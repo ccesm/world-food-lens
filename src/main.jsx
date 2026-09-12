@@ -5,7 +5,12 @@ import {
   BarChart, Bar, ReferenceLine
 } from "recharts";
 import snapshot from "./data/recoveredSnapshot";
-import {refreshOfficialData} from "./services/officialSources";
+import initialOfficialData from "../public/data/official-data.json";
+import {createDashboard,getDashboardMetrics} from "./data/dashboardMetrics";
+import {refreshOfficialData,sourceStateLabel,validateOfficialBundle} from "./services/officialSources";
+import SourceDesk from "./components/SourceDesk";
+import ClimateMonitor from "./components/ClimateMonitor";
+import PolicyEvents from "./components/PolicyEvents";
 import "./styles.css";
 
 const copy = {
@@ -13,11 +18,11 @@ const copy = {
     badge:"全球视角 · 官方数据 · 清晰解读",
     hero:"看懂粮价背后的变化。",
     intro:"从油价与化肥，到全球收成和贸易政策。把分散的信号，放到一起观察。",
-    sync:"迁移版 · 当前显示旧站恢复缓存",
+    sync:"官方定时缓存 · 观测期和数据状态见各模块",
     dataSources:"数据来源", check:"检查更新", english:"Switch to English",
     nav:["价格与成本","产量与库存","全球政策库","如何影响粮价","成本实验室","投资标的"],
     priceTitle:"粮价与能源，是否同向变化？", recovered:"旧站恢复快照",
-    normalized:"共同起点 = 100", raw:"查看恢复的月度数据",
+    normalized:"共同起点 = 100", raw:"查看月度数据",
     fertilizerTitle:"化肥：农场的成本信号", agriTitle:"农产品：国际贸易基准",
     crop:"作物", monthly:"月均价", change:"环比变化",
     usdaTitle:"收成能否跟上消耗？", ratio:"全球小麦库存消费比",
@@ -45,11 +50,11 @@ const copy = {
     badge:"Global view · Official data · Clear interpretation",
     hero:"See what is moving food prices.",
     intro:"From oil and fertilizer to harvests, inventories and trade policy—bring scattered signals into one view.",
-    sync:"Git migration · showing recovered hosted-site cache",
+    sync:"Scheduled official cache · periods and data status shown per section",
     dataSources:"Data sources", check:"Check updates", english:"中文",
     nav:["Prices & costs","Supply & stocks","Global policy","How it transmits","Cost lab","Investments"],
     priceTitle:"Do food and energy prices move together?", recovered:"Recovered hosted-site snapshot",
-    normalized:"Common starting point = 100", raw:"View recovered monthly data",
+    normalized:"Common starting point = 100", raw:"View monthly data",
     fertilizerTitle:"Fertilizer: the farm-cost signal", agriTitle:"Agriculture: international benchmarks",
     crop:"Commodity", monthly:"Monthly avg.", change:"MoM",
     usdaTitle:"Can harvests keep up with use?", ratio:"Global wheat stock-to-use ratio",
@@ -148,18 +153,26 @@ function TradingViewChart({instrument,lang}){
   </div>
 }
 
-function pct(v){ return `${v>=0?"+":""}${v.toFixed(1)}%`; }
+function pct(v){ return Number.isFinite(v)?`${v>=0?"+":""}${v.toFixed(1)}%`:"—"; }
 function normalize(rows,key){
-  const base = rows[0][key];
-  return rows.map(r=>({...r,[`${key}N`]: +(r[key]/base*100).toFixed(2)}));
+  const base = rows.find(row=>Number.isFinite(row[key]) && row[key]>0)?.[key];
+  return rows.map(r=>({...r,[`${key}N`]: Number.isFinite(r[key])&&base?+(r[key]/base*100).toFixed(2):null}));
 }
-function Kpi({label,value,change,period,unit}){
+function DataBadge({record,lang}){
+  return <div className="data-badge">{record?<>
+    <a href={record.source.url} target="_blank" rel="noopener noreferrer">{record.source.label} ↗</a>
+    <span>{sourceStateLabel(record,lang)}</span>
+    <small>{lang==="zh"?"抓取":"Fetched"}: {record.fetchedAt}</small>
+  </>:<span>{copy[lang].recovered}</span>}</div>;
+}
+function Kpi({label,value,change,period,unit,lang,source,estimate=false,changeUnit="%"}){
   const up = change>0;
   return <div className="kpi">
     <span>{label}</span><strong>{value}</strong>
-    <b className={up?"up":"down"}>{up?"↑":"↓"} {typeof change==="number" ? (Math.abs(change)<2 && unit==="%" ? `${change>0?"+":""}${change.toFixed(1)} pp` : pct(change)) : change}</b>
+    <b className={up?"up":"down"}>{!Number.isFinite(change)?"—":<>{change===0?"→":up?"↑":"↓"} {changeUnit==="pp" ? `${change>0?"+":""}${change.toFixed(1)} pp` : pct(change)}</>}</b>
     <small>{period} · {unit}</small>
-    <em>{copy.zh.recovered}</em>
+    {estimate&&<small>{lang==="zh"?"含预测/估计 · 可修订":"Forecast/estimate · revisable"}</small>}
+    <DataBadge record={source} lang={lang}/>
   </div>
 }
 function App(){
@@ -167,21 +180,35 @@ function App(){
   const [range,setRange]=useState(36);
   const [rawOpen,setRawOpen]=useState(false);
   const [refreshMsg,setRefreshMsg]=useState("");
+  const [refreshing,setRefreshing]=useState(false);
+  const [official,setOfficial]=useState(()=>validateOfficialBundle(initialOfficialData));
   const [fuel,setFuel]=useState(0), [fert,setFert]=useState(0), [other,setOther]=useState(0);
   const [selected,setSelected]=useState(investments.find(x=>x.symbol==="DBA"));
-  const [policyQuery,setPolicyQuery]=useState("");
   const t=copy[lang];
 
-  const rows=useMemo(()=>normalize(snapshot.monthly.slice(-range),"fao"),[range]);
+  const dashboard=useMemo(()=>createDashboard(snapshot,official),[official]);
+  const {provenance}=dashboard;
+  const {faoFoodPriceIndex:fao,brent,urea,wheat,wheatHistory}=getDashboardMetrics(dashboard);
+  const rows=useMemo(()=>normalize(dashboard.monthly.slice(-range),"fao"),[dashboard,range]);
   const chart=useMemo(()=>{
-    const baseB=rows[0].brent;
-    return rows.map(r=>({...r,brentN:+(r.brent/baseB*100).toFixed(2)}));
+    const baseB=rows.find(row=>Number.isFinite(row.brent)&&row.brent>0)?.brent;
+    return rows.map(r=>({...r,brentN:Number.isFinite(r.brent)&&baseB?+(r.brent/baseB*100).toFixed(2):null}));
   },[rows]);
   const total=0.2*fuel+0.3*fert+0.5*other;
 
+  useEffect(()=>{
+    let cancelled=false;
+    refreshOfficialData().then(data=>{if(!cancelled)setOfficial(data);})
+      .catch(()=>{if(!cancelled)setRefreshMsg("failed");});
+    return ()=>{cancelled=true;};
+  },[]);
+
   async function doRefresh(){
-    const r=await refreshOfficialData();
-    setRefreshMsg(lang==="zh"?t.updateUnavailable:r.message);
+    if(refreshing)return;
+    setRefreshing(true);
+    try{setOfficial(await refreshOfficialData());setRefreshMsg("loaded");}
+    catch{setRefreshMsg("failed");}
+    finally{setRefreshing(false);}
   }
 
   return <div className="app">
@@ -189,7 +216,7 @@ function App(){
       <div className="brand"><b>WFL</b><div><strong>World Food Lens</strong><span>全球粮食观察</span></div></div>
       <div className="actions">
         <a href="#data-desk">{t.dataSources}</a>
-        <button onClick={doRefresh}>↻ {t.check}</button>
+        <button onClick={doRefresh} disabled={refreshing}>↻ {refreshing?(lang==="zh"?"检查中…":"Checking…"):t.check}</button>
         <button onClick={()=>setLang(lang==="zh"?"en":"zh")}>{t.english}</button>
       </div>
     </header>
@@ -199,19 +226,19 @@ function App(){
         <div className="eyebrow">{t.badge}</div>
         <h1>{t.hero}</h1>
         <p>{t.intro}</p>
-        <div className="sync">{t.sync}</div>
-        {refreshMsg && <div className="notice">{refreshMsg}</div>}
+        <div className="sync">{Object.values(provenance).some(x=>x&&typeof x==="object")?t.sync:t.recovered}</div>
+        {refreshMsg && <div className="notice" role="status">{refreshMsg==="loaded"?(lang==="zh"?"已读取网站最新发布的缓存。此按钮不会直接触发官方接口抓取；各来源的成功/失败状态见数据来源。":"Loaded the site's latest published cache. This button does not trigger upstream downloads; source success/failure is shown in Data Desk."):(lang==="zh"?"网站缓存暂时无法读取，继续显示已载入的数据。":"The published cache could not be read; previously loaded data remain visible.")}</div>}
       </section>
 
       <section className="kpis">
-        <Kpi label={lang==="zh"?"FAO 粮食价格指数":"FAO Food Price Index"} value="133.3" change={1.9} period="2026-08" unit="2014–2016 = 100"/>
-        <Kpi label={lang==="zh"?"Brent 原油":"Brent crude"} value="$91.08" change={8.7} period="2026-08" unit={lang==="zh"?"美元 / 桶":"USD / barrel"}/>
-        <Kpi label={lang==="zh"?"尿素基准价格":"Urea benchmark"} value="$390.0" change={-2.5} period="2026-08" unit={lang==="zh"?"美元 / 公吨":"USD / mt"}/>
-        <Kpi label={t.ratio} value="33.6%" change={-0.7} period="2026/2027" unit="%"/>
+        <Kpi lang={lang} source={provenance.fao} label={lang==="zh"?"FAO 粮食价格指数":"FAO Food Price Index"} value={fao.value.toFixed(1)} change={fao.momPct} period={fao.period} unit={fao.unit}/>
+        <Kpi lang={lang} source={provenance.brent} label={lang==="zh"?"Brent 原油":"Brent crude"} value={`$${brent.value.toFixed(2)}`} change={brent.momPct} period={brent.period} unit={lang==="zh"?"美元 / 桶":brent.unit}/>
+        <Kpi lang={lang} source={provenance.urea} label={lang==="zh"?"尿素基准价格":"Urea benchmark"} value={`$${urea.value.toFixed(1)}`} change={urea.momPct} period={urea.period} unit={lang==="zh"?"美元 / 公吨":urea.unit}/>
+        <Kpi lang={lang} source={provenance.usda} estimate={!!provenance.usda} label={t.ratio} value={`${wheat.value.toFixed(1)}%`} change={wheat.deltaPp} changeUnit="pp" period={wheat.period} unit={wheat.unit}/>
       </section>
 
       <nav className="section-nav">
-        {t.nav.map((x,i)=><a key={x} href={`#s${i+1}`}>{x}</a>)}
+        {t.nav.map((x,i)=><React.Fragment key={x}><a href={`#s${i+1}`}>{x}</a>{i===1&&<a href="#climate">{lang==="zh"?"气候监测":"Climate monitor"}</a>}</React.Fragment>)}
       </nav>
 
       <section id="s1" className="section">
@@ -221,6 +248,10 @@ function App(){
           <div className="select-wrap"><label>{lang==="zh"?"时间范围":"Range"}</label><select value={range} onChange={e=>setRange(+e.target.value)}><option value="12">{lang==="zh"?"近 12 个月":"12 months"}</option><option value="36">{lang==="zh"?"近 36 个月":"36 months"}</option></select></div>
         </div>
         <div className="chart-card">
+          <div className="chart-provenance">{provenance.officialChart?<>
+            <DataBadge record={provenance.fao} lang={lang}/><DataBadge record={provenance.brent} lang={lang}/>
+            <small>{lang==="zh"?"仅比较两来源共同覆盖的月份；不拼接旧站恢复值。":"Only overlapping official months are compared; recovered rows are never appended."}</small>
+          </>:<p>{t.recovered} · {lang==="zh"?"官方序列尚未共同覆盖至少两个月，暂保留原图。":"Fewer than two overlapping official months; the original recovered chart is retained."}</p>}</div>
           <div className="legend"><span>● FAO</span><span>● Brent</span><b>{t.normalized}</b></div>
           <div className="chart">
             <ResponsiveContainer width="100%" height="100%">
@@ -228,18 +259,18 @@ function App(){
                 <CartesianGrid strokeDasharray="3 3" vertical={false}/>
                 <XAxis dataKey="month" minTickGap={36}/><YAxis domain={["auto","auto"]}/><Tooltip formatter={(v,n)=>[v,n==="faoN"?"FAO":"Brent"]}/>
                 <ReferenceLine y={100} strokeDasharray="5 5"/>
-                <Line type="monotone" dataKey="faoN" strokeWidth={2.6} dot={false}/>
-                <Line type="monotone" dataKey="brentN" strokeWidth={2.2} dot={false}/>
+                <Line type="linear" dataKey="faoN" stroke="#315d48" strokeWidth={2.6} dot={false} connectNulls={false}/>
+                <Line type="linear" dataKey="brentN" stroke="#ad7252" strokeWidth={2.2} dot={false} connectNulls={false}/>
               </LineChart>
             </ResponsiveContainer>
           </div>
           <button className="text-btn" onClick={()=>setRawOpen(!rawOpen)}>{t.raw} {rawOpen?"▲":"▼"}</button>
-          {rawOpen && <div className="raw-table"><table><thead><tr><th>Month</th><th>FAO</th><th>Brent</th></tr></thead><tbody>{rows.map(r=><tr key={r.month}><td>{r.month}</td><td>{r.fao.toFixed(2)}</td><td>${r.brent.toFixed(2)}</td></tr>)}</tbody></table></div>}
+          {rawOpen && <div className="raw-table"><table><thead><tr><th>{lang==="zh"?"月份":"Month"}</th><th>FAO</th><th>Brent</th></tr></thead><tbody>{rows.map(r=><tr key={r.month}><td>{r.month}</td><td>{r.fao?.toFixed(2)??"—"}</td><td>{Number.isFinite(r.brent)?`$${r.brent.toFixed(2)}`:"—"}</td></tr>)}</tbody></table></div>}
         </div>
 
         <div className="split">
-          <TableBox kicker="WORLD BANK / FERTILIZERS" title={t.fertilizerTitle} rows={snapshot.fertilizers} lang={lang}/>
-          <TableBox kicker="WORLD BANK / AGRICULTURE" title={t.agriTitle} rows={snapshot.agriculture} lang={lang}/>
+          <TableBox kicker="WORLD BANK / FERTILIZERS" title={t.fertilizerTitle} rows={dashboard.fertilizers} lang={lang} source={provenance.worldBank}/>
+          <TableBox kicker="WORLD BANK / AGRICULTURE" title={t.agriTitle} rows={dashboard.agriculture} lang={lang} source={provenance.worldBank}/>
         </div>
       </section>
 
@@ -247,21 +278,16 @@ function App(){
         <div className="section-no">02 / USDA • WORLD TOTAL</div>
         <h2>{t.usdaTitle}</h2>
         <div className="usda-grid">
-          <div className="ratio-card"><span>{t.ratio}</span><strong>33.6%</strong><b className="down">−0.7 pp</b><small>2026/2027 · USDA PSD headline recovered from old site</small></div>
-          <div className="mini-chart"><ResponsiveContainer width="100%" height="100%"><BarChart data={[{year:"2025/26",ratio:34.3},{year:"2026/27",ratio:33.6}]}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="year"/><YAxis domain={[30,36]}/><Tooltip/><Bar dataKey="ratio"/></BarChart></ResponsiveContainer></div>
+          <div className="ratio-card"><span>{t.ratio}</span><strong>{wheat.value.toFixed(1)}%</strong><b className={wheat.deltaPp>0?"up":"down"}>{wheat.deltaPp>0?"+":""}{wheat.deltaPp.toFixed(1)} pp</b><small>{wheat.period} · USDA PSD · {provenance.usda?(lang==="zh"?"含预测/估计，可修订":"Includes forecasts/estimates; subject to revision"):t.recovered}</small></div>
+          <div className="mini-chart"><ResponsiveContainer width="100%" height="100%"><BarChart data={wheatHistory}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="year"/><YAxis domain={[0,"auto"]} unit="%"/><Tooltip formatter={v=>[`${Number(v).toFixed(1)}%`,t.ratio]}/><Bar dataKey="ratio"/></BarChart></ResponsiveContainer></div>
         </div>
-        <div className="explain"><b>{lang==="zh"?"库存消费比是什么？":"What is stock-to-use?"}</b><p>{t.ratioHelp}</p><small>{lang==="zh"?"迁移说明：旧站公开快照中可恢复的是最新比率头条。完整 USDA 产量/消费/库存时间序列需要重新接入 PSD。":"Migration note: only the headline ratio was recoverable from the public snapshot; full PSD production/consumption/stocks series must be reconnected."}</small></div>
+        <DataBadge record={provenance.usda} lang={lang}/>
+        <div className="explain"><b>{lang==="zh"?"库存消费比是什么？":"What is stock-to-use?"}</b><p>{t.ratioHelp}</p><small>{provenance.usda?(lang==="zh"?"比率由 USDA 世界小麦期末库存和国内消费计算。市场年度不是自然年；最新年度可能为预测，历史值也可能修订。":"Ratios are calculated from USDA world wheat ending stocks and domestic consumption. Marketing years differ from calendar years; recent years can be forecasts and historical values can be revised."):(lang==="zh"?"当前为旧站恢复的比率，尚无可用的官方完整供需序列。":"Recovered ratios remain displayed; a verified full supply/use series is not yet available.")}</small></div>
+        {provenance.usda&&<details className="supply-details"><summary>{lang==="zh"?"查看产量、消费和库存（千公吨）":"View production, use and stocks (thousand metric tons)"}</summary><div className="raw-table"><table><thead><tr><th>{lang==="zh"?"市场年度":"Marketing year"}</th><th>{lang==="zh"?"产量":"Production"}</th><th>{lang==="zh"?"国内消费":"Domestic use"}</th><th>{lang==="zh"?"期末库存":"Ending stocks"}</th></tr></thead><tbody>{wheatHistory.map(row=><tr key={row.year}><td>{row.year}</td><td>{row.production?.toLocaleString()}</td><td>{row.consumption?.toLocaleString()}</td><td>{row.endingStocks?.toLocaleString()}</td></tr>)}</tbody></table></div></details>}
       </section>
 
-      <section id="s3" className="section">
-        <div className="section-no">03 / FAO • FAPDA</div>
-        <div className="section-head"><div><h2>{t.policyTitle}</h2><p>{lang==="zh"?"自动同步 FAO 整理的各国政策摘要，并保存可检索记录——此能力需要在 Git 版重新连接。":"The hosted site synchronized FAO-curated policy summaries; the Git version needs that backend reconnected."}</p></div><a className="source-link" href="https://fapda.apps.fao.org/" target="_blank" rel="noreferrer">FAPDA ↗</a></div>
-        <div className="policy-tools">
-          <input value={policyQuery} onChange={e=>setPolicyQuery(e.target.value)} placeholder={t.keyword}/>
-          <select><option>{t.country}</option></select><select><option>{t.type}</option></select><button disabled>{lang==="zh"?"筛选":"Filter"}</button>
-        </div>
-        <div className="pending-box"><b>{lang==="zh"?"FAPDA 适配器待重连":"FAPDA adapter pending"}</b><p>{t.policyPending}</p>{policyQuery&&<small>{lang==="zh"?`已输入关键词：“${policyQuery}”（目前仅界面演示）`:`Keyword entered: "${policyQuery}" (UI only for now)`}</small>}</div>
-      </section>
+      <ClimateMonitor record={official.sources.noaa} lang={lang}/>
+      <PolicyEvents lang={lang}/>
 
       <section id="s4" className="section alt">
         <div className="section-no">04 / CONNECT THE DOTS</div><h2>{t.dots}</h2>
@@ -293,20 +319,16 @@ function App(){
         </div>
       </section>
 
-      <section id="data-desk" className="section">
-        <div className="section-no">DATA DESK</div><h2>{t.desk}</h2><p>{t.deskHelp}</p>
-        <div className="desk">{snapshot.dataDesk.map(x=><div className="desk-row" key={x.source}><b>{x.source}</b><span><small>{t.observation}</small>{x.period}</span><span><small>{t.last}</small>{x.lastSuccess}</span><em>{x.status}</em></div>)}</div>
-        <div className="snapshot-note">{snapshot.snapshot.warning}</div>
-      </section>
+      <SourceDesk bundle={official} lang={lang} recovered={snapshot}/>
     </main>
-    <footer><b>World Food Lens</b><span>{t.footer}</span><small>Git migration / v1.0</small></footer>
+    <footer><b>World Food Lens</b><span>{t.footer}</span><small>Official data / v1.1</small></footer>
   </div>
 }
 function Slider({label,value,set}){
   return <label className="slider"><span>{label}<b>{value>=0?"+":""}{value}%</b></span><input type="range" min="-50" max="100" value={value} onChange={e=>set(+e.target.value)}/></label>
 }
-function TableBox({kicker,title,rows,lang}){
+function TableBox({kicker,title,rows,lang,source}){
   const t=copy[lang];
-  return <article className="table-box"><div className="kicker">{kicker}</div><h3>{title}</h3><div className="unit">USD / mt</div><table><thead><tr><th>{t.crop}</th><th>{t.monthly}</th><th>{t.change}</th></tr></thead><tbody>{rows.map(r=><tr key={r.nameEn}><td><b>{lang==="zh"?r.nameZh:r.nameEn}</b><small>{r.period}</small></td><td>{r.price.toFixed(2)}</td><td className={r.momPct>=0?"up":"down"}>{pct(r.momPct)}</td></tr>)}</tbody></table></article>
+  return <article className="table-box"><div className="kicker">{kicker}</div><h3>{title}</h3><div className="unit">USD / mt</div><DataBadge record={source} lang={lang}/><table><thead><tr><th>{t.crop}</th><th>{t.monthly}</th><th>{t.change}</th></tr></thead><tbody>{rows.map(r=><tr key={r.nameEn}><td><b>{lang==="zh"?r.nameZh:r.nameEn}</b><small>{r.period}</small></td><td>{r.price.toFixed(2)}</td><td className={r.momPct>=0?"up":"down"}>{pct(r.momPct)}</td></tr>)}</tbody></table></article>
 }
 createRoot(document.getElementById("root")).render(<App/>);

@@ -76,12 +76,19 @@ Any ChatGPT/Codex account should:
 
 ## Near-term roadmap
 
-1. Reconnect World Bank Pink Sheet.
-2. Reconnect FAO Food Price Index.
-3. Reconnect EIA Brent.
-4. Reconnect USDA PSD/WASDE.
-5. Rebuild FAPDA policy sync/search with durable local storage.
-6. Add source health/status metadata.
-7. Connect investment current/historical market data.
-8. Add scheduled refresh in hosting environment.
-9. Add automated tests.
+Implemented in the official-data/climate/policy increment:
+
+- Public FAO, World Bank, EIA and USDA downloads via Python standard-library adapters.
+- Generated `public/data/official-data.json`, with per-source validation and last-good fallback.
+- NOAA RONI observed climate history, provisional flags and regional interpretation cautions.
+- Nine bilingual, searchable policy/conflict historical records with official citations.
+- Source health, dates, daily GitHub Actions cache refresh, build and deployment.
+- Offline parser/data/filter tests; no changes to the TradingView instrument set.
+
+Boundaries to preserve: policy records are editorial, not automatic FAPDA sync;
+NOAA is a global ocean signal, not local crop/weather forecasts; recent USDA
+years are forecasts/estimates. Recovered values are fallback only, never live.
+
+Future increments: broaden reviewed policy coverage and authorized FAPDA
+integration; add regional rainfall/soil-moisture data and population/demand
+context; add release-specific archives and larger-scale end-to-end test coverage.

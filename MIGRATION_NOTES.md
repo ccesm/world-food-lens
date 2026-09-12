@@ -30,7 +30,21 @@ It also restores the recoverable 36-month FAO/Brent series and August 2026 bench
 - Any hidden server credentials/configuration
 - Original build-system internals used by the hosted Site
 
-These must be rebuilt in this Git repository.
+These were not recovered from the old site. The official-data increment now
+reimplements public macro downloads, climate monitoring and an editorial policy
+registry in this repository; it does not claim to recover the old backend.
+
+## Post-migration data increment
+
+The immutable recovered snapshot remains intact. Official downloads are stored
+separately in `public/data/official-data.json` and replace only sections with
+validated source data. The new USDA historical ratios are calculated from the
+official recent country/area records, not invented extensions of the old ratio.
+Source failures retain the prior successful cache and timestamp.
+
+NOAA RONI and a nine-event policy/conflict registry are new capabilities. Policy
+records are historical, non-exhaustive and manually verified, not a restored
+FAPDA synchronization service. Read README.md for operation and current limits.
 
 ## New post-migration extension
 

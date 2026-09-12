@@ -1,0 +1,34 @@
+.policy-disclosure{border-left:3px solid #b0934e;background:#fff9e9;padding:14px 17px;border-radius:0 9px 9px;margin-top:22px}
+.policy-disclosure p{font-size:12px;line-height:1.7;margin:0 0 7px;color:#615536}
+.policy-disclosure small{font-size:10px;color:#776949}
+.policy-filters{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr auto;gap:10px;align-items:end;margin:23px 0 12px}
+.policy-filters label{display:flex;flex-direction:column;gap:7px;font-size:11px;color:#506156;min-width:0}
+.policy-filters input,.policy-filters select{width:100%;min-width:0;border:1px solid #cbd4cb;background:#fff;color:#24392b;border-radius:8px;padding:11px 9px;font:inherit;font-size:12px;min-height:42px}
+.policy-filters button,.policy-empty button{border:1px solid #cbd4cb;border-radius:8px;padding:11px 13px;background:#fff;color:#2e513c;font:inherit;font-size:12px;min-height:42px;cursor:pointer}
+.policy-filters :is(input,select,button):focus-visible,.policy-empty button:focus-visible,.policy-record a:focus-visible,.policy-record summary:focus-visible{outline:3px solid #739a81;outline-offset:3px}
+.policy-section .policy-count{font-size:11px;color:#576d5e;margin:10px 0 16px}
+.policy-records{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.policy-record{background:#fff;border:1px solid #d8dfd6;border-radius:14px;padding:20px;min-width:0}
+.policy-record-meta{display:flex;gap:6px;flex-wrap:wrap;color:#54705d;font-size:10px}
+.policy-record-meta>span{border-radius:5px;padding:4px 7px;background:#eef3eb}
+.policy-record-meta .policy-record-status{color:#786637;background:#faf3df}
+.policy-record h3{font-family:Georgia,serif;font-size:21px;font-weight:500;line-height:1.4;margin:14px 0}
+.policy-record>p{font-size:12px;color:#56675b;line-height:1.75;margin:14px 0}
+.policy-dates{display:flex;gap:12px 20px;flex-wrap:wrap;margin:0}
+.policy-dates dt{font-size:9px;color:#768179}
+.policy-dates dd{font-size:11px;margin:4px 0 0;color:#394c3f;font-variant-numeric:tabular-nums}
+.policy-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.policy-tags span{font-size:10px;border:1px solid #e0e6dd;padding:3px 7px;border-radius:999px;color:#67766b}
+.policy-interpretation{background:#f5f7f1;padding:10px 12px;border-radius:7px;margin-top:13px}
+.policy-interpretation summary{font-size:10px;font-weight:600;color:#42664d;line-height:1.7;cursor:pointer}
+.policy-interpretation p{font-size:12px;line-height:1.65;color:#5a6d5d;margin:8px 0 0}
+.policy-source{border-top:1px solid #e6eae2;padding-top:12px;margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.policy-source a{font-size:11px;font-weight:600;color:#285b3b;text-decoration:none;overflow-wrap:anywhere;line-height:1.65}
+.policy-source a span{display:block;font-size:10px;font-weight:400;color:#617568}
+.policy-source a:hover{text-decoration:underline}
+.policy-source small{font-size:9px;color:#77847a}
+.policy-empty{border:1px dashed #bbc8bb;border-radius:12px;padding:24px;color:#59725e;font-size:13px}
+.policy-section .policy-footnote{font-size:11px;max-width:100%;margin:20px 0 12px}
+@media(max-width:1000px){.policy-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.policy-search{grid-column:1/-1}.policy-filters button{justify-self:start}}
+@media(max-width:700px){.policy-records{grid-template-columns:1fr}.policy-filters{grid-template-columns:1fr 1fr}.policy-filters label:nth-of-type(4){grid-column:1/-1}.policy-record{padding:17px}}
+@media(max-width:420px){.policy-filters{grid-template-columns:1fr}.policy-filters button{width:100%}.policy-dates{gap:12px}}
