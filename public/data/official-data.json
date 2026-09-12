@@ -1,0 +1,2923 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T12:55:32Z",
+  "sources": {
+    "usda": {
+      "source": {
+        "label": "USDA · PSD",
+        "url": "https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads",
+        "downloadUrl": "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip",
+        "period": "2026/2027",
+        "unit": "1000 metric tons; ratio: %",
+        "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
+      },
+      "data": {
+        "latestPeriod": "2026/2027",
+        "stockToUse": 33.5934,
+        "priorStockToUse": 34.3072,
+        "history": [
+          {
+            "year": "2017/2018",
+            "production": 760308.0,
+            "consumption": 739566.0,
+            "endingStocks": 287297.0,
+            "ratio": 38.8467,
+            "countryAreaCount": 125
+          },
+          {
+            "year": "2018/2019",
+            "production": 729893.0,
+            "consumption": 731054.0,
+            "endingStocks": 284007.0,
+            "ratio": 38.849,
+            "countryAreaCount": 125
+          },
+          {
+            "year": "2019/2020",
+            "production": 759933.0,
+            "consumption": 739102.0,
+            "endingStocks": 298622.0,
+            "ratio": 40.4034,
+            "countryAreaCount": 125
+          },
+          {
+            "year": "2020/2021",
+            "production": 772759.0,
+            "consumption": 776938.0,
+            "endingStocks": 285475.0,
+            "ratio": 36.7436,
+            "countryAreaCount": 125
+          },
+          {
+            "year": "2021/2022",
+            "production": 780860.0,
+            "consumption": 787911.0,
+            "endingStocks": 275010.0,
+            "ratio": 34.9037,
+            "countryAreaCount": 125
+          },
+          {
+            "year": "2022/2023",
+            "production": 790286.0,
+            "consumption": 781625.0,
+            "endingStocks": 274187.0,
+            "ratio": 35.0791,
+            "countryAreaCount": 125
+          },
+          {
+            "year": "2023/2024",
+            "production": 791593.0,
+            "consumption": 797065.0,
+            "endingStocks": 269944.0,
+            "ratio": 33.8673,
+            "countryAreaCount": 123
+          },
+          {
+            "year": "2024/2025",
+            "production": 799099.0,
+            "consumption": 799403.0,
+            "endingStocks": 260590.0,
+            "ratio": 32.5981,
+            "countryAreaCount": 123
+          },
+          {
+            "year": "2025/2026",
+            "production": 843989.0,
+            "consumption": 817916.0,
+            "endingStocks": 280604.0,
+            "ratio": 34.3072,
+            "countryAreaCount": 123
+          },
+          {
+            "year": "2026/2027",
+            "production": 822432.0,
+            "consumption": 822456.0,
+            "endingStocks": 276291.0,
+            "ratio": 33.5934,
+            "countryAreaCount": 123
+          }
+        ],
+        "releasePeriod": "2026-09",
+        "unit": "1000 metric tons; ratio: %",
+        "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
+      },
+      "status": "ok",
+      "fetchedAt": "2026-09-12T12:55:34Z",
+      "lastAttemptAt": "2026-09-12T12:55:32Z"
+    },
+    "fao": {
+      "source": {
+        "label": "FAO · Food Price Index",
+        "url": "https://www.fao.org/worldfoodsituation/foodpricesindex/en/",
+        "downloadUrl": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
+        "period": "2026-08",
+        "unit": "2014–2016 = 100",
+        "methodology": "Nominal export-weighted food price index. Recent meat inputs mix projected and observed prices; the index can be revised."
+      },
+      "data": {
+        "monthly": [
+          {
+            "month": "2016-09",
+            "fao": 96.1
+          },
+          {
+            "month": "2016-10",
+            "fao": 95.9
+          },
+          {
+            "month": "2016-11",
+            "fao": 96.0
+          },
+          {
+            "month": "2016-12",
+            "fao": 95.3
+          },
+          {
+            "month": "2017-01",
+            "fao": 97.8
+          },
+          {
+            "month": "2017-02",
+            "fao": 98.1
+          },
+          {
+            "month": "2017-03",
+            "fao": 96.2
+          },
+          {
+            "month": "2017-04",
+            "fao": 95.0
+          },
+          {
+            "month": "2017-05",
+            "fao": 97.3
+          },
+          {
+            "month": "2017-06",
+            "fao": 97.8
+          },
+          {
+            "month": "2017-07",
+            "fao": 100.0
+          },
+          {
+            "month": "2017-08",
+            "fao": 99.2
+          },
+          {
+            "month": "2017-09",
+            "fao": 99.7
+          },
+          {
+            "month": "2017-10",
+            "fao": 98.8
+          },
+          {
+            "month": "2017-11",
+            "fao": 98.8
+          },
+          {
+            "month": "2017-12",
+            "fao": 96.4
+          },
+          {
+            "month": "2018-01",
+            "fao": 96.7
+          },
+          {
+            "month": "2018-02",
+            "fao": 97.8
+          },
+          {
+            "month": "2018-03",
+            "fao": 98.8
+          },
+          {
+            "month": "2018-04",
+            "fao": 98.4
+          },
+          {
+            "month": "2018-05",
+            "fao": 98.5
+          },
+          {
+            "month": "2018-06",
+            "fao": 96.8
+          },
+          {
+            "month": "2018-07",
+            "fao": 95.0
+          },
+          {
+            "month": "2018-08",
+            "fao": 95.8
+          },
+          {
+            "month": "2018-09",
+            "fao": 94.0
+          },
+          {
+            "month": "2018-10",
+            "fao": 93.2
+          },
+          {
+            "month": "2018-11",
+            "fao": 91.9
+          },
+          {
+            "month": "2018-12",
+            "fao": 92.0
+          },
+          {
+            "month": "2019-01",
+            "fao": 93.1
+          },
+          {
+            "month": "2019-02",
+            "fao": 93.8
+          },
+          {
+            "month": "2019-03",
+            "fao": 93.0
+          },
+          {
+            "month": "2019-04",
+            "fao": 93.5
+          },
+          {
+            "month": "2019-05",
+            "fao": 94.2
+          },
+          {
+            "month": "2019-06",
+            "fao": 95.4
+          },
+          {
+            "month": "2019-07",
+            "fao": 95.1
+          },
+          {
+            "month": "2019-08",
+            "fao": 93.8
+          },
+          {
+            "month": "2019-09",
+            "fao": 93.2
+          },
+          {
+            "month": "2019-10",
+            "fao": 95.0
+          },
+          {
+            "month": "2019-11",
+            "fao": 98.2
+          },
+          {
+            "month": "2019-12",
+            "fao": 100.8
+          },
+          {
+            "month": "2020-01",
+            "fao": 102.5
+          },
+          {
+            "month": "2020-02",
+            "fao": 99.6
+          },
+          {
+            "month": "2020-03",
+            "fao": 95.2
+          },
+          {
+            "month": "2020-04",
+            "fao": 92.4
+          },
+          {
+            "month": "2020-05",
+            "fao": 91.2
+          },
+          {
+            "month": "2020-06",
+            "fao": 93.1
+          },
+          {
+            "month": "2020-07",
+            "fao": 93.8
+          },
+          {
+            "month": "2020-08",
+            "fao": 95.7
+          },
+          {
+            "month": "2020-09",
+            "fao": 97.9
+          },
+          {
+            "month": "2020-10",
+            "fao": 101.3
+          },
+          {
+            "month": "2020-11",
+            "fao": 105.5
+          },
+          {
+            "month": "2020-12",
+            "fao": 108.5
+          },
+          {
+            "month": "2021-01",
+            "fao": 113.5
+          },
+          {
+            "month": "2021-02",
+            "fao": 116.5
+          },
+          {
+            "month": "2021-03",
+            "fao": 119.1
+          },
+          {
+            "month": "2021-04",
+            "fao": 122.1
+          },
+          {
+            "month": "2021-05",
+            "fao": 128.4
+          },
+          {
+            "month": "2021-06",
+            "fao": 125.4
+          },
+          {
+            "month": "2021-07",
+            "fao": 124.4
+          },
+          {
+            "month": "2021-08",
+            "fao": 128.0
+          },
+          {
+            "month": "2021-09",
+            "fao": 129.1
+          },
+          {
+            "month": "2021-10",
+            "fao": 133.3
+          },
+          {
+            "month": "2021-11",
+            "fao": 135.4
+          },
+          {
+            "month": "2021-12",
+            "fao": 133.7
+          },
+          {
+            "month": "2022-01",
+            "fao": 135.7
+          },
+          {
+            "month": "2022-02",
+            "fao": 141.7
+          },
+          {
+            "month": "2022-03",
+            "fao": 160.2
+          },
+          {
+            "month": "2022-04",
+            "fao": 158.8
+          },
+          {
+            "month": "2022-05",
+            "fao": 158.7
+          },
+          {
+            "month": "2022-06",
+            "fao": 155.7
+          },
+          {
+            "month": "2022-07",
+            "fao": 141.6
+          },
+          {
+            "month": "2022-08",
+            "fao": 138.7
+          },
+          {
+            "month": "2022-09",
+            "fao": 137.3
+          },
+          {
+            "month": "2022-10",
+            "fao": 136.7
+          },
+          {
+            "month": "2022-11",
+            "fao": 136.0
+          },
+          {
+            "month": "2022-12",
+            "fao": 133.1
+          },
+          {
+            "month": "2023-01",
+            "fao": 131.4
+          },
+          {
+            "month": "2023-02",
+            "fao": 130.7
+          },
+          {
+            "month": "2023-03",
+            "fao": 128.0
+          },
+          {
+            "month": "2023-04",
+            "fao": 128.4
+          },
+          {
+            "month": "2023-05",
+            "fao": 124.5
+          },
+          {
+            "month": "2023-06",
+            "fao": 123.0
+          },
+          {
+            "month": "2023-07",
+            "fao": 124.4
+          },
+          {
+            "month": "2023-08",
+            "fao": 121.8
+          },
+          {
+            "month": "2023-09",
+            "fao": 121.7
+          },
+          {
+            "month": "2023-10",
+            "fao": 120.7
+          },
+          {
+            "month": "2023-11",
+            "fao": 120.6
+          },
+          {
+            "month": "2023-12",
+            "fao": 119.1
+          },
+          {
+            "month": "2024-01",
+            "fao": 117.6
+          },
+          {
+            "month": "2024-02",
+            "fao": 117.4
+          },
+          {
+            "month": "2024-03",
+            "fao": 118.9
+          },
+          {
+            "month": "2024-04",
+            "fao": 119.2
+          },
+          {
+            "month": "2024-05",
+            "fao": 120.5
+          },
+          {
+            "month": "2024-06",
+            "fao": 121.0
+          },
+          {
+            "month": "2024-07",
+            "fao": 120.9
+          },
+          {
+            "month": "2024-08",
+            "fao": 121.7
+          },
+          {
+            "month": "2024-09",
+            "fao": 124.6
+          },
+          {
+            "month": "2024-10",
+            "fao": 126.9
+          },
+          {
+            "month": "2024-11",
+            "fao": 127.7
+          },
+          {
+            "month": "2024-12",
+            "fao": 127.3
+          },
+          {
+            "month": "2025-01",
+            "fao": 124.6
+          },
+          {
+            "month": "2025-02",
+            "fao": 126.6
+          },
+          {
+            "month": "2025-03",
+            "fao": 127.2
+          },
+          {
+            "month": "2025-04",
+            "fao": 128.2
+          },
+          {
+            "month": "2025-05",
+            "fao": 127.1
+          },
+          {
+            "month": "2025-06",
+            "fao": 128.1
+          },
+          {
+            "month": "2025-07",
+            "fao": 129.8
+          },
+          {
+            "month": "2025-08",
+            "fao": 130.0
+          },
+          {
+            "month": "2025-09",
+            "fao": 128.6
+          },
+          {
+            "month": "2025-10",
+            "fao": 126.4
+          },
+          {
+            "month": "2025-11",
+            "fao": 125.2
+          },
+          {
+            "month": "2025-12",
+            "fao": 124.5
+          },
+          {
+            "month": "2026-01",
+            "fao": 124.1
+          },
+          {
+            "month": "2026-02",
+            "fao": 125.5
+          },
+          {
+            "month": "2026-03",
+            "fao": 128.7
+          },
+          {
+            "month": "2026-04",
+            "fao": 131.0
+          },
+          {
+            "month": "2026-05",
+            "fao": 131.0
+          },
+          {
+            "month": "2026-06",
+            "fao": 130.1
+          },
+          {
+            "month": "2026-07",
+            "fao": 130.8
+          },
+          {
+            "month": "2026-08",
+            "fao": 133.3
+          }
+        ],
+        "headline": {
+          "value": 133.3,
+          "momPct": 1.9113,
+          "period": "2026-08",
+          "unit": "2014–2016 = 100"
+        }
+      },
+      "status": "ok",
+      "fetchedAt": "2026-09-12T12:55:32Z",
+      "lastAttemptAt": "2026-09-12T12:55:32Z"
+    },
+    "noaa": {
+      "source": {
+        "label": "NOAA CPC · RONI",
+        "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/",
+        "downloadUrl": "https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt",
+        "period": "2026 JJA",
+        "unit": "°C",
+        "methodology": "ERSSTv6; overlapping 3-month relative Niño 3.4 sea-surface temperature anomalies; 1991–2020 baseline, tropical-mean adjusted and variance scaled. Recent values are provisional. Not an ENSO advisory or a crop forecast."
+      },
+      "data": {
+        "index": "RONI",
+        "baseline": "1991–2020",
+        "latest": {
+          "period": "2026 JJA",
+          "year": 2026,
+          "season": "JJA",
+          "startMonth": "2026-06",
+          "endMonth": "2026-08",
+          "value": 1.36,
+          "provisional": true
+        },
+        "history": [
+          {
+            "period": "2016 JAS",
+            "year": 2016,
+            "season": "JAS",
+            "startMonth": "2016-07",
+            "endMonth": "2016-09",
+            "value": -0.81,
+            "provisional": false
+          },
+          {
+            "period": "2016 ASO",
+            "year": 2016,
+            "season": "ASO",
+            "startMonth": "2016-08",
+            "endMonth": "2016-10",
+            "value": -0.88,
+            "provisional": false
+          },
+          {
+            "period": "2016 SON",
+            "year": 2016,
+            "season": "SON",
+            "startMonth": "2016-09",
+            "endMonth": "2016-11",
+            "value": -0.96,
+            "provisional": false
+          },
+          {
+            "period": "2016 OND",
+            "year": 2016,
+            "season": "OND",
+            "startMonth": "2016-10",
+            "endMonth": "2016-12",
+            "value": -0.96,
+            "provisional": false
+          },
+          {
+            "period": "2016 NDJ",
+            "year": 2016,
+            "season": "NDJ",
+            "startMonth": "2016-11",
+            "endMonth": "2017-01",
+            "value": -0.89,
+            "provisional": false
+          },
+          {
+            "period": "2017 DJF",
+            "year": 2017,
+            "season": "DJF",
+            "startMonth": "2016-12",
+            "endMonth": "2017-02",
+            "value": -0.6,
+            "provisional": false
+          },
+          {
+            "period": "2017 JFM",
+            "year": 2017,
+            "season": "JFM",
+            "startMonth": "2017-01",
+            "endMonth": "2017-03",
+            "value": -0.44,
+            "provisional": false
+          },
+          {
+            "period": "2017 FMA",
+            "year": 2017,
+            "season": "FMA",
+            "startMonth": "2017-02",
+            "endMonth": "2017-04",
+            "value": -0.18,
+            "provisional": false
+          },
+          {
+            "period": "2017 MAM",
+            "year": 2017,
+            "season": "MAM",
+            "startMonth": "2017-03",
+            "endMonth": "2017-05",
+            "value": -0.1,
+            "provisional": false
+          },
+          {
+            "period": "2017 AMJ",
+            "year": 2017,
+            "season": "AMJ",
+            "startMonth": "2017-04",
+            "endMonth": "2017-06",
+            "value": -0.02,
+            "provisional": false
+          },
+          {
+            "period": "2017 MJJ",
+            "year": 2017,
+            "season": "MJJ",
+            "startMonth": "2017-05",
+            "endMonth": "2017-07",
+            "value": -0.04,
+            "provisional": false
+          },
+          {
+            "period": "2017 JJA",
+            "year": 2017,
+            "season": "JJA",
+            "startMonth": "2017-06",
+            "endMonth": "2017-08",
+            "value": -0.23,
+            "provisional": false
+          },
+          {
+            "period": "2017 JAS",
+            "year": 2017,
+            "season": "JAS",
+            "startMonth": "2017-07",
+            "endMonth": "2017-09",
+            "value": -0.46,
+            "provisional": false
+          },
+          {
+            "period": "2017 ASO",
+            "year": 2017,
+            "season": "ASO",
+            "startMonth": "2017-08",
+            "endMonth": "2017-10",
+            "value": -0.62,
+            "provisional": false
+          },
+          {
+            "period": "2017 SON",
+            "year": 2017,
+            "season": "SON",
+            "startMonth": "2017-09",
+            "endMonth": "2017-11",
+            "value": -0.82,
+            "provisional": false
+          },
+          {
+            "period": "2017 OND",
+            "year": 2017,
+            "season": "OND",
+            "startMonth": "2017-10",
+            "endMonth": "2017-12",
+            "value": -0.97,
+            "provisional": false
+          },
+          {
+            "period": "2017 NDJ",
+            "year": 2017,
+            "season": "NDJ",
+            "startMonth": "2017-11",
+            "endMonth": "2018-01",
+            "value": -1.14,
+            "provisional": false
+          },
+          {
+            "period": "2018 DJF",
+            "year": 2018,
+            "season": "DJF",
+            "startMonth": "2017-12",
+            "endMonth": "2018-02",
+            "value": -1.08,
+            "provisional": false
+          },
+          {
+            "period": "2018 JFM",
+            "year": 2018,
+            "season": "JFM",
+            "startMonth": "2018-01",
+            "endMonth": "2018-03",
+            "value": -1.04,
+            "provisional": false
+          },
+          {
+            "period": "2018 FMA",
+            "year": 2018,
+            "season": "FMA",
+            "startMonth": "2018-02",
+            "endMonth": "2018-04",
+            "value": -0.9,
+            "provisional": false
+          },
+          {
+            "period": "2018 MAM",
+            "year": 2018,
+            "season": "MAM",
+            "startMonth": "2018-03",
+            "endMonth": "2018-05",
+            "value": -0.69,
+            "provisional": false
+          },
+          {
+            "period": "2018 AMJ",
+            "year": 2018,
+            "season": "AMJ",
+            "startMonth": "2018-04",
+            "endMonth": "2018-06",
+            "value": -0.33,
+            "provisional": false
+          },
+          {
+            "period": "2018 MJJ",
+            "year": 2018,
+            "season": "MJJ",
+            "startMonth": "2018-05",
+            "endMonth": "2018-07",
+            "value": -0.02,
+            "provisional": false
+          },
+          {
+            "period": "2018 JJA",
+            "year": 2018,
+            "season": "JJA",
+            "startMonth": "2018-06",
+            "endMonth": "2018-08",
+            "value": 0.08,
+            "provisional": false
+          },
+          {
+            "period": "2018 JAS",
+            "year": 2018,
+            "season": "JAS",
+            "startMonth": "2018-07",
+            "endMonth": "2018-09",
+            "value": 0.16,
+            "provisional": false
+          },
+          {
+            "period": "2018 ASO",
+            "year": 2018,
+            "season": "ASO",
+            "startMonth": "2018-08",
+            "endMonth": "2018-10",
+            "value": 0.35,
+            "provisional": false
+          },
+          {
+            "period": "2018 SON",
+            "year": 2018,
+            "season": "SON",
+            "startMonth": "2018-09",
+            "endMonth": "2018-11",
+            "value": 0.62,
+            "provisional": false
+          },
+          {
+            "period": "2018 OND",
+            "year": 2018,
+            "season": "OND",
+            "startMonth": "2018-10",
+            "endMonth": "2018-12",
+            "value": 0.82,
+            "provisional": false
+          },
+          {
+            "period": "2018 NDJ",
+            "year": 2018,
+            "season": "NDJ",
+            "startMonth": "2018-11",
+            "endMonth": "2019-01",
+            "value": 0.78,
+            "provisional": false
+          },
+          {
+            "period": "2019 DJF",
+            "year": 2019,
+            "season": "DJF",
+            "startMonth": "2018-12",
+            "endMonth": "2019-02",
+            "value": 0.68,
+            "provisional": false
+          },
+          {
+            "period": "2019 JFM",
+            "year": 2019,
+            "season": "JFM",
+            "startMonth": "2019-01",
+            "endMonth": "2019-03",
+            "value": 0.64,
+            "provisional": false
+          },
+          {
+            "period": "2019 FMA",
+            "year": 2019,
+            "season": "FMA",
+            "startMonth": "2019-02",
+            "endMonth": "2019-04",
+            "value": 0.57,
+            "provisional": false
+          },
+          {
+            "period": "2019 MAM",
+            "year": 2019,
+            "season": "MAM",
+            "startMonth": "2019-03",
+            "endMonth": "2019-05",
+            "value": 0.53,
+            "provisional": false
+          },
+          {
+            "period": "2019 AMJ",
+            "year": 2019,
+            "season": "AMJ",
+            "startMonth": "2019-04",
+            "endMonth": "2019-06",
+            "value": 0.37,
+            "provisional": false
+          },
+          {
+            "period": "2019 MJJ",
+            "year": 2019,
+            "season": "MJJ",
+            "startMonth": "2019-05",
+            "endMonth": "2019-07",
+            "value": 0.24,
+            "provisional": false
+          },
+          {
+            "period": "2019 JJA",
+            "year": 2019,
+            "season": "JJA",
+            "startMonth": "2019-06",
+            "endMonth": "2019-08",
+            "value": 0.04,
+            "provisional": false
+          },
+          {
+            "period": "2019 JAS",
+            "year": 2019,
+            "season": "JAS",
+            "startMonth": "2019-07",
+            "endMonth": "2019-09",
+            "value": -0.12,
+            "provisional": false
+          },
+          {
+            "period": "2019 ASO",
+            "year": 2019,
+            "season": "ASO",
+            "startMonth": "2019-08",
+            "endMonth": "2019-10",
+            "value": -0.01,
+            "provisional": false
+          },
+          {
+            "period": "2019 SON",
+            "year": 2019,
+            "season": "SON",
+            "startMonth": "2019-09",
+            "endMonth": "2019-11",
+            "value": 0.15,
+            "provisional": false
+          },
+          {
+            "period": "2019 OND",
+            "year": 2019,
+            "season": "OND",
+            "startMonth": "2019-10",
+            "endMonth": "2019-12",
+            "value": 0.29,
+            "provisional": false
+          },
+          {
+            "period": "2019 NDJ",
+            "year": 2019,
+            "season": "NDJ",
+            "startMonth": "2019-11",
+            "endMonth": "2020-01",
+            "value": 0.22,
+            "provisional": false
+          },
+          {
+            "period": "2020 DJF",
+            "year": 2020,
+            "season": "DJF",
+            "startMonth": "2019-12",
+            "endMonth": "2020-02",
+            "value": 0.14,
+            "provisional": false
+          },
+          {
+            "period": "2020 JFM",
+            "year": 2020,
+            "season": "JFM",
+            "startMonth": "2020-01",
+            "endMonth": "2020-03",
+            "value": 0.1,
+            "provisional": false
+          },
+          {
+            "period": "2020 FMA",
+            "year": 2020,
+            "season": "FMA",
+            "startMonth": "2020-02",
+            "endMonth": "2020-04",
+            "value": 0.02,
+            "provisional": false
+          },
+          {
+            "period": "2020 MAM",
+            "year": 2020,
+            "season": "MAM",
+            "startMonth": "2020-03",
+            "endMonth": "2020-05",
+            "value": -0.25,
+            "provisional": false
+          },
+          {
+            "period": "2020 AMJ",
+            "year": 2020,
+            "season": "AMJ",
+            "startMonth": "2020-04",
+            "endMonth": "2020-06",
+            "value": -0.55,
+            "provisional": false
+          },
+          {
+            "period": "2020 MJJ",
+            "year": 2020,
+            "season": "MJJ",
+            "startMonth": "2020-05",
+            "endMonth": "2020-07",
+            "value": -0.72,
+            "provisional": false
+          },
+          {
+            "period": "2020 JJA",
+            "year": 2020,
+            "season": "JJA",
+            "startMonth": "2020-06",
+            "endMonth": "2020-08",
+            "value": -0.76,
+            "provisional": false
+          },
+          {
+            "period": "2020 JAS",
+            "year": 2020,
+            "season": "JAS",
+            "startMonth": "2020-07",
+            "endMonth": "2020-09",
+            "value": -0.85,
+            "provisional": false
+          },
+          {
+            "period": "2020 ASO",
+            "year": 2020,
+            "season": "ASO",
+            "startMonth": "2020-08",
+            "endMonth": "2020-10",
+            "value": -1.16,
+            "provisional": false
+          },
+          {
+            "period": "2020 SON",
+            "year": 2020,
+            "season": "SON",
+            "startMonth": "2020-09",
+            "endMonth": "2020-11",
+            "value": -1.37,
+            "provisional": false
+          },
+          {
+            "period": "2020 OND",
+            "year": 2020,
+            "season": "OND",
+            "startMonth": "2020-10",
+            "endMonth": "2020-12",
+            "value": -1.46,
+            "provisional": false
+          },
+          {
+            "period": "2020 NDJ",
+            "year": 2020,
+            "season": "NDJ",
+            "startMonth": "2020-11",
+            "endMonth": "2021-01",
+            "value": -1.39,
+            "provisional": false
+          },
+          {
+            "period": "2021 DJF",
+            "year": 2021,
+            "season": "DJF",
+            "startMonth": "2020-12",
+            "endMonth": "2021-02",
+            "value": -1.32,
+            "provisional": false
+          },
+          {
+            "period": "2021 JFM",
+            "year": 2021,
+            "season": "JFM",
+            "startMonth": "2021-01",
+            "endMonth": "2021-03",
+            "value": -1.18,
+            "provisional": false
+          },
+          {
+            "period": "2021 FMA",
+            "year": 2021,
+            "season": "FMA",
+            "startMonth": "2021-02",
+            "endMonth": "2021-04",
+            "value": -1.08,
+            "provisional": false
+          },
+          {
+            "period": "2021 MAM",
+            "year": 2021,
+            "season": "MAM",
+            "startMonth": "2021-03",
+            "endMonth": "2021-05",
+            "value": -0.89,
+            "provisional": false
+          },
+          {
+            "period": "2021 AMJ",
+            "year": 2021,
+            "season": "AMJ",
+            "startMonth": "2021-04",
+            "endMonth": "2021-06",
+            "value": -0.68,
+            "provisional": false
+          },
+          {
+            "period": "2021 MJJ",
+            "year": 2021,
+            "season": "MJJ",
+            "startMonth": "2021-05",
+            "endMonth": "2021-07",
+            "value": -0.57,
+            "provisional": false
+          },
+          {
+            "period": "2021 JJA",
+            "year": 2021,
+            "season": "JJA",
+            "startMonth": "2021-06",
+            "endMonth": "2021-08",
+            "value": -0.6,
+            "provisional": false
+          },
+          {
+            "period": "2021 JAS",
+            "year": 2021,
+            "season": "JAS",
+            "startMonth": "2021-07",
+            "endMonth": "2021-09",
+            "value": -0.76,
+            "provisional": false
+          },
+          {
+            "period": "2021 ASO",
+            "year": 2021,
+            "season": "ASO",
+            "startMonth": "2021-08",
+            "endMonth": "2021-10",
+            "value": -0.95,
+            "provisional": false
+          },
+          {
+            "period": "2021 SON",
+            "year": 2021,
+            "season": "SON",
+            "startMonth": "2021-09",
+            "endMonth": "2021-11",
+            "value": -1.08,
+            "provisional": false
+          },
+          {
+            "period": "2021 OND",
+            "year": 2021,
+            "season": "OND",
+            "startMonth": "2021-10",
+            "endMonth": "2021-12",
+            "value": -1.24,
+            "provisional": false
+          },
+          {
+            "period": "2021 NDJ",
+            "year": 2021,
+            "season": "NDJ",
+            "startMonth": "2021-11",
+            "endMonth": "2022-01",
+            "value": -1.22,
+            "provisional": false
+          },
+          {
+            "period": "2022 DJF",
+            "year": 2022,
+            "season": "DJF",
+            "startMonth": "2021-12",
+            "endMonth": "2022-02",
+            "value": -1.18,
+            "provisional": false
+          },
+          {
+            "period": "2022 JFM",
+            "year": 2022,
+            "season": "JFM",
+            "startMonth": "2022-01",
+            "endMonth": "2022-03",
+            "value": -1.13,
+            "provisional": false
+          },
+          {
+            "period": "2022 FMA",
+            "year": 2022,
+            "season": "FMA",
+            "startMonth": "2022-02",
+            "endMonth": "2022-04",
+            "value": -1.19,
+            "provisional": false
+          },
+          {
+            "period": "2022 MAM",
+            "year": 2022,
+            "season": "MAM",
+            "startMonth": "2022-03",
+            "endMonth": "2022-05",
+            "value": -1.26,
+            "provisional": false
+          },
+          {
+            "period": "2022 AMJ",
+            "year": 2022,
+            "season": "AMJ",
+            "startMonth": "2022-04",
+            "endMonth": "2022-06",
+            "value": -1.17,
+            "provisional": false
+          },
+          {
+            "period": "2022 MJJ",
+            "year": 2022,
+            "season": "MJJ",
+            "startMonth": "2022-05",
+            "endMonth": "2022-07",
+            "value": -0.95,
+            "provisional": false
+          },
+          {
+            "period": "2022 JJA",
+            "year": 2022,
+            "season": "JJA",
+            "startMonth": "2022-06",
+            "endMonth": "2022-08",
+            "value": -0.86,
+            "provisional": false
+          },
+          {
+            "period": "2022 JAS",
+            "year": 2022,
+            "season": "JAS",
+            "startMonth": "2022-07",
+            "endMonth": "2022-09",
+            "value": -0.94,
+            "provisional": false
+          },
+          {
+            "period": "2022 ASO",
+            "year": 2022,
+            "season": "ASO",
+            "startMonth": "2022-08",
+            "endMonth": "2022-10",
+            "value": -1.07,
+            "provisional": false
+          },
+          {
+            "period": "2022 SON",
+            "year": 2022,
+            "season": "SON",
+            "startMonth": "2022-09",
+            "endMonth": "2022-11",
+            "value": -1.1,
+            "provisional": false
+          },
+          {
+            "period": "2022 OND",
+            "year": 2022,
+            "season": "OND",
+            "startMonth": "2022-10",
+            "endMonth": "2022-12",
+            "value": -1.05,
+            "provisional": false
+          },
+          {
+            "period": "2022 NDJ",
+            "year": 2022,
+            "season": "NDJ",
+            "startMonth": "2022-11",
+            "endMonth": "2023-01",
+            "value": -0.99,
+            "provisional": false
+          },
+          {
+            "period": "2023 DJF",
+            "year": 2023,
+            "season": "DJF",
+            "startMonth": "2022-12",
+            "endMonth": "2023-02",
+            "value": -0.86,
+            "provisional": false
+          },
+          {
+            "period": "2023 JFM",
+            "year": 2023,
+            "season": "JFM",
+            "startMonth": "2023-01",
+            "endMonth": "2023-03",
+            "value": -0.68,
+            "provisional": false
+          },
+          {
+            "period": "2023 FMA",
+            "year": 2023,
+            "season": "FMA",
+            "startMonth": "2023-02",
+            "endMonth": "2023-04",
+            "value": -0.55,
+            "provisional": false
+          },
+          {
+            "period": "2023 MAM",
+            "year": 2023,
+            "season": "MAM",
+            "startMonth": "2023-03",
+            "endMonth": "2023-05",
+            "value": -0.31,
+            "provisional": false
+          },
+          {
+            "period": "2023 AMJ",
+            "year": 2023,
+            "season": "AMJ",
+            "startMonth": "2023-04",
+            "endMonth": "2023-06",
+            "value": -0.04,
+            "provisional": false
+          },
+          {
+            "period": "2023 MJJ",
+            "year": 2023,
+            "season": "MJJ",
+            "startMonth": "2023-05",
+            "endMonth": "2023-07",
+            "value": 0.28,
+            "provisional": false
+          },
+          {
+            "period": "2023 JJA",
+            "year": 2023,
+            "season": "JJA",
+            "startMonth": "2023-06",
+            "endMonth": "2023-08",
+            "value": 0.54,
+            "provisional": false
+          },
+          {
+            "period": "2023 JAS",
+            "year": 2023,
+            "season": "JAS",
+            "startMonth": "2023-07",
+            "endMonth": "2023-09",
+            "value": 0.79,
+            "provisional": false
+          },
+          {
+            "period": "2023 ASO",
+            "year": 2023,
+            "season": "ASO",
+            "startMonth": "2023-08",
+            "endMonth": "2023-10",
+            "value": 1.04,
+            "provisional": false
+          },
+          {
+            "period": "2023 SON",
+            "year": 2023,
+            "season": "SON",
+            "startMonth": "2023-09",
+            "endMonth": "2023-11",
+            "value": 1.3,
+            "provisional": false
+          },
+          {
+            "period": "2023 OND",
+            "year": 2023,
+            "season": "OND",
+            "startMonth": "2023-10",
+            "endMonth": "2023-12",
+            "value": 1.42,
+            "provisional": false
+          },
+          {
+            "period": "2023 NDJ",
+            "year": 2023,
+            "season": "NDJ",
+            "startMonth": "2023-11",
+            "endMonth": "2024-01",
+            "value": 1.4,
+            "provisional": false
+          },
+          {
+            "period": "2024 DJF",
+            "year": 2024,
+            "season": "DJF",
+            "startMonth": "2023-12",
+            "endMonth": "2024-02",
+            "value": 1.13,
+            "provisional": false
+          },
+          {
+            "period": "2024 JFM",
+            "year": 2024,
+            "season": "JFM",
+            "startMonth": "2024-01",
+            "endMonth": "2024-03",
+            "value": 0.78,
+            "provisional": false
+          },
+          {
+            "period": "2024 FMA",
+            "year": 2024,
+            "season": "FMA",
+            "startMonth": "2024-02",
+            "endMonth": "2024-04",
+            "value": 0.42,
+            "provisional": false
+          },
+          {
+            "period": "2024 MAM",
+            "year": 2024,
+            "season": "MAM",
+            "startMonth": "2024-03",
+            "endMonth": "2024-05",
+            "value": 0.04,
+            "provisional": false
+          },
+          {
+            "period": "2024 AMJ",
+            "year": 2024,
+            "season": "AMJ",
+            "startMonth": "2024-04",
+            "endMonth": "2024-06",
+            "value": -0.28,
+            "provisional": false
+          },
+          {
+            "period": "2024 MJJ",
+            "year": 2024,
+            "season": "MJJ",
+            "startMonth": "2024-05",
+            "endMonth": "2024-07",
+            "value": -0.45,
+            "provisional": false
+          },
+          {
+            "period": "2024 JJA",
+            "year": 2024,
+            "season": "JJA",
+            "startMonth": "2024-06",
+            "endMonth": "2024-08",
+            "value": -0.49,
+            "provisional": false
+          },
+          {
+            "period": "2024 JAS",
+            "year": 2024,
+            "season": "JAS",
+            "startMonth": "2024-07",
+            "endMonth": "2024-09",
+            "value": -0.56,
+            "provisional": false
+          },
+          {
+            "period": "2024 ASO",
+            "year": 2024,
+            "season": "ASO",
+            "startMonth": "2024-08",
+            "endMonth": "2024-10",
+            "value": -0.67,
+            "provisional": false
+          },
+          {
+            "period": "2024 SON",
+            "year": 2024,
+            "season": "SON",
+            "startMonth": "2024-09",
+            "endMonth": "2024-11",
+            "value": -0.76,
+            "provisional": false
+          },
+          {
+            "period": "2024 OND",
+            "year": 2024,
+            "season": "OND",
+            "startMonth": "2024-10",
+            "endMonth": "2024-12",
+            "value": -0.88,
+            "provisional": false
+          },
+          {
+            "period": "2024 NDJ",
+            "year": 2024,
+            "season": "NDJ",
+            "startMonth": "2024-11",
+            "endMonth": "2025-01",
+            "value": -1.05,
+            "provisional": false
+          },
+          {
+            "period": "2025 DJF",
+            "year": 2025,
+            "season": "DJF",
+            "startMonth": "2024-12",
+            "endMonth": "2025-02",
+            "value": -1.1,
+            "provisional": false
+          },
+          {
+            "period": "2025 JFM",
+            "year": 2025,
+            "season": "JFM",
+            "startMonth": "2025-01",
+            "endMonth": "2025-03",
+            "value": -0.85,
+            "provisional": false
+          },
+          {
+            "period": "2025 FMA",
+            "year": 2025,
+            "season": "FMA",
+            "startMonth": "2025-02",
+            "endMonth": "2025-04",
+            "value": -0.66,
+            "provisional": false
+          },
+          {
+            "period": "2025 MAM",
+            "year": 2025,
+            "season": "MAM",
+            "startMonth": "2025-03",
+            "endMonth": "2025-05",
+            "value": -0.5,
+            "provisional": false
+          },
+          {
+            "period": "2025 AMJ",
+            "year": 2025,
+            "season": "AMJ",
+            "startMonth": "2025-04",
+            "endMonth": "2025-06",
+            "value": -0.48,
+            "provisional": false
+          },
+          {
+            "period": "2025 MJJ",
+            "year": 2025,
+            "season": "MJJ",
+            "startMonth": "2025-05",
+            "endMonth": "2025-07",
+            "value": -0.36,
+            "provisional": false
+          },
+          {
+            "period": "2025 JJA",
+            "year": 2025,
+            "season": "JJA",
+            "startMonth": "2025-06",
+            "endMonth": "2025-08",
+            "value": -0.41,
+            "provisional": false
+          },
+          {
+            "period": "2025 JAS",
+            "year": 2025,
+            "season": "JAS",
+            "startMonth": "2025-07",
+            "endMonth": "2025-09",
+            "value": -0.59,
+            "provisional": false
+          },
+          {
+            "period": "2025 ASO",
+            "year": 2025,
+            "season": "ASO",
+            "startMonth": "2025-08",
+            "endMonth": "2025-10",
+            "value": -0.78,
+            "provisional": false
+          },
+          {
+            "period": "2025 SON",
+            "year": 2025,
+            "season": "SON",
+            "startMonth": "2025-09",
+            "endMonth": "2025-11",
+            "value": -0.93,
+            "provisional": false
+          },
+          {
+            "period": "2025 OND",
+            "year": 2025,
+            "season": "OND",
+            "startMonth": "2025-10",
+            "endMonth": "2025-12",
+            "value": -0.98,
+            "provisional": false
+          },
+          {
+            "period": "2025 NDJ",
+            "year": 2025,
+            "season": "NDJ",
+            "startMonth": "2025-11",
+            "endMonth": "2026-01",
+            "value": -1.04,
+            "provisional": false
+          },
+          {
+            "period": "2026 DJF",
+            "year": 2026,
+            "season": "DJF",
+            "startMonth": "2025-12",
+            "endMonth": "2026-02",
+            "value": -0.91,
+            "provisional": false
+          },
+          {
+            "period": "2026 JFM",
+            "year": 2026,
+            "season": "JFM",
+            "startMonth": "2026-01",
+            "endMonth": "2026-03",
+            "value": -0.76,
+            "provisional": false
+          },
+          {
+            "period": "2026 FMA",
+            "year": 2026,
+            "season": "FMA",
+            "startMonth": "2026-02",
+            "endMonth": "2026-04",
+            "value": -0.44,
+            "provisional": false
+          },
+          {
+            "period": "2026 MAM",
+            "year": 2026,
+            "season": "MAM",
+            "startMonth": "2026-03",
+            "endMonth": "2026-05",
+            "value": -0.04,
+            "provisional": false
+          },
+          {
+            "period": "2026 AMJ",
+            "year": 2026,
+            "season": "AMJ",
+            "startMonth": "2026-04",
+            "endMonth": "2026-06",
+            "value": 0.49,
+            "provisional": true
+          },
+          {
+            "period": "2026 MJJ",
+            "year": 2026,
+            "season": "MJJ",
+            "startMonth": "2026-05",
+            "endMonth": "2026-07",
+            "value": 0.97,
+            "provisional": true
+          },
+          {
+            "period": "2026 JJA",
+            "year": 2026,
+            "season": "JJA",
+            "startMonth": "2026-06",
+            "endMonth": "2026-08",
+            "value": 1.36,
+            "provisional": true
+          }
+        ],
+        "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
+      },
+      "status": "ok",
+      "fetchedAt": "2026-09-12T12:55:32Z",
+      "lastAttemptAt": "2026-09-12T12:55:32Z"
+    },
+    "worldBank": {
+      "source": {
+        "label": "World Bank · Pink Sheet",
+        "url": "https://www.worldbank.org/en/research/commodity-markets",
+        "downloadUrl": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
+        "period": "2026-08",
+        "unit": "USD / mt; Brent: USD / barrel",
+        "methodology": "Nominal monthly commodity benchmarks; percentage changes use adjacent calendar months, not trading quotes."
+      },
+      "data": {
+        "monthly": [
+          {
+            "month": "2016-09",
+            "brent": 46.2,
+            "urea": 187.3
+          },
+          {
+            "month": "2016-10",
+            "brent": 49.7,
+            "urea": 187.5
+          },
+          {
+            "month": "2016-11",
+            "brent": 46.4,
+            "urea": 205.0
+          },
+          {
+            "month": "2016-12",
+            "brent": 54.1,
+            "urea": 217.8
+          },
+          {
+            "month": "2017-01",
+            "brent": 54.9,
+            "urea": 233.8
+          },
+          {
+            "month": "2017-02",
+            "brent": 55.5,
+            "urea": 191.9
+          },
+          {
+            "month": "2017-03",
+            "brent": 52.0,
+            "urea": 223.5
+          },
+          {
+            "month": "2017-04",
+            "brent": 53.0,
+            "urea": 207.9
+          },
+          {
+            "month": "2017-05",
+            "brent": 50.9,
+            "urea": 178.8
+          },
+          {
+            "month": "2017-06",
+            "brent": 46.9,
+            "urea": 191.0
+          },
+          {
+            "month": "2017-07",
+            "brent": 48.7,
+            "urea": 181.0
+          },
+          {
+            "month": "2017-08",
+            "brent": 51.4,
+            "urea": 192.6
+          },
+          {
+            "month": "2017-09",
+            "brent": 55.2,
+            "urea": 219.0
+          },
+          {
+            "month": "2017-10",
+            "brent": 57.6,
+            "urea": 252.5
+          },
+          {
+            "month": "2017-11",
+            "brent": 62.6,
+            "urea": 280.0
+          },
+          {
+            "month": "2017-12",
+            "brent": 64.2,
+            "urea": 214.6
+          },
+          {
+            "month": "2018-01",
+            "brent": 69.0,
+            "urea": 219.6
+          },
+          {
+            "month": "2018-02",
+            "brent": 65.4,
+            "urea": 232.5
+          },
+          {
+            "month": "2018-03",
+            "brent": 66.5,
+            "urea": 232.5
+          },
+          {
+            "month": "2018-04",
+            "brent": 71.6,
+            "urea": 230.6
+          },
+          {
+            "month": "2018-05",
+            "brent": 76.7,
+            "urea": 221.9
+          },
+          {
+            "month": "2018-06",
+            "brent": 75.2,
+            "urea": 224.0
+          },
+          {
+            "month": "2018-07",
+            "brent": 74.4,
+            "urea": 252.5
+          },
+          {
+            "month": "2018-08",
+            "brent": 73.1,
+            "urea": 260.0
+          },
+          {
+            "month": "2018-09",
+            "brent": 78.9,
+            "urea": 267.5
+          },
+          {
+            "month": "2018-10",
+            "brent": 80.5,
+            "urea": 270.0
+          },
+          {
+            "month": "2018-11",
+            "brent": 65.2,
+            "urea": 305.6
+          },
+          {
+            "month": "2018-12",
+            "brent": 56.5,
+            "urea": 276.7
+          },
+          {
+            "month": "2019-01",
+            "brent": 59.3,
+            "urea": 260.0
+          },
+          {
+            "month": "2019-02",
+            "brent": 64.1,
+            "urea": 250.6
+          },
+          {
+            "month": "2019-03",
+            "brent": 66.4,
+            "urea": 247.5
+          },
+          {
+            "month": "2019-04",
+            "brent": 71.2,
+            "urea": 247.5
+          },
+          {
+            "month": "2019-05",
+            "brent": 70.5,
+            "urea": 247.5
+          },
+          {
+            "month": "2019-06",
+            "brent": 63.3,
+            "urea": 247.5
+          },
+          {
+            "month": "2019-07",
+            "brent": 64.0,
+            "urea": 263.5
+          },
+          {
+            "month": "2019-08",
+            "brent": 59.3,
+            "urea": 262.5
+          },
+          {
+            "month": "2019-09",
+            "brent": 62.3,
+            "urea": 237.8
+          },
+          {
+            "month": "2019-10",
+            "brent": 59.4,
+            "urea": 237.0
+          },
+          {
+            "month": "2019-11",
+            "brent": 62.7,
+            "urea": 224.5
+          },
+          {
+            "month": "2019-12",
+            "brent": 65.9,
+            "urea": 217.5
+          },
+          {
+            "month": "2020-01",
+            "brent": 63.6,
+            "urea": 215.4
+          },
+          {
+            "month": "2020-02",
+            "brent": 55.0,
+            "urea": 214.4
+          },
+          {
+            "month": "2020-03",
+            "brent": 33.0,
+            "urea": 231.1
+          },
+          {
+            "month": "2020-04",
+            "brent": 23.3,
+            "urea": 235.0
+          },
+          {
+            "month": "2020-05",
+            "brent": 31.0,
+            "urea": 201.9
+          },
+          {
+            "month": "2020-06",
+            "brent": 39.9,
+            "urea": 202.0
+          },
+          {
+            "month": "2020-07",
+            "brent": 42.8,
+            "urea": 214.4
+          },
+          {
+            "month": "2020-08",
+            "brent": 44.3,
+            "urea": 249.5
+          },
+          {
+            "month": "2020-09",
+            "brent": 41.1,
+            "urea": 250.5
+          },
+          {
+            "month": "2020-10",
+            "brent": 40.5,
+            "urea": 245.0
+          },
+          {
+            "month": "2020-11",
+            "brent": 43.2,
+            "urea": 245.0
+          },
+          {
+            "month": "2020-12",
+            "brent": 49.9,
+            "urea": 245.0
+          },
+          {
+            "month": "2021-01",
+            "brent": 54.6,
+            "urea": 265.0
+          },
+          {
+            "month": "2021-02",
+            "brent": 62.0,
+            "urea": 335.0
+          },
+          {
+            "month": "2021-03",
+            "brent": 65.2,
+            "urea": 352.9
+          },
+          {
+            "month": "2021-04",
+            "brent": 64.8,
+            "urea": 328.1
+          },
+          {
+            "month": "2021-05",
+            "brent": 68.0,
+            "urea": 331.6
+          },
+          {
+            "month": "2021-06",
+            "brent": 73.1,
+            "urea": 393.3
+          },
+          {
+            "month": "2021-07",
+            "brent": 74.4,
+            "urea": 441.5
+          },
+          {
+            "month": "2021-08",
+            "brent": 70.0,
+            "urea": 446.9
+          },
+          {
+            "month": "2021-09",
+            "brent": 74.6,
+            "urea": 418.8
+          },
+          {
+            "month": "2021-10",
+            "brent": 83.7,
+            "urea": 695.0
+          },
+          {
+            "month": "2021-11",
+            "brent": 80.8,
+            "urea": 900.5
+          },
+          {
+            "month": "2021-12",
+            "brent": 74.3,
+            "urea": 890.0
+          },
+          {
+            "month": "2022-01",
+            "brent": 85.5,
+            "urea": 846.4
+          },
+          {
+            "month": "2022-02",
+            "brent": 95.8,
+            "urea": 744.2
+          },
+          {
+            "month": "2022-03",
+            "brent": 115.6,
+            "urea": 872.5
+          },
+          {
+            "month": "2022-04",
+            "brent": 105.8,
+            "urea": 925.0
+          },
+          {
+            "month": "2022-05",
+            "brent": 112.4,
+            "urea": 707.5
+          },
+          {
+            "month": "2022-06",
+            "brent": 120.1,
+            "urea": 690.0
+          },
+          {
+            "month": "2022-07",
+            "brent": 108.9,
+            "urea": 601.0
+          },
+          {
+            "month": "2022-08",
+            "brent": 98.6,
+            "urea": 591.3
+          },
+          {
+            "month": "2022-09",
+            "brent": 90.2,
+            "urea": 678.0
+          },
+          {
+            "month": "2022-10",
+            "brent": 93.1,
+            "urea": 636.3
+          },
+          {
+            "month": "2022-11",
+            "brent": 91.1,
+            "urea": 588.8
+          },
+          {
+            "month": "2022-12",
+            "brent": 80.9,
+            "urea": 519.4
+          },
+          {
+            "month": "2023-01",
+            "brent": 83.1,
+            "urea": 443.8
+          },
+          {
+            "month": "2023-02",
+            "brent": 82.7,
+            "urea": 357.5
+          },
+          {
+            "month": "2023-03",
+            "brent": 78.5,
+            "urea": 313.5
+          },
+          {
+            "month": "2023-04",
+            "brent": 84.1,
+            "urea": 313.4
+          },
+          {
+            "month": "2023-05",
+            "brent": 75.7,
+            "urea": 329.3
+          },
+          {
+            "month": "2023-06",
+            "brent": 74.9,
+            "urea": 287.5
+          },
+          {
+            "month": "2023-07",
+            "brent": 80.1,
+            "urea": 334.6
+          },
+          {
+            "month": "2023-08",
+            "brent": 86.2,
+            "urea": 385.6
+          },
+          {
+            "month": "2023-09",
+            "brent": 94.0,
+            "urea": 380.0
+          },
+          {
+            "month": "2023-10",
+            "brent": 91.1,
+            "urea": 411.4
+          },
+          {
+            "month": "2023-11",
+            "brent": 83.2,
+            "urea": 385.5
+          },
+          {
+            "month": "2023-12",
+            "brent": 77.9,
+            "urea": 354.0
+          },
+          {
+            "month": "2024-01",
+            "brent": 80.2,
+            "urea": 335.4
+          },
+          {
+            "month": "2024-02",
+            "brent": 83.8,
+            "urea": 351.3
+          },
+          {
+            "month": "2024-03",
+            "brent": 85.4,
+            "urea": 330.0
+          },
+          {
+            "month": "2024-04",
+            "brent": 90.1,
+            "urea": 320.0
+          },
+          {
+            "month": "2024-05",
+            "brent": 82.0,
+            "urea": 284.8
+          },
+          {
+            "month": "2024-06",
+            "brent": 82.6,
+            "urea": 336.3
+          },
+          {
+            "month": "2024-07",
+            "brent": 85.3,
+            "urea": 342.5
+          },
+          {
+            "month": "2024-08",
+            "brent": 80.9,
+            "urea": 342.5
+          },
+          {
+            "month": "2024-09",
+            "brent": 74.3,
+            "urea": 337.5
+          },
+          {
+            "month": "2024-10",
+            "brent": 75.7,
+            "urea": 374.8
+          },
+          {
+            "month": "2024-11",
+            "brent": 74.4,
+            "urea": 352.3
+          },
+          {
+            "month": "2024-12",
+            "brent": 73.8,
+            "urea": 352.0
+          },
+          {
+            "month": "2025-01",
+            "brent": 79.2,
+            "urea": 380.5
+          },
+          {
+            "month": "2025-02",
+            "brent": 75.2,
+            "urea": 436.5
+          },
+          {
+            "month": "2025-03",
+            "brent": 72.6,
+            "urea": 394.5
+          },
+          {
+            "month": "2025-04",
+            "brent": 67.7,
+            "urea": 386.9
+          },
+          {
+            "month": "2025-05",
+            "brent": 64.2,
+            "urea": 392.0
+          },
+          {
+            "month": "2025-06",
+            "brent": 71.5,
+            "urea": 420.5
+          },
+          {
+            "month": "2025-07",
+            "brent": 71.0,
+            "urea": 496.0
+          },
+          {
+            "month": "2025-08",
+            "brent": 68.2,
+            "urea": 507.7
+          },
+          {
+            "month": "2025-09",
+            "brent": 68.0,
+            "urea": 461.1
+          },
+          {
+            "month": "2025-10",
+            "brent": 64.7,
+            "urea": 394.4
+          },
+          {
+            "month": "2025-11",
+            "brent": 63.6,
+            "urea": 409.3
+          },
+          {
+            "month": "2025-12",
+            "brent": 62.7,
+            "urea": 392.5
+          },
+          {
+            "month": "2026-01",
+            "brent": 66.8,
+            "urea": 415.4
+          },
+          {
+            "month": "2026-02",
+            "brent": 71.1,
+            "urea": 472.0
+          },
+          {
+            "month": "2026-03",
+            "brent": 103.7,
+            "urea": 725.6
+          },
+          {
+            "month": "2026-04",
+            "brent": 120.4,
+            "urea": 856.9
+          },
+          {
+            "month": "2026-05",
+            "brent": 107.5,
+            "urea": 770.5
+          },
+          {
+            "month": "2026-06",
+            "brent": 85.4,
+            "urea": 453.1
+          },
+          {
+            "month": "2026-07",
+            "brent": 83.4,
+            "urea": 400.0
+          },
+          {
+            "month": "2026-08",
+            "brent": 90.9,
+            "urea": 390.0
+          }
+        ],
+        "headline": {
+          "brent": {
+            "value": 90.9,
+            "momPct": 8.9928,
+            "period": "2026-08",
+            "unit": "USD / barrel"
+          },
+          "urea": {
+            "value": 390.0,
+            "momPct": -2.5,
+            "period": "2026-08",
+            "unit": "USD / mt"
+          }
+        },
+        "fertilizers": [
+          {
+            "nameEn": "Urea",
+            "nameZh": "尿素",
+            "price": 390.0,
+            "period": "2026-08",
+            "momPct": -2.5,
+            "unit": "USD / mt"
+          },
+          {
+            "nameEn": "DAP",
+            "nameZh": "磷酸二铵 DAP",
+            "price": 793.5,
+            "period": "2026-08",
+            "momPct": 1.5615,
+            "unit": "USD / mt"
+          },
+          {
+            "nameEn": "TSP",
+            "nameZh": "重过磷酸钙 TSP",
+            "price": 704.4,
+            "period": "2026-08",
+            "momPct": -2.0987,
+            "unit": "USD / mt"
+          },
+          {
+            "nameEn": "Potassium chloride",
+            "nameZh": "氯化钾",
+            "price": 386.9,
+            "period": "2026-08",
+            "momPct": -2.4212,
+            "unit": "USD / mt"
+          }
+        ],
+        "agriculture": [
+          {
+            "nameEn": "Wheat, US HRW",
+            "nameZh": "小麦（美国硬红冬麦）",
+            "price": 330.0,
+            "period": "2026-08",
+            "momPct": 6.4516,
+            "unit": "USD / mt"
+          },
+          {
+            "nameEn": "Maize",
+            "nameZh": "玉米",
+            "price": 224.0,
+            "period": "2026-08",
+            "momPct": 4.9672,
+            "unit": "USD / mt"
+          },
+          {
+            "nameEn": "Rice, Thai 5%",
+            "nameZh": "大米（泰国 5% 破碎率）",
+            "price": 471.0,
+            "period": "2026-08",
+            "momPct": 0.8565,
+            "unit": "USD / mt"
+          },
+          {
+            "nameEn": "Soybeans",
+            "nameZh": "大豆",
+            "price": 482.0,
+            "period": "2026-08",
+            "momPct": 0.8368,
+            "unit": "USD / mt"
+          }
+        ]
+      },
+      "status": "ok",
+      "fetchedAt": "2026-09-12T12:55:32Z",
+      "lastAttemptAt": "2026-09-12T12:55:32Z"
+    },
+    "eia": {
+      "source": {
+        "label": "EIA · Brent",
+        "url": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=M",
+        "downloadUrl": "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=M",
+        "period": "2026-08",
+        "unit": "USD / barrel",
+        "methodology": "Europe Brent spot price FOB, published monthly averages. Not a real-time or futures quote."
+      },
+      "data": {
+        "monthly": [
+          {
+            "month": "2016-09",
+            "brent": 46.57
+          },
+          {
+            "month": "2016-10",
+            "brent": 49.52
+          },
+          {
+            "month": "2016-11",
+            "brent": 44.73
+          },
+          {
+            "month": "2016-12",
+            "brent": 53.31
+          },
+          {
+            "month": "2017-01",
+            "brent": 54.58
+          },
+          {
+            "month": "2017-02",
+            "brent": 54.87
+          },
+          {
+            "month": "2017-03",
+            "brent": 51.59
+          },
+          {
+            "month": "2017-04",
+            "brent": 52.31
+          },
+          {
+            "month": "2017-05",
+            "brent": 50.33
+          },
+          {
+            "month": "2017-06",
+            "brent": 46.37
+          },
+          {
+            "month": "2017-07",
+            "brent": 48.48
+          },
+          {
+            "month": "2017-08",
+            "brent": 51.7
+          },
+          {
+            "month": "2017-09",
+            "brent": 56.15
+          },
+          {
+            "month": "2017-10",
+            "brent": 57.51
+          },
+          {
+            "month": "2017-11",
+            "brent": 62.71
+          },
+          {
+            "month": "2017-12",
+            "brent": 64.37
+          },
+          {
+            "month": "2018-01",
+            "brent": 69.08
+          },
+          {
+            "month": "2018-02",
+            "brent": 65.32
+          },
+          {
+            "month": "2018-03",
+            "brent": 66.02
+          },
+          {
+            "month": "2018-04",
+            "brent": 72.11
+          },
+          {
+            "month": "2018-05",
+            "brent": 76.98
+          },
+          {
+            "month": "2018-06",
+            "brent": 74.41
+          },
+          {
+            "month": "2018-07",
+            "brent": 74.25
+          },
+          {
+            "month": "2018-08",
+            "brent": 72.53
+          },
+          {
+            "month": "2018-09",
+            "brent": 78.89
+          },
+          {
+            "month": "2018-10",
+            "brent": 81.03
+          },
+          {
+            "month": "2018-11",
+            "brent": 64.75
+          },
+          {
+            "month": "2018-12",
+            "brent": 57.36
+          },
+          {
+            "month": "2019-01",
+            "brent": 59.41
+          },
+          {
+            "month": "2019-02",
+            "brent": 63.96
+          },
+          {
+            "month": "2019-03",
+            "brent": 66.14
+          },
+          {
+            "month": "2019-04",
+            "brent": 71.23
+          },
+          {
+            "month": "2019-05",
+            "brent": 71.32
+          },
+          {
+            "month": "2019-06",
+            "brent": 64.22
+          },
+          {
+            "month": "2019-07",
+            "brent": 63.92
+          },
+          {
+            "month": "2019-08",
+            "brent": 59.04
+          },
+          {
+            "month": "2019-09",
+            "brent": 62.83
+          },
+          {
+            "month": "2019-10",
+            "brent": 59.71
+          },
+          {
+            "month": "2019-11",
+            "brent": 63.21
+          },
+          {
+            "month": "2019-12",
+            "brent": 67.31
+          },
+          {
+            "month": "2020-01",
+            "brent": 63.65
+          },
+          {
+            "month": "2020-02",
+            "brent": 55.66
+          },
+          {
+            "month": "2020-03",
+            "brent": 32.01
+          },
+          {
+            "month": "2020-04",
+            "brent": 18.38
+          },
+          {
+            "month": "2020-05",
+            "brent": 29.38
+          },
+          {
+            "month": "2020-06",
+            "brent": 40.27
+          },
+          {
+            "month": "2020-07",
+            "brent": 43.24
+          },
+          {
+            "month": "2020-08",
+            "brent": 44.74
+          },
+          {
+            "month": "2020-09",
+            "brent": 40.91
+          },
+          {
+            "month": "2020-10",
+            "brent": 40.19
+          },
+          {
+            "month": "2020-11",
+            "brent": 42.69
+          },
+          {
+            "month": "2020-12",
+            "brent": 49.99
+          },
+          {
+            "month": "2021-01",
+            "brent": 54.77
+          },
+          {
+            "month": "2021-02",
+            "brent": 62.28
+          },
+          {
+            "month": "2021-03",
+            "brent": 65.41
+          },
+          {
+            "month": "2021-04",
+            "brent": 64.81
+          },
+          {
+            "month": "2021-05",
+            "brent": 68.53
+          },
+          {
+            "month": "2021-06",
+            "brent": 73.16
+          },
+          {
+            "month": "2021-07",
+            "brent": 75.17
+          },
+          {
+            "month": "2021-08",
+            "brent": 70.75
+          },
+          {
+            "month": "2021-09",
+            "brent": 74.49
+          },
+          {
+            "month": "2021-10",
+            "brent": 83.54
+          },
+          {
+            "month": "2021-11",
+            "brent": 81.05
+          },
+          {
+            "month": "2021-12",
+            "brent": 74.17
+          },
+          {
+            "month": "2022-01",
+            "brent": 86.51
+          },
+          {
+            "month": "2022-02",
+            "brent": 97.13
+          },
+          {
+            "month": "2022-03",
+            "brent": 117.25
+          },
+          {
+            "month": "2022-04",
+            "brent": 104.58
+          },
+          {
+            "month": "2022-05",
+            "brent": 113.34
+          },
+          {
+            "month": "2022-06",
+            "brent": 122.71
+          },
+          {
+            "month": "2022-07",
+            "brent": 111.93
+          },
+          {
+            "month": "2022-08",
+            "brent": 100.45
+          },
+          {
+            "month": "2022-09",
+            "brent": 89.76
+          },
+          {
+            "month": "2022-10",
+            "brent": 93.33
+          },
+          {
+            "month": "2022-11",
+            "brent": 91.42
+          },
+          {
+            "month": "2022-12",
+            "brent": 80.92
+          },
+          {
+            "month": "2023-01",
+            "brent": 82.5
+          },
+          {
+            "month": "2023-02",
+            "brent": 82.59
+          },
+          {
+            "month": "2023-03",
+            "brent": 78.43
+          },
+          {
+            "month": "2023-04",
+            "brent": 84.64
+          },
+          {
+            "month": "2023-05",
+            "brent": 75.47
+          },
+          {
+            "month": "2023-06",
+            "brent": 74.84
+          },
+          {
+            "month": "2023-07",
+            "brent": 80.11
+          },
+          {
+            "month": "2023-08",
+            "brent": 86.15
+          },
+          {
+            "month": "2023-09",
+            "brent": 93.72
+          },
+          {
+            "month": "2023-10",
+            "brent": 90.6
+          },
+          {
+            "month": "2023-11",
+            "brent": 82.94
+          },
+          {
+            "month": "2023-12",
+            "brent": 77.63
+          },
+          {
+            "month": "2024-01",
+            "brent": 80.12
+          },
+          {
+            "month": "2024-02",
+            "brent": 83.48
+          },
+          {
+            "month": "2024-03",
+            "brent": 85.41
+          },
+          {
+            "month": "2024-04",
+            "brent": 89.94
+          },
+          {
+            "month": "2024-05",
+            "brent": 81.75
+          },
+          {
+            "month": "2024-06",
+            "brent": 82.25
+          },
+          {
+            "month": "2024-07",
+            "brent": 85.15
+          },
+          {
+            "month": "2024-08",
+            "brent": 80.36
+          },
+          {
+            "month": "2024-09",
+            "brent": 74.02
+          },
+          {
+            "month": "2024-10",
+            "brent": 75.63
+          },
+          {
+            "month": "2024-11",
+            "brent": 74.35
+          },
+          {
+            "month": "2024-12",
+            "brent": 73.86
+          },
+          {
+            "month": "2025-01",
+            "brent": 79.27
+          },
+          {
+            "month": "2025-02",
+            "brent": 75.44
+          },
+          {
+            "month": "2025-03",
+            "brent": 72.73
+          },
+          {
+            "month": "2025-04",
+            "brent": 68.13
+          },
+          {
+            "month": "2025-05",
+            "brent": 64.45
+          },
+          {
+            "month": "2025-06",
+            "brent": 71.44
+          },
+          {
+            "month": "2025-07",
+            "brent": 71.04
+          },
+          {
+            "month": "2025-08",
+            "brent": 67.87
+          },
+          {
+            "month": "2025-09",
+            "brent": 67.99
+          },
+          {
+            "month": "2025-10",
+            "brent": 64.54
+          },
+          {
+            "month": "2025-11",
+            "brent": 63.8
+          },
+          {
+            "month": "2025-12",
+            "brent": 62.54
+          },
+          {
+            "month": "2026-01",
+            "brent": 66.6
+          },
+          {
+            "month": "2026-02",
+            "brent": 70.89
+          },
+          {
+            "month": "2026-03",
+            "brent": 103.13
+          },
+          {
+            "month": "2026-04",
+            "brent": 117.29
+          },
+          {
+            "month": "2026-05",
+            "brent": 107.14
+          },
+          {
+            "month": "2026-06",
+            "brent": 85.4
+          },
+          {
+            "month": "2026-07",
+            "brent": 83.76
+          },
+          {
+            "month": "2026-08",
+            "brent": 91.08
+          }
+        ],
+        "headline": {
+          "value": 91.08,
+          "momPct": 8.7393,
+          "period": "2026-08",
+          "unit": "USD / barrel"
+        }
+      },
+      "status": "ok",
+      "fetchedAt": "2026-09-12T12:55:43Z",
+      "lastAttemptAt": "2026-09-12T12:55:32Z"
+    }
+  }
+}
