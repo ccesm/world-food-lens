@@ -5,7 +5,7 @@ import {
   BarChart, Bar, ReferenceLine
 } from "recharts";
 import snapshot from "./data/recoveredSnapshot";
-import initialOfficialData from "../public/data/official-data.json";
+import initialOfficialData from "virtual:official-data";
 import {createDashboard,getDashboardMetrics} from "./data/dashboardMetrics";
 import {refreshOfficialData,sourceStateLabel,validateOfficialBundle} from "./services/officialSources";
 import SourceDesk from "./components/SourceDesk";
