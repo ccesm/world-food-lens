@@ -47,6 +47,12 @@ These are historical/recovered cache values, not current live quotes.
 Initial U.S.-listed instruments:
 DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM.
 
+Current chart implementation:
+- World Food Lens maintains the bilingual instrument explanations.
+- TradingView's public Advanced Chart widget supplies interactive intraday and historical charts.
+- No brokerage connection or client-side API key is required.
+- TradingView attribution and delayed-data disclosure must remain visible.
+
 Desired future instrument detail:
 - current/delayed price with timestamp
 - historical chart

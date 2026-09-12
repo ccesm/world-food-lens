@@ -17,6 +17,7 @@ https://world-food-lens.d47cjrv8xg.chatgpt.site/
 - Input-cost learning lab
 - Data Desk with source/period/cache metadata
 - New investment-lens extension for U.S.-listed agriculture ETFs/stocks
+- TradingView-powered interactive market charts for the investment instruments
 - Mobile-responsive design
 - GitHub Pages deployment workflow
 
@@ -53,6 +54,12 @@ See:
 - `PROJECT_CONTEXT.md`
 
 The next development milestone is to replace the adapter stubs with durable server-side/serverless connectors for FAO, EIA, World Bank, USDA and FAPDA.
+
+## Investment market charts
+
+The Investment Lens keeps its instrument descriptions in this repository and embeds TradingView's public Advanced Chart widget for price history. The widget does not require an API key or a connected brokerage account.
+
+Market quotes and charts may be delayed under exchange and data-provider rules. TradingView attribution and direct fallback links must remain visible.
 
 ## Safety / data integrity rules
 

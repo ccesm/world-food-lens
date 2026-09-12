@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useEffect, useMemo, useRef, useState} from "react";
 import {createRoot} from "react-dom/client";
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid,
@@ -32,8 +32,10 @@ const copy = {
     causalityText:"本工具不把时间上的先后或同时上涨解读为已证实的政策效果，也不提供未经验证的粮价涨跌预测。",
     lab:"如果投入成本改变了呢？", labHelp:"假设燃料占 20%、化肥占 30%、其他投入占 50%，观察加权总成本变化。不是粮价预测。",
     fuel:"燃料成本变化", fert:"化肥成本变化", other:"其他投入成本变化", total:"假设总成本变化", reset:"重置",
-    invest:"美国市场可投资标的", investHelp:"这一模块是迁移后新增的扩展入口。当前不显示伪实时行情；历史价格将在连接市场数据提供商后显示。",
-    historyPending:"历史价格接口待接入", exposure:"农业暴露",
+    invest:"美国市场可投资标的", investHelp:"标的说明由 World Food Lens 整理；交互式价格图表由 TradingView 提供。点击标的可查看日内或长期走势，无需连接个人券商账户。",
+    exposure:"农业暴露", whyItMatters:"为何关注", marketChart:"市场价格图表",
+    marketNotice:"行情与图表由 TradingView 提供，可能依据交易所及数据供应商规则延迟；不构成投资建议。",
+    viewOnTradingView:"在 TradingView 查看", chartUnavailable:"图表暂时无法加载，请使用下方链接查看。",
     desk:"每个数字，都能追溯来源", deskHelp:"以下时间来自旧站最后一次可恢复的数据快照，并不代表当前实时抓取。",
     observation:"观测期 / 市场年度", last:"旧站最近成功抓取", status:"状态",
     footer:"帮助理解全球粮食系统 · 非投资建议或法律意见",
@@ -62,8 +64,10 @@ const copy = {
     causalityText:"This tool does not treat timing or simultaneous increases as proven policy effects and does not present unverified food-price forecasts.",
     lab:"What if input costs change?", labHelp:"Arithmetic experiment: fuel 20%, fertilizer 30%, other inputs 50%. This is not a food-price forecast.",
     fuel:"Fuel cost change", fert:"Fertilizer cost change", other:"Other input change", total:"Hypothetical total-cost change", reset:"Reset",
-    invest:"Investable U.S. market exposure", investHelp:"This is a post-migration extension. No fake real-time quotes are shown; historical prices appear after a market-data provider is connected.",
-    historyPending:"Historical price adapter pending", exposure:"Exposure",
+    invest:"Investable U.S. market exposure", investHelp:"World Food Lens provides the instrument explanations; TradingView provides the interactive price charts. Select an instrument to explore intraday or long-term history without connecting a brokerage account.",
+    exposure:"Agricultural exposure", whyItMatters:"Why it matters", marketChart:"Market price chart",
+    marketNotice:"Quotes and charts are provided by TradingView and may be delayed under exchange and data-provider rules. Not investment advice.",
+    viewOnTradingView:"View on TradingView", chartUnavailable:"The chart could not be loaded. Use the link below to view it instead.",
     desk:"Every number should be traceable", deskHelp:"These timestamps are from the last recoverable hosted-site snapshot, not a current live fetch.",
     observation:"Observation / marketing year", last:"Old-site last success", status:"Status",
     footer:"Understand the global food system · Not investment or legal advice",
@@ -72,15 +76,71 @@ const copy = {
 };
 
 const investments = [
-  {symbol:"DBA",name:"Invesco DB Agriculture Fund",zh:"广泛农业商品",en:"Broad agriculture"},
-  {symbol:"CORN",name:"Teucrium Corn Fund",zh:"玉米",en:"Corn"},
-  {symbol:"WEAT",name:"Teucrium Wheat Fund",zh:"小麦",en:"Wheat"},
-  {symbol:"SOYB",name:"Teucrium Soybean Fund",zh:"大豆",en:"Soybeans"},
-  {symbol:"MOS",name:"The Mosaic Company",zh:"磷肥 / 钾肥",en:"Phosphate & potash"},
-  {symbol:"NTR",name:"Nutrien",zh:"化肥",en:"Fertilizer"},
-  {symbol:"DE",name:"Deere & Company",zh:"农业机械",en:"Farm equipment"},
-  {symbol:"ADM",name:"Archer-Daniels-Midland",zh:"粮食加工与贸易",en:"Grain processing & trade"},
+  {symbol:"DBA",name:"Invesco DB Agriculture Fund",zh:"广泛农业商品",en:"Broad agriculture",tvSymbol:"AMEX:DBA",descZh:"通过农业商品期货组合提供广泛敞口，走势还会受到期货曲线、展期和基金费用影响。",descEn:"Provides broad exposure through agricultural commodity futures; returns are also shaped by the futures curve, contract rolls and fund expenses."},
+  {symbol:"CORN",name:"Teucrium Corn Fund",zh:"玉米",en:"Corn",tvSymbol:"AMEX:CORN",descZh:"主要通过不同到期月份的玉米期货表达玉米价格敞口，并不等同于现货玉米价格。",descEn:"Uses corn futures across several maturities to express corn exposure; its return is not the same as the spot price of corn."},
+  {symbol:"WEAT",name:"Teucrium Wheat Fund",zh:"小麦",en:"Wheat",tvSymbol:"AMEX:WEAT",descZh:"通过小麦期货提供价格敞口，天气、出口流向和期货曲线都可能影响基金表现。",descEn:"Provides exposure through wheat futures; weather, export flows and the futures curve can all influence its performance."},
+  {symbol:"SOYB",name:"Teucrium Soybean Fund",zh:"大豆",en:"Soybeans",tvSymbol:"AMEX:SOYB",descZh:"通过大豆期货连接油籽市场，表现也会受到压榨需求、贸易和展期结构影响。",descEn:"Connects to the oilseed market through soybean futures; crushing demand, trade and roll structure can also affect returns."},
+  {symbol:"MOS",name:"The Mosaic Company",zh:"磷肥 / 钾肥",en:"Phosphate & potash",tvSymbol:"NYSE:MOS",descZh:"化肥生产商，其经营与磷肥、钾肥价格、原料成本、产能利用率和全球施肥需求相关。",descEn:"A fertilizer producer exposed to phosphate and potash prices, input costs, capacity utilization and global nutrient demand."},
+  {symbol:"NTR",name:"Nutrien",zh:"化肥与农业零售",en:"Fertilizer & farm retail",tvSymbol:"NYSE:NTR",descZh:"业务覆盖钾肥、氮肥、磷肥和农业零售，可观察作物投入品需求与化肥周期。",descEn:"Spans potash, nitrogen, phosphate and agricultural retail, offering a view into crop-input demand and fertilizer cycles."},
+  {symbol:"DE",name:"Deere & Company",zh:"农业机械",en:"Farm equipment",tvSymbol:"NYSE:DE",descZh:"农业机械和精准农业设备制造商，需求与农场收入、融资环境及设备更新周期有关。",descEn:"A farm-machinery and precision-agriculture manufacturer whose demand relates to farm income, financing conditions and replacement cycles."},
+  {symbol:"ADM",name:"Archer-Daniels-Midland",zh:"粮食加工与贸易",en:"Grain processing & trade",tvSymbol:"NYSE:ADM",descZh:"连接粮食收购、运输、加工和贸易环节；利润更多取决于加工与贸易价差，而非单一粮价方向。",descEn:"Connects origination, transport, processing and trading; margins depend more on processing and merchandising spreads than one crop-price direction."},
 ];
+
+function tradingViewUrl(instrument){
+  return `https://www.tradingview.com/symbols/${instrument.tvSymbol.replace(":","-")}/?utm_source=world-food-lens&utm_medium=widget&utm_campaign=advanced-chart`;
+}
+
+function TradingViewChart({instrument,lang}){
+  const container=useRef(null);
+  const [loadFailed,setLoadFailed]=useState(false);
+  const href=tradingViewUrl(instrument);
+
+  useEffect(()=>{
+    const host=container.current;
+    if(!host) return;
+    setLoadFailed(false);
+    const script=document.createElement("script");
+    script.src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.type="text/javascript";
+    script.async=true;
+    script.onerror=()=>setLoadFailed(true);
+    script.innerHTML=JSON.stringify({
+      autosize:true,
+      symbol:instrument.tvSymbol,
+      interval:"D",
+      timezone:"exchange",
+      theme:"light",
+      backgroundColor:"#ffffff",
+      gridColor:"rgba(46, 46, 46, 0.06)",
+      style:"1",
+      locale:lang==="zh"?"zh_CN":"en",
+      hide_side_toolbar:true,
+      hide_top_toolbar:false,
+      hide_legend:false,
+      hide_volume:false,
+      allow_symbol_change:false,
+      withdateranges:true,
+      save_image:false,
+      calendar:false,
+      support_host:"https://www.tradingview.com"
+    });
+    host.appendChild(script);
+    return ()=>script.remove();
+  },[instrument.tvSymbol,lang]);
+
+  const t=copy[lang];
+  return <div className="market-chart">
+    <div className="market-chart-head"><b>{t.marketChart}</b><span>{instrument.tvSymbol}</span></div>
+    {loadFailed&&<div className="chart-fallback" role="status">{t.chartUnavailable}</div>}
+    <div className="tradingview-widget-container" ref={container}>
+      <div className="tradingview-widget-container__widget"/>
+      <div className="tradingview-widget-copyright">
+        <a href={href} rel="noopener nofollow" target="_blank">{instrument.symbol} chart</a><span> by TradingView</span>
+      </div>
+    </div>
+    <div className="market-note"><span>{t.marketNotice}</span><a href={href} rel="noopener nofollow" target="_blank">{t.viewOnTradingView} ↗</a></div>
+  </div>
+}
 
 function pct(v){ return `${v>=0?"+":""}${v.toFixed(1)}%`; }
 function normalize(rows,key){
@@ -218,10 +278,11 @@ function App(){
       <section id="s6" className="section alt">
         <div className="section-no">06 / INVESTMENT LENS</div><h2>{t.invest}</h2><p>{t.investHelp}</p>
         <div className="invest-grid">
-          <div className="tickers">{investments.map(x=><button className={x.symbol===selected.symbol?"active":""} key={x.symbol} onClick={()=>setSelected(x)}><b>{x.symbol}</b><span>{lang==="zh"?x.zh:x.en}</span></button>)}</div>
+          <div className="tickers" aria-label={t.invest}>{investments.map(x=><button aria-pressed={x.symbol===selected.symbol} className={x.symbol===selected.symbol?"active":""} key={x.symbol} onClick={()=>setSelected(x)}><b>{x.symbol}</b><span>{lang==="zh"?x.zh:x.en}</span></button>)}</div>
           <div className="security">
             <span className="big-symbol">{selected.symbol}</span><h3>{selected.name}</h3><p><b>{t.exposure}:</b> {lang==="zh"?selected.zh:selected.en}</p>
-            <div className="history-placeholder">{t.historyPending}<small>{lang==="zh"?"待选择并接入合法的市场数据提供商；不会用模拟价格冒充实时行情。":"A licensed/current market-data provider should be selected; simulated prices will not be presented as live quotes."}</small></div>
+            <div className="instrument-context"><b>{t.whyItMatters}</b><p>{lang==="zh"?selected.descZh:selected.descEn}</p></div>
+            <TradingViewChart key={`${selected.tvSymbol}-${lang}`} instrument={selected} lang={lang}/>
           </div>
         </div>
       </section>
