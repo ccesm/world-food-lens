@@ -32,3 +32,28 @@
 @media(max-width:1000px){.policy-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.policy-search{grid-column:1/-1}.policy-filters button{justify-self:start}}
 @media(max-width:700px){.policy-records{grid-template-columns:1fr}.policy-filters{grid-template-columns:1fr 1fr}.policy-filters label:nth-of-type(4){grid-column:1/-1}.policy-record{padding:17px}}
 @media(max-width:420px){.policy-filters{grid-template-columns:1fr}.policy-filters button{width:100%}.policy-dates{gap:12px}}
+
+[data-theme="dark"] .policy-disclosure{background:#302a19}
+[data-theme="dark"] .policy-disclosure p{color:#eadca9}
+[data-theme="dark"] .policy-disclosure small{color:#c8b982}
+[data-theme="dark"] .policy-filters label,
+[data-theme="dark"] .policy-section .policy-count,
+[data-theme="dark"] .policy-record>p,
+[data-theme="dark"] .policy-dates dt,
+[data-theme="dark"] .policy-source a span,
+[data-theme="dark"] .policy-source small{color:#a9b8ad}
+[data-theme="dark"] .policy-filters input,
+[data-theme="dark"] .policy-filters select,
+[data-theme="dark"] .policy-filters button,
+[data-theme="dark"] .policy-empty button,
+[data-theme="dark"] .policy-record{background:#19201c;border-color:#344039;color:#e7eee8}
+[data-theme="dark"] .policy-record-meta>span{background:#28342c;color:#b8cdbd}
+[data-theme="dark"] .policy-record-meta .policy-record-status{background:#3b3420;color:#dfcc8b}
+[data-theme="dark"] .policy-dates dd{color:#d7e2da}
+[data-theme="dark"] .policy-tags span{border-color:#3a473e;color:#adbbb1}
+[data-theme="dark"] .policy-interpretation{background:#222b25}
+[data-theme="dark"] .policy-interpretation summary,
+[data-theme="dark"] .policy-source a{color:#8fc5a2}
+[data-theme="dark"] .policy-interpretation p{color:#b5c3b9}
+[data-theme="dark"] .policy-source{border-color:#344039}
+[data-theme="dark"] .policy-empty{border-color:#526158;color:#b4c6b7}

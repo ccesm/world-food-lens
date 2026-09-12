@@ -59,3 +59,76 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,
   .market-note{display:block}
   .market-note a{display:inline-block;margin-top:7px}
 }
+
+/* Theme colors live at the end of the stylesheet so existing layout rules stay intact. */
+:root{color-scheme:light}
+body,.top,.section.alt,.kpi,.chart-card,.table-box,.mini-chart,.three article,.slider,.security,.market-chart,.desk,.tickers button{transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.theme-toggle span{display:inline-block;width:1em;text-align:center}
+
+[data-theme="dark"]{color-scheme:dark;background:#0f1411;color:#e7eee8}
+[data-theme="dark"] body{background:#0f1411;color:#e7eee8}
+[data-theme="dark"] .top{background:rgba(15,20,17,.94);border-color:#303a33}
+[data-theme="dark"] .brand span,
+[data-theme="dark"] .hero p,
+[data-theme="dark"] .section>p,
+[data-theme="dark"] .section-head p,
+[data-theme="dark"] .three p,
+[data-theme="dark"] .instrument-context p,
+[data-theme="dark"] .chart-provenance>small,
+[data-theme="dark"] .chart-provenance>p,
+[data-theme="dark"] .data-badge,
+[data-theme="dark"] .data-badge small,
+[data-theme="dark"] .market-note,
+[data-theme="dark"] .snapshot-note{color:#aab8ae}
+[data-theme="dark"] .actions a,
+[data-theme="dark"] .actions button,
+[data-theme="dark"] .section-nav a,
+[data-theme="dark"] .select-wrap select,
+[data-theme="dark"] .policy-tools input,
+[data-theme="dark"] .policy-tools select{background:#18201b;border-color:#3a473e;color:#e2ebe4}
+[data-theme="dark"] .actions button:last-child{background:#dce9df;border-color:#dce9df;color:#173324}
+[data-theme="dark"] .sync,
+[data-theme="dark"] .desk-row em,
+[data-theme="dark"] .kpi em,
+[data-theme="dark"] .market-chart-head span{background:#263229;color:#c4d2c8}
+[data-theme="dark"] .notice,
+[data-theme="dark"] .chart-fallback{background:#302a19;border-color:#665a32;color:#eadca9}
+[data-theme="dark"] .section,
+[data-theme="dark"] .raw-table,
+[data-theme="dark"] .chart-provenance{border-color:#303a33}
+[data-theme="dark"] .section.alt{background:#141a16}
+[data-theme="dark"] .kpi,
+[data-theme="dark"] .chart-card,
+[data-theme="dark"] .table-box,
+[data-theme="dark"] .mini-chart,
+[data-theme="dark"] .explain,
+[data-theme="dark"] .caution,
+[data-theme="dark"] .three article,
+[data-theme="dark"] .slider,
+[data-theme="dark"] .tickers button,
+[data-theme="dark"] .security,
+[data-theme="dark"] .market-chart,
+[data-theme="dark"] .desk,
+[data-theme="dark"] .instrument-context{background:#19201c;border-color:#344039}
+[data-theme="dark"] .kpi>span,
+[data-theme="dark"] .kpi small,
+[data-theme="dark"] .unit,
+[data-theme="dark"] .tickers span,
+[data-theme="dark"] .tradingview-widget-copyright{color:#9daba1}
+[data-theme="dark"] .tickers button.active{background:#233229;outline-color:#87ad94}
+[data-theme="dark"] .market-chart-head,
+[data-theme="dark"] .market-note,
+[data-theme="dark"] .desk-row,
+[data-theme="dark"] th,
+[data-theme="dark"] td{border-color:#303a33}
+[data-theme="dark"] .market-note{background:#151b18}
+[data-theme="dark"] .source-link,
+[data-theme="dark"] .data-badge a,
+[data-theme="dark"] .market-note a,
+[data-theme="dark"] .text-btn{color:#8fc5a2}
+[data-theme="dark"] .up{color:#ef9a87}
+[data-theme="dark"] .down{color:#7fc59e}
+[data-theme="dark"] .pending-box{background:#171d19;border-color:#516158}
+[data-theme="dark"] .recharts-cartesian-axis-tick-value{fill:#aab8ae}
+[data-theme="dark"] .recharts-cartesian-grid line{stroke:#334038}
+[data-theme="dark"] .recharts-default-tooltip{background:#202923!important;border-color:#47564c!important;color:#e7eee8!important}

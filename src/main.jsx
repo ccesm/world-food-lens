@@ -8,6 +8,7 @@ import snapshot from "./data/recoveredSnapshot";
 import initialOfficialData from "virtual:official-data";
 import {createDashboard,getDashboardMetrics} from "./data/dashboardMetrics";
 import {refreshOfficialData,sourceStateLabel,validateOfficialBundle} from "./services/officialSources";
+import {nextTheme,resolveTheme,THEME_STORAGE_KEY} from "./services/theme";
 import SourceDesk from "./components/SourceDesk";
 import ClimateMonitor from "./components/ClimateMonitor";
 import PolicyEvents from "./components/PolicyEvents";
@@ -19,7 +20,7 @@ const copy = {
     hero:"看懂粮价背后的变化。",
     intro:"从油价与化肥，到全球收成和贸易政策。把分散的信号，放到一起观察。",
     sync:"官方定时缓存 · 观测期和数据状态见各模块",
-    dataSources:"数据来源", check:"检查更新", english:"Switch to English",
+    dataSources:"数据来源", check:"检查更新", english:"Switch to English", lightMode:"浅色", darkMode:"深色",
     nav:["价格与成本","产量与库存","全球政策库","如何影响粮价","成本实验室","投资标的"],
     priceTitle:"粮价与能源，是否同向变化？", recovered:"旧站恢复快照",
     normalized:"共同起点 = 100", raw:"查看月度数据",
@@ -51,7 +52,7 @@ const copy = {
     hero:"See what is moving food prices.",
     intro:"From oil and fertilizer to harvests, inventories and trade policy—bring scattered signals into one view.",
     sync:"Scheduled official cache · periods and data status shown per section",
-    dataSources:"Data sources", check:"Check updates", english:"中文",
+    dataSources:"Data sources", check:"Check updates", english:"中文", lightMode:"Light", darkMode:"Dark",
     nav:["Prices & costs","Supply & stocks","Global policy","How it transmits","Cost lab","Investments"],
     priceTitle:"Do food and energy prices move together?", recovered:"Recovered hosted-site snapshot",
     normalized:"Common starting point = 100", raw:"View monthly data",
@@ -99,7 +100,7 @@ function tradingViewUrl(instrument){
   return `https://www.tradingview.com/symbols/${instrument.tvSymbol.replace(":","-")}/?utm_source=world-food-lens&utm_medium=widget&utm_campaign=advanced-chart`;
 }
 
-function TradingViewChart({instrument,lang}){
+function TradingViewChart({instrument,lang,theme}){
   const container=useRef(null);
   const [loadFailed,setLoadFailed]=useState(false);
   const href=tradingViewUrl(instrument);
@@ -118,9 +119,9 @@ function TradingViewChart({instrument,lang}){
       symbol:instrument.tvSymbol,
       interval:"D",
       timezone:"exchange",
-      theme:"light",
-      backgroundColor:"#ffffff",
-      gridColor:"rgba(46, 46, 46, 0.06)",
+      theme,
+      backgroundColor:theme==="dark"?"#151b18":"#ffffff",
+      gridColor:theme==="dark"?"rgba(214, 229, 218, 0.08)":"rgba(46, 46, 46, 0.06)",
       style:"1",
       locale:lang==="zh"?"zh_CN":"en",
       hide_side_toolbar:true,
@@ -135,7 +136,7 @@ function TradingViewChart({instrument,lang}){
     });
     host.appendChild(script);
     return ()=>{ script.onerror=null; script.remove(); };
-  },[instrument.tvSymbol,lang]);
+  },[instrument.tvSymbol,lang,theme]);
 
   const t=copy[lang];
   return <div className="market-chart">
@@ -177,6 +178,10 @@ function Kpi({label,value,change,period,unit,lang,source,estimate=false,changeUn
 }
 function App(){
   const [lang,setLang]=useState("zh");
+  const [theme,setTheme]=useState(()=>resolveTheme(
+    document.documentElement.dataset.theme,
+    window.matchMedia?.("(prefers-color-scheme: dark)").matches
+  ));
   const [range,setRange]=useState(36);
   const [rawOpen,setRawOpen]=useState(false);
   const [refreshMsg,setRefreshMsg]=useState("");
@@ -203,6 +208,30 @@ function App(){
     return ()=>{cancelled=true;};
   },[]);
 
+  useEffect(()=>{
+    document.documentElement.dataset.theme=theme;
+    document.documentElement.style.colorScheme=theme;
+  },[theme]);
+
+  useEffect(()=>{
+    const media=window.matchMedia?.("(prefers-color-scheme: dark)");
+    if(!media)return;
+    const syncSystemTheme=event=>{
+      try{
+        if(localStorage.getItem(THEME_STORAGE_KEY))return;
+      }catch{}
+      setTheme(resolveTheme(null,event.matches));
+    };
+    media.addEventListener?.("change",syncSystemTheme);
+    return ()=>media.removeEventListener?.("change",syncSystemTheme);
+  },[]);
+
+  function toggleTheme(){
+    const updated=nextTheme(theme);
+    setTheme(updated);
+    try{localStorage.setItem(THEME_STORAGE_KEY,updated);}catch{}
+  }
+
   async function doRefresh(){
     if(refreshing)return;
     setRefreshing(true);
@@ -217,6 +246,9 @@ function App(){
       <div className="actions">
         <a href="#data-desk">{t.dataSources}</a>
         <button onClick={doRefresh} disabled={refreshing}>↻ {refreshing?(lang==="zh"?"检查中…":"Checking…"):t.check}</button>
+        <button className="theme-toggle" onClick={toggleTheme} aria-label={lang==="zh"?`切换到${theme==="dark"?"浅色":"深色"}模式`:`Switch to ${theme==="dark"?"light":"dark"} mode`} title={theme==="dark"?t.lightMode:t.darkMode}>
+          <span aria-hidden="true">{theme==="dark"?"☀":"☾"}</span> {theme==="dark"?t.lightMode:t.darkMode}
+        </button>
         <button onClick={()=>setLang(lang==="zh"?"en":"zh")}>{t.english}</button>
       </div>
     </header>
@@ -314,7 +346,7 @@ function App(){
           <div className="security">
             <span className="big-symbol">{selected.symbol}</span><h3>{selected.name}</h3><p><b>{t.exposure}:</b> {lang==="zh"?selected.zh:selected.en}</p>
             <div className="instrument-context"><b>{t.whyItMatters}</b><p>{lang==="zh"?selected.descZh:selected.descEn}</p></div>
-            <TradingViewChart key={`${selected.tvSymbol}-${lang}`} instrument={selected} lang={lang}/>
+            <TradingViewChart key={`${selected.tvSymbol}-${lang}-${theme}`} instrument={selected} lang={lang} theme={theme}/>
           </div>
         </div>
       </section>
