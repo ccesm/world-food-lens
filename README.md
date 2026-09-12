@@ -1,17 +1,34 @@
-# World Food Crisis
+# World Food Lens — Git Migration
 
-A public-facing bilingual web application for understanding global food-price movements and the forces that drive them: crop supply, inventories, fertilizer, energy, climate, policy, and investable market exposure.
+This repository is a source-controlled migration of the previously published World Food Lens site:
 
-## Current v0.1
-- Responsive global food dashboard
-- English / Chinese toggle
-- Historical food-price visualization scaffold
-- Commodity monitor
-- Climate, energy, fertilizer, policy and stock pressure signals
-- U.S.-listed agriculture ETF/stock module
-- Clickable investment instruments with historical-chart placeholder
-- Policy-monitor scaffold
-- Clear separation between placeholder data and future live official feeds
+https://world-food-lens.d47cjrv8xg.chatgpt.site/
+
+## What this migration restores
+
+- Bilingual Chinese / English interface
+- Headline cards for FAO Food Price Index, Brent, urea and global wheat stock-to-use
+- Recovered 36-month FAO vs Brent comparison from the hosted-site snapshot
+- World Bank fertilizer benchmark table
+- World Bank agriculture benchmark table
+- USDA stock-to-use explanation and recovered wheat headline
+- FAPDA policy-database interface / adapter point
+- "Connect the dots" explanatory section
+- Input-cost learning lab
+- Data Desk with source/period/cache metadata
+- New investment-lens extension for U.S.-listed agriculture ETFs/stocks
+- Mobile-responsive design
+- GitHub Pages deployment workflow
+
+## Critical migration limitation
+
+The old `chatgpt.site` Site projection exposes the published page and a text snapshot, but not the original server-side/source bundle that performed live synchronization. Therefore this repository intentionally does **not** pretend that the recovered cache is live.
+
+The old site showed a last successful source check at:
+
+`2026-09-12 01:08 UTC`
+
+The local app currently labels those values as recovered cache.
 
 ## Run locally
 
@@ -20,22 +37,28 @@ npm install
 npm run dev
 ```
 
-## Production build
+## Build
 
 ```bash
 npm run build
 ```
 
-## Data integrations planned
-1. FAO / FAOSTAT — food-price and agricultural data
-2. World Bank Commodity Price Data ("Pink Sheet") — agriculture, fertilizer, energy
-3. USDA PSD / WASDE — production, consumption, trade and ending stocks
-4. EIA — energy/oil
-5. NOAA and other official climate agencies — ENSO and weather risks
-6. Official government sources — export restrictions, tariffs, subsidies and stock releases
-7. A suitable market-data provider — current and historical prices for ETFs/stocks
+## Data layer
 
-Do not commit API keys or secrets. Put secrets in local environment variables and keep `.env` ignored.
+See:
 
-## Important
-The v0.1 dashboard contains illustrative/placeholder values where a live source has not yet been connected. Do not present placeholder data as real-time data.
+- `public/data/recovered-snapshot.json`
+- `src/services/officialSources.js`
+- `MIGRATION_NOTES.md`
+- `PROJECT_CONTEXT.md`
+
+The next development milestone is to replace the adapter stubs with durable server-side/serverless connectors for FAO, EIA, World Bank, USDA and FAPDA.
+
+## Safety / data integrity rules
+
+- Never commit API keys or tokens.
+- Never label recovered/static data as real-time.
+- Show observation period separately from fetch time.
+- Label forecasts and estimates.
+- Prefer official sources.
+- Preserve original units and methodology notes.

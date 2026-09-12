@@ -1,85 +1,79 @@
-# PROJECT_CONTEXT — World Food Crisis
+# PROJECT_CONTEXT — World Food Lens
 
-## Mission
-Build an understandable global food-intelligence application that explains not only *what* food prices are doing, but *why* they are moving.
+## Product identity
 
-## Product scope
-The app should connect:
-- global food and agricultural commodity prices
-- long-run historical price trends
-- crop production, consumption and ending stocks
-- fertilizer prices
-- crude oil / energy prices
-- climate and ENSO risks (El Niño / La Niña)
-- trade and agricultural policy
-- investable U.S. securities related to agriculture
+Name: **World Food Lens / 全球粮食观察**
 
-## Data-source direction
-Prefer authoritative, reproducible sources:
-- FAO / FAOSTAT
-- World Bank Commodity Price Data / Pink Sheet
-- USDA PSD and WASDE
-- EIA
-- NOAA and other official meteorological agencies
-- official national government policy releases
+Purpose: help non-specialists understand global food-price movements by connecting prices, energy, fertilizer, harvests, inventories, policy and market exposure.
 
-Every displayed data series should eventually expose source, observation date, update date, units, and methodology where practical.
+Old hosted site:
+https://world-food-lens.d47cjrv8xg.chatgpt.site/
 
-## Investment module
-Track U.S.-listed ETFs/stocks with agriculture exposure. Initial examples:
+This Git repository is the durable source-of-truth going forward.
+
+## Core product principles
+
+1. Official sources first.
+2. Explain *why* a signal matters, not just the number.
+3. Never confuse correlation with causality.
+4. Separate observation date, forecast/marketing year and fetch time.
+5. Distinguish live, delayed, cached, estimated and recovered data.
+6. Maintain Chinese and English UI.
+7. Keep mobile support.
+8. Do not commit secrets.
+
+## Source direction
+
+- FAO Food Price Index / FAOSTAT
+- U.S. EIA for energy / Brent
+- World Bank Commodity Price Data ("Pink Sheet") for fertilizer/agriculture/energy
+- USDA PSD / WASDE for global production, consumption, trade and ending stocks
+- FAO FAPDA for policy events
+- Later: a compliant current/historical market-data provider for ETFs/stocks
+
+## Recovered hosted-site snapshot
+
+Recoverable headline values from the old site:
+- FAO Food Price Index: 133.3, 2026-08, +1.9% MoM
+- Brent: $91.08/bbl, 2026-08, +8.7% MoM
+- Urea: $390/mt, 2026-08, -2.5% MoM
+- Global wheat stock-to-use: 33.6%, 2026/27, -0.7 percentage point from prior year
+- Old-site last successful fetch shown: 2026-09-12 01:08 UTC
+
+These are historical/recovered cache values, not current live quotes.
+
+## Investment Lens
+
+Initial U.S.-listed instruments:
 DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM.
 
-Clicking an instrument should eventually show:
-- latest available market price
-- historical price chart
-- company/fund description
+Desired future instrument detail:
+- current/delayed price with timestamp
+- historical chart
+- fund/company description
 - agricultural exposure
-- relationship to food prices
-- source and timestamp
+- relationship to the food system
+- source/license information
 
-Market data must be clearly distinguished from delayed/illustrative values.
+## Development handoff rule
 
-## Policy database
-Normalize important policy events such as:
-- export bans/restrictions
-- import tariffs
-- subsidies
-- strategic reserve releases/purchases
-- biofuel mandates
-- fertilizer/export policy
-- sanctions affecting food, fertilizer or energy flows
-
-Desired fields:
-date, country, commodity, policy_type, direction, summary, source_url, expected_effect, confidence, updated_at.
-
-## Language
-Maintain English and Chinese UI. New user-facing strings should be placed in the translation layer rather than hard-coded repeatedly.
-
-## Development rules
-- GitHub should be the source of truth.
-- Make incremental changes and preserve working functionality.
-- Do not commit API keys, passwords, tokens or `.env`.
-- Prefer official data over scraped secondary data.
-- Clearly label forecasts, estimates, delayed data and placeholders.
-- Before a large refactor, inspect current architecture and test existing behavior.
-- Keep the interface understandable to non-experts.
-- Mobile responsiveness is required.
+Any ChatGPT/Codex account should:
+1. Read this file, `README.md` and `MIGRATION_NOTES.md`.
+2. Run `git status`.
+3. Inspect recent commits before editing.
+4. Preserve working features unless explicitly asked to remove them.
+5. Avoid large refactors before understanding current source adapters.
+6. Test `npm run build` after changes.
+7. Commit in small, meaningful units.
 
 ## Near-term roadmap
-1. Connect live World Bank agriculture/fertilizer/energy data.
-2. Connect USDA PSD/WASDE production and ending-stock series.
-3. Connect FAO food-price data.
-4. Build normalized automated policy feed/database.
-5. Add climate/ENSO risk panel.
-6. Connect current + historical market prices for investment instruments.
-7. Add source timestamps and data-health indicators.
-8. Add deploy configuration for public hosting.
-9. Add tests and automated data refresh jobs.
 
-## Handoff rule for any ChatGPT/Codex account
-Before editing:
-1. Read this file and README.md.
-2. Inspect `git status`, current branch, and recent commits.
-3. Inspect existing implementation before replacing anything.
-4. Preserve features unless explicitly asked to remove them.
-5. After changes, test the app and summarize changed files.
+1. Reconnect World Bank Pink Sheet.
+2. Reconnect FAO Food Price Index.
+3. Reconnect EIA Brent.
+4. Reconnect USDA PSD/WASDE.
+5. Rebuild FAPDA policy sync/search with durable local storage.
+6. Add source health/status metadata.
+7. Connect investment current/historical market data.
+8. Add scheduled refresh in hosting environment.
+9. Add automated tests.
