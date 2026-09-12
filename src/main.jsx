@@ -269,7 +269,7 @@ function App(){
         <Kpi lang={lang} source={provenance.usda} estimate={!!provenance.usda} label={t.ratio} value={`${wheat.value.toFixed(1)}%`} change={wheat.deltaPp} changeUnit="pp" period={wheat.period} unit={wheat.unit}/>
       </section>
 
-      <nav className="section-nav">
+      <nav className="section-nav" aria-label={lang==="zh"?"页面模块导航":"Page sections"}>
         {t.nav.map((x,i)=><React.Fragment key={x}><a href={`#s${i+1}`}>{x}</a>{i===1&&<a href="#climate">{lang==="zh"?"气候监测":"Climate monitor"}</a>}</React.Fragment>)}
       </nav>
 

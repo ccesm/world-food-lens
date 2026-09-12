@@ -132,3 +132,30 @@ body,.top,.section.alt,.kpi,.chart-card,.table-box,.mini-chart,.three article,.s
 [data-theme="dark"] .recharts-cartesian-axis-tick-value{fill:#aab8ae}
 [data-theme="dark"] .recharts-cartesian-grid line{stroke:#334038}
 [data-theme="dark"] .recharts-default-tooltip{background:#202923!important;border-color:#47564c!important;color:#e7eee8!important}
+
+/* Persistent section navigation */
+.app{padding-bottom:calc(70px + env(safe-area-inset-bottom,0px))}
+.section-nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:50;
+  justify-content:center;
+  gap:8px;
+  margin:0;
+  padding:10px max(4vw,22px) calc(10px + env(safe-area-inset-bottom,0px));
+  background:rgba(250,249,244,.94);
+  border-top:1px solid #d4d9d2;
+  box-shadow:0 -8px 24px rgba(23,51,36,.08);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  scrollbar-width:none;
+}
+.section-nav::-webkit-scrollbar{display:none}
+.section-nav a{flex:0 0 auto}
+[data-theme="dark"] .section-nav{background:rgba(15,20,17,.94);border-color:#344039;box-shadow:0 -8px 28px rgba(0,0,0,.28)}
+
+@media(max-width:900px){
+  .section-nav{justify-content:flex-start;padding-left:18px;padding-right:18px}
+}
