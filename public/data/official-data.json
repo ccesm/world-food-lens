@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T13:24:02Z",
+  "generatedAt": "2026-09-12T13:31:25Z",
   "sources": {
     "usda": {
       "source": {
@@ -101,10 +101,9 @@
         "unit": "1000 metric tons; ratio: %",
         "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
       },
-      "status": "error",
-      "fetchedAt": "2026-09-12T13:06:05Z",
-      "lastAttemptAt": "2026-09-12T13:24:02Z",
-      "error": "URLError: <urlopen error timed out>"
+      "status": "ok",
+      "fetchedAt": "2026-09-12T13:31:28Z",
+      "lastAttemptAt": "2026-09-12T13:31:25Z"
     },
     "fao": {
       "source": {
@@ -606,8 +605,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:24:02Z",
-      "lastAttemptAt": "2026-09-12T13:24:02Z"
+      "fetchedAt": "2026-09-12T13:31:26Z",
+      "lastAttemptAt": "2026-09-12T13:31:25Z"
     },
     "noaa": {
       "source": {
@@ -1715,8 +1714,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:24:03Z",
-      "lastAttemptAt": "2026-09-12T13:24:02Z"
+      "fetchedAt": "2026-09-12T13:31:26Z",
+      "lastAttemptAt": "2026-09-12T13:31:25Z"
     },
     "worldBank": {
       "source": {
@@ -2414,8 +2413,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:24:03Z",
-      "lastAttemptAt": "2026-09-12T13:24:02Z"
+      "fetchedAt": "2026-09-12T13:31:26Z",
+      "lastAttemptAt": "2026-09-12T13:31:25Z"
     },
     "eia": {
       "source": {
@@ -2917,8 +2916,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:24:11Z",
-      "lastAttemptAt": "2026-09-12T13:24:02Z"
+      "fetchedAt": "2026-09-12T13:31:36Z",
+      "lastAttemptAt": "2026-09-12T13:31:25Z"
     }
   }
 }
