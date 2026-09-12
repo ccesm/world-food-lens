@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T13:06:03Z",
+  "generatedAt": "2026-09-12T13:24:02Z",
   "sources": {
     "usda": {
       "source": {
@@ -101,9 +101,10 @@
         "unit": "1000 metric tons; ratio: %",
         "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
       },
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-09-12T13:06:05Z",
-      "lastAttemptAt": "2026-09-12T13:06:03Z"
+      "lastAttemptAt": "2026-09-12T13:24:02Z",
+      "error": "URLError: <urlopen error timed out>"
     },
     "fao": {
       "source": {
@@ -605,8 +606,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:06:03Z",
-      "lastAttemptAt": "2026-09-12T13:06:03Z"
+      "fetchedAt": "2026-09-12T13:24:02Z",
+      "lastAttemptAt": "2026-09-12T13:24:02Z"
     },
     "noaa": {
       "source": {
@@ -1714,8 +1715,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:06:03Z",
-      "lastAttemptAt": "2026-09-12T13:06:03Z"
+      "fetchedAt": "2026-09-12T13:24:03Z",
+      "lastAttemptAt": "2026-09-12T13:24:02Z"
     },
     "worldBank": {
       "source": {
@@ -2413,8 +2414,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:06:03Z",
-      "lastAttemptAt": "2026-09-12T13:06:03Z"
+      "fetchedAt": "2026-09-12T13:24:03Z",
+      "lastAttemptAt": "2026-09-12T13:24:02Z"
     },
     "eia": {
       "source": {
@@ -2916,8 +2917,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:06:11Z",
-      "lastAttemptAt": "2026-09-12T13:06:03Z"
+      "fetchedAt": "2026-09-12T13:24:11Z",
+      "lastAttemptAt": "2026-09-12T13:24:02Z"
     }
   }
 }
