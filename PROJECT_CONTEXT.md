@@ -47,6 +47,8 @@ These are historical/recovered cache values, not current live quotes.
 Initial U.S.-listed instruments:
 DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM.
 
+Additional instruments: MOO, VEGI, CF, AGCO. The instrument selector sits above a full-width chart with an explicit responsive height to prevent the embedded chart from collapsing.
+
 Current chart implementation:
 - World Food Lens maintains the bilingual instrument explanations.
 - TradingView's public Advanced Chart widget supplies interactive intraday and historical charts.

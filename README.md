@@ -57,6 +57,8 @@ The next development milestone is to replace the adapter stubs with durable serv
 
 ## Investment market charts
 
+Available instruments: DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM, MOO, VEGI, CF and AGCO. Select a card above the full-width chart to switch instruments. The chart frame reserves 640px on desktop, 560px on tablets and 500px on mobile, including attribution.
+
 The Investment Lens keeps its instrument descriptions in this repository and embeds TradingView's public Advanced Chart widget for price history. The widget does not require an API key or a connected brokerage account.
 
 Market quotes and charts may be delayed under exchange and data-provider rules. TradingView attribution and direct fallback links must remain visible.

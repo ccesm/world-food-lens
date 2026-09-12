@@ -76,6 +76,10 @@ const copy = {
 };
 
 const investments = [
+  {symbol:"MOO",name:"VanEck Agribusiness ETF",zh:"全球农业企业 ETF",en:"Global agribusiness ETF",tvSymbol:"AMEX:MOO",descZh:"持有农业产业链企业股票，覆盖农业投入品、设备和生产等环节。表现受企业盈利与股票市场估值影响。",descEn:"Holds agribusiness equities across inputs, equipment and production. Returns reflect corporate earnings and equity valuations."},
+  {symbol:"VEGI",name:"iShares MSCI Agriculture Producers ETF",zh:"农业生产商 ETF",en:"Agriculture producers ETF",tvSymbol:"AMEX:VEGI",descZh:"通过农业生产相关企业的股票组合观察产业链，覆盖化肥、农机和食品等业务；与商品期货基金的风险来源不同。",descEn:"Tracks a basket of agriculture-related producers, including fertilizer, machinery and food businesses, with different risk drivers from commodity futures funds."},
+  {symbol:"CF",name:"CF Industries Holdings",zh:"氮肥与天然气成本",en:"Nitrogen fertilizer",tvSymbol:"NYSE:CF",descZh:"氮肥生产商，可用于观察化肥需求与天然气原料成本之间的关系。股价也受企业经营和整体市场影响。",descEn:"A nitrogen fertilizer producer linking nutrient demand with natural-gas feedstock costs. Business performance and the broader equity market also affect its share price."},
+  {symbol:"AGCO",name:"AGCO Corporation",zh:"农机与精准农业",en:"Machinery & precision agriculture",tvSymbol:"NYSE:AGCO",descZh:"农业机械及精准农业解决方案供应商，可观察农场资本开支和设备更新周期。",descEn:"Supplies agricultural machinery and precision-agriculture solutions, providing exposure to farm capital spending and equipment replacement cycles."},
   {symbol:"DBA",name:"Invesco DB Agriculture Fund",zh:"广泛农业商品",en:"Broad agriculture",tvSymbol:"AMEX:DBA",descZh:"通过农业商品期货组合提供广泛敞口，走势还会受到期货曲线、展期和基金费用影响。",descEn:"Provides broad exposure through agricultural commodity futures; returns are also shaped by the futures curve, contract rolls and fund expenses."},
   {symbol:"CORN",name:"Teucrium Corn Fund",zh:"玉米",en:"Corn",tvSymbol:"AMEX:CORN",descZh:"主要通过不同到期月份的玉米期货表达玉米价格敞口，并不等同于现货玉米价格。",descEn:"Uses corn futures across several maturities to express corn exposure; its return is not the same as the spot price of corn."},
   {symbol:"WEAT",name:"Teucrium Wheat Fund",zh:"小麦",en:"Wheat",tvSymbol:"AMEX:WEAT",descZh:"通过小麦期货提供价格敞口，天气、出口流向和期货曲线都可能影响基金表现。",descEn:"Provides exposure through wheat futures; weather, export flows and the futures curve can all influence its performance."},
@@ -125,18 +129,20 @@ function TradingViewChart({instrument,lang}){
       support_host:"https://www.tradingview.com"
     });
     host.appendChild(script);
-    return ()=>script.remove();
+    return ()=>{ script.onerror=null; script.remove(); };
   },[instrument.tvSymbol,lang]);
 
   const t=copy[lang];
   return <div className="market-chart">
     <div className="market-chart-head"><b>{t.marketChart}</b><span>{instrument.tvSymbol}</span></div>
     {loadFailed&&<div className="chart-fallback" role="status">{t.chartUnavailable}</div>}
-    <div className="tradingview-widget-container" ref={container}>
-      <div className="tradingview-widget-container__widget"/>
+    <div className="market-chart-frame">
+    <div className="tradingview-widget-container" ref={container} style={{height:"100%",width:"100%"}}>
+      <div className="tradingview-widget-container__widget" style={{height:"calc(100% - 32px)",width:"100%"}}/>
       <div className="tradingview-widget-copyright">
         <a href={href} rel="noopener nofollow" target="_blank">{instrument.symbol} chart</a><span> by TradingView</span>
       </div>
+    </div>
     </div>
     <div className="market-note"><span>{t.marketNotice}</span><a href={href} rel="noopener nofollow" target="_blank">{t.viewOnTradingView} ↗</a></div>
   </div>
@@ -162,7 +168,7 @@ function App(){
   const [rawOpen,setRawOpen]=useState(false);
   const [refreshMsg,setRefreshMsg]=useState("");
   const [fuel,setFuel]=useState(0), [fert,setFert]=useState(0), [other,setOther]=useState(0);
-  const [selected,setSelected]=useState(investments[0]);
+  const [selected,setSelected]=useState(investments.find(x=>x.symbol==="DBA"));
   const [policyQuery,setPolicyQuery]=useState("");
   const t=copy[lang];
 
