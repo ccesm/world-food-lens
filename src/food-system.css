@@ -1,0 +1,31 @@
+.food-system{--fs-surface:#fff;--fs-border:#d6ded5;--fs-muted:#566a5c;--fs-soft:#eef2eb;--fs-link:#315d48}
+[data-theme="dark"] .food-system{--fs-surface:#19211c;--fs-border:#3b483e;--fs-muted:#b3c2b8;--fs-soft:#25332a;--fs-link:#a3d4b4}
+.food-system p{font-size:13px;line-height:1.8;color:var(--fs-muted)}
+.food-system a{color:var(--fs-link);font-size:12px;overflow-wrap:anywhere}
+.fs-summary,.fs-factor-grid,.fs-two,.fs-history{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.fs-factor-grid,.fs-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fs-card{min-width:0;border:1px solid var(--fs-border);border-radius:14px;padding:20px;background:var(--fs-surface);display:flex;flex-direction:column;gap:9px}
+.fs-card h3{font-size:17px;line-height:1.5;margin:0}.fs-card p{margin:0}.fs-card>span,.fs-card>small,.fs-muted{font-size:12px;color:var(--fs-muted);line-height:1.6}
+.fs-summary strong{font-size:38px;letter-spacing:-.035em}.fs-summary strong small{font-size:18px}.fs-unavailable{color:var(--fs-muted)}
+.fs-summary meter{width:100%;height:12px;accent-color:#789b85}.fs-summary .fs-card>b{font-size:13px}
+.fs-notice{padding:16px;border-left:3px solid #8b967d;background:var(--fs-soft);font-size:13px;line-height:1.8;margin:20px 0}.fs-notice p{margin:0}
+.fs-factor-head{display:flex;gap:12px;justify-content:space-between}.fs-factor-head>span{font-size:11px;white-space:nowrap;color:var(--fs-muted)}
+.fs-calculation{font-size:24px!important;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.fs-provenance{display:flex;flex-wrap:wrap;gap:5px 15px;color:var(--fs-muted);font-size:11px;line-height:1.7;overflow-wrap:anywhere}.fs-card .fs-provenance{border-top:1px solid var(--fs-border);padding-top:10px;flex-direction:column;margin-top:auto}
+.fs-details{border-top:1px solid var(--fs-border);padding:18px 0;font-size:13px}.fs-details summary{font-weight:650;cursor:pointer;line-height:1.7}
+.fs-controls{display:flex;flex-wrap:wrap;align-items:end;gap:15px;margin:24px 0}.fs-control{display:flex;flex-direction:column;gap:8px;font-size:13px;max-width:100%}
+.food-system select,.fs-controls>button{padding:11px 14px;background:var(--fs-surface);color:inherit;border:1px solid var(--fs-border);border-radius:9px;font:inherit;max-width:100%;min-height:44px}
+.fs-controls>button{cursor:pointer;font-size:13px}.grain-inventory{margin-top:32px;padding-top:16px;border-top:1px solid var(--fs-border)}.fs-subtitle{font-size:24px;font-weight:500}
+.fs-stage-legend{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}.fs-stage{padding:8px;background:var(--fs-soft);color:inherit;border-radius:5px;font-size:12px}
+.stage-P{background:#e4eee1;color:#304f34}.stage-V{background:#e7efec;color:#37544d}.stage-F,.stage-G{background:#f5d8a4;color:#5e4315;font-weight:750}.stage-W{background:#dce6f6;color:#345171}.stage-H{background:#e7dfcd;color:#5a4e32}.stage-off{background:var(--fs-soft);color:var(--fs-muted)}
+[data-theme="dark"] .stage-P,[data-theme="dark"] .stage-V{background:#2d4435;color:#d3e6d6}
+[data-theme="dark"] .stage-F,[data-theme="dark"] .stage-G{background:#634a21;color:#ffe3ad}
+[data-theme="dark"] .stage-W{background:#293d55;color:#c7dcf5}[data-theme="dark"] .stage-H{background:#484032;color:#e9dfcc}
+.fs-calendar-scroll{max-width:100%;overflow-x:auto;border:1px solid var(--fs-border);border-radius:10px}
+.fs-calendar{width:100%;min-width:910px;border-collapse:collapse;font-size:12px}.fs-calendar th,.fs-calendar td{border-color:var(--fs-border);padding:8px 5px}
+.fs-calendar th:first-child{min-width:175px;max-width:230px}.fs-calendar th small,.fs-calendar th a{display:block;font-weight:400;margin-top:4px}
+.fs-calendar button{width:100%;min-width:44px;min-height:44px;border:1px solid transparent;cursor:pointer}
+.fs-calendar button[aria-pressed="true"]{border:2px solid currentColor}.fs-status{display:block;padding:8px;background:var(--fs-soft);border-radius:6px}
+.fs-history{list-style:none;padding:0}.fs-history li>span{font-size:24px;font-weight:650}
+@media(max-width:850px){.fs-summary,.fs-history{grid-template-columns:1fr}.fs-factor-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.fs-factor-grid,.fs-two{grid-template-columns:1fr}.fs-card{padding:17px}.fs-controls{align-items:stretch}.fs-controls .fs-control{flex:1;min-width:130px}.fs-factor-head{flex-wrap:wrap}.fs-calculation{font-size:22px!important}}

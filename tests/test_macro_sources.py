@@ -30,7 +30,7 @@ def workbook(unit="($/bbl)"):
     return stream.getvalue()
 
 
-def usda_zip(missing=False, duplicate=False, unit="(1000 MT)", years=(2025,2026)):
+def usda_zip(missing=False, duplicate=False, unit="(1000 MT)", years=(2025,2026), commodity="0410000"):
     stream = io.StringIO()
     headers = ["Commodity_Code","Country_Name","Country_Code","Market_Year","Calendar_Year","Month",
                "Attribute_Description","Unit_Description","Value"]
@@ -39,7 +39,7 @@ def usda_zip(missing=False, duplicate=False, unit="(1000 MT)", years=(2025,2026)
         for country, scale in (("European Union",10),("France",3),("United Kingdom",2),("China",20)):
             for attribute, value in (("Production",110),("Domestic Consumption",100),("Ending Stocks",30)):
                 if missing and country == "China" and attribute == "Ending Stocks": continue
-                row = dict(zip(headers,["0410000",country,country,year,2026,"09",attribute,unit,value*scale]))
+                row = dict(zip(headers,[commodity,country,country,year,2026,"09",attribute,unit,value*scale]))
                 writer.writerow(row)
                 if duplicate: writer.writerow(row)
     zipped = io.BytesIO()
@@ -76,6 +76,8 @@ class MacroTests(unittest.TestCase):
         self.assertEqual(data["headline"]["urea"]["momPct"],-2.5)
         self.assertEqual(len(data["fertilizers"]),4)
         self.assertEqual(len(data["agriculture"]),4)
+        self.assertEqual(data["monthly"][-1]["dap"],710)
+        self.assertEqual(data["monthly"][-1]["maize"],210)
         with self.assertRaises(ValueError):parse_world_bank(workbook("cents"),AS_OF)
 
     def test_usda_eu_not_double_counted_and_uk_separate(self):
@@ -84,6 +86,15 @@ class MacroTests(unittest.TestCase):
         self.assertEqual(data["history"][-1]["consumption"],3200)
         self.assertEqual(data["history"][-1]["countryAreaCount"],3)
         self.assertEqual(data["stockToUse"],30)
+        self.assertEqual(data["history"][-1]["excludingChina"]["consumption"],1200)
+        self.assertEqual(data["history"][-1]["excludingChina"]["endingStocks"],360)
+
+    def test_usda_maize_and_milled_rice_use_distinct_codes(self):
+        for code in ("440000","422110"):
+            data = parse_usda(usda_zip(commodity="0"+code),AS_OF,commodity_code=code)
+            self.assertEqual(data["stockToUse"],30)
+            with self.assertRaises(ValueError):
+                parse_usda(usda_zip(commodity="0"+code),AS_OF)
 
     def test_usda_incomplete_duplicate_or_wrong_unit_is_rejected(self):
         for content in (usda_zip(missing=True),usda_zip(duplicate=True),usda_zip(unit="MT")):

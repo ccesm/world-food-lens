@@ -166,6 +166,23 @@ Recheck official schedules at least monthly and add newly published annual
 schedules deliberately. The UI warns when manual verification is over 30 days
 old. Daily source downloads do not silently refresh this review date.
 
+## Food-system evidence, crop windows and inventory comparisons
+
+The Global Food Stress Monitor exposes seven proposed weights with raw inputs,
+source status and missingness. Only three factors (45% of weight) are connected;
+no overall score is published until all factors have eligible data. Percentile
+rules are experimental screening heuristics, not crisis probabilities.
+
+USDA now adds maize and milled-rice histories alongside wheat, retaining the
+legacy wheat fields. World/ex-China comparisons subtract both stocks and use;
+neither is a direct measure of freely exportable stocks. No total-cereal sum
+is manufactured. The 21 crop-season templates are explicitly estimated, with
+month/crop filters, critical-stage lists and an educational winterkill checklist.
+They are not current-year field progress or live weather risk.
+
+Read [the implementation report](docs/FOOD_SYSTEM_UPGRADE.md) for formulas,
+sources, modified files, missing integrations and the next validation steps.
+
 ## Investment market charts
 
 Available instruments: DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM, MOO, VEGI, CF and AGCO. Select a card above the full-width chart to switch instruments. The chart frame reserves 640px on desktop, 560px on tablets and 500px on mobile, including attribution.

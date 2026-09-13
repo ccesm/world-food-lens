@@ -16,8 +16,22 @@ const series = (rows, field) => Array.isArray(rows) && rows.length >= 2 &&
   rows.every((row, i) => period(row.month) && finite(row[field]) && row[field] > 0 &&
     (!i || row.month > rows[i-1].month));
 
+const quantities = row => row && ["production","consumption","endingStocks","ratio"].every(key=>finite(row[key])) &&
+  row.production>0 && row.consumption>0 && row.endingStocks>=0 && row.ratio>=0 &&
+  Math.abs(row.ratio-row.endingStocks/row.consumption*100)<.001;
+const grain = data => data && Array.isArray(data.history) && data.history.length>=2 &&
+  data.latestPeriod===data.history.at(-1)?.year && data.stockToUse===data.history.at(-1)?.ratio &&
+  data.priorStockToUse===data.history.at(-2)?.ratio && data.history.every((row,i)=>
+    /^\d{4}\/\d{4}$/.test(row.year??"") && +row.year.slice(5)===+row.year.slice(0,4)+1 && quantities(row) &&
+    (!i || +row.year.slice(0,4)===+data.history[i-1].year.slice(0,4)+1) &&
+    (row.excludingChina==null || (quantities(row.excludingChina) &&
+      ["production","consumption","endingStocks"].every(key=>row.excludingChina[key]<=row[key]))));
+
 export function validSourceData(key, data) {
   if (!data || typeof data !== "object") return false;
+  if (key==="usda" && data.grains!==undefined && (!["wheat","maize","rice"].every(key=>
+      grain(data.grains?.[key]) && data.grains[key].latestPeriod===data.latestPeriod) ||
+      JSON.stringify(data.history)!==JSON.stringify(data.grains.wheat.history))) return false;
   if (key === "fao") return headline(data.headline) && series(data.monthly,"fao");
   if (key === "eia") return headline(data.headline) && series(data.monthly,"brent");
   if (key === "worldBank") return headline(data.headline?.brent) && headline(data.headline?.urea) &&

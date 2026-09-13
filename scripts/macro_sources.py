@@ -143,7 +143,7 @@ def parse_world_bank(content, as_of=None):
         point = latest_headline(series[key], key, "USD / mt")
         table.append({"nameEn": name, "nameZh": chinese, "price": point["value"],
                       "period": point["period"], "momPct": point["momPct"], "unit": point["unit"]})
-    return {"monthly": [{"month": row["month"], "brent": row["brent"], "urea": row["urea"]}
+    return {"monthly": [{"month": row["month"], **{key: row[key] for key, *_ in specifications}}
                         for row in series["brent"]], "headline": headline,
             "fertilizers": table[:4], "agriculture": table[4:]}
 
@@ -217,7 +217,7 @@ EU_MEMBERS = {"Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Repu
               "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden"}
 
 
-def parse_usda(content, as_of=None):
+def parse_usda(content, as_of=None, commodity_code="410000"):
     as_of = as_of or datetime.now(timezone.utc).date()
     with zipfile.ZipFile(io.BytesIO(content)) as archive:
         info = archive.getinfo("psd_grains_pulses.csv")
@@ -232,7 +232,7 @@ def parse_usda(content, as_of=None):
         years = {}
         released = set()
         for row in reader:
-            if row["Commodity_Code"].lstrip("0") != "410000" or row["Attribute_Description"] not in attributes:
+            if row["Commodity_Code"].lstrip("0") != commodity_code or row["Attribute_Description"] not in attributes:
                 continue
             year = int(row["Market_Year"])
             # Start at 2000: avoid predecessor-state and EU-15-era aggregation.
@@ -244,10 +244,10 @@ def parse_usda(content, as_of=None):
                 raise ValueError("USDA data has a future release month")
             released.add(release)
             if row["Unit_Description"].strip().upper() != "(1000 MT)":
-                raise ValueError("USDA wheat quantity unit changed")
+                raise ValueError("USDA grain quantity unit changed")
             value = numeric(row["Value"])
             if value is None or value < 0:
-                raise ValueError("Missing or negative USDA wheat quantity")
+                raise ValueError("Missing or negative USDA grain quantity")
             country = years.setdefault(year, {}).setdefault(row["Country_Name"], {})
             attribute = attributes[row["Attribute_Description"]]
             if attribute in country:
@@ -267,8 +267,16 @@ def parse_usda(content, as_of=None):
         totals = {key: sum(values[key] for values in chosen.values()) for key in attributes.values()}
         if totals["consumption"] <= 0 or totals["production"] <= 0:
             raise ValueError("Invalid USDA global denominator/production")
+        china = countries.get("China")
+        excluding_china = None
+        if china and set(china) == set(attributes.values()):
+            rest = {key: totals[key] - china[key] for key in totals}
+            if any(value < 0 for value in rest.values()) or rest["consumption"] <= 0:
+                raise ValueError("Invalid USDA ex-China quantities")
+            excluding_china = {**rest, "ratio": round(rest["endingStocks"] / rest["consumption"] * 100, 4)}
         history.append({"year": f"{year}/{year+1}", **totals,
                         "ratio": round(totals["endingStocks"] / totals["consumption"] * 100, 4),
+                        "excludingChina": excluding_china,
                         "countryAreaCount": len(chosen)})
     if len(history) < 2 or any(int(b["year"][:4])-int(a["year"][:4]) != 1
                                for a, b in zip(history, history[1:])):
@@ -276,10 +284,16 @@ def parse_usda(content, as_of=None):
     return {"latestPeriod": history[-1]["year"], "stockToUse": history[-1]["ratio"],
             "priorStockToUse": history[-2]["ratio"], "history": history,
             "releasePeriod": max(released), "unit": "1000 metric tons; ratio: %",
-            "methodology": "World wheat totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."}
+            "methodology": "World grain totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Ex-China subtracts China from BOTH stocks and consumption; it is not an estimate of exportable stocks. Marketing years vary by country; figures include forecasts and revisions. Rice is on a milled basis."}
 
 
 def fetch_usda():
-    data = parse_usda(download(USDA_URL))
+    content = download(USDA_URL)
+    grains = {key: parse_usda(content, commodity_code=code) for key, code in
+              (("wheat", "410000"), ("maize", "440000"), ("rice", "422110"))}
+    if len({grain["latestPeriod"] for grain in grains.values()}) != 1:
+        raise ValueError("USDA grain marketing years are not aligned")
+    # Keep the legacy wheat shape for existing cards and consumers.
+    data = {**grains["wheat"], "grains": grains}
     return wrap(data, "USDA · PSD", "https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads",
                 USDA_URL, data["latestPeriod"], data["unit"], data["methodology"])

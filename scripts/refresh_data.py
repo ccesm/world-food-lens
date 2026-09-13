@@ -68,6 +68,29 @@ def validate_result(result, key):
             isinstance(data.get("history"), list) and len(data["history"]) >= 2 and all(
                 isinstance(row, dict) and isinstance(row.get("year"), str) and number(row.get("ratio"))
                 and row["ratio"] >= 0 for row in data["history"])
+        if "grains" in data:
+            def quantities(row):
+                return isinstance(row, dict) and all(number(row.get(k)) for k in
+                    ("production", "consumption", "endingStocks", "ratio")) and \
+                    row["production"] > 0 and row["consumption"] > 0 and row["endingStocks"] >= 0 and \
+                    abs(row["ratio"] - row["endingStocks"] / row["consumption"] * 100) < .001
+            def grain(value):
+                if not isinstance(value, dict):
+                    return False
+                rows = value.get("history")
+                return isinstance(rows, list) and len(rows) >= 2 and all(
+                    isinstance(row, dict) and quantities(row) and
+                    bool(re.fullmatch(r"\d{4}/\d{4}", str(row.get("year", "")))) and
+                    int(row["year"][5:]) == int(row["year"][:4])+1 and
+                    (i == 0 or int(row["year"][:4]) == int(rows[i-1]["year"][:4])+1) and
+                    (row.get("excludingChina") is None or (quantities(row["excludingChina"]) and
+                        all(row["excludingChina"][k] <= row[k] for k in ("production", "consumption", "endingStocks"))))
+                    for i, row in enumerate(rows)) and value.get("latestPeriod") == rows[-1]["year"] and \
+                    value.get("stockToUse") == rows[-1]["ratio"] and value.get("priorStockToUse") == rows[-2]["ratio"]
+            grains = data["grains"]
+            valid = valid and isinstance(grains, dict) and all(grain(grains.get(k)) and
+                grains[k]["latestPeriod"] == data["latestPeriod"] for k in ("wheat", "maize", "rice")) and \
+                data["history"] == grains["wheat"]["history"]
     elif key == "noaa":
         valid = number(data.get("latest", {}).get("value")) and isinstance(data.get("history"), list) and \
             len(data["history"]) >= 2 and all(isinstance(row, dict) and isinstance(row.get("period"), str) and

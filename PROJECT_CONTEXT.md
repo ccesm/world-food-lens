@@ -106,3 +106,18 @@ Forecast limitations are part of the feature: revised historical vintages,
 overlapping evaluation windows, no validated causal coefficients for climate
 or conflict, and no independently guaranteed interval coverage. Do not label
 these model estimates as official predictions or future observations.
+
+## Food-system evidence increment (2026-09-13 UTC)
+
+Added an evidence-gated Global Food Stress Monitor; only stocks (20%), costs
+(15%) and FAO price levels (10%) are currently scoreable. Missing factors are
+not zero or rescaled; the overall score stays unavailable. No crisis probability
+or calibrated historical similarity is claimed. See docs/FOOD_SYSTEM_UPGRADE.md.
+
+USDA retains the original wheat shape plus three-grain histories (wheat, maize,
+milled rice), with optional ex-China stocks AND consumption. World Bank monthly
+data retain all nine existing commodity fields. No new API credentials.
+
+21 crop-season templates are editorial estimates, not current crop progress.
+The calendar and winterkill checklist must never be labelled live weather or
+evidence of synchronized crop damage. Existing site features are preserved.

@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from refresh_data import refresh_bundle, write_cache
+from refresh_data import refresh_bundle, write_cache, validate_result
 
 
 def fixture(value=130, period="2026-07"):
@@ -18,6 +18,18 @@ def fixture(value=130, period="2026-07"):
 
 
 class RefreshTests(unittest.TestCase):
+    def test_extended_grains_validate_and_bad_extension_retains_full_cache(self):
+        previous = json.loads((Path(__file__).resolve().parents[1] / "public/data/official-data.json").read_text())
+        original = previous["sources"]["usda"]
+        self.assertEqual(validate_result(original,"usda"),original)
+        for field,value in (("consumption",0),("ratio",999),("year","2024/2025")):
+            bad = copy.deepcopy(original)
+            bad["data"]["grains"]["rice"]["history"][-1][field] = value
+            result, failures = refresh_bundle(previous,{"usda":lambda:bad},"test-attempt")
+            self.assertIn("usda",failures)
+            self.assertEqual(result["sources"]["usda"]["data"],original["data"])
+            self.assertEqual(result["sources"]["usda"]["fetchedAt"],original["fetchedAt"])
+
     def test_independent_failure_retains_last_success_and_original_input(self):
         previous = {"sources": {"fao": dict(fixture(), fetchedAt="old", status="ok")}}
         untouched = copy.deepcopy(previous)

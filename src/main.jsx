@@ -15,6 +15,10 @@ import PolicyEvents from "./components/PolicyEvents";
 import SupplyHistory from "./components/SupplyHistory";
 import PriceOutlook from "./components/PriceOutlook";
 import ReleaseCalendar from "./components/ReleaseCalendar";
+import GlobalFoodStress from "./components/GlobalFoodStress";
+import GrainInventory from "./components/GrainInventory";
+import CropCriticalWindow from "./components/CropCriticalWindow";
+import FoodHistory from "./components/FoodHistory";
 import "./styles.css";
 
 const copy = {
@@ -273,10 +277,14 @@ function App(){
       </section>
 
       <nav className="section-nav" aria-label={lang==="zh"?"页面模块导航":"Page sections"}>
+        <a href="#food-stress">{lang==="zh"?"粮食压力":"Food stress"}</a>
+        <a href="#crop-windows">{lang==="zh"?"作物窗口":"Crop windows"}</a>
         {t.nav.map((x,i)=><React.Fragment key={x}><a href={`#s${i+1}`}>{x}</a>{i===1&&<a href="#climate">{lang==="zh"?"气候监测":"Climate monitor"}</a>}</React.Fragment>)}
         <a href="#price-outlook">{lang==="zh"?"价格展望":"Price outlook"}</a>
         <a href="#release-calendar">{lang==="zh"?"发布日历":"Release calendar"}</a>
       </nav>
+
+      <GlobalFoodStress bundle={official} lang={lang}/>
 
       <section id="s1" className="section">
         <div className="section-no">01 / PRICE PATH</div>
@@ -323,10 +331,13 @@ function App(){
         {provenance.usda&&<details className="supply-details"><summary>{lang==="zh"?"查看产量、消费和库存（千公吨）":"View production, use and stocks (thousand metric tons)"}</summary><div className="raw-table"><table><thead><tr><th>{lang==="zh"?"市场年度":"Marketing year"}</th><th>{lang==="zh"?"产量":"Production"}</th><th>{lang==="zh"?"国内消费":"Domestic use"}</th><th>{lang==="zh"?"期末库存":"Ending stocks"}</th></tr></thead><tbody>{wheatHistory.map(row=><tr key={row.year}><td>{row.year}</td><td>{row.production?.toLocaleString()}</td><td>{row.consumption?.toLocaleString()}</td><td>{row.endingStocks?.toLocaleString()}</td></tr>)}</tbody></table></div></details>}
       </section>
 
+      <section id="grain-inventory" className="section alt"><GrainInventory record={official.sources.usda} lang={lang}/></section>
+      <CropCriticalWindow lang={lang}/>
       <ClimateMonitor record={official.sources.noaa} lang={lang}/>
       <PolicyEvents lang={lang}/>
       <PriceOutlook record={official.sources.fao} lang={lang}/>
       <ReleaseCalendar lang={lang}/>
+      <FoodHistory lang={lang}/>
 
       <section id="s4" className="section alt">
         <div className="section-no">04 / CONNECT THE DOTS</div><h2>{t.dots}</h2>
