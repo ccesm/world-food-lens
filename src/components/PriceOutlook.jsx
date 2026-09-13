@@ -4,12 +4,12 @@ import {buildPriceForecast} from "../services/priceForecast.js";
 import {hasOfficialData,sourceStateLabel} from "../services/officialSources.js";
 import "../outlook.css";
 
-export default function PriceOutlook({record,lang}) {
+export default function PriceOutlook({record,lang,sectionId="price-outlook"}) {
   const zh=lang==="zh", [shock,setShock]=useState(0);
   const result=useMemo(()=>buildPriceForecast(hasOfficialData("fao",record)?record.data.monthly:[],shock),[record,shock]);
   const label={actual:zh?"已发布指数":"Published index",forecast:zh?"模型基线":"Model baseline",scenario:zh?"自设情景":"User scenario",band:zh?"历史误差参考带":"Historical error band"};
   const chart=result.available?[...result.history.slice(0,-1),{...result.history.at(-1),forecast:result.lastValue,scenario:result.lastValue},...result.points]:[];
-  return <section id="price-outlook" className="section outlook-section">
+  return <section id={sectionId} className="section outlook-section">
     <div className="section-no">PRICE OUTLOOK · EXPERIMENTAL</div>
     <h2>{zh?"未来一年，粮价可能怎样变化？":"Where could food prices go over the next year?"}</h2>
     <p>{zh?"实验模型预测 FAO 全球粮食价格指数，单位为指数点（2014–2016 = 100）。预测从最后一个已发布月份起算 12 个月，不代表 ETF、股票或单一作物价格。":"An experimental forecast of the FAO global Food Price Index, in index points (2014–2016 = 100). The horizon is 12 months after the last published month, not an ETF, equity or individual crop forecast."}</p>

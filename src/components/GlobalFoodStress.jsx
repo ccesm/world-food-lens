@@ -1,5 +1,4 @@
-import React, {useEffect,useMemo,useState} from "react";
-import {buildFoodStress} from "../services/foodStress.js";
+import React from "react";
 import {sourceStateLabel} from "../services/officialSources.js";
 import "../food-system.css";
 
@@ -10,7 +9,7 @@ const copy={
     factors:{crop:"多产区作物压力",stocks:"谷物库存缓冲",imports:"进口需求冲击",energy:"能源与化肥成本",trade:"贸易限制与物流",prices:"食品价格水平确认",synchronization:"关键窗口同步受压"},
     stocksRaw:"小麦 / 玉米 / 稻米库存消费比",energyRaw:"Brent / 尿素 / DAP / 钾肥",priceRaw:"FAO 名义粮食价格指数",
     stocksRule:"三种谷物分别计算当前库存消费比在此前年度中的百分位；压力 = 100 − 百分位，再等权平均。不是总谷物指标。",
-    energyRule:"四项名义价格分别与此前最多 120 个月比较，取价格水平百分位的等权平均。不是冲突强度，也不表示成本都在上涨。Brent 使用 World Bank，与上方 EIA 基准可能不同。",
+    energyRule:"四项名义价格分别与此前最多 120 个月比较，取价格水平百分位的等权平均。不是冲突强度，也不表示成本都在上涨。Brent 使用 World Bank，与价格模块中的 EIA 基准可能不同。",
     pricesRule:"FAO 当前名义指数在此前最多 120 个月的价格水平百分位。不是期货突破指标，不代表物理短缺已确认。",
     method:"方法、缺失值与时间限制",methodText:"综合公式为 Σ(因子分 × 权重)。仅当全部七项都有合格证据才显示总分；不把缺失记为 0，也不按现有因子重新放大到 100 分。百分位采用此前观测的中秩法，相同数值计半；价格至少需 36 个对比月份，库存至少需 10 个对比年度。",
     freshness:"刷新失败、超过 72 小时未检查或发布期超过 100 天的来源不参与当前计分，但原始缓存仍可查看。月度价格与年度供需频率不同，不能当作同一天的实时观测。名义价格未去除通胀，历史值含修订和预测。",
@@ -26,7 +25,7 @@ const copy={
     factors:{crop:"Multi-region crop stress",stocks:"Grain inventory buffer",imports:"Importer demand shock",energy:"Energy and fertilizer costs",trade:"Trade restrictions / logistics",prices:"Food price-level confirmation",synchronization:"Critical-window synchronization"},
     stocksRaw:"Wheat / maize / rice stocks-to-use",energyRaw:"Brent / urea / DAP / potash",priceRaw:"FAO nominal Food Price Index",
     stocksRule:"Calculate each grain’s current stocks/use percentile against prior years. Stress = 100 − percentile, averaged equally across three grains. Not a total-cereal measure.",
-    energyRule:"Average four nominal price-level percentiles against up to 120 prior months. Not conflict intensity or a claim that all costs are rising. Uses World Bank Brent, which can differ from EIA above.",
+    energyRule:"Average four nominal price-level percentiles against up to 120 prior months. Not conflict intensity or a claim that all costs are rising. Uses World Bank Brent, which can differ from the price module’s EIA benchmark.",
     pricesRule:"Current nominal FAO index percentile against up to 120 prior months. Not a futures breakout or confirmation of physical shortage.",
     method:"Method, missingness and timing",methodText:"Total = Σ(factor score × weight). Show it only when all seven factors have eligible evidence. Missing is not zero and available factors are not rescaled to 100. Percentiles use midranks against prior observations, counting ties as half; minimum comparison samples are 36 price months and 10 inventory years.",
     freshness:"Failed refreshes, sources unchecked for over 72 hours or releases older than 100 days are excluded from current scoring; retained observations remain accessible. Monthly prices and annual supply estimates are not same-day live measurements. Nominal prices are not inflation-adjusted; historical data include revisions and forecasts.",
@@ -39,10 +38,8 @@ const copy={
 };
 const number=x=>Number.isFinite(x)?x.toFixed(1):"—";
 
-export default function GlobalFoodStress({bundle,lang}) {
-  const [now,setNow]=useState(Date.now);
-  useEffect(()=>{const timer=setInterval(()=>setNow(Date.now()),60000);return ()=>clearInterval(timer);},[]);
-  const t=copy[lang], model=useMemo(()=>buildFoodStress(bundle,now),[bundle,now]);
+export default function GlobalFoodStress({bundle,lang,model}) {
+  const t=copy[lang];
   const comparison=(signal)=>signal?`${signal.referenceStart}–${signal.referenceEnd} · n=${signal.count}`:"—";
   const metadata={
     stocks:{record:bundle.sources.usda,raw:t.stocksRaw,value:["wheat","maize","rice"].map(key=>`${number(model.inventories[key]?.current.ratio)}%`).join(" / "),period:model.inventories.wheat?.current.year,rule:t.stocksRule},
@@ -57,7 +54,7 @@ export default function GlobalFoodStress({bundle,lang}) {
       <article className="fs-card"><span>{t.known}</span><strong>{number(model.known)} <small>/ {model.coverage}</small></strong><small>{t.knownNote}</small></article>
     </div>
     <p className="fs-notice">{t.notice}</p>
-    <details className="fs-details" open><summary>{t.factor}</summary><div className="fs-factor-grid">
+    <details className="fs-details"><summary>{t.factor}</summary><div className="fs-factor-grid">
       {model.rows.map(row=>{const meta=metadata[row.id];return <article className="fs-card" key={row.id}>
         <div className="fs-factor-head"><h3>{t.factors[row.id]}</h3><span>{row.weight}% {t.weight}</span></div>
         <p className="fs-calculation">{number(row.score)} × {row.weight}% = {number(row.contribution)}</p>

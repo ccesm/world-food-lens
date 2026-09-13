@@ -32,7 +32,7 @@ const copy = {
   },
 };
 
-export default function PolicyEvents({lang = "zh"}) {
+export default function PolicyEvents({lang = "zh",sectionId="s3"}) {
   const locale = lang === "en" ? "en" : "zh";
   const t = copy[locale];
   const [filters, setFilters] = useState({query: "", country: "", type: "", commodity: ""});
@@ -40,7 +40,7 @@ export default function PolicyEvents({lang = "zh"}) {
   const update = key => event => setFilters(current => ({...current, [key]: event.target.value}));
   const clear = () => setFilters({query: "", country: "", type: "", commodity: ""});
 
-  return <section id="s3" className="section policy-section" aria-labelledby="policy-heading">
+  return <section id={sectionId} className="section policy-section" aria-labelledby="policy-heading">
     <div className="section-no">POLICY &amp; CONFLICT · HISTORICAL REGISTRY</div>
     <h2 id="policy-heading">{t.title}</h2>
     <p>{t.intro}</p>

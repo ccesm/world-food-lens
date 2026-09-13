@@ -19,6 +19,9 @@ import GlobalFoodStress from "./components/GlobalFoodStress";
 import GrainInventory from "./components/GrainInventory";
 import CropCriticalWindow from "./components/CropCriticalWindow";
 import FoodHistory from "./components/FoodHistory";
+import HomeOrientation,{HomeHero} from "./components/HomeOrientation";
+import DetailModule from "./components/DetailModule";
+import useFoodStress from "./hooks/useFoodStress";
 import "./styles.css";
 
 const copy = {
@@ -198,6 +201,8 @@ function App(){
   const [selected,setSelected]=useState(investments.find(x=>x.symbol==="DBA"));
   const t=copy[lang];
 
+  const stressModel=useFoodStress(official);
+  useEffect(()=>{document.documentElement.lang=lang==="zh"?"zh-CN":"en";},[lang]);
   const dashboard=useMemo(()=>createDashboard(snapshot,official),[official]);
   const {provenance}=dashboard;
   const {faoFoodPriceIndex:fao,brent,urea,wheat,wheatHistory}=getDashboardMetrics(dashboard);
@@ -261,32 +266,68 @@ function App(){
     </header>
 
     <main>
-      <section className="hero">
-        <div className="eyebrow">{t.badge}</div>
-        <h1>{t.hero}</h1>
-        <p>{t.intro}</p>
-        <div className="sync">{Object.values(provenance).some(x=>x&&typeof x==="object")?t.sync:t.recovered}</div>
+      <HomeHero lang={lang} model={stressModel}>
         {refreshMsg && <div className="notice" role="status">{refreshMsg==="loaded"?(lang==="zh"?"已读取网站最新发布的缓存。此按钮不会直接触发官方接口抓取；各来源的成功/失败状态见数据来源。":"Loaded the site's latest published cache. This button does not trigger upstream downloads; source success/failure is shown in Data Desk."):(lang==="zh"?"网站缓存暂时无法读取，继续显示已载入的数据。":"The published cache could not be read; previously loaded data remain visible.")}</div>}
-      </section>
-
-      <section className="kpis">
-        <Kpi lang={lang} source={provenance.fao} label={lang==="zh"?"FAO 粮食价格指数":"FAO Food Price Index"} value={fao.value.toFixed(1)} change={fao.momPct} period={fao.period} unit={fao.unit}/>
-        <Kpi lang={lang} source={provenance.brent} label={lang==="zh"?"Brent 原油":"Brent crude"} value={`$${brent.value.toFixed(2)}`} change={brent.momPct} period={brent.period} unit={lang==="zh"?"美元 / 桶":brent.unit}/>
-        <Kpi lang={lang} source={provenance.urea} label={lang==="zh"?"尿素基准价格":"Urea benchmark"} value={`$${urea.value.toFixed(1)}`} change={urea.momPct} period={urea.period} unit={lang==="zh"?"美元 / 公吨":urea.unit}/>
-        <Kpi lang={lang} source={provenance.usda} estimate={!!provenance.usda} label={t.ratio} value={`${wheat.value.toFixed(1)}%`} change={wheat.deltaPp} changeUnit="pp" period={wheat.period} unit={wheat.unit}/>
-      </section>
+      </HomeHero>
+      <HomeOrientation lang={lang}/>
 
       <nav className="section-nav" aria-label={lang==="zh"?"页面模块导航":"Page sections"}>
+        <a href="#home">{lang==="zh"?"首页导览":"Start here"}</a>
         <a href="#food-stress">{lang==="zh"?"粮食压力":"Food stress"}</a>
+        <a href="#grain-inventory">{lang==="zh"?"三谷物库存":"Grain inventories"}</a>
         <a href="#crop-windows">{lang==="zh"?"作物窗口":"Crop windows"}</a>
         {t.nav.map((x,i)=><React.Fragment key={x}><a href={`#s${i+1}`}>{x}</a>{i===1&&<a href="#climate">{lang==="zh"?"气候监测":"Climate monitor"}</a>}</React.Fragment>)}
         <a href="#price-outlook">{lang==="zh"?"价格展望":"Price outlook"}</a>
         <a href="#release-calendar">{lang==="zh"?"发布日历":"Release calendar"}</a>
       </nav>
 
-      <GlobalFoodStress bundle={official} lang={lang}/>
+      <GlobalFoodStress bundle={official} lang={lang} model={stressModel}/>
 
-      <section id="s1" className="section">
+      <CropCriticalWindow lang={lang}/>
+
+      <section id="grain-inventory" className="section alt"><GrainInventory record={official.sources.usda} lang={lang}/></section>
+
+      <DetailModule id="s2" title={lang==="zh"?"查看详细供需历史":"Explore supply history"} description={lang==="zh"?`产量与消费能否平衡？展开 ${wheatHistory.length} 年小麦图表与数据。`:`Can harvests keep up? Expand ${wheatHistory.length} years of wheat charts and data.`}>
+      <section id="s2-content" className="section alt">
+        <div className="section-no">02 / USDA • WORLD TOTAL</div>
+        <h2>{t.usdaTitle}</h2>
+        <div className="usda-grid">
+          <div className="ratio-card"><span>{t.ratio}</span><strong>{wheat.value.toFixed(1)}%</strong><b className={wheat.deltaPp>0?"up":"down"}>{wheat.deltaPp>0?"+":""}{wheat.deltaPp.toFixed(1)} pp</b><small>{wheat.period} · USDA PSD · {provenance.usda?(lang==="zh"?"含预测/估计，可修订":"Includes forecasts/estimates; subject to revision"):t.recovered}</small></div>
+          <SupplyHistory history={wheatHistory} lang={lang} official={!!provenance.usda}/>
+        </div>
+        <DataBadge record={provenance.usda} lang={lang}/>
+        <div className="explain"><b>{lang==="zh"?"库存消费比是什么？":"What is stock-to-use?"}</b><p>{t.ratioHelp}</p><small>{provenance.usda?(lang==="zh"?"比率由 USDA 世界小麦期末库存和国内消费计算。市场年度不是自然年；最新年度可能为预测，历史值也可能修订。":"Ratios are calculated from USDA world wheat ending stocks and domestic consumption. Marketing years differ from calendar years; recent years can be forecasts and historical values can be revised."):(lang==="zh"?"当前为旧站恢复的比率，尚无可用的官方完整供需序列。":"Recovered ratios remain displayed; a verified full supply/use series is not yet available.")}</small></div>
+        {provenance.usda&&<details className="supply-details"><summary>{lang==="zh"?"查看产量、消费和库存（千公吨）":"View production, use and stocks (thousand metric tons)"}</summary><div className="raw-table"><table><thead><tr><th>{lang==="zh"?"市场年度":"Marketing year"}</th><th>{lang==="zh"?"产量":"Production"}</th><th>{lang==="zh"?"国内消费":"Domestic use"}</th><th>{lang==="zh"?"期末库存":"Ending stocks"}</th></tr></thead><tbody>{wheatHistory.map(row=><tr key={row.year}><td>{row.year}</td><td>{row.production?.toLocaleString()}</td><td>{row.consumption?.toLocaleString()}</td><td>{row.endingStocks?.toLocaleString()}</td></tr>)}</tbody></table></div></details>}
+      </section>
+      </DetailModule>
+
+
+      <DetailModule id="s3" anchorPrefix="policy-" title={lang==="zh"?"贸易与政策：供应如何流动":"Trade & policy: how supply moves"} description={lang==="zh"?"展开历史事件库与搜索；不是实时限制清单。":"Search historical events; not a live list of restrictions."}>
+        <PolicyEvents lang={lang} sectionId="s3-content"/>
+      </DetailModule>
+
+
+      <DetailModule id="s4" title={lang==="zh"?"能源与化肥：压力如何传导":"Energy & fertilizer: how stress transmits"} description={lang==="zh"?"展开能源、库存和政策的解释，不把关联当因果。":"Explore energy, inventory and policy mechanisms, without assuming causality."}>
+      <section id="s4-content" className="section alt">
+        <div className="section-no">04 / CONNECT THE DOTS</div><h2>{t.dots}</h2>
+        <div className="three">
+          <article><i>01</i><h3>{t.energy}</h3><p>{t.energyText}</p></article>
+          <article><i>02</i><h3>{t.stocks}</h3><p>{t.stocksText}</p></article>
+          <article><i>03</i><h3>{t.policy}</h3><p>{t.policyText}</p></article>
+        </div>
+        <div className="caution"><b>{t.causality}</b><p>{t.causalityText}</p></div>
+      </section>
+      </DetailModule>
+
+
+      <DetailModule id="s1" title={lang==="zh"?"市场确认：价格与成本":"Market confirmation: prices & costs"} description={lang==="zh"?"展开四项指标、粮价/原油曲线及化肥与农产品基准。":"Expand headline indicators, food/oil charts and commodity benchmarks."}>
+      <section className="kpis">
+        <Kpi lang={lang} source={provenance.fao} label={lang==="zh"?"FAO 粮食价格指数":"FAO Food Price Index"} value={fao.value.toFixed(1)} change={fao.momPct} period={fao.period} unit={fao.unit}/>
+        <Kpi lang={lang} source={provenance.brent} label={lang==="zh"?"Brent 原油":"Brent crude"} value={`$${brent.value.toFixed(2)}`} change={brent.momPct} period={brent.period} unit={lang==="zh"?"美元 / 桶":brent.unit}/>
+        <Kpi lang={lang} source={provenance.urea} label={lang==="zh"?"尿素基准价格":"Urea benchmark"} value={`$${urea.value.toFixed(1)}`} change={urea.momPct} period={urea.period} unit={lang==="zh"?"美元 / 公吨":urea.unit}/>
+        <Kpi lang={lang} source={provenance.usda} estimate={!!provenance.usda} label={t.ratio} value={`${wheat.value.toFixed(1)}%`} change={wheat.deltaPp} changeUnit="pp" period={wheat.period} unit={wheat.unit}/>
+      </section>
+      <section id="s1-content" className="section">
         <div className="section-no">01 / PRICE PATH</div>
         <div className="section-head">
           <div><h2>{t.priceTitle}</h2><p>{lang==="zh"?"图中序列统一换算为共同起点 = 100，便于比较变化幅度，不代表价格水平相同。共同波动不等于因果关系。":"Series are rebased to a common starting point of 100 for change comparison. Co-movement does not establish causality."}</p></div>
@@ -318,46 +359,39 @@ function App(){
           <TableBox kicker="WORLD BANK / AGRICULTURE" title={t.agriTitle} rows={dashboard.agriculture} lang={lang} source={provenance.worldBank}/>
         </div>
       </section>
+      </DetailModule>
 
-      <section id="s2" className="section alt">
-        <div className="section-no">02 / USDA • WORLD TOTAL</div>
-        <h2>{t.usdaTitle}</h2>
-        <div className="usda-grid">
-          <div className="ratio-card"><span>{t.ratio}</span><strong>{wheat.value.toFixed(1)}%</strong><b className={wheat.deltaPp>0?"up":"down"}>{wheat.deltaPp>0?"+":""}{wheat.deltaPp.toFixed(1)} pp</b><small>{wheat.period} · USDA PSD · {provenance.usda?(lang==="zh"?"含预测/估计，可修订":"Includes forecasts/estimates; subject to revision"):t.recovered}</small></div>
-          <SupplyHistory history={wheatHistory} lang={lang} official={!!provenance.usda}/>
-        </div>
-        <DataBadge record={provenance.usda} lang={lang}/>
-        <div className="explain"><b>{lang==="zh"?"库存消费比是什么？":"What is stock-to-use?"}</b><p>{t.ratioHelp}</p><small>{provenance.usda?(lang==="zh"?"比率由 USDA 世界小麦期末库存和国内消费计算。市场年度不是自然年；最新年度可能为预测，历史值也可能修订。":"Ratios are calculated from USDA world wheat ending stocks and domestic consumption. Marketing years differ from calendar years; recent years can be forecasts and historical values can be revised."):(lang==="zh"?"当前为旧站恢复的比率，尚无可用的官方完整供需序列。":"Recovered ratios remain displayed; a verified full supply/use series is not yet available.")}</small></div>
-        {provenance.usda&&<details className="supply-details"><summary>{lang==="zh"?"查看产量、消费和库存（千公吨）":"View production, use and stocks (thousand metric tons)"}</summary><div className="raw-table"><table><thead><tr><th>{lang==="zh"?"市场年度":"Marketing year"}</th><th>{lang==="zh"?"产量":"Production"}</th><th>{lang==="zh"?"国内消费":"Domestic use"}</th><th>{lang==="zh"?"期末库存":"Ending stocks"}</th></tr></thead><tbody>{wheatHistory.map(row=><tr key={row.year}><td>{row.year}</td><td>{row.production?.toLocaleString()}</td><td>{row.consumption?.toLocaleString()}</td><td>{row.endingStocks?.toLocaleString()}</td></tr>)}</tbody></table></div></details>}
-      </section>
 
-      <section id="grain-inventory" className="section alt"><GrainInventory record={official.sources.usda} lang={lang}/></section>
-      <CropCriticalWindow lang={lang}/>
-      <ClimateMonitor record={official.sources.noaa} lang={lang}/>
-      <PolicyEvents lang={lang}/>
-      <PriceOutlook record={official.sources.fao} lang={lang}/>
-      <ReleaseCalendar lang={lang}/>
+      <DetailModule id="climate" title={lang==="zh"?"气候背景：NOAA 海温观测":"Climate context: NOAA ocean observations"} description={lang==="zh"?"海温不是地区天气，更不是作物损失。":"Ocean temperatures are not local weather or crop losses."}>
+        <ClimateMonitor record={official.sources.noaa} lang={lang} sectionId="climate-content"/>
+      </DetailModule>
+
+
+      <DetailModule id="price-outlook" title={lang==="zh"?"实验价格展望":"Experimental price outlook"} description={lang==="zh"?"展开未来 12 个月情景、历史误差与模型方法。":"Explore 12-month scenarios, historical errors and model methodology."}>
+        <PriceOutlook record={official.sources.fao} lang={lang} sectionId="price-outlook-content"/>
+      </DetailModule>
+
+
+      <DetailModule id="release-calendar" title={lang==="zh"?"下一批官方数据何时发布？":"When is the next official release?"} description={lang==="zh"?"展开已确认排期与未来一年的预计窗口。":"Explore confirmed dates and estimated windows for the coming year."}>
+        <ReleaseCalendar lang={lang} sectionId="release-calendar-content"/>
+      </DetailModule>
+
+
       <FoodHistory lang={lang}/>
 
-      <section id="s4" className="section alt">
-        <div className="section-no">04 / CONNECT THE DOTS</div><h2>{t.dots}</h2>
-        <div className="three">
-          <article><i>01</i><h3>{t.energy}</h3><p>{t.energyText}</p></article>
-          <article><i>02</i><h3>{t.stocks}</h3><p>{t.stocksText}</p></article>
-          <article><i>03</i><h3>{t.policy}</h3><p>{t.policyText}</p></article>
-        </div>
-        <div className="caution"><b>{t.causality}</b><p>{t.causalityText}</p></div>
-      </section>
-
-      <section id="s5" className="section">
+      <DetailModule id="s5" title={lang==="zh"?"试一试：投入成本实验室":"Try it: input-cost lab"} description={lang==="zh"?"手动调整假设，观察总成本变化；不是粮价预测。":"Adjust assumptions and explore total costs—not a food-price forecast."}>
+      <section id="s5-content" className="section">
         <div className="section-no">05 / LEARNING LAB</div><h2>{t.lab}</h2><p>{t.labHelp}</p>
         <div className="lab">
           <Slider label={t.fuel} value={fuel} set={setFuel}/><Slider label={t.fert} value={fert} set={setFert}/><Slider label={t.other} value={other} set={setOther}/>
           <div className="formula"><span>{t.total}</span><strong>{total>=0?"+":""}{total.toFixed(1)}%</strong><code>ΔC = 0.2×ΔFuel + 0.3×ΔFertilizer + 0.5×ΔOther</code><button onClick={()=>{setFuel(0);setFert(0);setOther(0)}}>{t.reset}</button></div>
         </div>
       </section>
+      </DetailModule>
 
-      <section id="s6" className="section alt">
+
+      <DetailModule id="s6" title={lang==="zh"?"最后看市场：农业敏感资产":"Then explore agriculturally sensitive assets"} description={lang==="zh"?"12 个现有标的及 TradingView 图表；不是买卖建议。":"12 existing instruments with TradingView charts; not trading recommendations."}>
+      <section id="s6-content" className="section alt">
         <div className="section-no">06 / INVESTMENT LENS</div><h2>{t.invest}</h2><p>{t.investHelp}</p>
         <div className="invest-grid">
           <div className="tickers" aria-label={t.invest}>{investments.map(x=><button aria-pressed={x.symbol===selected.symbol} className={x.symbol===selected.symbol?"active":""} key={x.symbol} onClick={()=>setSelected(x)}><b>{x.symbol}</b><span>{lang==="zh"?x.zh:x.en}</span></button>)}</div>
@@ -368,6 +402,8 @@ function App(){
           </div>
         </div>
       </section>
+      </DetailModule>
+
 
       <SourceDesk bundle={official} lang={lang} recovered={snapshot}/>
     </main>

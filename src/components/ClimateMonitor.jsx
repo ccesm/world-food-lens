@@ -54,7 +54,7 @@ function timestamp(value) {
   return Number.isNaN(date.getTime()) ? value : `${date.toISOString().slice(0, 16).replace("T", " ")} UTC`;
 }
 
-export default function ClimateMonitor({record, lang = "zh"}) {
+export default function ClimateMonitor({record, lang = "zh",sectionId="climate"}) {
   const t = copy[lang] || copy.zh;
   const [months, setMonths] = useState(36);
   const latest = record?.data?.latest;
@@ -62,7 +62,7 @@ export default function ClimateMonitor({record, lang = "zh"}) {
   const hasData = latest && Number.isFinite(latest.value) && history.length > 0;
   const direction = hasData ? (latest.value > 0 ? "positive" : latest.value < 0 ? "negative" : "zero") : "zero";
 
-  return <section id="climate" className="section climate-section">
+  return <section id={sectionId} className="section climate-section">
     <div className="section-no">CLIMATE MONITOR · NOAA</div>
     <h2>{t.title}</h2><p>{t.intro}</p>
     {record?.status === "error" && hasData && <p role="status" className="climate-warning"><b>{t.cachedTitle} · </b>{t.cached}</p>}

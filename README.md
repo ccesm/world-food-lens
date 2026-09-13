@@ -28,6 +28,17 @@ https://world-food-lens.d47cjrv8xg.chatgpt.site/
 - Mobile-responsive design
 - GitHub Pages deployment workflow
 
+## Homepage: explain the logic before the data
+
+The homepage now starts with purpose, a shared evidence summary and a clickable
+weather → crop stage → production → inventories → trade → energy → markets
+guide. Detailed modules are expandable; original navigation links, chart filters,
+themes and bilingual support remain available. Investment charts appear after
+the food-system explanation. No analytical formulas or upstream feeds changed.
+
+See [the homepage implementation report](docs/HOMEPAGE_GUIDE.md) for the full
+reading order, changed files, verification and current capability boundaries.
+
 ## Critical migration limitation
 
 The old `chatgpt.site` Site projection exposes the published page and a text snapshot, but not the original server-side/source bundle that performed live synchronization. Therefore this repository intentionally does **not** pretend that the recovered cache is live.

@@ -121,3 +121,13 @@ data retain all nine existing commodity fields. No new API credentials.
 21 crop-season templates are editorial estimates, not current crop progress.
 The calendar and winterkill checklist must never be labelled live weather or
 evidence of synchronized crop damage. Existing site features are preserved.
+
+## Homepage orientation (2026-09-13 UTC)
+
+The homepage explains purpose and evidence coverage before detailed charts.
+HomeOrientation provides a bilingual clickable ten-step framework and optional
+learning examples. DetailModule keeps original section anchors reachable while
+mounting charts on demand and preserving filters after closing. The hero and
+GlobalFoodStress share one useFoodStress result; model formulas are unchanged.
+Investments follow the food-system and historical context, not the introduction.
+See docs/HOMEPAGE_GUIDE.md for architecture, changed files and verification.

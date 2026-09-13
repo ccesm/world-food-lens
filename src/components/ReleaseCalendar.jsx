@@ -3,13 +3,13 @@ import {buildReleaseCalendar} from "../services/releaseCalendar.js";
 import {releaseSources,scheduleCheckedAt} from "../data/releaseSchedule.js";
 import "../outlook.css";
 
-export default function ReleaseCalendar({lang}) {
+export default function ReleaseCalendar({lang,sectionId="release-calendar"}) {
   const zh=lang==="zh",[filter,setFilter]=useState("all"),[onlyConfirmed,setOnlyConfirmed]=useState(false);
   const {today,endDate,events}=buildReleaseCalendar();
   const visible=events.filter(e=>(filter==="all"||e.source.id===filter)&&(!onlyConfirmed||e.confirmed));
   const months=[...new Set(visible.map(e=>e.month))];
   const checkedAge=(Date.parse(today)-Date.parse(scheduleCheckedAt))/86400000;
-  return <section id="release-calendar" className="section alt outlook-section">
+  return <section id={sectionId} className="section alt outlook-section">
     <div className="section-no">OFFICIAL RELEASE CALENDAR</div><h2>{zh?"下一批官方数据，什么时候发布？":"When will the next official data arrive?"}</h2>
     <p>{zh?`未来一年：${today} 至 ${endDate}。官网排期人工核对：${scheduleCheckedAt}。日期标签区分官方已排期与本站预计窗口；到期不等于已发布。`:`One-year window: ${today} to ${endDate}. Official schedules reviewed on ${scheduleCheckedAt}. Labels distinguish official schedules from planning estimates; a scheduled date is not proof of release.`}</p>
     {checkedAge>30&&<div className="notice">{zh?"日历已超过 30 天未人工核对，请以来源网站为准。":"This calendar has not been manually verified in over 30 days; check the source websites."}</div>}
