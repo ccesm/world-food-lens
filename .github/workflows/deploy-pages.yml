@@ -46,6 +46,13 @@ jobs:
       - name: Report weather source failure
         if: steps.weather.outcome == 'failure'
         run: echo "::warning::Weather source failed for one or more points. Prior dates are retained and stale/error data are not interpreted as current."
+      - name: Refresh Copernicus GDO drought monitor
+        id: drought
+        continue-on-error: true
+        run: python3 scripts/refresh_drought.py
+      - name: Report drought source failure
+        if: steps.drought.outcome == 'failure'
+        run: echo "::warning::Copernicus GDO refresh failed. Prior map periods and point classifications are retained and marked stale."
       - name: Refresh NOAA ENSO outlook
         id: enso
         continue-on-error: true
@@ -58,7 +65,7 @@ jobs:
       - name: Save cache to the source-of-truth repository
         if: github.ref == 'refs/heads/main'
         run: |
-          git add public/data/official-data.json public/data/local-weather.json public/data/enso-outlook.json
+          git add public/data/official-data.json public/data/local-weather.json public/data/enso-outlook.json public/data/drought-monitor.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

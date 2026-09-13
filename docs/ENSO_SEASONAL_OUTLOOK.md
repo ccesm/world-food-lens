@@ -50,8 +50,9 @@ are shown separately from the RONI forecast and all cache timestamps.
 3. **Observed weather and crop impacts**: the existing NASA POWER point cache
    and JRC report watchlist have their own dates and coverage. They are linked
    from this module, but the ENSO module does not silently convert them into
-   matched regional anomalies or verified yield losses. The present point
-   weather lacks climate normals, soil moisture, planted area and field damage.
+   matched regional anomalies or verified yield losses. GDO drought classes and
+   NASA point soil wetness are now linked independently; crop-area weighting,
+   rainfall normals, planted area and field damage remain missing.
 
 The **Upcoming Agricultural Exposure** overview applies this separation to four
 forward screening rows: Australia wheat, Southern Africa maize, Central Brazil
@@ -65,13 +66,15 @@ adjacent context, never as their current forecast. The IRI material is a
 not a substitute for a national meteorological service. It expires with the same
 45-day editorial review guard as the regional list.
 
-Because the NASA representative-point history begins in 2024 and has no
-adequate climate-normal baseline, the observed field cannot currently label
-rainfall “dry”, “normal” or “wet”. Consequently all four final agricultural
-risk fields remain **evidence incomplete / not rated**. A historical dry
-tendency alone can never raise that result. Low/Moderate ratings should only be
-introduced after a defined, tested rule combines same-region seasonal forecasts,
-comparable observed anomalies and crop-condition evidence.
+Because the NASA representative-point rainfall history begins in 2024 and has
+no adequate rainfall-normal baseline, the ENSO observed-rainfall field cannot
+currently label rain “dry”, “normal” or “wet”. The separate GDO and soil panels
+add useful point context but do not establish regional crop condition.
+Consequently all four final agricultural-risk fields remain **evidence
+incomplete / not rated**. A historical dry tendency alone can never raise that
+result. Low/Moderate ratings should only be introduced after a defined, tested
+rule combines same-region seasonal forecasts, crop-area-weighted observations
+and crop-condition evidence.
 
 The initial regional sources are [WMO's August–October 2026 discussion](https://wmo.int/news/media-centre/strong-el-nino-expected-intensify)
 for the Indian subcontinent and southern/eastern Australia,
@@ -119,7 +122,7 @@ Blank months are missing, not zero-probability forecasts.
 
 On screens up to 620px, the bottom bar is capped at five top-level destinations:
 Home, Food risk, Crops, Climate and More. Climate opens ENSO, Seasonal Outlook
-and Crop Weather. Drought and Soil Moisture are visible but disabled until real
-sources and methods are connected. Desktop keeps the full section navigation.
+and Crop Weather. Drought and Soil Moisture now open the connected official-data
+sections. Desktop keeps the full section navigation.
 
 No credentials, hidden endpoints or market-data entitlements are added.

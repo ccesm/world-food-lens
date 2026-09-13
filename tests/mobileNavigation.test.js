@@ -8,8 +8,8 @@ test("mobile bottom navigation stays at five primary entries",()=>{
   assert.ok(mobilePrimaryNavigation.every(item=>item.label.zh&&item.label.en));
 });
 
-test("climate submenu separates available destinations from future evidence",()=>{
-  assert.deepEqual(mobileClimateNavigation.filter(item=>item.href).map(item=>item.href),["#enso-outlook","#seasonal-outlook","#local-crop-weather"]);
-  assert.deepEqual(mobileClimateNavigation.filter(item=>!item.href).map(item=>item.label.en),["Drought","Soil moisture"]);
+test("climate submenu links only to connected climate destinations",()=>{
+  assert.deepEqual(mobileClimateNavigation.filter(item=>item.href).map(item=>item.href),["#enso-outlook","#seasonal-outlook","#local-crop-weather","#drought-monitor","#soil-moisture"]);
+  assert.equal(mobileClimateNavigation.filter(item=>!item.href).length,0);
   assert.ok([...mobileClimateNavigation,...mobileMoreNavigation].every(item=>item.label.zh&&item.label.en));
 });

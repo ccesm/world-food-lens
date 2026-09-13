@@ -71,13 +71,15 @@ F/G/W 被列为关键检查窗口。相同敏感度按记录编号稳定排序�
 | [FAO FFPI](https://www.fao.org/worldfoodsituation/foodpricesindex/en/) | 月度名义粮价指数 | 已接通，无密钥 |
 | [EIA](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=M) | 月度 Brent；保留原卡片优先顺序 | 已接通，无密钥 |
 | [NOAA CPC](https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/) | RONI 观测 | 已接通，无密钥；不能代替地方天气 |
+| [Copernicus/JRC GDO](https://joint-research-centre.ec.europa.eu/european-and-global-drought-observatories_en) | 1/6 个月 SPI、农业干旱影响风险 | 已接通代表点与官方全球图层；不等于受灾面积或减产 |
+| [NASA POWER](https://power.larc.nasa.gov/docs/services/api/temporal/daily/) | 代表点温度、降雨、根区/表层模型土壤湿润度 | 已接通，无密钥；1991–2020 同月土壤基线，不是田间实测 |
 | TradingView | 原有 12 个投资标的公开嵌入图表 | 不抓取其行情用于新评分；保留归属与延迟说明 |
 | USDA 正常作物日历 / FAO 日历 | 代表性季节背景 | 本站模板全部 `sourceType: estimated`，不是自动同步或今年实测进度 |
 | 政策事件和发布日历 | 既有精选历史记录 / 已确认和预计发布日期 | 人工核对，非实时政策状态 |
 
 没有新增需要用户输入凭证的接口，没有请求券商账户权限。
-未来卫星、天气、贸易和物流接口尚未选定，授权、限流和许可需要逐项确认，
-不是假设它们都必须付费或都需要 API key。
+卫星植被、积雪、区域灌溉、贸易和物流接口尚未选定；授权、限流和
+许可仍需逐项确认，不是假设它们都必须付费或都需要 API key。
 
 季节模板的来源与语义边界：
 
@@ -96,8 +98,9 @@ F/G/W 被列为关键检查窗口。相同敏感度按记录编号稳定排序�
 
 ## 未完成与建议顺序
 
-1. 用可授权的官方地区降雨、土壤水分/温度、积雪和作物评级，建立
-   至少一个完整作物季节的验证样本；替换通用日历为地区级记录。
+1. 在已接通的代表点降雨、GDO 干旱和 NASA 土壤湿润度之上，补充
+   作物面积加权的区域观测、土温、积雪和作物评级，并建立至少一个
+   完整作物季节的验证样本；替换通用日历为地区级记录。
 2. 引入国家/地区生产和出口份额，避免把季节敏感度误当全球重要性；
    然后才计算天气与关键窗口同步压力。
 3. 引入同口径月度进口或招标数据、当前有效政策与航道状态。

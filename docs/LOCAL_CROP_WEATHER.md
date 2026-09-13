@@ -9,13 +9,16 @@ nor does one Pampas point represent all Argentina. Nearby crops reuse a request.
 ## Source and collection
 
 [NASA POWER Daily API](https://power.larc.nasa.gov/docs/services/api/temporal/daily/)
-supplies T2M_MAX, T2M_MIN (°C), PRECTOTCORR (mm/day), requested in UTC for the
-agricultural community. Meteorological values are gridded assimilation/model
-products, not field observations. Provider lineage is retained per point.
+supplies T2M_MAX, T2M_MIN (°C), PRECTOTCORR (mm/day), GWETROOT and GWETTOP,
+requested in UTC for the agricultural community. Soil wetness is a unitless 0–1
+model estimate. Meteorological values are gridded assimilation/model products,
+not field observations. Provider lineage is retained per point.
 See [NASA's data FAQ](https://power.larc.nasa.gov/docs/faqs/data/).
 
 `python3 scripts/refresh_weather.py` retrieves daily history from 2024-01-01
-through four UTC days before the run, allowing for publication lag. It validates units,
+through four UTC days before the run, allowing for publication lag. A separate
+monthly request builds 1991–2020 same-calendar-month soil-wetness percentiles.
+The refresh validates units,
 response coordinates, complete dates, numeric ranges, missing sentinels and
 temperature ordering. Three concurrent requests maximum. Each point retains its
 last good data/fetch date independently on failure; JSON replacement is atomic.
@@ -46,10 +49,13 @@ weather ending over ten days ago suppress current interpretation; valid complete
 historical months remain available for historical template comparisons, with any
 refresh warning exposed. Missing/malformed windows yield no summary, never zero risk.
 
-No precipitation anomaly, drought designation, yield loss, winterkill probability,
-or global-score change is calculated. Climate normals, soil moisture, snow,
-irrigation, cultivars, area weights and field damage remain missing. This is a
-first weather-exposure layer, not the completed regional agricultural risk model.
+This temperature/rain panel alone does not calculate a precipitation anomaly,
+drought designation, yield loss, winterkill probability or global-score change.
+The adjacent official-data panel now provides GDO SPI/RDrI classes and NASA soil
+wetness against a same-month point baseline. Snow, irrigation, cultivars,
+crop-area weights and field damage remain missing. Together these are screening
+layers, not a completed regional agricultural risk model. See
+`docs/DROUGHT_SOIL_MOISTURE.md`.
 
 ## UI and verification
 
@@ -59,8 +65,9 @@ is expandable. Chinese/English and light/dark styles are preserved. The module
 provides NASA methodology and the exact raw request for audit.
 
 Tests cover all crop mappings, daily date/stage alignment, missing/invalid data,
-stale/error suppression, unit/sentinel validation and independent last-good
-fallback. Existing tests remain in the standard `npm test` suite.
+stale/error suppression, unit/sentinel validation, soil ranges and same-month
+climatology, and independent last-good fallback. Existing tests remain in the
+standard `npm test` suite.
 
 Initial retrieval: all 16 points succeeded, representing 2026-08-11–2026-09-09.
 Historical expansion on 2026-09-13: all 16 points succeeded from 2024-01-01

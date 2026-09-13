@@ -68,6 +68,8 @@ npm run build
 See:
 
 - `public/data/official-data.json` — generated, verified cache
+- `public/data/local-weather.json` — NASA POWER point weather and soil wetness
+- `public/data/drought-monitor.json` — Copernicus GDO point classifications and map metadata
 - `public/data/recovered-snapshot.json` — unchanged migration fallback
 - `scripts/macro_sources.py` and `scripts/climate_sources.py` — public downloads
 - `scripts/refresh_data.py` — validation and atomic cache replacement
@@ -82,6 +84,8 @@ See:
 | [EIA](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=M) | Published monthly Brent spot-price table | Preferred over World Bank at equal observation dates, not a real-time quote |
 | [USDA PSD](https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads) | Grains/pulses bulk CSV, wheat records | Marketing years since 2000; provider's EU aggregate counted once per year and separate UK rows included when supplied; includes forecasts/revisions |
 | [NOAA CPC](https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/) | Observed RONI ASCII series | Overlapping three-month windows; not an ENSO advisory or a local yield forecast |
+| [Copernicus/JRC GDO](https://joint-research-centre.ec.europa.eu/european-and-global-drought-observatories_en) | One- and six-month SPI plus agricultural drought-impact risk | Official WMS layers sampled at representative points; not affected area or yield loss |
+| [NASA POWER](https://power.larc.nasa.gov/docs/services/api/temporal/daily/) | Daily point temperature, rain, root-zone and surface soil wetness | Gridded/model estimates; 1991–2020 same-month soil baseline; not a station or field measurement |
 
 The frontend uses `src/data/dashboardMetrics.js` for both wheat cards and the
 USDA history. Stock/use is ending stocks divided by domestic consumption, and
@@ -208,8 +212,11 @@ partial through its published cutoff; future/missing months show no substitute.
 The independent latest-30-days view remains available.
 
 Run `python3 scripts/refresh_weather.py`; the existing daily deployment also
-refreshes and commits `public/data/local-weather.json`. See
-[local weather methodology](docs/LOCAL_CROP_WEATHER.md) for limitations and checks.
+refreshes and commits `public/data/local-weather.json`. Run
+`python3 scripts/refresh_drought.py` for the Copernicus cache. See
+[local weather methodology](docs/LOCAL_CROP_WEATHER.md) and
+[drought/soil-moisture methodology](docs/DROUGHT_SOIL_MOISTURE.md) for limitations
+and checks.
 
 ## Crop-weather report watchlist
 
@@ -242,8 +249,8 @@ remain visible and suppress current crop-watch claims. Run
 
 At phone widths the fixed navigation is limited to Home, Food risk, Crops,
 Climate and More. ENSO, Seasonal Outlook and Crop Weather live under Climate;
-Drought and Soil Moisture are labelled not connected rather than presented as
-working data products. The full section bar remains available on larger screens.
+Drought and Soil Moisture now link to the live official-data sections in that
+submenu. The full original section bar remains available on larger screens.
 
 ## Investment market charts
 

@@ -35,7 +35,7 @@ Inner sections receive distinct IDs to avoid duplicate anchors.
 The bottom navigation remains fixed. On desktop it retains the full section
 list. At phone widths it is capped at Home, Food risk, Crops, Climate and More;
 Climate and More open grouped secondary menus so future modules do not crowd the
-bar. Drought and Soil Moisture are visibly unavailable until connected. Desktop
+bar. Drought and Soil Moisture now open their connected official-data sections. Desktop
 flow cards use five columns; iPhone-width cards stack vertically. Both themes
 use existing theme state.
 New text follows the existing bilingual object convention; document language

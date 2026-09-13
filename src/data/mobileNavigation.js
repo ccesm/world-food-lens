@@ -12,8 +12,8 @@ export const mobileClimateNavigation=[
   {href:"#enso-outlook",label:pair("ENSO 状态与概率","ENSO state & odds")},
   {href:"#seasonal-outlook",label:pair("地区季节展望","Seasonal outlook")},
   {href:"#local-crop-weather",label:pair("产区天气","Crop weather")},
-  {label:pair("干旱监测","Drought"),status:pair("尚未接通","Not connected")},
-  {label:pair("土壤水分","Soil moisture"),status:pair("尚未接通","Not connected")},
+  {href:"#drought-monitor",label:pair("干旱监测","Drought")},
+  {href:"#soil-moisture",label:pair("土壤水分","Soil moisture")},
 ];
 
 export const mobileMoreNavigation=[

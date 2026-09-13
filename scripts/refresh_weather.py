@@ -2,6 +2,7 @@
 import copy
 import json
 import math
+import statistics
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import urlencode
@@ -10,7 +11,14 @@ from refresh_data import ROOT, utc_now, write_cache
 
 PATH = ROOT / "public/data/local-weather.json"
 POINTS = ROOT / "src/data/weatherPoints.json"
-FIELDS = {"T2M_MAX": ("max", "C"), "T2M_MIN": ("min", "C"), "PRECTOTCORR": ("rain", "mm/day")}
+FIELDS = {
+    "T2M_MAX": ("max", "C"),
+    "T2M_MIN": ("min", "C"),
+    "PRECTOTCORR": ("rain", "mm/day"),
+    "GWETROOT": ("rootWetness", "1"),
+    "GWETTOP": ("surfaceWetness", "1"),
+}
+SOIL_FIELDS = {"GWETROOT": "root", "GWETTOP": "surface"}
 
 
 def parse_daily(payload, start, end):
@@ -28,7 +36,10 @@ def parse_daily(payload, start, end):
             value = parameters.get(key, {}).get(day.strftime("%Y%m%d"))
             if isinstance(value, bool) or not isinstance(value, (float, int)) or not math.isfinite(value):
                 raise ValueError("Missing/nonfinite daily value")
-            if not ((0 <= value <= 2000) if field == "rain" else (-100 <= value <= 70)):
+            valid = (0 <= value <= 2000) if field == "rain" else \
+                    (0 <= value <= 1) if field in ("rootWetness", "surfaceWetness") else \
+                    (-100 <= value <= 70)
+            if not valid:
                 raise ValueError("Missing sentinel or implausible daily value")
             row[field] = value
         if row["min"] > row["max"]:
@@ -36,6 +47,43 @@ def parse_daily(payload, start, end):
         rows.append(row)
         day += timedelta(days=1)
     return rows
+
+
+def _percentile(values, fraction):
+    position = (len(values) - 1) * fraction
+    lower = math.floor(position)
+    upper = math.ceil(position)
+    if lower == upper:
+        return values[lower]
+    return values[lower] + (values[upper] - values[lower]) * (position - lower)
+
+
+def parse_soil_climatology(payload, start_year=1991, end_year=2020):
+    parameters = payload.get("properties", {}).get("parameter", {})
+    metadata = payload.get("parameters", {})
+    for key in SOIL_FIELDS:
+        if metadata.get(key, {}).get("units") != "1":
+            raise ValueError("Unexpected soil-wetness units")
+    months = {}
+    for month in range(1, 13):
+        entry = {}
+        for key, field in SOIL_FIELDS.items():
+            values = []
+            for year in range(start_year, end_year + 1):
+                value = parameters.get(key, {}).get(f"{year}{month:02d}")
+                if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or not 0 <= value <= 1:
+                    raise ValueError("Missing or invalid soil climatology value")
+                values.append(value)
+            values.sort()
+            entry[field] = {
+                "p10": round(_percentile(values, .10), 4),
+                "p25": round(_percentile(values, .25), 4),
+                "median": round(statistics.median(values), 4),
+                "p75": round(_percentile(values, .75), 4),
+                "p90": round(_percentile(values, .90), 4),
+            }
+        months[f"{month:02d}"] = entry
+    return {"baseline": f"{start_year}–{end_year}", "months": months}
 
 
 def fetch_point(point, start, end):
@@ -48,7 +96,14 @@ def fetch_point(point, start, end):
     coords = payload.get("geometry", {}).get("coordinates", [])
     if len(coords) < 2 or abs(coords[0]-point["lon"]) > .01 or abs(coords[1]-point["lat"]) > .01:
         raise ValueError("Unexpected response location")
+    climatology_url = "https://power.larc.nasa.gov/api/temporal/monthly/point?" + urlencode({
+        "parameters": ",".join(SOIL_FIELDS), "community": "AG", "latitude": point["lat"],
+        "longitude": point["lon"], "start": 1991, "end": 2020, "format": "JSON"})
+    with urlopen(climatology_url, timeout=45) as response:
+        climatology_payload = json.load(response)
     return {"days": parse_daily(payload, start, end), "url": url,
+            "soilClimatology": parse_soil_climatology(climatology_payload),
+            "climatologyUrl": climatology_url,
             "providerSources": payload.get("header", {}).get("sources", [])}
 
 

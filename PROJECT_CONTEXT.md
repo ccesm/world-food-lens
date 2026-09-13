@@ -137,7 +137,7 @@ See docs/HOMEPAGE_GUIDE.md for architecture, changed files and verification.
 CropCriticalWindow now fetches a separate NASA POWER daily weather cache. Sixteen
 editorial representative points map to the 21 existing crop windows. Temperature,
 rain and stage overlap are descriptive screening only: no regional area weights,
-climate normals, soil/snow/irrigation or field damage; the global model is unchanged.
+rainfall normals, snow/irrigation or field damage; the global model is unchanged.
 Earlier statements that all local weather is unconnected are superseded only for
 this point-based layer, not region-wide crop impact. The deployment refreshes both
 caches with independent last-good retention. See docs/LOCAL_CROP_WEATHER.md.
@@ -173,14 +173,31 @@ independent. See docs/ENSO_SEASONAL_OUTLOOK.md for sources and maintenance.
 The forward agricultural exposure overview now makes that separation visible
 for Australia wheat, Southern Africa maize, Central Brazil soybeans and
 Southeast Asia/Thailand rice. A typical ENSO tendency never fills the current
-forecast column. Direct region/crop matches, adjacent context, point rainfall
-and calendar stages retain distinct labels; without climate normals and crop
-condition confirmation, the agricultural-risk result remains not rated. The
+forecast column. Direct region/crop matches, adjacent context, point rainfall,
+point soil wetness and calendar stages retain distinct labels; without
+crop-area-weighted observations and crop-condition confirmation, the
+agricultural-risk result remains not rated. The
 same 45-day review guard suppresses both direct and adjacent current-outlook
 claims when the editorial set is stale.
 
 Phone navigation is capped at five primary entries: Home, Food risk, Crops,
 Climate and More. Climate contains ENSO, Seasonal Outlook and Crop Weather;
-Drought and Soil Moisture remain disabled placeholders until sources are added.
+Drought and Soil Moisture now link to connected official-data sections. Desktop
+retains its original full navigation. Do not treat either point layer as a
+country-wide drought or yield assessment.
 Do not expand the phone bottom bar with future Energy, Trade or Markets links;
 place secondary destinations in the appropriate submenu instead.
+
+## Drought and soil moisture (2026-09-13)
+
+Copernicus/JRC GDO one-month SPI, six-month SPI and RDrI-Agri are sampled at the
+same 16 representative points. Exact map periods and official WMS URLs are
+cached; the global map remains provider-hosted. NASA POWER daily records now
+include root-zone and surface model wetness, compared with 1991–2020 same-month
+point climatology. Values are unitless 0–1 estimates, not field volumetric water
+content. Source-specific age guards, schema checks, atomic writes and last-good
+retention prevent missing data from becoming a normal or low-risk result.
+
+These layers remain independent from ENSO tendencies, seasonal outlooks and
+crop calendars. They do not estimate affected hectares, production loss or a
+Global Food Stress score. See docs/DROUGHT_SOIL_MOISTURE.md.

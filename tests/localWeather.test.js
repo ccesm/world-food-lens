@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {weatherSummary as summarize} from "../src/services/localWeather.js";
+import {soilMoistureSummary} from "../src/services/droughtMonitor.js";
 const weatherSummary=(r,c,m,now)=>summarize(r,c,m,now,new Date(now).getUTCFullYear(),"recent");
 import {cropCalendars} from "../src/data/cropCalendars.js";
 const points=JSON.parse(readFileSync(new URL('../src/data/weatherPoints.json',import.meta.url)));
@@ -38,6 +39,9 @@ test('checked-in NASA point records have complete physically valid daily windows
     const c=cropCalendars.find(c=>point.crops.includes(c.id));
     assert.ok(weatherSummary(r,c,9,Math.max(Date.parse(r.fetchedAt),Date.parse(r.days.at(-1).date))));
     assert.ok(r.url.startsWith('https://power.larc.nasa.gov/api/'));
+    assert.ok(r.climatologyUrl.startsWith('https://power.larc.nasa.gov/api/temporal/monthly/'));
+    assert.equal(r.soilClimatology.baseline,'1991–2020');
+    assert.ok(soilMoistureSummary(r,7,2026,now));
   }
 });
 const monthlyRecord=(year,month,count)=>({status:'ok',fetchedAt:'2026-09-13T00:00:00Z',days:Array.from({length:count},(_,i)=>({date:new Date(Date.UTC(year,month-1,i+1)).toISOString().slice(0,10),max:36,min:10,rain:2}))});

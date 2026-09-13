@@ -16,7 +16,7 @@ const copy={
     bounds:"仅由缺失值造成的数学范围",boundsNote:"把未知因子分别设为 0 和 100 得到；不是置信区间，不预测结果。",
     levels:"分级规则（仅适用于完整证据）：≤20 低，>20–40 中等，>40–60 偏高，>60–80 高，>80 严重。",
     early:"早期信号与官方确认",earlyLead:"信息到达有先后，分歧需要同地区、同作物、同时间的证据核对。官方预测更新较慢并不意味着故意隐瞒。",
-    earlyTitle:"早期信号 · 部分接入",earlyText:"作物窗口已有 NASA 代表点温度与降雨；冠层/土壤水分、作物评级、卫星植被与采购招标仍缺失。当前尚不能自动判断“天气恶化但官方预测稳定”的分歧。",
+    earlyTitle:"早期信号 · 部分接入",earlyText:"作物窗口已有 NASA 代表点温度、降雨和模型土壤湿润度，以及 GDO 干旱背景；冠层状态、作物评级、卫星植被、灌溉与采购招标仍缺失。当前尚不能自动判断“天气恶化但官方预测稳定”的分歧。",
     officialTitle:"官方确认 · 已有部分数据",officialText:"已接通 USDA 年度供需、FAO 月度指数、World Bank 成本基准和 NOAA 海温背景。并非地区级收成确认；库存与贸易可用性还需要更多核验。",
   },
   en:{title:"Global Food Stress Monitor",intro:"When can a regional shock spread globally? Check whether harvests, stocks, trade and costs reinforce one another, then look for market confirmation. This transparent experimental screen does not equate bad weather with crop failure.",
@@ -32,7 +32,7 @@ const copy={
     bounds:"Mathematical bounds due only to missing factors",boundsNote:"Unknown factors set to 0 or 100; not a confidence interval or an outcome forecast.",
     levels:"Levels (complete evidence only): ≤20 Low; >20–40 Moderate; >40–60 Elevated; >60–80 High; >80 Critical.",
     early:"Official Data vs Early Signals",earlyLead:"Evidence arrives at different times. Compare the same crop, region and period before interpreting divergence. Slower official revisions do not imply deliberate concealment.",
-    earlyTitle:"Early signals · partly connected",earlyText:"Crop windows now include NASA point temperatures and rainfall; crown/soil moisture, crop ratings, vegetation and purchase tenders remain missing. Automated detection of deteriorating weather versus stable official production is not yet available.",
+    earlyTitle:"Early signals · partly connected",earlyText:"Crop windows now include NASA point temperatures, rainfall and modelled soil wetness plus GDO drought context. Canopy condition, crop ratings, satellite vegetation, irrigation and purchase tenders remain missing. Automated detection of deteriorating weather versus stable official production is not yet available.",
     officialTitle:"Official confirmation · partly connected",officialText:"USDA annual balances, FAO monthly prices, World Bank costs and NOAA ocean context are connected. These are not regional harvest confirmation; inventories and tradable availability still require verification.",
   },
 };
