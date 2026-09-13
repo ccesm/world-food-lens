@@ -141,3 +141,10 @@ climate normals, soil/snow/irrigation or field damage; the global model is uncha
 Earlier statements that all local weather is unconnected are superseded only for
 this point-based layer, not region-wide crop impact. The deployment refreshes both
 caches with independent last-good retention. See docs/LOCAL_CROP_WEATHER.md.
+
+The weather cache now retains history from 2024-01-01. Weather follows the crop
+window's selected year/month by default; past months require complete dates and
+current months clearly label partial coverage. Future or unavailable months
+must never fall back to current weather. Latest 30 days remains a separate view.
+Historical weather is compared with estimated seasonal templates, not measured
+historical crop progress or validated damage. Existing global scores are unchanged.

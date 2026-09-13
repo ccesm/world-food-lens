@@ -197,11 +197,15 @@ sources, modified files, missing integrations and the next validation steps.
 ## Local weather in crop windows
 
 The 21 seasonal crop windows now link to 16 NASA POWER representative grid points:
-30-day maximum/minimum temperatures, rainfall totals, low-rain runs and the
+daily history since 2024, with year/month-linked maximum/minimum temperatures,
+rainfall totals, low-rain runs and the
 overlap of hot days with template flowering/grain-fill stages. Daily values,
 coordinates, actual dates and source links are exposed. These are gridded
 estimates, not country averages, drought diagnoses or yield-loss forecasts.
 Missing/failed/stale data do not generate current interpretations or risk scores.
+Historical months require a full calendar month. The current month is labelled
+partial through its published cutoff; future/missing months show no substitute.
+The independent latest-30-days view remains available.
 
 Run `python3 scripts/refresh_weather.py`; the existing daily deployment also
 refreshes and commits `public/data/local-weather.json`. See

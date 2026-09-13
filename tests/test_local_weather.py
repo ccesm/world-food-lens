@@ -21,7 +21,7 @@ class LocalWeatherTests(unittest.TestCase):
         old={'points':{'bad':{'days':[{'date':'2026-09-08'}],'fetchedAt':'old'}}}
         def fetch(p,start,end):
             if p['id']=='bad':raise ValueError('offline')
-            self.assertEqual((end-start).days,29)
+            self.assertEqual(start,date(2024,1,1))
             self.assertEqual(end,date(2026,9,9))
             return {'days':[{'date':end.isoformat()}]}
         result=refresh(old,[{'id':'bad'},{'id':'ok'}],date(2026,9,13),fetch,'new')

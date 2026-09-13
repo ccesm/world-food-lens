@@ -21,6 +21,7 @@ export default function CropCriticalWindow({lang}) {
   const t=copy[lang],currentMonth=new Date().getUTCMonth()+1;
   const [month,setMonth]=useState(currentMonth),[crop,setCrop]=useState("all"),[checks,setChecks]=useState({});
   const [weather,setWeather]=useState(null),[weatherSelection,setWeatherSelection]=useState("");
+  const currentYear=new Date().getUTCFullYear(),[year,setYear]=useState(currentYear);
   useEffect(()=>{
     const controller=new AbortController();
     fetch(`${import.meta.env.BASE_URL}data/local-weather.json`,{cache:"no-store",signal:controller.signal})
@@ -34,15 +35,16 @@ export default function CropCriticalWindow({lang}) {
   return <section id="crop-windows" className="section food-system">
     <div className="section-no">SEASONAL EXPOSURE / GRID WEATHER</div><h2>{t.title}</h2><p>{t.intro}</p>
     <div className="fs-controls"><label className="fs-control">{t.month}<select aria-label={t.month} value={month} onChange={e=>setMonth(+e.target.value)}>{Array.from({length:12},(_,i)=><option value={i+1} key={i}>{monthName(i+1)}</option>)}</select></label>
+      <label className="fs-control">{lang==="zh"?"天气年份":"Weather year"}<select value={year} onChange={e=>setYear(+e.target.value)}>{Array.from({length:Math.max(1,currentYear-2024+1)},(_,i)=>currentYear-i).map(y=><option key={y} value={y}>{y}</option>)}</select></label>
       <label className="fs-control">{t.crop}<select aria-label={t.crop} value={crop} onChange={e=>setCrop(e.target.value)}><option value="all">{t.all}</option>{Object.entries(CROP_NAMES).map(([key,name])=><option key={key} value={key}>{name[lang]}</option>)}</select></label>
-      <button type="button" onClick={()=>setMonth(currentMonth)}>{t.current}</button></div>
-    <h3>{t.priorities} · {monthName(month)}</h3><p className="fs-muted">{lang==="zh"?"按季节模板敏感度排序，不是按天气损伤或国家重要性排名。下方代表点天气供逐项核对；尚无产区面积、产量与贸易权重。":"Sorted by seasonal stage sensitivity, not weather damage or country importance. Point weather below supports inspection; crop-area, production and trade weights are not connected."}</p>
+      <button type="button" onClick={()=>{setMonth(currentMonth);setYear(currentYear);}}>{t.current}</button></div>
+    <h3>{lang==="zh"?"所选年月：季节关键窗口":"Selected period: seasonal critical windows"} · {year} · {monthName(month)}</h3><p className="fs-muted">{lang==="zh"?"按季节模板敏感度排序，不是按天气损伤或国家重要性排名。模板不随年份改变，不代表该年实测进度；下方天气按所选年月展示。":"Sorted by seasonal stage sensitivity, not weather damage or country importance. Templates do not vary by year or measure that year's progress; weather below follows the selected period."}</p>
     <div className="fs-factor-grid">{priorities.slice(0,8).map(({record,stage})=><article className="fs-card" key={record.id}>
       <small>{t.estimated}</small><h3>{record.region[lang]} · {CROP_NAMES[record.crop][lang]}</h3><b>{t.stage}: {stage[lang]}</b>
       <p>{t.sensitivity}: {stage.sensitivity} / 100</p><p>{t.explain[record.crop]}</p><a href="#local-crop-weather" onClick={()=>setWeatherSelection(record.id)}>{lang==="zh"?"查看该产区代表点天气（非受灾判定）":"Inspect this region's point weather (not damage assessment)"} ↓</a>
       <a href={record.source} target="_blank" rel="noreferrer">{t.source} ↗</a>
     </article>)}</div>{!priorities.length&&<p>{t.none}</p>}
-    <div id="local-crop-weather" style={{scrollMarginTop:115}}><LocalCropWeather bundle={weather} rows={rows} month={month} lang={lang} selection={weatherSelection} setSelection={setWeatherSelection}/></div>
+    <div id="local-crop-weather" style={{scrollMarginTop:115}}><LocalCropWeather bundle={weather} rows={rows} month={month} year={year} lang={lang} selection={weatherSelection} setSelection={setWeatherSelection}/></div>
     <div className="fs-notice"><b>{t.synchronization}</b><p>{lang==="zh"?"代表点天气不等于全产区受灾。尚缺作物面积权重与田间损伤验证，因此仍不计算同步受灾分数。":"Point weather is not region-wide crop damage. Crop-area weights and field-damage validation are missing, so synchronized-damage scores remain unavailable."}</p></div>
     <details className="fs-details"><summary>{t.calendar} · {cropCalendars.length}</summary><p>{t.calendarHelp}</p><p>{t.reviewed}: {CALENDAR_REVIEWED}</p>
       <div className="fs-stage-legend">{Object.entries(STAGES).map(([key,stage])=><span key={key} className={`fs-stage stage-${key==="-"?"off":key}`}>{key}: {stage[lang]}</span>)}</div>

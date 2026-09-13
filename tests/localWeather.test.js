@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {weatherSummary} from "../src/services/localWeather.js";
+import {weatherSummary as summarize} from "../src/services/localWeather.js";
+const weatherSummary=(r,c,m,now)=>summarize(r,c,m,now,new Date(now).getUTCFullYear(),"recent");
 import {cropCalendars} from "../src/data/cropCalendars.js";
 const points=JSON.parse(readFileSync(new URL('../src/data/weatherPoints.json',import.meta.url)));
 const now=Date.parse('2026-09-13T00:00:00Z');
@@ -38,4 +39,26 @@ test('checked-in NASA point records have complete physically valid daily windows
     assert.ok(weatherSummary(r,c,9,Math.max(Date.parse(r.fetchedAt),Date.parse(r.days.at(-1).date))));
     assert.ok(r.url.startsWith('https://power.larc.nasa.gov/api/'));
   }
+});
+const monthlyRecord=(year,month,count)=>({status:'ok',fetchedAt:'2026-09-13T00:00:00Z',days:Array.from({length:count},(_,i)=>({date:new Date(Date.UTC(year,month-1,i+1)).toISOString().slice(0,10),max:36,min:10,rain:2}))});
+test('July uses July dates and full-month totals, never latest weather',()=>{
+  const r=monthlyRecord(2026,7,31);
+  r.days.push(...monthlyRecord(2026,8,31).days.map(d=>({...d,rain:100})));
+  const s=summarize(r,cropCalendars[0],7,now,2026);
+  assert.equal(s.start,'2026-07-01');assert.equal(s.end,'2026-07-31');
+  assert.equal(s.rain,62);assert.equal(s.sensitiveDays,31);assert.equal(s.historical,true);
+  assert.equal(s.partial,false);assert.equal(s.interpret,true);
+});
+test('February handles leap years and rejects incomplete historical months',()=>{
+  assert.equal(summarize(monthlyRecord(2024,2,29),cropCalendars[0],2,now,2024).days.length,29);
+  assert.equal(summarize(monthlyRecord(2025,2,28),cropCalendars[0],2,now,2025).days.length,28);
+  assert.equal(summarize(monthlyRecord(2024,2,28),cropCalendars[0],2,now,2024),null);
+});
+test('current month is explicitly partial; future and missing periods have no substitute',()=>{
+  const r=monthlyRecord(2026,9,9);
+  const s=summarize(r,cropCalendars[0],9,now,2026);
+  assert.equal(s.partial,true);assert.equal(s.days.length,9);assert.equal(s.rain,18);
+  assert.equal(summarize(r,cropCalendars[0],7,now,2026),null);
+  assert.equal(summarize(monthlyRecord(2026,12,31),cropCalendars[0],12,now,2026),null);
+  assert.equal(summarize({...r,days:r.days.filter((_,i)=>i!==3)},cropCalendars[0],9,now,2026),null);
 });

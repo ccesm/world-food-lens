@@ -14,8 +14,8 @@ agricultural community. Meteorological values are gridded assimilation/model
 products, not field observations. Provider lineage is retained per point.
 See [NASA's data FAQ](https://power.larc.nasa.gov/docs/faqs/data/).
 
-`python3 scripts/refresh_weather.py` retrieves 30 consecutive days ending four
-UTC days before the run, allowing for publication lag. It validates units,
+`python3 scripts/refresh_weather.py` retrieves daily history from 2024-01-01
+through four UTC days before the run, allowing for publication lag. It validates units,
 response coordinates, complete dates, numeric ranges, missing sentinels and
 temperature ordering. Three concurrent requests maximum. Each point retains its
 last good data/fetch date independently on failure; JSON replacement is atomic.
@@ -25,17 +25,26 @@ provider request is needed. Macro-data adapters are unchanged.
 
 ## Interpretation
 
+The default UI follows the selected year and month. Historical months require
+every calendar day (including leap days); the current month may be incomplete,
+with a prominent notice. Future or missing months never reuse current weather.
+An independent latest-30-days view remains selectable; changing year/month
+returns to monthly mode. Historical values are latest revised provider data,
+not archived as-known-at-the-time vintages.
+
 The UI displays the actual represented period, timestamps, temperature extremes,
 days ≥35°C maximum / ≤0°C minimum, rain total and longest run below 1 mm/day.
 These are explicit descriptive cutoffs, not calibrated crop injury thresholds.
-The 30-day maximum dry run is bounded by the window; it may have started earlier.
+The maximum dry run is bounded by the selected window; it may have started earlier.
 
 Each weather day is matched to its own month in the crop template. The overlap
-count and heat-day count cover flowering/pollination and grain fill only. Selecting
-a month other than the current UTC month suppresses current-stage interpretation.
+count and heat-day count cover flowering/pollination and grain fill only. Monthly
+historical comparisons describe the selected year, not current conditions. In the
+independent 30-day view, a non-current year/month suppresses stage interpretation.
 Failed fetches, checks older than 72 hours, implausibly future fetch times or
-weather ending over ten days ago suppress current interpretation; valid historical
-values remain visible. Missing/malformed windows yield no summary, never zero risk.
+weather ending over ten days ago suppress current interpretation; valid complete
+historical months remain available for historical template comparisons, with any
+refresh warning exposed. Missing/malformed windows yield no summary, never zero risk.
 
 No precipitation anomaly, drought designation, yield loss, winterkill probability,
 or global-score change is calculated. Climate normals, soil moisture, snow,
@@ -54,4 +63,5 @@ stale/error suppression, unit/sentinel validation and independent last-good
 fallback. Existing tests remain in the standard `npm test` suite.
 
 Initial retrieval: all 16 points succeeded, representing 2026-08-11–2026-09-09.
-Do not update this historical initial-retrieval statement to imply continuing health.
+Historical expansion on 2026-09-13: all 16 points succeeded from 2024-01-01
+through 2026-09-09. These dated checks do not imply continuing source health.

@@ -3,7 +3,7 @@ import copy
 import json
 import math
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from urllib.parse import urlencode
 from urllib.request import urlopen
 from refresh_data import ROOT, utc_now, write_cache
@@ -56,7 +56,7 @@ def refresh(previous, points, today, fetcher=fetch_point, stamp=None):
     stamp = stamp or utc_now()
     # Conservative publication delay. Exact represented dates are always exposed.
     end = today - timedelta(days=4)
-    start = end - timedelta(days=29)
+    start = date(2024, 1, 1)
     output = copy.deepcopy(previous)
     output.update(schemaVersion=1, generatedAt=stamp)
     records = output.setdefault("points", {})
