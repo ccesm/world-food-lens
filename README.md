@@ -211,6 +211,14 @@ Run `python3 scripts/refresh_weather.py`; the existing daily deployment also
 refreshes and commits `public/data/local-weather.json`. See
 [local weather methodology](docs/LOCAL_CROP_WEATHER.md) for limitations and checks.
 
+## Crop-weather report watchlist
+
+The crop-window section includes a manually reviewed crop-weather report
+watchlist, independent of historical-weather controls. WFL red/yellow levels
+are not official meteorological warnings. Sources, dates, coverage gaps and
+review expiry are visible; no damage or price score is derived. See
+[watchlist methodology](docs/CROP_WEATHER_ALERTS.md).
+
 ## Investment market charts
 
 Available instruments: DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM, MOO, VEGI, CF and AGCO. Select a card above the full-width chart to switch instruments. The chart frame reserves 640px on desktop, 560px on tablets and 500px on mobile, including attribution.

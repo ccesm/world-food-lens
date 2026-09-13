@@ -148,3 +148,9 @@ current months clearly label partial coverage. Future or unavailable months
 must never fall back to current weather. Latest 30 days remains a separate view.
 Historical weather is compared with estimated seasonal templates, not measured
 historical crop progress or validated damage. Existing global scores are unchanged.
+
+The crop-window section now has seven manually reviewed JRC crop-weather report
+groups (2026-09-13). WFL red/yellow concern colors are NOT official weather warning
+grades. Dates, impact uncertainty, limited coverage and a 30-day review expiry
+are visible. This list is independent of historical weather filters and excluded
+from all model scores. See docs/CROP_WEATHER_ALERTS.md for source maintenance.
