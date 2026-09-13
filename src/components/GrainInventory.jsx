@@ -15,7 +15,7 @@ export default function GrainInventory({record,lang}) {
       <span>{t.ratio} · {data.current.year}</span><strong>{data.current.ratio.toFixed(1)}%</strong>
       <p>{t.rank}: <b>{data.percentile.toFixed(0)} / 100</b></p><meter min="0" max="100" value={data.percentile} aria-label={`${names[lang][key]} ${t.rank}`}/>
       <small>{t.reference}: {data.referenceStart}–{data.referenceEnd} · n={data.count}</small>
-      <p>{t.change}: {(data.current.ratio-data.previous.ratio).toFixed(1)} pp<br/>{t.balance}: {((data.current.production-data.current.consumption)/1000).toFixed(1)} {t.unit}</p>
+      <p>{t.change}: {(data.current.ratio-data.previous.ratio).toFixed(1)} pp<br/>{t.balance}: {((data.current.production-data.current.consumption)/1000).toLocaleString(lang==="zh"?"zh-CN":"en-US",{minimumFractionDigits:1,maximumFractionDigits:3})} {t.unit}</p>
     </>:<p>{t.missing}</p>}</article>})}</div>
     <p className="fs-notice">{t.note}</p><div className="fs-provenance"><a href={record?.source?.url??"https://apps.fas.usda.gov/psdonline/"} target="_blank" rel="noreferrer">{t.source} ↗</a><span>{sourceStateLabel(record,lang)}</span><span>{record?.fetchedAt??"—"}</span></div>
     <details className="fs-details"><summary>{t.detail}</summary><p>{t.costNote}</p></details>
