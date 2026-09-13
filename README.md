@@ -218,6 +218,9 @@ watchlist, independent of historical-weather controls. WFL red/yellow levels
 are not official meteorological warnings. Sources, dates, coverage gaps and
 review expiry are visible; no damage or price score is derived. See
 [watchlist methodology](docs/CROP_WEATHER_ALERTS.md).
+Each alert displays the published affected-area coverage (currently unavailable
+for these event-specific reports) and, where comparable, a USDA national/EU
+share of global production for the same crop as context, never damaged output.
 
 ## Investment market charts
 

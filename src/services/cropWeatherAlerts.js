@@ -5,3 +5,7 @@ export function alertSnapshot(now=Date.now(),level="all") {
   const rows=cropWeatherAlerts.filter(r=>r.year===date.getUTCFullYear()&&Date.parse(r.source.date)<=now);
   return {stale,rows:rows.filter(r=>level==="all"||r.level===level),red:rows.filter(r=>r.level==="red").length,yellow:rows.filter(r=>r.level==="yellow").length};
 }
+export function productionContextShare(context) {
+  if(!context||!Number.isFinite(context.production)||!Number.isFinite(context.worldProduction)||context.production<0||context.worldProduction<=0||context.production>context.worldProduction)return null;
+  return (100*context.production/context.worldProduction).toFixed(context.precision);
+}
