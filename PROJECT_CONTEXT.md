@@ -131,3 +131,13 @@ mounting charts on demand and preserving filters after closing. The hero and
 GlobalFoodStress share one useFoodStress result; model formulas are unchanged.
 Investments follow the food-system and historical context, not the introduction.
 See docs/HOMEPAGE_GUIDE.md for architecture, changed files and verification.
+
+## Local weather exposure (2026-09-13)
+
+CropCriticalWindow now fetches a separate NASA POWER daily weather cache. Sixteen
+editorial representative points map to the 21 existing crop windows. Temperature,
+rain and stage overlap are descriptive screening only: no regional area weights,
+climate normals, soil/snow/irrigation or field damage; the global model is unchanged.
+Earlier statements that all local weather is unconnected are superseded only for
+this point-based layer, not region-wide crop impact. The deployment refreshes both
+caches with independent last-good retention. See docs/LOCAL_CROP_WEATHER.md.

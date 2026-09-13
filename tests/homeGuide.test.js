@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {guideCopy,logicNodes,guideExamples} from "../src/data/homeGuide.js";
 
-const targets=new Set(["home","how-it-works","food-stress","crop-windows","grain-inventory","food-history","s1","s2","s3","s4","s5","s6","climate","price-outlook","release-calendar"]);
+const targets=new Set(["home","how-it-works","food-stress","crop-windows","local-crop-weather","grain-inventory","food-history","s1","s2","s3","s4","s5","s6","climate","price-outlook","release-calendar"]);
 
 test("homepage flow has ten unique bilingual steps and existing module targets",()=>{
   assert.equal(logicNodes.length,10);
@@ -40,7 +40,7 @@ test("expanded learning examples have matching bilingual entries",()=>{
 
 test("guide discloses missing integrations instead of advertising live monitors",()=>{
   const find=id=>logicNodes.find(node=>node.id===id).en[2];
-  assert.match(find("weather"),/local weather not yet connected/);
+  assert.match(find("weather"),/not region-wide damage monitoring/);
   assert.match(find("importance"),/weights are not yet connected/);
   assert.match(find("importers"),/not connected/);
   assert.match(find("trade"),/historical, not live/);

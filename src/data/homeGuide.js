@@ -4,7 +4,7 @@ export const guideCopy={
 };
 // Bilingual editorial explanations; no new model, data feed or implied capability.
 export const logicNodes=[
-  {id:"weather",target:"climate",zh:["气候与天气","先确认干旱、热浪、寒潮或季风异常是否发生在具体产区。","已接 NOAA 海温背景；地方天气尚未接入。"],en:["Climate & Weather","Is drought, heat, cold or a monsoon anomaly actually affecting a growing region?","NOAA ocean context connected; local weather not yet connected."]},
+  {id:"weather",target:"local-crop-weather",zh:["气候与天气","先核对温度、降雨与作物阶段，再确认是否存在田间损伤。","已接 NOAA 海温与 NASA 代表点天气；不是全产区受灾监测。"],en:["Climate & Weather","Check temperature, rainfall and crop stage before confirming field damage.","NOAA ocean context and NASA point weather connected; not region-wide damage monitoring."]},
   {id:"stage",target:"crop-windows",zh:["作物生育期","同样的天气，发生在授粉、开花或灌浆期可能更重要。","21 个季节估计模板，不是今年实测进度。"],en:["Crop Growth Stage","The same weather can matter more at pollination, flowering or grain fill.","21 estimated seasonal templates, not measured current-year progress."]},
   {id:"production",target:"s2",zh:["产量影响","天气信号还需要作物状况、单产和收获数据确认，不能直接当成减产。","USDA 供需历史含预测与修订。"],en:["Production Impact","Weather signals need crop-condition, yield and harvest confirmation; they are not measured losses.","USDA supply history includes forecasts and revisions."]},
   {id:"importance",target:"crop-windows",zh:["全球重要性","美国玉米带、黑海、巴西、阿根廷、中国、印度、东南亚稻区与澳大利亚，对不同作物和贸易的作用不同。","需要同时核对生产与出口份额；本版尚未纳入定量权重。"],en:["Global Importance","The US Corn Belt, Black Sea, Brazil, Argentina, China, India, Southeast Asian rice regions and Australia matter differently across crops and trade.","Production and export shares both matter; quantitative regional weights are not yet connected."]},

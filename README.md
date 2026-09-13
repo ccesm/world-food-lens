@@ -194,6 +194,19 @@ They are not current-year field progress or live weather risk.
 Read [the implementation report](docs/FOOD_SYSTEM_UPGRADE.md) for formulas,
 sources, modified files, missing integrations and the next validation steps.
 
+## Local weather in crop windows
+
+The 21 seasonal crop windows now link to 16 NASA POWER representative grid points:
+30-day maximum/minimum temperatures, rainfall totals, low-rain runs and the
+overlap of hot days with template flowering/grain-fill stages. Daily values,
+coordinates, actual dates and source links are exposed. These are gridded
+estimates, not country averages, drought diagnoses or yield-loss forecasts.
+Missing/failed/stale data do not generate current interpretations or risk scores.
+
+Run `python3 scripts/refresh_weather.py`; the existing daily deployment also
+refreshes and commits `public/data/local-weather.json`. See
+[local weather methodology](docs/LOCAL_CROP_WEATHER.md) for limitations and checks.
+
 ## Investment market charts
 
 Available instruments: DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM, MOO, VEGI, CF and AGCO. Select a card above the full-width chart to switch instruments. The chart frame reserves 640px on desktop, 560px on tablets and 500px on mobile, including attribution.

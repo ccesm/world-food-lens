@@ -29,3 +29,4 @@
 .fs-history{list-style:none;padding:0}.fs-history li>span{font-size:24px;font-weight:650}
 @media(max-width:850px){.fs-summary,.fs-history{grid-template-columns:1fr}.fs-factor-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.fs-factor-grid,.fs-two{grid-template-columns:1fr}.fs-card{padding:17px}.fs-controls{align-items:stretch}.fs-controls .fs-control{flex:1;min-width:130px}.fs-factor-head{flex-wrap:wrap}.fs-calculation{font-size:22px!important}}
+.local-weather{margin:24px 0}.local-weather select{max-width:100%;width:100%}.local-weather p{overflow-wrap:anywhere}.local-weather table{width:100%;text-align:left;font-size:13px}.local-weather td,.local-weather th{padding:8px}.local-weather>a{margin-right:18px}
