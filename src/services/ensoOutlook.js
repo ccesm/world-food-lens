@@ -1,5 +1,5 @@
 import {cropCalendars,STAGES} from "../data/cropCalendars.js";
-import {seasonalClimateSignals,SIGNAL_REVIEWED} from "../data/seasonalClimateSignals.js";
+import {agriculturalExposureProfiles,seasonalClimateSignals,SIGNAL_REVIEWED} from "../data/seasonalClimateSignals.js";
 
 const MONTH=/^20\d\d-(0[1-9]|1[0-2])$/;
 export function validateEnsoBundle(bundle,now=Date.now()) {
@@ -57,4 +57,25 @@ export function forecastWatchIntersections(now=Date.now()) {
   return signals.map(signal=>({signal,overlap:cropSignalOverlap(signal,currentMonth)}))
     .filter(row=>row.overlap?.stages.length)
     .sort((a,b)=>b.overlap.peakSensitivity-a.overlap.peakSensitivity||a.signal.start.localeCompare(b.signal.start));
+}
+
+export function agriculturalExposureRows(now=Date.now()) {
+  if(!Number.isFinite(now))return [];
+  const {stale,signals}=activeRegionalSignals(now);
+  const currentMonth=new Date(now).toISOString().slice(0,7);
+  return agriculturalExposureProfiles.map(profile=>{
+    const calendar=cropCalendars.find(row=>row.id===profile.cropId);
+    const signal=profile.currentSignalId?signals.find(row=>row.id===profile.currentSignalId):null;
+    const overlap=signal?cropSignalOverlap(signal,currentMonth):null;
+    const months=overlap?.stages??monthSpan(currentMonth,addMonths(currentMonth,2)).map(period=>({period,code:calendar?.months[Number(period.slice(5))-1]??"-"}));
+    const critical=months.some(row=>["F","G"].includes(row.code));
+    return {...profile,calendar,signal:stale?null:signal,adjacentForecast:stale?null:profile.adjacentForecast,regionalOutlookStale:stale,months,critical,
+      watch:stale||!signal?"no-current-match":critical?"critical-window":"forecast-overlap",
+      observed:"no-climate-normal",agriculturalRisk:"not-rated"};
+  });
+}
+
+function addMonths(period,count) {
+  const [year,month]=period.split("-").map(Number),date=new Date(Date.UTC(year,month-1+count,1));
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth()+1).padStart(2,"0")}`;
 }

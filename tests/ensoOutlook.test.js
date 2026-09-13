@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import cache from "../public/data/enso-outlook.json" with {type:"json"};
-import {validateEnsoBundle,monthSpan,cropSignalOverlap,activeRegionalSignals,forecastWatchIntersections} from "../src/services/ensoOutlook.js";
+import {validateEnsoBundle,monthSpan,cropSignalOverlap,activeRegionalSignals,agriculturalExposureRows,forecastWatchIntersections} from "../src/services/ensoOutlook.js";
 import {seasonalClimateSignals,typicalTeleconnections} from "../src/data/seasonalClimateSignals.js";
 import {productionContextShare} from "../src/services/cropWeatherAlerts.js";
 
@@ -42,4 +42,18 @@ test("national USDA shares are context, not estimated affected output",()=>{
   assert.equal(productionContextShare(byId["australia-aso"]),"3.8");
   assert.equal(productionContextShare(byId["southern-africa-ond"]),"1.3");
   assert.equal(byId["horn-ond"],undefined);
+});
+test("agricultural exposure never turns a typical ENSO tendency into current risk",()=>{
+  const rows=agriculturalExposureRows(now),byId=Object.fromEntries(rows.map(row=>[row.id,row]));
+  assert.equal(rows.length,4);
+  assert.equal(byId["australia-wheat"].historical.direction,"dry");
+  assert.equal(byId["australia-wheat"].signal.id,"australia-aso");
+  assert.equal(byId["australia-wheat"].watch,"critical-window");
+  assert.equal(byId["southern-africa-maize"].watch,"forecast-overlap");
+  assert.equal(byId["brazil-soy"].signal,null);
+  assert.equal(byId["se-asia-rice"].signal,null);
+  assert.ok(byId["brazil-soy"].adjacentForecast);
+  assert.ok(rows.every(row=>row.observed==="no-climate-normal"&&row.agriculturalRisk==="not-rated"));
+  assert.ok(agriculturalExposureRows(Date.parse("2026-11-01T00:00:00Z")).every(row=>row.signal===null&&row.adjacentForecast==null));
+  assert.deepEqual(agriculturalExposureRows(NaN),[]);
 });

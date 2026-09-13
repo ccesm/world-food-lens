@@ -229,12 +229,21 @@ It caches NOAA's diagnostic, nine official three-month phase probabilities and
 RONI forecast percentile ranges. A separate, manually reviewed list summarizes
 four published regional seasonal outlooks and compares their valid periods with
 existing estimated crop calendars. A schematic historical teleconnection map
-is explicitly educational, not a current forecast. The next-12-month timeline
+is explicitly educational, not a current forecast. A four-region agricultural
+exposure overview places historical ENSO tendency, directly matched current
+forecast, observed-rainfall status and crop timing side by side. Missing climate
+normals or crop-region matches leave the final risk **not rated**; broader IRI
+discussion is labelled adjacent evidence only. The next-12-month timeline
 shows templates and only NOAA-published probability months. No regional yield
 or global risk score is inferred from ENSO alone. Stale or failed source checks
 remain visible and suppress current crop-watch claims. Run
 `python3 scripts/refresh_enso.py` to refresh the NOAA cache; see
 [ENSO methodology and sources](docs/ENSO_SEASONAL_OUTLOOK.md).
+
+At phone widths the fixed navigation is limited to Home, Food risk, Crops,
+Climate and More. ENSO, Seasonal Outlook and Crop Weather live under Climate;
+Drought and Soil Moisture are labelled not connected rather than presented as
+working data products. The full section bar remains available on larger screens.
 
 ## Investment market charts
 

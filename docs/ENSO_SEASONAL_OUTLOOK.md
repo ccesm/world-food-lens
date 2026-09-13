@@ -53,6 +53,26 @@ are shown separately from the RONI forecast and all cache timestamps.
    matched regional anomalies or verified yield losses. The present point
    weather lacks climate normals, soil moisture, planted area and field damage.
 
+The **Upcoming Agricultural Exposure** overview applies this separation to four
+forward screening rows: Australia wheat, Southern Africa maize, Central Brazil
+soybeans and Southeast Asia/Thailand rice. Every row keeps the historical ENSO
+tendency, a directly matched current regional outlook, observed-rainfall status
+and the next three months of its crop-calendar template in separate fields.
+Australia and Southern Africa currently have reviewed direct outlook matches.
+Central Brazil and Thailand do not: broader IRI discussion is shown only as
+adjacent context, never as their current forecast. The IRI material is a
+[research forecast product](https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/),
+not a substitute for a national meteorological service. It expires with the same
+45-day editorial review guard as the regional list.
+
+Because the NASA representative-point history begins in 2024 and has no
+adequate climate-normal baseline, the observed field cannot currently label
+rainfall “dry”, “normal” or “wet”. Consequently all four final agricultural
+risk fields remain **evidence incomplete / not rated**. A historical dry
+tendency alone can never raise that result. Low/Moderate ratings should only be
+introduced after a defined, tested rule combines same-region seasonal forecasts,
+comparable observed anomalies and crop-condition evidence.
+
 The initial regional sources are [WMO's August–October 2026 discussion](https://wmo.int/news/media-centre/strong-el-nino-expected-intensify)
 for the Indian subcontinent and southern/eastern Australia,
 [JRC ASAP's October–December Southern Africa outlook](https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/el-nino-drives-crop-failure-central-america-and-east-africa-and-threatens-next-season-southern-2026-09-03_en),
@@ -96,5 +116,10 @@ Blank months are missing, not zero-probability forecasts.
 - Run `npm test` and `npm run build`; verify Chinese/English, light/dark and
   mobile navigation before deployment. Source failures should leave the
   existing site usable with honest warning labels.
+
+On screens up to 620px, the bottom bar is capped at five top-level destinations:
+Home, Food risk, Crops, Climate and More. Climate opens ENSO, Seasonal Outlook
+and Crop Weather. Drought and Soil Moisture are visible but disabled until real
+sources and methods are connected. Desktop keeps the full section navigation.
 
 No credentials, hidden endpoints or market-data entitlements are added.

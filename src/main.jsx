@@ -22,6 +22,7 @@ import CropCriticalWindow from "./components/CropCriticalWindow";
 import FoodHistory from "./components/FoodHistory";
 import HomeOrientation,{HomeHero} from "./components/HomeOrientation";
 import DetailModule from "./components/DetailModule";
+import MobileNavigation from "./components/MobileNavigation";
 import useFoodStress from "./hooks/useFoodStress";
 import {loadEnsoOutlook,validateEnsoBundle} from "./services/ensoOutlook";
 import "./styles.css";
@@ -290,6 +291,7 @@ function App(){
         <a href="#price-outlook">{lang==="zh"?"价格展望":"Price outlook"}</a>
         <a href="#release-calendar">{lang==="zh"?"发布日历":"Release calendar"}</a>
       </nav>
+      <MobileNavigation lang={lang}/>
 
       <GlobalFoodStress bundle={official} lang={lang} model={stressModel}/>
 

@@ -169,3 +169,18 @@ Old forecasts are archived and current crop-watch intersections suppressed.
 No regional crop-loss, synchronized shock or global score is fabricated.
 The existing observed RONI, NASA point weather and impact watchlist remain
 independent. See docs/ENSO_SEASONAL_OUTLOOK.md for sources and maintenance.
+
+The forward agricultural exposure overview now makes that separation visible
+for Australia wheat, Southern Africa maize, Central Brazil soybeans and
+Southeast Asia/Thailand rice. A typical ENSO tendency never fills the current
+forecast column. Direct region/crop matches, adjacent context, point rainfall
+and calendar stages retain distinct labels; without climate normals and crop
+condition confirmation, the agricultural-risk result remains not rated. The
+same 45-day review guard suppresses both direct and adjacent current-outlook
+claims when the editorial set is stale.
+
+Phone navigation is capped at five primary entries: Home, Food risk, Crops,
+Climate and More. Climate contains ENSO, Seasonal Outlook and Crop Weather;
+Drought and Soil Moisture remain disabled placeholders until sources are added.
+Do not expand the phone bottom bar with future Energy, Trade or Markets links;
+place secondary destinations in the appropriate submenu instead.

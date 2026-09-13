@@ -14,6 +14,22 @@ export const seasonalClimateSignals=[
   {id:"horn-ond",region:pair("非洲之角部分地区","Parts of the Greater Horn of Africa"),cropId:null,start:"2026-10",end:"2026-12",signal:"wet",issuedAt:"2026-08-19",source:"WMO / ICPAC",url:"https://wmo.int/media/news/el-nino-impacts-greater-horn-of-africa",detail:pair("10–12 月局部降雨偏多概率升高；部分地区可能发生洪涝，但本站没有匹配的作物日历，不能量化产量影响。","Higher odds of wet October–December conditions in specific areas; flood risk exists, but no matched crop calendar supports a yield estimate.")},
 ];
 
+// Four overview rows requested for forward agricultural screening. Historical
+// tendencies never become current forecasts. Adjacent forecast notes explicitly
+// describe why a broader map cannot be assigned to the named crop template.
+export const agriculturalExposureProfiles=[
+  {id:"australia-wheat",cropId:"australia-wheat",currentSignalId:"australia-aso",
+    title:pair("澳大利亚","Australia"),historical:{direction:"dry",source:"Australian Bureau of Meteorology",url:"https://www.bom.gov.au/news-and-media/el-nino-what-it-means-for-australias-climate",detail:pair("厄尔尼诺期间，澳大利亚东部冬春季常见偏干倾向；每次事件不同，强度不决定当地影响。","Eastern Australia often has a drier winter–spring tendency during El Niño; events differ and ENSO strength does not determine local impact.")}},
+  {id:"southern-africa-maize",cropId:"south-africa-corn",currentSignalId:"southern-africa-ond",
+    title:pair("南部非洲","Southern Africa"),historical:{direction:"dry",source:"NOAA CPC",url:"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/impacts/enso.html",detail:pair("历史复合资料显示，厄尔尼诺北半球冬季非洲东南部常有偏干倾向。","Historical composites show a drier tendency in southeastern Africa during Northern Hemisphere winter El Niño.")}},
+  {id:"brazil-soy",cropId:"brazil-soy",currentSignalId:null,title:pair("巴西中部","Central Brazil"),
+    historical:{direction:"mixed",source:"NOAA CPC",url:"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/impacts/enso.html",detail:pair("厄尔尼诺对巴西的历史影响有明显地域差异：北部偏干、南部偏湿；不能直接套用到巴西中部大豆。","Historical El Niño influence differs across Brazil—drier in the north and wetter in the south—so it cannot be assigned directly to Central Brazil soybeans.")},
+    adjacentForecast:{source:"IRI seasonal forecast",url:"https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/",detail:pair("最新公开讨论提到南美北部偏干，但没有给本站巴西中部大豆模板一个可直接匹配的结论。","The latest public discussion highlights dryness in northern South America, not a directly matched Central Brazil soybean outlook.")}},
+  {id:"se-asia-rice",cropId:"thailand-rice",currentSignalId:null,title:pair("东南亚","Southeast Asia"),
+    historical:{direction:"mixed",source:"NOAA CPC",url:"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/impacts/enso.html",detail:pair("印度尼西亚和菲律宾常见偏干倾向，但东南亚各地和稻季不同，不能代表泰国全部稻区。","Indonesia and the Philippines often tilt dry, but Southeast Asian regions and rice seasons differ; this does not represent all Thai rice areas.")},
+    adjacentForecast:{source:"IRI seasonal forecast",url:"https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/",detail:pair("最新公开讨论提到海洋大陆部分地区偏干；这不是泰国主季稻的直接地区预测。","The latest public discussion highlights dryness in parts of the Maritime Continent; it is not a direct regional forecast for Thailand's main rice season.")}},
+];
+
 // Historical associations only. NOAA CPC describes these seasons/regions.
 export const typicalTeleconnections=[
   {id:"indonesia",region:pair("印度尼西亚／澳大利亚北部","Indonesia / northern Australia"),season:"DJF",elNino:"dry",laNina:"wet",url:"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/impacts/enso.html"},
