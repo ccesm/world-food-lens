@@ -11,6 +11,7 @@ import {refreshOfficialData,sourceStateLabel,validateOfficialBundle} from "./ser
 import {nextTheme,resolveTheme,THEME_STORAGE_KEY} from "./services/theme";
 import SourceDesk from "./components/SourceDesk";
 import ClimateMonitor from "./components/ClimateMonitor";
+import EnsoSeasonalOutlook,{EnsoHomeCard} from "./components/EnsoSeasonalOutlook";
 import PolicyEvents from "./components/PolicyEvents";
 import SupplyHistory from "./components/SupplyHistory";
 import PriceOutlook from "./components/PriceOutlook";
@@ -22,6 +23,7 @@ import FoodHistory from "./components/FoodHistory";
 import HomeOrientation,{HomeHero} from "./components/HomeOrientation";
 import DetailModule from "./components/DetailModule";
 import useFoodStress from "./hooks/useFoodStress";
+import {loadEnsoOutlook,validateEnsoBundle} from "./services/ensoOutlook";
 import "./styles.css";
 
 const copy = {
@@ -197,6 +199,7 @@ function App(){
   const [refreshMsg,setRefreshMsg]=useState("");
   const [refreshing,setRefreshing]=useState(false);
   const [official,setOfficial]=useState(()=>validateOfficialBundle(initialOfficialData));
+  const [ensoOutlook,setEnsoOutlook]=useState(null);
   const [fuel,setFuel]=useState(0), [fert,setFert]=useState(0), [other,setOther]=useState(0);
   const [selected,setSelected]=useState(investments.find(x=>x.symbol==="DBA"));
   const t=copy[lang];
@@ -217,8 +220,10 @@ function App(){
     let cancelled=false;
     refreshOfficialData().then(data=>{if(!cancelled)setOfficial(data);})
       .catch(()=>{if(!cancelled)setRefreshMsg("failed");});
+    loadEnsoOutlook().then(data=>{if(!cancelled)setEnsoOutlook(data);}).catch(()=>{});
     return ()=>{cancelled=true;};
   },[]);
+  useEffect(()=>{const timer=setInterval(()=>setEnsoOutlook(value=>value?validateEnsoBundle(value):null),3600000);return ()=>clearInterval(timer);},[]);
 
   useEffect(()=>{
     document.documentElement.dataset.theme=theme;
@@ -247,9 +252,12 @@ function App(){
   async function doRefresh(){
     if(refreshing)return;
     setRefreshing(true);
-    try{setOfficial(await refreshOfficialData());setRefreshMsg("loaded");}
-    catch{setRefreshMsg("failed");}
-    finally{setRefreshing(false);}
+    const [base,enso]=await Promise.allSettled([refreshOfficialData(),loadEnsoOutlook()]);
+    if(base.status==="fulfilled")setOfficial(base.value);
+    if(enso.status==="fulfilled")setEnsoOutlook(enso.value);
+    else setEnsoOutlook(value=>value?validateEnsoBundle(value):null);
+    setRefreshMsg(base.status==="fulfilled"&&enso.status==="fulfilled"&&enso.value?"loaded":"failed");
+    setRefreshing(false);
   }
 
   return <div className="app">
@@ -270,12 +278,14 @@ function App(){
         {refreshMsg && <div className="notice" role="status">{refreshMsg==="loaded"?(lang==="zh"?"已读取网站最新发布的缓存。此按钮不会直接触发官方接口抓取；各来源的成功/失败状态见数据来源。":"Loaded the site's latest published cache. This button does not trigger upstream downloads; source success/failure is shown in Data Desk."):(lang==="zh"?"网站缓存暂时无法读取，继续显示已载入的数据。":"The published cache could not be read; previously loaded data remain visible.")}</div>}
       </HomeHero>
       <HomeOrientation lang={lang}/>
+      <EnsoHomeCard outlook={ensoOutlook} lang={lang}/>
 
       <nav className="section-nav" aria-label={lang==="zh"?"页面模块导航":"Page sections"}>
         <a href="#home">{lang==="zh"?"首页导览":"Start here"}</a>
         <a href="#food-stress">{lang==="zh"?"粮食压力":"Food stress"}</a>
         <a href="#grain-inventory">{lang==="zh"?"三谷物库存":"Grain inventories"}</a>
         <a href="#crop-windows">{lang==="zh"?"作物窗口":"Crop windows"}</a>
+        <a href="#enso-outlook">{lang==="zh"?"ENSO 展望":"ENSO outlook"}</a>
         {t.nav.map((x,i)=><React.Fragment key={x}><a href={`#s${i+1}`}>{x}</a>{i===1&&<a href="#climate">{lang==="zh"?"气候监测":"Climate monitor"}</a>}</React.Fragment>)}
         <a href="#price-outlook">{lang==="zh"?"价格展望":"Price outlook"}</a>
         <a href="#release-calendar">{lang==="zh"?"发布日历":"Release calendar"}</a>
@@ -284,6 +294,8 @@ function App(){
       <GlobalFoodStress bundle={official} lang={lang} model={stressModel}/>
 
       <CropCriticalWindow lang={lang}/>
+
+      <EnsoSeasonalOutlook outlook={ensoOutlook} lang={lang}/>
 
       <section id="grain-inventory" className="section alt"><GrainInventory record={official.sources.usda} lang={lang}/></section>
 

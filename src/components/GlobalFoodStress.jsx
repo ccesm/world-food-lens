@@ -54,6 +54,7 @@ export default function GlobalFoodStress({bundle,lang,model}) {
       <article className="fs-card"><span>{t.known}</span><strong>{number(model.known)} <small>/ {model.coverage}</small></strong><small>{t.knownNote}</small></article>
     </div>
     <p className="fs-notice">{t.notice}</p>
+    <p><a href="#enso-outlook">{lang==="zh"?"查看 ENSO 和季节气候展望（尚不参与综合计分） ↗":"Explore ENSO and seasonal outlook (not included in the total score) ↗"}</a></p>
     <details className="fs-details"><summary>{t.factor}</summary><div className="fs-factor-grid">
       {model.rows.map(row=>{const meta=metadata[row.id];return <article className="fs-card" key={row.id}>
         <div className="fs-factor-head"><h3>{t.factors[row.id]}</h3><span>{row.weight}% {t.weight}</span></div>

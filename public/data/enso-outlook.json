@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "lastAttemptAt": "2026-09-13T15:18:44Z",
+  "status": "ok",
+  "data": {
+    "issuedAt": "2026-09-10",
+    "phase": "el-nino",
+    "trend": "strengthening",
+    "nino34": 1.8,
+    "nino34Month": "2026-08",
+    "strengthOutlook": "very-strong-likely",
+    "forecasts": [
+      {
+        "season": "ASO",
+        "startMonth": "2026-08",
+        "laNina": 0.0,
+        "neutral": 0.0,
+        "elNino": 100.0,
+        "roniPercentiles": [
+          1.8,
+          1.9,
+          1.96,
+          2.07,
+          2.18,
+          2.24,
+          2.34
+        ]
+      },
+      {
+        "season": "SON",
+        "startMonth": "2026-09",
+        "laNina": 0.0,
+        "neutral": 0.0,
+        "elNino": 100.0,
+        "roniPercentiles": [
+          2.01,
+          2.16,
+          2.26,
+          2.43,
+          2.6,
+          2.69,
+          2.85
+        ]
+      },
+      {
+        "season": "OND",
+        "startMonth": "2026-10",
+        "laNina": 0.0,
+        "neutral": 0.0,
+        "elNino": 100.0,
+        "roniPercentiles": [
+          2.12,
+          2.32,
+          2.44,
+          2.67,
+          2.9,
+          3.02,
+          3.23
+        ]
+      },
+      {
+        "season": "NDJ",
+        "startMonth": "2026-11",
+        "laNina": 0.0,
+        "neutral": 0.0,
+        "elNino": 100.0,
+        "roniPercentiles": [
+          1.87,
+          2.13,
+          2.28,
+          2.57,
+          2.85,
+          3.0,
+          3.26
+        ]
+      },
+      {
+        "season": "DJF",
+        "startMonth": "2026-12",
+        "laNina": 0.0,
+        "neutral": 0.0,
+        "elNino": 100.0,
+        "roniPercentiles": [
+          1.48,
+          1.77,
+          1.94,
+          2.27,
+          2.59,
+          2.76,
+          3.06
+        ]
+      },
+      {
+        "season": "JFM",
+        "startMonth": "2027-01",
+        "laNina": 0.0,
+        "neutral": 0.0,
+        "elNino": 100.0,
+        "roniPercentiles": [
+          1.04,
+          1.33,
+          1.5,
+          1.82,
+          2.14,
+          2.31,
+          2.59
+        ]
+      },
+      {
+        "season": "FMA",
+        "startMonth": "2027-02",
+        "laNina": 0.0,
+        "neutral": 3.0,
+        "elNino": 97.0,
+        "roniPercentiles": [
+          0.56,
+          0.82,
+          0.97,
+          1.26,
+          1.54,
+          1.69,
+          1.95
+        ]
+      },
+      {
+        "season": "MAM",
+        "startMonth": "2027-03",
+        "laNina": 0.0,
+        "neutral": 18.0,
+        "elNino": 82.0,
+        "roniPercentiles": [
+          0.17,
+          0.4,
+          0.54,
+          0.79,
+          1.05,
+          1.19,
+          1.42
+        ]
+      },
+      {
+        "season": "AMJ",
+        "startMonth": "2027-04",
+        "laNina": 2.0,
+        "neutral": 55.0,
+        "elNino": 43.0,
+        "roniPercentiles": [
+          -0.27,
+          -0.03,
+          0.12,
+          0.38,
+          0.65,
+          0.8,
+          1.04
+        ]
+      }
+    ],
+    "urls": {
+      "advisory": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+      "probabilities": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/probabilities/",
+      "outlook": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/outlook/"
+    }
+  },
+  "fetchedAt": "2026-09-13T15:18:44Z"
+}

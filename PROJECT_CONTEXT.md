@@ -158,3 +158,14 @@ The JRC report groups do not state event-specific affected hectares. Selected
 cards show frozen September 2026 USDA 2026/27 same-crop national/EU output shares
 as context only, not affected output or estimated global loss. Overlapping EU
 groups must never be added together.
+
+## ENSO and seasonal outlook (2026-09-13)
+
+The new top-level ENSO module caches the official NOAA diagnostic, nine
+overlapping three-month phase probabilities and RONI forecast percentiles.
+Separately reviewed WMO/JRC regional forecasts are compared with estimated
+crop windows; historical NOAA teleconnections are teaching context only.
+Old forecasts are archived and current crop-watch intersections suppressed.
+No regional crop-loss, synchronized shock or global score is fabricated.
+The existing observed RONI, NASA point weather and impact watchlist remain
+independent. See docs/ENSO_SEASONAL_OUTLOOK.md for sources and maintenance.

@@ -222,6 +222,20 @@ Each alert displays the published affected-area coverage (currently unavailable
 for these event-specific reports) and, where comparable, a USDA national/EU
 share of global production for the same crop as context, never damaged output.
 
+## ENSO & seasonal climate outlook
+
+The homepage and fixed navigation link to a separate bilingual ENSO module.
+It caches NOAA's diagnostic, nine official three-month phase probabilities and
+RONI forecast percentile ranges. A separate, manually reviewed list summarizes
+four published regional seasonal outlooks and compares their valid periods with
+existing estimated crop calendars. A schematic historical teleconnection map
+is explicitly educational, not a current forecast. The next-12-month timeline
+shows templates and only NOAA-published probability months. No regional yield
+or global risk score is inferred from ENSO alone. Stale or failed source checks
+remain visible and suppress current crop-watch claims. Run
+`python3 scripts/refresh_enso.py` to refresh the NOAA cache; see
+[ENSO methodology and sources](docs/ENSO_SEASONAL_OUTLOOK.md).
+
 ## Investment market charts
 
 Available instruments: DBA, CORN, WEAT, SOYB, MOS, NTR, DE, ADM, MOO, VEGI, CF and AGCO. Select a card above the full-width chart to switch instruments. The chart frame reserves 640px on desktop, 560px on tablets and 500px on mobile, including attribution.

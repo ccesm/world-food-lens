@@ -34,7 +34,7 @@ export default function CropCriticalWindow({lang}) {
   const monthName=m=>new Intl.DateTimeFormat(lang==="zh"?"zh-CN":"en",{month:"short",timeZone:"UTC"}).format(new Date(Date.UTC(2020,m-1,1)));
   const rows=cropCalendars.filter(r=>crop==="all"||r.crop===crop),priorities=seasonalPriorities(rows,month);
   return <section id="crop-windows" className="section food-system">
-    <div className="section-no">SEASONAL EXPOSURE / GRID WEATHER</div><h2>{t.title}</h2><p>{t.intro}</p>
+    <div className="section-no">SEASONAL EXPOSURE / GRID WEATHER</div><h2>{t.title}</h2><p>{t.intro} <a href="#enso-outlook">{lang==="zh"?"查看 ENSO 与未来季节展望 ↗":"Explore ENSO and seasonal outlook ↗"}</a></p>
     <CropWeatherAlerts lang={lang}/>
     <div className="fs-controls"><label className="fs-control">{t.month}<select aria-label={t.month} value={month} onChange={e=>setMonth(+e.target.value)}>{Array.from({length:12},(_,i)=><option value={i+1} key={i}>{monthName(i+1)}</option>)}</select></label>
       <label className="fs-control">{lang==="zh"?"天气年份":"Weather year"}<select value={year} onChange={e=>setYear(+e.target.value)}>{Array.from({length:Math.max(1,currentYear-2024+1)},(_,i)=>currentYear-i).map(y=><option key={y} value={y}>{y}</option>)}</select></label>
