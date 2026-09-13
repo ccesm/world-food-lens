@@ -92,3 +92,17 @@ years are forecasts/estimates. Recovered values are fallback only, never live.
 Future increments: broaden reviewed policy coverage and authorized FAPDA
 integration; add regional rainfall/soil-moisture data and population/demand
 context; add release-specific archives and larger-scale end-to-end test coverage.
+
+## September 2026 history / outlook increment
+
+- USDA wheat history since 2000 with range and production/use comparison controls.
+- Experimental 12-month FAO price-only model with rolling MAE versus flat prices,
+  empirical error bands, and separately labelled user price-shock scenarios.
+- Rolling one-year official release calendar: exact verified schedules and
+  unconfirmed planning windows are distinct; manually reviewed on 2026-09-12.
+- Light/dark theme and fixed bottom navigation remain available.
+
+Forecast limitations are part of the feature: revised historical vintages,
+overlapping evaluation windows, no validated causal coefficients for climate
+or conflict, and no independently guaranteed interval coverage. Do not label
+these model estimates as official predictions or future observations.

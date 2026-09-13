@@ -30,12 +30,12 @@ def workbook(unit="($/bbl)"):
     return stream.getvalue()
 
 
-def usda_zip(missing=False, duplicate=False, unit="(1000 MT)"):
+def usda_zip(missing=False, duplicate=False, unit="(1000 MT)", years=(2025,2026)):
     stream = io.StringIO()
     headers = ["Commodity_Code","Country_Name","Country_Code","Market_Year","Calendar_Year","Month",
                "Attribute_Description","Unit_Description","Value"]
     writer = csv.DictWriter(stream, fieldnames=headers); writer.writeheader()
-    for year in (2025,2026):
+    for year in years:
         for country, scale in (("European Union",10),("France",3),("United Kingdom",2),("China",20)):
             for attribute, value in (("Production",110),("Domestic Consumption",100),("Ending Stocks",30)):
                 if missing and country == "China" and attribute == "Ending Stocks": continue
@@ -88,6 +88,13 @@ class MacroTests(unittest.TestCase):
     def test_usda_incomplete_duplicate_or_wrong_unit_is_rejected(self):
         for content in (usda_zip(missing=True),usda_zip(duplicate=True),usda_zip(unit="MT")):
             with self.assertRaises(ValueError):parse_usda(content,AS_OF)
+
+    def test_usda_retains_history_from_2000_and_rejects_year_gaps(self):
+        data = parse_usda(usda_zip(years=range(2000,2027)),AS_OF)
+        self.assertEqual(len(data["history"]),27)
+        self.assertEqual(data["history"][0]["year"],"2000/2001")
+        with self.assertRaises(ValueError):
+            parse_usda(usda_zip(years=(2000,2025,2026)),AS_OF)
 
     def test_missing_sentinels_and_zero_are_distinct(self):
         self.assertIsNone(numeric("…")); self.assertEqual(numeric(0),0)

@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useRef, useState} from "react";
 import {createRoot} from "react-dom/client";
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid,
-  BarChart, Bar, ReferenceLine
+  ReferenceLine
 } from "recharts";
 import snapshot from "./data/recoveredSnapshot";
 import initialOfficialData from "virtual:official-data";
@@ -12,6 +12,9 @@ import {nextTheme,resolveTheme,THEME_STORAGE_KEY} from "./services/theme";
 import SourceDesk from "./components/SourceDesk";
 import ClimateMonitor from "./components/ClimateMonitor";
 import PolicyEvents from "./components/PolicyEvents";
+import SupplyHistory from "./components/SupplyHistory";
+import PriceOutlook from "./components/PriceOutlook";
+import ReleaseCalendar from "./components/ReleaseCalendar";
 import "./styles.css";
 
 const copy = {
@@ -35,7 +38,7 @@ const copy = {
     stocks:"收成与库存 → 缓冲能力", stocksText:"当消费高于产量时，库存可能提供缓冲。库存较低时，天气和供应冲击更容易引起价格变化。",
     policy:"政策 → 可贸易供应", policyText:"出口限制可能压低出口国内价格，却推高进口市场压力；减免进口税可能降低本地成本。",
     causality:"观察关联，不冒充因果估计",
-    causalityText:"本工具不把时间上的先后或同时上涨解读为已证实的政策效果，也不提供未经验证的粮价涨跌预测。",
+    causalityText:"时间上的先后或同时上涨不能证明政策效果。价格展望是单独标注的实验模型，需结合其历史误差、假设和局限阅读。",
     lab:"如果投入成本改变了呢？", labHelp:"假设燃料占 20%、化肥占 30%、其他投入占 50%，观察加权总成本变化。不是粮价预测。",
     fuel:"燃料成本变化", fert:"化肥成本变化", other:"其他投入成本变化", total:"假设总成本变化", reset:"重置",
     invest:"美国市场可投资标的", investHelp:"标的说明由 World Food Lens 整理；交互式价格图表由 TradingView 提供。点击标的可查看日内或长期走势，无需连接个人券商账户。",
@@ -67,7 +70,7 @@ const copy = {
     stocks:"Harvests & stocks → buffer", stocksText:"When consumption exceeds production, inventories can absorb shocks. Low buffers can increase sensitivity to weather and supply disruptions.",
     policy:"Policy → tradable supply", policyText:"Export restrictions can reduce domestic prices while increasing pressure on import markets. Effects depend on execution, markets and FX.",
     causality:"Observe relationships without pretending causality",
-    causalityText:"This tool does not treat timing or simultaneous increases as proven policy effects and does not present unverified food-price forecasts.",
+    causalityText:"Timing or simultaneous increases do not establish policy effects. Price Outlook is a separately labelled experimental model; read its historical errors, assumptions and limitations.",
     lab:"What if input costs change?", labHelp:"Arithmetic experiment: fuel 20%, fertilizer 30%, other inputs 50%. This is not a food-price forecast.",
     fuel:"Fuel cost change", fert:"Fertilizer cost change", other:"Other input change", total:"Hypothetical total-cost change", reset:"Reset",
     invest:"Investable U.S. market exposure", investHelp:"World Food Lens provides the instrument explanations; TradingView provides the interactive price charts. Select an instrument to explore intraday or long-term history without connecting a brokerage account.",
@@ -271,6 +274,8 @@ function App(){
 
       <nav className="section-nav" aria-label={lang==="zh"?"页面模块导航":"Page sections"}>
         {t.nav.map((x,i)=><React.Fragment key={x}><a href={`#s${i+1}`}>{x}</a>{i===1&&<a href="#climate">{lang==="zh"?"气候监测":"Climate monitor"}</a>}</React.Fragment>)}
+        <a href="#price-outlook">{lang==="zh"?"价格展望":"Price outlook"}</a>
+        <a href="#release-calendar">{lang==="zh"?"发布日历":"Release calendar"}</a>
       </nav>
 
       <section id="s1" className="section">
@@ -311,7 +316,7 @@ function App(){
         <h2>{t.usdaTitle}</h2>
         <div className="usda-grid">
           <div className="ratio-card"><span>{t.ratio}</span><strong>{wheat.value.toFixed(1)}%</strong><b className={wheat.deltaPp>0?"up":"down"}>{wheat.deltaPp>0?"+":""}{wheat.deltaPp.toFixed(1)} pp</b><small>{wheat.period} · USDA PSD · {provenance.usda?(lang==="zh"?"含预测/估计，可修订":"Includes forecasts/estimates; subject to revision"):t.recovered}</small></div>
-          <div className="mini-chart"><ResponsiveContainer width="100%" height="100%"><BarChart data={wheatHistory}><CartesianGrid strokeDasharray="3 3" vertical={false}/><XAxis dataKey="year"/><YAxis domain={[0,"auto"]} unit="%"/><Tooltip formatter={v=>[`${Number(v).toFixed(1)}%`,t.ratio]}/><Bar dataKey="ratio"/></BarChart></ResponsiveContainer></div>
+          <SupplyHistory history={wheatHistory} lang={lang} official={!!provenance.usda}/>
         </div>
         <DataBadge record={provenance.usda} lang={lang}/>
         <div className="explain"><b>{lang==="zh"?"库存消费比是什么？":"What is stock-to-use?"}</b><p>{t.ratioHelp}</p><small>{provenance.usda?(lang==="zh"?"比率由 USDA 世界小麦期末库存和国内消费计算。市场年度不是自然年；最新年度可能为预测，历史值也可能修订。":"Ratios are calculated from USDA world wheat ending stocks and domestic consumption. Marketing years differ from calendar years; recent years can be forecasts and historical values can be revised."):(lang==="zh"?"当前为旧站恢复的比率，尚无可用的官方完整供需序列。":"Recovered ratios remain displayed; a verified full supply/use series is not yet available.")}</small></div>
@@ -320,6 +325,8 @@ function App(){
 
       <ClimateMonitor record={official.sources.noaa} lang={lang}/>
       <PolicyEvents lang={lang}/>
+      <PriceOutlook record={official.sources.fao} lang={lang}/>
+      <ReleaseCalendar lang={lang}/>
 
       <section id="s4" className="section alt">
         <div className="section-no">04 / CONNECT THE DOTS</div><h2>{t.dots}</h2>

@@ -141,7 +141,7 @@ body,.top,.section.alt,.kpi,.chart-card,.table-box,.mini-chart,.three article,.s
   right:0;
   bottom:0;
   z-index:50;
-  justify-content:center;
+  justify-content:flex-start;
   gap:8px;
   margin:0;
   padding:10px max(4vw,22px) calc(10px + env(safe-area-inset-bottom,0px));

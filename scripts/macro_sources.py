@@ -59,7 +59,7 @@ def monthly_series(rows, field, as_of=None):
             indexed[row["month"]] = row
     if len(indexed) < 2:
         raise ValueError(f"Too few valid {field} observations")
-    return [indexed[month] for month in sorted(indexed)][-120:]
+    return [indexed[month] for month in sorted(indexed)][-600:]
 
 
 def latest_headline(rows, field, unit):
@@ -235,8 +235,9 @@ def parse_usda(content, as_of=None):
             if row["Commodity_Code"].lstrip("0") != "410000" or row["Attribute_Description"] not in attributes:
                 continue
             year = int(row["Market_Year"])
-            # Recent history avoids historical country/union boundary changes.
-            if year < as_of.year - 9 or year > as_of.year:
+            # Start at 2000: avoid predecessor-state and EU-15-era aggregation.
+            # Use the provider's contemporary EU aggregate for each year.
+            if year < 2000 or year > as_of.year:
                 continue
             release = f"{int(row['Calendar_Year']):04d}-{int(row['Month']):02d}"
             if release > as_of.strftime("%Y-%m"):
@@ -269,12 +270,13 @@ def parse_usda(content, as_of=None):
         history.append({"year": f"{year}/{year+1}", **totals,
                         "ratio": round(totals["endingStocks"] / totals["consumption"] * 100, 4),
                         "countryAreaCount": len(chosen)})
-    if len(history) < 2 or int(history[-1]["year"][:4]) - int(history[-2]["year"][:4]) != 1:
+    if len(history) < 2 or any(int(b["year"][:4])-int(a["year"][:4]) != 1
+                               for a, b in zip(history, history[1:])):
         raise ValueError("USDA requires consecutive market years")
     return {"latestPeriod": history[-1]["year"], "stockToUse": history[-1]["ratio"],
             "priorStockToUse": history[-2]["ratio"], "history": history,
             "releasePeriod": max(released), "unit": "1000 metric tons; ratio: %",
-            "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."}
+            "methodology": "World wheat totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."}
 
 
 def fetch_usda():

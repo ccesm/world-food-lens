@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T13:31:25Z",
+  "generatedAt": "2026-09-12T13:43:10Z",
   "sources": {
     "usda": {
       "source": {
@@ -9,13 +9,149 @@
         "downloadUrl": "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip",
         "period": "2026/2027",
         "unit": "1000 metric tons; ratio: %",
-        "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
+        "methodology": "World wheat totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
       },
       "data": {
         "latestPeriod": "2026/2027",
         "stockToUse": 33.5934,
         "priorStockToUse": 34.3072,
         "history": [
+          {
+            "year": "2000/2001",
+            "production": 582813.0,
+            "consumption": 583912.0,
+            "endingStocks": 206122.0,
+            "ratio": 35.3002,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2001/2002",
+            "production": 583791.0,
+            "consumption": 586787.0,
+            "endingStocks": 203577.0,
+            "ratio": 34.6935,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2002/2003",
+            "production": 570058.0,
+            "consumption": 602181.0,
+            "endingStocks": 169825.0,
+            "ratio": 28.2017,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2003/2004",
+            "production": 556088.0,
+            "consumption": 581491.0,
+            "endingStocks": 137010.0,
+            "ratio": 23.5618,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2004/2005",
+            "production": 627061.0,
+            "consumption": 605692.0,
+            "endingStocks": 157738.0,
+            "ratio": 26.0426,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2005/2006",
+            "production": 619105.0,
+            "consumption": 616353.0,
+            "endingStocks": 154668.0,
+            "ratio": 25.0941,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2006/2007",
+            "production": 596834.0,
+            "consumption": 619099.0,
+            "endingStocks": 134778.0,
+            "ratio": 21.77,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2007/2008",
+            "production": 611710.0,
+            "consumption": 614378.0,
+            "endingStocks": 129216.0,
+            "ratio": 21.032,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2008/2009",
+            "production": 684262.0,
+            "consumption": 636775.0,
+            "endingStocks": 170285.0,
+            "ratio": 26.7418,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2009/2010",
+            "production": 687531.0,
+            "consumption": 650872.0,
+            "endingStocks": 203785.0,
+            "ratio": 31.3095,
+            "countryAreaCount": 118
+          },
+          {
+            "year": "2010/2011",
+            "production": 650300.0,
+            "consumption": 653373.0,
+            "endingStocks": 199617.0,
+            "ratio": 30.5518,
+            "countryAreaCount": 124
+          },
+          {
+            "year": "2011/2012",
+            "production": 698743.0,
+            "consumption": 690834.0,
+            "endingStocks": 200121.0,
+            "ratio": 28.968,
+            "countryAreaCount": 124
+          },
+          {
+            "year": "2012/2013",
+            "production": 660810.0,
+            "consumption": 687339.0,
+            "endingStocks": 180610.0,
+            "ratio": 26.2767,
+            "countryAreaCount": 124
+          },
+          {
+            "year": "2013/2014",
+            "production": 718132.0,
+            "consumption": 691037.0,
+            "endingStocks": 200723.0,
+            "ratio": 29.0466,
+            "countryAreaCount": 124
+          },
+          {
+            "year": "2014/2015",
+            "production": 732116.0,
+            "consumption": 702416.0,
+            "endingStocks": 225580.0,
+            "ratio": 32.1149,
+            "countryAreaCount": 124
+          },
+          {
+            "year": "2015/2016",
+            "production": 739036.0,
+            "consumption": 713929.0,
+            "endingStocks": 247821.0,
+            "ratio": 34.7123,
+            "countryAreaCount": 124
+          },
+          {
+            "year": "2016/2017",
+            "production": 757269.0,
+            "consumption": 734193.0,
+            "endingStocks": 267779.0,
+            "ratio": 36.4726,
+            "countryAreaCount": 125
+          },
           {
             "year": "2017/2018",
             "production": 760308.0,
@@ -99,11 +235,11 @@
         ],
         "releasePeriod": "2026-09",
         "unit": "1000 metric tons; ratio: %",
-        "methodology": "World wheat totals calculated from USDA PSD country/area records. EU-27 counted once; UK separate. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
+        "methodology": "World wheat totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Marketing years vary by country; figures include forecasts and revisions."
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:31:28Z",
-      "lastAttemptAt": "2026-09-12T13:31:25Z"
+      "fetchedAt": "2026-09-12T13:43:14Z",
+      "lastAttemptAt": "2026-09-12T13:43:10Z"
     },
     "fao": {
       "source": {
@@ -116,6 +252,1286 @@
       },
       "data": {
         "monthly": [
+          {
+            "month": "1990-01",
+            "fao": 64.4
+          },
+          {
+            "month": "1990-02",
+            "fao": 64.7
+          },
+          {
+            "month": "1990-03",
+            "fao": 64.0
+          },
+          {
+            "month": "1990-04",
+            "fao": 66.0
+          },
+          {
+            "month": "1990-05",
+            "fao": 64.6
+          },
+          {
+            "month": "1990-06",
+            "fao": 64.1
+          },
+          {
+            "month": "1990-07",
+            "fao": 62.9
+          },
+          {
+            "month": "1990-08",
+            "fao": 61.8
+          },
+          {
+            "month": "1990-09",
+            "fao": 61.3
+          },
+          {
+            "month": "1990-10",
+            "fao": 61.4
+          },
+          {
+            "month": "1990-11",
+            "fao": 62.3
+          },
+          {
+            "month": "1990-12",
+            "fao": 62.2
+          },
+          {
+            "month": "1991-01",
+            "fao": 61.0
+          },
+          {
+            "month": "1991-02",
+            "fao": 61.8
+          },
+          {
+            "month": "1991-03",
+            "fao": 62.3
+          },
+          {
+            "month": "1991-04",
+            "fao": 61.0
+          },
+          {
+            "month": "1991-05",
+            "fao": 60.8
+          },
+          {
+            "month": "1991-06",
+            "fao": 61.3
+          },
+          {
+            "month": "1991-07",
+            "fao": 62.2
+          },
+          {
+            "month": "1991-08",
+            "fao": 61.8
+          },
+          {
+            "month": "1991-09",
+            "fao": 62.4
+          },
+          {
+            "month": "1991-10",
+            "fao": 64.5
+          },
+          {
+            "month": "1991-11",
+            "fao": 64.6
+          },
+          {
+            "month": "1991-12",
+            "fao": 64.3
+          },
+          {
+            "month": "1992-01",
+            "fao": 65.1
+          },
+          {
+            "month": "1992-02",
+            "fao": 65.9
+          },
+          {
+            "month": "1992-03",
+            "fao": 66.5
+          },
+          {
+            "month": "1992-04",
+            "fao": 64.8
+          },
+          {
+            "month": "1992-05",
+            "fao": 65.1
+          },
+          {
+            "month": "1992-06",
+            "fao": 65.9
+          },
+          {
+            "month": "1992-07",
+            "fao": 64.7
+          },
+          {
+            "month": "1992-08",
+            "fao": 63.1
+          },
+          {
+            "month": "1992-09",
+            "fao": 63.8
+          },
+          {
+            "month": "1992-10",
+            "fao": 61.8
+          },
+          {
+            "month": "1992-11",
+            "fao": 62.7
+          },
+          {
+            "month": "1992-12",
+            "fao": 61.3
+          },
+          {
+            "month": "1993-01",
+            "fao": 61.6
+          },
+          {
+            "month": "1993-02",
+            "fao": 61.4
+          },
+          {
+            "month": "1993-03",
+            "fao": 63.2
+          },
+          {
+            "month": "1993-04",
+            "fao": 62.8
+          },
+          {
+            "month": "1993-05",
+            "fao": 62.4
+          },
+          {
+            "month": "1993-06",
+            "fao": 61.8
+          },
+          {
+            "month": "1993-07",
+            "fao": 62.2
+          },
+          {
+            "month": "1993-08",
+            "fao": 60.9
+          },
+          {
+            "month": "1993-09",
+            "fao": 61.2
+          },
+          {
+            "month": "1993-10",
+            "fao": 61.5
+          },
+          {
+            "month": "1993-11",
+            "fao": 63.4
+          },
+          {
+            "month": "1993-12",
+            "fao": 64.7
+          },
+          {
+            "month": "1994-01",
+            "fao": 64.8
+          },
+          {
+            "month": "1994-02",
+            "fao": 64.5
+          },
+          {
+            "month": "1994-03",
+            "fao": 64.8
+          },
+          {
+            "month": "1994-04",
+            "fao": 64.1
+          },
+          {
+            "month": "1994-05",
+            "fao": 65.9
+          },
+          {
+            "month": "1994-06",
+            "fao": 65.5
+          },
+          {
+            "month": "1994-07",
+            "fao": 64.2
+          },
+          {
+            "month": "1994-08",
+            "fao": 66.6
+          },
+          {
+            "month": "1994-09",
+            "fao": 69.6
+          },
+          {
+            "month": "1994-10",
+            "fao": 70.3
+          },
+          {
+            "month": "1994-11",
+            "fao": 73.6
+          },
+          {
+            "month": "1994-12",
+            "fao": 73.3
+          },
+          {
+            "month": "1995-01",
+            "fao": 73.0
+          },
+          {
+            "month": "1995-02",
+            "fao": 74.7
+          },
+          {
+            "month": "1995-03",
+            "fao": 75.5
+          },
+          {
+            "month": "1995-04",
+            "fao": 74.3
+          },
+          {
+            "month": "1995-05",
+            "fao": 74.1
+          },
+          {
+            "month": "1995-06",
+            "fao": 75.3
+          },
+          {
+            "month": "1995-07",
+            "fao": 79.6
+          },
+          {
+            "month": "1995-08",
+            "fao": 78.1
+          },
+          {
+            "month": "1995-09",
+            "fao": 78.5
+          },
+          {
+            "month": "1995-10",
+            "fao": 80.5
+          },
+          {
+            "month": "1995-11",
+            "fao": 80.0
+          },
+          {
+            "month": "1995-12",
+            "fao": 78.2
+          },
+          {
+            "month": "1996-01",
+            "fao": 77.1
+          },
+          {
+            "month": "1996-02",
+            "fao": 77.6
+          },
+          {
+            "month": "1996-03",
+            "fao": 78.7
+          },
+          {
+            "month": "1996-04",
+            "fao": 80.9
+          },
+          {
+            "month": "1996-05",
+            "fao": 82.5
+          },
+          {
+            "month": "1996-06",
+            "fao": 80.7
+          },
+          {
+            "month": "1996-07",
+            "fao": 80.5
+          },
+          {
+            "month": "1996-08",
+            "fao": 80.1
+          },
+          {
+            "month": "1996-09",
+            "fao": 77.1
+          },
+          {
+            "month": "1996-10",
+            "fao": 74.4
+          },
+          {
+            "month": "1996-11",
+            "fao": 72.7
+          },
+          {
+            "month": "1996-12",
+            "fao": 71.5
+          },
+          {
+            "month": "1997-01",
+            "fao": 71.0
+          },
+          {
+            "month": "1997-02",
+            "fao": 71.2
+          },
+          {
+            "month": "1997-03",
+            "fao": 73.0
+          },
+          {
+            "month": "1997-04",
+            "fao": 73.5
+          },
+          {
+            "month": "1997-05",
+            "fao": 72.9
+          },
+          {
+            "month": "1997-06",
+            "fao": 70.3
+          },
+          {
+            "month": "1997-07",
+            "fao": 68.6
+          },
+          {
+            "month": "1997-08",
+            "fao": 70.0
+          },
+          {
+            "month": "1997-09",
+            "fao": 70.1
+          },
+          {
+            "month": "1997-10",
+            "fao": 69.9
+          },
+          {
+            "month": "1997-11",
+            "fao": 70.5
+          },
+          {
+            "month": "1997-12",
+            "fao": 68.1
+          },
+          {
+            "month": "1998-01",
+            "fao": 67.5
+          },
+          {
+            "month": "1998-02",
+            "fao": 67.7
+          },
+          {
+            "month": "1998-03",
+            "fao": 67.6
+          },
+          {
+            "month": "1998-04",
+            "fao": 67.0
+          },
+          {
+            "month": "1998-05",
+            "fao": 66.6
+          },
+          {
+            "month": "1998-06",
+            "fao": 64.4
+          },
+          {
+            "month": "1998-07",
+            "fao": 64.4
+          },
+          {
+            "month": "1998-08",
+            "fao": 62.6
+          },
+          {
+            "month": "1998-09",
+            "fao": 62.1
+          },
+          {
+            "month": "1998-10",
+            "fao": 62.9
+          },
+          {
+            "month": "1998-11",
+            "fao": 62.8
+          },
+          {
+            "month": "1998-12",
+            "fao": 62.2
+          },
+          {
+            "month": "1999-01",
+            "fao": 61.2
+          },
+          {
+            "month": "1999-02",
+            "fao": 58.6
+          },
+          {
+            "month": "1999-03",
+            "fao": 57.2
+          },
+          {
+            "month": "1999-04",
+            "fao": 56.0
+          },
+          {
+            "month": "1999-05",
+            "fao": 55.6
+          },
+          {
+            "month": "1999-06",
+            "fao": 54.8
+          },
+          {
+            "month": "1999-07",
+            "fao": 52.8
+          },
+          {
+            "month": "1999-08",
+            "fao": 54.6
+          },
+          {
+            "month": "1999-09",
+            "fao": 54.8
+          },
+          {
+            "month": "1999-10",
+            "fao": 53.5
+          },
+          {
+            "month": "1999-11",
+            "fao": 53.5
+          },
+          {
+            "month": "1999-12",
+            "fao": 52.1
+          },
+          {
+            "month": "2000-01",
+            "fao": 52.8
+          },
+          {
+            "month": "2000-02",
+            "fao": 52.5
+          },
+          {
+            "month": "2000-03",
+            "fao": 53.1
+          },
+          {
+            "month": "2000-04",
+            "fao": 53.7
+          },
+          {
+            "month": "2000-05",
+            "fao": 54.0
+          },
+          {
+            "month": "2000-06",
+            "fao": 54.2
+          },
+          {
+            "month": "2000-07",
+            "fao": 54.4
+          },
+          {
+            "month": "2000-08",
+            "fao": 53.5
+          },
+          {
+            "month": "2000-09",
+            "fao": 52.9
+          },
+          {
+            "month": "2000-10",
+            "fao": 53.7
+          },
+          {
+            "month": "2000-11",
+            "fao": 54.2
+          },
+          {
+            "month": "2000-12",
+            "fao": 54.8
+          },
+          {
+            "month": "2001-01",
+            "fao": 54.1
+          },
+          {
+            "month": "2001-02",
+            "fao": 54.6
+          },
+          {
+            "month": "2001-03",
+            "fao": 55.5
+          },
+          {
+            "month": "2001-04",
+            "fao": 55.0
+          },
+          {
+            "month": "2001-05",
+            "fao": 55.8
+          },
+          {
+            "month": "2001-06",
+            "fao": 55.2
+          },
+          {
+            "month": "2001-07",
+            "fao": 56.9
+          },
+          {
+            "month": "2001-08",
+            "fao": 57.0
+          },
+          {
+            "month": "2001-09",
+            "fao": 55.8
+          },
+          {
+            "month": "2001-10",
+            "fao": 54.5
+          },
+          {
+            "month": "2001-11",
+            "fao": 55.1
+          },
+          {
+            "month": "2001-12",
+            "fao": 54.6
+          },
+          {
+            "month": "2002-01",
+            "fao": 53.8
+          },
+          {
+            "month": "2002-02",
+            "fao": 52.0
+          },
+          {
+            "month": "2002-03",
+            "fao": 52.3
+          },
+          {
+            "month": "2002-04",
+            "fao": 51.4
+          },
+          {
+            "month": "2002-05",
+            "fao": 50.8
+          },
+          {
+            "month": "2002-06",
+            "fao": 51.6
+          },
+          {
+            "month": "2002-07",
+            "fao": 52.3
+          },
+          {
+            "month": "2002-08",
+            "fao": 53.7
+          },
+          {
+            "month": "2002-09",
+            "fao": 55.1
+          },
+          {
+            "month": "2002-10",
+            "fao": 55.5
+          },
+          {
+            "month": "2002-11",
+            "fao": 56.6
+          },
+          {
+            "month": "2002-12",
+            "fao": 56.0
+          },
+          {
+            "month": "2003-01",
+            "fao": 56.2
+          },
+          {
+            "month": "2003-02",
+            "fao": 56.9
+          },
+          {
+            "month": "2003-03",
+            "fao": 55.9
+          },
+          {
+            "month": "2003-04",
+            "fao": 55.9
+          },
+          {
+            "month": "2003-05",
+            "fao": 56.7
+          },
+          {
+            "month": "2003-06",
+            "fao": 56.4
+          },
+          {
+            "month": "2003-07",
+            "fao": 57.1
+          },
+          {
+            "month": "2003-08",
+            "fao": 57.8
+          },
+          {
+            "month": "2003-09",
+            "fao": 59.0
+          },
+          {
+            "month": "2003-10",
+            "fao": 60.6
+          },
+          {
+            "month": "2003-11",
+            "fao": 62.0
+          },
+          {
+            "month": "2003-12",
+            "fao": 62.9
+          },
+          {
+            "month": "2004-01",
+            "fao": 64.7
+          },
+          {
+            "month": "2004-02",
+            "fao": 65.5
+          },
+          {
+            "month": "2004-03",
+            "fao": 67.1
+          },
+          {
+            "month": "2004-04",
+            "fao": 67.7
+          },
+          {
+            "month": "2004-05",
+            "fao": 66.8
+          },
+          {
+            "month": "2004-06",
+            "fao": 66.4
+          },
+          {
+            "month": "2004-07",
+            "fao": 65.8
+          },
+          {
+            "month": "2004-08",
+            "fao": 64.8
+          },
+          {
+            "month": "2004-09",
+            "fao": 65.4
+          },
+          {
+            "month": "2004-10",
+            "fao": 64.9
+          },
+          {
+            "month": "2004-11",
+            "fao": 65.7
+          },
+          {
+            "month": "2004-12",
+            "fao": 66.0
+          },
+          {
+            "month": "2005-01",
+            "fao": 65.8
+          },
+          {
+            "month": "2005-02",
+            "fao": 66.2
+          },
+          {
+            "month": "2005-03",
+            "fao": 67.5
+          },
+          {
+            "month": "2005-04",
+            "fao": 66.0
+          },
+          {
+            "month": "2005-05",
+            "fao": 66.5
+          },
+          {
+            "month": "2005-06",
+            "fao": 67.4
+          },
+          {
+            "month": "2005-07",
+            "fao": 67.7
+          },
+          {
+            "month": "2005-08",
+            "fao": 67.6
+          },
+          {
+            "month": "2005-09",
+            "fao": 68.6
+          },
+          {
+            "month": "2005-10",
+            "fao": 69.5
+          },
+          {
+            "month": "2005-11",
+            "fao": 69.0
+          },
+          {
+            "month": "2005-12",
+            "fao": 69.8
+          },
+          {
+            "month": "2006-01",
+            "fao": 69.8
+          },
+          {
+            "month": "2006-02",
+            "fao": 70.8
+          },
+          {
+            "month": "2006-03",
+            "fao": 69.8
+          },
+          {
+            "month": "2006-04",
+            "fao": 70.1
+          },
+          {
+            "month": "2006-05",
+            "fao": 71.3
+          },
+          {
+            "month": "2006-06",
+            "fao": 71.4
+          },
+          {
+            "month": "2006-07",
+            "fao": 73.2
+          },
+          {
+            "month": "2006-08",
+            "fao": 73.1
+          },
+          {
+            "month": "2006-09",
+            "fao": 73.2
+          },
+          {
+            "month": "2006-10",
+            "fao": 75.1
+          },
+          {
+            "month": "2006-11",
+            "fao": 77.7
+          },
+          {
+            "month": "2006-12",
+            "fao": 78.8
+          },
+          {
+            "month": "2007-01",
+            "fao": 78.5
+          },
+          {
+            "month": "2007-02",
+            "fao": 80.0
+          },
+          {
+            "month": "2007-03",
+            "fao": 81.1
+          },
+          {
+            "month": "2007-04",
+            "fao": 83.9
+          },
+          {
+            "month": "2007-05",
+            "fao": 86.5
+          },
+          {
+            "month": "2007-06",
+            "fao": 91.4
+          },
+          {
+            "month": "2007-07",
+            "fao": 95.5
+          },
+          {
+            "month": "2007-08",
+            "fao": 99.1
+          },
+          {
+            "month": "2007-09",
+            "fao": 105.3
+          },
+          {
+            "month": "2007-10",
+            "fao": 107.9
+          },
+          {
+            "month": "2007-11",
+            "fao": 110.8
+          },
+          {
+            "month": "2007-12",
+            "fao": 114.7
+          },
+          {
+            "month": "2008-01",
+            "fao": 120.4
+          },
+          {
+            "month": "2008-02",
+            "fao": 128.4
+          },
+          {
+            "month": "2008-03",
+            "fao": 132.4
+          },
+          {
+            "month": "2008-04",
+            "fao": 130.7
+          },
+          {
+            "month": "2008-05",
+            "fao": 130.3
+          },
+          {
+            "month": "2008-06",
+            "fao": 132.7
+          },
+          {
+            "month": "2008-07",
+            "fao": 130.2
+          },
+          {
+            "month": "2008-08",
+            "fao": 121.2
+          },
+          {
+            "month": "2008-09",
+            "fao": 112.8
+          },
+          {
+            "month": "2008-10",
+            "fao": 97.8
+          },
+          {
+            "month": "2008-11",
+            "fao": 89.7
+          },
+          {
+            "month": "2008-12",
+            "fao": 86.3
+          },
+          {
+            "month": "2009-01",
+            "fao": 86.7
+          },
+          {
+            "month": "2009-02",
+            "fao": 84.5
+          },
+          {
+            "month": "2009-03",
+            "fao": 84.3
+          },
+          {
+            "month": "2009-04",
+            "fao": 87.4
+          },
+          {
+            "month": "2009-05",
+            "fao": 93.5
+          },
+          {
+            "month": "2009-06",
+            "fao": 93.4
+          },
+          {
+            "month": "2009-07",
+            "fao": 90.7
+          },
+          {
+            "month": "2009-08",
+            "fao": 93.5
+          },
+          {
+            "month": "2009-09",
+            "fao": 93.1
+          },
+          {
+            "month": "2009-10",
+            "fao": 94.8
+          },
+          {
+            "month": "2009-11",
+            "fao": 98.9
+          },
+          {
+            "month": "2009-12",
+            "fao": 100.8
+          },
+          {
+            "month": "2010-01",
+            "fao": 101.8
+          },
+          {
+            "month": "2010-02",
+            "fao": 99.3
+          },
+          {
+            "month": "2010-03",
+            "fao": 96.5
+          },
+          {
+            "month": "2010-04",
+            "fao": 97.1
+          },
+          {
+            "month": "2010-05",
+            "fao": 96.4
+          },
+          {
+            "month": "2010-06",
+            "fao": 95.9
+          },
+          {
+            "month": "2010-07",
+            "fao": 100.0
+          },
+          {
+            "month": "2010-08",
+            "fao": 107.8
+          },
+          {
+            "month": "2010-09",
+            "fao": 114.1
+          },
+          {
+            "month": "2010-10",
+            "fao": 120.1
+          },
+          {
+            "month": "2010-11",
+            "fao": 124.2
+          },
+          {
+            "month": "2010-12",
+            "fao": 129.4
+          },
+          {
+            "month": "2011-01",
+            "fao": 133.8
+          },
+          {
+            "month": "2011-02",
+            "fao": 137.7
+          },
+          {
+            "month": "2011-03",
+            "fao": 134.3
+          },
+          {
+            "month": "2011-04",
+            "fao": 136.3
+          },
+          {
+            "month": "2011-05",
+            "fao": 135.1
+          },
+          {
+            "month": "2011-06",
+            "fao": 134.8
+          },
+          {
+            "month": "2011-07",
+            "fao": 133.0
+          },
+          {
+            "month": "2011-08",
+            "fao": 132.7
+          },
+          {
+            "month": "2011-09",
+            "fao": 130.1
+          },
+          {
+            "month": "2011-10",
+            "fao": 125.6
+          },
+          {
+            "month": "2011-11",
+            "fao": 125.9
+          },
+          {
+            "month": "2011-12",
+            "fao": 121.9
+          },
+          {
+            "month": "2012-01",
+            "fao": 122.2
+          },
+          {
+            "month": "2012-02",
+            "fao": 125.3
+          },
+          {
+            "month": "2012-03",
+            "fao": 125.7
+          },
+          {
+            "month": "2012-04",
+            "fao": 124.4
+          },
+          {
+            "month": "2012-05",
+            "fao": 119.0
+          },
+          {
+            "month": "2012-06",
+            "fao": 115.8
+          },
+          {
+            "month": "2012-07",
+            "fao": 122.0
+          },
+          {
+            "month": "2012-08",
+            "fao": 123.2
+          },
+          {
+            "month": "2012-09",
+            "fao": 125.1
+          },
+          {
+            "month": "2012-10",
+            "fao": 124.0
+          },
+          {
+            "month": "2012-11",
+            "fao": 123.5
+          },
+          {
+            "month": "2012-12",
+            "fao": 122.8
+          },
+          {
+            "month": "2013-01",
+            "fao": 123.4
+          },
+          {
+            "month": "2013-02",
+            "fao": 123.3
+          },
+          {
+            "month": "2013-03",
+            "fao": 122.9
+          },
+          {
+            "month": "2013-04",
+            "fao": 122.9
+          },
+          {
+            "month": "2013-05",
+            "fao": 122.2
+          },
+          {
+            "month": "2013-06",
+            "fao": 120.9
+          },
+          {
+            "month": "2013-07",
+            "fao": 118.0
+          },
+          {
+            "month": "2013-08",
+            "fao": 116.2
+          },
+          {
+            "month": "2013-09",
+            "fao": 116.4
+          },
+          {
+            "month": "2013-10",
+            "fao": 118.7
+          },
+          {
+            "month": "2013-11",
+            "fao": 118.6
+          },
+          {
+            "month": "2013-12",
+            "fao": 118.2
+          },
+          {
+            "month": "2014-01",
+            "fao": 116.2
+          },
+          {
+            "month": "2014-02",
+            "fao": 118.6
+          },
+          {
+            "month": "2014-03",
+            "fao": 122.1
+          },
+          {
+            "month": "2014-04",
+            "fao": 121.5
+          },
+          {
+            "month": "2014-05",
+            "fao": 121.2
+          },
+          {
+            "month": "2014-06",
+            "fao": 119.2
+          },
+          {
+            "month": "2014-07",
+            "fao": 116.3
+          },
+          {
+            "month": "2014-08",
+            "fao": 112.8
+          },
+          {
+            "month": "2014-09",
+            "fao": 109.2
+          },
+          {
+            "month": "2014-10",
+            "fao": 109.3
+          },
+          {
+            "month": "2014-11",
+            "fao": 108.1
+          },
+          {
+            "month": "2014-12",
+            "fao": 105.2
+          },
+          {
+            "month": "2015-01",
+            "fao": 101.0
+          },
+          {
+            "month": "2015-02",
+            "fao": 98.7
+          },
+          {
+            "month": "2015-03",
+            "fao": 95.7
+          },
+          {
+            "month": "2015-04",
+            "fao": 94.6
+          },
+          {
+            "month": "2015-05",
+            "fao": 95.0
+          },
+          {
+            "month": "2015-06",
+            "fao": 94.6
+          },
+          {
+            "month": "2015-07",
+            "fao": 93.8
+          },
+          {
+            "month": "2015-08",
+            "fao": 89.5
+          },
+          {
+            "month": "2015-09",
+            "fao": 88.9
+          },
+          {
+            "month": "2015-10",
+            "fao": 90.3
+          },
+          {
+            "month": "2015-11",
+            "fao": 87.7
+          },
+          {
+            "month": "2015-12",
+            "fao": 87.0
+          },
+          {
+            "month": "2016-01",
+            "fao": 84.9
+          },
+          {
+            "month": "2016-02",
+            "fao": 86.1
+          },
+          {
+            "month": "2016-03",
+            "fao": 87.4
+          },
+          {
+            "month": "2016-04",
+            "fao": 89.1
+          },
+          {
+            "month": "2016-05",
+            "fao": 90.6
+          },
+          {
+            "month": "2016-06",
+            "fao": 93.8
+          },
+          {
+            "month": "2016-07",
+            "fao": 93.0
+          },
+          {
+            "month": "2016-08",
+            "fao": 95.3
+          },
           {
             "month": "2016-09",
             "fao": 96.1
@@ -605,8 +2021,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:31:26Z",
-      "lastAttemptAt": "2026-09-12T13:31:25Z"
+      "fetchedAt": "2026-09-12T13:43:10Z",
+      "lastAttemptAt": "2026-09-12T13:43:10Z"
     },
     "noaa": {
       "source": {
@@ -1714,8 +3130,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:31:26Z",
-      "lastAttemptAt": "2026-09-12T13:31:25Z"
+      "fetchedAt": "2026-09-12T13:43:11Z",
+      "lastAttemptAt": "2026-09-12T13:43:10Z"
     },
     "worldBank": {
       "source": {
@@ -1728,6 +3144,2406 @@
       },
       "data": {
         "monthly": [
+          {
+            "month": "1976-09",
+            "brent": 11.6,
+            "urea": 82.0
+          },
+          {
+            "month": "1976-10",
+            "brent": 11.9,
+            "urea": 82.0
+          },
+          {
+            "month": "1976-11",
+            "brent": 11.9,
+            "urea": 82.0
+          },
+          {
+            "month": "1976-12",
+            "brent": 11.9,
+            "urea": 82.0
+          },
+          {
+            "month": "1977-01",
+            "brent": 12.5,
+            "urea": 115.0
+          },
+          {
+            "month": "1977-02",
+            "brent": 12.5,
+            "urea": 100.5
+          },
+          {
+            "month": "1977-03",
+            "brent": 12.5,
+            "urea": 100.5
+          },
+          {
+            "month": "1977-04",
+            "brent": 12.4,
+            "urea": 109.5
+          },
+          {
+            "month": "1977-05",
+            "brent": 12.4,
+            "urea": 116.1
+          },
+          {
+            "month": "1977-06",
+            "brent": 12.4,
+            "urea": 120.0
+          },
+          {
+            "month": "1977-07",
+            "brent": 12.6,
+            "urea": 123.1
+          },
+          {
+            "month": "1977-08",
+            "brent": 12.6,
+            "urea": 129.6
+          },
+          {
+            "month": "1977-09",
+            "brent": 12.6,
+            "urea": 132.5
+          },
+          {
+            "month": "1977-10",
+            "brent": 12.7,
+            "urea": 131.0
+          },
+          {
+            "month": "1977-11",
+            "brent": 12.7,
+            "urea": 137.0
+          },
+          {
+            "month": "1977-12",
+            "brent": 12.7,
+            "urea": 134.3
+          },
+          {
+            "month": "1978-01",
+            "brent": 12.7,
+            "urea": 133.0
+          },
+          {
+            "month": "1978-02",
+            "brent": 12.7,
+            "urea": 134.8
+          },
+          {
+            "month": "1978-03",
+            "brent": 12.7,
+            "urea": 134.5
+          },
+          {
+            "month": "1978-04",
+            "brent": 12.7,
+            "urea": 134.0
+          },
+          {
+            "month": "1978-05",
+            "brent": 12.7,
+            "urea": 130.8
+          },
+          {
+            "month": "1978-06",
+            "brent": 12.7,
+            "urea": 132.5
+          },
+          {
+            "month": "1978-07",
+            "brent": 12.8,
+            "urea": 142.0
+          },
+          {
+            "month": "1978-08",
+            "brent": 12.8,
+            "urea": 142.5
+          },
+          {
+            "month": "1978-09",
+            "brent": 12.8,
+            "urea": 134.6
+          },
+          {
+            "month": "1978-10",
+            "brent": 12.9,
+            "urea": 132.0
+          },
+          {
+            "month": "1978-11",
+            "brent": 13.2,
+            "urea": 140.8
+          },
+          {
+            "month": "1978-12",
+            "brent": 14.5,
+            "urea": 141.0
+          },
+          {
+            "month": "1979-01",
+            "brent": 19.0,
+            "urea": 143.0
+          },
+          {
+            "month": "1979-02",
+            "brent": 22.0,
+            "urea": 143.0
+          },
+          {
+            "month": "1979-03",
+            "brent": 23.3,
+            "urea": 131.9
+          },
+          {
+            "month": "1979-04",
+            "brent": 23.6,
+            "urea": 135.0
+          },
+          {
+            "month": "1979-05",
+            "brent": 32.8,
+            "urea": 141.8
+          },
+          {
+            "month": "1979-06",
+            "brent": 36.5,
+            "urea": 148.5
+          },
+          {
+            "month": "1979-07",
+            "brent": 35.0,
+            "urea": 155.4
+          },
+          {
+            "month": "1979-08",
+            "brent": 35.8,
+            "urea": 160.0
+          },
+          {
+            "month": "1979-09",
+            "brent": 36.5,
+            "urea": 163.8
+          },
+          {
+            "month": "1979-10",
+            "brent": 38.5,
+            "urea": 167.5
+          },
+          {
+            "month": "1979-11",
+            "brent": 42.0,
+            "urea": 170.0
+          },
+          {
+            "month": "1979-12",
+            "brent": 40.5,
+            "urea": 176.3
+          },
+          {
+            "month": "1980-01",
+            "brent": 40.0,
+            "urea": 187.5
+          },
+          {
+            "month": "1980-02",
+            "brent": 38.5,
+            "urea": 187.5
+          },
+          {
+            "month": "1980-03",
+            "brent": 38.3,
+            "urea": 187.5
+          },
+          {
+            "month": "1980-04",
+            "brent": 38.2,
+            "urea": 196.3
+          },
+          {
+            "month": "1980-05",
+            "brent": 38.5,
+            "urea": 205.0
+          },
+          {
+            "month": "1980-06",
+            "brent": 38.0,
+            "urea": 205.0
+          },
+          {
+            "month": "1980-07",
+            "brent": 37.4,
+            "urea": 205.0
+          },
+          {
+            "month": "1980-08",
+            "brent": 33.6,
+            "urea": 205.0
+          },
+          {
+            "month": "1980-09",
+            "brent": 33.4,
+            "urea": 207.0
+          },
+          {
+            "month": "1980-10",
+            "brent": 37.9,
+            "urea": 207.0
+          },
+          {
+            "month": "1980-11",
+            "brent": 40.8,
+            "urea": 207.0
+          },
+          {
+            "month": "1980-12",
+            "brent": 40.2,
+            "urea": 207.0
+          },
+          {
+            "month": "1981-01",
+            "brent": 40.3,
+            "urea": 207.0
+          },
+          {
+            "month": "1981-02",
+            "brent": 38.7,
+            "urea": 242.5
+          },
+          {
+            "month": "1981-03",
+            "brent": 38.3,
+            "urea": 242.5
+          },
+          {
+            "month": "1981-04",
+            "brent": 37.2,
+            "urea": 135.0
+          },
+          {
+            "month": "1981-05",
+            "brent": 35.2,
+            "urea": 215.0
+          },
+          {
+            "month": "1981-06",
+            "brent": 33.3,
+            "urea": 215.0
+          },
+          {
+            "month": "1981-07",
+            "brent": 35.1,
+            "urea": 180.0
+          },
+          {
+            "month": "1981-08",
+            "brent": 35.8,
+            "urea": 160.0
+          },
+          {
+            "month": "1981-09",
+            "brent": 35.9,
+            "urea": 160.0
+          },
+          {
+            "month": "1981-10",
+            "brent": 36.5,
+            "urea": 160.0
+          },
+          {
+            "month": "1981-11",
+            "brent": 37.1,
+            "urea": 136.5
+          },
+          {
+            "month": "1981-12",
+            "brent": 36.7,
+            "urea": 136.5
+          },
+          {
+            "month": "1982-01",
+            "brent": 35.8,
+            "urea": 112.5
+          },
+          {
+            "month": "1982-02",
+            "brent": 31.6,
+            "urea": 130.0
+          },
+          {
+            "month": "1982-03",
+            "brent": 29.3,
+            "urea": 130.0
+          },
+          {
+            "month": "1982-04",
+            "brent": 33.1,
+            "urea": 122.5
+          },
+          {
+            "month": "1982-05",
+            "brent": 35.2,
+            "urea": 122.5
+          },
+          {
+            "month": "1982-06",
+            "brent": 34.6,
+            "urea": 122.5
+          },
+          {
+            "month": "1982-07",
+            "brent": 33.7,
+            "urea": 122.5
+          },
+          {
+            "month": "1982-08",
+            "brent": 32.8,
+            "urea": 125.0
+          },
+          {
+            "month": "1982-09",
+            "brent": 34.3,
+            "urea": 125.0
+          },
+          {
+            "month": "1982-10",
+            "brent": 35.0,
+            "urea": 127.5
+          },
+          {
+            "month": "1982-11",
+            "brent": 33.8,
+            "urea": 127.5
+          },
+          {
+            "month": "1982-12",
+            "brent": 31.8,
+            "urea": 120.0
+          },
+          {
+            "month": "1983-01",
+            "brent": 30.9,
+            "urea": 124.5
+          },
+          {
+            "month": "1983-02",
+            "brent": 29.1,
+            "urea": 124.5
+          },
+          {
+            "month": "1983-03",
+            "brent": 28.2,
+            "urea": 120.0
+          },
+          {
+            "month": "1983-04",
+            "brent": 29.8,
+            "urea": 109.0
+          },
+          {
+            "month": "1983-05",
+            "brent": 29.6,
+            "urea": 101.5
+          },
+          {
+            "month": "1983-06",
+            "brent": 30.2,
+            "urea": 120.0
+          },
+          {
+            "month": "1983-07",
+            "brent": 30.8,
+            "urea": 109.0
+          },
+          {
+            "month": "1983-08",
+            "brent": 31.1,
+            "urea": 110.5
+          },
+          {
+            "month": "1983-09",
+            "brent": 30.4,
+            "urea": 110.5
+          },
+          {
+            "month": "1983-10",
+            "brent": 29.9,
+            "urea": 114.0
+          },
+          {
+            "month": "1983-11",
+            "brent": 29.2,
+            "urea": 115.5
+          },
+          {
+            "month": "1983-12",
+            "brent": 29.0,
+            "urea": 115.5
+          },
+          {
+            "month": "1984-01",
+            "brent": 29.6,
+            "urea": 116.5
+          },
+          {
+            "month": "1984-02",
+            "brent": 29.9,
+            "urea": 118.0
+          },
+          {
+            "month": "1984-03",
+            "brent": 30.1,
+            "urea": 141.0
+          },
+          {
+            "month": "1984-04",
+            "brent": 30.1,
+            "urea": 127.5
+          },
+          {
+            "month": "1984-05",
+            "brent": 29.9,
+            "urea": 147.5
+          },
+          {
+            "month": "1984-06",
+            "brent": 29.2,
+            "urea": 155.0
+          },
+          {
+            "month": "1984-07",
+            "brent": 27.9,
+            "urea": 162.5
+          },
+          {
+            "month": "1984-08",
+            "brent": 28.1,
+            "urea": 165.0
+          },
+          {
+            "month": "1984-09",
+            "brent": 28.4,
+            "urea": 165.0
+          },
+          {
+            "month": "1984-10",
+            "brent": 27.8,
+            "urea": 172.0
+          },
+          {
+            "month": "1984-11",
+            "brent": 27.7,
+            "urea": 166.0
+          },
+          {
+            "month": "1984-12",
+            "brent": 27.0,
+            "urea": 166.0
+          },
+          {
+            "month": "1985-01",
+            "brent": 27.0,
+            "urea": 168.5
+          },
+          {
+            "month": "1985-02",
+            "brent": 28.2,
+            "urea": 168.5
+          },
+          {
+            "month": "1985-03",
+            "brent": 28.1,
+            "urea": 105.0
+          },
+          {
+            "month": "1985-04",
+            "brent": 27.9,
+            "urea": 107.5
+          },
+          {
+            "month": "1985-05",
+            "brent": 26.7,
+            "urea": 127.5
+          },
+          {
+            "month": "1985-06",
+            "brent": 26.5,
+            "urea": 112.5
+          },
+          {
+            "month": "1985-07",
+            "brent": 26.6,
+            "urea": 109.5
+          },
+          {
+            "month": "1985-08",
+            "brent": 27.2,
+            "urea": 97.5
+          },
+          {
+            "month": "1985-09",
+            "brent": 27.2,
+            "urea": 87.5
+          },
+          {
+            "month": "1985-10",
+            "brent": 27.9,
+            "urea": 80.5
+          },
+          {
+            "month": "1985-11",
+            "brent": 29.1,
+            "urea": 87.5
+          },
+          {
+            "month": "1985-12",
+            "brent": 25.9,
+            "urea": 87.5
+          },
+          {
+            "month": "1986-01",
+            "brent": 25.8,
+            "urea": 82.5
+          },
+          {
+            "month": "1986-02",
+            "brent": 17.6,
+            "urea": 77.0
+          },
+          {
+            "month": "1986-03",
+            "brent": 13.9,
+            "urea": 77.0
+          },
+          {
+            "month": "1986-04",
+            "brent": 12.5,
+            "urea": 72.5
+          },
+          {
+            "month": "1986-05",
+            "brent": 14.2,
+            "urea": 72.5
+          },
+          {
+            "month": "1986-06",
+            "brent": 11.9,
+            "urea": 72.5
+          },
+          {
+            "month": "1986-07",
+            "brent": 9.5,
+            "urea": 67.5
+          },
+          {
+            "month": "1986-08",
+            "brent": 13.7,
+            "urea": 71.0
+          },
+          {
+            "month": "1986-09",
+            "brent": 14.2,
+            "urea": 65.0
+          },
+          {
+            "month": "1986-10",
+            "brent": 13.8,
+            "urea": 62.5
+          },
+          {
+            "month": "1986-11",
+            "brent": 14.6,
+            "urea": 64.5
+          },
+          {
+            "month": "1986-12",
+            "brent": 15.9,
+            "urea": 64.5
+          },
+          {
+            "month": "1987-01",
+            "brent": 18.4,
+            "urea": 64.0
+          },
+          {
+            "month": "1987-02",
+            "brent": 17.3,
+            "urea": 68.0
+          },
+          {
+            "month": "1987-03",
+            "brent": 17.9,
+            "urea": 70.5
+          },
+          {
+            "month": "1987-04",
+            "brent": 18.1,
+            "urea": 77.5
+          },
+          {
+            "month": "1987-05",
+            "brent": 18.8,
+            "urea": 87.5
+          },
+          {
+            "month": "1987-06",
+            "brent": 18.9,
+            "urea": 87.5
+          },
+          {
+            "month": "1987-07",
+            "brent": 19.8,
+            "urea": 87.5
+          },
+          {
+            "month": "1987-08",
+            "brent": 19.0,
+            "urea": 85.0
+          },
+          {
+            "month": "1987-09",
+            "brent": 18.4,
+            "urea": 85.0
+          },
+          {
+            "month": "1987-10",
+            "brent": 18.8,
+            "urea": 92.5
+          },
+          {
+            "month": "1987-11",
+            "brent": 17.8,
+            "urea": 92.5
+          },
+          {
+            "month": "1987-12",
+            "brent": 17.1,
+            "urea": 92.5
+          },
+          {
+            "month": "1988-01",
+            "brent": 16.9,
+            "urea": 92.5
+          },
+          {
+            "month": "1988-02",
+            "brent": 15.8,
+            "urea": 97.5
+          },
+          {
+            "month": "1988-03",
+            "brent": 14.8,
+            "urea": 105.0
+          },
+          {
+            "month": "1988-04",
+            "brent": 16.6,
+            "urea": 97.5
+          },
+          {
+            "month": "1988-05",
+            "brent": 16.4,
+            "urea": 110.0
+          },
+          {
+            "month": "1988-06",
+            "brent": 15.6,
+            "urea": 110.0
+          },
+          {
+            "month": "1988-07",
+            "brent": 14.9,
+            "urea": 110.0
+          },
+          {
+            "month": "1988-08",
+            "brent": 15.0,
+            "urea": 130.0
+          },
+          {
+            "month": "1988-09",
+            "brent": 13.3,
+            "urea": 130.0
+          },
+          {
+            "month": "1988-10",
+            "brent": 12.5,
+            "urea": 130.0
+          },
+          {
+            "month": "1988-11",
+            "brent": 13.0,
+            "urea": 130.0
+          },
+          {
+            "month": "1988-12",
+            "brent": 15.2,
+            "urea": 120.0
+          },
+          {
+            "month": "1989-01",
+            "brent": 17.0,
+            "urea": 120.0
+          },
+          {
+            "month": "1989-02",
+            "brent": 16.7,
+            "urea": 120.0
+          },
+          {
+            "month": "1989-03",
+            "brent": 18.7,
+            "urea": 120.0
+          },
+          {
+            "month": "1989-04",
+            "brent": 19.8,
+            "urea": 113.5
+          },
+          {
+            "month": "1989-05",
+            "brent": 18.4,
+            "urea": 113.5
+          },
+          {
+            "month": "1989-06",
+            "brent": 17.5,
+            "urea": 113.5
+          },
+          {
+            "month": "1989-07",
+            "brent": 17.8,
+            "urea": 113.5
+          },
+          {
+            "month": "1989-08",
+            "brent": 17.1,
+            "urea": 82.5
+          },
+          {
+            "month": "1989-09",
+            "brent": 17.8,
+            "urea": 82.5
+          },
+          {
+            "month": "1989-10",
+            "brent": 19.0,
+            "urea": 72.5
+          },
+          {
+            "month": "1989-11",
+            "brent": 19.2,
+            "urea": 86.0
+          },
+          {
+            "month": "1989-12",
+            "brent": 19.9,
+            "urea": 98.0
+          },
+          {
+            "month": "1990-01",
+            "brent": 21.0,
+            "urea": 104.5
+          },
+          {
+            "month": "1990-02",
+            "brent": 19.9,
+            "urea": 106.3
+          },
+          {
+            "month": "1990-03",
+            "brent": 18.5,
+            "urea": 111.0
+          },
+          {
+            "month": "1990-04",
+            "brent": 16.8,
+            "urea": 111.0
+          },
+          {
+            "month": "1990-05",
+            "brent": 16.7,
+            "urea": 107.0
+          },
+          {
+            "month": "1990-06",
+            "brent": 15.7,
+            "urea": 107.0
+          },
+          {
+            "month": "1990-07",
+            "brent": 17.6,
+            "urea": 107.0
+          },
+          {
+            "month": "1990-08",
+            "brent": 27.1,
+            "urea": 114.9
+          },
+          {
+            "month": "1990-09",
+            "brent": 34.1,
+            "urea": 90.6
+          },
+          {
+            "month": "1990-10",
+            "brent": 36.1,
+            "urea": 136.5
+          },
+          {
+            "month": "1990-11",
+            "brent": 33.0,
+            "urea": 144.5
+          },
+          {
+            "month": "1990-12",
+            "brent": 28.0,
+            "urea": 147.5
+          },
+          {
+            "month": "1991-01",
+            "brent": 23.7,
+            "urea": 151.0
+          },
+          {
+            "month": "1991-02",
+            "brent": 19.4,
+            "urea": 151.0
+          },
+          {
+            "month": "1991-03",
+            "brent": 19.5,
+            "urea": 145.0
+          },
+          {
+            "month": "1991-04",
+            "brent": 19.3,
+            "urea": 143.5
+          },
+          {
+            "month": "1991-05",
+            "brent": 19.3,
+            "urea": 138.5
+          },
+          {
+            "month": "1991-06",
+            "brent": 18.2,
+            "urea": 135.5
+          },
+          {
+            "month": "1991-07",
+            "brent": 19.5,
+            "urea": 132.5
+          },
+          {
+            "month": "1991-08",
+            "brent": 19.8,
+            "urea": 132.5
+          },
+          {
+            "month": "1991-09",
+            "brent": 20.5,
+            "urea": 132.5
+          },
+          {
+            "month": "1991-10",
+            "brent": 22.2,
+            "urea": 132.5
+          },
+          {
+            "month": "1991-11",
+            "brent": 21.3,
+            "urea": 134.4
+          },
+          {
+            "month": "1991-12",
+            "brent": 18.4,
+            "urea": 131.9
+          },
+          {
+            "month": "1992-01",
+            "brent": 18.2,
+            "urea": 122.5
+          },
+          {
+            "month": "1992-02",
+            "brent": 18.1,
+            "urea": 120.6
+          },
+          {
+            "month": "1992-03",
+            "brent": 17.6,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-04",
+            "brent": 19.0,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-05",
+            "brent": 19.9,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-06",
+            "brent": 21.2,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-07",
+            "brent": 20.3,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-08",
+            "brent": 19.8,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-09",
+            "brent": 20.3,
+            "urea": 120.0
+          },
+          {
+            "month": "1992-10",
+            "brent": 20.3,
+            "urea": 116.9
+          },
+          {
+            "month": "1992-11",
+            "brent": 19.2,
+            "urea": 107.5
+          },
+          {
+            "month": "1992-12",
+            "brent": 18.2,
+            "urea": 103.8
+          },
+          {
+            "month": "1993-01",
+            "brent": 17.4,
+            "urea": 102.5
+          },
+          {
+            "month": "1993-02",
+            "brent": 18.5,
+            "urea": 102.5
+          },
+          {
+            "month": "1993-03",
+            "brent": 18.8,
+            "urea": 86.2
+          },
+          {
+            "month": "1993-04",
+            "brent": 18.7,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-05",
+            "brent": 18.5,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-06",
+            "brent": 17.7,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-07",
+            "brent": 16.8,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-08",
+            "brent": 16.7,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-09",
+            "brent": 16.0,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-10",
+            "brent": 16.6,
+            "urea": 81.0
+          },
+          {
+            "month": "1993-11",
+            "brent": 15.2,
+            "urea": 82.8
+          },
+          {
+            "month": "1993-12",
+            "brent": 13.6,
+            "urea": 85.5
+          },
+          {
+            "month": "1994-01",
+            "brent": 14.3,
+            "urea": 85.5
+          },
+          {
+            "month": "1994-02",
+            "brent": 13.8,
+            "urea": 85.5
+          },
+          {
+            "month": "1994-03",
+            "brent": 14.0,
+            "urea": 98.6
+          },
+          {
+            "month": "1994-04",
+            "brent": 15.2,
+            "urea": 103.5
+          },
+          {
+            "month": "1994-05",
+            "brent": 16.2,
+            "urea": 103.5
+          },
+          {
+            "month": "1994-06",
+            "brent": 16.8,
+            "urea": 103.5
+          },
+          {
+            "month": "1994-07",
+            "brent": 17.6,
+            "urea": 106.5
+          },
+          {
+            "month": "1994-08",
+            "brent": 16.8,
+            "urea": 88.0
+          },
+          {
+            "month": "1994-09",
+            "brent": 15.9,
+            "urea": 88.0
+          },
+          {
+            "month": "1994-10",
+            "brent": 16.4,
+            "urea": 88.0
+          },
+          {
+            "month": "1994-11",
+            "brent": 17.2,
+            "urea": 88.0
+          },
+          {
+            "month": "1994-12",
+            "brent": 16.0,
+            "urea": 88.0
+          },
+          {
+            "month": "1995-01",
+            "brent": 16.6,
+            "urea": 159.6
+          },
+          {
+            "month": "1995-02",
+            "brent": 17.1,
+            "urea": 177.5
+          },
+          {
+            "month": "1995-03",
+            "brent": 17.0,
+            "urea": 191.3
+          },
+          {
+            "month": "1995-04",
+            "brent": 18.7,
+            "urea": 205.0
+          },
+          {
+            "month": "1995-05",
+            "brent": 18.4,
+            "urea": 159.0
+          },
+          {
+            "month": "1995-06",
+            "brent": 17.4,
+            "urea": 90.0
+          },
+          {
+            "month": "1995-07",
+            "brent": 15.9,
+            "urea": 90.0
+          },
+          {
+            "month": "1995-08",
+            "brent": 16.1,
+            "urea": 90.0
+          },
+          {
+            "month": "1995-09",
+            "brent": 16.8,
+            "urea": 90.0
+          },
+          {
+            "month": "1995-10",
+            "brent": 16.1,
+            "urea": 90.0
+          },
+          {
+            "month": "1995-11",
+            "brent": 16.9,
+            "urea": 90.0
+          },
+          {
+            "month": "1995-12",
+            "brent": 18.0,
+            "urea": 90.0
+          },
+          {
+            "month": "1996-01",
+            "brent": 17.9,
+            "urea": 90.0
+          },
+          {
+            "month": "1996-02",
+            "brent": 18.0,
+            "urea": 90.0
+          },
+          {
+            "month": "1996-03",
+            "brent": 20.0,
+            "urea": 90.0
+          },
+          {
+            "month": "1996-04",
+            "brent": 21.0,
+            "urea": 160.4
+          },
+          {
+            "month": "1996-05",
+            "brent": 19.1,
+            "urea": 169.5
+          },
+          {
+            "month": "1996-06",
+            "brent": 18.3,
+            "urea": 172.1
+          },
+          {
+            "month": "1996-07",
+            "brent": 19.6,
+            "urea": 184.5
+          },
+          {
+            "month": "1996-08",
+            "brent": 20.6,
+            "urea": 187.0
+          },
+          {
+            "month": "1996-09",
+            "brent": 22.6,
+            "urea": 181.4
+          },
+          {
+            "month": "1996-10",
+            "brent": 24.2,
+            "urea": 172.3
+          },
+          {
+            "month": "1996-11",
+            "brent": 22.6,
+            "urea": 172.6
+          },
+          {
+            "month": "1996-12",
+            "brent": 23.9,
+            "urea": 174.5
+          },
+          {
+            "month": "1997-01",
+            "brent": 23.5,
+            "urea": 173.5
+          },
+          {
+            "month": "1997-02",
+            "brent": 20.8,
+            "urea": 160.4
+          },
+          {
+            "month": "1997-03",
+            "brent": 19.2,
+            "urea": 148.0
+          },
+          {
+            "month": "1997-04",
+            "brent": 17.5,
+            "urea": 135.0
+          },
+          {
+            "month": "1997-05",
+            "brent": 19.1,
+            "urea": 113.1
+          },
+          {
+            "month": "1997-06",
+            "brent": 17.6,
+            "urea": 108.5
+          },
+          {
+            "month": "1997-07",
+            "brent": 18.4,
+            "urea": 112.5
+          },
+          {
+            "month": "1997-08",
+            "brent": 18.7,
+            "urea": 102.5
+          },
+          {
+            "month": "1997-09",
+            "brent": 18.5,
+            "urea": 88.3
+          },
+          {
+            "month": "1997-10",
+            "brent": 19.9,
+            "urea": 87.5
+          },
+          {
+            "month": "1997-11",
+            "brent": 19.0,
+            "urea": 90.6
+          },
+          {
+            "month": "1997-12",
+            "brent": 17.0,
+            "urea": 90.0
+          },
+          {
+            "month": "1998-01",
+            "brent": 15.1,
+            "urea": 86.3
+          },
+          {
+            "month": "1998-02",
+            "brent": 14.1,
+            "urea": 77.5
+          },
+          {
+            "month": "1998-03",
+            "brent": 13.1,
+            "urea": 84.5
+          },
+          {
+            "month": "1998-04",
+            "brent": 13.4,
+            "urea": 100.0
+          },
+          {
+            "month": "1998-05",
+            "brent": 14.4,
+            "urea": 95.0
+          },
+          {
+            "month": "1998-06",
+            "brent": 12.1,
+            "urea": 88.4
+          },
+          {
+            "month": "1998-07",
+            "brent": 12.0,
+            "urea": 86.0
+          },
+          {
+            "month": "1998-08",
+            "brent": 11.9,
+            "urea": 85.5
+          },
+          {
+            "month": "1998-09",
+            "brent": 13.4,
+            "urea": 83.6
+          },
+          {
+            "month": "1998-10",
+            "brent": 12.6,
+            "urea": 75.6
+          },
+          {
+            "month": "1998-11",
+            "brent": 10.9,
+            "urea": 70.7
+          },
+          {
+            "month": "1998-12",
+            "brent": 9.8,
+            "urea": 65.5
+          },
+          {
+            "month": "1999-01",
+            "brent": 11.1,
+            "urea": 64.5
+          },
+          {
+            "month": "1999-02",
+            "brent": 10.2,
+            "urea": 64.0
+          },
+          {
+            "month": "1999-03",
+            "brent": 12.5,
+            "urea": 75.5
+          },
+          {
+            "month": "1999-04",
+            "brent": 15.3,
+            "urea": 64.5
+          },
+          {
+            "month": "1999-05",
+            "brent": 15.1,
+            "urea": 64.9
+          },
+          {
+            "month": "1999-06",
+            "brent": 15.8,
+            "urea": 63.8
+          },
+          {
+            "month": "1999-07",
+            "brent": 19.0,
+            "urea": 62.8
+          },
+          {
+            "month": "1999-08",
+            "brent": 20.2,
+            "urea": 65.7
+          },
+          {
+            "month": "1999-09",
+            "brent": 22.4,
+            "urea": 67.5
+          },
+          {
+            "month": "1999-10",
+            "brent": 22.0,
+            "urea": 65.4
+          },
+          {
+            "month": "1999-11",
+            "brent": 24.6,
+            "urea": 66.0
+          },
+          {
+            "month": "1999-12",
+            "brent": 25.6,
+            "urea": 66.8
+          },
+          {
+            "month": "2000-01",
+            "brent": 25.4,
+            "urea": 77.4
+          },
+          {
+            "month": "2000-02",
+            "brent": 27.7,
+            "urea": 90.1
+          },
+          {
+            "month": "2000-03",
+            "brent": 27.5,
+            "urea": 88.8
+          },
+          {
+            "month": "2000-04",
+            "brent": 22.5,
+            "urea": 83.3
+          },
+          {
+            "month": "2000-05",
+            "brent": 27.3,
+            "urea": 91.0
+          },
+          {
+            "month": "2000-06",
+            "brent": 29.7,
+            "urea": 105.1
+          },
+          {
+            "month": "2000-07",
+            "brent": 28.5,
+            "urea": 121.7
+          },
+          {
+            "month": "2000-08",
+            "brent": 29.4,
+            "urea": 133.4
+          },
+          {
+            "month": "2000-09",
+            "brent": 32.6,
+            "urea": 113.9
+          },
+          {
+            "month": "2000-10",
+            "brent": 30.9,
+            "urea": 111.1
+          },
+          {
+            "month": "2000-11",
+            "brent": 32.5,
+            "urea": 99.4
+          },
+          {
+            "month": "2000-12",
+            "brent": 25.1,
+            "urea": 96.0
+          },
+          {
+            "month": "2001-01",
+            "brent": 25.6,
+            "urea": 121.0
+          },
+          {
+            "month": "2001-02",
+            "brent": 27.4,
+            "urea": 105.3
+          },
+          {
+            "month": "2001-03",
+            "brent": 24.4,
+            "urea": 98.9
+          },
+          {
+            "month": "2001-04",
+            "brent": 25.6,
+            "urea": 95.3
+          },
+          {
+            "month": "2001-05",
+            "brent": 28.5,
+            "urea": 85.0
+          },
+          {
+            "month": "2001-06",
+            "brent": 27.7,
+            "urea": 87.5
+          },
+          {
+            "month": "2001-07",
+            "brent": 24.5,
+            "urea": 87.5
+          },
+          {
+            "month": "2001-08",
+            "brent": 25.7,
+            "urea": 88.8
+          },
+          {
+            "month": "2001-09",
+            "brent": 25.5,
+            "urea": 94.5
+          },
+          {
+            "month": "2001-10",
+            "brent": 20.5,
+            "urea": 96.1
+          },
+          {
+            "month": "2001-11",
+            "brent": 18.9,
+            "urea": 96.5
+          },
+          {
+            "month": "2001-12",
+            "brent": 18.6,
+            "urea": 101.2
+          },
+          {
+            "month": "2002-01",
+            "brent": 19.5,
+            "urea": 104.1
+          },
+          {
+            "month": "2002-02",
+            "brent": 20.3,
+            "urea": 99.6
+          },
+          {
+            "month": "2002-03",
+            "brent": 23.7,
+            "urea": 90.3
+          },
+          {
+            "month": "2002-04",
+            "brent": 25.7,
+            "urea": 84.7
+          },
+          {
+            "month": "2002-05",
+            "brent": 25.4,
+            "urea": 85.5
+          },
+          {
+            "month": "2002-06",
+            "brent": 24.1,
+            "urea": 92.8
+          },
+          {
+            "month": "2002-07",
+            "brent": 25.8,
+            "urea": 94.2
+          },
+          {
+            "month": "2002-08",
+            "brent": 26.6,
+            "urea": 105.0
+          },
+          {
+            "month": "2002-09",
+            "brent": 28.3,
+            "urea": 93.0
+          },
+          {
+            "month": "2002-10",
+            "brent": 27.5,
+            "urea": 92.3
+          },
+          {
+            "month": "2002-11",
+            "brent": 24.2,
+            "urea": 92.3
+          },
+          {
+            "month": "2002-12",
+            "brent": 28.5,
+            "urea": 99.4
+          },
+          {
+            "month": "2003-01",
+            "brent": 31.2,
+            "urea": 112.0
+          },
+          {
+            "month": "2003-02",
+            "brent": 32.6,
+            "urea": 132.1
+          },
+          {
+            "month": "2003-03",
+            "brent": 30.3,
+            "urea": 138.9
+          },
+          {
+            "month": "2003-04",
+            "brent": 25.0,
+            "urea": 118.6
+          },
+          {
+            "month": "2003-05",
+            "brent": 25.8,
+            "urea": 128.1
+          },
+          {
+            "month": "2003-06",
+            "brent": 27.5,
+            "urea": 133.9
+          },
+          {
+            "month": "2003-07",
+            "brent": 28.4,
+            "urea": 142.8
+          },
+          {
+            "month": "2003-08",
+            "brent": 29.8,
+            "urea": 141.5
+          },
+          {
+            "month": "2003-09",
+            "brent": 27.1,
+            "urea": 146.8
+          },
+          {
+            "month": "2003-10",
+            "brent": 29.6,
+            "urea": 150.6
+          },
+          {
+            "month": "2003-11",
+            "brent": 28.8,
+            "urea": 153.5
+          },
+          {
+            "month": "2003-12",
+            "brent": 29.9,
+            "urea": 159.4
+          },
+          {
+            "month": "2004-01",
+            "brent": 31.2,
+            "urea": 160.3
+          },
+          {
+            "month": "2004-02",
+            "brent": 30.9,
+            "urea": 134.5
+          },
+          {
+            "month": "2004-03",
+            "brent": 33.8,
+            "urea": 130.5
+          },
+          {
+            "month": "2004-04",
+            "brent": 33.4,
+            "urea": 128.4
+          },
+          {
+            "month": "2004-05",
+            "brent": 37.9,
+            "urea": 135.9
+          },
+          {
+            "month": "2004-06",
+            "brent": 35.2,
+            "urea": 158.3
+          },
+          {
+            "month": "2004-07",
+            "brent": 38.4,
+            "urea": 185.0
+          },
+          {
+            "month": "2004-08",
+            "brent": 43.0,
+            "urea": 196.2
+          },
+          {
+            "month": "2004-09",
+            "brent": 43.4,
+            "urea": 218.1
+          },
+          {
+            "month": "2004-10",
+            "brent": 49.8,
+            "urea": 242.1
+          },
+          {
+            "month": "2004-11",
+            "brent": 43.1,
+            "urea": 224.5
+          },
+          {
+            "month": "2004-12",
+            "brent": 39.6,
+            "urea": 185.3
+          },
+          {
+            "month": "2005-01",
+            "brent": 44.3,
+            "urea": 184.6
+          },
+          {
+            "month": "2005-02",
+            "brent": 45.6,
+            "urea": 185.8
+          },
+          {
+            "month": "2005-03",
+            "brent": 53.1,
+            "urea": 217.1
+          },
+          {
+            "month": "2005-04",
+            "brent": 51.9,
+            "urea": 242.1
+          },
+          {
+            "month": "2005-05",
+            "brent": 48.7,
+            "urea": 256.0
+          },
+          {
+            "month": "2005-06",
+            "brent": 54.3,
+            "urea": 217.5
+          },
+          {
+            "month": "2005-07",
+            "brent": 57.6,
+            "urea": 221.9
+          },
+          {
+            "month": "2005-08",
+            "brent": 64.1,
+            "urea": 208.5
+          },
+          {
+            "month": "2005-09",
+            "brent": 63.0,
+            "urea": 210.4
+          },
+          {
+            "month": "2005-10",
+            "brent": 58.5,
+            "urea": 215.5
+          },
+          {
+            "month": "2005-11",
+            "brent": 55.5,
+            "urea": 235.0
+          },
+          {
+            "month": "2005-12",
+            "brent": 56.7,
+            "urea": 213.9
+          },
+          {
+            "month": "2006-01",
+            "brent": 63.6,
+            "urea": 202.3
+          },
+          {
+            "month": "2006-02",
+            "brent": 59.9,
+            "urea": 213.9
+          },
+          {
+            "month": "2006-03",
+            "brent": 62.3,
+            "urea": 243.1
+          },
+          {
+            "month": "2006-04",
+            "brent": 70.4,
+            "urea": 247.5
+          },
+          {
+            "month": "2006-05",
+            "brent": 70.2,
+            "urea": 229.5
+          },
+          {
+            "month": "2006-06",
+            "brent": 68.9,
+            "urea": 210.0
+          },
+          {
+            "month": "2006-07",
+            "brent": 73.9,
+            "urea": 205.5
+          },
+          {
+            "month": "2006-08",
+            "brent": 73.6,
+            "urea": 210.5
+          },
+          {
+            "month": "2006-09",
+            "brent": 62.8,
+            "urea": 215.1
+          },
+          {
+            "month": "2006-10",
+            "brent": 58.4,
+            "urea": 209.2
+          },
+          {
+            "month": "2006-11",
+            "brent": 58.5,
+            "urea": 227.4
+          },
+          {
+            "month": "2006-12",
+            "brent": 62.3,
+            "urea": 251.7
+          },
+          {
+            "month": "2007-01",
+            "brent": 54.3,
+            "urea": 265.0
+          },
+          {
+            "month": "2007-02",
+            "brent": 57.8,
+            "urea": 299.4
+          },
+          {
+            "month": "2007-03",
+            "brent": 62.1,
+            "urea": 318.1
+          },
+          {
+            "month": "2007-04",
+            "brent": 67.4,
+            "urea": 291.0
+          },
+          {
+            "month": "2007-05",
+            "brent": 67.5,
+            "urea": 293.1
+          },
+          {
+            "month": "2007-06",
+            "brent": 71.3,
+            "urea": 291.9
+          },
+          {
+            "month": "2007-07",
+            "brent": 77.2,
+            "urea": 269.5
+          },
+          {
+            "month": "2007-08",
+            "brent": 70.8,
+            "urea": 260.6
+          },
+          {
+            "month": "2007-09",
+            "brent": 77.1,
+            "urea": 305.0
+          },
+          {
+            "month": "2007-10",
+            "brent": 82.9,
+            "urea": 323.8
+          },
+          {
+            "month": "2007-11",
+            "brent": 92.5,
+            "urea": 366.3
+          },
+          {
+            "month": "2007-12",
+            "brent": 91.5,
+            "urea": 401.7
+          },
+          {
+            "month": "2008-01",
+            "brent": 91.9,
+            "urea": 376.6
+          },
+          {
+            "month": "2008-02",
+            "brent": 94.8,
+            "urea": 328.1
+          },
+          {
+            "month": "2008-03",
+            "brent": 103.3,
+            "urea": 371.0
+          },
+          {
+            "month": "2008-04",
+            "brent": 110.2,
+            "urea": 462.5
+          },
+          {
+            "month": "2008-05",
+            "brent": 123.9,
+            "urea": 633.8
+          },
+          {
+            "month": "2008-06",
+            "brent": 133.0,
+            "urea": 642.0
+          },
+          {
+            "month": "2008-07",
+            "brent": 133.9,
+            "urea": 733.8
+          },
+          {
+            "month": "2008-08",
+            "brent": 113.8,
+            "urea": 785.0
+          },
+          {
+            "month": "2008-09",
+            "brent": 99.1,
+            "urea": 744.5
+          },
+          {
+            "month": "2008-10",
+            "brent": 72.8,
+            "urea": 575.0
+          },
+          {
+            "month": "2008-11",
+            "brent": 53.2,
+            "urea": 287.5
+          },
+          {
+            "month": "2008-12",
+            "brent": 41.6,
+            "urea": 240.0
+          },
+          {
+            "month": "2009-01",
+            "brent": 44.9,
+            "urea": 273.8
+          },
+          {
+            "month": "2009-02",
+            "brent": 43.2,
+            "urea": 281.3
+          },
+          {
+            "month": "2009-03",
+            "brent": 46.8,
+            "urea": 268.5
+          },
+          {
+            "month": "2009-04",
+            "brent": 50.8,
+            "urea": 245.6
+          },
+          {
+            "month": "2009-05",
+            "brent": 57.9,
+            "urea": 236.3
+          },
+          {
+            "month": "2009-06",
+            "brent": 68.6,
+            "urea": 239.7
+          },
+          {
+            "month": "2009-07",
+            "brent": 64.9,
+            "urea": 243.8
+          },
+          {
+            "month": "2009-08",
+            "brent": 72.5,
+            "urea": 251.5
+          },
+          {
+            "month": "2009-09",
+            "brent": 67.7,
+            "urea": 232.3
+          },
+          {
+            "month": "2009-10",
+            "brent": 73.2,
+            "urea": 234.9
+          },
+          {
+            "month": "2009-11",
+            "brent": 77.0,
+            "urea": 243.5
+          },
+          {
+            "month": "2009-12",
+            "brent": 74.7,
+            "urea": 262.0
+          },
+          {
+            "month": "2010-01",
+            "brent": 76.4,
+            "urea": 266.5
+          },
+          {
+            "month": "2010-02",
+            "brent": 74.3,
+            "urea": 297.5
+          },
+          {
+            "month": "2010-03",
+            "brent": 79.3,
+            "urea": 278.7
+          },
+          {
+            "month": "2010-04",
+            "brent": 85.0,
+            "urea": 253.8
+          },
+          {
+            "month": "2010-05",
+            "brent": 76.3,
+            "urea": 234.0
+          },
+          {
+            "month": "2010-06",
+            "brent": 74.8,
+            "urea": 226.3
+          },
+          {
+            "month": "2010-07",
+            "brent": 74.7,
+            "urea": 259.4
+          },
+          {
+            "month": "2010-08",
+            "brent": 76.7,
+            "urea": 263.5
+          },
+          {
+            "month": "2010-09",
+            "brent": 77.8,
+            "urea": 308.8
+          },
+          {
+            "month": "2010-10",
+            "brent": 82.9,
+            "urea": 332.5
+          },
+          {
+            "month": "2010-11",
+            "brent": 85.7,
+            "urea": 365.4
+          },
+          {
+            "month": "2010-12",
+            "brent": 91.8,
+            "urea": 380.6
+          },
+          {
+            "month": "2011-01",
+            "brent": 96.3,
+            "urea": 378.5
+          },
+          {
+            "month": "2011-02",
+            "brent": 104.0,
+            "urea": 297.5
+          },
+          {
+            "month": "2011-03",
+            "brent": 114.4,
+            "urea": 278.7
+          },
+          {
+            "month": "2011-04",
+            "brent": 123.1,
+            "urea": 253.8
+          },
+          {
+            "month": "2011-05",
+            "brent": 114.5,
+            "urea": 234.0
+          },
+          {
+            "month": "2011-06",
+            "brent": 113.8,
+            "urea": 478.8
+          },
+          {
+            "month": "2011-07",
+            "brent": 116.5,
+            "urea": 483.8
+          },
+          {
+            "month": "2011-08",
+            "brent": 110.1,
+            "urea": 475.5
+          },
+          {
+            "month": "2011-09",
+            "brent": 110.9,
+            "urea": 508.8
+          },
+          {
+            "month": "2011-10",
+            "brent": 109.5,
+            "urea": 493.5
+          },
+          {
+            "month": "2011-11",
+            "brent": 110.5,
+            "urea": 481.3
+          },
+          {
+            "month": "2011-12",
+            "brent": 107.9,
+            "urea": 423.1
+          },
+          {
+            "month": "2012-01",
+            "brent": 111.2,
+            "urea": 368.0
+          },
+          {
+            "month": "2012-02",
+            "brent": 119.7,
+            "urea": 375.0
+          },
+          {
+            "month": "2012-03",
+            "brent": 124.9,
+            "urea": 393.1
+          },
+          {
+            "month": "2012-04",
+            "brent": 120.5,
+            "urea": 494.4
+          },
+          {
+            "month": "2012-05",
+            "brent": 110.5,
+            "urea": 513.1
+          },
+          {
+            "month": "2012-06",
+            "brent": 95.6,
+            "urea": 456.9
+          },
+          {
+            "month": "2012-07",
+            "brent": 103.1,
+            "urea": 307.5
+          },
+          {
+            "month": "2012-08",
+            "brent": 113.3,
+            "urea": 382.5
+          },
+          {
+            "month": "2012-09",
+            "brent": 113.4,
+            "urea": 384.4
+          },
+          {
+            "month": "2012-10",
+            "brent": 112.0,
+            "urea": 349.0
+          },
+          {
+            "month": "2012-11",
+            "brent": 109.7,
+            "urea": 383.5
+          },
+          {
+            "month": "2012-12",
+            "brent": 109.7,
+            "urea": 375.8
+          },
+          {
+            "month": "2013-01",
+            "brent": 113.0,
+            "urea": 380.0
+          },
+          {
+            "month": "2013-02",
+            "brent": 116.5,
+            "urea": 415.6
+          },
+          {
+            "month": "2013-03",
+            "brent": 109.2,
+            "urea": 395.6
+          },
+          {
+            "month": "2013-04",
+            "brent": 102.9,
+            "urea": 365.6
+          },
+          {
+            "month": "2013-05",
+            "brent": 103.0,
+            "urea": 358.1
+          },
+          {
+            "month": "2013-06",
+            "brent": 103.1,
+            "urea": 329.4
+          },
+          {
+            "month": "2013-07",
+            "brent": 107.7,
+            "urea": 312.5
+          },
+          {
+            "month": "2013-08",
+            "brent": 111.0,
+            "urea": 310.6
+          },
+          {
+            "month": "2013-09",
+            "brent": 111.6,
+            "urea": 301.0
+          },
+          {
+            "month": "2013-10",
+            "brent": 109.5,
+            "urea": 296.9
+          },
+          {
+            "month": "2013-11",
+            "brent": 108.1,
+            "urea": 305.0
+          },
+          {
+            "month": "2013-12",
+            "brent": 110.7,
+            "urea": 305.0
+          },
+          {
+            "month": "2014-01",
+            "brent": 107.4,
+            "urea": 330.0
+          },
+          {
+            "month": "2014-02",
+            "brent": 108.8,
+            "urea": 353.1
+          },
+          {
+            "month": "2014-03",
+            "brent": 107.4,
+            "urea": 327.5
+          },
+          {
+            "month": "2014-04",
+            "brent": 107.8,
+            "urea": 260.0
+          },
+          {
+            "month": "2014-05",
+            "brent": 109.7,
+            "urea": 265.0
+          },
+          {
+            "month": "2014-06",
+            "brent": 111.9,
+            "urea": 288.8
+          },
+          {
+            "month": "2014-07",
+            "brent": 107.0,
+            "urea": 305.0
+          },
+          {
+            "month": "2014-08",
+            "brent": 101.9,
+            "urea": 311.3
+          },
+          {
+            "month": "2014-09",
+            "brent": 97.3,
+            "urea": 317.5
+          },
+          {
+            "month": "2014-10",
+            "brent": 87.3,
+            "urea": 317.5
+          },
+          {
+            "month": "2014-11",
+            "brent": 78.4,
+            "urea": 317.5
+          },
+          {
+            "month": "2014-12",
+            "brent": 62.3,
+            "urea": 308.1
+          },
+          {
+            "month": "2015-01",
+            "brent": 48.1,
+            "urea": 305.0
+          },
+          {
+            "month": "2015-02",
+            "brent": 57.9,
+            "urea": 305.0
+          },
+          {
+            "month": "2015-03",
+            "brent": 55.8,
+            "urea": 295.5
+          },
+          {
+            "month": "2015-04",
+            "brent": 59.4,
+            "urea": 260.0
+          },
+          {
+            "month": "2015-05",
+            "brent": 64.6,
+            "urea": 265.0
+          },
+          {
+            "month": "2015-06",
+            "brent": 62.3,
+            "urea": 288.8
+          },
+          {
+            "month": "2015-07",
+            "brent": 55.9,
+            "urea": 283.8
+          },
+          {
+            "month": "2015-08",
+            "brent": 47.0,
+            "urea": 274.6
+          },
+          {
+            "month": "2015-09",
+            "brent": 47.2,
+            "urea": 279.4
+          },
+          {
+            "month": "2015-10",
+            "brent": 48.1,
+            "urea": 250.6
+          },
+          {
+            "month": "2015-11",
+            "brent": 44.4,
+            "urea": 263.6
+          },
+          {
+            "month": "2015-12",
+            "brent": 37.7,
+            "urea": 264.0
+          },
+          {
+            "month": "2016-01",
+            "brent": 30.8,
+            "urea": 233.9
+          },
+          {
+            "month": "2016-02",
+            "brent": 33.2,
+            "urea": 191.9
+          },
+          {
+            "month": "2016-03",
+            "brent": 39.1,
+            "urea": 201.8
+          },
+          {
+            "month": "2016-04",
+            "brent": 42.3,
+            "urea": 196.3
+          },
+          {
+            "month": "2016-05",
+            "brent": 47.1,
+            "urea": 198.4
+          },
+          {
+            "month": "2016-06",
+            "brent": 48.5,
+            "urea": 142.6
+          },
+          {
+            "month": "2016-07",
+            "brent": 45.1,
+            "urea": 181.0
+          },
+          {
+            "month": "2016-08",
+            "brent": 46.1,
+            "urea": 186.3
+          },
           {
             "month": "2016-09",
             "brent": 46.2,
@@ -2413,8 +6229,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:31:26Z",
-      "lastAttemptAt": "2026-09-12T13:31:25Z"
+      "fetchedAt": "2026-09-12T13:43:12Z",
+      "lastAttemptAt": "2026-09-12T13:43:10Z"
     },
     "eia": {
       "source": {
@@ -2427,6 +6243,1414 @@
       },
       "data": {
         "monthly": [
+          {
+            "month": "1987-05",
+            "brent": 18.58
+          },
+          {
+            "month": "1987-06",
+            "brent": 18.86
+          },
+          {
+            "month": "1987-07",
+            "brent": 19.86
+          },
+          {
+            "month": "1987-08",
+            "brent": 18.98
+          },
+          {
+            "month": "1987-09",
+            "brent": 18.31
+          },
+          {
+            "month": "1987-10",
+            "brent": 18.76
+          },
+          {
+            "month": "1987-11",
+            "brent": 17.78
+          },
+          {
+            "month": "1987-12",
+            "brent": 17.05
+          },
+          {
+            "month": "1988-01",
+            "brent": 16.75
+          },
+          {
+            "month": "1988-02",
+            "brent": 15.73
+          },
+          {
+            "month": "1988-03",
+            "brent": 14.73
+          },
+          {
+            "month": "1988-04",
+            "brent": 16.6
+          },
+          {
+            "month": "1988-05",
+            "brent": 16.31
+          },
+          {
+            "month": "1988-06",
+            "brent": 15.54
+          },
+          {
+            "month": "1988-07",
+            "brent": 14.91
+          },
+          {
+            "month": "1988-08",
+            "brent": 14.89
+          },
+          {
+            "month": "1988-09",
+            "brent": 13.18
+          },
+          {
+            "month": "1988-10",
+            "brent": 12.41
+          },
+          {
+            "month": "1988-11",
+            "brent": 13.02
+          },
+          {
+            "month": "1988-12",
+            "brent": 15.31
+          },
+          {
+            "month": "1989-01",
+            "brent": 17.17
+          },
+          {
+            "month": "1989-02",
+            "brent": 16.89
+          },
+          {
+            "month": "1989-03",
+            "brent": 18.7
+          },
+          {
+            "month": "1989-04",
+            "brent": 20.32
+          },
+          {
+            "month": "1989-05",
+            "brent": 18.63
+          },
+          {
+            "month": "1989-06",
+            "brent": 17.67
+          },
+          {
+            "month": "1989-07",
+            "brent": 17.62
+          },
+          {
+            "month": "1989-08",
+            "brent": 16.77
+          },
+          {
+            "month": "1989-09",
+            "brent": 17.77
+          },
+          {
+            "month": "1989-10",
+            "brent": 18.91
+          },
+          {
+            "month": "1989-11",
+            "brent": 18.73
+          },
+          {
+            "month": "1989-12",
+            "brent": 19.84
+          },
+          {
+            "month": "1990-01",
+            "brent": 21.25
+          },
+          {
+            "month": "1990-02",
+            "brent": 19.81
+          },
+          {
+            "month": "1990-03",
+            "brent": 18.39
+          },
+          {
+            "month": "1990-04",
+            "brent": 16.61
+          },
+          {
+            "month": "1990-05",
+            "brent": 16.35
+          },
+          {
+            "month": "1990-06",
+            "brent": 15.1
+          },
+          {
+            "month": "1990-07",
+            "brent": 17.17
+          },
+          {
+            "month": "1990-08",
+            "brent": 27.17
+          },
+          {
+            "month": "1990-09",
+            "brent": 34.9
+          },
+          {
+            "month": "1990-10",
+            "brent": 36.02
+          },
+          {
+            "month": "1990-11",
+            "brent": 33.07
+          },
+          {
+            "month": "1990-12",
+            "brent": 28.27
+          },
+          {
+            "month": "1991-01",
+            "brent": 23.57
+          },
+          {
+            "month": "1991-02",
+            "brent": 19.54
+          },
+          {
+            "month": "1991-03",
+            "brent": 19.08
+          },
+          {
+            "month": "1991-04",
+            "brent": 19.18
+          },
+          {
+            "month": "1991-05",
+            "brent": 19.19
+          },
+          {
+            "month": "1991-06",
+            "brent": 18.17
+          },
+          {
+            "month": "1991-07",
+            "brent": 19.4
+          },
+          {
+            "month": "1991-08",
+            "brent": 19.77
+          },
+          {
+            "month": "1991-09",
+            "brent": 20.5
+          },
+          {
+            "month": "1991-10",
+            "brent": 22.21
+          },
+          {
+            "month": "1991-11",
+            "brent": 21.11
+          },
+          {
+            "month": "1991-12",
+            "brent": 18.41
+          },
+          {
+            "month": "1992-01",
+            "brent": 18.16
+          },
+          {
+            "month": "1992-02",
+            "brent": 18.05
+          },
+          {
+            "month": "1992-03",
+            "brent": 17.63
+          },
+          {
+            "month": "1992-04",
+            "brent": 18.92
+          },
+          {
+            "month": "1992-05",
+            "brent": 19.89
+          },
+          {
+            "month": "1992-06",
+            "brent": 21.16
+          },
+          {
+            "month": "1992-07",
+            "brent": 20.24
+          },
+          {
+            "month": "1992-08",
+            "brent": 19.74
+          },
+          {
+            "month": "1992-09",
+            "brent": 20.27
+          },
+          {
+            "month": "1992-10",
+            "brent": 20.26
+          },
+          {
+            "month": "1992-11",
+            "brent": 19.21
+          },
+          {
+            "month": "1992-12",
+            "brent": 18.14
+          },
+          {
+            "month": "1993-01",
+            "brent": 17.39
+          },
+          {
+            "month": "1993-02",
+            "brent": 18.47
+          },
+          {
+            "month": "1993-03",
+            "brent": 18.79
+          },
+          {
+            "month": "1993-04",
+            "brent": 18.67
+          },
+          {
+            "month": "1993-05",
+            "brent": 18.51
+          },
+          {
+            "month": "1993-06",
+            "brent": 17.65
+          },
+          {
+            "month": "1993-07",
+            "brent": 16.78
+          },
+          {
+            "month": "1993-08",
+            "brent": 16.7
+          },
+          {
+            "month": "1993-09",
+            "brent": 16.01
+          },
+          {
+            "month": "1993-10",
+            "brent": 16.61
+          },
+          {
+            "month": "1993-11",
+            "brent": 15.2
+          },
+          {
+            "month": "1993-12",
+            "brent": 13.73
+          },
+          {
+            "month": "1994-01",
+            "brent": 14.29
+          },
+          {
+            "month": "1994-02",
+            "brent": 13.8
+          },
+          {
+            "month": "1994-03",
+            "brent": 13.82
+          },
+          {
+            "month": "1994-04",
+            "brent": 15.23
+          },
+          {
+            "month": "1994-05",
+            "brent": 16.19
+          },
+          {
+            "month": "1994-06",
+            "brent": 16.76
+          },
+          {
+            "month": "1994-07",
+            "brent": 17.6
+          },
+          {
+            "month": "1994-08",
+            "brent": 16.89
+          },
+          {
+            "month": "1994-09",
+            "brent": 15.9
+          },
+          {
+            "month": "1994-10",
+            "brent": 16.49
+          },
+          {
+            "month": "1994-11",
+            "brent": 17.19
+          },
+          {
+            "month": "1994-12",
+            "brent": 15.93
+          },
+          {
+            "month": "1995-01",
+            "brent": 16.55
+          },
+          {
+            "month": "1995-02",
+            "brent": 17.11
+          },
+          {
+            "month": "1995-03",
+            "brent": 17.01
+          },
+          {
+            "month": "1995-04",
+            "brent": 18.65
+          },
+          {
+            "month": "1995-05",
+            "brent": 18.35
+          },
+          {
+            "month": "1995-06",
+            "brent": 17.31
+          },
+          {
+            "month": "1995-07",
+            "brent": 15.85
+          },
+          {
+            "month": "1995-08",
+            "brent": 16.1
+          },
+          {
+            "month": "1995-09",
+            "brent": 16.7
+          },
+          {
+            "month": "1995-10",
+            "brent": 16.11
+          },
+          {
+            "month": "1995-11",
+            "brent": 16.86
+          },
+          {
+            "month": "1995-12",
+            "brent": 17.93
+          },
+          {
+            "month": "1996-01",
+            "brent": 17.85
+          },
+          {
+            "month": "1996-02",
+            "brent": 18.0
+          },
+          {
+            "month": "1996-03",
+            "brent": 19.85
+          },
+          {
+            "month": "1996-04",
+            "brent": 20.9
+          },
+          {
+            "month": "1996-05",
+            "brent": 19.15
+          },
+          {
+            "month": "1996-06",
+            "brent": 18.46
+          },
+          {
+            "month": "1996-07",
+            "brent": 19.57
+          },
+          {
+            "month": "1996-08",
+            "brent": 20.51
+          },
+          {
+            "month": "1996-09",
+            "brent": 22.63
+          },
+          {
+            "month": "1996-10",
+            "brent": 24.16
+          },
+          {
+            "month": "1996-11",
+            "brent": 22.76
+          },
+          {
+            "month": "1996-12",
+            "brent": 23.78
+          },
+          {
+            "month": "1997-01",
+            "brent": 23.54
+          },
+          {
+            "month": "1997-02",
+            "brent": 20.85
+          },
+          {
+            "month": "1997-03",
+            "brent": 19.13
+          },
+          {
+            "month": "1997-04",
+            "brent": 17.56
+          },
+          {
+            "month": "1997-05",
+            "brent": 19.02
+          },
+          {
+            "month": "1997-06",
+            "brent": 17.58
+          },
+          {
+            "month": "1997-07",
+            "brent": 18.46
+          },
+          {
+            "month": "1997-08",
+            "brent": 18.6
+          },
+          {
+            "month": "1997-09",
+            "brent": 18.46
+          },
+          {
+            "month": "1997-10",
+            "brent": 19.87
+          },
+          {
+            "month": "1997-11",
+            "brent": 19.17
+          },
+          {
+            "month": "1997-12",
+            "brent": 17.18
+          },
+          {
+            "month": "1998-01",
+            "brent": 15.19
+          },
+          {
+            "month": "1998-02",
+            "brent": 14.07
+          },
+          {
+            "month": "1998-03",
+            "brent": 13.1
+          },
+          {
+            "month": "1998-04",
+            "brent": 13.53
+          },
+          {
+            "month": "1998-05",
+            "brent": 14.36
+          },
+          {
+            "month": "1998-06",
+            "brent": 12.21
+          },
+          {
+            "month": "1998-07",
+            "brent": 12.08
+          },
+          {
+            "month": "1998-08",
+            "brent": 11.91
+          },
+          {
+            "month": "1998-09",
+            "brent": 13.34
+          },
+          {
+            "month": "1998-10",
+            "brent": 12.7
+          },
+          {
+            "month": "1998-11",
+            "brent": 11.04
+          },
+          {
+            "month": "1998-12",
+            "brent": 9.82
+          },
+          {
+            "month": "1999-01",
+            "brent": 11.11
+          },
+          {
+            "month": "1999-02",
+            "brent": 10.27
+          },
+          {
+            "month": "1999-03",
+            "brent": 12.51
+          },
+          {
+            "month": "1999-04",
+            "brent": 15.29
+          },
+          {
+            "month": "1999-05",
+            "brent": 15.23
+          },
+          {
+            "month": "1999-06",
+            "brent": 15.86
+          },
+          {
+            "month": "1999-07",
+            "brent": 19.08
+          },
+          {
+            "month": "1999-08",
+            "brent": 20.22
+          },
+          {
+            "month": "1999-09",
+            "brent": 22.54
+          },
+          {
+            "month": "1999-10",
+            "brent": 22.0
+          },
+          {
+            "month": "1999-11",
+            "brent": 24.58
+          },
+          {
+            "month": "1999-12",
+            "brent": 25.47
+          },
+          {
+            "month": "2000-01",
+            "brent": 25.51
+          },
+          {
+            "month": "2000-02",
+            "brent": 27.78
+          },
+          {
+            "month": "2000-03",
+            "brent": 27.49
+          },
+          {
+            "month": "2000-04",
+            "brent": 22.76
+          },
+          {
+            "month": "2000-05",
+            "brent": 27.74
+          },
+          {
+            "month": "2000-06",
+            "brent": 29.8
+          },
+          {
+            "month": "2000-07",
+            "brent": 28.68
+          },
+          {
+            "month": "2000-08",
+            "brent": 30.2
+          },
+          {
+            "month": "2000-09",
+            "brent": 33.14
+          },
+          {
+            "month": "2000-10",
+            "brent": 30.96
+          },
+          {
+            "month": "2000-11",
+            "brent": 32.55
+          },
+          {
+            "month": "2000-12",
+            "brent": 25.66
+          },
+          {
+            "month": "2001-01",
+            "brent": 25.62
+          },
+          {
+            "month": "2001-02",
+            "brent": 27.5
+          },
+          {
+            "month": "2001-03",
+            "brent": 24.5
+          },
+          {
+            "month": "2001-04",
+            "brent": 25.66
+          },
+          {
+            "month": "2001-05",
+            "brent": 28.31
+          },
+          {
+            "month": "2001-06",
+            "brent": 27.85
+          },
+          {
+            "month": "2001-07",
+            "brent": 24.61
+          },
+          {
+            "month": "2001-08",
+            "brent": 25.68
+          },
+          {
+            "month": "2001-09",
+            "brent": 25.62
+          },
+          {
+            "month": "2001-10",
+            "brent": 20.54
+          },
+          {
+            "month": "2001-11",
+            "brent": 18.8
+          },
+          {
+            "month": "2001-12",
+            "brent": 18.71
+          },
+          {
+            "month": "2002-01",
+            "brent": 19.42
+          },
+          {
+            "month": "2002-02",
+            "brent": 20.28
+          },
+          {
+            "month": "2002-03",
+            "brent": 23.7
+          },
+          {
+            "month": "2002-04",
+            "brent": 25.73
+          },
+          {
+            "month": "2002-05",
+            "brent": 25.35
+          },
+          {
+            "month": "2002-06",
+            "brent": 24.08
+          },
+          {
+            "month": "2002-07",
+            "brent": 25.74
+          },
+          {
+            "month": "2002-08",
+            "brent": 26.65
+          },
+          {
+            "month": "2002-09",
+            "brent": 28.4
+          },
+          {
+            "month": "2002-10",
+            "brent": 27.54
+          },
+          {
+            "month": "2002-11",
+            "brent": 24.34
+          },
+          {
+            "month": "2002-12",
+            "brent": 28.33
+          },
+          {
+            "month": "2003-01",
+            "brent": 31.18
+          },
+          {
+            "month": "2003-02",
+            "brent": 32.77
+          },
+          {
+            "month": "2003-03",
+            "brent": 30.61
+          },
+          {
+            "month": "2003-04",
+            "brent": 25.0
+          },
+          {
+            "month": "2003-05",
+            "brent": 25.86
+          },
+          {
+            "month": "2003-06",
+            "brent": 27.65
+          },
+          {
+            "month": "2003-07",
+            "brent": 28.35
+          },
+          {
+            "month": "2003-08",
+            "brent": 29.89
+          },
+          {
+            "month": "2003-09",
+            "brent": 27.11
+          },
+          {
+            "month": "2003-10",
+            "brent": 29.61
+          },
+          {
+            "month": "2003-11",
+            "brent": 28.75
+          },
+          {
+            "month": "2003-12",
+            "brent": 29.81
+          },
+          {
+            "month": "2004-01",
+            "brent": 31.28
+          },
+          {
+            "month": "2004-02",
+            "brent": 30.86
+          },
+          {
+            "month": "2004-03",
+            "brent": 33.63
+          },
+          {
+            "month": "2004-04",
+            "brent": 33.59
+          },
+          {
+            "month": "2004-05",
+            "brent": 37.57
+          },
+          {
+            "month": "2004-06",
+            "brent": 35.18
+          },
+          {
+            "month": "2004-07",
+            "brent": 38.22
+          },
+          {
+            "month": "2004-08",
+            "brent": 42.74
+          },
+          {
+            "month": "2004-09",
+            "brent": 43.2
+          },
+          {
+            "month": "2004-10",
+            "brent": 49.78
+          },
+          {
+            "month": "2004-11",
+            "brent": 43.11
+          },
+          {
+            "month": "2004-12",
+            "brent": 39.6
+          },
+          {
+            "month": "2005-01",
+            "brent": 44.51
+          },
+          {
+            "month": "2005-02",
+            "brent": 45.48
+          },
+          {
+            "month": "2005-03",
+            "brent": 53.1
+          },
+          {
+            "month": "2005-04",
+            "brent": 51.88
+          },
+          {
+            "month": "2005-05",
+            "brent": 48.65
+          },
+          {
+            "month": "2005-06",
+            "brent": 54.35
+          },
+          {
+            "month": "2005-07",
+            "brent": 57.52
+          },
+          {
+            "month": "2005-08",
+            "brent": 63.98
+          },
+          {
+            "month": "2005-09",
+            "brent": 62.91
+          },
+          {
+            "month": "2005-10",
+            "brent": 58.54
+          },
+          {
+            "month": "2005-11",
+            "brent": 55.24
+          },
+          {
+            "month": "2005-12",
+            "brent": 56.86
+          },
+          {
+            "month": "2006-01",
+            "brent": 62.99
+          },
+          {
+            "month": "2006-02",
+            "brent": 60.21
+          },
+          {
+            "month": "2006-03",
+            "brent": 62.06
+          },
+          {
+            "month": "2006-04",
+            "brent": 70.26
+          },
+          {
+            "month": "2006-05",
+            "brent": 69.78
+          },
+          {
+            "month": "2006-06",
+            "brent": 68.56
+          },
+          {
+            "month": "2006-07",
+            "brent": 73.67
+          },
+          {
+            "month": "2006-08",
+            "brent": 73.23
+          },
+          {
+            "month": "2006-09",
+            "brent": 61.96
+          },
+          {
+            "month": "2006-10",
+            "brent": 57.81
+          },
+          {
+            "month": "2006-11",
+            "brent": 58.76
+          },
+          {
+            "month": "2006-12",
+            "brent": 62.47
+          },
+          {
+            "month": "2007-01",
+            "brent": 53.68
+          },
+          {
+            "month": "2007-02",
+            "brent": 57.56
+          },
+          {
+            "month": "2007-03",
+            "brent": 62.05
+          },
+          {
+            "month": "2007-04",
+            "brent": 67.49
+          },
+          {
+            "month": "2007-05",
+            "brent": 67.21
+          },
+          {
+            "month": "2007-06",
+            "brent": 71.05
+          },
+          {
+            "month": "2007-07",
+            "brent": 76.93
+          },
+          {
+            "month": "2007-08",
+            "brent": 70.76
+          },
+          {
+            "month": "2007-09",
+            "brent": 77.17
+          },
+          {
+            "month": "2007-10",
+            "brent": 82.34
+          },
+          {
+            "month": "2007-11",
+            "brent": 92.41
+          },
+          {
+            "month": "2007-12",
+            "brent": 90.93
+          },
+          {
+            "month": "2008-01",
+            "brent": 92.18
+          },
+          {
+            "month": "2008-02",
+            "brent": 94.99
+          },
+          {
+            "month": "2008-03",
+            "brent": 103.64
+          },
+          {
+            "month": "2008-04",
+            "brent": 109.07
+          },
+          {
+            "month": "2008-05",
+            "brent": 122.8
+          },
+          {
+            "month": "2008-06",
+            "brent": 132.32
+          },
+          {
+            "month": "2008-07",
+            "brent": 132.72
+          },
+          {
+            "month": "2008-08",
+            "brent": 113.24
+          },
+          {
+            "month": "2008-09",
+            "brent": 97.23
+          },
+          {
+            "month": "2008-10",
+            "brent": 71.58
+          },
+          {
+            "month": "2008-11",
+            "brent": 52.45
+          },
+          {
+            "month": "2008-12",
+            "brent": 39.95
+          },
+          {
+            "month": "2009-01",
+            "brent": 43.44
+          },
+          {
+            "month": "2009-02",
+            "brent": 43.32
+          },
+          {
+            "month": "2009-03",
+            "brent": 46.54
+          },
+          {
+            "month": "2009-04",
+            "brent": 50.18
+          },
+          {
+            "month": "2009-05",
+            "brent": 57.3
+          },
+          {
+            "month": "2009-06",
+            "brent": 68.61
+          },
+          {
+            "month": "2009-07",
+            "brent": 64.44
+          },
+          {
+            "month": "2009-08",
+            "brent": 72.51
+          },
+          {
+            "month": "2009-09",
+            "brent": 67.65
+          },
+          {
+            "month": "2009-10",
+            "brent": 72.77
+          },
+          {
+            "month": "2009-11",
+            "brent": 76.66
+          },
+          {
+            "month": "2009-12",
+            "brent": 74.46
+          },
+          {
+            "month": "2010-01",
+            "brent": 76.17
+          },
+          {
+            "month": "2010-02",
+            "brent": 73.75
+          },
+          {
+            "month": "2010-03",
+            "brent": 78.83
+          },
+          {
+            "month": "2010-04",
+            "brent": 84.82
+          },
+          {
+            "month": "2010-05",
+            "brent": 75.95
+          },
+          {
+            "month": "2010-06",
+            "brent": 74.76
+          },
+          {
+            "month": "2010-07",
+            "brent": 75.58
+          },
+          {
+            "month": "2010-08",
+            "brent": 77.04
+          },
+          {
+            "month": "2010-09",
+            "brent": 77.84
+          },
+          {
+            "month": "2010-10",
+            "brent": 82.67
+          },
+          {
+            "month": "2010-11",
+            "brent": 85.28
+          },
+          {
+            "month": "2010-12",
+            "brent": 91.45
+          },
+          {
+            "month": "2011-01",
+            "brent": 96.52
+          },
+          {
+            "month": "2011-02",
+            "brent": 103.72
+          },
+          {
+            "month": "2011-03",
+            "brent": 114.64
+          },
+          {
+            "month": "2011-04",
+            "brent": 123.26
+          },
+          {
+            "month": "2011-05",
+            "brent": 114.99
+          },
+          {
+            "month": "2011-06",
+            "brent": 113.83
+          },
+          {
+            "month": "2011-07",
+            "brent": 116.97
+          },
+          {
+            "month": "2011-08",
+            "brent": 110.22
+          },
+          {
+            "month": "2011-09",
+            "brent": 112.83
+          },
+          {
+            "month": "2011-10",
+            "brent": 109.55
+          },
+          {
+            "month": "2011-11",
+            "brent": 110.77
+          },
+          {
+            "month": "2011-12",
+            "brent": 107.87
+          },
+          {
+            "month": "2012-01",
+            "brent": 110.69
+          },
+          {
+            "month": "2012-02",
+            "brent": 119.33
+          },
+          {
+            "month": "2012-03",
+            "brent": 125.45
+          },
+          {
+            "month": "2012-04",
+            "brent": 119.75
+          },
+          {
+            "month": "2012-05",
+            "brent": 110.34
+          },
+          {
+            "month": "2012-06",
+            "brent": 95.16
+          },
+          {
+            "month": "2012-07",
+            "brent": 102.62
+          },
+          {
+            "month": "2012-08",
+            "brent": 113.36
+          },
+          {
+            "month": "2012-09",
+            "brent": 112.86
+          },
+          {
+            "month": "2012-10",
+            "brent": 111.71
+          },
+          {
+            "month": "2012-11",
+            "brent": 109.06
+          },
+          {
+            "month": "2012-12",
+            "brent": 109.49
+          },
+          {
+            "month": "2013-01",
+            "brent": 112.96
+          },
+          {
+            "month": "2013-02",
+            "brent": 116.05
+          },
+          {
+            "month": "2013-03",
+            "brent": 108.47
+          },
+          {
+            "month": "2013-04",
+            "brent": 102.25
+          },
+          {
+            "month": "2013-05",
+            "brent": 102.56
+          },
+          {
+            "month": "2013-06",
+            "brent": 102.92
+          },
+          {
+            "month": "2013-07",
+            "brent": 107.93
+          },
+          {
+            "month": "2013-08",
+            "brent": 111.28
+          },
+          {
+            "month": "2013-09",
+            "brent": 111.6
+          },
+          {
+            "month": "2013-10",
+            "brent": 109.08
+          },
+          {
+            "month": "2013-11",
+            "brent": 107.79
+          },
+          {
+            "month": "2013-12",
+            "brent": 110.76
+          },
+          {
+            "month": "2014-01",
+            "brent": 108.12
+          },
+          {
+            "month": "2014-02",
+            "brent": 108.9
+          },
+          {
+            "month": "2014-03",
+            "brent": 107.48
+          },
+          {
+            "month": "2014-04",
+            "brent": 107.76
+          },
+          {
+            "month": "2014-05",
+            "brent": 109.54
+          },
+          {
+            "month": "2014-06",
+            "brent": 111.8
+          },
+          {
+            "month": "2014-07",
+            "brent": 106.77
+          },
+          {
+            "month": "2014-08",
+            "brent": 101.61
+          },
+          {
+            "month": "2014-09",
+            "brent": 97.09
+          },
+          {
+            "month": "2014-10",
+            "brent": 87.43
+          },
+          {
+            "month": "2014-11",
+            "brent": 79.44
+          },
+          {
+            "month": "2014-12",
+            "brent": 62.34
+          },
+          {
+            "month": "2015-01",
+            "brent": 47.76
+          },
+          {
+            "month": "2015-02",
+            "brent": 58.1
+          },
+          {
+            "month": "2015-03",
+            "brent": 55.89
+          },
+          {
+            "month": "2015-04",
+            "brent": 59.52
+          },
+          {
+            "month": "2015-05",
+            "brent": 64.08
+          },
+          {
+            "month": "2015-06",
+            "brent": 61.48
+          },
+          {
+            "month": "2015-07",
+            "brent": 56.56
+          },
+          {
+            "month": "2015-08",
+            "brent": 46.52
+          },
+          {
+            "month": "2015-09",
+            "brent": 47.62
+          },
+          {
+            "month": "2015-10",
+            "brent": 48.43
+          },
+          {
+            "month": "2015-11",
+            "brent": 44.27
+          },
+          {
+            "month": "2015-12",
+            "brent": 38.01
+          },
+          {
+            "month": "2016-01",
+            "brent": 30.7
+          },
+          {
+            "month": "2016-02",
+            "brent": 32.18
+          },
+          {
+            "month": "2016-03",
+            "brent": 38.21
+          },
+          {
+            "month": "2016-04",
+            "brent": 41.58
+          },
+          {
+            "month": "2016-05",
+            "brent": 46.74
+          },
+          {
+            "month": "2016-06",
+            "brent": 48.25
+          },
+          {
+            "month": "2016-07",
+            "brent": 44.95
+          },
+          {
+            "month": "2016-08",
+            "brent": 45.84
+          },
           {
             "month": "2016-09",
             "brent": 46.57
@@ -2916,8 +8140,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-09-12T13:31:36Z",
-      "lastAttemptAt": "2026-09-12T13:31:25Z"
+      "fetchedAt": "2026-09-12T13:43:20Z",
+      "lastAttemptAt": "2026-09-12T13:43:10Z"
     }
   }
 }

@@ -69,7 +69,7 @@ See:
 | [FAO](https://www.fao.org/worldfoodsituation/foodpricesindex/en/) | Nominal monthly food-price index CSV | 2014–2016 = 100; recent values can be revised |
 | [World Bank](https://www.worldbank.org/en/research/commodity-markets) | Pink Sheet monthly workbook | Brent, four fertilizers and four agricultural benchmarks; original units validated |
 | [EIA](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=M) | Published monthly Brent spot-price table | Preferred over World Bank at equal observation dates, not a real-time quote |
-| [USDA PSD](https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads) | Grains/pulses bulk CSV, wheat records | Ten marketing years; calculated world totals, EU counted once and UK separate; includes forecasts/revisions |
+| [USDA PSD](https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads) | Grains/pulses bulk CSV, wheat records | Marketing years since 2000; provider's EU aggregate counted once per year and separate UK rows included when supplied; includes forecasts/revisions |
 | [NOAA CPC](https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/) | Observed RONI ASCII series | Overlapping three-month windows; not an ENSO advisory or a local yield forecast |
 
 The frontend uses `src/data/dashboardMetrics.js` for both wheat cards and the
@@ -130,6 +130,41 @@ can still be deployed. Inspect Actions logs and Data Desk for source health.
 Provider formats/URLs may change. In particular, review the World Bank download
 URL on annual document rollover if the observed period stops advancing. Do not
 change success/review dates manually to conceal a failure.
+
+## Supply history, price outlook and release calendar
+
+Supply history now covers 2000/01 onward (27 marketing years in the September
+2026 cache). Select all history, 20 or 10 years, and switch between stock/use
+and production versus consumption. Quantities in the chart are million metric
+tons; the detailed table retains thousand metric tons. No pre-2000 totals are
+constructed because predecessor-state and EU-15 aggregation requires separate
+validation. Country/area coverage is taken from the provider in each year.
+
+`src/services/priceForecast.js` implements experimental WFL v1, a price-only
+AR(1) model of FAO monthly log returns with fixed ridge penalty 0.01, coefficient
+clipped to ±0.95, and up to 120 training months. The official price cache now
+retains up to 600 months (FAO starts in 1990). At least 84 consecutive valid
+months are required. Missing/invalid history suppresses the forecast.
+
+Forecasts cover 12 months beyond the last published observation. Up to 60
+rolling origins are evaluated at each of 12 horizons using origin-only training
+windows; displayed MAE is compared to unchanged prices on identical outcomes.
+The 10th–90th percentile log-error band is calibrated from those same rolling
+errors, expanded if necessary to include the baseline. It is not independently
+validated 80% coverage. Historical series are current revised vintages and
+origins overlap: this is not a point-in-time trading simulation. An assumed
+extra price shock ramps logarithmically to the user's chosen percentage at 12
+months; it does not change model fitting or the baseline's error band. It does
+not estimate causal weather, supply, war or policy elasticities.
+
+`src/data/releaseSchedule.js` stores manually reviewed 2026 FAO/WASDE dates and
+NOAA's explicitly announced next release, with official links and review date.
+`src/services/releaseCalendar.js` builds a rolling one-year calendar. Unverified
+months use explicitly estimated planning windows, never official-date badges;
+2026 dates are not copied into 2027. No future report values are invented.
+Recheck official schedules at least monthly and add newly published annual
+schedules deliberately. The UI warns when manual verification is over 30 days
+old. Daily source downloads do not silently refresh this review date.
 
 ## Investment market charts
 

@@ -1,0 +1,21 @@
+.outlook-summary,.release-cadence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}
+.outlook-summary article,.release-cadence article,.release-month{padding:20px;background:#fff;border:1px solid #d4dbd3;border-radius:14px;min-width:0}
+.outlook-summary article{display:flex;flex-direction:column;gap:9px}.outlook-summary strong{font-size:30px;letter-spacing:-.04em}.outlook-summary small,.outlook-summary span{font-size:11px;color:#5d7062}
+.outlook-legend{display:flex;flex-wrap:wrap;gap:15px;font-size:11px;color:#52685a}
+.scenario-control{display:flex;flex-direction:column;gap:10px;max-width:480px;font-size:13px;margin-top:14px}.scenario-control input{width:100%;accent-color:#5b916f}
+.outlook-section .outlook-note,.supply-history .outlook-note{font-size:12px;line-height:1.8;color:#5e7064;max-width:none}
+.outlook-method{padding:18px 0;border-bottom:1px solid #d4dbd3;font-size:12px;line-height:1.8}.outlook-method summary{font-weight:700;cursor:pointer}.outlook-method .raw-table{max-height:360px}.outlook-method table{white-space:nowrap}
+.release-cadence{grid-template-columns:repeat(2,minmax(0,1fr))}.release-cadence h3{font-size:14px;line-height:1.7}.release-cadence p{font-size:12px;line-height:1.7;color:#5e7064}
+.release-controls{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:16px 0}.release-controls label{display:flex;align-items:center;gap:8px;font-size:12px}.release-controls select{font:inherit;border:1px solid #bac8bb;border-radius:8px;padding:9px;background:#fff;color:#233b2b;max-width:100%}
+.release-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.release-month h3{margin:0 0 14px;font-size:22px}.release-month ul{padding:0;margin:0;list-style:none}.release-month li{padding:12px 0;border-top:1px solid #dce3da;display:flex;flex-direction:column;gap:8px;font-size:11px}.release-month li>div{display:flex;flex-wrap:wrap;gap:8px}.release-month a{color:#315d48;line-height:1.6}.release-month small{color:#657b6b;line-height:1.6}.release-confirmed,.release-estimated{padding:3px 6px;border-radius:5px;font-size:10px}.release-confirmed{background:#e4efe5;color:#28583b}.release-estimated{background:#f5ecd4;color:#715d28}
+.usda-grid .supply-history{margin-top:0}.usda-grid{grid-template-columns:minmax(230px,.65fr) minmax(0,1.5fr)}
+[data-theme="dark"] .outlook-summary article,[data-theme="dark"] .release-cadence article,[data-theme="dark"] .release-month{background:#19201c;border-color:#344039}
+[data-theme="dark"] .outlook-summary small,[data-theme="dark"] .outlook-summary span,[data-theme="dark"] .outlook-legend,[data-theme="dark"] .outlook-note,[data-theme="dark"] .release-cadence p,[data-theme="dark"] .release-month small{color:#afc0b4}
+[data-theme="dark"] .release-controls select{background:#222b25;border-color:#445248;color:#d7e4dc}
+[data-theme="dark"] .release-month a{color:#8fc5a2}[data-theme="dark"] .release-month li,[data-theme="dark"] .outlook-method{border-color:#344039}
+[data-theme="dark"] .release-confirmed{background:#294635;color:#b2dbbf}[data-theme="dark"] .release-estimated{background:#3b3420;color:#dfcc8b}
+/* Additional navigation items must remain reachable at intermediate widths. */
+.section-nav{justify-content:flex-start}
+.section-nav a:first-child{margin-left:auto}.section-nav a:last-child{margin-right:auto}
+@media(max-width:900px){.outlook-summary,.release-timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.usda-grid{grid-template-columns:1fr}.section-nav a:first-child{margin-left:0}.section-nav a:last-child{margin-right:0}}
+@media(max-width:620px){.outlook-summary,.release-cadence,.release-timeline{grid-template-columns:1fr}.release-controls label{flex-wrap:wrap}.release-month{padding:16px}}
