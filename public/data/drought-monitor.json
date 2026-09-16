@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-15T11:54:01Z",
+  "generatedAt": "2026-09-16T11:48:54Z",
   "maps": {
     "shortTerm": {
-      "period": "2026-08-21",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-08-21&SELECTED_TIMESCALE=01",
+      "period": "2026-09-01",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-01&SELECTED_TIMESCALE=01",
       "layer": "spaST",
       "title": "SPI ERA5 Short Term (1 month)"
     },
@@ -28,12 +28,12 @@
       "impactRisk": "no-hotspot"
     },
     "kansas": {
-      "shortTerm": "extremely-dry",
+      "shortTerm": "severely-dry",
       "longTerm": "severely-dry",
       "impactRisk": "no-hotspot"
     },
     "saskatchewan": {
-      "shortTerm": "near-normal",
+      "shortTerm": "very-wet",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -63,7 +63,7 @@
       "impactRisk": "no-hotspot"
     },
     "pampas": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-dry",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -83,7 +83,7 @@
       "impactRisk": "low"
     },
     "punjab": {
-      "shortTerm": "moderately-dry",
+      "shortTerm": "extremely-dry",
       "longTerm": "moderately-dry",
       "impactRisk": "no-hotspot"
     },
@@ -93,7 +93,7 @@
       "impactRisk": "no-hotspot"
     },
     "australia": {
-      "shortTerm": "moderately-wet",
+      "shortTerm": "near-normal",
       "longTerm": "extremely-wet",
       "impactRisk": "no-hotspot"
     },
@@ -104,8 +104,8 @@
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-09-15T11:54:01Z",
-  "lastAttemptAt": "2026-09-15T11:54:01Z",
+  "fetchedAt": "2026-09-16T11:48:54Z",
+  "lastAttemptAt": "2026-09-16T11:48:54Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
