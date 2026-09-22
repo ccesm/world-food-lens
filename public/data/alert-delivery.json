@@ -1,5 +1,20 @@
 {
   "schemaVersion": 1,
-  "status": "not-configured",
-  "sentEventIds": []
+  "status": "sent",
+  "sentEventIds": [],
+  "lastCheckedAt": "2026-09-22T13:46:53Z",
+  "deliveredEpisodes": {},
+  "lastAttemptAt": "2026-09-22T13:46:53Z",
+  "lastSentAt": "2026-09-22T13:46:53Z",
+  "acceptance": "smtp-accepted",
+  "welcomeSentAt": "2026-09-22T13:46:53Z",
+  "healthStates": {
+    "weather": "ok",
+    "drought": "unavailable",
+    "soil": "ok",
+    "fao": "ok",
+    "costs": "ok",
+    "enso": "ok",
+    "calendar": "ok"
+  }
 }
