@@ -70,6 +70,8 @@ See:
 - `public/data/official-data.json` — generated, verified cache
 - `public/data/local-weather.json` — NASA POWER point weather and soil wetness
 - `public/data/drought-monitor.json` — Copernicus GDO point classifications and map metadata
+- `public/data/monitor-alerts.json` — daily rule evaluation, alert history and source health
+- `public/data/alert-delivery.json` — notification receipts without addresses or credentials
 - `public/data/recovered-snapshot.json` — unchanged migration fallback
 - `scripts/macro_sources.py` and `scripts/climate_sources.py` — public downloads
 - `scripts/refresh_data.py` — validation and atomic cache replacement
@@ -134,6 +136,14 @@ manual dispatch and daily at 06:23 UTC (GitHub schedules can be delayed). The
 generated JSON is committed back to main before deployment, retaining GitHub as
 the source of truth. The same workflow deploys directly: a bot commit does not
 need to trigger another workflow. No personal token is added.
+
+The automatic alert center checks representative-point heat/crop-stage overlap,
+verified drought classifications and monthly price/cost changes. After a
+successful publication, configured server-side Gmail Secrets enable one initial
+confirmation and later new/escalated signal or source-outage digests. Unchanged
+signals are silent; unavailable evidence is never treated as normal. Political
+and conflict events remain editorial. See [monitoring rules, email setup and
+delivery limitations](docs/AUTOMATIC_MONITORING.md).
 
 GitHub Pages must use **GitHub Actions** as its source. The build job needs
 repository-content write permission to save cache commits; protected-branch

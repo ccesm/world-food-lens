@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "1",
+  "generatedAt": "2026-09-22T13:44:40.721Z",
+  "active": [],
+  "events": [],
+  "health": [
+    {
+      "id": "weather",
+      "label": {
+        "zh": "气温观测",
+        "en": "Temperature observations"
+      },
+      "status": "ok",
+      "reason": {
+        "zh": "16/16 个代表点通过连续性、来源和时效检查；最新观测最多允许滞后 10 天。",
+        "en": "16/16 representative points pass continuity, source and freshness checks; latest observations may lag by at most 10 days."
+      },
+      "period": "2026-09-18",
+      "fetchedAt": "2026-09-22T11:50:55Z"
+    },
+    {
+      "id": "drought",
+      "label": {
+        "zh": "官方干旱图层",
+        "en": "Official drought layer"
+      },
+      "status": "unavailable",
+      "reason": {
+        "zh": "图层日期尚未被官方可用数据范围证实；暂停自动干旱判定。",
+        "en": "The layer date has not been corroborated by official data availability; automatic drought screening is paused."
+      },
+      "fetchedAt": "2026-09-22T13:38:33Z"
+    },
+    {
+      "id": "soil",
+      "label": {
+        "zh": "土壤湿度背景",
+        "en": "Soil-moisture context"
+      },
+      "status": "ok",
+      "reason": {
+        "zh": "16/16 个点有有效当月数据及 1991–2020 同月基准；部分月份仅作背景，不触发红色预警。",
+        "en": "16/16 points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts."
+      },
+      "period": "2026-09-18",
+      "fetchedAt": "2026-09-22T11:50:55Z"
+    },
+    {
+      "id": "fao",
+      "label": {
+        "zh": "FAO 月度食品价格",
+        "en": "FAO monthly food prices"
+      },
+      "status": "ok",
+      "reason": {
+        "zh": "相邻月份、单位、数值及更新时间已校验。",
+        "en": "Adjacent months, units, values and freshness validated."
+      },
+      "period": "2026-08",
+      "fetchedAt": "2026-09-22T11:50:46Z"
+    },
+    {
+      "id": "costs",
+      "label": {
+        "zh": "世界银行能源与化肥",
+        "en": "World Bank energy and fertilizer"
+      },
+      "status": "ok",
+      "reason": {
+        "zh": "5/5 个成本序列可评估；使用完整月份环比。",
+        "en": "5/5 cost series can be evaluated, using complete-month changes."
+      },
+      "period": "2026-08",
+      "fetchedAt": "2026-09-22T11:50:46Z"
+    },
+    {
+      "id": "enso",
+      "label": {
+        "zh": "ENSO 展望背景",
+        "en": "ENSO outlook context"
+      },
+      "status": "ok",
+      "reason": {
+        "zh": "仅检查背景资料更新；ENSO 强度和历史倾向不会直接触发作物预警。",
+        "en": "Context freshness only; ENSO strength and historical tendencies never directly trigger crop alerts."
+      },
+      "period": "2026-09-10",
+      "fetchedAt": "2026-09-22T11:51:06Z"
+    },
+    {
+      "id": "calendar",
+      "label": {
+        "zh": "作物季节模板",
+        "en": "Crop seasonal templates"
+      },
+      "status": "ok",
+      "reason": {
+        "zh": "21 个作物窗口可匹配。模板是估计生育期，仍需人工维护；不是实测田间进度。",
+        "en": "21 crop windows can be matched. Templates estimate growth stages and require editorial maintenance; they are not measured crop progress."
+      }
+    }
+  ],
+  "coverage": {
+    "automatic": {
+      "zh": "NASA POWER 代表点高温与生育期重叠、日期被官方可用范围证实的短期干旱图层、FAO 与世界银行完整月份价格 / 成本涨幅。每日重新检查；源数据按各自发布节奏更新。",
+      "en": "Representative-point NASA POWER heat/stage overlap, official short-term drought layers with availability-corroborated dates, and complete-month FAO/World Bank price and cost rises. Rechecked daily; source observations follow provider publication schedules."
+    },
+    "manual": {
+      "zh": "政策、战争、地区季节预报和产量影响仍需人工核实。ENSO 与土壤湿度作背景；未自动推断受灾面积、减产比例或全球危机概率。",
+      "en": "Policy, conflict, regional seasonal forecasts and yield consequences still require review. ENSO and soil moisture provide context; affected area, yield loss and global crisis probabilities are not automatically inferred."
+    }
+  },
+  "email": {
+    "status": "configured"
+  }
+}

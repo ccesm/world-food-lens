@@ -17,6 +17,7 @@ export const mobileClimateNavigation=[
 ];
 
 export const mobileMoreNavigation=[
+  {href:"#automatic-alerts",label:pair("自动预警","Automatic alerts")},
   {href:"#grain-inventory",label:pair("三谷物库存","Grain inventories")},
   {href:"#s1",label:pair("价格与成本","Prices & costs")},
   {href:"#s2",label:pair("产量与库存","Supply & stocks")},

@@ -20,6 +20,11 @@ and many expanded dashboards, leaving new readers to infer their relationship.
 7. Two compact historical cases; the longer 1972–1974 timeline is expandable.
 8. Optional cost experiment and investments, followed by the existing Data Desk.
 
+September 22 addition: a compact automatic alert center now follows the hero,
+before the core-question guide. Counts and freshness stay visible; event
+evidence and source-health details are expandable. The phone More menu includes
+its link without adding a sixth primary tab. See AUTOMATIC_MONITORING.md.
+
 The hero and evidence section share `useFoodStress`; its one timer and memoized
 call use the unchanged `buildFoodStress` service. There is no second score,
 normalization rule or data source. Missing evidence remains unscored.

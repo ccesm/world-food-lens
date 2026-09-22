@@ -10,7 +10,7 @@ calendar.
 ## Copernicus Global Drought Observatory
 
 `scripts/refresh_drought.py` reads the public Copernicus/JRC Global Drought
-Observatory WMS catalogue, discovers the latest published periods and retrieves
+Observatory service-page request examples, retains their exact dates and retrieves
 three global raster layers:
 
 - short-term precipitation anomaly: one-month SPI (`spaST`);
@@ -22,6 +22,14 @@ indexed-colour raster and stores the resulting class, exact source period and
 WMS URL in `public/data/drought-monitor.json`. The browser shows both the cached
 point classifications and the provider-hosted global map. It does not download
 or republish a full raster in this repository.
+
+Example request dates are not an authoritative latest-publication listing.
+The refresher separately checks WMS GetCapabilities layer availability ranges.
+Only dates corroborated for all three layers set `periodVerified: true`; this
+does not prove that they are the latest periods. Missing/contradictory metadata,
+future or regressed periods and failed refreshes clear verification. Reference
+maps remain labelled with their requested dates and an unverified-date notice;
+unverified GDO data cannot trigger the automatic alert center.
 
 SPI describes how precipitation at a grid cell compares with its historical
 distribution. RDrI-Agri combines hazard, exposure and vulnerability for hotspot

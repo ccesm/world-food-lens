@@ -19,6 +19,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      published_sha: ${{ steps.saved.outputs.sha }}
     permissions:
       contents: write
     steps:
@@ -60,18 +63,24 @@ jobs:
       - name: Report ENSO outlook failure
         if: steps.enso.outcome == 'failure'
         run: echo "::warning::NOAA ENSO outlook refresh failed. The last good issue date is retained and stale outlooks are not used for current crop watches."
+      - name: Evaluate automatic alerts against retained event history
+        env:
+          WFL_EMAIL_CONFIGURED: ${{ secrets.WFL_ALERT_TO != '' && secrets.WFL_SMTP_USER != '' && secrets.WFL_SMTP_PASSWORD != '' }}
+        run: npm run evaluate-alerts
       - run: npm test
       - run: npm run build
       - name: Save cache to the source-of-truth repository
+        id: saved
         if: github.ref == 'refs/heads/main'
         run: |
-          git add public/data/official-data.json public/data/local-weather.json public/data/enso-outlook.json public/data/drought-monitor.json
+          git add public/data/official-data.json public/data/local-weather.json public/data/enso-outlook.json public/data/drought-monitor.json public/data/monitor-alerts.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git commit -m 'Refresh official data cache'
             git push origin HEAD:main
           fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
@@ -86,3 +95,54 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    name: Email changes after successful publication
+    needs: [build, deploy]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ needs.build.outputs.published_sha }}
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Read latest delivery ledger before retries
+        run: |
+          git fetch origin main
+          git restore --source=origin/main --worktree -- public/data/alert-delivery.json
+      - name: Send new or escalated alerts and newly interrupted sources
+        id: email
+        continue-on-error: true
+        env:
+          WFL_ALERT_TO: ${{ secrets.WFL_ALERT_TO }}
+          WFL_SMTP_USER: ${{ secrets.WFL_SMTP_USER }}
+          WFL_SMTP_PASSWORD: ${{ secrets.WFL_SMTP_PASSWORD }}
+        run: python3 scripts/send_alert_email.py
+      - name: Preserve delivery receipt for recovery
+        if: always() && steps.email.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: alert-delivery-${{ github.run_id }}-${{ github.run_attempt }}
+          path: public/data/alert-delivery.json
+          retention-days: 14
+      - name: Save delivery ledger without addresses or credentials
+        if: always() && steps.email.outcome != 'skipped'
+        run: |
+          git add public/data/alert-delivery.json
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Record automatic alert delivery status'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Report email failure
+        if: steps.email.outcome == 'failure'
+        run: |
+          echo "::error::Email failed. Pending alert events were retained for retry; check the error category and SMTP secrets."
+          exit 1

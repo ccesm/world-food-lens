@@ -23,6 +23,7 @@ import FoodHistory from "./components/FoodHistory";
 import HomeOrientation,{HomeHero} from "./components/HomeOrientation";
 import DetailModule from "./components/DetailModule";
 import MobileNavigation from "./components/MobileNavigation";
+import AlertCenter from "./components/AlertCenter";
 import useFoodStress from "./hooks/useFoodStress";
 import {loadEnsoOutlook,validateEnsoBundle} from "./services/ensoOutlook";
 import "./styles.css";
@@ -278,6 +279,7 @@ function App(){
       <HomeHero lang={lang} model={stressModel}>
         {refreshMsg && <div className="notice" role="status">{refreshMsg==="loaded"?(lang==="zh"?"已读取网站最新发布的缓存。此按钮不会直接触发官方接口抓取；各来源的成功/失败状态见数据来源。":"Loaded the site's latest published cache. This button does not trigger upstream downloads; source success/failure is shown in Data Desk."):(lang==="zh"?"网站缓存暂时无法读取，继续显示已载入的数据。":"The published cache could not be read; previously loaded data remain visible.")}</div>}
       </HomeHero>
+      <AlertCenter lang={lang}/>
       <HomeOrientation lang={lang}/>
       <EnsoHomeCard outlook={ensoOutlook} lang={lang}/>
 

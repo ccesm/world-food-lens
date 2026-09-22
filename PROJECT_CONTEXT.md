@@ -201,3 +201,21 @@ retention prevent missing data from becoming a normal or low-risk result.
 These layers remain independent from ENSO tendencies, seasonal outlooks and
 crop calendars. They do not estimate affected hectares, production loss or a
 Global Food Stress score. See docs/DROUGHT_SOIL_MOISTURE.md.
+
+## Daily automatic monitoring and email (2026-09-22)
+
+The existing daily workflow now evaluates transparent heat/crop-stage, verified
+GDO SPI and monthly price/cost thresholds. The compact homepage alert center
+shows source health, evidence, new/escalated/resolved transitions and unverified
+retained alerts. No new global score or affected-production estimate is added.
+Its phone link is under More; desktop and five phone primary entries are intact.
+
+The separate post-publication SMTP job sends a first activation confirmation,
+then only new/escalated active alerts or previously good sources going missing.
+Credentials and addresses live only in repository Actions Secrets; public
+receipts contain identifiers, status and timestamps. Retry reads the latest
+delivery ledger, and that status appears on the next site build. SMTP acceptance
+is not inbox delivery. GDO service-page example periods now require advertised
+availability corroboration; unverified maps remain reference-only. Soil moisture,
+ENSO, policy and war do not independently generate automated damage claims.
+See docs/AUTOMATIC_MONITORING.md for thresholds, boundaries and operations.
