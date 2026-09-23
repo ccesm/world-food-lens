@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rulesVersion": "1",
-  "generatedAt": "2026-09-22T13:48:25.403Z",
+  "generatedAt": "2026-09-23T11:50:43.926Z",
   "active": [],
   "events": [],
   "health": [
@@ -16,8 +16,8 @@
         "zh": "16/16 个代表点通过连续性、来源和时效检查；最新观测最多允许滞后 10 天。",
         "en": "16/16 representative points pass continuity, source and freshness checks; latest observations may lag by at most 10 days."
       },
-      "period": "2026-09-18",
-      "fetchedAt": "2026-09-22T13:48:09Z"
+      "period": "2026-09-19",
+      "fetchedAt": "2026-09-23T11:50:32Z"
     },
     {
       "id": "drought",
@@ -30,7 +30,7 @@
         "zh": "图层日期尚未被官方可用数据范围证实；暂停自动干旱判定。",
         "en": "The layer date has not been corroborated by official data availability; automatic drought screening is paused."
       },
-      "fetchedAt": "2026-09-22T13:48:20Z"
+      "fetchedAt": "2026-09-23T11:50:40Z"
     },
     {
       "id": "soil",
@@ -43,8 +43,8 @@
         "zh": "16/16 个点有有效当月数据及 1991–2020 同月基准；部分月份仅作背景，不触发红色预警。",
         "en": "16/16 points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts."
       },
-      "period": "2026-09-18",
-      "fetchedAt": "2026-09-22T13:48:09Z"
+      "period": "2026-09-19",
+      "fetchedAt": "2026-09-23T11:50:32Z"
     },
     {
       "id": "fao",
@@ -58,7 +58,7 @@
         "en": "Adjacent months, units, values and freshness validated."
       },
       "period": "2026-08",
-      "fetchedAt": "2026-09-22T13:48:00Z"
+      "fetchedAt": "2026-09-23T11:50:23Z"
     },
     {
       "id": "costs",
@@ -72,7 +72,7 @@
         "en": "5/5 cost series can be evaluated, using complete-month changes."
       },
       "period": "2026-08",
-      "fetchedAt": "2026-09-22T13:48:01Z"
+      "fetchedAt": "2026-09-23T11:50:23Z"
     },
     {
       "id": "enso",
@@ -86,7 +86,7 @@
         "en": "Context freshness only; ENSO strength and historical tendencies never directly trigger crop alerts."
       },
       "period": "2026-09-10",
-      "fetchedAt": "2026-09-22T13:48:24Z"
+      "fetchedAt": "2026-09-23T11:50:43Z"
     },
     {
       "id": "calendar",
