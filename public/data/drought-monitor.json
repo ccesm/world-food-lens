@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-25T11:59:38Z",
+  "generatedAt": "2026-09-26T11:34:35Z",
   "maps": {
     "shortTerm": {
-      "period": "2026-09-01",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-01&SELECTED_TIMESCALE=01",
+      "period": "2026-09-11",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-11&SELECTED_TIMESCALE=01",
       "layer": "spaST",
       "title": "SPI ERA5 Short Term (1 month)",
       "periodBasis": "wms-service-example",
@@ -40,12 +40,12 @@
       "impactRisk": "no-hotspot"
     },
     "kansas": {
-      "shortTerm": "severely-dry",
+      "shortTerm": "near-normal",
       "longTerm": "severely-dry",
       "impactRisk": "no-hotspot"
     },
     "saskatchewan": {
-      "shortTerm": "very-wet",
+      "shortTerm": "extremely-wet",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -75,12 +75,12 @@
       "impactRisk": "no-hotspot"
     },
     "pampas": {
-      "shortTerm": "moderately-dry",
+      "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
     "henan": {
-      "shortTerm": "moderately-wet",
+      "shortTerm": "severely-dry",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -90,12 +90,12 @@
       "impactRisk": "no-hotspot"
     },
     "india-rice": {
-      "shortTerm": "extremely-wet",
+      "shortTerm": "very-wet",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
     "punjab": {
-      "shortTerm": "extremely-dry",
+      "shortTerm": "severely-dry",
       "longTerm": "moderately-dry",
       "impactRisk": "no-hotspot"
     },
@@ -110,14 +110,14 @@
       "impactRisk": "no-hotspot"
     },
     "free-state": {
-      "shortTerm": "moderately-wet",
+      "shortTerm": "very-wet",
       "longTerm": "extremely-wet",
       "impactRisk": "no-hotspot"
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-09-25T11:59:38Z",
-  "lastAttemptAt": "2026-09-25T11:59:38Z",
+  "fetchedAt": "2026-09-26T11:34:35Z",
+  "lastAttemptAt": "2026-09-26T11:34:35Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -126,7 +126,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-09-25T11:59:40Z",
+    "checkedAt": "2026-09-26T11:34:37Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "example-period-not-corroborated"
   }
