@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-27T12:13:03Z",
+  "generatedAt": "2026-09-28T14:11:23Z",
   "maps": {
     "shortTerm": {
       "period": "2026-09-11",
@@ -23,8 +23,8 @@
       "availabilityEnd": "2026-06-01"
     },
     "impactRisk": {
-      "period": "2026-09-01",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-01",
+      "period": "2026-09-11",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-11",
       "layer": "rdria",
       "title": "Risk of Drought Impact for Agriculture",
       "periodBasis": "wms-service-example",
@@ -116,8 +116,8 @@
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-09-27T12:13:03Z",
-  "lastAttemptAt": "2026-09-27T12:13:03Z",
+  "fetchedAt": "2026-09-28T14:11:23Z",
+  "lastAttemptAt": "2026-09-28T14:11:23Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -126,7 +126,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-09-27T12:13:05Z",
+    "checkedAt": "2026-09-28T14:11:25Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "example-period-not-corroborated"
   }
