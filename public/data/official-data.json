@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-01T13:31:54Z",
+  "generatedAt": "2026-10-02T12:50:40Z",
   "sources": {
     "usda": {
       "source": {
@@ -1566,15 +1566,15 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-01T13:32:00Z",
-      "lastAttemptAt": "2026-10-01T13:31:54Z"
+      "fetchedAt": "2026-10-02T12:50:46Z",
+      "lastAttemptAt": "2026-10-02T12:50:40Z"
     },
     "fao": {
       "source": {
         "label": "FAO · Food Price Index",
         "url": "https://www.fao.org/worldfoodsituation/foodpricesindex/en/",
         "downloadUrl": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
-        "period": "2026-08",
+        "period": "2026-09",
         "unit": "2014–2016 = 100",
         "methodology": "Nominal export-weighted food price index. Recent meat inputs mix projected and observed prices; the index can be revised."
       },
@@ -3334,23 +3334,27 @@
           },
           {
             "month": "2026-07",
-            "fao": 130.8
+            "fao": 131.7
           },
           {
             "month": "2026-08",
-            "fao": 133.3
+            "fao": 134.0
+          },
+          {
+            "month": "2026-09",
+            "fao": 136.0
           }
         ],
         "headline": {
-          "value": 133.3,
-          "momPct": 1.9113,
-          "period": "2026-08",
+          "value": 136.0,
+          "momPct": 1.4925,
+          "period": "2026-09",
           "unit": "2014–2016 = 100"
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-01T13:31:54Z",
-      "lastAttemptAt": "2026-10-01T13:31:54Z"
+      "fetchedAt": "2026-10-02T12:50:40Z",
+      "lastAttemptAt": "2026-10-02T12:50:40Z"
     },
     "noaa": {
       "source": {
@@ -4458,8 +4462,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-10-01T13:31:55Z",
-      "lastAttemptAt": "2026-10-01T13:31:54Z"
+      "fetchedAt": "2026-10-02T12:50:40Z",
+      "lastAttemptAt": "2026-10-02T12:50:40Z"
     },
     "worldBank": {
       "source": {
@@ -11757,8 +11761,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-10-01T13:31:55Z",
-      "lastAttemptAt": "2026-10-01T13:31:54Z"
+      "fetchedAt": "2026-10-02T12:50:40Z",
+      "lastAttemptAt": "2026-10-02T12:50:40Z"
     },
     "eia": {
       "source": {
@@ -13668,8 +13672,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-01T13:32:04Z",
-      "lastAttemptAt": "2026-10-01T13:31:54Z"
+      "fetchedAt": "2026-10-02T12:50:48Z",
+      "lastAttemptAt": "2026-10-02T12:50:40Z"
     }
   }
 }
