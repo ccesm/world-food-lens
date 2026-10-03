@@ -1,9 +1,75 @@
 {
   "schemaVersion": 1,
   "rulesVersion": "1",
-  "generatedAt": "2026-10-02T12:50:59.768Z",
-  "active": [],
-  "events": [],
+  "generatedAt": "2026-10-03T11:49:39.022Z",
+  "active": [
+    {
+      "id": "market/worldBank/brent",
+      "category": "market",
+      "severity": "red",
+      "title": {
+        "zh": "布伦特原油月度涨幅预警",
+        "en": "Brent crude monthly price rise"
+      },
+      "summary": {
+        "zh": "2026-09 月度基准环比上涨 28.5%。这是价格 / 成本压力筛查，实际粮食供应影响需进一步核对。",
+        "en": "The 2026-09 monthly benchmark increased 28.5% from the preceding calendar month. This screens price/cost pressure; food-supply consequences need separate evidence."
+      },
+      "rule": {
+        "zh": "WFL 筛查：相邻完整月份涨幅 ≥10% 为黄、≥20% 为红；直接由经单位校验的数值重新计算。",
+        "en": "WFL screen: ≥10% between adjacent complete months is yellow; ≥20% is red. Recalculated from values with validated units."
+      },
+      "sourcePeriod": "2026-09",
+      "sources": [
+        {
+          "label": "World Bank · Pink Sheet",
+          "url": "https://www.worldbank.org/en/research/commodity-markets",
+          "period": "2026-09"
+        }
+      ],
+      "target": "#s4",
+      "firstSeenAt": "2026-10-03T11:49:39.022Z",
+      "lastEvaluatedAt": "2026-10-03T11:49:39.022Z",
+      "state": "active"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-6e8d91635e5f02c5",
+      "alertId": "market/worldBank/brent",
+      "type": "new",
+      "at": "2026-10-03T11:49:39.022Z",
+      "alert": {
+        "id": "market/worldBank/brent",
+        "category": "market",
+        "severity": "red",
+        "title": {
+          "zh": "布伦特原油月度涨幅预警",
+          "en": "Brent crude monthly price rise"
+        },
+        "summary": {
+          "zh": "2026-09 月度基准环比上涨 28.5%。这是价格 / 成本压力筛查，实际粮食供应影响需进一步核对。",
+          "en": "The 2026-09 monthly benchmark increased 28.5% from the preceding calendar month. This screens price/cost pressure; food-supply consequences need separate evidence."
+        },
+        "rule": {
+          "zh": "WFL 筛查：相邻完整月份涨幅 ≥10% 为黄、≥20% 为红；直接由经单位校验的数值重新计算。",
+          "en": "WFL screen: ≥10% between adjacent complete months is yellow; ≥20% is red. Recalculated from values with validated units."
+        },
+        "sourcePeriod": "2026-09",
+        "sources": [
+          {
+            "label": "World Bank · Pink Sheet",
+            "url": "https://www.worldbank.org/en/research/commodity-markets",
+            "period": "2026-09"
+          }
+        ],
+        "target": "#s4",
+        "firstSeenAt": "2026-10-03T11:49:39.022Z",
+        "lastEvaluatedAt": "2026-10-03T11:49:39.022Z",
+        "state": "active"
+      }
+    }
+  ],
   "health": [
     {
       "id": "weather",
@@ -16,8 +82,8 @@
         "zh": "16/16 个代表点通过连续性、来源和时效检查；最新观测最多允许滞后 10 天。",
         "en": "16/16 representative points pass continuity, source and freshness checks; latest observations may lag by at most 10 days."
       },
-      "period": "2026-09-28",
-      "fetchedAt": "2026-10-02T12:50:48Z"
+      "period": "2026-09-29",
+      "fetchedAt": "2026-10-03T11:49:28Z"
     },
     {
       "id": "drought",
@@ -30,7 +96,7 @@
         "zh": "图层日期尚未被官方可用数据范围证实；暂停自动干旱判定。",
         "en": "The layer date has not been corroborated by official data availability; automatic drought screening is paused."
       },
-      "fetchedAt": "2026-10-02T12:50:56Z"
+      "fetchedAt": "2026-10-03T11:49:35Z"
     },
     {
       "id": "soil",
@@ -43,7 +109,7 @@
         "zh": "0/16 个点有有效当月数据及 1991–2020 同月基准；部分月份仅作背景，不触发红色预警。",
         "en": "0/16 points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts."
       },
-      "fetchedAt": "2026-10-02T12:50:48Z"
+      "fetchedAt": "2026-10-03T11:49:28Z"
     },
     {
       "id": "fao",
@@ -57,7 +123,7 @@
         "en": "Adjacent months, units, values and freshness validated."
       },
       "period": "2026-09",
-      "fetchedAt": "2026-10-02T12:50:40Z"
+      "fetchedAt": "2026-10-03T11:49:18Z"
     },
     {
       "id": "costs",
@@ -70,8 +136,8 @@
         "zh": "5/5 个成本序列可评估；使用完整月份环比。",
         "en": "5/5 cost series can be evaluated, using complete-month changes."
       },
-      "period": "2026-08",
-      "fetchedAt": "2026-10-02T12:50:40Z"
+      "period": "2026-09",
+      "fetchedAt": "2026-10-03T11:49:19Z"
     },
     {
       "id": "enso",
@@ -85,7 +151,7 @@
         "en": "Context freshness only; ENSO strength and historical tendencies never directly trigger crop alerts."
       },
       "period": "2026-09-10",
-      "fetchedAt": "2026-10-02T12:50:58Z"
+      "fetchedAt": "2026-10-03T11:49:37Z"
     },
     {
       "id": "calendar",
