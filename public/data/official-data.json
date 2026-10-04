@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T11:49:18Z",
+  "generatedAt": "2026-10-04T12:32:50Z",
   "sources": {
     "usda": {
       "source": {
@@ -1566,8 +1566,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-03T11:49:28Z",
-      "lastAttemptAt": "2026-10-03T11:49:18Z"
+      "fetchedAt": "2026-10-04T12:32:56Z",
+      "lastAttemptAt": "2026-10-04T12:32:50Z"
     },
     "fao": {
       "source": {
@@ -3352,16 +3352,17 @@
           "unit": "2014–2016 = 100"
         }
       },
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-03T11:49:18Z",
-      "lastAttemptAt": "2026-10-03T11:49:18Z"
+      "lastAttemptAt": "2026-10-04T12:32:50Z",
+      "error": "HTTPError: HTTP Error 404: Not Found"
     },
     "noaa": {
       "source": {
         "label": "NOAA CPC · RONI",
         "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/",
         "downloadUrl": "https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt",
-        "period": "2026 JJA",
+        "period": "2026 JAS",
         "unit": "°C",
         "methodology": "ERSSTv6; overlapping 3-month relative Niño 3.4 sea-surface temperature anomalies; 1991–2020 baseline, tropical-mean adjusted and variance scaled. Recent values are provisional. Not an ENSO advisory or a crop forecast."
       },
@@ -3369,24 +3370,15 @@
         "index": "RONI",
         "baseline": "1991–2020",
         "latest": {
-          "period": "2026 JJA",
+          "period": "2026 JAS",
           "year": 2026,
-          "season": "JJA",
-          "startMonth": "2026-06",
-          "endMonth": "2026-08",
-          "value": 1.36,
+          "season": "JAS",
+          "startMonth": "2026-07",
+          "endMonth": "2026-09",
+          "value": 1.69,
           "provisional": true
         },
         "history": [
-          {
-            "period": "2016 JAS",
-            "year": 2016,
-            "season": "JAS",
-            "startMonth": "2016-07",
-            "endMonth": "2016-09",
-            "value": -0.81,
-            "provisional": false
-          },
           {
             "period": "2016 ASO",
             "year": 2016,
@@ -4438,7 +4430,7 @@
             "startMonth": "2026-04",
             "endMonth": "2026-06",
             "value": 0.49,
-            "provisional": true
+            "provisional": false
           },
           {
             "period": "2026 MJJ",
@@ -4457,13 +4449,22 @@
             "endMonth": "2026-08",
             "value": 1.36,
             "provisional": true
+          },
+          {
+            "period": "2026 JAS",
+            "year": 2026,
+            "season": "JAS",
+            "startMonth": "2026-07",
+            "endMonth": "2026-09",
+            "value": 1.69,
+            "provisional": true
           }
         ],
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-10-03T11:49:19Z",
-      "lastAttemptAt": "2026-10-03T11:49:18Z"
+      "fetchedAt": "2026-10-04T12:32:50Z",
+      "lastAttemptAt": "2026-10-04T12:32:50Z"
     },
     "worldBank": {
       "source": {
@@ -11761,8 +11762,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-10-03T11:49:19Z",
-      "lastAttemptAt": "2026-10-03T11:49:18Z"
+      "fetchedAt": "2026-10-04T12:32:50Z",
+      "lastAttemptAt": "2026-10-04T12:32:50Z"
     },
     "eia": {
       "source": {
@@ -13672,8 +13673,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-03T11:49:26Z",
-      "lastAttemptAt": "2026-10-03T11:49:18Z"
+      "fetchedAt": "2026-10-04T12:33:00Z",
+      "lastAttemptAt": "2026-10-04T12:32:50Z"
     }
   }
 }
