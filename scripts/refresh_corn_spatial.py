@@ -15,7 +15,7 @@ from data_contract import DataIssue, timestamp
 SETTINGS = json.loads((Path(__file__).resolve().parents[1] / "src/data/cornSpatial.json").read_text())
 
 
-def fetch_weather(cache, url, identity, checked_day, *, attempts=3):
+def fetch_weather(cache, url, identity, checked_day, *, attempts=3, deadline=None):
     """Daily recheck of the rolling preliminary window; same-day warm reuse.
 
     Date clocks control retrieval freshness, NOT scientific identity. Exact raw
@@ -34,10 +34,15 @@ def fetch_weather(cache, url, identity, checked_day, *, attempts=3):
     for attempt in range(attempts):
         partial = path.with_suffix(".part")
         try:
+            remaining = deadline - time.monotonic() if deadline is not None else 60
+            if remaining <= 0:
+                raise TimeoutError("Spatial weather retrieval budget exhausted")
             size = 0
-            with urlopen(url, timeout=60) as response, partial.open("wb") as stream:
+            with urlopen(url, timeout=min(60, remaining)) as response, partial.open("wb") as stream:
                 length = int(response.headers.get("Content-Length", 0))
                 for chunk in iter(lambda: response.read(1024 * 1024), b""):
+                    if deadline is not None and time.monotonic() >= deadline:
+                        raise TimeoutError("Spatial weather retrieval budget exhausted")
                     size += len(chunk)
                     if size > 20_000_000:
                         raise ValueError("Weather subset exceeds bounded request budget")
@@ -54,12 +59,14 @@ def fetch_weather(cache, url, identity, checked_day, *, attempts=3):
             last = error
             if partial.exists():
                 partial.unlink()  # Exact incomplete file owned by this collector.
+            if deadline is not None and time.monotonic() >= deadline:
+                break
             if attempt + 1 < attempts:
                 time.sleep(min(2 ** attempt, 4))
     raise DataIssue(str(last), "retrieval_failed", "unknown")
 
 
-def process(state, annual_dir, weather_cache, period, at, level_a, previous, *, offline_raw=None):
+def process(state, annual_dir, weather_cache, period, at, level_a, previous, *, offline_raw=None, deadline=None):
     from corn_spatial_geo import load_annual, read_weather, summarize, point_comparison
     import numpy as np
     manifest, coords, weights = load_annual(annual_dir)
@@ -87,7 +94,7 @@ def process(state, annual_dir, weather_cache, period, at, level_a, previous, *, 
                 downloaded_now = 0
                 url = acquisition[key + ".nc"]["url"]
             else:
-                path, _, downloaded_now = fetch_weather(weather_cache, url, identity, at[:10])
+                path, _, downloaded_now = fetch_weather(weather_cache, url, identity, at[:10], deadline=deadline)
             array, version = read_weather(path, variable, subset, coords)
             version.update(sourceUrl="https://www.climatologylab.org/gridmet.html", downloadUrl=url)
             pieces.append(array)
@@ -128,8 +135,9 @@ def process(state, annual_dir, weather_cache, period, at, level_a, previous, *, 
     return state_result, (values, joint_weights), downloaded
 
 
-def refresh(annual, weather_cache, start, end, at, *, previous=None, official=None, offline_raw=None, fail_state=None):
+def refresh(annual, weather_cache, start, end, at, *, previous=None, official=None, offline_raw=None, fail_state=None, network_budget=None):
     period = dates(start, end)
+    deadline = time.monotonic() + network_budget if network_budget is not None else None
     results, distributions, measurements = [], [], []
     for state in STATES:
         begun = time.perf_counter()
@@ -152,7 +160,7 @@ def refresh(annual, weather_cache, start, end, at, *, previous=None, official=No
             if fail_state == state["id"]:
                 raise DataIssue("Explicit validation-only simulated state outage", "retrieval_failed", "unknown")
             result, distribution, downloaded = process(state, Path(annual) / state["id"], weather_cache, period, at,
-                (official or {}).get("cornPilot", {}).get("weather", {}).get(state["id"]), old, offline_raw=offline_raw)
+                (official or {}).get("cornPilot", {}).get("weather", {}).get(state["id"]), old, offline_raw=offline_raw, deadline=deadline)
             if result["status"] == "ok":
                 distributions.append(distribution)
         except Exception as error:
@@ -164,7 +172,9 @@ def refresh(annual, weather_cache, start, end, at, *, previous=None, official=No
                       "validWeatherAreaM2": 0., "coverage": 0. if mapped else None, "missingAreaM2": mapped,
                       "period": {"start": start, "end": end}, "reasons": [issue.reason], "error": str(issue),
                       "annualKey": manifest["key"] if manifest else None, "cropGeographyYear": manifest["identity"]["cropYear"] if manifest else None,
-                      "geographyUse": "unavailable", "geographyReason": "crop-or-weather-not-eligible",
+                      "geographyUse": ("year-specific" if manifest["identity"]["cropYear"] == int(end[:4]) else "validated-older-geography-proxy") if manifest else "unavailable",
+                      "geographyReason": ("validated-year-specific-cdl" if manifest["identity"]["cropYear"] == int(end[:4]) else "older-validated-native30m-proxy; newer-native10m-not-validated") if manifest else "crop-map-not-validated",
+                      "cropGeographyPublicationDate": manifest["publicationDate"] if manifest else None,
                       "areaValidation": manifest.get("areaValidation") if manifest else None,
                       "gridVersion": GRID["version"], "methodVersion": METHOD, "localStageEligibility": "insufficient"}
             old_records = (old or {}).get("records", {})
@@ -264,7 +274,11 @@ if __name__ == "__main__":
     parser.add_argument("--offline-raw")
     parser.add_argument("--fail-state", choices=[s["id"] for s in STATES])
     parser.add_argument("--input-archive")
+    parser.add_argument("--network-budget-seconds", type=float, default=180,
+                        help="Shared retrieval budget; existing valid same-day entries remain usable")
     args = parser.parse_args()
+    if not __import__('math').isfinite(args.network_budget_seconds) or args.network_budget_seconds <= 0:
+        parser.error("--network-budget-seconds must be finite and positive")
     if args.now and not timestamp(args.now):
         parser.error("--now must be a canonical UTC timestamp")
     now = datetime.fromisoformat(args.now.replace("Z", "+00:00")) if args.now else datetime.now(timezone.utc)
@@ -284,7 +298,7 @@ if __name__ == "__main__":
     except (OSError, ValueError):
         official = None
     artifact, performance = refresh(annual, weather_cache, start, end, at, previous=previous, official=official,
-                                    offline_raw=args.offline_raw, fail_state=args.fail_state)
+                                    offline_raw=args.offline_raw, fail_state=args.fail_state, network_budget=args.network_budget_seconds)
     if args.input_archive:
         artifact["inputArchive"] = archive_inputs(weather_cache, artifact, args.input_archive)
     write_json(output, artifact)

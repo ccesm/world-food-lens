@@ -40,6 +40,7 @@ def compare(original,replay):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--directory',required=True);p.add_argument('--output',required=True)
+    p.add_argument('--rebuilt-annual-cache')
     args=p.parse_args();root=external_cache(args.directory)
     annual=root/'annual';weather=external_cache(root/'weather')
     unpack(root/'corn-spatial-annual.tar.gz',annual,ANNUAL_HASH)
@@ -55,4 +56,9 @@ if __name__=='__main__':
     # Failure cannot fetch a newer preliminary vintage during fixed-input replay.
     with patch('refresh_corn_spatial.urlopen',side_effect=AssertionError('Network forbidden in fixed-input replay')):
         replay,_=refresh(annual,weather,original['period']['start'],original['period']['end'],original['generatedAt'])
-    write_json(args.output,compare(original,replay))
+    result=compare(original,replay)
+    if args.rebuilt_annual_cache:
+        with patch('refresh_corn_spatial.urlopen',side_effect=AssertionError('Network forbidden in fixed-input replay')):
+            rebuilt,_=refresh(Path(args.rebuilt_annual_cache),weather,original['period']['start'],original['period']['end'],original['generatedAt'])
+        result['runnerRebuiltAnnualGrid']=compare(original,rebuilt)
+    write_json(args.output,result)

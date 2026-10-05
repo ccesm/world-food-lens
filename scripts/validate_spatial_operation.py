@@ -8,12 +8,13 @@ import argparse
 import json
 import re
 import subprocess
+import shutil
 import tempfile
 from datetime import datetime
 from pathlib import Path
 
 from corn_spatial import write_json
-from release_pipeline import validate_manifest, commit_bytes, CACHES, ALERT, LEDGER
+from release_pipeline import validate_manifest, commit_bytes, CACHES, ALERT, LEDGER, ALL_GENERATED, git, save_data, verify_release
 from send_alert_email import select_changes, build_message
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -85,11 +86,40 @@ def validate(snapshot):
             "releaseId":feed["release"]["id"], "spatialAnalysisHash":feed["analysis"]["cornSpatial"]["analysisHash"]}
 
 
+def exercise_local_release(snapshot, dist):
+    """Actual save/verify implementation, with a filesystem-only bare remote.
+
+    Never change the real checkout's remotes or main. No notification helper.
+    """
+    directory=Path(snapshot).parent
+    with tempfile.TemporaryDirectory(prefix="wfl-owned-local-release-") as temp:
+        temp=Path(temp);repo=temp/"checkout";bare=temp/"origin.git"
+        git(temp,"init","--bare","--initial-branch=main",str(bare))
+        git(temp,"clone","--no-hardlinks","--no-checkout",str(ROOT),str(repo))
+        source=json.loads(Path(snapshot).read_bytes())["release"]["sourceRevision"]
+        git(repo,"switch","--detach",source)
+        git(repo,"switch","-c","operational-local-release")
+        git(repo,"remote","set-url","origin",str(bare))
+        assert git(repo,"remote","get-url","origin").decode().strip()==str(bare)
+        git(repo,"push","origin",f"{source}:refs/heads/main")
+        for name in ALL_GENERATED:
+            path=directory/Path(name).name
+            if path.exists():shutil.copyfile(path,repo/name)
+        shutil.copytree(Path(dist),repo/"dist")
+        revision=save_data(repo,repo/"dist")
+        feed=verify_release(repo,revision)
+        return {"verified":True,"sourceRevision":source,"generatedRevision":revision,
+                "releaseId":feed["release"]["id"],"remoteKind":"temporary-local-bare-only","smtpContacted":False}
+
+
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--snapshot", required=True)
     p.add_argument("--output")
+    p.add_argument("--exercise-local-release", action="store_true")
+    p.add_argument("--dist", default="dist")
     args = p.parse_args()
     result = validate(args.snapshot)
+    if args.exercise_local_release: result["immutableRelease"]=exercise_local_release(args.snapshot,args.dist)
     if args.output: write_json(args.output, result)
     print(json.dumps(result, sort_keys=True))

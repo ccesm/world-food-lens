@@ -10,6 +10,9 @@ from ensure_corn_spatial import approved,cache_key,ensure
 from validate_spatial_operation import inspect_public,decision
 from send_alert_email import select_changes,build_message
 from test_alert_email import fixture,NOW
+from refresh_corn_spatial import fetch_weather
+from corn_spatial import file_hash,write_json
+from data_contract import DataIssue
 
 
 class SpatialOperationsTests(unittest.TestCase):
@@ -63,5 +66,16 @@ class SpatialOperationsTests(unittest.TestCase):
 
     def test_release_identity_not_alert_policy(self):
         self.assertEqual(decision({'releaseId':'x','severity':'red'}),decision({'releaseId':'y','severity':'red'}))
+
+    def test_expired_budget_blocks_network_but_not_valid_cached_input(self):
+        identity={'dataset':'gridMET','period':['2026-10-03']};url='https://example.com/weather'
+        with tempfile.TemporaryDirectory() as d,patch('refresh_corn_spatial.urlopen') as network:
+            cache=Path(d)
+            with self.assertRaises(DataIssue):fetch_weather(cache,url,identity,'2026-10-05',deadline=0)
+            network.assert_not_called()
+            path=cache/(digest(identity)+'.nc');path.write_bytes(b'validated-weather-bytes')
+            write_json(path.with_suffix('.json'),{'identity':identity,'url':url,'checkedDay':'2026-10-05','rawHash':file_hash(path)})
+            self.assertEqual(fetch_weather(cache,url,identity,'2026-10-05',deadline=0)[0],path)
+            network.assert_not_called()
 
 if __name__=='__main__':unittest.main()

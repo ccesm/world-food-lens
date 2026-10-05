@@ -22,9 +22,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: ${{ (github.ref != 'refs/heads/main' || inputs.validation_only) && 45 || 20 }}
+    # Hosted cold CDL acquisition measured 12.7 min; leave room for unrelated
+    # existing refreshes on cache eviction. Routine warm runs do not rebuild.
+    timeout-minutes: 45
     outputs:
       published_sha: ${{ steps.saved.outputs.sha }}
+      annual_cache_key: ${{ steps.annual-lifecycle.outputs.persisted_key }}
     permissions:
       contents: write
     steps:
@@ -85,14 +88,26 @@ jobs:
         run: |
           KEY=$(python scripts/ensure_corn_spatial.py --print-key --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json")
           printf 'key=%s\n' "$KEY" >> "$GITHUB_OUTPUT"
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
+        id: annual-cache
         with:
           path: ${{ runner.temp }}/corn-annual
           key: ${{ steps.spatial-config.outputs.key }}
+          restore-keys: ${{ steps.spatial-config.outputs.key }}-
       - name: Validate, restore or generate reviewed annual cache
+        id: annual-lifecycle
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/ensure_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json"
+          RESTORED_KEY: ${{ steps.annual-cache.outputs.cache-matched-key }}
+        run: |
+          python scripts/ensure_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json"
+          python -c 'import json,os; a=json.load(open(os.environ["RUNNER_TEMP"]+"/annual-lifecycle.json")); key=os.environ["RESTORED_KEY"] if a["available"] and a["action"]=="reuse" else a["cacheKey"]+"-"+os.environ["GITHUB_RUN_ID"]; print("available="+str(a["available"]).lower()+"\naction="+a["action"]+"\npersisted_key="+key)' >> "$GITHUB_OUTPUT"
+      - name: Persist only approved annual grids (new snapshot also repairs corrupt cache)
+        if: steps.annual-lifecycle.outputs.available == 'true' && steps.annual-lifecycle.outputs.action != 'reuse'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/corn-annual
+          key: ${{ steps.annual-lifecycle.outputs.persisted_key }}
       - uses: actions/cache@v4
         with:
           path: ${{ runner.temp }}/corn-weather
@@ -117,7 +132,8 @@ jobs:
           retention-days: 90
       - name: Evaluate automatic alerts against retained event history
         run: npm run evaluate-alerts
-      - run: npm test
+      # The complete suite ran BEFORE refresh against its committed fixtures.
+      # After refresh validate actual release/data invariants, not fixture dates.
       - name: Operational validation and frozen numerical suites (no SMTP)
         if: github.ref != 'refs/heads/main' || inputs.validation_only
         run: |
@@ -126,6 +142,9 @@ jobs:
           python -m unittest discover -s research/cornbelt_spatial
           python scripts/validate_spatial_operation.py --snapshot public/data/monitor-alerts.json --output "$RUNNER_TEMP/cold-operation-verdict.json"
       - run: npm run build
+      - name: Exercise actual immutable release against local-only bare remote
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        run: python scripts/validate_spatial_operation.py --snapshot public/data/monitor-alerts.json --exercise-local-release --dist dist --output "$RUNNER_TEMP/cold-operation-verdict.json"
       - name: Retain cold operational release for the warm-run comparison
         if: github.ref != 'refs/heads/main' || inputs.validation_only
         uses: actions/upload-artifact@v4
@@ -172,7 +191,7 @@ jobs:
         id: annual-restore
         with:
           path: ${{ runner.temp }}/corn-annual
-          key: ${{ steps.spatial-config.outputs.key }}
+          key: ${{ needs.build.outputs.annual_cache_key }}
           fail-on-cache-miss: true
       - uses: actions/cache/restore@v4
         with:
@@ -196,7 +215,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release download corn-spatial-validation-20261005 --repo ccesm/world-food-lens --dir "$RUNNER_TEMP/replay" --pattern 'corn-spatial-annual.tar.gz' --pattern 'wfl-production-weather-inputs.tar.gz' --pattern 'corn-spatial-local-reference.json'
-          python scripts/validate_spatial_replay.py --directory "$RUNNER_TEMP/replay" --output "$RUNNER_TEMP/replay-verdict.json"
+          python scripts/validate_spatial_replay.py --directory "$RUNNER_TEMP/replay" --rebuilt-annual-cache "$RUNNER_TEMP/corn-annual" --output "$RUNNER_TEMP/replay-verdict.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
