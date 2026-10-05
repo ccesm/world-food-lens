@@ -5,7 +5,7 @@ import {droughtPointSummary,soilMoistureSummary,validateDroughtBundle} from "../
 
 const now=Date.parse("2026-09-13T00:00:00Z");
 const maps={shortTerm:{period:"2026-08-21",url:"https://drought.emergency.copernicus.eu/api/wms?short"},longTerm:{period:"2026-08-01",url:"https://drought.emergency.copernicus.eu/api/wms?long"},impactRisk:{period:"2026-08-11",url:"https://drought.emergency.copernicus.eu/api/wms?risk"}};
-const bundle={schemaVersion:1,status:"ok",fetchedAt:"2026-09-13T00:00:00Z",maps,points:{iowa:{shortTerm:"moderately-dry",longTerm:"near-normal",impactRisk:"low"}}};
+const bundle={schemaVersion:1,status:"ok",periodVerified:true,fetchedAt:"2026-09-13T00:00:00Z",maps,points:{iowa:{shortTerm:"moderately-dry",longTerm:"near-normal",impactRisk:"low"}}};
 test("GDO drought cache validates classifications and each layer's own age",()=>{
   assert.ok(validateDroughtBundle(bundle,now));
   const summary=droughtPointSummary(bundle,"iowa",now);
@@ -13,6 +13,9 @@ test("GDO drought cache validates classifications and each layer's own age",()=>
   assert.equal(summary.layers.shortTerm.stale,false);
   assert.equal(summary.layers.longTerm.stale,false);
   assert.equal(summary.interpret,true);
+  assert.equal(droughtPointSummary({...bundle,periodVerified:false},"iowa",now).interpret,false);
+  const contradictory=structuredClone(bundle);contradictory.maps.shortTerm.productPeriodVerified=false;
+  assert.equal(droughtPointSummary(contradictory,"iowa",now).interpret,false);
   assert.equal(droughtPointSummary({...bundle,status:"error"},"iowa",now).interpret,false);
   assert.equal(validateDroughtBundle({...bundle,points:{iowa:{...bundle.points.iowa,shortTerm:"safe"}}},now),null);
 });

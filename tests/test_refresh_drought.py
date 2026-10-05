@@ -16,7 +16,7 @@ STAMP = "2026-09-22T06:23:00Z"
 def capabilities(short="2026-08-21", long="2026-08-01", impact="2026-08-11"):
     return '<WMS_Capabilities xmlns="http://www.opengis.net/wms"><Capability><Layer>' + "".join(
         f'<Layer><Name>{name}</Name><Dimension name="time" units="ISO8601" default="2021-10">'
-        f'1991-01-01/{end}/{cadence}</Dimension></Layer>'
+        f'2026-08-01/{end}/{cadence}</Dimension></Layer>'
         for name, end, cadence in [("spaST", short, "P10D"), ("spaLT", long, "P1M"), ("rdria", impact, "P10D")]
     ) + '</Layer></Capability></WMS_Capabilities>'
 
@@ -61,30 +61,75 @@ class DroughtRefreshTests(unittest.TestCase):
         self.assertTrue(old["maps"]["shortTerm"]["periodVerified"])
         self.assertEqual(old["status"],"ok")
 
-    def test_advertised_ranges_corroborate_examples_without_using_default_date(self):
+    def test_exact_membership_does_not_prove_returned_product_date(self):
         selected = maps()
         result = verify_periods(selected, capabilities(), STAMP)
-        self.assertTrue(result["periodVerified"])
+        self.assertFalse(result["periodVerified"])
+        self.assertTrue(selected["shortTerm"]["availablePeriodVerified"])
+        self.assertEqual(result["periodVerification"]["reason"], "returned-product-period-unverified")
         self.assertEqual(selected["shortTerm"]["availabilityEnd"], "2026-08-21")
         self.assertEqual(result["periodVerification"]["checkedAt"], STAMP)
         selected["shortTerm"]["period"] = "2026-08-11"
-        self.assertTrue(verify_periods(selected, capabilities(), STAMP)["periodVerified"])
+        self.assertFalse(verify_periods(selected, capabilities(), STAMP)["periodVerified"])
+        self.assertTrue(selected["shortTerm"]["availablePeriodVerified"])
+        selected["shortTerm"]["period"] = "2026-08-12"
+        verify_periods(selected, capabilities(), STAMP)
+        self.assertFalse(selected["shortTerm"]["availablePeriodVerified"])
 
     def test_examples_ahead_of_advertised_end_are_not_verified(self):
         selected = maps()
-        result = verify_periods(selected, capabilities(short="2026-08-11", long="2026-07-01"), STAMP)
+        selected["longTerm"]["period"] = "2026-09-01"
+        result = verify_periods(selected, capabilities(short="2026-08-11"), STAMP)
         self.assertFalse(result["periodVerified"])
         self.assertFalse(selected["shortTerm"]["periodVerified"])
         self.assertFalse(selected["longTerm"]["periodVerified"])
-        self.assertTrue(selected["impactRisk"]["periodVerified"])
+        self.assertTrue(selected["impactRisk"]["availablePeriodVerified"])
         self.assertEqual(selected["shortTerm"]["period"], "2026-08-21")
 
     def test_missing_unknown_and_reversed_availability_fail_closed(self):
         self.assertFalse(verify_periods(maps(), "<WMS_Capabilities/>", STAMP)["periodVerified"])
-        unknown = capabilities().replace("1991-01-01/2026-08-21/P10D", "2026-08-11,2026-08-21")
-        self.assertNotIn("shortTerm", advertised_ranges(unknown))
+        listed = capabilities().replace("2026-08-01/2026-08-21/P10D", "2026-08-11,2026-08-21")
+        self.assertEqual(advertised_ranges(listed)["shortTerm"]["times"], ["2026-08-11", "2026-08-21"])
         with self.assertRaises(ValueError):
             advertised_ranges(capabilities(short="1990-01-01"))
+
+    def test_malformed_unknown_and_non_aligned_time_dimensions_fail_closed(self):
+        for xml in ("broken", capabilities().replace("P10D", "P0D"), capabilities(short="2026-08-22"),
+                    capabilities().replace("2026-08-01/2026-08-21/P10D", "2026-02-30")):
+            with self.subTest(xml=xml):
+                with self.assertRaises(Exception):
+                    advertised_ranges(xml)
+
+    def test_discovery_prefers_authoritative_times_but_unlabelled_png_remains_ineligible(self):
+        def response(request, **_):
+            if request.full_url == CAPABILITIES:
+                return BytesIO(capabilities().encode())
+            self.assertIn("REQUEST=GetMap", request.full_url)
+            return BytesIO(b"image")
+        with patch("refresh_drought.urlopen", side_effect=response), \
+             patch("refresh_drought.decode_indexed_png", return_value={"width":1440,"height":720}), \
+             patch("refresh_drought.sample_color", return_value=(255,255,254)):
+            result = fetch_current([{"id":"x","lat":0,"lon":0}])
+        layer = result["maps"]["shortTerm"]
+        self.assertEqual(layer["period"], "2026-08-21")
+        self.assertEqual(layer["periodBasis"], "wms-time-dimension")
+        self.assertTrue(layer["downloaded"])
+        self.assertTrue(layer["imageParsed"])
+        self.assertTrue(layer["availablePeriodVerified"])
+        self.assertFalse(layer["productPeriodVerified"])
+        self.assertFalse(result["periodVerified"])
+
+    def test_malformed_metadata_retains_reference_maps_without_claiming_availability(self):
+        html = b'LAYERS=spaST&TIME=2026-08-21 LAYERS=spaLT&TIME=2026-08-01 LAYERS=rdria&TIME=2026-08-11'
+        def response(request, **_):
+            return BytesIO(b"malformed" if request.full_url == CAPABILITIES else html)
+        with patch("refresh_drought.urlopen", side_effect=response), \
+             patch("refresh_drought.decode_indexed_png", return_value={"width":1440,"height":720}), \
+             patch("refresh_drought.sample_color", return_value=(255,255,254)):
+            result = fetch_current([{"id":"x","lat":0,"lon":0}])
+        self.assertEqual(result["periodVerification"]["reason"], "availability-metadata-invalid")
+        self.assertFalse(result["periodVerified"])
+        self.assertFalse(result["maps"]["shortTerm"]["availablePeriodVerified"])
 
     def test_metadata_outage_keeps_maps_unverified(self):
         html = b'LAYERS=spaST&TIME=2026-08-21 LAYERS=spaLT&TIME=2026-08-01 LAYERS=rdria&TIME=2026-08-11'

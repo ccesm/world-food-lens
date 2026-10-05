@@ -6,11 +6,12 @@ import struct
 import xml.etree.ElementTree as ET
 import zlib
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timezone, timedelta
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from refresh_data import ROOT, utc_now, write_cache
+from refresh_data import ROOT, utc_now, write_cache, failure_kind
+from data_contract import attach_metadata, DataIssue
 
 PATH = ROOT / "public/data/drought-monitor.json"
 POINTS = ROOT / "src/data/weatherPoints.json"
@@ -53,13 +54,14 @@ def checked_date(value):
 
 
 def advertised_ranges(xml):
-    """Read explicit layer time intervals, never old WMS default attributes.
+    """Read exact time sets. Never reinterpret P10D as calendar dekads.
 
-    WMS 1.1 may return Extent; this endpoint currently returns WMS 1.3 Dimension.
-    Unknown/list-based encodings remain unverified instead of guessing dates.
+    A non-aligned interval end is contradictory metadata, not permission to
+    accept every date between the endpoints. Unknown encodings fail closed.
     """
     root = ET.fromstring(xml)
     ranges = {}
+    seen = set()
     names = {config["id"]: key for key, config in LAYERS.items()}
     for layer in root.iter():
         if layer.tag.rsplit("}", 1)[-1] != "Layer":
@@ -70,32 +72,64 @@ def advertised_ranges(xml):
             continue
         dimensions = [item for item in children if item.tag.rsplit("}", 1)[-1] in ("Dimension", "Extent")
                       and item.get("name", "").lower() == "time" and item.text and item.text.strip()]
-        if len(dimensions) != 1 or names[name] in ranges:
+        if name in seen:
+            raise ValueError("Duplicate GDO time metadata")
+        seen.add(name)
+        if len(dimensions) != 1:
             continue
         text = dimensions[0].text.strip()
-        match = re.fullmatch(r"(\d{4}-\d{2}-\d{2})/(\d{4}-\d{2}-\d{2})/(P\d+[DMY])", text)
-        if not match:
-            continue
-        start, end, cadence = match.groups()
-        if checked_date(start) > checked_date(end):
-            raise ValueError("Reversed GDO advertised availability")
-        ranges[names[name]] = {"start": start, "end": end, "cadence": cadence}
+        values = set()
+        for token in text.split(","):
+            token = token.strip()
+            if re.fullmatch(r"\d{4}-\d{2}-\d{2}", token):
+                values.add(checked_date(token).isoformat())
+                continue
+            match = re.fullmatch(r"(\d{4}-\d{2}-\d{2})/(\d{4}-\d{2}-\d{2})/P([1-9]\d*)([DMY])", token)
+            if not match:
+                raise ValueError("Unsupported GDO time dimension")
+            start, end, count, unit = match.groups()
+            first, last, count = checked_date(start), checked_date(end), int(count)
+            if first > last:
+                raise ValueError("Reversed GDO advertised availability")
+            steps, candidate = 0, first
+            while candidate <= last and steps < 50000:
+                last_step = candidate
+                values.add(candidate.isoformat())
+                steps += 1
+                if unit == "D":
+                    candidate = first + timedelta(days=count * steps)
+                else:
+                    months = first.year * 12 + first.month - 1 + count * steps * (12 if unit == "Y" else 1)
+                    candidate = date(months // 12, months % 12 + 1, first.day)
+            if last_step != last or steps >= 50000:
+                raise ValueError("GDO interval end does not align with its advertised timestep")
+        if not values:
+            raise ValueError("Empty GDO time dimension")
+        ranges[names[name]] = {"start": min(values), "end": max(values), "times": sorted(values),
+                               "dimension": text}
     return ranges
 
 
 def verify_periods(maps, xml, stamp):
-    """Availability corroboration only; this does not establish latest publication."""
+    """Exact membership alone cannot verify the date of an unlabelled PNG.
+
+    Live service probes (2026-10-04) returned the same image for distinct TIME
+    values and no response observation date. No positive product association is
+    currently available; keep automatic drought disabled even for listed dates.
+    """
     ranges = advertised_ranges(xml)
     for key, metadata in maps.items():
         available = ranges.get(key)
-        metadata.update(periodBasis="wms-service-example", periodVerified=False)
+        metadata.update(periodVerified=False, availablePeriodVerified=False,
+                        productPeriodVerified=False)
         if available:
             metadata.update(availabilityStart=available["start"], availabilityEnd=available["end"])
-            metadata["periodVerified"] = available["start"] <= metadata["period"] <= available["end"]
-    verified = all(maps.get(key, {}).get("periodVerified") is True for key in LAYERS)
-    return {"periodVerified": verified, "periodVerification": {
+            metadata.update(timeDimension=available["dimension"],
+                            availablePeriodVerified=metadata["period"] in available["times"])
+    available = all(maps.get(key, {}).get("availablePeriodVerified") is True for key in LAYERS)
+    return {"periodVerified": False, "periodVerification": {
         "checkedAt": stamp, "sourceUrl": CAPABILITIES,
-        "reason": "advertised-range-corroborated" if verified else "example-period-not-corroborated",
+        "reason": "returned-product-period-unverified" if available else "period-not-in-authoritative-time-set",
     }}
 
 
@@ -171,10 +205,28 @@ def sample_color(image, latitude, longitude):
 
 
 def fetch_current(points):
-    request = Request(SERVICE_PAGE, headers={"User-Agent": "WorldFoodLens/1.0 (public official-data dashboard)"})
-    with urlopen(request, timeout=60) as response:
-        periods = latest_periods(response.read().decode("utf-8", "replace"))
+    xml, metadata_error, periods = None, None, {}
     today = datetime.now(timezone.utc).date()
+    try:
+        with urlopen(Request(CAPABILITIES, headers={"User-Agent": "WorldFoodLens/1.0"}), timeout=45) as response:
+            xml = response.read()
+        available = advertised_ranges(xml)
+        for key in LAYERS:
+            times = [period for period in available.get(key, {}).get("times", []) if checked_date(period) <= today]
+            if times:
+                periods[key] = max(times)
+    except Exception as exc:
+        metadata_error = exc
+    bases = {key: "wms-time-dimension" for key in periods}
+    if len(periods) != len(LAYERS):
+        # Documentation examples remain reference-map fallback only, never
+        # evidence of availability or the date of the returned observation.
+        request = Request(SERVICE_PAGE, headers={"User-Agent": "WorldFoodLens/1.0"})
+        with urlopen(request, timeout=60) as response:
+            examples = latest_periods(response.read().decode("utf-8", "replace"))
+        for key in LAYERS:
+            if key not in periods:
+                periods[key], bases[key] = examples[key], "wms-service-example"
     for period in periods.values():
         if checked_date(period) > today:
             raise ValueError("Future GDO example period")
@@ -193,7 +245,8 @@ def fetch_current(points):
             if color not in colors:
                 raise ValueError(f"Unknown {key} map color {color}")
             sampled[point["id"]] = colors[color]
-        return key, {"period": periods[key], "url": url, "layer": config["id"], "title": config["title"]}, sampled
+        return key, {"period": periods[key], "url": url, "layer": config["id"], "title": config["title"],
+                     "periodBasis": bases[key], "downloaded": True, "imageParsed": True}, sampled
 
     maps, sampled = {}, {point["id"]: {} for point in points}
     with ThreadPoolExecutor(max_workers=3) as pool:
@@ -203,14 +256,16 @@ def fetch_current(points):
                 sampled[point_id][key] = value
     stamp = utc_now()
     try:
-        with urlopen(Request(CAPABILITIES, headers={"User-Agent": "WorldFoodLens/1.0"}), timeout=45) as response:
-            verification = verify_periods(maps, response.read(), stamp)
+        if metadata_error:
+            raise metadata_error
+        verification = verify_periods(maps, xml, stamp)
     except Exception as exc:
         for metadata in maps.values():
-            metadata.update(periodBasis="wms-service-example", periodVerified=False)
+            metadata.update(periodVerified=False, availablePeriodVerified=False, productPeriodVerified=False)
         verification = {"periodVerified": False, "periodVerification": {
             "checkedAt": stamp, "sourceUrl": CAPABILITIES,
-            "reason": "availability-metadata-unavailable", "error": str(exc)[:200],
+            "reason": "availability-metadata-unavailable" if failure_kind(exc) == "retrieval" else "availability-metadata-invalid",
+            "error": str(exc)[:200],
         }}
     return {"maps": maps, "points": sampled, **verification}
 
@@ -219,8 +274,10 @@ def refresh(previous, points, fetcher=fetch_current, stamp=None):
     stamp = stamp or utc_now()
     output = copy.deepcopy(previous)
     output.update(schemaVersion=1, generatedAt=stamp)
+    failure, parsed = None, False
     try:
         current = fetcher(points)
+        parsed = True
         today = datetime.fromisoformat(stamp.replace("Z", "+00:00")).date()
         for key in LAYERS:
             period = current.get("maps", {}).get(key, {}).get("period")
@@ -228,7 +285,7 @@ def refresh(previous, points, fetcher=fetch_current, stamp=None):
                 raise ValueError(f"Future GDO {key} period")
             old_period = previous.get("maps", {}).get(key, {}).get("period")
             if old_period and checked_date(period) < checked_date(old_period):
-                raise ValueError(f"Regressed GDO {key} period")
+                raise DataIssue(f"Regressed GDO {key} period", "publication_regression")
         # Never inherit successful verification from a previous fetch.
         current["periodVerified"] = current.get("periodVerified") is True and all(
             current["maps"][key].get("periodVerified") is True for key in LAYERS)
@@ -242,13 +299,15 @@ def refresh(previous, points, fetcher=fetch_current, stamp=None):
             "license": "European Union, Copernicus CEMS; see provider terms",
         })
         output.pop("error", None)
+        output.pop("failureKind", None)
     except Exception as exc:
-        output.update(status="error", lastAttemptAt=stamp, error=str(exc)[:200], periodVerified=False,
+        failure = exc
+        output.update(status="error", lastAttemptAt=stamp, error=str(exc)[:200], failureKind=failure_kind(exc), periodVerified=False,
                       periodVerification={"checkedAt": stamp, "sourceUrl": CAPABILITIES,
                                           "reason": "refresh-failed"})
         for metadata in output.get("maps", {}).values():
             metadata["periodVerified"] = False
-    return output
+    return attach_metadata(output, "drought", previous, failure=failure, parsed=parsed)
 
 
 if __name__ == "__main__":

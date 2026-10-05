@@ -1,19 +1,21 @@
 import React,{useMemo,useState} from "react";
 import {ResponsiveContainer,ComposedChart,Line,Area,CartesianGrid,XAxis,YAxis,Tooltip,ReferenceLine} from "recharts";
-import {buildPriceForecast} from "../services/priceForecast.js";
-import {hasOfficialData,sourceStateLabel} from "../services/officialSources.js";
+import {buildOfficialPriceForecast} from "../services/priceForecast.js";
+import {sourceStateLabel} from "../services/officialSources.js";
+import {datasetHealth} from "../services/dataHealth.js";
 import "../outlook.css";
 
 export default function PriceOutlook({record,lang,sectionId="price-outlook"}) {
   const zh=lang==="zh", [shock,setShock]=useState(0);
-  const result=useMemo(()=>buildPriceForecast(hasOfficialData("fao",record)?record.data.monthly:[],shock),[record,shock]);
+  const current=datasetHealth(record,{key:"fao"}).analysisUsable;
+  const result=useMemo(()=>buildOfficialPriceForecast(record,shock),[record,shock,current]);
   const label={actual:zh?"已发布指数":"Published index",forecast:zh?"模型基线":"Model baseline",scenario:zh?"自设情景":"User scenario",band:zh?"历史误差参考带":"Historical error band"};
   const chart=result.available?[...result.history.slice(0,-1),{...result.history.at(-1),forecast:result.lastValue,scenario:result.lastValue},...result.points]:[];
   return <section id={sectionId} className="section outlook-section">
     <div className="section-no">PRICE OUTLOOK · EXPERIMENTAL</div>
     <h2>{zh?"未来一年，粮价可能怎样变化？":"Where could food prices go over the next year?"}</h2>
     <p>{zh?"实验模型预测 FAO 全球粮食价格指数，单位为指数点（2014–2016 = 100）。预测从最后一个已发布月份起算 12 个月，不代表 ETF、股票或单一作物价格。":"An experimental forecast of the FAO global Food Price Index, in index points (2014–2016 = 100). The horizon is 12 months after the last published month, not an ETF, equity or individual crop forecast."}</p>
-    {!result.available?<div className="notice">{zh?"至少需要 84 个连续月份的有效官方指数。当前数据不足或有缺口，暂不生成预测。":"At least 84 consecutive valid official monthly observations are required. Forecast unavailable because data are insufficient or contain gaps."}</div>:<>
+    {!result.available?<div className="notice">{zh?"至少需要 84 个连续月份的有效官方指数，且通过当前资料健康检查。数据不足、过期或更新失败时，暂不生成预测。":"At least 84 consecutive valid official monthly observations and passing current data-health checks are required. Insufficient, stale or failed-refresh evidence does not generate a current forecast."}</div>:<>
       <div className="outlook-summary">
         <article><small>{zh?"最后已发布观测":"Last published observation"} · {result.lastMonth}</small><strong>{result.lastValue.toFixed(1)}</strong><span>{sourceStateLabel(record,lang)}</span></article>
         <article><small>{zh?"12 个月模型基线":"12-month model baseline"} · {result.points.at(-1).month}</small><strong>{result.points.at(-1).forecast.toFixed(1)}</strong><span>{zh?"模型估计，非官方预测":"Model estimate, not an official forecast"}</span></article>

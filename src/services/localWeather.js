@@ -1,3 +1,4 @@
+import {freshCheck, publicationState} from "./dataHealth.js";
 const DAY=86400000;
 export function weatherSummary(record,calendar,selectedMonth,now=Date.now(),year=new Date(now).getUTCFullYear(),mode="month"){
   if(!Number.isInteger(year)||!Number.isInteger(selectedMonth)||selectedMonth<1||selectedMonth>12)return null;
@@ -20,9 +21,8 @@ export function weatherSummary(record,calendar,selectedMonth,now=Date.now(),year
   }
   const end=days.at(-1).date,lag=(now-Date.parse(end))/DAY;
   if(lag<0)return null;
-  const fetched=Date.parse(record.fetchedAt);
   const historical=mode!=="recent"&&period<currentPeriod;
-  const stale=!Number.isFinite(fetched)||fetched>now+300000||now-fetched>3*DAY||(!historical&&lag>10)||record.status!=="ok";
+  const stale=!freshCheck(record,now)||(!historical&&publicationState("weather",end,now)!=="current");
   let run=0,dry=0;
   for(const row of days){run=row.rain<1?run+1:0;dry=Math.max(dry,run);}
   // Align daily weather with each day's template month, not a future selected stage.

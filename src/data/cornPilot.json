@@ -1,0 +1,26 @@
+{
+  "methodVersion": "us-corn-point-exposure/v1",
+  "baseline": "1991-2020",
+  "windowDays": 7,
+  "productionSource": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
+  "progressSource": "https://esmis.nal.usda.gov/publication/crop-progress",
+  "stageSource": "https://www.nass.usda.gov/Publications/National_Crop_Progress/terms_definitions.php",
+  "agronomySource": "https://crops.extension.iastate.edu/encyclopedia/corn-pollination-effect-high-temperature-and-stress",
+  "regions": [
+    {"id":"IA","name":{"en":"Iowa","zh":"爱荷华州"},"lat":42,"lon":-93.5,"calendar":"central"},
+    {"id":"IL","name":{"en":"Illinois","zh":"伊利诺伊州"},"lat":40.5,"lon":-89,"calendar":"central"},
+    {"id":"NE","name":{"en":"Nebraska","zh":"内布拉斯加州"},"lat":41,"lon":-98,"calendar":"central"},
+    {"id":"MN","name":{"en":"Minnesota","zh":"明尼苏达州"},"lat":44,"lon":-95,"calendar":"north"},
+    {"id":"IN","name":{"en":"Indiana","zh":"印第安纳州"},"lat":40,"lon":-86,"calendar":"central"},
+    {"id":"SD","name":{"en":"South Dakota","zh":"南达科他州"},"lat":44,"lon":-97.5,"calendar":"north"},
+    {"id":"KS","name":{"en":"Kansas","zh":"堪萨斯州"},"lat":39,"lon":-98,"calendar":"south"},
+    {"id":"OH","name":{"en":"Ohio","zh":"俄亥俄州"},"lat":40.5,"lon":-83.5,"calendar":"central"},
+    {"id":"MO","name":{"en":"Missouri","zh":"密苏里州"},"lat":39,"lon":-92,"calendar":"south"},
+    {"id":"WI","name":{"en":"Wisconsin","zh":"威斯康星州"},"lat":43.5,"lon":-89.5,"calendar":"north"}
+  ],
+  "calendars": {
+    "south": [["01-01","off"],["04-01","planting"],["05-01","emergence"],["05-20","vegetative"],["06-20","silking"],["07-20","grainFill"],["09-01","maturity"],["09-20","harvest"],["12-01","off"]],
+    "central": [["01-01","off"],["04-15","planting"],["05-15","emergence"],["06-01","vegetative"],["07-01","silking"],["08-01","grainFill"],["09-15","maturity"],["10-01","harvest"],["12-01","off"]],
+    "north": [["01-01","off"],["04-25","planting"],["05-25","emergence"],["06-10","vegetative"],["07-15","silking"],["08-10","grainFill"],["09-20","maturity"],["10-10","harvest"],["12-01","off"]]
+  }
+}

@@ -1,7 +1,8 @@
 import React,{useEffect,useState} from "react";
 import points from "../data/weatherPoints.json";
 import {CROP_NAMES} from "../data/cropCalendars.js";
-import {droughtPointSummary,soilMoistureSummary} from "../services/droughtMonitor.js";
+import {droughtPointSummary,soilMoistureSummary,droughtVerificationLabel} from "../services/droughtMonitor.js";
+import {sourceHealth,publicationState,healthLabel} from "../services/sourceHealth.js";
 
 const spiLabels={
   zh:{"extremely-dry":"极端偏干","severely-dry":"严重偏干","moderately-dry":"中度偏干","near-normal":"接近常年","moderately-wet":"中度偏湿","very-wet":"明显偏湿","extremely-wet":"极端偏湿","no-data":"该栅格无资料"},
@@ -16,6 +17,9 @@ export default function DroughtSoilMonitor({drought,weather,rows,month,year,lang
   const point=points.find(item=>item.crops.includes(crop?.id));
   const now=Date.now(),droughtSummary=droughtPointSummary(drought,point?.id,now);
   const soil=soilMoistureSummary(weather?.points?.[point?.id],month,year,now);
+  const record=weather?.points?.[point?.id],currentSelected=`${year}-${String(month).padStart(2,"0")}`===new Date(now).toISOString().slice(0,7);
+  const soilHealth=sourceHealth(record,{now,valid:Boolean(record?.days?.length),eligible:Boolean(soil&&!soil.stale),
+    publication:publicationState("soil",record?.days?.at(-1)?.date,now)});
   const [mapKey,setMapKey]=useState("shortTerm"),[mapFailed,setMapFailed]=useState(false);
   useEffect(()=>setMapFailed(false),[mapKey,drought?.fetchedAt]);
   const selectedMap=drought?.maps?.[mapKey];
@@ -28,7 +32,7 @@ export default function DroughtSoilMonitor({drought,weather,rows,month,year,lang
         <small>{point?.label??"—"}</small><h4 id="drought-title">{zh?"干旱监测":"Drought monitor"}</h4>
         {!droughtSummary?<p role="status">{zh?"官方干旱缓存尚不可用；不显示正常或低风险替代值。":"Official drought cache is unavailable; no normal or low-risk substitute is shown."}</p>:<>
           {droughtSummary.stale&&<p className="fs-notice">{zh?"刷新失败或缓存过期，以下只作存档查看。":"Refresh failed or cache is stale; archive display only."}</p>}
-          {drought.periodVerified!==true&&<p className="fs-notice">{zh?"资料日期待核实：官方服务页示例日期尚未被可用数据范围证实。以下图层仅作参考，不参与当前自动预警；成功下载不代表资料已更新。":"Source dates are unverified: service-page example dates have not been corroborated by advertised data availability. These layers are reference only and excluded from current automatic alerts; a successful download does not establish a data update."}</p>}
+          {drought.periodVerified!==true&&<p className="fs-notice">{droughtVerificationLabel(drought,lang)}。{zh?"以下仅为请求日期对应的参考图，不确认其实际观测日期，不参与自动预警。成功下载不代表资料已更新。":"These are reference maps labelled by requested date, not confirmed observation date; they are excluded from automatic alerts. Successful download does not establish an update."}</p>}
           <dl className="climate-evidence-list">
             <div><dt>{mapLabels[lang].shortTerm}</dt><dd><b className={`climate-status ${droughtSummary.layers.shortTerm.value}`}>{spiLabels[lang][droughtSummary.layers.shortTerm.value]}</b><span>{droughtSummary.layers.shortTerm.period}{droughtSummary.layers.shortTerm.stale?(zh?" · 已过期":" · stale"):""}</span></dd></div>
             <div><dt>{mapLabels[lang].longTerm}</dt><dd><b className={`climate-status ${droughtSummary.layers.longTerm.value}`}>{spiLabels[lang][droughtSummary.layers.longTerm.value]}</b><span>{droughtSummary.layers.longTerm.period}{droughtSummary.layers.longTerm.stale?(zh?" · 已过期":" · stale"):""}</span></dd></div>
@@ -43,6 +47,7 @@ export default function DroughtSoilMonitor({drought,weather,rows,month,year,lang
       </section>
       <section id="soil-moisture" className="drought-panel" aria-labelledby="soil-title">
         <small>{year}-{String(month).padStart(2,"0")} · {point?.label??"—"}</small><h4 id="soil-title">{zh?"土壤水分":"Soil moisture"}</h4>
+        {currentSelected&&<p role="status">{healthLabel(soilHealth,lang)} · {zh?"最新已存观测：":"Latest cached observation: "}{record?.days?.at(-1)?.date??"—"}{soilHealth.freshness==="awaiting"?(zh?"。本站保守滞后 4 天；上月资料不会替代当月。":". Collection trails by four days; prior-month values do not substitute for this month."):""}</p>}
         {!soil?<p role="status">{zh?"所选月份没有完整可比的土壤湿润度与常年值；不会用当前值替代。":"The selected month has no complete comparable soil-wetness data and normals; current values are not substituted."}</p>:<>
           <p>{soil.start} → {soil.end} · {soil.days} {zh?"天":"days"}{soil.partial?(zh?" · 当月未完整":" · partial month"):""}</p>
           {soil.stale&&<p className="fs-notice">{zh?"当前缓存更新失败或过期；历史月份仍可查看，但不作当前状态解读。":"Current cache failed or is stale. Historical months remain inspectable, but no current-state interpretation is made."}</p>}

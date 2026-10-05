@@ -272,6 +272,13 @@ Market quotes and charts may be delayed under exchange and data-provider rules. 
 
 ## Safety / data integrity rules
 
+Historical US corn research (2012–2019) is available below the US corn pilot.
+It is retrospective, not a point-in-time signal replay or yield forecast.
+See the [historical evaluation protocol](docs/CORN_HISTORY_PROTOCOL.md) and
+[Phase 4A assessment](docs/PHASE4A_CORN_HISTORY_VALIDATION.md). Reproduce the
+saved research artifact offline with `node scripts/evaluate_corn_history.mjs`;
+this command does not update live feeds, deploy, or send email.
+
 - Never commit API keys or tokens.
 - Never label recovered/static data as real-time.
 - Show observation period separately from fetch time.

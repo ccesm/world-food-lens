@@ -7,7 +7,8 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import urlencode
 from urllib.request import urlopen
-from refresh_data import ROOT, utc_now, write_cache
+from refresh_data import ROOT, utc_now, write_cache, failure_kind
+from data_contract import attach_metadata, DataIssue, SPEC
 
 PATH = ROOT / "public/data/local-weather.json"
 POINTS = ROOT / "src/data/weatherPoints.json"
@@ -110,20 +111,24 @@ def fetch_point(point, start, end):
 def refresh(previous, points, today, fetcher=fetch_point, stamp=None):
     stamp = stamp or utc_now()
     # Conservative publication delay. Exact represented dates are always exposed.
-    end = today - timedelta(days=4)
+    end = today - timedelta(days=SPEC["policies"]["soilCollectionLagDays"])
     start = date(2024, 1, 1)
     output = copy.deepcopy(previous)
     output.update(schemaVersion=1, generatedAt=stamp)
     records = output.setdefault("points", {})
     def run(point):
         old = records.get(point["id"], {})
+        failure, parsed = None, False
         try:
             result = fetcher(point, start, end)
+            parsed = True
             if old.get("days") and result["days"][-1]["date"] < old["days"][-1]["date"]:
-                raise ValueError("Regressed weather period")
-            return point["id"], dict(result, status="ok", fetchedAt=stamp, lastAttemptAt=stamp)
+                raise DataIssue("Regressed weather period", "publication_regression")
+            record = dict(result, status="ok", fetchedAt=stamp, lastAttemptAt=stamp)
         except Exception as exc:
-            return point["id"], dict(old, status="error", lastAttemptAt=stamp, error=str(exc)[:200])
+            failure = exc
+            record = dict(old, status="error", lastAttemptAt=stamp, error=str(exc)[:200], failureKind=failure_kind(exc))
+        return point["id"], attach_metadata(record, "weather", old, point_id=point["id"], failure=failure, parsed=parsed)
     with ThreadPoolExecutor(max_workers=3) as pool:
         for key, value in pool.map(run, points):
             records[key] = value

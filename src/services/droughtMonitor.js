@@ -1,3 +1,4 @@
+import {freshCheck, publicationState} from "./dataHealth.js";
 const DAY=86400000;
 const GDO_URL="https://drought.emergency.copernicus.eu/api/wms?";
 const SPI=new Set(["extremely-dry","severely-dry","moderately-dry","near-normal","moderately-wet","very-wet","extremely-wet","no-data"]);
@@ -15,8 +16,7 @@ export function validateDroughtBundle(bundle,now=Date.now()){
   for(const point of Object.values(bundle.points)){
     if(!point||!SPI.has(point.shortTerm)||!SPI.has(point.longTerm)||!IMPACT.has(point.impactRisk))return null;
   }
-  const fetched=Date.parse(bundle.fetchedAt);
-  const stale=bundle.status!=="ok"||!Number.isFinite(fetched)||fetched>now+300000||now-fetched>3*DAY;
+  const stale=!freshCheck(bundle,now);
   return {...bundle,stale};
 }
 
@@ -34,7 +34,19 @@ export function droughtPointSummary(bundle,pointId,now=Date.now()){
     const map=valid.maps[key],age=Math.floor((now-Date.parse(`${map.period}T00:00:00Z`))/DAY);
     layers[key]={value:point[key],period:map.period,url:map.url,age,stale:age<0||age>maxAge||valid.stale};
   }
-  return {layers,stale:valid.stale,interpret:!layers.shortTerm.stale&&point.shortTerm!=="no-data"};
+  const verified=valid.periodVerified===true&&Object.values(valid.maps).every(map=>
+    map.periodVerified!==false&&map.availablePeriodVerified!==false&&map.productPeriodVerified!==false);
+  return {layers,stale:valid.stale,interpret:verified&&!layers.shortTerm.stale&&point.shortTerm!=="no-data"};
+}
+
+export function droughtVerificationLabel(bundle,lang){
+  const labels={
+    "availability-metadata-unavailable":["官方日期目录暂时无法获取", "Official time metadata could not be retrieved"],
+    "availability-metadata-invalid":["官方时间目录格式或时间步不一致", "Official time metadata is malformed or its timestep is inconsistent"],
+    "period-not-in-authoritative-time-set":["请求日期不在官方可用时间集合中", "Requested date is not in the authoritative available-time set"],
+    "returned-product-period-unverified":["日期在官方目录中，但返回图像的观测日期无法确认", "Date is listed, but the returned image's observation date cannot be confirmed"],
+  };
+  return (labels[bundle?.periodVerification?.reason]??["资料日期尚未可靠核实", "Observation date has not been reliably verified"])[lang==="en"?1:0];
 }
 
 function soilBand(value,normal){
@@ -68,8 +80,7 @@ export function soilMoistureSummary(record,selectedMonth,year,now=Date.now()){
   if(record.soilClimatology?.baseline!=="1991–2020"||!validNormal(normals?.root)||!validNormal(normals?.surface))return null;
   const average=key=>days.reduce((total,row)=>total+row[key],0)/days.length;
   const root=average("rootWetness"),surface=average("surfaceWetness"),historical=period<current;
-  const fetched=Date.parse(record.fetchedAt),lag=(now-Date.parse(`${days.at(-1).date}T00:00:00Z`))/DAY;
-  const stale=record.status!=="ok"||!Number.isFinite(fetched)||fetched>now+300000||now-fetched>3*DAY||(!historical&&lag>10);
+  const stale=!freshCheck(record,now)||(!historical&&publicationState("soil",days.at(-1).date,now)!=="current");
   return {start:days[0].date,end:days.at(-1).date,days:days.length,partial:days.length<monthLength,historical,stale,
     baseline:record.soilClimatology.baseline,root,surface,rootBand:soilBand(root,normals.root),surfaceBand:soilBand(surface,normals.surface),
     rootNormal:normals.root,surfaceNormal:normals.surface,interpret:historical||!stale};

@@ -1,3 +1,6 @@
+import {datasetHealth,derivedProvenance} from "./dataHealth.js";
+import {validSourceData} from "./officialSources.js";
+
 // A deliberately small, reproducible price-only model. No future observations
 // enter a rolling training window. Revised historical vintages are disclosed in UI.
 export function monthOffset(month, offset) {
@@ -65,4 +68,10 @@ export function buildPriceForecast(input, shockPct = 0) {
   return {available:true, points, model, trainingStart:training[0].month, lastMonth:last.month,
     originStart:input[firstOrigin].month, originEnd:input[input.length-13].month,
     history:input.slice(-24).map(row=>({month:row.month,actual:row.fao})), lastValue:last.fao};
+}
+export function buildOfficialPriceForecast(record, shockPct=0, now=Date.now()) {
+  const health=datasetHealth(record,{key:"fao",now,valid:validSourceData("fao",record?.data)});
+  const result=buildPriceForecast(health.analysisUsable?record.data.monthly:[],shockPct);
+  return {...result,provenance:derivedProvenance("price-momentum/v1",[record],{
+    now,eligible:result.available,inputIds:["fao"]})};
 }

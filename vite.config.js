@@ -12,7 +12,11 @@ const officialCache = {
   load(id) {
     if (id !== "\0official-data") return;
     this.addWatchFile(cachePath);
-    return `export default ${JSON.stringify(JSON.parse(readFileSync(cachePath, "utf8")))};`;
+    const cache=JSON.parse(readFileSync(cachePath, "utf8"));
+    // Pilot visitors read the compact release-bound analysis. Its 30-year
+    // reference statistics belong in the source cache, not the initial JS bundle.
+    delete cache.cornPilot;
+    return `export default ${JSON.stringify(cache)};`;
   },
 };
 

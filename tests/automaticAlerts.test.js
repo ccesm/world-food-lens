@@ -54,6 +54,67 @@ function worldBank(change = 12) {
 const evaluate = (overrides = {}) => evaluateAutomaticAlerts({points:[point], now, ...overrides});
 const health = (result, id) => result.health.find(row => row.id === id);
 
+test("healthy month-start soil lag is awaiting, not an outage, with actual latest dates",()=>{
+  const at=Date.parse("2026-10-04T12:00:00Z");
+  const input=weather(0,{at,end:"2026-09-30"});
+  const result=evaluate({weather:input,now:at});
+  assert.equal(health(result,"weather").retrieval,"ok");
+  assert.equal(health(result,"soil").retrieval,"ok");
+  assert.equal(health(result,"soil").validation,"passed");
+  assert.equal(health(result,"soil").freshness,"awaiting");
+  assert.equal(health(result,"soil").eligibility,"insufficient");
+  assert.equal(health(result,"soil").period,"2026-09-30");
+  assert.equal(health(result,"soil").fetchedAt,iso(at));
+  input.points.iowa.fetchedAt=iso(at+DAY);
+  assert.equal(health(evaluate({weather:input,now:at+DAY}),"soil").freshness,"overdue");
+});
+
+test("healthy source with too little rule history is not a validation or retrieval failure",()=>{
+  const input=weather(); input.points.iowa.days=input.points.iowa.days.slice(-5);
+  const initial=evaluate({weather:weather(5)}), result=evaluate({weather:input,previous:initial});
+  const row=health(result,"weather");
+  assert.equal(row.retrieval,"ok");assert.equal(row.validation,"passed");assert.equal(row.eligibility,"insufficient");
+  assert.equal(result.active[0].state,"unverified");
+  assert.equal(result.events.at(-1).type,"verification-lost");
+});
+
+test("normal publication lag cannot resolve an existing alert without its required evidence",()=>{
+  const at=Date.parse("2026-10-01T12:00:00Z"),record=fao(12,"2026-08");record.fetchedAt=iso(at);
+  const initial=evaluate({official:{schemaVersion:1,sources:{fao:record}},now:at});
+  record.data.monthly=record.data.monthly.slice(-1);
+  const insufficient=evaluate({official:{schemaVersion:1,sources:{fao:record}},now:at,previous:initial});
+  assert.equal(health(insufficient,"fao").freshness,"awaiting");
+  assert.equal(insufficient.active[0].state,"unverified");
+  assert.equal(insufficient.events.some(e=>e.type==="resolved"),false);
+  const low=fao(0,"2026-09");low.fetchedAt=iso(at+4*DAY);
+  const clear=evaluate({official:{schemaVersion:1,sources:{fao:low}},now:at+4*DAY,previous:insufficient});
+  assert.equal(clear.active.length,0);assert.equal(clear.events.at(-1).type,"resolved");
+});
+
+test("retrieval and validation failures retain alerts and expose distinct source-health causes",()=>{
+  const initial=evaluate({weather:weather(5)});
+  for(const kind of ["retrieval","validation"]){
+    const input=weather();Object.assign(input.points.iowa,{status:"error",failureKind:kind});
+    const result=evaluate({weather:input,previous:initial}),row=health(result,"weather");
+    assert.equal(result.active[0].state,"unverified");
+    assert.equal(row.retrieval,kind==="retrieval"?"failed":"ok");
+    assert.equal(row.validation,kind==="validation"?"failed":"unknown");
+    assert.equal(row.eligibility,"insufficient");
+  }
+});
+
+test("overdue unchanged FAO data is not made current by a successful download",()=>{
+  const before=Date.parse("2026-10-04T12:00:00Z"),record=fao(12,"2026-08");record.fetchedAt=iso(before);
+  const previous=evaluate({official:{schemaVersion:1,sources:{fao:record}},now:before});
+  const after=before+DAY;record.fetchedAt=iso(after);
+  const result=evaluate({official:{schemaVersion:1,sources:{fao:record}},now:after,previous});
+  assert.equal(health(result,"fao").retrieval,"ok");
+  assert.equal(health(result,"fao").freshness,"overdue");
+  assert.equal(health(result,"fao").eligibility,"insufficient");
+  assert.equal(result.active[0].state,"unverified");
+  assert.equal(result.events.at(-1).type,"verification-lost");
+});
+
 test("heat screen uses the latest seven observed days and actual-day crop stages", () => {
   const result = evaluate({weather:weather(3)});
   assert.ok(validateMonitorBundle(result));

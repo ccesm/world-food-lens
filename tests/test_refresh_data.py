@@ -18,6 +18,126 @@ def fixture(value=130, period="2026-07"):
 
 
 class RefreshTests(unittest.TestCase):
+    def usda_previous(self):
+        bundle = json.loads((Path(__file__).resolve().parents[1] / "public/data/official-data.json").read_text())
+        return {"sources": {"usda": bundle["sources"]["usda"]}}
+
+    def set_usda_vintage(self, record, vintage):
+        record["data"]["releasePeriod"] = vintage
+        for grain in record["data"].get("grains", {}).values():
+            grain["releasePeriod"] = vintage
+        return record
+
+    def test_usda_older_publication_for_same_market_year_preserves_data_and_fetch_time(self):
+        previous = self.usda_previous()
+        incoming = self.set_usda_vintage(copy.deepcopy(previous["sources"]["usda"]), "2026-08")
+        untouched = copy.deepcopy(previous)
+        result, failures = refresh_bundle(previous, {"usda": lambda: incoming}, "2026-10-04T13:00:00Z")
+        self.assertIn("usda", failures)
+        retained = result["sources"]["usda"]
+        self.assertEqual(retained["status"], "error")
+        self.assertEqual(retained["data"], previous["sources"]["usda"]["data"])
+        self.assertEqual(retained["fetchedAt"], previous["sources"]["usda"]["fetchedAt"])
+        self.assertEqual(retained["lastAttemptAt"], "2026-10-04T13:00:00Z")
+        self.assertEqual(previous, untouched)
+
+    def test_usda_newer_publication_for_same_market_year_is_accepted(self):
+        previous = self.usda_previous()
+        incoming = self.set_usda_vintage(copy.deepcopy(previous["sources"]["usda"]), "2026-10")
+        result, failures = refresh_bundle(previous, {"usda": lambda: incoming}, "2026-10-04T13:00:00Z")
+        self.assertFalse(failures)
+        self.assertEqual(result["sources"]["usda"]["data"]["latestPeriod"], "2026/2027")
+        self.assertEqual(result["sources"]["usda"]["data"]["releasePeriod"], "2026-10")
+        self.assertEqual(result["sources"]["usda"]["refreshKind"], "new-publication")
+
+    def test_usda_same_vintage_revision_is_identified_and_allowed(self):
+        previous = self.usda_previous()
+        incoming = copy.deepcopy(previous["sources"]["usda"])
+        incoming["data"]["grains"]["rice"]["history"][-1]["production"] += 100
+        result, failures = refresh_bundle(previous, {"usda": lambda: incoming}, "2026-10-04T13:00:00Z")
+        self.assertFalse(failures)
+        record = result["sources"]["usda"]
+        self.assertEqual(record["refreshKind"], "same-vintage-revision")
+        grain = record["data"]["grains"]["rice"]
+        self.assertEqual(grain["observationId"], "usda-psd/422110/2026/2027")
+        self.assertRegex(grain["revisionId"], r"^[a-f0-9]{64}$")
+        self.assertEqual(grain["releasePeriod"], previous["sources"]["usda"]["data"]["releasePeriod"])
+
+    def test_usda_missing_invalid_future_or_mixed_vintages_cannot_replace_cache(self):
+        previous = self.usda_previous()
+        for vintage in (None, "", "2026-13", "2026-9", "2027-01"):
+            incoming = self.set_usda_vintage(copy.deepcopy(previous["sources"]["usda"]), vintage)
+            result, failures = refresh_bundle(previous, {"usda": lambda: incoming}, "2026-10-04T13:00:00Z")
+            self.assertIn("usda", failures)
+            self.assertEqual(result["sources"]["usda"]["data"], previous["sources"]["usda"]["data"])
+        incoming = self.set_usda_vintage(copy.deepcopy(previous["sources"]["usda"]), "2026-10")
+        incoming["data"]["grains"]["rice"]["releasePeriod"] = "2026-08"
+        _, failures = refresh_bundle(previous, {"usda": lambda: incoming}, "2026-10-04T13:00:00Z")
+        self.assertIn("usda", failures)
+
+    def test_usda_unchanged_data_and_legacy_wheat_cache_remain_supported(self):
+        previous = self.usda_previous()
+        for legacy in (False, True):
+            snapshot = copy.deepcopy(previous)
+            if legacy:
+                snapshot["sources"]["usda"]["data"].pop("grains")
+            result, failures = refresh_bundle(snapshot, {"usda": lambda: copy.deepcopy(snapshot["sources"]["usda"])}, "2026-10-04T13:00:00Z")
+            self.assertFalse(failures)
+            self.assertEqual(result["sources"]["usda"]["refreshKind"], "unchanged")
+            self.assertEqual(result["sources"]["usda"]["data"]["observationId"], "usda-psd/410000/2026/2027")
+
+    def test_usda_revision_fingerprint_must_match_corrected_content(self):
+        previous = self.usda_previous()
+        accepted, failures = refresh_bundle(previous, {"usda": lambda: copy.deepcopy(previous["sources"]["usda"])}, "2026-10-04T13:00:00Z")
+        self.assertFalse(failures)
+        incoming = copy.deepcopy(accepted["sources"]["usda"])
+        rice = incoming["data"]["grains"]["rice"]
+        rice["history"][-1]["production"] += 100
+        _, failures = refresh_bundle(accepted, {"usda": lambda: incoming}, "2026-10-04T14:00:00Z")
+        self.assertIn("usda", failures)
+        from macro_sources import usda_identity
+        rice.update(usda_identity(rice, "422110"))
+        revised, failures = refresh_bundle(accepted, {"usda": lambda: incoming}, "2026-10-04T14:00:00Z")
+        self.assertFalse(failures)
+        self.assertEqual(revised["sources"]["usda"]["refreshKind"], "same-vintage-revision")
+
+    def test_usda_marketing_year_change_cannot_bypass_publication_check(self):
+        previous = self.usda_previous()
+        for shift,vintage in ((1,"2026-08"),(-1,"2026-10"),(1,"2026-10")):
+            incoming = self.set_usda_vintage(copy.deepcopy(previous["sources"]["usda"]), vintage)
+            data = incoming["data"]
+            observations = [data,*data["grains"].values()]
+            seen = set()
+            for observation in observations:
+                observation["latestPeriod"] = f"{2026+shift}/{2027+shift}"
+                for row in observation["history"]:
+                    if id(row) in seen: continue
+                    seen.add(id(row))
+                    year = int(row["year"][:4])+shift
+                    row["year"] = f"{year}/{year+1}"
+            incoming["source"]["period"] = data["latestPeriod"]
+            result, failures = refresh_bundle(previous, {"usda": lambda: incoming}, "2026-10-04T13:00:00Z")
+            if shift<0 or vintage=="2026-08":
+                self.assertIn("usda",failures)
+                self.assertEqual(result["sources"]["usda"]["data"],previous["sources"]["usda"]["data"])
+            else:
+                self.assertFalse(failures)
+                self.assertEqual(result["sources"]["usda"]["refreshKind"],"new-market-year")
+
+    def test_usda_invalid_identity_or_source_market_year_is_rejected(self):
+        previous = self.usda_previous()
+        for location in ("source","root","grain"):
+            incoming = copy.deepcopy(previous["sources"]["usda"])
+            if location=="source":
+                incoming["source"]["period"]="2025/2026"
+            elif location=="root":
+                incoming["data"]["observationId"]="usda-psd/410000/2025/2026"
+            else:
+                incoming["data"]["grains"]["rice"]["revisionId"]="0"*64
+            result, failures = refresh_bundle(previous,{"usda":lambda:incoming},"2026-10-04T13:00:00Z")
+            self.assertIn("usda",failures)
+            self.assertEqual(result["sources"]["usda"]["data"],previous["sources"]["usda"]["data"])
+
     def test_extended_grains_validate_and_bad_extension_retains_full_cache(self):
         previous = json.loads((Path(__file__).resolve().parents[1] / "public/data/official-data.json").read_text())
         original = previous["sources"]["usda"]
