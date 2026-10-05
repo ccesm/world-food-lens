@@ -152,6 +152,23 @@ jobs:
           name: corn-spatial-operation-cold
           path: public/data/*.json
           retention-days: 90
+      - name: Read authenticated frozen validation inputs (never production or Pages)
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download corn-spatial-validation-20261005 --repo ccesm/world-food-lens --dir "$RUNNER_TEMP/replay-inputs" --pattern 'corn-spatial-annual.tar.gz' --pattern 'wfl-production-weather-inputs.tar.gz' --pattern 'corn-spatial-local-reference.json'
+      - uses: actions/upload-artifact@v4
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        with:
+          name: corn-spatial-fixed-validation-inputs
+          path: ${{ runner.temp }}/replay-inputs/*
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        if: (github.ref != 'refs/heads/main' || inputs.validation_only) && always()
+        with:
+          name: corn-spatial-cold-verdict
+          path: ${{ runner.temp }}/cold-operation-verdict.json
+          retention-days: 90
       - name: Verify built snapshot and save immutable data release
         id: saved
         if: github.ref == 'refs/heads/main' && !inputs.validation_only
@@ -211,11 +228,12 @@ jobs:
       - name: Actual warm / single-state / complete-module failures, no notification send
         run: python scripts/validate_spatial_scenarios.py --annual-cache "$RUNNER_TEMP/corn-annual" --weather-cache "$RUNNER_TEMP/corn-weather" --cold-data "$RUNNER_TEMP/cold-data" --output "$RUNNER_TEMP/scenarios"
       - name: Fixed local input replay on Linux (authenticated draft, never Pages)
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release download corn-spatial-validation-20261005 --repo ccesm/world-food-lens --dir "$RUNNER_TEMP/replay" --pattern 'corn-spatial-annual.tar.gz' --pattern 'wfl-production-weather-inputs.tar.gz' --pattern 'corn-spatial-local-reference.json'
-          python scripts/validate_spatial_replay.py --directory "$RUNNER_TEMP/replay" --rebuilt-annual-cache "$RUNNER_TEMP/corn-annual" --output "$RUNNER_TEMP/replay-verdict.json"
+        uses: actions/download-artifact@v4
+        with:
+          name: corn-spatial-fixed-validation-inputs
+          path: ${{ runner.temp }}/replay
+      - name: Compare frozen scientific inputs and rebuilt annual grid
+        run: python scripts/validate_spatial_replay.py --directory "$RUNNER_TEMP/replay" --rebuilt-annual-cache "$RUNNER_TEMP/corn-annual" --output "$RUNNER_TEMP/replay-verdict.json"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

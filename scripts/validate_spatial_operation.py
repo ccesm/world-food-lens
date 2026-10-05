@@ -107,9 +107,10 @@ def exercise_local_release(snapshot, dist):
             if path.exists():shutil.copyfile(path,repo/name)
         shutil.copytree(Path(dist),repo/"dist")
         revision=save_data(repo,repo/"dist")
-        feed=verify_release(repo,revision)
+        feed,pointer=verify_release(repo,revision)
         return {"verified":True,"sourceRevision":source,"generatedRevision":revision,
-                "releaseId":feed["release"]["id"],"remoteKind":"temporary-local-bare-only","smtpContacted":False}
+                "releaseId":feed["release"]["id"],"dataRevision":pointer["dataRevision"],
+                "remoteKind":"temporary-local-bare-only","smtpContacted":False}
 
 
 if __name__ == "__main__":

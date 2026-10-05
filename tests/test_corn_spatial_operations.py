@@ -7,12 +7,13 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
 from corn_spatial import digest, GRID, ANNUAL_METHOD
 from ensure_corn_spatial import approved,cache_key,ensure
-from validate_spatial_operation import inspect_public,decision
+from validate_spatial_operation import inspect_public,decision,exercise_local_release
 from send_alert_email import select_changes,build_message
 from test_alert_email import fixture,NOW
 from refresh_corn_spatial import fetch_weather
 from corn_spatial import file_hash,write_json
 from data_contract import DataIssue
+import test_release_pipeline
 
 
 class SpatialOperationsTests(unittest.TestCase):
@@ -77,5 +78,20 @@ class SpatialOperationsTests(unittest.TestCase):
             write_json(path.with_suffix('.json'),{'identity':identity,'url':url,'checkedDay':'2026-10-05','rawHash':file_hash(path)})
             self.assertEqual(fetch_weather(cache,url,identity,'2026-10-05',deadline=0)[0],path)
             network.assert_not_called()
+
+    def test_actual_immutable_release_uses_only_owned_local_remote(self):
+        fixture_repo=test_release_pipeline.GitReleaseTests()
+        fixture_repo.setUp()
+        try:
+            fixture_repo.generate()
+            source=test_release_pipeline.git(fixture_repo.repo,'rev-parse','HEAD').decode().strip()
+            remote=test_release_pipeline.git(fixture_repo.repo,'remote','get-url','origin')
+            with patch('validate_spatial_operation.ROOT',fixture_repo.repo):
+                result=exercise_local_release(fixture_repo.repo/test_release_pipeline.ALERT,fixture_repo.repo/'dist')
+            self.assertTrue(result['verified']);self.assertFalse(result['smtpContacted'])
+            self.assertEqual(result['sourceRevision'],source)
+            self.assertEqual(test_release_pipeline.git(fixture_repo.repo,'rev-parse','HEAD').decode().strip(),source)
+            self.assertEqual(test_release_pipeline.git(fixture_repo.repo,'remote','get-url','origin'),remote)
+        finally:fixture_repo.doCleanups()
 
 if __name__=='__main__':unittest.main()
