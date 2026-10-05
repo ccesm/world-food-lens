@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rulesVersion": "1",
-  "generatedAt": "2026-10-04T12:33:10.396Z",
+  "generatedAt": "2026-10-05T14:58:16.070Z",
   "active": [
     {
       "id": "market/worldBank/brent",
@@ -29,7 +29,7 @@
       ],
       "target": "#s4",
       "firstSeenAt": "2026-10-03T11:49:39.022Z",
-      "lastEvaluatedAt": "2026-10-04T12:33:10.396Z",
+      "lastEvaluatedAt": "2026-10-05T14:58:16.070Z",
       "state": "active"
     }
   ],
@@ -82,8 +82,8 @@
         "zh": "16/16 个代表点通过连续性、来源和时效检查；最新观测最多允许滞后 10 天。",
         "en": "16/16 representative points pass continuity, source and freshness checks; latest observations may lag by at most 10 days."
       },
-      "period": "2026-09-30",
-      "fetchedAt": "2026-10-04T12:33:00Z"
+      "period": "2026-10-01",
+      "fetchedAt": "2026-10-05T14:58:02Z"
     },
     {
       "id": "drought",
@@ -96,7 +96,7 @@
         "zh": "图层日期尚未被官方可用数据范围证实；暂停自动干旱判定。",
         "en": "The layer date has not been corroborated by official data availability; automatic drought screening is paused."
       },
-      "fetchedAt": "2026-10-04T12:33:07Z"
+      "fetchedAt": "2026-10-05T14:58:10Z"
     },
     {
       "id": "soil",
@@ -104,12 +104,13 @@
         "zh": "土壤湿度背景",
         "en": "Soil-moisture context"
       },
-      "status": "unavailable",
+      "status": "ok",
       "reason": {
-        "zh": "0/16 个点有有效当月数据及 1991–2020 同月基准；部分月份仅作背景，不触发红色预警。",
-        "en": "0/16 points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts."
+        "zh": "16/16 个点有有效当月数据及 1991–2020 同月基准；部分月份仅作背景，不触发红色预警。",
+        "en": "16/16 points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts."
       },
-      "fetchedAt": "2026-10-04T12:33:00Z"
+      "period": "2026-10-01",
+      "fetchedAt": "2026-10-05T14:58:02Z"
     },
     {
       "id": "fao",
@@ -136,7 +137,7 @@
         "en": "5/5 cost series can be evaluated, using complete-month changes."
       },
       "period": "2026-09",
-      "fetchedAt": "2026-10-04T12:32:50Z"
+      "fetchedAt": "2026-10-05T14:57:53Z"
     },
     {
       "id": "enso",
@@ -150,7 +151,7 @@
         "en": "Context freshness only; ENSO strength and historical tendencies never directly trigger crop alerts."
       },
       "period": "2026-09-10",
-      "fetchedAt": "2026-10-04T12:33:09Z"
+      "fetchedAt": "2026-10-05T14:58:15Z"
     },
     {
       "id": "calendar",
@@ -177,7 +178,7 @@
   },
   "email": {
     "status": "sent",
-    "lastSentAt": "2026-10-03T11:50:08Z",
-    "lastAttemptAt": "2026-10-03T11:50:08Z"
+    "lastSentAt": "2026-10-04T12:33:42Z",
+    "lastAttemptAt": "2026-10-04T12:33:42Z"
   }
 }
