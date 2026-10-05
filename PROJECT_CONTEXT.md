@@ -232,3 +232,21 @@ The conditional production-equivalent proxy is not affected acreage or loss.
 See docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md and the distinct research artifact.
 No new hazards, source providers, deployment or email in this phase. Phase 4B-2
 may expand screening variables only with these limitations and version guards.
+
+## Level C production implementation (Phase 4B-1.9, 2026-10-05)
+
+Additive `mapped-corn-weather-production/1` reuses frozen Iowa/ten-state native
+30m CDL geometry and gridMET readers. Annual derived grids stay outside Git;
+Pages receives compact area-weighted Tmax/Tmin/precipitation summaries with
+existing canonical metadata, Central Data Health, release binding and coarse
+Phase 2 changes. Ten-state failures retain explicit missing area/unknown
+geography, never silently normalize partial coverage. Level A remains fallback,
+historical reference and unchanged alert basis. No local stage, damage, loss or
+production weighting claims. The 2023 map is explicitly an older validated proxy
+for recent weather; native 10m CDL is not silently resampled.
+
+Local complete tests, build, real-source measurements and reference replay pass.
+Annual asset publishing and actual GitHub Actions validation are still pending;
+do not call the live Level C module activated. No push, deployment or email.
+See docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md for exact files, measured resource use
+and the operational gate before Phase 4B-2.

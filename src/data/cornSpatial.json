@@ -1,0 +1,16 @@
+{
+  "methodVersion": "mapped-corn-weather-production/1",
+  "datasets": {
+    "cornSpatialCrop": {"provider":"USDA NASS CDL","type":"validated-native30m-corn-geography","frequency":"annual"},
+    "cornSpatialWeather": {"provider":"gridMET","type":"gridded-weather","frequency":"daily-revisable"},
+    "cornSpatial": {"provider":"USDA NASS CDL × gridMET","type":"mapped-corn-area-weighted-weather","frequency":"rolling-fourteen-days"}
+  },
+  "annualMethodVersion": "native30m-corn-fraction-exact-overlap/1",
+  "cropGeographyYear": 2023,
+  "geographyPolicy": "Latest validated native-30m CDL; explicitly older geography proxy for recent weather. Native10m/resampled/HCDL not silently substituted.",
+  "annualIndexHash": "bfb0d22a90f0dc185461957f45cdcdfcfb54b4a1a51dbc336f78fc44cab0092a",
+  "annualAsset": {"tag": "corn-spatial-annual-2023-c4b589b61a17", "name": "corn-spatial-annual.tar.gz", "sha256": "c4b589b61a1723fa12d768e94ff3b819947f077e7956bdc36c2c93fa017ea404"},
+  "weatherWindowDays": 14,
+  "weatherLagDays": 2,
+  "informationalOnly": true
+}

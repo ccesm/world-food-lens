@@ -287,6 +287,22 @@ offline replay. This phase adds no hazards, deploys nothing and sends no email.
 The regular evaluation command generates new-method live artifacts; existing
 published snapshots remain unchanged until a deliberate subsequent release.
 
+## Level C informational corn-area weather (Phase 4B-1.9)
+
+An additive production pipeline now supports native-30m CDL preprocessing,
+content-verified annual derived caches, recent gridMET summaries and explicit
+state failure isolation. The US Corn view prefers healthy mapped-corn-area
+weighted weather; Level A remains a clearly labeled fallback/reference and the
+unchanged basis for existing alerts. State progress is separate context, never
+observed local stage or crop damage.
+
+The configured 2023 map is an explicitly older validated geography proxy, not
+the latest available CDL or exact current-year planting. Raw grids remain outside
+Git/Pages. Implementation and local tests/build are complete, but the annual
+asset has not been uploaded and actual Actions activation has not run. No
+deployment or email was performed. See the
+[production report, measurements and activation gates](docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md).
+
 ## Safety / data integrity rules
 
 Historical US corn research (2012–2019) is available below the US corn pilot.

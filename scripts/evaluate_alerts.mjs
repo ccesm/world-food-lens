@@ -9,6 +9,7 @@ import {healthState} from "../src/services/sourceHealth.js";
 import {buildPhase2} from "./revision_tracking.mjs";
 import {qualifyCornHealth} from "../src/services/cornExposure.js";
 import {attachCornAlignment} from "./corn_alignment.mjs";
+import {attachCornSpatial} from "./corn_spatial.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const args = process.argv.slice(2), options = {};
@@ -40,7 +41,7 @@ async function readCache(path, required = false) {
   }
 }
 
-const [weather, drought, official, enso, previous, delivery, points] = await Promise.all([
+const [weather, drought, official, enso, previous, delivery, points, spatial] = await Promise.all([
   readCache(resolve(dataDir, "local-weather.json")),
   readCache(resolve(dataDir, "drought-monitor.json")),
   readCache(resolve(dataDir, "official-data.json")),
@@ -48,6 +49,7 @@ const [weather, drought, official, enso, previous, delivery, points] = await Pro
   readCache(output, true),
   readCache(resolve(dataDir, "alert-delivery.json")),
   readCache(resolve(root, "src/data/weatherPoints.json"), true),
+  readCache(resolve(dataDir, "corn-spatial.json"), true),
 ]);
 if (!Array.isArray(points) || !points.length) throw new Error("Representative-point registry is unavailable");
 const result = evaluateAutomaticAlerts({weather, drought, official, enso, previous, points, now});
@@ -61,10 +63,12 @@ const sourceRevision = options["source-revision"] ?? execFileSync("git", ["rev-p
 if (!/^[a-f0-9]{40}$/.test(sourceRevision)) throw new Error("Invalid source revision");
 const inputNames = ["official-data.json", "local-weather.json", "drought-monitor.json", "enso-outlook.json"];
 const inputs = inputNames.map(name => [name, inputBytes.has(resolve(dataDir,name)) ? hash(inputBytes.get(resolve(dataDir,name))) : null]);
+if(spatial)inputs.push(["corn-spatial.json",hash(inputBytes.get(resolve(dataDir,"corn-spatial.json")))]);
 inputs.push(["previous-alerts", inputBytes.has(output) ? hash(inputBytes.get(output)) : null],
   ["previous-delivery", inputBytes.has(resolve(dataDir,"alert-delivery.json")) ? hash(inputBytes.get(resolve(dataDir,"alert-delivery.json"))) : null]);
 for (const path of ["src/data/weatherPoints.json", "src/data/cropCalendars.js", "src/data/releaseSchedule.js", "src/data/cornAlignment.json"])
   inputs.push([path, hash(inputBytes.get(resolve(root,path)) ?? await readFile(resolve(root,path)))]);
+if(spatial)inputs.push(["src/data/cornSpatial.json",hash(await readFile(resolve(root,"src/data/cornSpatial.json")))]);
 const inputsHash = hash(JSON.stringify(inputs));
 const releaseId = `release-${hash(JSON.stringify([1,sourceRevision,result.generatedAt,result.rulesVersion,inputsHash]))}`;
 result.release = {id:releaseId,sourceRevision,inputsHash};
@@ -77,6 +81,7 @@ for (const alert of [...result.active,...result.events.filter(e=>e.at===result.g
 result.analysis = buildPhase2({official,enso,monitor:result,previous});
 attachCornAlignment({official,monitor:result,previous});
 result.dataHealth = qualifyCornHealth(result.dataHealth,result.analysis.cornPilot);
+attachCornSpatial({spatial,monitor:result,previous});
 if (!validateMonitorBundle(result)) throw new Error("Invalid output or delivery metadata; previous cache remains unchanged");
 
 await mkdir(dirname(output), {recursive:true});

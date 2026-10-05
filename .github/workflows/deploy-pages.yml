@@ -2,8 +2,13 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "codex/phase4b1-10-operational-validation"]
   workflow_dispatch:
+    inputs:
+      validation_only:
+        description: Validate without publishing data, deploying Pages or sending email
+        type: boolean
+        default: false
   schedule:
     - cron: "23 6 * * *"
 
@@ -11,13 +16,13 @@ permissions:
   contents: read
 
 concurrency:
-  group: "pages"
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: ${{ (github.ref != 'refs/heads/main' || inputs.validation_only) && 45 || 20 }}
     outputs:
       published_sha: ${{ steps.saved.outputs.sha }}
     permissions:
@@ -33,6 +38,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/corn_spatial_requirements.txt
       - run: npm ci
       - run: npm test
       - name: Download official data (retain good cache on source failure)
@@ -70,19 +77,138 @@ jobs:
       - name: Report corn pilot source failure
         if: steps.corn.outcome == 'failure'
         run: echo "::warning::Corn pilot source failed; prior accepted records retained. Missing baselines or weather disable exposure, not zero exposure."
+      - name: Install optional spatial runtime
+        continue-on-error: true
+        run: pip install -r scripts/corn_spatial_requirements.txt
+      - name: Read pinned annual cache identity
+        id: spatial-config
+        run: |
+          KEY=$(python scripts/ensure_corn_spatial.py --print-key --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json")
+          printf 'key=%s\n' "$KEY" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/corn-annual
+          key: ${{ steps.spatial-config.outputs.key }}
+      - name: Validate, restore or generate reviewed annual cache
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/ensure_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json"
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/corn-weather
+          key: corn-weather-${{ hashFiles('src/data/cornSpatial.json', 'scripts/corn_spatial*.py', 'scripts/refresh_corn_spatial.py') }}-${{ github.run_id }}
+          restore-keys: |
+            corn-weather-${{ hashFiles('src/data/cornSpatial.json', 'scripts/corn_spatial*.py', 'scripts/refresh_corn_spatial.py') }}-
+      - name: Refresh informational mapped-corn weather (isolated module; no alert migration)
+        run: python scripts/refresh_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --weather-cache "$RUNNER_TEMP/corn-weather" --performance "$RUNNER_TEMP/corn-spatial-performance.json" --input-archive "$RUNNER_TEMP/corn-weather-inputs.tar.gz"
+      - name: Preserve spatial runtime diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: corn-spatial-diagnostics-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/corn-spatial-performance.json
+            ${{ runner.temp }}/annual-lifecycle.json
+            ${{ runner.temp }}/cdl-raw/annual-build-performance.json
+            ${{ runner.temp }}/cdl-raw/*/acquisition.json
+            ${{ runner.temp }}/cdl-raw/acquisition.json
+            ${{ runner.temp }}/corn-weather-inputs.tar.gz
+            public/data/corn-spatial.json
+          retention-days: 90
       - name: Evaluate automatic alerts against retained event history
         run: npm run evaluate-alerts
       - run: npm test
+      - name: Operational validation and frozen numerical suites (no SMTP)
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        run: |
+          python -m unittest discover -s tests/spatial
+          python -m unittest discover -s research/iowa_spatial
+          python -m unittest discover -s research/cornbelt_spatial
+          python scripts/validate_spatial_operation.py --snapshot public/data/monitor-alerts.json --output "$RUNNER_TEMP/cold-operation-verdict.json"
       - run: npm run build
+      - name: Retain cold operational release for the warm-run comparison
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        uses: actions/upload-artifact@v4
+        with:
+          name: corn-spatial-operation-cold
+          path: public/data/*.json
+          retention-days: 90
       - name: Verify built snapshot and save immutable data release
         id: saved
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && !inputs.validation_only
         run: python3 scripts/release_pipeline.py save-data
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
+  spatial-operational-warm:
+    if: github.ref != 'refs/heads/main' || inputs.validation_only
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/corn_spatial_requirements.txt
+      - run: npm ci
+      - run: pip install -r scripts/corn_spatial_requirements.txt
+      - name: Exact annual key (no restore-prefix substitution)
+        id: spatial-config
+        run: |
+          KEY=$(python scripts/ensure_corn_spatial.py --print-key --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/warm-annual-lifecycle.json")
+          printf 'key=%s\n' "$KEY" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/restore@v4
+        id: annual-restore
+        with:
+          path: ${{ runner.temp }}/corn-annual
+          key: ${{ steps.spatial-config.outputs.key }}
+          fail-on-cache-miss: true
+      - uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/corn-weather
+          key: corn-weather-${{ hashFiles('src/data/cornSpatial.json', 'scripts/corn_spatial*.py', 'scripts/refresh_corn_spatial.py') }}-${{ github.run_id }}
+          fail-on-cache-miss: true
+      - name: Verify actual warm annual reuse
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/ensure_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/warm-annual-lifecycle.json" --no-rebuild
+          python -c 'import json,os; a=json.load(open(os.environ["RUNNER_TEMP"]+"/warm-annual-lifecycle.json")); assert a["available"] and a["action"]=="reuse"'
+      - uses: actions/download-artifact@v4
+        with:
+          name: corn-spatial-operation-cold
+          path: ${{ runner.temp }}/cold-data
+      - name: Actual warm / single-state / complete-module failures, no notification send
+        run: python scripts/validate_spatial_scenarios.py --annual-cache "$RUNNER_TEMP/corn-annual" --weather-cache "$RUNNER_TEMP/corn-weather" --cold-data "$RUNNER_TEMP/cold-data" --output "$RUNNER_TEMP/scenarios"
+      - name: Fixed local input replay on Linux (authenticated draft, never Pages)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download corn-spatial-validation-20261005 --repo ccesm/world-food-lens --dir "$RUNNER_TEMP/replay" --pattern 'corn-spatial-annual.tar.gz' --pattern 'wfl-production-weather-inputs.tar.gz' --pattern 'corn-spatial-local-reference.json'
+          python scripts/validate_spatial_replay.py --directory "$RUNNER_TEMP/replay" --output "$RUNNER_TEMP/replay-verdict.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: corn-spatial-operation-warm
+          path: |
+            ${{ runner.temp }}/warm-annual-lifecycle.json
+            ${{ runner.temp }}/scenarios
+            ${{ runner.temp }}/replay-verdict.json
+          retention-days: 90
+
   deploy:
+    if: github.ref == 'refs/heads/main' && !inputs.validation_only
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -99,7 +225,7 @@ jobs:
   notify:
     name: Email changes after successful publication
     needs: [build, deploy]
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && !inputs.validation_only
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

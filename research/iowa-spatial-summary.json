@@ -1,0 +1,775 @@
+{
+  "analysisHash": "3d9c8f11a9bdb1374494376d16fe02d02b307fdee3d3b545f882b7ad05a39d4a",
+  "areaValidation": {
+    "acres": 13500000,
+    "calibrationApplied": false,
+    "cropUniverse": "2015 corn planted for all purposes; survey estimate, not mapped class-1 area",
+    "differenceAcres": -442851.14551634155,
+    "mappedCornAcres": 13057148.854483658,
+    "publication": "Iowa AgriNews Vol 16-02, January 21, 2016; Crop Production 2015 Summary",
+    "publicationDate": "2016-01-21",
+    "relativeDifference": -0.03280378855676602,
+    "url": "https://publications.iowa.gov/21433/1/AgriNews02_2016.pdf"
+  },
+  "cropSource": {
+    "accuracyInterpretation": "Product validation statistics, not a per-field guarantee or exposure confidence score",
+    "areaConservationResidualM2": 0.00485992431640625,
+    "backgroundCode": 0,
+    "boundaryDiagnosticVersion": "a45f9733af9ea12010b6a102284080d6656fcf959586cfdc503850e692ffb458",
+    "bounds": [
+      -52095.0,
+      1938165.0,
+      481755.0,
+      2288295.0
+    ],
+    "completenessEvidence": "Official metadata: entire state covered; class 0 is not a measured non-corn classification",
+    "contentHash": "0d241b2bbf16b89654c1d2253b4d30e86aa221761def9b7a1a02dfb9a76e52b6",
+    "cornClass": 1,
+    "cornClassProducerAccuracyPct": 98.54,
+    "cornClassUserAccuracyPct": 98.86,
+    "cropYear": 2015,
+    "crs": "EPSG:5070",
+    "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_19.tif",
+    "edition": "2015 Edition",
+    "excludedClasses": [
+      12,
+      13,
+      225,
+      226,
+      237,
+      241
+    ],
+    "height": 11671,
+    "maximumCellConservationResidualM2": 4.051625728607178e-05,
+    "nativeCrsWkt": "PROJCS[\"unnamed\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Albers_Conic_Equal_Area\"],PARAMETER[\"latitude_of_center\",23],PARAMETER[\"longitude_of_center\",-96],PARAMETER[\"standard_parallel_1\",29.5],PARAMETER[\"standard_parallel_2\",45.5],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "nativeResolutionM": 30,
+    "nodataTag": null,
+    "provider": "USDA NASS CDL",
+    "publicationDate": "2016-02-12",
+    "publicationTimeKnown": false,
+    "publishedAt": null,
+    "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_ia15.htm",
+    "transform": [
+      30.0,
+      0.0,
+      -52095.0,
+      0.0,
+      -30.0,
+      2288295.0
+    ],
+    "width": 17795
+  },
+  "daily": [
+    {
+      "date": "2015-07-01",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 13.0,
+        "mean": 0.9050922118273919,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 3.5
+      },
+      "tmaxC": {
+        "max": 29.55000000000001,
+        "mean": 23.535511036263017,
+        "min": 18.850000000000023,
+        "p10": 20.650000000000034,
+        "p50": 23.450000000000045,
+        "p90": 26.55000000000001
+      },
+      "tminC": {
+        "max": 18.850000000000023,
+        "mean": 12.27881772369952,
+        "min": 7.850000000000023,
+        "p10": 9.450000000000045,
+        "p50": 12.150000000000034,
+        "p90": 15.350000000000023
+      }
+    },
+    {
+      "date": "2015-07-02",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 25.0,
+        "mean": 0.2007461205517992,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.5
+      },
+      "tmaxC": {
+        "max": 24.05000000000001,
+        "mean": 21.752777546351055,
+        "min": 19.450000000000045,
+        "p10": 20.450000000000045,
+        "p50": 21.850000000000023,
+        "p90": 22.950000000000045
+      },
+      "tminC": {
+        "max": 16.75,
+        "mean": 11.501033655174508,
+        "min": 7.75,
+        "p10": 9.950000000000045,
+        "p50": 11.150000000000034,
+        "p90": 13.75
+      }
+    },
+    {
+      "date": "2015-07-03",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "tmaxC": {
+        "max": 27.05000000000001,
+        "mean": 25.255484626847043,
+        "min": 23.650000000000034,
+        "p10": 24.55000000000001,
+        "p50": 25.25,
+        "p90": 25.850000000000023
+      },
+      "tminC": {
+        "max": 15.650000000000034,
+        "mean": 12.211197695192332,
+        "min": 9.350000000000023,
+        "p10": 11.050000000000011,
+        "p50": 12.350000000000023,
+        "p90": 13.150000000000034
+      }
+    },
+    {
+      "date": "2015-07-04",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 1.7000000000000002,
+        "mean": 0.011806272596691283,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "tmaxC": {
+        "max": 29.05000000000001,
+        "mean": 27.100932884861827,
+        "min": 25.850000000000023,
+        "p10": 26.55000000000001,
+        "p50": 27.150000000000034,
+        "p90": 27.650000000000034
+      },
+      "tminC": {
+        "max": 17.650000000000034,
+        "mean": 14.64609131327828,
+        "min": 11.350000000000023,
+        "p10": 13.650000000000034,
+        "p50": 14.650000000000034,
+        "p90": 15.650000000000034
+      }
+    },
+    {
+      "date": "2015-07-05",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 74.4,
+        "mean": 9.321140968015227,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 5.6000000000000005,
+        "p90": 23.900000000000002
+      },
+      "tmaxC": {
+        "max": 32.75,
+        "mean": 29.743744851888376,
+        "min": 26.850000000000023,
+        "p10": 28.450000000000045,
+        "p50": 29.650000000000034,
+        "p90": 31.150000000000034
+      },
+      "tminC": {
+        "max": 20.950000000000045,
+        "mean": 18.35956039904403,
+        "min": 15.450000000000045,
+        "p10": 17.350000000000023,
+        "p50": 18.350000000000023,
+        "p90": 19.350000000000023
+      }
+    },
+    {
+      "date": "2015-07-06",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 112.10000000000001,
+        "mean": 12.438403823933738,
+        "min": 0.0,
+        "p10": 2.3000000000000003,
+        "p50": 7.7,
+        "p90": 29.1
+      },
+      "tmaxC": {
+        "max": 30.850000000000023,
+        "mean": 25.313901511760662,
+        "min": 22.450000000000045,
+        "p10": 23.450000000000045,
+        "p50": 25.350000000000023,
+        "p90": 26.950000000000045
+      },
+      "tminC": {
+        "max": 17.75,
+        "mean": 11.859538917418412,
+        "min": 7.650000000000034,
+        "p10": 9.650000000000034,
+        "p50": 11.450000000000045,
+        "p90": 14.650000000000034
+      }
+    },
+    {
+      "date": "2015-07-07",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 0.6000000000000001,
+        "mean": 0.0003570380213432441,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "tmaxC": {
+        "max": 24.350000000000023,
+        "mean": 21.347105058132463,
+        "min": 19.05000000000001,
+        "p10": 20.25,
+        "p50": 21.150000000000034,
+        "p90": 22.650000000000034
+      },
+      "tminC": {
+        "max": 16.150000000000034,
+        "mean": 11.198571976215138,
+        "min": 8.850000000000023,
+        "p10": 9.75,
+        "p50": 10.650000000000034,
+        "p90": 13.650000000000034
+      }
+    },
+    {
+      "date": "2015-07-08",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 7.7,
+        "mean": 0.11102966576897828,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "tmaxC": {
+        "max": 25.850000000000023,
+        "mean": 21.90369520934094,
+        "min": 15.75,
+        "p10": 19.55000000000001,
+        "p50": 22.450000000000045,
+        "p90": 23.55000000000001
+      },
+      "tminC": {
+        "max": 15.25,
+        "mean": 12.150714150664632,
+        "min": 9.25,
+        "p10": 11.25,
+        "p50": 12.150000000000034,
+        "p90": 13.050000000000011
+      }
+    },
+    {
+      "date": "2015-07-09",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 2.7,
+        "mean": 0.009984126294310785,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "tmaxC": {
+        "max": 28.950000000000045,
+        "mean": 25.955849775643177,
+        "min": 23.850000000000023,
+        "p10": 24.950000000000045,
+        "p50": 25.850000000000023,
+        "p90": 27.150000000000034
+      },
+      "tminC": {
+        "max": 17.450000000000045,
+        "mean": 14.339386618256707,
+        "min": 11.25,
+        "p10": 13.25,
+        "p50": 14.450000000000045,
+        "p90": 15.150000000000034
+      }
+    },
+    {
+      "date": "2015-07-10",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 96.80000000000001,
+        "mean": 4.707457062143515,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 15.200000000000001
+      },
+      "tmaxC": {
+        "max": 28.25,
+        "mean": 26.765178463128958,
+        "min": 25.350000000000023,
+        "p10": 26.150000000000034,
+        "p50": 26.75,
+        "p90": 27.450000000000045
+      },
+      "tminC": {
+        "max": 19.450000000000045,
+        "mean": 16.97985644688357,
+        "min": 13.75,
+        "p10": 15.950000000000045,
+        "p50": 17.05000000000001,
+        "p90": 17.650000000000034
+      }
+    },
+    {
+      "date": "2015-07-11",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 65.8,
+        "mean": 5.215351523577158,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 1.1,
+        "p90": 15.5
+      },
+      "tmaxC": {
+        "max": 33.450000000000045,
+        "mean": 28.36520496501545,
+        "min": 23.150000000000034,
+        "p10": 25.75,
+        "p50": 28.350000000000023,
+        "p90": 30.650000000000034
+      },
+      "tminC": {
+        "max": 22.650000000000034,
+        "mean": 19.76921755403645,
+        "min": 16.450000000000045,
+        "p10": 18.450000000000045,
+        "p50": 19.850000000000023,
+        "p90": 20.650000000000034
+      }
+    },
+    {
+      "date": "2015-07-12",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 16.900000000000002,
+        "mean": 0.22969363989501923,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.30000000000000004
+      },
+      "tmaxC": {
+        "max": 34.950000000000045,
+        "mean": 32.059599709614375,
+        "min": 27.450000000000045,
+        "p10": 29.850000000000023,
+        "p50": 32.450000000000045,
+        "p90": 33.450000000000045
+      },
+      "tminC": {
+        "max": 25.450000000000045,
+        "mean": 21.582379321812088,
+        "min": 17.05000000000001,
+        "p10": 19.350000000000023,
+        "p50": 21.75,
+        "p90": 23.350000000000023
+      }
+    },
+    {
+      "date": "2015-07-13",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 22.400000000000002,
+        "mean": 0.4947770104897003,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 1.7000000000000002
+      },
+      "tmaxC": {
+        "max": 35.55000000000001,
+        "mean": 33.017598555834205,
+        "min": 31.25,
+        "p10": 32.05000000000001,
+        "p50": 32.950000000000045,
+        "p90": 34.05000000000001
+      },
+      "tminC": {
+        "max": 23.25,
+        "mean": 19.739227979264683,
+        "min": 17.150000000000034,
+        "p10": 18.55000000000001,
+        "p50": 19.650000000000034,
+        "p90": 21.150000000000034
+      }
+    },
+    {
+      "date": "2015-07-14",
+      "jointCoveredCornM2": 52840406699.99514,
+      "rainMm": {
+        "max": 16.6,
+        "mean": 0.0915575781968702,
+        "min": 0.0,
+        "p10": 0.0,
+        "p50": 0.0,
+        "p90": 0.0
+      },
+      "tmaxC": {
+        "max": 34.25,
+        "mean": 30.37400157420947,
+        "min": 27.450000000000045,
+        "p10": 28.75,
+        "p50": 30.350000000000023,
+        "p90": 31.850000000000023
+      },
+      "tminC": {
+        "max": 23.650000000000034,
+        "mean": 18.424635466670722,
+        "min": 13.350000000000023,
+        "p10": 15.850000000000023,
+        "p50": 18.55000000000001,
+        "p90": 20.75
+      }
+    }
+  ],
+  "denominators": {
+    "X_mappedCornM2": 52840406700.0,
+    "Y_jointValidCornM2": 52840406699.995,
+    "Z_screenOverlapM2": 0.0,
+    "coverage_Y_over_X": 0.9999999999999054,
+    "eligibility": "eligible",
+    "knownContribution_Z_over_X": 0.0,
+    "missingWeatherCornM2": 0.00499725341796875,
+    "overlap_Z_over_Y": 0.0
+  },
+  "diagnostics": {
+    "classifiedDataM2": 145744469100.0,
+    "commonGrid14DayRainMeansMm": {
+      "max": 138.84607915160586,
+      "mean": 33.73739704131174,
+      "min": 5.00910045887009,
+      "p10": 10.721783454878782,
+      "p50": 24.19075687360153,
+      "p90": 74.7018544703012
+    },
+    "commonGridCells": 2340,
+    "cornContainingCells": 1896,
+    "mappedCornAcres": 13057148.854483658,
+    "nativeSupport14DayRainMm": {
+      "max": 150.0,
+      "mean": 33.73739704131174,
+      "min": 3.5,
+      "p10": 10.600000000000001,
+      "p50": 24.1,
+      "p90": 75.7
+    },
+    "nativeSupportPeriodMaxTmaxC": {
+      "max": 35.55000000000001,
+      "mean": 33.191076521703216,
+      "min": 31.25,
+      "p10": 32.35000000000002,
+      "p50": 33.150000000000034,
+      "p90": 34.05000000000001
+    },
+    "nativeSupportPeriodMinTminC": {
+      "max": 14.75,
+      "mean": 10.555216372942024,
+      "min": 7.650000000000034,
+      "p10": 9.050000000000011,
+      "p50": 10.25,
+      "p90": 12.450000000000045
+    },
+    "nativeWeatherCellsWithCorn": 9281,
+    "nonzeroIntersectionWeights": 19222,
+    "unclassifiedInsideGeneralizedBoundaryM2": 14901103.754309852,
+    "variableFullWindowCoverage": {
+      "pr": 0.9999999999999081,
+      "tmmn": 0.9999999999999081,
+      "tmmx": 0.9999999999999081
+    }
+  },
+  "grid": {
+    "cellSizeM": 9000,
+    "crs": "EPSG:5070",
+    "edgeSegments": 16,
+    "originX": -52095,
+    "originY": 2288295,
+    "version": "ia-2015-cdl-aligned-9km/1"
+  },
+  "implementation": {
+    "collect.py": "1c22d649ce1900afc54817d199072ef8d4a02cedd2cad926801e939760a0d328",
+    "config.json": "35b94c8ece6e7dbcc9b86178463fc908d3db55664efcbe2ff61600e0cd0c8883",
+    "requirements.txt": "3c29a9cc88dd0a1d99be123c33f7ce3f5659991ce6b9460c793568873b67ba36",
+    "run.py": "40f2811ad8d8ddfc9032390b13596c516fb5f024053e7eec67a63e1dc8ab4230",
+    "spatial.py": "fb283d0720415807e455a58765445203dc41456b4b15f766c4a392a909e62a53"
+  },
+  "interpretation": {
+    "en": "Crop-area weather-screen overlap, not affected acreage, physiological stress or yield loss.",
+    "zh": "\u7389\u7c73\u5236\u56fe\u9762\u79ef\u4e0e\u5929\u6c14\u7b5b\u67e5\u6761\u4ef6\u7684\u7a7a\u95f4\u4ea4\u53e0\uff1b\u975e\u53d7\u707e\u9762\u79ef\u3001\u751f\u7406\u80c1\u8feb\u6216\u51cf\u4ea7\u3002"
+  },
+  "provenance": {
+    "availability": "retrospective-post-season-mask; original-publication-availability-unverified",
+    "eligibility": "eligible",
+    "gridVersion": "ia-2015-cdl-aligned-9km/1",
+    "inputs": [
+      {
+        "contentHash": "0d241b2bbf16b89654c1d2253b4d30e86aa221761def9b7a1a02dfb9a76e52b6",
+        "datasetId": "research/usda-cdl/US-IA/2015"
+      },
+      {
+        "contentHash": "f0cc792dc9f2fe45ef975095cc29f71c8313430164ed9af3a69db433f3075396",
+        "datasetId": "research/gridmet/tmmx"
+      },
+      {
+        "contentHash": "3ebcfc93503bcaa453e2e4a96cf202cb5622045012eb55355ead2c13e6f15387",
+        "datasetId": "research/gridmet/tmmn"
+      },
+      {
+        "contentHash": "5146604bcd26e5abf4aa7fe385c28de3361119299eea140b73ef511f1f9b2a05",
+        "datasetId": "research/gridmet/pr"
+      },
+      {
+        "contentHash": "a45f9733af9ea12010b6a102284080d6656fcf959586cfdc503850e692ffb458",
+        "datasetId": "research/census/US-IA/2015-generalized-boundary"
+      }
+    ],
+    "localStageEligibility": "insufficient",
+    "localStageReason": "no_stage_resolved_spatial_observation",
+    "methodVersion": "iowa-mapped-corn-weather-intersection/1",
+    "observationPeriod": {
+      "end": "2015-07-14",
+      "start": "2015-07-01"
+    }
+  },
+  "representativePoint": {
+    "gridmetDemonstrationFlag": false,
+    "gridmetNativeCellCentre": {
+      "latitude": 41.983333333333334,
+      "longitude": -93.51666663333334
+    },
+    "gridmetRainTotalMm": 73.60000000000001,
+    "gridmetTmaxMaxC": 32.950000000000045,
+    "gridmetTminMinC": 11.050000000000011,
+    "powerUtcReference": {
+      "acceptedSourceHash": "a21b465196c1a9bb985a543392fcaa5885e7b65a7aefe99a6ce3de41c5502738",
+      "demonstrationFlag": false,
+      "inputHash": "9a496abaa7bd5205546ad3661aaf056a0f0ac6f563bedb59a2b1512d2a7f1c79",
+      "rainTotalMm": 42.300000000000004,
+      "tmaxMaxC": 33.0,
+      "tminMinC": 11.74,
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+    },
+    "providerComparisonCaveat": "POWER UTC days differ from gridMET days ending approximately 07UTC next day; provider differences are not spatial effects.",
+    "requested": {
+      "latitude": 42,
+      "longitude": -93.5
+    }
+  },
+  "runtimeVersions": {
+    "affine": "3.0.1",
+    "gdal": "3.9.3",
+    "netCDF4": "1.7.4",
+    "numpy": "2.3.5",
+    "pyproj": "3.7.2",
+    "python": "3.12.14",
+    "rasterio": "1.4.3",
+    "scipy": "1.16.3",
+    "shapely": "2.1.2"
+  },
+  "schemaVersion": 1,
+  "scope": {
+    "crop": "corn-class-1",
+    "cropYear": 2015,
+    "end": "2015-07-14",
+    "geography": "US-IA",
+    "selection": "Fixed calendar window proposed in Phase 4B-1.6 before outcome inspection; accepted only if all required dates are available.",
+    "start": "2015-07-01"
+  },
+  "screen": {
+    "label": "LEGACY / DEMONSTRATION TEMPERATURE-ONLY SCREEN",
+    "minimumDays": 3,
+    "moistureScreen": null,
+    "stageMultiplier": null,
+    "tmaxC": 35,
+    "windows": [
+      [
+        0,
+        7
+      ],
+      [
+        7,
+        14
+      ]
+    ]
+  },
+  "weatherSources": {
+    "pr": {
+      "addOffset": 0.0,
+      "contentHash": "5146604bcd26e5abf4aa7fe385c28de3361119299eea140b73ef511f1f9b2a05",
+      "crs": "EPSG:4326",
+      "dates": [
+        "2015-07-01",
+        "2015-07-02",
+        "2015-07-03",
+        "2015-07-04",
+        "2015-07-05",
+        "2015-07-06",
+        "2015-07-07",
+        "2015-07-08",
+        "2015-07-09",
+        "2015-07-10",
+        "2015-07-11",
+        "2015-07-12",
+        "2015-07-13",
+        "2015-07-14"
+      ],
+      "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+      "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=43.7&south=40.2&east=-89.9&west=-96.8&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+      "fillValue": 32767,
+      "intervalQualification": "Approximate provider calendar days; source note5 retained",
+      "latitudeBounds": [
+        40.19166666666667,
+        43.69166666666667
+      ],
+      "longitudeBounds": [
+        -96.80833330000002,
+        -89.89166663333334
+      ],
+      "observationIntervalEnd": "2015-07-15T07:00:00Z",
+      "observationIntervalStart": "2015-07-01T07:00:00Z",
+      "provider": "University of Idaho gridMET",
+      "publishedAt": null,
+      "rawFileHash": "b2fdd3d32b79cb75d9077771c33210d10ee612b022db92262511bf32250ba6c7",
+      "scaleFactor": 0.1,
+      "shape": [
+        14,
+        85,
+        167
+      ],
+      "sourceEditionText": "04 July 2019",
+      "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+      "unitsIn": "mm",
+      "unitsOut": "mm",
+      "unsignedPacking": "true"
+    },
+    "tmmn": {
+      "addOffset": 210.0,
+      "contentHash": "3ebcfc93503bcaa453e2e4a96cf202cb5622045012eb55355ead2c13e6f15387",
+      "crs": "EPSG:4326",
+      "dates": [
+        "2015-07-01",
+        "2015-07-02",
+        "2015-07-03",
+        "2015-07-04",
+        "2015-07-05",
+        "2015-07-06",
+        "2015-07-07",
+        "2015-07-08",
+        "2015-07-09",
+        "2015-07-10",
+        "2015-07-11",
+        "2015-07-12",
+        "2015-07-13",
+        "2015-07-14"
+      ],
+      "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+      "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=43.7&south=40.2&east=-89.9&west=-96.8&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+      "fillValue": 32767,
+      "intervalQualification": "Approximate provider calendar days; source note5 retained",
+      "latitudeBounds": [
+        40.19166666666667,
+        43.69166666666667
+      ],
+      "longitudeBounds": [
+        -96.80833330000002,
+        -89.89166663333334
+      ],
+      "observationIntervalEnd": "2015-07-15T07:00:00Z",
+      "observationIntervalStart": "2015-07-01T07:00:00Z",
+      "provider": "University of Idaho gridMET",
+      "publishedAt": null,
+      "rawFileHash": "0b739cc7d18836f807baaef7b70d1e6b6fb54ba9f354f607f8278b127389bc28",
+      "scaleFactor": 0.1,
+      "shape": [
+        14,
+        85,
+        167
+      ],
+      "sourceEditionText": "04 July 2019",
+      "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+      "unitsIn": "K",
+      "unitsOut": "degC",
+      "unsignedPacking": "true"
+    },
+    "tmmx": {
+      "addOffset": 220.0,
+      "contentHash": "f0cc792dc9f2fe45ef975095cc29f71c8313430164ed9af3a69db433f3075396",
+      "crs": "EPSG:4326",
+      "dates": [
+        "2015-07-01",
+        "2015-07-02",
+        "2015-07-03",
+        "2015-07-04",
+        "2015-07-05",
+        "2015-07-06",
+        "2015-07-07",
+        "2015-07-08",
+        "2015-07-09",
+        "2015-07-10",
+        "2015-07-11",
+        "2015-07-12",
+        "2015-07-13",
+        "2015-07-14"
+      ],
+      "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+      "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=43.7&south=40.2&east=-89.9&west=-96.8&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+      "fillValue": 32767,
+      "intervalQualification": "Approximate provider calendar days; source note5 retained",
+      "latitudeBounds": [
+        40.19166666666667,
+        43.69166666666667
+      ],
+      "longitudeBounds": [
+        -96.80833330000002,
+        -89.89166663333334
+      ],
+      "observationIntervalEnd": "2015-07-15T07:00:00Z",
+      "observationIntervalStart": "2015-07-01T07:00:00Z",
+      "provider": "University of Idaho gridMET",
+      "publishedAt": null,
+      "rawFileHash": "d25eea356f04381284a9be646766805a9521d88a6a026e83e56f0ebaa0cb4b4d",
+      "scaleFactor": 0.1,
+      "shape": [
+        14,
+        85,
+        167
+      ],
+      "sourceEditionText": "04 July 2019",
+      "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+      "unitsIn": "K",
+      "unitsOut": "degC",
+      "unsignedPacking": "true"
+    }
+  }
+}

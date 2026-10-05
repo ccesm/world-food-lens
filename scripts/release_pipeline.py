@@ -21,6 +21,7 @@ ALERT = "public/data/monitor-alerts.json"
 MANIFEST = "public/data/release-manifest.json"
 LEDGER = "public/data/alert-delivery.json"
 GENERATED = [f"public/data/{name}" for name in CACHES] + [ALERT, MANIFEST]
+ALL_GENERATED = GENERATED + ["public/data/corn-spatial.json"]  # Additive, optional in legacy releases.
 SHA = re.compile(r"[a-f0-9]{40}")
 HASH = re.compile(r"[a-f0-9]{64}")
 
@@ -105,6 +106,11 @@ def validate_manifest(manifest, snapshot, read_input, read_previous):
     for name in CACHES:
         raw = read_input(f"public/data/{name}", True)
         inputs.append([name, digest(raw) if raw is not None else None])
+    if (feed.get("analysis") or {}).get("cornSpatial") is not None:
+        raw = read_input("public/data/corn-spatial.json", False)
+        if raw is None:
+            raise ValueError("Level C artifact lacks release-bound input")
+        inputs.append(["corn-spatial.json", digest(raw)])
     for label, path in [("previous-alerts", ALERT), ("previous-delivery", LEDGER)]:
         raw = read_previous(path, True)
         inputs.append([label, digest(raw) if raw is not None else None])
@@ -118,6 +124,8 @@ def validate_manifest(manifest, snapshot, read_input, read_previous):
                 raise ValueError("Spatial-stage artifact lacks its release-bound configuration")
             continue
         inputs.append([path, digest(raw)])
+    if (feed.get("analysis") or {}).get("cornSpatial") is not None:
+        inputs.append(["src/data/cornSpatial.json", digest(read_input("src/data/cornSpatial.json", False))])
     if digest(compact(inputs)) != manifest["inputsHash"]:
         raise ValueError("Release input bytes do not match the evaluated data revision")
     identity = [1, manifest["sourceRevision"], manifest["evaluatedAt"], manifest["rulesVersion"], manifest["inputsHash"]]
@@ -132,7 +140,7 @@ def verify_release(repo, revision):
     if not SHA.fullmatch(source or "") or git(repo, "rev-parse", f"{revision}^").decode().strip() != source:
         raise ValueError("Release must be a generated-data commit directly following its source revision")
     changed = git(repo, "diff", "--name-only", source, revision).decode().splitlines()
-    if any(path not in GENERATED for path in changed):
+    if any(path not in ALL_GENERATED for path in changed):
         raise ValueError("Release commit unexpectedly changes source code")
     feed = validate_manifest(manifest, commit_bytes(repo, revision, ALERT),
         lambda path, optional: commit_bytes(repo, revision, path, optional),
@@ -152,16 +160,16 @@ def save_data(repo, dist):
     validate_manifest(manifest, (repo / ALERT).read_bytes(), local,
                       lambda path, optional: commit_bytes(repo, source, path, optional))
     status = git(repo, "status", "--porcelain", "--untracked-files=all").decode().splitlines()
-    if any(line[3:] not in GENERATED for line in status):
+    if any(line[3:] not in ALL_GENERATED for line in status):
         raise ValueError("Non-data working tree changes; refusing release commit")
-    for path in GENERATED:
+    for path in ALL_GENERATED:
         published = dist / path.removeprefix("public/")
         if (repo / path).exists() and ((not published.exists()) or published.read_bytes() != (repo / path).read_bytes()):
             raise ValueError("Pages artifact differs from the evaluated release")
     git(repo, "fetch", "origin", "main")
     if git(repo, "rev-parse", "origin/main").decode().strip() != source:
         raise ValueError("Main advanced during build; rebuild from current main")
-    git(repo, "add", "--", *GENERATED)
+    git(repo, "add", "--", *[path for path in ALL_GENERATED if (repo / path).exists() or git(repo, "ls-files", "--", path)])
     git(repo, "-c", "user.name=github-actions[bot]", "-c", "user.email=41898282+github-actions[bot]@users.noreply.github.com",
         "commit", "-m", "Refresh official data release")
     revision = git(repo, "rev-parse", "HEAD").decode().strip()

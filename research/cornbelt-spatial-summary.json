@@ -1,0 +1,3807 @@
+{
+  "analysisHash": "3cd4a9e0b80e09d1911d3bec44d2c891b4cc9c706a6f9384b70bab3ec5a49034",
+  "analysisPeriod": {
+    "end": "2015-07-14",
+    "start": "2015-07-01"
+  },
+  "boundaryAudit": {
+    "artifactHash": "c067e07c7b300a90bc21e69019b822bcff591518e396f2467ed029f330bfa52c",
+    "inputs": {
+      "IA": "0d241b2bbf16b89654c1d2253b4d30e86aa221761def9b7a1a02dfb9a76e52b6",
+      "IL": "efe86c7878ee9cef5c9744588dda0c44e38ebad7847a054baf716feb7097042b",
+      "IN": "8a4c9ca3c6708a0d200c6ef03bbff4d4c8c0448bffbd3ceb635330db27976e4b",
+      "KS": "8cc41f350604eab1c2d3dea4518303fd4bbfc4c35030a7c0a050ec6746fb54d1",
+      "MN": "ac6cd3ae3ff78c0b1ce1a2ad395217d2ad335345a43a0ef9c70b5903c64d90d0",
+      "MO": "fd4ebdd788eb50657b767bb59caac6952c1703fae49b2e85c792239ad211862b",
+      "NE": "8943151ea660e3702507d5b26622bba9a421145960e56ef993a1f647424d9c84",
+      "OH": "ab954f03037d10ed1971e684a78a290ee4751435810ead61f52f8b0c8c361c45",
+      "SD": "c3380963f3a63bf1800c3c1a470826bbb19d28dc2c497f07e2162c5d457c0599",
+      "WI": "3813c245e82cb0c3538b220bace905a86b73901d6ff86123fc1b643bf8aecd60"
+    },
+    "nativeAreaAudit": {
+      "IA": {
+        "cornClass1AreaM2": 52840406700,
+        "excludedCornNamedClassAreasM2": {
+          "12": 10436400,
+          "13": 25756200,
+          "225": 620100,
+          "226": 0,
+          "237": 0,
+          "241": 0
+        }
+      },
+      "IL": {
+        "cornClass1AreaM2": 46754116200,
+        "excludedCornNamedClassAreasM2": {
+          "12": 31759200,
+          "13": 112001400,
+          "225": 4060800,
+          "226": 15300,
+          "237": 126000,
+          "241": 130500
+        }
+      },
+      "IN": {
+        "cornClass1AreaM2": 23290730100,
+        "excludedCornNamedClassAreasM2": {
+          "12": 1536300,
+          "13": 171163800,
+          "225": 1669500,
+          "226": 0,
+          "237": 37800,
+          "241": 147600
+        }
+      },
+      "KS": {
+        "cornClass1AreaM2": 15998532300,
+        "excludedCornNamedClassAreasM2": {
+          "12": 0,
+          "13": 591300,
+          "225": 41561100,
+          "226": 889200,
+          "237": 0,
+          "241": 14400
+        }
+      },
+      "MN": {
+        "cornClass1AreaM2": 32157828000,
+        "excludedCornNamedClassAreasM2": {
+          "12": 462303000,
+          "13": 0,
+          "225": 0,
+          "226": 0,
+          "237": 0,
+          "241": 31500
+        }
+      },
+      "MO": {
+        "cornClass1AreaM2": 11835593100,
+        "excludedCornNamedClassAreasM2": {
+          "12": 333000,
+          "13": 74212200,
+          "225": 4128300,
+          "226": 0,
+          "237": 117000,
+          "241": 502200
+        }
+      },
+      "NE": {
+        "cornClass1AreaM2": 38322549900,
+        "excludedCornNamedClassAreasM2": {
+          "12": 104400,
+          "13": 120083400,
+          "225": 4278600,
+          "226": 0,
+          "237": 0,
+          "241": 0
+        }
+      },
+      "OH": {
+        "cornClass1AreaM2": 14218249500,
+        "excludedCornNamedClassAreasM2": {
+          "12": 5033700,
+          "13": 57347100,
+          "225": 1459800,
+          "226": 0,
+          "237": 59400,
+          "241": 0
+        }
+      },
+      "SD": {
+        "cornClass1AreaM2": 22088114100,
+        "excludedCornNamedClassAreasM2": {
+          "12": 0,
+          "13": 12404700,
+          "225": 0,
+          "226": 0,
+          "237": 0,
+          "241": 18000
+        }
+      },
+      "WI": {
+        "cornClass1AreaM2": 16566845400,
+        "excludedCornNamedClassAreasM2": {
+          "12": 240754500,
+          "13": 883800,
+          "225": 1870200,
+          "226": 864000,
+          "237": 852300,
+          "241": 13500
+        }
+      }
+    },
+    "pairwiseDuplicateCornAreaM2": 0
+  },
+  "contributingStates": [
+    "IA",
+    "IL",
+    "NE",
+    "MN",
+    "IN",
+    "SD",
+    "KS",
+    "OH",
+    "MO",
+    "WI"
+  ],
+  "coverage": 0.9999999999995749,
+  "grid": {
+    "cellSizeM": 9000,
+    "crs": "EPSG:5070",
+    "edgeSegments": 16,
+    "originX": -52095,
+    "originY": 2288295,
+    "version": "cornbelt-iowa-anchored-9km/1"
+  },
+  "implementation": {
+    "acquire.py": "d22f45b39d0147dad5e96674420686e2dc5847021cd04364d91de7bb90789f4b",
+    "audit_boundaries.py": "85f73ed60d09c66c3638a369c8d2ab3f9ce490bd0b885aac0085bad8667cfe7f",
+    "config.json": "cc61eae19f1df512ce1ea5a2cb8ff6793b5edb4c02677df1a31d464f552a2f90",
+    "geometry.py": "002028b58abc1bc7b5e57b4eacd86714889425eeb2d59c63794794dcdec1911b",
+    "validate.py": "95536d38b9075f645f20077ba0127da24b05e9dd6262b54f1a119ade61b49417"
+  },
+  "interpretation": {
+    "en": "Mapped crop area and weather distribution only; not national US exposure, affected acreage, crop damage or yield loss.",
+    "zh": "\u4ec5\u4e3a\u6240\u9009\u5341\u5dde\u7389\u7c73\u5236\u56fe\u9762\u79ef\u4e0e\u5929\u6c14\u5206\u5e03\uff1b\u4e0d\u662f\u7f8e\u56fd\u5168\u56fd\u66b4\u9732\u3001\u53d7\u707e\u9762\u79ef\u3001\u4f5c\u7269\u635f\u5bb3\u6216\u51cf\u4ea7\u3002"
+  },
+  "knownDenominatorCoverage": 0.9999999999995749,
+  "knownMappedCornAreaM2": 274072965300.0,
+  "label": {
+    "en": "Ten-state Corn Belt mapped-corn summary",
+    "zh": "\u5341\u5dde\u7389\u7c73\u5e26\u7389\u7c73\u5236\u56fe\u9762\u79ef\u6c47\u603b"
+  },
+  "methodVersion": "ten-state-mapped-corn-weather/1",
+  "missingGeographyStates": [],
+  "nativeMaskUnionVerified": true,
+  "provenance": {
+    "localStageEligibility": "insufficient",
+    "methodVersion": "ten-state-mapped-corn-weather/1",
+    "stateArtifacts": [
+      {
+        "analysisHash": "6d05962c62f9cac9951367ca971d0d1d198aacc168c4e28b9649914f08228001",
+        "state": "IA",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "4ec413a9122d834c542d21a8400638e967b33b41b3b85ac2a99e16e3a6b51d3e",
+        "state": "IL",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "5bf7398cf43d0c5a360a0752a661883d31da8113c1c09733739fa0f7fa34d670",
+        "state": "NE",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "fdada89dc182ab03f605ea78cb7eef624e82d47d292bff1284d330e25e615624",
+        "state": "MN",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "7c968a41e750c202ea19899dfd24774d0dc9fca0ff4cf892cb23b7ae5c78d13f",
+        "state": "IN",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "739f7814de2c1527dce78fe750173225f1598cc06ff358ac6db437042f447a71",
+        "state": "SD",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "6bde5b20e86c5137ca922ecd9759340fc594d3e016bbb31e7f9d03ef86841434",
+        "state": "KS",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "e6715c8b502e28af7f02f12a9dcf76aa18afced2552e2527d2511f4982c57b08",
+        "state": "OH",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "8134dc82a2b4ae7ce18ae2e552016db8c82915c6a97abff89b658f7b9d507a0e",
+        "state": "MO",
+        "status": "ok"
+      },
+      {
+        "analysisHash": "684c7173833bc8ce41cb4172eb0e93bd0dbaeb79438e6711bf476bd6c0aa5ba5",
+        "state": "WI",
+        "status": "ok"
+      }
+    ]
+  },
+  "runtimeVersions": {
+    "netCDF4": "1.7.4",
+    "numpy": "2.3.5",
+    "pyproj": "3.7.2",
+    "rasterio": "1.4.3",
+    "scipy": "1.16.3",
+    "shapely": "2.1.2"
+  },
+  "states": [
+    {
+      "analysisHash": "6d05962c62f9cac9951367ca971d0d1d198aacc168c4e28b9649914f08228001",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": -442851.14551634155,
+        "harvestedGrainAcres": 13050000.0,
+        "investigate": false,
+        "mappedCornAcres": 13057148.854483658,
+        "plantedAcres": 13500000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": -0.03280378855676604,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999999081,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 52840406699.99514,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 52840406699.99514,
+          "tmmn": 52840406699.99514,
+          "tmmx": 52840406699.99514
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.00485992431640625,
+        "backgroundCode": 0,
+        "bounds": [
+          -52095.0,
+          1938165.0,
+          481755.0,
+          2288295.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "0d241b2bbf16b89654c1d2253b4d30e86aa221761def9b7a1a02dfb9a76e52b6",
+        "cornAreaM2": 52840406700.0,
+        "cornCells": 1896,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_19.tif",
+        "gridCells": 2340,
+        "height": 11671,
+        "maximumCellConservationResidualM2": 4.051625728607178e-05,
+        "metadataHash": "6e203239a45a9be0237847c4de69b8117de2d0f2414d21888fc8108b8e44059d",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 19222,
+        "producerAccuracyPct": 98.54,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_ia15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          -52095.0,
+          0.0,
+          -30.0,
+          2288295.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 14901103.754309852,
+        "userAccuracyPct": 98.86,
+        "weatherCellsWithCorn": 9281,
+        "wholeStateCoverageEvidence": true,
+        "width": 17795
+      },
+      "mappedCornAreaM2": 52840406700.0,
+      "missingAreaM2": 0.00485992431640625,
+      "name": {
+        "en": "Iowa",
+        "zh": "\u7231\u8377\u534e\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 42,
+          "lon": -93.5
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": 0.612328770486763,
+          "tmaxDailyMeanC": -0.3987641079365855,
+          "tmaxPeriodMaximumC": -0.14180971864892503,
+          "tminDailyMeanC": 0.028375273346180258,
+          "tminPeriodMinimumC": 0.14552459619352434
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 41.983333333333334,
+          "lon": -93.51666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 73.60000000000001,
+          "tmaxDailyMeanC": 25.928571428571452,
+          "tmaxPeriodMaximumC": 32.950000000000045,
+          "tminDailyMeanC": 15.421428571428594,
+          "tminPeriodMinimumC": 11.050000000000011
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": 39.86260295868827,
+          "tmaxDailyMeanC": -0.6778989834921951,
+          "tmaxPeriodMaximumC": -0.24107652170317095,
+          "tminDailyMeanC": 0.06141219874209014,
+          "tminPeriodMinimumC": 0.49478362705798773
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": 8.562602958688267,
+          "tmaxDailyMeanC": 0.27781530222206996,
+          "tmaxPeriodMaximumC": -0.19107652170321643,
+          "tminDailyMeanC": 0.9335550558849253,
+          "tminPeriodMinimumC": 1.1847836270579766
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 42.300000000000004,
+          "sourceHash": "a21b465196c1a9bb985a543392fcaa5885e7b65a7aefe99a6ce3de41c5502738",
+          "tmaxDailyMeanC": 26.884285714285717,
+          "tmaxPeriodMaximumC": 33.0,
+          "tminDailyMeanC": 16.29357142857143,
+          "tminPeriodMinimumC": 11.74,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "95726d33486971846537942d50809c995788f97aabadb5ab805ec0774b46afba",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "0d241b2bbf16b89654c1d2253b4d30e86aa221761def9b7a1a02dfb9a76e52b6",
+            "datasetId": "research/usda-cdl/US-IA/2015"
+          },
+          {
+            "contentHash": "f0cc792dc9f2fe45ef975095cc29f71c8313430164ed9af3a69db433f3075396",
+            "datasetId": "research/gridmet/tmmx/US-IA"
+          },
+          {
+            "contentHash": "3ebcfc93503bcaa453e2e4a96cf202cb5622045012eb55355ead2c13e6f15387",
+            "datasetId": "research/gridmet/tmmn/US-IA"
+          },
+          {
+            "contentHash": "5146604bcd26e5abf4aa7fe385c28de3361119299eea140b73ef511f1f9b2a05",
+            "datasetId": "research/gridmet/pr/US-IA"
+          },
+          {
+            "contentHash": "a45f9733af9ea12010b6a102284080d6656fcf959586cfdc503850e692ffb458",
+            "datasetId": "research/census/US-IA/2015"
+          },
+          {
+            "contentHash": "4942bf2b75e9e867db6043348a8e1fa356831040069cc57302def9026997b238",
+            "datasetId": "research/cdl-metadata/US-IA/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-IA",
+      "state": "IA",
+      "status": "ok",
+      "validWeatherAreaM2": 52840406699.99514,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "5146604bcd26e5abf4aa7fe385c28de3361119299eea140b73ef511f1f9b2a05",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=43.7&south=40.2&east=-89.9&west=-96.8&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            40.19166666666667,
+            43.69166666666667
+          ],
+          "longitudeBounds": [
+            -96.80833330000002,
+            -89.89166663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "b2fdd3d32b79cb75d9077771c33210d10ee612b022db92262511bf32250ba6c7",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            85,
+            167
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "3ebcfc93503bcaa453e2e4a96cf202cb5622045012eb55355ead2c13e6f15387",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=43.7&south=40.2&east=-89.9&west=-96.8&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            40.19166666666667,
+            43.69166666666667
+          ],
+          "longitudeBounds": [
+            -96.80833330000002,
+            -89.89166663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "0b739cc7d18836f807baaef7b70d1e6b6fb54ba9f354f607f8278b127389bc28",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            85,
+            167
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "f0cc792dc9f2fe45ef975095cc29f71c8313430164ed9af3a69db433f3075396",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=43.7&south=40.2&east=-89.9&west=-96.8&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            40.19166666666667,
+            43.69166666666667
+          ],
+          "longitudeBounds": [
+            -96.80833330000002,
+            -89.89166663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "d25eea356f04381284a9be646766805a9521d88a6a026e83e56f0ebaa0cb4b4d",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            85,
+            167
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 150.0,
+          "mean": 33.73739704131174,
+          "min": 3.5,
+          "p10": 10.600000000000001,
+          "p50": 24.1,
+          "p90": 75.7
+        },
+        "tmaxDailyMeanC": {
+          "max": 29.07142857142859,
+          "mean": 26.606470412063647,
+          "min": 24.70714285714288,
+          "p10": 25.764285714285734,
+          "p50": 26.57142857142859,
+          "p90": 27.464285714285733
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 35.55000000000001,
+          "mean": 33.191076521703216,
+          "min": 31.25,
+          "p10": 32.35000000000002,
+          "p50": 33.150000000000034,
+          "p90": 34.05000000000001
+        },
+        "tminDailyMeanC": {
+          "max": 18.321428571428594,
+          "mean": 15.360016372686504,
+          "min": 12.457142857142884,
+          "p10": 14.450000000000017,
+          "p50": 15.264285714285734,
+          "p90": 16.61428571428573
+        },
+        "tminPeriodMinimumC": {
+          "max": 14.75,
+          "mean": 10.555216372942024,
+          "min": 7.650000000000034,
+          "p10": 9.050000000000011,
+          "p50": 10.25,
+          "p90": 12.450000000000045
+        }
+      }
+    },
+    {
+      "analysisHash": "4ec413a9122d834c542d21a8400638e967b33b41b3b85ac2a99e16e3a6b51d3e",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": -146806.281238826,
+        "harvestedGrainAcres": 11500000.0,
+        "investigate": false,
+        "mappedCornAcres": 11553193.718761174,
+        "plantedAcres": 11700000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": -0.012547545405027862,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998608,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 46754116199.99349,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 46754116199.99349,
+          "tmmn": 46754116199.99349,
+          "tmmx": 46754116199.99349
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.0065155029296875,
+        "backgroundCode": 0,
+        "bounds": [
+          378585.0,
+          1569045.0,
+          731325.0,
+          2194905.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "efe86c7878ee9cef5c9744588dda0c44e38ebad7847a054baf716feb7097042b",
+        "cornAreaM2": 46754116200.0,
+        "cornCells": 1897,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_17.tif",
+        "gridCells": 2870,
+        "height": 20862,
+        "maximumCellConservationResidualM2": 3.962963819503784e-05,
+        "metadataHash": "2b416b2fe20252c5babf849730e7ff7335d9931e79b6309314eeec84ac91c3ae",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 18616,
+        "producerAccuracyPct": 98.02,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_il15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          378585.0,
+          0.0,
+          -30.0,
+          2194905.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 20781056.52045376,
+        "userAccuracyPct": 97.92,
+        "weatherCellsWithCorn": 8958,
+        "wholeStateCoverageEvidence": true,
+        "width": 11758
+      },
+      "mappedCornAreaM2": 46754116200.0,
+      "missingAreaM2": 0.00650787353515625,
+      "name": {
+        "en": "Illinois",
+        "zh": "\u4f0a\u5229\u8bfa\u4f0a\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 40.5,
+          "lon": -89
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": 0.42447451429152383,
+          "tmaxDailyMeanC": 0.022353461883709565,
+          "tmaxPeriodMaximumC": 0.28091943141226083,
+          "tminDailyMeanC": -0.1234913951880971,
+          "tminPeriodMinimumC": -0.17053759491704507
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 40.48333333333334,
+          "lon": -89.01666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 116.9,
+          "tmaxDailyMeanC": 26.892857142857164,
+          "tmaxPeriodMaximumC": 33.650000000000034,
+          "tminDailyMeanC": 16.114285714285735,
+          "tminPeriodMinimumC": 12.050000000000011
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": 35.5709642976297,
+          "tmaxDailyMeanC": 0.0667410504813617,
+          "tmaxPeriodMaximumC": 0.8708502373780149,
+          "tminDailyMeanC": -0.5627679295000405,
+          "tminPeriodMinimumC": -0.835634215093517
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": 15.350964297629687,
+          "tmaxDailyMeanC": -0.9375446638043741,
+          "tmaxPeriodMaximumC": -2.14914976262202,
+          "tminDailyMeanC": 0.16151778478565149,
+          "tminPeriodMinimumC": -1.4756342150935282
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 96.67999999999999,
+          "sourceHash": "b12e797151a21011be8ba8233b740cd431cf479040fd1a3dc519963dd7bd2c29",
+          "tmaxDailyMeanC": 25.888571428571428,
+          "tmaxPeriodMaximumC": 30.63,
+          "tminDailyMeanC": 16.838571428571427,
+          "tminPeriodMinimumC": 11.41,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "f478c74524b057fe8851f6bba3914019d65463b95d6bcb20d7ffb86a5deeb054",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "efe86c7878ee9cef5c9744588dda0c44e38ebad7847a054baf716feb7097042b",
+            "datasetId": "research/usda-cdl/US-IL/2015"
+          },
+          {
+            "contentHash": "535007816524559caa9634f299ee05abb907a6e216eec9b814178ec7907434c4",
+            "datasetId": "research/gridmet/tmmx/US-IL"
+          },
+          {
+            "contentHash": "7e7213db7c5145312ce2c05e3a229cd5d194744c6fbb50f7d14cc01b0e5e1235",
+            "datasetId": "research/gridmet/tmmn/US-IL"
+          },
+          {
+            "contentHash": "1cfa63132f3222be9a20e9afb065cee734b83ccbf8d56f69649e55847edc02ac",
+            "datasetId": "research/gridmet/pr/US-IL"
+          },
+          {
+            "contentHash": "2e2750cc68995c48be9379a362551045491bbc30cce788b7d4af52e02f96e909",
+            "datasetId": "research/census/US-IL/2015"
+          },
+          {
+            "contentHash": "4d4196feeec02c3ad0bcda9a51a4a92a5c87e65d781982246f3decc5e055d5a8",
+            "datasetId": "research/cdl-metadata/US-IL/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-IL",
+      "state": "IL",
+      "status": "ok",
+      "validWeatherAreaM2": 46754116199.99349,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "1cfa63132f3222be9a20e9afb065cee734b83ccbf8d56f69649e55847edc02ac",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=42.758352&south=36.788278&west=-91.789277&east=-86.950364&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            36.775000000000006,
+            42.775000000000006
+          ],
+          "longitudeBounds": [
+            -91.80833330000002,
+            -86.93333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "c35c904fe351aed0bb29b1361fcef40220f6670931ff3e73cdb6e3ff0a558cae",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            145,
+            118
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "7e7213db7c5145312ce2c05e3a229cd5d194744c6fbb50f7d14cc01b0e5e1235",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=42.758352&south=36.788278&west=-91.789277&east=-86.950364&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            36.775000000000006,
+            42.775000000000006
+          ],
+          "longitudeBounds": [
+            -91.80833330000002,
+            -86.93333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "c001a68ad1ac7303e611065bb705d2fc8f5f0b3a71277e5f3cd3cf1a0383aa49",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            145,
+            118
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "535007816524559caa9634f299ee05abb907a6e216eec9b814178ec7907434c4",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=42.758352&south=36.788278&west=-91.789277&east=-86.950364&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            36.775000000000006,
+            42.775000000000006
+          ],
+          "longitudeBounds": [
+            -91.80833330000002,
+            -86.93333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "af156dbeca3f45de0e92b09f9b4b299379548380b3d81374a3039bc990d193db",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            145,
+            118
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 278.80000000000007,
+          "mean": 81.3290357023703,
+          "min": 9.3,
+          "p10": 43.199999999999996,
+          "p50": 76.1,
+          "p90": 127.0
+        },
+        "tmaxDailyMeanC": {
+          "max": 31.642857142857167,
+          "mean": 26.826116092375802,
+          "min": 22.842857142857174,
+          "p10": 25.485714285714298,
+          "p50": 26.700000000000024,
+          "p90": 28.471428571428596
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 37.150000000000034,
+          "mean": 32.77914976262202,
+          "min": 29.350000000000023,
+          "p10": 31.05000000000001,
+          "p50": 33.05000000000001,
+          "p90": 34.150000000000034
+        },
+        "tminDailyMeanC": {
+          "max": 22.42142857142859,
+          "mean": 16.677053643785776,
+          "min": 12.42142857142859,
+          "p10": 14.721428571428598,
+          "p50": 16.507142857142878,
+          "p90": 19.27857142857144
+        },
+        "tminPeriodMinimumC": {
+          "max": 20.05000000000001,
+          "mean": 12.885634215093528,
+          "min": 7.350000000000023,
+          "p10": 10.350000000000023,
+          "p50": 13.050000000000011,
+          "p90": 15.25
+        }
+      }
+    },
+    {
+      "analysisHash": "5bf7398cf43d0c5a360a0752a661883d31da8113c1c09733739fa0f7fa34d670",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": 69708.31183397956,
+        "harvestedGrainAcres": 9150000.0,
+        "investigate": false,
+        "mappedCornAcres": 9469708.31183398,
+        "plantedAcres": 9400000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": 0.007415777854678677,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.999999999999882,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 38322549899.995476,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 38322549899.995476,
+          "tmmn": 38322549899.995476,
+          "tmmx": 38322549899.995476
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.0045318603515625,
+        "backgroundCode": 0,
+        "bounds": [
+          -671205.0,
+          1887015.0,
+          58545.0,
+          2250435.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "8943151ea660e3702507d5b26622bba9a421145960e56ef993a1f647424d9c84",
+        "cornAreaM2": 38322549900.0,
+        "cornCells": 2420,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_31.tif",
+        "gridCells": 3362,
+        "height": 12114,
+        "maximumCellConservationResidualM2": 4.885345697402954e-05,
+        "metadataHash": "1434066fe021233fb43fd4c7d8373066ba94ff773679f28207e955d9ecb9a5cb",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 19181,
+        "producerAccuracyPct": 98.38,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_ne15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          -671205.0,
+          0.0,
+          -30.0,
+          2250435.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 14638387.604140196,
+        "userAccuracyPct": 97.91,
+        "weatherCellsWithCorn": 10272,
+        "wholeStateCoverageEvidence": true,
+        "width": 24325
+      },
+      "mappedCornAreaM2": 38322549900.0,
+      "missingAreaM2": 0.00452423095703125,
+      "name": {
+        "en": "Nebraska",
+        "zh": "\u5185\u5e03\u62c9\u65af\u52a0\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 41,
+          "lon": -98
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": -0.029758336398177973,
+          "tmaxDailyMeanC": -0.21287606419143526,
+          "tmaxPeriodMaximumC": -0.22138046972657285,
+          "tminDailyMeanC": 0.30042336032856604,
+          "tminPeriodMinimumC": -0.16197403728555743
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 40.98333333333334,
+          "lon": -98.01666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 36.5,
+          "tmaxDailyMeanC": 28.6714285714286,
+          "tmaxPeriodMaximumC": 34.950000000000045,
+          "tminDailyMeanC": 16.97142857142859,
+          "tminPeriodMinimumC": 10.25
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": -1.3301976369985553,
+          "tmaxDailyMeanC": -0.553477766897732,
+          "tmaxPeriodMaximumC": -0.6420033622070562,
+          "tminDailyMeanC": 0.5514914543174427,
+          "tminPeriodMinimumC": -0.40493509321389354
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": 2.6898023630014407,
+          "tmaxDailyMeanC": -0.019906338326329376,
+          "tmaxPeriodMaximumC": -0.21200336220709914,
+          "tminDailyMeanC": 1.176491454317425,
+          "tminPeriodMinimumC": 0.5950649067861065
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 40.519999999999996,
+          "sourceHash": "dfb567ccd1ef1db49cdbc8b2d0ea8253c471b4e6fd014dc18bf3a9ca2c2e3aa0",
+          "tmaxDailyMeanC": 29.205000000000002,
+          "tmaxPeriodMaximumC": 35.38,
+          "tminDailyMeanC": 17.59642857142857,
+          "tminPeriodMinimumC": 11.25,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "f8e15614a6e627236a4c012a7899917bcd76119813212fff4c6b7756160e4ee9",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "8943151ea660e3702507d5b26622bba9a421145960e56ef993a1f647424d9c84",
+            "datasetId": "research/usda-cdl/US-NE/2015"
+          },
+          {
+            "contentHash": "76fbc84e2ea32f3d8318d0e75e534ba7bf5f4a220875f5fbc613f40031501c7e",
+            "datasetId": "research/gridmet/tmmx/US-NE"
+          },
+          {
+            "contentHash": "02809f6fc6e7563eb56350a66a562c9b16fff91dde53dc419fb4f109005c23b8",
+            "datasetId": "research/gridmet/tmmn/US-NE"
+          },
+          {
+            "contentHash": "39ee0069e9cc5fae817d748d6340aadbfd3b7c59a3ca7a492e704e69bb0b09e1",
+            "datasetId": "research/gridmet/pr/US-NE"
+          },
+          {
+            "contentHash": "63e08800dd715872825313407694fe91f6ff785ac8e4b4ebb5e93217d231f41d",
+            "datasetId": "research/census/US-NE/2015"
+          },
+          {
+            "contentHash": "a51caea42f49698b8d8604d6843dead01e28cdef851e2defd36b4d6615fcb2d7",
+            "datasetId": "research/cdl-metadata/US-NE/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-NE",
+      "state": "NE",
+      "status": "ok",
+      "validWeatherAreaM2": 38322549899.995476,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "39ee0069e9cc5fae817d748d6340aadbfd3b7c59a3ca7a492e704e69bb0b09e1",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=43.338267&south=39.660792&west=-104.376126&east=-95.18543&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            39.650000000000006,
+            43.358333333333334
+          ],
+          "longitudeBounds": [
+            -104.39166663333334,
+            -95.18333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "3a189fa00b7aedb1648d61d3e78937af250385d928b0737aebf3114034e74c62",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            90,
+            222
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "02809f6fc6e7563eb56350a66a562c9b16fff91dde53dc419fb4f109005c23b8",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=43.338267&south=39.660792&west=-104.376126&east=-95.18543&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            39.650000000000006,
+            43.358333333333334
+          ],
+          "longitudeBounds": [
+            -104.39166663333334,
+            -95.18333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "e1851d5e534d96908f8754abfa7b3a57de7a9077b129c5142cab59beb4c78707",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            90,
+            222
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "76fbc84e2ea32f3d8318d0e75e534ba7bf5f4a220875f5fbc613f40031501c7e",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=43.338267&south=39.660792&west=-104.376126&east=-95.18543&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            39.650000000000006,
+            43.358333333333334
+          ],
+          "longitudeBounds": [
+            -104.39166663333334,
+            -95.18333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "e3f1efed7ecdb994933f843387a2921962f9d497a2791abcdc8787119971af86",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            90,
+            222
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 142.5,
+          "mean": 37.830197636998555,
+          "min": 1.8000000000000003,
+          "p10": 15.300000000000002,
+          "p50": 37.2,
+          "p90": 60.0
+        },
+        "tmaxDailyMeanC": {
+          "max": 33.307142857142885,
+          "mean": 29.22490633832633,
+          "min": 26.58571428571431,
+          "p10": 28.05714285714288,
+          "p50": 29.00000000000002,
+          "p90": 30.65714285714288
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 40.05000000000001,
+          "mean": 35.5920033622071,
+          "min": 32.05000000000001,
+          "p10": 34.35000000000002,
+          "p50": 35.25,
+          "p90": 37.25
+        },
+        "tminDailyMeanC": {
+          "max": 18.278571428571446,
+          "mean": 16.419937117111147,
+          "min": 11.464285714285735,
+          "p10": 15.521428571428592,
+          "p50": 16.350000000000016,
+          "p90": 17.35714285714289
+        },
+        "tminPeriodMinimumC": {
+          "max": 14.25,
+          "mean": 10.654935093213894,
+          "min": 8.050000000000011,
+          "p10": 9.450000000000045,
+          "p50": 10.550000000000011,
+          "p90": 11.950000000000045
+        }
+      }
+    },
+    {
+      "analysisHash": "fdada89dc182ab03f605ea78cb7eef624e82d47d292bff1284d330e25e615624",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": -153627.6449045092,
+        "harvestedGrainAcres": 7600000.0,
+        "investigate": false,
+        "mappedCornAcres": 7946372.355095491,
+        "plantedAcres": 8100000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": -0.018966375914136937,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998281,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 32157827999.994473,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 32157827999.994473,
+          "tmmn": 32157827999.994473,
+          "tmmx": 32157827999.994473
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.005519866943359375,
+        "backgroundCode": 0,
+        "bounds": [
+          -91875.0,
+          2278515.0,
+          489285.0,
+          2930685.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "ac6cd3ae3ff78c0b1ce1a2ad395217d2ad335345a43a0ef9c70b5903c64d90d0",
+        "cornAreaM2": 32157828000.0,
+        "cornCells": 2285,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_27.tif",
+        "gridCells": 4884,
+        "height": 21739,
+        "maximumCellConservationResidualM2": 2.473592758178711e-05,
+        "metadataHash": "943ad8309422711efedff62673975686caac7d1299bce11f872bd8d4eb7938b8",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 20244,
+        "producerAccuracyPct": 98.46,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_mn15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          -91875.0,
+          0.0,
+          -30.0,
+          2930685.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 44322165.617326245,
+        "userAccuracyPct": 98.67,
+        "weatherCellsWithCorn": 10773,
+        "wholeStateCoverageEvidence": true,
+        "width": 19372
+      },
+      "mappedCornAreaM2": 32157828000.0,
+      "missingAreaM2": 0.005527496337890625,
+      "name": {
+        "en": "Minnesota",
+        "zh": "\u660e\u5c3c\u82cf\u8fbe\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 44,
+          "lon": -95
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": -0.09036089680875252,
+          "tmaxDailyMeanC": 0.25604438832651655,
+          "tmaxPeriodMaximumC": 0.40571797745074406,
+          "tminDailyMeanC": 0.1497134063518915,
+          "tminPeriodMinimumC": 0.10190327998249293
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 43.983333333333334,
+          "lon": -95.01666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 37.3,
+          "tmaxDailyMeanC": 27.007142857142874,
+          "tmaxPeriodMaximumC": 33.25,
+          "tminDailyMeanC": 15.021428571428588,
+          "tminPeriodMinimumC": 9.050000000000011
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": -5.430689898206026,
+          "tmaxDailyMeanC": 0.48099767235624213,
+          "tmaxPeriodMaximumC": 1.33886932558746,
+          "tminDailyMeanC": 0.23847206868908444,
+          "tminPeriodMinimumC": 0.21399688796323169
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": -1.7306898982060233,
+          "tmaxDailyMeanC": 2.1324262437848027,
+          "tmaxPeriodMaximumC": 3.1988693255874594,
+          "tminDailyMeanC": 1.2170434972604998,
+          "tminPeriodMinimumC": 0.39399688796322074
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 41.0,
+          "sourceHash": "2604fc2a89900c1e006bf2ac09d6cc85e686006fdec3562b7dedf54497edb18a",
+          "tmaxDailyMeanC": 28.658571428571435,
+          "tmaxPeriodMaximumC": 35.11,
+          "tminDailyMeanC": 16.000000000000004,
+          "tminPeriodMinimumC": 9.23,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "77906fa6ef60b9979494e28d62c4f4186b789235b3517706a10c4396f488162f",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "ac6cd3ae3ff78c0b1ce1a2ad395217d2ad335345a43a0ef9c70b5903c64d90d0",
+            "datasetId": "research/usda-cdl/US-MN/2015"
+          },
+          {
+            "contentHash": "8cc649c5133633869aae9e968a975315c2d1a301623f9d76eb97d976af8201e6",
+            "datasetId": "research/gridmet/tmmx/US-MN"
+          },
+          {
+            "contentHash": "552064d00e8691fb8ae3316251c5a258f841eaefd10c471d4b7563980db12704",
+            "datasetId": "research/gridmet/tmmn/US-MN"
+          },
+          {
+            "contentHash": "c7d316ea849194cb20302d601b055d3d823e33931749fbc8ed1e7a32fb118679",
+            "datasetId": "research/gridmet/pr/US-MN"
+          },
+          {
+            "contentHash": "fcab30284f158970869ec6e21b4dec906f82736f113665b40add9b23114efaea",
+            "datasetId": "research/census/US-MN/2015"
+          },
+          {
+            "contentHash": "8cfafea0676d51870f15b1de8f487a7a12d537bf5a060267320666ac66c2e263",
+            "datasetId": "research/cdl-metadata/US-MN/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-MN",
+      "state": "MN",
+      "status": "ok",
+      "validWeatherAreaM2": 32157827999.994473,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "c7d316ea849194cb20302d601b055d3d823e33931749fbc8ed1e7a32fb118679",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=49.476821&south=43.269803&west=-97.337551&east=-89.276518&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            43.275000000000006,
+            49.400000000000006
+          ],
+          "longitudeBounds": [
+            -97.34999996666667,
+            -89.26666663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "cc20edcbac0225f4c2ae8a89519c5a77e6f68207480b00ceb595e66ba371780d",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            148,
+            195
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "552064d00e8691fb8ae3316251c5a258f841eaefd10c471d4b7563980db12704",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=49.476821&south=43.269803&west=-97.337551&east=-89.276518&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            43.275000000000006,
+            49.400000000000006
+          ],
+          "longitudeBounds": [
+            -97.34999996666667,
+            -89.26666663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "9313ad9b0d5a7a45115885a5d9d8a08dd4b12eda7548ee896e27f8f527f4f90e",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            148,
+            195
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "8cc649c5133633869aae9e968a975315c2d1a301623f9d76eb97d976af8201e6",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=49.476821&south=43.269803&west=-97.337551&east=-89.276518&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            43.275000000000006,
+            49.400000000000006
+          ],
+          "longitudeBounds": [
+            -97.34999996666667,
+            -89.26666663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "d7b96a3dc6daa789e691d4ae18142522a0c3a47bd4be9d022ee6819a2bf6c245",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            148,
+            195
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 194.60000000000002,
+          "mean": 42.73068989820602,
+          "min": 3.4000000000000004,
+          "p10": 18.400000000000002,
+          "p50": 35.9,
+          "p90": 78.5
+        },
+        "tmaxDailyMeanC": {
+          "max": 29.192857142857168,
+          "mean": 26.526145184786632,
+          "min": 20.03571428571431,
+          "p10": 25.657142857142876,
+          "p50": 26.492857142857165,
+          "p90": 27.535714285714306
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 35.55000000000001,
+          "mean": 31.91113067441254,
+          "min": 22.650000000000034,
+          "p10": 30.350000000000023,
+          "p50": 31.650000000000034,
+          "p90": 33.650000000000034
+        },
+        "tminDailyMeanC": {
+          "max": 16.607142857142872,
+          "mean": 14.782956502739504,
+          "min": 10.064285714285736,
+          "p10": 13.82857142857145,
+          "p50": 14.942857142857159,
+          "p90": 15.421428571428594
+        },
+        "tminPeriodMinimumC": {
+          "max": 11.650000000000034,
+          "mean": 8.83600311203678,
+          "min": 3.5500000000000114,
+          "p10": 7.650000000000034,
+          "p50": 8.950000000000045,
+          "p90": 9.75
+        }
+      }
+    },
+    {
+      "analysisHash": "7c968a41e750c202ea19899dfd24774d0dc9fca0ff4cf892cb23b7ae5c78d13f",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": 105264.74600929022,
+        "harvestedGrainAcres": 5480000.0,
+        "investigate": false,
+        "mappedCornAcres": 5755264.74600929,
+        "plantedAcres": 5650000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": 0.018630928497219507,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998798,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 23290730099.9972,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 23290730099.9972,
+          "tmmn": 23290730099.9972,
+          "tmmx": 23290730099.9972
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.00279998779296875,
+        "backgroundCode": 0,
+        "bounds": [
+          687435.0,
+          1666935.0,
+          961725.0,
+          2138445.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "8a4c9ca3c6708a0d200c6ef03bbff4d4c8c0448bffbd3ceb635330db27976e4b",
+        "cornAreaM2": 23290730100.0,
+        "cornCells": 1257,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_18.tif",
+        "gridCells": 1674,
+        "height": 15717,
+        "maximumCellConservationResidualM2": 2.751871943473816e-05,
+        "metadataHash": "cccc1efcab0fb0371d978e6849c03376da36814c7512dcebb6fec3846199ac63",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 12002,
+        "producerAccuracyPct": 96.37,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_in15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          687435.0,
+          0.0,
+          -30.0,
+          2138445.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 26533618.100286443,
+        "userAccuracyPct": 95.78,
+        "weatherCellsWithCorn": 5806,
+        "wholeStateCoverageEvidence": true,
+        "width": 9143
+      },
+      "mappedCornAreaM2": 23290730100.0,
+      "missingAreaM2": 0.00279998779296875,
+      "name": {
+        "en": "Indiana",
+        "zh": "\u5370\u7b2c\u5b89\u7eb3\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 40,
+          "lon": -86
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": 1.0704979382614843,
+          "tmaxDailyMeanC": 0.061813873976472124,
+          "tmaxPeriodMaximumC": -0.14422755345213234,
+          "tminDailyMeanC": -0.021203317348454022,
+          "tminPeriodMinimumC": -0.04645878479630553
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 39.98333333333334,
+          "lon": -86.01666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 185.00000000000003,
+          "tmaxDailyMeanC": 26.100000000000026,
+          "tmaxPeriodMaximumC": 29.55000000000001,
+          "tminDailyMeanC": 16.085714285714317,
+          "tminPeriodMinimumC": 12.850000000000023
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": 80.3943951634375,
+          "tmaxDailyMeanC": 0.20751800549244237,
+          "tmaxPeriodMaximumC": -0.6201784798441707,
+          "tminDailyMeanC": -0.08996264646415497,
+          "tminPeriodMinimumC": -0.2137104100630065
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": 12.974395163437464,
+          "tmaxDailyMeanC": -0.42748199450758406,
+          "tmaxPeriodMaximumC": -1.1901784798441817,
+          "tminDailyMeanC": 0.8121802106786724,
+          "tminPeriodMinimumC": 0.2262895899369699
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 117.58,
+          "sourceHash": "aaa6db32e43ea8ba8b787ff12cb61985d7c72eb7cf000370d7a5d362ea8f6116",
+          "tmaxDailyMeanC": 25.465,
+          "tmaxPeriodMaximumC": 28.98,
+          "tminDailyMeanC": 16.987857142857145,
+          "tminPeriodMinimumC": 13.29,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "aa517651fe8981a06deb0c73c84d2627433c2e552904f15effc2e140173d5911",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "8a4c9ca3c6708a0d200c6ef03bbff4d4c8c0448bffbd3ceb635330db27976e4b",
+            "datasetId": "research/usda-cdl/US-IN/2015"
+          },
+          {
+            "contentHash": "149ffe2e3ce9e57091311b43b9af5bf122ced8616ab4401f99bc9d97a2404d50",
+            "datasetId": "research/gridmet/tmmx/US-IN"
+          },
+          {
+            "contentHash": "b2fdcab60990b2a1a8fe6fcd5e32821279e09e13fe5d0efff04890c055ad8084",
+            "datasetId": "research/gridmet/tmmn/US-IN"
+          },
+          {
+            "contentHash": "893acf3268dc59e6da857178eb9cca67b4627b74a3ede976feced17432dd8ac9",
+            "datasetId": "research/gridmet/pr/US-IN"
+          },
+          {
+            "contentHash": "ea3461a3e7b28454a5df4b41f18f2561d517d6f64fe9cca3bcc869c2d5cf4f3b",
+            "datasetId": "research/census/US-IN/2015"
+          },
+          {
+            "contentHash": "9a2222d2593afb7fc91d5cfc33022617ed4f22d8da6805c00ec9e7bacdb0283f",
+            "datasetId": "research/cdl-metadata/US-IN/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-IN",
+      "state": "IN",
+      "status": "ok",
+      "validWeatherAreaM2": 23290730099.9972,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "893acf3268dc59e6da857178eb9cca67b4627b74a3ede976feced17432dd8ac9",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=42.065521&south=37.448931&west=-88.20099&east=-84.237345&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            37.44166666666667,
+            42.06666666666667
+          ],
+          "longitudeBounds": [
+            -88.18333330000002,
+            -84.22499996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "a93e81a30c148e073adf11a7a309109ed2727d3c85fc685e25109a345942f671",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            112,
+            96
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "b2fdcab60990b2a1a8fe6fcd5e32821279e09e13fe5d0efff04890c055ad8084",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=42.065521&south=37.448931&west=-88.20099&east=-84.237345&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            37.44166666666667,
+            42.06666666666667
+          ],
+          "longitudeBounds": [
+            -88.18333330000002,
+            -84.22499996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "78578e795cb00f2f121168290c37ecef791368b1c12afb8230dc7df798533d41",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            112,
+            96
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "149ffe2e3ce9e57091311b43b9af5bf122ced8616ab4401f99bc9d97a2404d50",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=42.065521&south=37.448931&west=-88.20099&east=-84.237345&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            37.44166666666667,
+            42.06666666666667
+          ],
+          "longitudeBounds": [
+            -88.18333330000002,
+            -84.22499996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "bc3186a361f194d3178e9f70844eb6d1bc341f6a571c84706e85dc3fff36ebab",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            112,
+            96
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 291.9,
+          "mean": 104.60560483656253,
+          "min": 17.5,
+          "p10": 70.5,
+          "p50": 98.80000000000001,
+          "p90": 145.60000000000002
+        },
+        "tmaxDailyMeanC": {
+          "max": 30.178571428571455,
+          "mean": 25.892481994507584,
+          "min": 23.54285714285717,
+          "p10": 24.78571428571431,
+          "p50": 25.40714285714288,
+          "p90": 28.14285714285717
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 34.55000000000001,
+          "mean": 30.170178479844182,
+          "min": 27.850000000000023,
+          "p10": 28.75,
+          "p50": 29.55000000000001,
+          "p90": 33.05000000000001
+        },
+        "tminDailyMeanC": {
+          "max": 21.49285714285717,
+          "mean": 16.175676932178472,
+          "min": 13.51428571428573,
+          "p10": 14.478571428571447,
+          "p50": 15.678571428571454,
+          "p90": 18.721428571428593
+        },
+        "tminPeriodMinimumC": {
+          "max": 19.150000000000034,
+          "mean": 13.06371041006303,
+          "min": 10.550000000000011,
+          "p10": 11.350000000000023,
+          "p50": 12.550000000000011,
+          "p90": 15.950000000000045
+        }
+      }
+    },
+    {
+      "analysisHash": "739f7814de2c1527dce78fe750173225f1598cc06ff358ac6db437042f447a71",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": 58091.86057077348,
+        "harvestedGrainAcres": 5030000.0,
+        "investigate": false,
+        "mappedCornAcres": 5458091.8605707735,
+        "plantedAcres": 5400000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": 0.010757751957550644,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998815,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 22088114099.997383,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 22088114099.997383,
+          "tmmn": 22088114099.997383,
+          "tmmx": 22088114099.997383
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.00261688232421875,
+        "backgroundCode": 0,
+        "bounds": [
+          -652245.0,
+          2164635.0,
+          -35325.0,
+          2577225.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "c3380963f3a63bf1800c3c1a470826bbb19d28dc2c497f07e2162c5d457c0599",
+        "cornAreaM2": 22088114100.0,
+        "cornCells": 2242,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_46.tif",
+        "gridCells": 3243,
+        "height": 13753,
+        "maximumCellConservationResidualM2": 2.7243047952651978e-05,
+        "metadataHash": "a7285672b7a331d28389ef324dfd35ef5f5f4b7b2f746c411e9fcc4e4b138fca",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 17683,
+        "producerAccuracyPct": 97.24,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_sd15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          -652245.0,
+          0.0,
+          -30.0,
+          2577225.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 15594935.371808017,
+        "userAccuracyPct": 97.24,
+        "weatherCellsWithCorn": 9851,
+        "wholeStateCoverageEvidence": true,
+        "width": 20564
+      },
+      "mappedCornAreaM2": 22088114100.0,
+      "missingAreaM2": 0.00261688232421875,
+      "name": {
+        "en": "South Dakota",
+        "zh": "\u5357\u8fbe\u79d1\u4ed6\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 44,
+          "lon": -97.5
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": -0.12143756514222073,
+          "tmaxDailyMeanC": -0.44083979378427557,
+          "tmaxPeriodMaximumC": -0.32111157435184934,
+          "tminDailyMeanC": -0.5988431393167865,
+          "tminPeriodMinimumC": -0.20869550262864886
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 43.983333333333334,
+          "lon": -97.51666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 35.1,
+          "tmaxDailyMeanC": 27.05000000000002,
+          "tmaxPeriodMaximumC": 34.05000000000001,
+          "tminDailyMeanC": 14.74285714285717,
+          "tminPeriodMinimumC": 9.150000000000034
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": -7.213391369447912,
+          "tmaxDailyMeanC": -1.1335880411595696,
+          "tmaxPeriodMaximumC": -0.8348900933147974,
+          "tminDailyMeanC": -0.834102944048384,
+          "tminPeriodMinimumC": -0.6052169576230888
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": 20.166608630552084,
+          "tmaxDailyMeanC": 0.5506976731261268,
+          "tmaxPeriodMaximumC": -0.16489009331480986,
+          "tminDailyMeanC": 0.6387541988087335,
+          "tminPeriodMinimumC": -0.005216957623122909
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 62.48,
+          "sourceHash": "2417ca31c8116b303231b104e0ad2ede07584dacf62c2409c8ea19955663f094",
+          "tmaxDailyMeanC": 28.734285714285715,
+          "tmaxPeriodMaximumC": 34.72,
+          "tminDailyMeanC": 16.215714285714288,
+          "tminPeriodMinimumC": 9.75,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "a8335448595f695e718e41706ca67fb9af7e94cee7b2c9e0b2c842a2857306f3",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "c3380963f3a63bf1800c3c1a470826bbb19d28dc2c497f07e2162c5d457c0599",
+            "datasetId": "research/usda-cdl/US-SD/2015"
+          },
+          {
+            "contentHash": "dcf1095aa5bcfb5a87de2ba6ad822ba353bd802a326c9441fff7adf919d3214f",
+            "datasetId": "research/gridmet/tmmx/US-SD"
+          },
+          {
+            "contentHash": "126f8a9b914665b01acc2badad7bacb1adae0369ad2168cdea0811cd4226bd67",
+            "datasetId": "research/gridmet/tmmn/US-SD"
+          },
+          {
+            "contentHash": "3565522bdd844c99bcd09f6bdc48ef7bf12c8f5494a618652917a033089d4447",
+            "datasetId": "research/gridmet/pr/US-SD"
+          },
+          {
+            "contentHash": "d3a9dbe5690f254de3d8be8c7ed0006c729c5567000abd44a04b047aefd98f41",
+            "datasetId": "research/census/US-SD/2015"
+          },
+          {
+            "contentHash": "61a61bb4d16d1107b34f5212cd4aab253fa10d106640925b05b19ac3c8ec1486",
+            "datasetId": "research/cdl-metadata/US-SD/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-SD",
+      "state": "SD",
+      "status": "ok",
+      "validWeatherAreaM2": 22088114099.997383,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "3565522bdd844c99bcd09f6bdc48ef7bf12c8f5494a618652917a033089d4447",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=46.27276&south=42.145811&west=-104.499342&east=-96.342367&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            42.150000000000006,
+            46.275000000000006
+          ],
+          "longitudeBounds": [
+            -104.51666663333334,
+            -96.34999996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "2ac1ba13ad45c7d1b6f7ff9eb6b09ad83ea22e3041fbd1464d97ddaaeafeeeed",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            100,
+            197
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "126f8a9b914665b01acc2badad7bacb1adae0369ad2168cdea0811cd4226bd67",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=46.27276&south=42.145811&west=-104.499342&east=-96.342367&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            42.150000000000006,
+            46.275000000000006
+          ],
+          "longitudeBounds": [
+            -104.51666663333334,
+            -96.34999996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "97920c77d3c3a670fa7601b818bb80d68b526f9384756c256fb1df2bc1bbbb3b",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            100,
+            197
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "dcf1095aa5bcfb5a87de2ba6ad822ba353bd802a326c9441fff7adf919d3214f",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=46.27276&south=42.145811&west=-104.499342&east=-96.342367&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            42.150000000000006,
+            46.275000000000006
+          ],
+          "longitudeBounds": [
+            -104.51666663333334,
+            -96.34999996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "61f567008768ccc2c50db62ada5079360bfd799fe2f6dee2b4946feca865d50a",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            100,
+            197
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 156.60000000000002,
+          "mean": 42.31339136944791,
+          "min": 0.8,
+          "p10": 13.5,
+          "p50": 40.5,
+          "p90": 72.9
+        },
+        "tmaxDailyMeanC": {
+          "max": 31.6214285714286,
+          "mean": 28.183588041159588,
+          "min": 22.735714285714312,
+          "p10": 26.792857142857166,
+          "p50": 28.30000000000003,
+          "p90": 29.364285714285746
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 37.85000000000002,
+          "mean": 34.88489009331481,
+          "min": 27.05000000000001,
+          "p10": 33.450000000000045,
+          "p50": 34.950000000000045,
+          "p90": 36.05000000000001
+        },
+        "tminDailyMeanC": {
+          "max": 17.485714285714312,
+          "mean": 15.576960086905554,
+          "min": 9.828571428571454,
+          "p10": 14.907142857142881,
+          "p50": 15.528571428571452,
+          "p90": 16.30000000000003
+        },
+        "tminPeriodMinimumC": {
+          "max": 13.550000000000011,
+          "mean": 9.755216957623123,
+          "min": 6.9500000000000455,
+          "p10": 8.25,
+          "p50": 9.75,
+          "p90": 11.150000000000034
+        }
+      }
+    },
+    {
+      "analysisHash": "6bde5b20e86c5137ca922ecd9759340fc594d3e016bbb31e7f9d03ef86841434",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": -196676.57309373422,
+        "harvestedGrainAcres": 3920000.0,
+        "investigate": false,
+        "mappedCornAcres": 3953323.426906266,
+        "plantedAcres": 4150000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": -0.04739194532379138,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998618,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 15998532299.99779,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 15998532299.99779,
+          "tmmn": 15998532299.99779,
+          "tmmx": 15998532299.99779
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.0022106170654296875,
+        "backgroundCode": 0,
+        "bounds": [
+          -532395.0,
+          1550625.0,
+          121845.0,
+          1903635.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "8cc41f350604eab1c2d3dea4518303fd4bbfc4c35030a7c0a050ec6746fb54d1",
+        "cornAreaM2": 15998532300.0,
+        "cornCells": 2718,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_20.tif",
+        "gridCells": 2960,
+        "height": 11767,
+        "maximumCellConservationResidualM2": 1.8522143363952637e-05,
+        "metadataHash": "b81e18ab65ef6a66921fea64bcac8605351e4bc25871a34faad2b4e09bbb207c",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 22198,
+        "producerAccuracyPct": 94.84,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_ks15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          -532395.0,
+          0.0,
+          -30.0,
+          1903635.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 9159149.436758226,
+        "userAccuracyPct": 95.34,
+        "weatherCellsWithCorn": 12253,
+        "wholeStateCoverageEvidence": true,
+        "width": 21808
+      },
+      "mappedCornAreaM2": 15998532300.0,
+      "missingAreaM2": 0.0022106170654296875,
+      "name": {
+        "en": "Kansas",
+        "zh": "\u582a\u8428\u65af\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 39,
+          "lon": -98
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": -0.16415274070935804,
+          "tmaxDailyMeanC": 0.3636519738514797,
+          "tmaxPeriodMaximumC": 0.32446452972543294,
+          "tminDailyMeanC": 0.0324157462637348,
+          "tminPeriodMinimumC": -0.16060584124302354
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 38.98333333333334,
+          "lon": -98.01666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 35.60000000000001,
+          "tmaxDailyMeanC": 32.76428571428574,
+          "tmaxPeriodMaximumC": 39.35000000000002,
+          "tminDailyMeanC": 18.357142857142886,
+          "tminPeriodMinimumC": 12.350000000000023
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": -15.05280632304813,
+          "tmaxDailyMeanC": 1.4208402121197103,
+          "tmaxPeriodMaximumC": 1.5898761956546323,
+          "tminDailyMeanC": 0.13823000371035477,
+          "tminPeriodMinimumC": -0.8833321268366294
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": -16.022806323048137,
+          "tmaxDailyMeanC": 0.8136973549768207,
+          "tmaxPeriodMaximumC": 1.0198761956546107,
+          "tminDailyMeanC": 2.198944289424613,
+          "tminPeriodMinimumC": 1.1966678731633476
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 34.63,
+          "sourceHash": "69c8eb2e00047eda03969a38e0c3d5755801dfc5271b08e265dcb6fc3ae9954d",
+          "tmaxDailyMeanC": 32.15714285714285,
+          "tmaxPeriodMaximumC": 38.78,
+          "tminDailyMeanC": 20.417857142857144,
+          "tminPeriodMinimumC": 14.43,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "e8d8aba14e9e0c0f2090892605a9cfa293adef982f254e6592932cb55dfaf9b2",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "8cc41f350604eab1c2d3dea4518303fd4bbfc4c35030a7c0a050ec6746fb54d1",
+            "datasetId": "research/usda-cdl/US-KS/2015"
+          },
+          {
+            "contentHash": "9ef9b53074cd64f31532f956dba50d452e3ebcbe329cf0260c38f4f88853e764",
+            "datasetId": "research/gridmet/tmmx/US-KS"
+          },
+          {
+            "contentHash": "302f11aaba8522ee8bedd4cf6595ccce308fa2aac788159a8f80ca959affe71c",
+            "datasetId": "research/gridmet/tmmn/US-KS"
+          },
+          {
+            "contentHash": "76b7637d7dc25d07e5330cb94d2cf2192991900c57430bd66eb3984b6d753da6",
+            "datasetId": "research/gridmet/pr/US-KS"
+          },
+          {
+            "contentHash": "f655cde2ff4c808bc852aefb0e4f7cb1a6189116f80db8329fb2e55b1ddd0dee",
+            "datasetId": "research/census/US-KS/2015"
+          },
+          {
+            "contentHash": "64a74c527699497bed41733e8494e637893b5881655cc873e528ad7a4a36a305",
+            "datasetId": "research/cdl-metadata/US-KS/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-KS",
+      "state": "KS",
+      "status": "ok",
+      "validWeatherAreaM2": 15998532299.99779,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "76b7637d7dc25d07e5330cb94d2cf2192991900c57430bd66eb3984b6d753da6",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=40.238666&south=36.758012&west=-102.385236&east=-94.467259&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            36.775000000000006,
+            40.23333333333334
+          ],
+          "longitudeBounds": [
+            -102.39166663333334,
+            -94.47499996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "7f6352b70ea80de8e08965f8e42b0f22bbbee8fe150c9a78bc0698427d6bebfc",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            84,
+            191
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "302f11aaba8522ee8bedd4cf6595ccce308fa2aac788159a8f80ca959affe71c",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=40.238666&south=36.758012&west=-102.385236&east=-94.467259&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            36.775000000000006,
+            40.23333333333334
+          ],
+          "longitudeBounds": [
+            -102.39166663333334,
+            -94.47499996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "ee5deab311b530586f0c762ed0c13b9d0fb697fc906f938931c9e561788fa5ff",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            84,
+            191
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "9ef9b53074cd64f31532f956dba50d452e3ebcbe329cf0260c38f4f88853e764",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=40.238666&south=36.758012&west=-102.385236&east=-94.467259&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            36.775000000000006,
+            40.23333333333334
+          ],
+          "longitudeBounds": [
+            -102.39166663333334,
+            -94.47499996666667
+          ],
+          "publishedAt": null,
+          "rawFileHash": "6a84cf970daf432bd02a79d1719d8660524dd5e7ed8cf6406bcef4b9c4b3a0aa",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            84,
+            191
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 179.7,
+          "mean": 50.65280632304814,
+          "min": 5.2,
+          "p10": 16.3,
+          "p50": 38.5,
+          "p90": 107.99999999999999
+        },
+        "tmaxDailyMeanC": {
+          "max": 34.16428571428574,
+          "mean": 31.34344550216603,
+          "min": 28.107142857142883,
+          "p10": 28.97142857142859,
+          "p50": 31.91428571428574,
+          "p90": 32.87857142857145
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 41.85000000000002,
+          "mean": 37.76012380434539,
+          "min": 34.55000000000001,
+          "p10": 35.25,
+          "p50": 38.25,
+          "p90": 40.150000000000034
+        },
+        "tminDailyMeanC": {
+          "max": 22.271428571428597,
+          "mean": 18.21891285343253,
+          "min": 14.685714285714303,
+          "p10": 16.028571428571457,
+          "p50": 18.178571428571452,
+          "p90": 20.29285714285717
+        },
+        "tminPeriodMinimumC": {
+          "max": 19.05000000000001,
+          "mean": 13.233332126836652,
+          "min": 9.350000000000023,
+          "p10": 11.050000000000011,
+          "p50": 12.350000000000023,
+          "p90": 16.55000000000001
+        }
+      }
+    },
+    {
+      "analysisHash": "e6715c8b502e28af7f02f12a9dcf76aa18afced2552e2527d2511f4982c57b08",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": -36594.03350716736,
+        "harvestedGrainAcres": 3260000.0,
+        "investigate": false,
+        "mappedCornAcres": 3513405.9664928326,
+        "plantedAcres": 3550000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": -0.0103081784527232,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999941117,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 14218249499.916279,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 14218249499.916279,
+          "tmmn": 14218249499.916279,
+          "tmmx": 14218249499.916279
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.08372116088867188,
+        "backgroundCode": 0,
+        "bounds": [
+          922755.0,
+          1790145.0,
+          1292655.0,
+          2211915.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "ab954f03037d10ed1971e684a78a290ee4751435810ead61f52f8b0c8c361c45",
+        "cornAreaM2": 14218249500.0,
+        "cornCells": 1403,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_39.tif",
+        "gridCells": 2016,
+        "height": 14059,
+        "maximumCellConservationResidualM2": 0.08184867724776268,
+        "metadataHash": "541b82350617d25c3d891f72fa8d87d0e948daf5d4ff56d60ec765650dbf0493",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 12450,
+        "producerAccuracyPct": 96.6,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_oh15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          922755.0,
+          0.0,
+          -30.0,
+          2211915.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 55079679.06738261,
+        "userAccuracyPct": 97.19,
+        "weatherCellsWithCorn": 6390,
+        "wholeStateCoverageEvidence": true,
+        "width": 12330
+      },
+      "mappedCornAreaM2": 14218249500.0,
+      "missingAreaM2": 0.08372116088867188,
+      "name": {
+        "en": "Ohio",
+        "zh": "\u4fc4\u4ea5\u4fc4\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 40.5,
+          "lon": -83.5
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": -0.3322479533628782,
+          "tmaxDailyMeanC": -0.3150040351959538,
+          "tmaxPeriodMaximumC": -0.5036782528908716,
+          "tminDailyMeanC": -0.11724195170644976,
+          "tminPeriodMinimumC": -0.14550928962988538
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 40.48333333333334,
+          "lon": -83.51666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 63.3,
+          "tmaxDailyMeanC": 25.114285714285735,
+          "tmaxPeriodMaximumC": 28.25,
+          "tminDailyMeanC": 15.464285714285738,
+          "tminPeriodMinimumC": 12.050000000000011
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": -20.466473927153302,
+          "tmaxDailyMeanC": -0.30150386225898274,
+          "tmaxPeriodMaximumC": -0.7555173793363075,
+          "tminDailyMeanC": -0.2328090183885223,
+          "tminPeriodMinimumC": -0.4074260109636807
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": -8.186473927153301,
+          "tmaxDailyMeanC": -0.5200752908304338,
+          "tmaxPeriodMaximumC": -1.5555173793363082,
+          "tminDailyMeanC": 0.16790526732573774,
+          "tminPeriodMinimumC": -1.0074260109636928
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 75.58,
+          "sourceHash": "0115d974e1cb294f0b50c436fd00d3d2d4c5c6b0380f3d883757b1f087fe37ca",
+          "tmaxDailyMeanC": 24.895714285714284,
+          "tmaxPeriodMaximumC": 27.45,
+          "tminDailyMeanC": 15.864999999999998,
+          "tminPeriodMinimumC": 11.45,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "31d0161075f2bcb403e92257a7cf4f3dd47e9325ab56a7889f92f3367baa8b8f",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "ab954f03037d10ed1971e684a78a290ee4751435810ead61f52f8b0c8c361c45",
+            "datasetId": "research/usda-cdl/US-OH/2015"
+          },
+          {
+            "contentHash": "33b8bcecc6463cd7def9dc5998cd58828642cfdc39816dee46c0bc9e85988188",
+            "datasetId": "research/gridmet/tmmx/US-OH"
+          },
+          {
+            "contentHash": "c4cc59c56d3c396955e8cbd8db80f3e95a7ba6538098aef3ff4f5b26e2d952f7",
+            "datasetId": "research/gridmet/tmmn/US-OH"
+          },
+          {
+            "contentHash": "bfe58936409384f68b6b93c6fe491e90a5f9a56a3c2303ecebef4301452badb9",
+            "datasetId": "research/gridmet/pr/US-OH"
+          },
+          {
+            "contentHash": "80f43814a323d0499453c38164ab81e294990931ad75b7e9135b92cd7f912607",
+            "datasetId": "research/census/US-OH/2015"
+          },
+          {
+            "contentHash": "55be6f1dd8a1937972fc88814b59462b1617ad287fe1635bb358e1a38188bd2b",
+            "datasetId": "research/cdl-metadata/US-OH/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-OH",
+      "state": "OH",
+      "status": "ok",
+      "validWeatherAreaM2": 14218249499.916279,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "bfe58936409384f68b6b93c6fe491e90a5f9a56a3c2303ecebef4301452badb9",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=42.501588&south=38.135774&west=-85.361198&east=-80.137705&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            38.150000000000006,
+            42.483333333333334
+          ],
+          "longitudeBounds": [
+            -85.34999996666667,
+            -80.14166663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "5b932290ab9e6fe53f849294be8316543c7072480ad9b3327a2188f75f7507d7",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            105,
+            126
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "c4cc59c56d3c396955e8cbd8db80f3e95a7ba6538098aef3ff4f5b26e2d952f7",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=42.501588&south=38.135774&west=-85.361198&east=-80.137705&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            38.150000000000006,
+            42.483333333333334
+          ],
+          "longitudeBounds": [
+            -85.34999996666667,
+            -80.14166663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "2016082971ef8e1e7aedd0715f76428b21cf12f64dcdcdeb01eb1cbdc4c79e18",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            105,
+            126
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "33b8bcecc6463cd7def9dc5998cd58828642cfdc39816dee46c0bc9e85988188",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=42.501588&south=38.135774&west=-85.361198&east=-80.137705&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            38.150000000000006,
+            42.483333333333334
+          ],
+          "longitudeBounds": [
+            -85.34999996666667,
+            -80.14166663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "6e6f455a346cbaee37ff6f73bdc4d21be9598da39020f18ed8e1840b9387a971",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            105,
+            126
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 200.20000000000002,
+          "mean": 83.7664739271533,
+          "min": 23.1,
+          "p10": 53.0,
+          "p50": 82.00000000000001,
+          "p90": 114.60000000000001
+        },
+        "tmaxDailyMeanC": {
+          "max": 27.650000000000027,
+          "mean": 25.415789576544718,
+          "min": 24.014285714285744,
+          "p10": 25.000000000000025,
+          "p50": 25.342857142857167,
+          "p90": 25.957142857142877
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 32.150000000000034,
+          "mean": 29.005517379336307,
+          "min": 27.350000000000023,
+          "p10": 28.350000000000023,
+          "p50": 28.950000000000045,
+          "p90": 29.850000000000023
+        },
+        "tminDailyMeanC": {
+          "max": 19.135714285714318,
+          "mean": 15.69709473267426,
+          "min": 12.521428571428597,
+          "p10": 14.742857142857165,
+          "p50": 15.700000000000017,
+          "p90": 16.728571428571456
+        },
+        "tminPeriodMinimumC": {
+          "max": 16.950000000000045,
+          "mean": 12.457426010963692,
+          "min": 7.350000000000023,
+          "p10": 11.25,
+          "p50": 12.25,
+          "p90": 14.050000000000011
+        }
+      }
+    },
+    {
+      "analysisHash": "8134dc82a2b4ae7ce18ae2e552016db8c82915c6a97abff89b658f7b9d507a0e",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": -325361.2521343501,
+        "harvestedGrainAcres": 3080000.0,
+        "investigate": true,
+        "mappedCornAcres": 2924638.74786565,
+        "plantedAcres": 3250000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": -0.10011115450287696,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998579,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 11835593099.998318,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 11835593099.998318,
+          "tmmn": 11835593099.998318,
+          "tmmx": 11835593099.998318
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.001682281494140625,
+        "backgroundCode": 0,
+        "bounds": [
+          18885.0,
+          1453095.0,
+          608235.0,
+          1963785.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "fd4ebdd788eb50657b767bb59caac6952c1703fae49b2e85c792239ad211862b",
+        "cornAreaM2": 11835593100.0,
+        "cornCells": 2200,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_29.tif",
+        "gridCells": 3819,
+        "height": 17023,
+        "maximumCellConservationResidualM2": 1.630932092666626e-05,
+        "metadataHash": "da1594a33a9a8044adaf1000f2fa7bb983f8ea205b137305b30a09af84707b78",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 15590,
+        "producerAccuracyPct": 95.34,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_mo15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          18885.0,
+          0.0,
+          -30.0,
+          1963785.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 28783065.599558078,
+        "userAccuracyPct": 96.02,
+        "weatherCellsWithCorn": 8801,
+        "wholeStateCoverageEvidence": true,
+        "width": 19645
+      },
+      "mappedCornAreaM2": 11835593100.0,
+      "missingAreaM2": 0.001682281494140625,
+      "name": {
+        "en": "Missouri",
+        "zh": "\u5bc6\u82cf\u91cc\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 39,
+          "lon": -92
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": 0.26464684857739906,
+          "tmaxDailyMeanC": -0.1986274224160936,
+          "tmaxPeriodMaximumC": -0.044886555170329974,
+          "tminDailyMeanC": -0.037699925714451334,
+          "tminPeriodMinimumC": -0.10980888480983562
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 38.98333333333334,
+          "lon": -92.01666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 113.4,
+          "tmaxDailyMeanC": 28.07857142857145,
+          "tmaxPeriodMaximumC": 34.450000000000045,
+          "tminDailyMeanC": 18.778571428571446,
+          "tminPeriodMinimumC": 14.25
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": 25.194379984568386,
+          "tmaxDailyMeanC": -0.46961197728376547,
+          "tmaxPeriodMaximumC": -0.06284117723846094,
+          "tminDailyMeanC": -0.1588782583680448,
+          "tminPeriodMinimumC": -0.6808150858209796
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": 13.68437998456838,
+          "tmaxDailyMeanC": -0.42175483442664685,
+          "tmaxPeriodMaximumC": 0.02715882276149273,
+          "tminDailyMeanC": -0.18387825836806115,
+          "tminPeriodMinimumC": -0.8208150858209802
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 101.89,
+          "sourceHash": "08dc408aefb953460625df98b46ecdfb40db8dd2032ddf706e6f1bca4e37b789",
+          "tmaxDailyMeanC": 28.12642857142857,
+          "tmaxPeriodMaximumC": 34.54,
+          "tminDailyMeanC": 18.75357142857143,
+          "tminPeriodMinimumC": 14.11,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "eca6f99155dda26284d6138b4fc67fa9d4ae97d5de5fb161d006fe242beb8cc8",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "fd4ebdd788eb50657b767bb59caac6952c1703fae49b2e85c792239ad211862b",
+            "datasetId": "research/usda-cdl/US-MO/2015"
+          },
+          {
+            "contentHash": "2da1e1360ee9d20807bf0af1c2130a575844e58fdf1d85f6eb3ba90df7e749db",
+            "datasetId": "research/gridmet/tmmx/US-MO"
+          },
+          {
+            "contentHash": "b98755c10a4bff17c3b2fc4f597820401bc052e2d2bdc07c157a6046d621516c",
+            "datasetId": "research/gridmet/tmmn/US-MO"
+          },
+          {
+            "contentHash": "68ff1b8687c930349f62b7a2066c41e842716fcc00402e93c2182a1faed78846",
+            "datasetId": "research/gridmet/pr/US-MO"
+          },
+          {
+            "contentHash": "0c79220488adb2c11e6e975d754722ae99c7a2e88ff79b4920c8bfe395c4f78d",
+            "datasetId": "research/census/US-MO/2015"
+          },
+          {
+            "contentHash": "254aa7d235401f4b04624cb28bf9d5edb0e1b15b1061f55874a0ca68213e1ba6",
+            "datasetId": "research/cdl-metadata/US-MO/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-MO",
+      "state": "MO",
+      "status": "ok",
+      "validWeatherAreaM2": 11835593099.998318,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "68ff1b8687c930349f62b7a2066c41e842716fcc00402e93c2182a1faed78846",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=40.775427&south=35.843575&west=-95.878257&east=-88.66713&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            35.858333333333334,
+            40.775000000000006
+          ],
+          "longitudeBounds": [
+            -95.89166663333334,
+            -88.68333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "d823a08ed5abcefe1aed7a54d9154e236c97311382aa59da9e4e27c3780fbb61",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            119,
+            174
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "b98755c10a4bff17c3b2fc4f597820401bc052e2d2bdc07c157a6046d621516c",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=40.775427&south=35.843575&west=-95.878257&east=-88.66713&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            35.858333333333334,
+            40.775000000000006
+          ],
+          "longitudeBounds": [
+            -95.89166663333334,
+            -88.68333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "d647aec82cfe7fb310eaeb0f266d4f329a9a820b10e44f24c773fe77eb71afb4",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            119,
+            174
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "2da1e1360ee9d20807bf0af1c2130a575844e58fdf1d85f6eb3ba90df7e749db",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=40.775427&south=35.843575&west=-95.878257&east=-88.66713&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            35.858333333333334,
+            40.775000000000006
+          ],
+          "longitudeBounds": [
+            -95.89166663333334,
+            -88.68333330000002
+          ],
+          "publishedAt": null,
+          "rawFileHash": "b37871bb191065f33cb7ab8c0c5737241cb105e38ad9fea405067fec4cc8a125",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            119,
+            174
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 343.09999999999997,
+          "mean": 88.20562001543162,
+          "min": 15.8,
+          "p10": 42.4,
+          "p50": 83.5,
+          "p90": 137.6
+        },
+        "tmaxDailyMeanC": {
+          "max": 31.69285714285716,
+          "mean": 28.548183405855216,
+          "min": 26.735714285714312,
+          "p10": 27.728571428571453,
+          "p50": 28.32142857142859,
+          "p90": 30.092857142857174
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 36.950000000000045,
+          "mean": 34.512841177238506,
+          "min": 32.55000000000001,
+          "p10": 33.85000000000002,
+          "p50": 34.450000000000045,
+          "p90": 35.25
+        },
+        "tminDailyMeanC": {
+          "max": 23.435714285714308,
+          "mean": 18.93744968693949,
+          "min": 16.51428571428574,
+          "p10": 17.40714285714288,
+          "p50": 18.592857142857163,
+          "p90": 21.62142857142859
+        },
+        "tminPeriodMinimumC": {
+          "max": 21.05000000000001,
+          "mean": 14.93081508582098,
+          "min": 11.75,
+          "p10": 13.050000000000011,
+          "p50": 14.25,
+          "p90": 19.25
+        }
+      }
+    },
+    {
+      "analysisHash": "684c7173833bc8ce41cb4172eb0e93bd0dbaeb79438e6711bf476bd6c0aa5ba5",
+      "areaValidation": {
+        "calibrationApplied": false,
+        "comparisonBasis": "Planted all-purpose corn; harvested grain is separate context, not calibration",
+        "cropYear": 2015,
+        "differenceAcres": 93756.6522745532,
+        "harvestedGrainAcres": 3000000.0,
+        "investigate": false,
+        "mappedCornAcres": 4093756.652274553,
+        "plantedAcres": 4000000.0,
+        "publicationDate": "2016-01-12",
+        "rawHash": "907f8fcfdd5d843ca9f7c505336d04a845bb5c7eafc6d875b3b357b9ef59ef45",
+        "relativeDifference": 0.0234391630686383,
+        "url": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt"
+      },
+      "coverage": 0.9999999999998761,
+      "coverageDiagnostics": {
+        "jointValidAreaM2": 16566845399.997948,
+        "missingValueDates": {
+          "pr": [],
+          "tmmn": [],
+          "tmmx": []
+        },
+        "missingWeatherCellsWithCorn": 0,
+        "variableCoveredAreaM2": {
+          "pr": 16566845399.997948,
+          "tmmn": 16566845399.997948,
+          "tmmx": 16566845399.997948
+        }
+      },
+      "cropSource": {
+        "areaConservationResidualM2": 0.0020542144775390625,
+        "backgroundCode": 0,
+        "bounds": [
+          242535.0,
+          2180055.0,
+          718545.0,
+          2688855.0
+        ],
+        "classificationPolicy": "Class 1 only; 0 background/unclassified; no yield/production weighting",
+        "contentHash": "3813c245e82cb0c3538b220bace905a86b73901d6ff86123fc1b643bf8aecd60",
+        "cornAreaM2": 16566845400.0,
+        "cornCells": 1841,
+        "cornClass": 1,
+        "cropYear": 2015,
+        "crs": "EPSG:5070",
+        "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_55.tif",
+        "gridCells": 3132,
+        "height": 16960,
+        "maximumCellConservationResidualM2": 1.8753111362457275e-05,
+        "metadataHash": "2f2aaf3b6cb9085d6f344fbb8de1ddc9c0980361068476c13e90b5aafe445f36",
+        "nativeResolutionM": 30,
+        "nodataTag": null,
+        "nonzeroWeights": 15984,
+        "producerAccuracyPct": 97.01,
+        "provider": "USDA NASS CDL",
+        "publicationDate": "2016-02-12",
+        "publishedAt": null,
+        "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_wi15.htm",
+        "transform": [
+          30.0,
+          0.0,
+          242535.0,
+          0.0,
+          -30.0,
+          2688855.0
+        ],
+        "unclassifiedInsideGeneralizedBoundaryM2": 182589353.4934266,
+        "userAccuracyPct": 95.77,
+        "weatherCellsWithCorn": 8480,
+        "wholeStateCoverageEvidence": true,
+        "width": 15867
+      },
+      "mappedCornAreaM2": 16566845400.0,
+      "missingAreaM2": 0.00205230712890625,
+      "name": {
+        "en": "Wisconsin",
+        "zh": "\u5a01\u65af\u5eb7\u661f\u5dde"
+      },
+      "pointComparison": {
+        "caveat": "Same-provider comparison isolates sampling; POWER includes provider/support and UTC vs gridMET 07UTC day differences. No pass/fail threshold.",
+        "coordinate": {
+          "lat": 43.5,
+          "lon": -89.5
+        },
+        "differenceDividedBySpatialP10P90Range": {
+          "precipitation14DayMm": -0.0698513753248552,
+          "tmaxDailyMeanC": -0.15787409451043224,
+          "tmaxPeriodMaximumC": -0.04295184830636527,
+          "tminDailyMeanC": 0.1889429770614896,
+          "tminPeriodMinimumC": 0.13559754462336784
+        },
+        "gridmetNativeCellCentre": {
+          "lat": 43.483333333333334,
+          "lon": -89.51666663333334
+        },
+        "gridmetPoint": {
+          "precipitation14DayMm": 48.2,
+          "tmaxDailyMeanC": 25.207142857142877,
+          "tmaxPeriodMaximumC": 29.75,
+          "tminDailyMeanC": 13.507142857142883,
+          "tminPeriodMinimumC": 8.550000000000011
+        },
+        "gridmetPointMinusAreaMean": {
+          "precipitation14DayMm": -5.3785559000138505,
+          "tmaxDailyMeanC": -0.22102373231460604,
+          "tmaxPeriodMaximumC": -0.13744591458036837,
+          "tminDailyMeanC": 0.36708921257660876,
+          "tminPeriodMinimumC": 0.3389938615584196
+        },
+        "powerUtcPointMinusAreaMean": {
+          "precipitation14DayMm": -3.8185559000138554,
+          "tmaxDailyMeanC": 0.5068334105425158,
+          "tmaxPeriodMaximumC": 0.22255408541963106,
+          "tminDailyMeanC": 1.1963749268622959,
+          "tminPeriodMinimumC": 0.008993861558408867
+        },
+        "powerUtcReference": {
+          "eligibility": "eligible",
+          "precipitation14DayMm": 49.76,
+          "sourceHash": "ffead19462099e47d8c2311568c1a77768568b81eae74cb4c5a3a019eefe89b3",
+          "tmaxDailyMeanC": 25.935,
+          "tmaxPeriodMaximumC": 30.11,
+          "tminDailyMeanC": 14.33642857142857,
+          "tminPeriodMinimumC": 8.22,
+          "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20120325&end=20191207&format=JSON&time-standard=UTC"
+        }
+      },
+      "provenance": {
+        "annualWeightVersion": "3a7ce987118bb66244a85065d52d6f41f5081f7384c0bf7ba9b77c81c2e58df6",
+        "availability": "retrospective-post-season-map; original-time availability unverified",
+        "cropYear": 2015,
+        "eligibility": "eligible",
+        "gridVersion": "cornbelt-iowa-anchored-9km/1",
+        "inputs": [
+          {
+            "contentHash": "3813c245e82cb0c3538b220bace905a86b73901d6ff86123fc1b643bf8aecd60",
+            "datasetId": "research/usda-cdl/US-WI/2015"
+          },
+          {
+            "contentHash": "a4943ed37ea634836234ef8bbcf611715fde402f3aa441b884dedac3cc078044",
+            "datasetId": "research/gridmet/tmmx/US-WI"
+          },
+          {
+            "contentHash": "45894fefb2d52b29a3f776fa6e3a31a57dde4600edc1d3f8fd55876ff12a4bd4",
+            "datasetId": "research/gridmet/tmmn/US-WI"
+          },
+          {
+            "contentHash": "baf73e889a0ba0ce0cbb7aaaab2bd2f7be789d79852e3f6014be368374c61522",
+            "datasetId": "research/gridmet/pr/US-WI"
+          },
+          {
+            "contentHash": "6c56d7472366ba395b494ae904002d76eaf7d5d88162c8309a04cd2cab0428fc",
+            "datasetId": "research/census/US-WI/2015"
+          },
+          {
+            "contentHash": "fa287f8dfd1f85973d2327a309dbe91f72b893e546d072e437294a8960d8cb0b",
+            "datasetId": "research/cdl-metadata/US-WI/2015"
+          }
+        ],
+        "localStageEligibility": "insufficient",
+        "methodVersion": "ten-state-mapped-corn-weather/1",
+        "observationPeriod": {
+          "end": "2015-07-14",
+          "start": "2015-07-01"
+        }
+      },
+      "stableId": "US-WI",
+      "state": "WI",
+      "status": "ok",
+      "validWeatherAreaM2": 16566845399.997948,
+      "weatherSources": {
+        "pr": {
+          "addOffset": 0.0,
+          "contentHash": "baf73e889a0ba0ce0cbb7aaaab2bd2f7be789d79852e3f6014be368374c61522",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/pr/pr_2015.nc?var=precipitation_amount&north=47.244595&south=42.230983&west=-93.116493&east=-86.509174&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            42.233333333333334,
+            47.233333333333334
+          ],
+          "longitudeBounds": [
+            -93.09999996666667,
+            -86.51666663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "47894881ed2893ea92a28e14289be7cc799a84eb1d9b8d67e3db0074704b9943",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            121,
+            159
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "mm",
+          "unitsOut": "mm",
+          "unsignedPacking": "true"
+        },
+        "tmmn": {
+          "addOffset": 210.0,
+          "contentHash": "45894fefb2d52b29a3f776fa6e3a31a57dde4600edc1d3f8fd55876ff12a4bd4",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmn/tmmn_2015.nc?var=air_temperature&north=47.244595&south=42.230983&west=-93.116493&east=-86.509174&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            42.233333333333334,
+            47.233333333333334
+          ],
+          "longitudeBounds": [
+            -93.09999996666667,
+            -86.51666663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "e78dae735620913511ea545aeba4dbc19abd4d2ad0e1871c01d936beef47d787",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            121,
+            159
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        },
+        "tmmx": {
+          "addOffset": 220.0,
+          "contentHash": "a4943ed37ea634836234ef8bbcf611715fde402f3aa441b884dedac3cc078044",
+          "crs": "EPSG:4326",
+          "dates": [
+            "2015-07-01",
+            "2015-07-02",
+            "2015-07-03",
+            "2015-07-04",
+            "2015-07-05",
+            "2015-07-06",
+            "2015-07-07",
+            "2015-07-08",
+            "2015-07-09",
+            "2015-07-10",
+            "2015-07-11",
+            "2015-07-12",
+            "2015-07-13",
+            "2015-07-14"
+          ],
+          "dayDefinition": "Days correspond approximately to calendar days ending at midnight, Mountain Standard Time (7 UTC the next calendar day)",
+          "downloadUrl": "https://thredds.northwestknowledge.net/thredds/ncss/MET/tmmx/tmmx_2015.nc?var=air_temperature&north=47.244595&south=42.230983&west=-93.116493&east=-86.509174&time_start=2015-07-01T00%3A00%3A00Z&time_end=2015-07-14T00%3A00%3A00Z&accept=netcdf",
+          "fillValue": 32767,
+          "latitudeBounds": [
+            42.233333333333334,
+            47.233333333333334
+          ],
+          "longitudeBounds": [
+            -93.09999996666667,
+            -86.51666663333334
+          ],
+          "publishedAt": null,
+          "rawFileHash": "1378d3a58edf9e2c4608df70d5691b46c51e90bb100be476570fae2f136f5558",
+          "scaleFactor": 0.1,
+          "shape": [
+            14,
+            121,
+            159
+          ],
+          "sourceEditionText": "04 July 2019",
+          "sourceUrl": "https://www.climatologylab.org/gridmet.html",
+          "unitsIn": "K",
+          "unitsOut": "degC",
+          "unsignedPacking": "true"
+        }
+      },
+      "weatherSummary": {
+        "precipitation14DayMm": {
+          "max": 204.10000000000002,
+          "mean": 53.57855590001385,
+          "min": 6.700000000000001,
+          "p10": 23.1,
+          "p50": 46.0,
+          "p90": 100.1
+        },
+        "tmaxDailyMeanC": {
+          "max": 27.857142857142883,
+          "mean": 25.428166589457483,
+          "min": 21.700000000000035,
+          "p10": 24.77142857142859,
+          "p50": 25.450000000000017,
+          "p90": 26.171428571428596
+        },
+        "tmaxPeriodMaximumC": {
+          "max": 33.35000000000002,
+          "mean": 29.88744591458037,
+          "min": 24.950000000000045,
+          "p10": 28.350000000000023,
+          "p50": 29.850000000000023,
+          "p90": 31.55000000000001
+        },
+        "tminDailyMeanC": {
+          "max": 16.292857142857162,
+          "mean": 13.140053644566274,
+          "min": 9.228571428571456,
+          "p10": 12.242857142857158,
+          "p50": 13.050000000000011,
+          "p90": 14.185714285714303
+        },
+        "tminPeriodMinimumC": {
+          "max": 11.75,
+          "mean": 8.211006138441592,
+          "min": 2.25,
+          "p10": 7.150000000000034,
+          "p50": 8.150000000000034,
+          "p90": 9.650000000000034
+        }
+      }
+    }
+  ],
+  "totalMappedCornAreaM2": 274072965300.0,
+  "unavailableStates": [],
+  "validWeatherAreaM2": 274072965299.88348,
+  "weatherSummary": {
+    "precipitation14DayMm": {
+      "max": 343.09999999999997,
+      "mean": 57.33138017333037,
+      "min": 0.8,
+      "p10": 16.700000000000003,
+      "p50": 48.7,
+      "p90": 108.7
+    },
+    "tmaxDailyMeanC": {
+      "max": 34.16428571428574,
+      "mean": 27.294438443150444,
+      "min": 20.03571428571431,
+      "p10": 25.30000000000002,
+      "p50": 26.835714285714314,
+      "p90": 29.771428571428597
+    },
+    "tmaxPeriodMaximumC": {
+      "max": 41.85000000000002,
+      "mean": 33.09308864703059,
+      "min": 22.650000000000034,
+      "p10": 29.350000000000023,
+      "p50": 33.25,
+      "p90": 36.05000000000001
+    },
+    "tminDailyMeanC": {
+      "max": 23.435714285714308,
+      "mean": 15.95665337450866,
+      "min": 9.228571428571456,
+      "p10": 14.207142857142875,
+      "p50": 15.685714285714312,
+      "p90": 18.12857142857145
+    },
+    "tminPeriodMinimumC": {
+      "max": 21.05000000000001,
+      "mean": 11.21595198002306,
+      "min": 2.25,
+      "p10": 8.550000000000011,
+      "p50": 10.950000000000045,
+      "p90": 14.150000000000034
+    }
+  }
+}

@@ -3,6 +3,7 @@ import {validSourceData} from "./officialSources.js";
 import {validateEnsoBundle, strengthOutlookSummary} from "./ensoOutlook.js";
 import {validateDroughtBundle} from "./droughtMonitor.js";
 import {config as cornConfig,validCornData,validCornBaseline} from "./cornData.js";
+import {spatialHealth} from "./cornSpatial.js";
 const safe = fn => {try {return fn();} catch {return false;}};
 
 export function validPointData(record, point, soil=false, now=Date.now()) {
@@ -56,4 +57,11 @@ export function buildDataHealth({official,weather,drought,enso,points=[],now=Dat
       valid:!!safe(()=>validCornBaseline(corn?.baselines?.[region.id],region)),ruleId:"corn-matched-calendar-normal"});
   }
   return {schemaVersion:1,assessedAt:new Date(now).toISOString(),release:null,datasets};
+}
+
+/** Informational diagnostics are attached after legacy alert evaluation, so
+ * adding a dataset cannot change the frozen alert health inputs or emails. */
+export function addSpatialDataHealth(snapshot,artifact,{now,release}) {
+  snapshot.datasets.push(...spatialHealth(artifact,{now,release}));
+  return snapshot;
 }

@@ -1,0 +1,51 @@
+name: Prepare annual corn spatial cache (no deployment or email)
+on:
+  workflow_dispatch:
+    inputs:
+      crop_year:
+        description: Native 30m CDL year (2008–2023; 10m requires separate validation)
+        default: '2023'
+        required: true
+      publish_asset:
+        description: Publish immutable derived annual cache as a GitHub Release asset
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/corn_spatial_requirements.txt
+      - run: pip install -r scripts/corn_spatial_requirements.txt
+      - name: Preprocess native crop geography once
+        env:
+          CROP_YEAR: ${{ inputs.crop_year }}
+        run: |
+          python scripts/prepare_corn_spatial.py --year "$CROP_YEAR" --raw-cache "$RUNNER_TEMP/cdl-raw" --output-cache "$RUNNER_TEMP/corn-annual" --acquire
+          python scripts/corn_spatial_cache.py pack --cache "$RUNNER_TEMP/corn-annual" --archive "$RUNNER_TEMP/corn-spatial-annual.tar.gz" > "$RUNNER_TEMP/annual-sha256.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-annual-derived-corn-grid
+          path: |
+            ${{ runner.temp }}/corn-spatial-annual.tar.gz
+            ${{ runner.temp }}/annual-sha256.txt
+            ${{ runner.temp }}/corn-annual/index.json
+          retention-days: 90
+      - name: Publish derived asset (never Pages, never email)
+        if: inputs.publish_asset
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROP_YEAR: ${{ inputs.crop_year }}
+        run: |
+          HASH=$(< "$RUNNER_TEMP/annual-sha256.txt")
+          TAG="corn-spatial-annual-$CROP_YEAR-${HASH:0:12}"
+          gh release create "$TAG" "$RUNNER_TEMP/corn-spatial-annual.tar.gz" "$RUNNER_TEMP/annual-sha256.txt" --title "Validated corn spatial cache $CROP_YEAR" --notes "Derived native-30m CDL crop/weather overlap cache. No source rasters. Pin tag and full SHA-256 in src/data/cornSpatial.json after review."
