@@ -270,6 +270,23 @@ The Investment Lens keeps its instrument descriptions in this repository and emb
 
 Market quotes and charts may be delayed under exchange and data-provider rules. TradingView attribution and direct fallback links must remain visible.
 
+## US Corn spatial-stage screening (Phase 4B-1)
+
+The US Corn module now supports an additive `us-corn-spatial-stage-screen/1`
+artifact alongside the unchanged Phase 3/4A method. It remains **state-level
+representative screening**, not a crop-area/weather intersection or affected
+acreage estimate. Cumulative USDA progress is bounded without zero-filling;
+daily weather uses reports published before that day, with a seven-day hold
+since publication. National production, stage, weather and joint coverage are
+shown separately; missing shares are not normalized.
+
+See the [spatial-stage methodology and decision report](docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md).
+Run `node scripts/evaluate_corn_alignment.mjs` for the separate deterministic
+2012–2019 diagnostic artifact. The original research inputs are preserved for
+offline replay. This phase adds no hazards, deploys nothing and sends no email.
+The regular evaluation command generates new-method live artifacts; existing
+published snapshots remain unchanged until a deliberate subsequent release.
+
 ## Safety / data integrity rules
 
 Historical US corn research (2012–2019) is available below the US corn pilot.

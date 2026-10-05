@@ -219,3 +219,16 @@ is not inbox delivery. GDO service-page example periods now require advertised
 availability corroboration; unverified maps remain reference-only. Soil moisture,
 ENSO, policy and war do not independently generate automated damage claims.
 See docs/AUTOMATIC_MONITORING.md for thresholds, boundaries and operations.
+
+## US Corn spatial-stage alignment (Phase 4B-1, 2026-10-05)
+
+Baseline checkpoint: 42c55f6. Preserve legacy `us-corn-point-exposure/v1`, its
+frozen replay source hashes and `src/data/cornHistory.json`. New additive method:
+`us-corn-spatial-stage-screen/1`, still Level A state-level representative
+screening, not crop-area intersection. Cumulative stage bounds and daily
+published-before-day holds replace unsupported calendar imputation only in the
+new artifact. National production/stage/weather/joint coverage stays explicit.
+The conditional production-equivalent proxy is not affected acreage or loss.
+See docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md and the distinct research artifact.
+No new hazards, source providers, deployment or email in this phase. Phase 4B-2
+may expand screening variables only with these limitations and version guards.

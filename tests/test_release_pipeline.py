@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from refresh_data import ROOT, write_cache
 from release_pipeline import (ALERT, CACHES, GENERATED, LEDGER, MANIFEST, STATIC,
     ancestor, commit_bytes, compact, compare_release, digest, git, latest_ledger,
-    persist_ledger, save_data, validate_pointer, verify_release)
+    persist_ledger, save_data, validate_pointer, validate_manifest, verify_release)
 from send_alert_email import (SMTPAcceptanceUncertain, configuration, deliver, main,
     prepare_notification, prepare_release, send_prepared_release, smtp_send)
 from test_alert_email import ENV, NOW, STAMP, fixture
@@ -305,6 +305,32 @@ class GitReleaseTests(unittest.TestCase):
         self.assertEqual(feed["release"]["id"], release["releaseId"])
         self.assertEqual(feed["analysis"]["releaseId"], release["releaseId"])
         self.assertEqual(feed["analysis"]["changeSet"]["releaseId"], release["releaseId"])
+        self.assertEqual(feed["analysis"]["cornAlignment"]["methodVersion"], "us-corn-spatial-stage-screen/1")
+
+    def test_legacy_manifest_without_spatial_configuration_still_verifies(self):
+        self.generate()
+        manifest = json.loads((self.repo / MANIFEST).read_bytes())
+        feed = json.loads((self.repo / ALERT).read_bytes())
+        inputs = [[name, digest((self.repo / f"public/data/{name}").read_bytes())] for name in CACHES]
+        inputs += [[label, digest((self.repo / path).read_bytes())] for label, path in
+                   [("previous-alerts", ALERT), ("previous-delivery", LEDGER)]]
+        # The source parent, not the freshly generated alert snapshot.
+        inputs[len(CACHES)][1] = digest(commit_bytes(self.repo, manifest["sourceRevision"], ALERT))
+        inputs += [[path, digest((self.repo / path).read_bytes())] for path in STATIC[:-1]]
+        manifest["inputsHash"] = digest(compact(inputs))
+        manifest["releaseId"] = "release-" + digest(compact([1, manifest["sourceRevision"], manifest["evaluatedAt"], "1", manifest["inputsHash"]]))
+        feed["release"] = {
+            "id": manifest["releaseId"], "sourceRevision": manifest["sourceRevision"], "inputsHash": manifest["inputsHash"]}
+        snapshot = compact(feed)
+        manifest["snapshotSha256"] = digest(snapshot)
+        def read_input(path, optional):
+            return None if path == STATIC[-1] else (self.repo / path).read_bytes()
+        previous = lambda path, optional: commit_bytes(self.repo, manifest["sourceRevision"], path, optional)
+        self.assertEqual(validate_manifest(manifest, snapshot, read_input, previous)["release"], feed["release"])
+        feed["analysis"] = {"cornAlignment": {"methodVersion": "us-corn-spatial-stage-screen/1"}}
+        snapshot = compact(feed); manifest["snapshotSha256"] = digest(snapshot)
+        with self.assertRaisesRegex(ValueError, "lacks its release-bound configuration"):
+            validate_manifest(manifest, snapshot, read_input, previous)
 
     def test_input_hash_and_code_in_data_commit_fail_validation(self):
         self.generate()

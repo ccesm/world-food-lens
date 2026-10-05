@@ -8,6 +8,7 @@ import {evaluateAutomaticAlerts, validateMonitorBundle} from "../src/services/au
 import {healthState} from "../src/services/sourceHealth.js";
 import {buildPhase2} from "./revision_tracking.mjs";
 import {qualifyCornHealth} from "../src/services/cornExposure.js";
+import {attachCornAlignment} from "./corn_alignment.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const args = process.argv.slice(2), options = {};
@@ -62,7 +63,7 @@ const inputNames = ["official-data.json", "local-weather.json", "drought-monitor
 const inputs = inputNames.map(name => [name, inputBytes.has(resolve(dataDir,name)) ? hash(inputBytes.get(resolve(dataDir,name))) : null]);
 inputs.push(["previous-alerts", inputBytes.has(output) ? hash(inputBytes.get(output)) : null],
   ["previous-delivery", inputBytes.has(resolve(dataDir,"alert-delivery.json")) ? hash(inputBytes.get(resolve(dataDir,"alert-delivery.json"))) : null]);
-for (const path of ["src/data/weatherPoints.json", "src/data/cropCalendars.js", "src/data/releaseSchedule.js"])
+for (const path of ["src/data/weatherPoints.json", "src/data/cropCalendars.js", "src/data/releaseSchedule.js", "src/data/cornAlignment.json"])
   inputs.push([path, hash(inputBytes.get(resolve(root,path)) ?? await readFile(resolve(root,path)))]);
 const inputsHash = hash(JSON.stringify(inputs));
 const releaseId = `release-${hash(JSON.stringify([1,sourceRevision,result.generatedAt,result.rulesVersion,inputsHash]))}`;
@@ -74,6 +75,7 @@ for (const event of result.events.filter(e=>e.at===result.generatedAt)) if(event
 for (const alert of [...result.active,...result.events.filter(e=>e.at===result.generatedAt).map(e=>e.alert)])
   if (alert.state === "active" && alert.provenance?.calculatedAt === result.generatedAt) alert.provenance.release = releaseId;
 result.analysis = buildPhase2({official,enso,monitor:result,previous});
+attachCornAlignment({official,monitor:result,previous});
 result.dataHealth = qualifyCornHealth(result.dataHealth,result.analysis.cornPilot);
 if (!validateMonitorBundle(result)) throw new Error("Invalid output or delivery metadata; previous cache remains unchanged");
 

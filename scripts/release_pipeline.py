@@ -16,7 +16,7 @@ import tempfile
 from refresh_data import ROOT, write_cache
 
 CACHES = ["official-data.json", "local-weather.json", "drought-monitor.json", "enso-outlook.json"]
-STATIC = ["src/data/weatherPoints.json", "src/data/cropCalendars.js", "src/data/releaseSchedule.js"]
+STATIC = ["src/data/weatherPoints.json", "src/data/cropCalendars.js", "src/data/releaseSchedule.js", "src/data/cornAlignment.json"]
 ALERT = "public/data/monitor-alerts.json"
 MANIFEST = "public/data/release-manifest.json"
 LEDGER = "public/data/alert-delivery.json"
@@ -108,7 +108,16 @@ def validate_manifest(manifest, snapshot, read_input, read_previous):
     for label, path in [("previous-alerts", ALERT), ("previous-delivery", LEDGER)]:
         raw = read_previous(path, True)
         inputs.append([label, digest(raw) if raw is not None else None])
-    inputs.extend([path, digest(read_input(path, False))] for path in STATIC)
+    for path in STATIC:
+        # Old releases predate the additive spatial method. A new alignment
+        # artifact MUST bind its configuration, never fall back to legacy hashes.
+        spatial = path == "src/data/cornAlignment.json"
+        raw = read_input(path, spatial)
+        if spatial and raw is None:
+            if (feed.get("analysis") or {}).get("cornAlignment") is not None:
+                raise ValueError("Spatial-stage artifact lacks its release-bound configuration")
+            continue
+        inputs.append([path, digest(raw)])
     if digest(compact(inputs)) != manifest["inputsHash"]:
         raise ValueError("Release input bytes do not match the evaluated data revision")
     identity = [1, manifest["sourceRevision"], manifest["evaluatedAt"], manifest["rulesVersion"], manifest["inputsHash"]]

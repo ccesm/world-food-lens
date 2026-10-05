@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import {loadAlertFeed} from "../services/alertFeed.js";
 import {reasonText} from "../services/dataHealth.js";
 import {config} from "../services/cornExposure.js";
+import {CornAlignmentView} from "./CornAlignment.jsx";
 
 const LABELS={
   zh:{title:"美国玉米 · 玉米带试点",intro:"产量分布 → 生育期 → 天气潜在暴露 ｜ 官方作物状况 ｜ USDA 供需修订。三类证据并列，不证明因果。",
@@ -32,12 +33,13 @@ const LABELS={
 const STAGES={off:["非生长期","Off season"],planting:["播种","Planting"],emergence:["出苗","Emergence"],vegetative:["营养生长","Vegetative"],silking:["吐丝 / 授粉","Silking / pollination"],grainFill:["灌浆","Grain fill"],maturity:["成熟","Maturity"],harvest:["收获","Harvest"],planted:["已播种","Planted"],emerged:["已出苗","Emerged"],dough:["糊熟","Dough"],dented:["凹粒","Dented"],mature:["已成熟","Mature"],harvested:["已收获","Harvested"]};
 const number=v=>Number.isFinite(v)?v.toLocaleString("en-US",{maximumFractionDigits:2}):"—";
 const pct=v=>Number.isFinite(v)?`${number(v*100)}%`:"—";
-export function CornPilotView({artifact:a,lang="zh",archive=false}) {
+export function CornPilotView({artifact:a,alignment=null,lang="zh",archive=false}) {
   const t=LABELS[lang],stage=k=>STAGES[k]?.[lang==="zh"?0:1]??"—";
   return <article className="fs-card corn-pilot" id="us-corn-pilot"><h3>{t.title}</h3><p>{t.intro}</p>
     <p>{lang==="zh"?"独立的本次发布窗口，不随下方历史月份选择切换。NASA POWER 为网格化估计，不是田间实测；根区湿润度为 0–1 指标。":"Independent release window; the historical-month controls below do not change this pilot. NASA POWER provides gridded estimates, not field measurements; root-zone wetness is a 0–1 index."}</p>
+    {archive&&<p className="fs-notice">{t.archive}</p>}
+    <CornAlignmentView artifact={alignment} lang={lang}/>
     {!a?<p>{t.missing}</p>:<>
-      {archive&&<p className="fs-notice">{t.archive}</p>}
       <p>{t.period}: {a.period.start} – {a.period.end} · {a.eligibility==="eligible"?t.healthy:a.eligibility==="partial"?t.partial:t.unavailable}</p>
       <p>{t.weight}: {a.weightYear??"—"} / {a.weightPublication??"—"}</p>
       <div className="fs-two"><div><p>{t.coverage}: {pct(a.coverage?.pilot)}</p><p>{t.assessed}: {pct(a.coverage?.assessed)}</p><p>{t.unknown}: {pct(a.coverage?.missing)} · {t.outside}: {pct(a.coverage?.outsidePilot)}</p></div>
@@ -66,5 +68,5 @@ export function CornPilotView({artifact:a,lang="zh",archive=false}) {
 export default function USCornPilot({lang}) {
   const [feed,setFeed]=useState(null);
   useEffect(()=>{const controller=new AbortController();loadAlertFeed(controller.signal).then(setFeed).catch(()=>{});return ()=>controller.abort();},[]);
-  return <CornPilotView artifact={feed?.analysis?.cornPilot} lang={lang} archive={feed?.stale}/>;
+  return <CornPilotView artifact={feed?.analysis?.cornPilot} alignment={feed?.analysis?.cornAlignment} lang={lang} archive={feed?.stale}/>;
 }

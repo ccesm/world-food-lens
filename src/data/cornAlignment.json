@@ -1,0 +1,20 @@
+{
+  "methodVersion": "us-corn-spatial-stage-screen/1",
+  "spatialLevel": "state-level-representative-screening",
+  "samplingVersion": "corn-state-points/1",
+  "weightMethod": "prior-completed-year-national-production-share/1",
+  "stageMethod": "cumulative-silking-minus-mature-bounds/1",
+  "temporalMethod": "published-before-UTC-day-hold-publication-max-7-days/1",
+  "units": [
+    {"id":"US-IA/maize","state":"IA","lat":42,"lon":-93.5},
+    {"id":"US-IL/maize","state":"IL","lat":40.5,"lon":-89},
+    {"id":"US-NE/maize","state":"NE","lat":41,"lon":-98},
+    {"id":"US-MN/maize","state":"MN","lat":44,"lon":-95},
+    {"id":"US-IN/maize","state":"IN","lat":40,"lon":-86},
+    {"id":"US-SD/maize","state":"SD","lat":44,"lon":-97.5},
+    {"id":"US-KS/maize","state":"KS","lat":39,"lon":-98},
+    {"id":"US-OH/maize","state":"OH","lat":40.5,"lon":-83.5},
+    {"id":"US-MO/maize","state":"MO","lat":39,"lon":-92},
+    {"id":"US-WI/maize","state":"WI","lat":43.5,"lon":-89.5}
+  ]
+}

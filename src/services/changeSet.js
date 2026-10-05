@@ -1,6 +1,7 @@
 // Wire validation and language rendering only. Evaluation lives on the build
 // side; the browser neither recalculates signals nor chooses source versions.
 import {validCornArtifact} from "./cornExposure.js";
+import {validAlignment} from "./cornAlignment.js";
 const hash=v=>typeof v==="string"&&/^[a-f0-9]{64}$/.test(v);
 const release=v=>typeof v==="string"&&/^release-[a-f0-9]{64}$/.test(v);
 const object=v=>v&&typeof v==="object"&&!Array.isArray(v);
@@ -49,6 +50,7 @@ export function validPhase2(a,id,at) {
   return object(a)&&a.schemaVersion===1&&release(id)&&a.releaseId===id&&a.evaluatedAt===at&&timestamp(at)&&hash(a.integrity)&&
     timestamp(a.startedAt)&&a.startedAt<=at&&(a.prunedThrough===null||timestamp(a.prunedThrough)&&a.prunedThrough<=at)&&
     (a.cornPilot===undefined||validCornArtifact(a.cornPilot,id,at))&&
+    (a.cornAlignment===undefined||validAlignment(a.cornAlignment,id,at))&&
     object(a.checkpoints)&&Object.entries(a.checkpoints).every(([key,c])=>["usda","fao","worldBank","enso","cornProduction","cornProgress"].includes(key)&&checkpoint(c,key))&&
     object(a.health)&&Object.values(a.health).every(health)&&a.changeSet?.releaseId===id&&a.changeSet.evaluatedAt===at&&Array.isArray(a.changeSet.datasets)&&
     a.changeSet.datasets.every(d=>object(d)&&typeof d.datasetId==="string"&&
@@ -79,7 +81,8 @@ export const METRIC_LABELS={production:{zh:"产量",en:"Production"},consumption
   elNino:{zh:"厄尔尼诺概率",en:"El Niño probability"},laNina:{zh:"拉尼娜概率",en:"La Niña probability"},
   neutral:{zh:"中性概率",en:"Neutral probability"},phase:{zh:"ENSO 阶段",en:"ENSO phase"},
   strengthEvidence:{zh:"强度原始证据",en:"Original strength evidence"},roniPercentiles:{zh:"RONI 分位数",en:"RONI percentiles"},
-  structure:{zh:"覆盖 / 单位",en:"Coverage / units"},observation:{zh:"观测范围",en:"Observation scope"}};
+  structure:{zh:"覆盖 / 单位",en:"Coverage / units"},observation:{zh:"观测范围",en:"Observation scope"},
+  spatialStageCoverage:{zh:"空间—生育期覆盖 / 可用性",en:"Spatial-stage coverage / eligibility"}};
 export function dimensionLabel(value,lang="zh") {
   const names={wheat:{zh:"小麦",en:"Wheat"},maize:{zh:"玉米",en:"Maize"},rice:{zh:"大米",en:"Rice"},
     world:{zh:"全球",en:"World"},"world-ex-China":{zh:"全球（不含中国）",en:"World excluding China"},
