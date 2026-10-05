@@ -2,9 +2,9 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
 import {validSpatial,selectSpatial,spatialHealth} from "../src/services/cornSpatial.js";
-import {validMonitorBundle} from "../src/services/automaticAlerts.js";
+import {validateMonitorBundle} from "../src/services/automaticAlerts.js";
 const feed=JSON.parse(fs.readFileSync(process.argv[2]));
-assert.ok(validMonitorBundle(feed));
+assert.ok(validateMonitorBundle(feed));
 const a=feed.analysis.cornSpatial,now=Date.parse(feed.generatedAt);
 assert.ok(validSpatial(a,feed.release.id,feed.generatedAt));
 const health=feed.dataHealth.datasets;
