@@ -10,9 +10,9 @@ on:
         type: boolean
         default: false
   schedule:
-    # Temporary production schedule check: 2026-10-05 20:39 Pacific.
+    # Temporary production schedule check: 2026-10-05 22:02 Pacific.
     # Date-limited cron recurs annually; remove after this validation completes.
-    - cron: "39 20 5 10 *"
+    - cron: "2 22 5 10 *"
       timezone: "America/Los_Angeles"
     - cron: "23 6 * * *"
 
