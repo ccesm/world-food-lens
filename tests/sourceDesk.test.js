@@ -14,7 +14,7 @@ const output=await build({entryPoints:["src/components/SourceDesk.jsx"],bundle:t
 const compiled={exports:{}};
 new Function("require","module","exports",output.outputFiles[0].text)(createRequire(import.meta.url),compiled,compiled.exports);
 const {default:SourceDesk,HealthDetails}=compiled.exports;
-const bundle=JSON.parse(readFileSync(new URL("../public/data/official-data.json",import.meta.url)));
+const bundle=JSON.parse(readFileSync(new URL("./fixtures/official-data-baseline.json",import.meta.url)));
 const recovered=JSON.parse(readFileSync(new URL("../public/data/recovered-snapshot.json",import.meta.url)));
 
 test("SourceDesk renders both languages and clearly discloses legacy health availability",()=>{

@@ -98,7 +98,7 @@ test("central snapshot and legacy health projection agree and are release-bound"
   }
 });
 test("GDO parsing success with an unverified period never supplies automatic evidence",()=>{
-  const drought=JSON.parse(readFileSync(new URL("../public/data/drought-monitor.json",import.meta.url)));
+  const drought=JSON.parse(readFileSync(new URL("./fixtures/drought-monitor-baseline.json",import.meta.url)));
   drought.status="ok";drought.fetchedAt=new Date(now).toISOString();drought.periodVerified=false;
   const health=buildDataHealth({drought,now,evidence:{drought:new Set(["x"])}}).datasets.find(r=>r.id==="drought");
   assert.equal(health.retrieval,"ok");assert.equal(health.validation,"unverified");
@@ -123,7 +123,7 @@ test("alert creation and resolution retain separate audited evaluation inputs",(
   assert.equal(failed.events.at(-1).provenance.eligibility,"insufficient");
 });
 test("price model uses the same health gate and records its input version",()=>{
-  const record=JSON.parse(readFileSync(new URL("../public/data/official-data.json",import.meta.url))).sources.fao;
+  const record=JSON.parse(readFileSync(new URL("./fixtures/official-data-baseline.json",import.meta.url))).sources.fao;
   record.status="ok";record.fetchedAt=new Date(now).toISOString();
   const usable=buildOfficialPriceForecast(record,0,now);
   assert.equal(usable.available,true);assert.equal(usable.provenance.inputs[0].datasetId,"fao");

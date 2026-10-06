@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-05T14:58:10Z",
+  "maps": {
+    "shortTerm": {
+      "period": "2026-09-11",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-11&SELECTED_TIMESCALE=01",
+      "layer": "spaST",
+      "title": "SPI ERA5 Short Term (1 month)",
+      "periodBasis": "wms-service-example",
+      "periodVerified": false,
+      "availabilityStart": "1991-01-01",
+      "availabilityEnd": "2026-06-21"
+    },
+    "longTerm": {
+      "period": "2026-08-01",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaLT&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-08-01&SELECTED_TIMESCALE=06",
+      "layer": "spaLT",
+      "title": "SPI ERA5 Long Term (6 months)",
+      "periodBasis": "wms-service-example",
+      "periodVerified": false,
+      "availabilityStart": "1991-01-01",
+      "availabilityEnd": "2026-06-01"
+    },
+    "impactRisk": {
+      "period": "2026-09-11",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-11",
+      "layer": "rdria",
+      "title": "Risk of Drought Impact for Agriculture",
+      "periodBasis": "wms-service-example",
+      "periodVerified": false,
+      "availabilityStart": "2010-01-01",
+      "availabilityEnd": "2026-06-21"
+    }
+  },
+  "points": {
+    "iowa": {
+      "shortTerm": "near-normal",
+      "longTerm": "moderately-wet",
+      "impactRisk": "no-hotspot"
+    },
+    "kansas": {
+      "shortTerm": "near-normal",
+      "longTerm": "severely-dry",
+      "impactRisk": "no-hotspot"
+    },
+    "saskatchewan": {
+      "shortTerm": "extremely-wet",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "france": {
+      "shortTerm": "near-normal",
+      "longTerm": "severely-dry",
+      "impactRisk": "medium"
+    },
+    "germany": {
+      "shortTerm": "near-normal",
+      "longTerm": "moderately-dry",
+      "impactRisk": "no-hotspot"
+    },
+    "krasnodar": {
+      "shortTerm": "near-normal",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "ukraine": {
+      "shortTerm": "near-normal",
+      "longTerm": "moderately-dry",
+      "impactRisk": "low"
+    },
+    "mato-grosso": {
+      "shortTerm": "near-normal",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "pampas": {
+      "shortTerm": "near-normal",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "henan": {
+      "shortTerm": "severely-dry",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "jilin": {
+      "shortTerm": "near-normal",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "india-rice": {
+      "shortTerm": "very-wet",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "punjab": {
+      "shortTerm": "severely-dry",
+      "longTerm": "moderately-dry",
+      "impactRisk": "no-hotspot"
+    },
+    "thailand": {
+      "shortTerm": "near-normal",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
+    "australia": {
+      "shortTerm": "near-normal",
+      "longTerm": "extremely-wet",
+      "impactRisk": "no-hotspot"
+    },
+    "free-state": {
+      "shortTerm": "very-wet",
+      "longTerm": "extremely-wet",
+      "impactRisk": "no-hotspot"
+    }
+  },
+  "status": "ok",
+  "fetchedAt": "2026-10-05T14:58:10Z",
+  "lastAttemptAt": "2026-10-05T14:58:10Z",
+  "source": {
+    "name": "Copernicus Emergency Management Service / Global Drought Observatory",
+    "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
+    "serviceUrl": "https://drought.emergency.copernicus.eu/data/wms-service",
+    "license": "European Union, Copernicus CEMS; see provider terms"
+  },
+  "periodVerified": false,
+  "periodVerification": {
+    "checkedAt": "2026-10-05T14:58:14Z",
+    "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
+    "reason": "example-period-not-corroborated"
+  }
+}
