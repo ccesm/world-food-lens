@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-10-05T14:58:15Z",
+  "lastAttemptAt": "2026-10-06T02:33:19Z",
   "status": "ok",
   "data": {
     "issuedAt": "2026-09-10",
@@ -9,6 +9,26 @@
     "nino34": 1.8,
     "nino34Month": "2026-08",
     "strengthOutlook": "very-strong-likely",
+    "strengthEvidence": {
+      "status": "extracted",
+      "reason": "explicit-probability-event-period",
+      "event": {
+        "phase": "el-nino",
+        "strength": "very-strong"
+      },
+      "probability": {
+        "operator": "gt",
+        "percent": 90.0
+      },
+      "period": {
+        "startMonth": "2026-09",
+        "endMonth": "2027-02",
+        "label": "the Northern Hemisphere fall and winter 2026-27"
+      },
+      "sourceText": "Synopsis: El Niño is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27. In summary, El Niño is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27.",
+      "sourceUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+      "issuedAt": "2026-09-10"
+    },
     "forecasts": [
       {
         "season": "ASO",
@@ -161,5 +181,40 @@
       "outlook": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/outlook/"
     }
   },
-  "fetchedAt": "2026-10-05T14:58:15Z"
+  "fetchedAt": "2026-10-06T02:33:19Z",
+  "metadata": {
+    "contractVersion": 1,
+    "datasetId": "enso",
+    "provider": "NOAA CPC ENSO",
+    "sourceUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+    "downloadUrl": null,
+    "observation": {
+      "period": "2026-09-10",
+      "marketYear": null,
+      "vintage": null,
+      "publishedAt": null
+    },
+    "attempt": {
+      "checkedAt": "2026-10-06T02:33:19Z",
+      "retrieval": "ok",
+      "format": "passed",
+      "semantic": "passed",
+      "reason": null
+    },
+    "accepted": {
+      "fetchedAt": "2026-10-06T02:33:19Z",
+      "format": "passed",
+      "semantic": "passed",
+      "period": "verified"
+    },
+    "cache": "new",
+    "version": {
+      "contentHash": "eb4cd2ca9fdb90db7af9a5d7dc47cc8ac040dcc243d598068688eeb75e91d815",
+      "observationId": null,
+      "revisionId": null
+    },
+    "extensions": {
+      "strengthExtraction": "extracted"
+    }
+  }
 }
