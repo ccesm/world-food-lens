@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "status": "sent",
+  "status": "uncertain",
   "sentEventIds": [
     "evt-6e8d91635e5f02c5"
   ],
-  "lastCheckedAt": "2026-10-05T14:58:49Z",
+  "lastCheckedAt": "2026-10-06T02:46:48Z",
   "deliveredEpisodes": {
     "episode-5ecd79ba4449ef3bc210618d1efe1166": "red"
   },
@@ -20,5 +20,20 @@
     "costs": "ok",
     "enso": "ok",
     "calendar": "ok"
-  }
+  },
+  "latestRelease": {
+    "releaseId": "release-a62d47aee34188fc72a8456e90a5c4f7fce679d21184c92581f249267a83e9a9",
+    "dataRevision": "6bf1fdeb633bb9f8562eb973715590c5e599ac66",
+    "snapshotSha256": "468dbdc57dc63adf2e38002eb26d98ad521301d4f09ae91e2233e47be1970de0"
+  },
+  "pendingAttempt": {
+    "release": {
+      "releaseId": "release-a62d47aee34188fc72a8456e90a5c4f7fce679d21184c92581f249267a83e9a9",
+      "dataRevision": "6bf1fdeb633bb9f8562eb973715590c5e599ac66",
+      "snapshotSha256": "468dbdc57dc63adf2e38002eb26d98ad521301d4f09ae91e2233e47be1970de0"
+    },
+    "messageId": "<wfl-d5e5fa755277a7b14b43254b36722a17@world-food-lens.local>",
+    "preparedAt": "2026-10-06T02:46:48Z"
+  },
+  "errorCode": "SMTPIntentPending"
 }
