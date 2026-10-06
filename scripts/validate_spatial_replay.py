@@ -15,15 +15,17 @@ ANNUAL_HASH="c4b589b61a1723fa12d768e94ff3b819947f077e7956bdc36c2c93fa017ea404"
 WEATHER_HASH="c9e304510a92e519f8421a41d02e74e4abeb0fa93cec9e673189575140d133bc"
 
 
-def compare_annual(original_root, rebuilt_root):
+def compare_annual(original_root, rebuilt_root, weather, reference):
     """Use the EXISTING area-conservation tolerance, not a fitted threshold.
 
     The total-variation bound on a weighted mean is TV * (max - min).
     Quantiles/extrema do not gain a tolerance from this mean-only bound.
-    Only applies to this fixed complete-weather replay (verified below).
+    Normalize only the identical weather-eligible support used by the actual
+    mean calculation. Published area coverage is NEVER renormalized here.
     """
     from corn_spatial_geo import load_annual
-    from corn_spatial import STATES, validate_manifest
+    from corn_spatial import STATES, validate_manifest, dates
+    from refresh_corn_spatial import process
     import numpy as np
     result={};original_weights=[];rebuilt_weights=[]
     for s in STATES:
@@ -35,6 +37,12 @@ def compare_annual(original_root, rebuilt_root):
         absolute=float(np.abs(w-v).sum())
         tolerance=max(.01,a['mappedCornAreaM2']*1e-9) # Frozen 1.8/1.9 geometric guard.
         assert absolute<=tolerance,'Annual overlap weights differ beyond existing geometry precision'
+        period=dates(reference['period']['start'],reference['period']['end'])
+        first,(_,w),_=process(s,Path(original_root)/s['id'],weather,period,reference['generatedAt'],None,None)
+        second,(_,v),_=process(s,Path(rebuilt_root)/s['id'],weather,period,reference['generatedAt'],None,None)
+        assert first['weatherVersions']==second['weatherVersions']
+        assert first['coverageDiagnostics']['missingValueDates']==second['coverageDiagnostics']['missingValueDates']
+        assert first['coverageDiagnostics']['missingWeatherCellsWithCorn']==second['coverageDiagnostics']['missingWeatherCellsWithCorn']
         result[s['id']]={'weightL1DifferenceM2':absolute,'existingAreaToleranceM2':tolerance,
                         'totalVariation':float(.5*np.abs(w/w.sum()-v/v.sum()).sum())}
         original_weights.append(w);rebuilt_weights.append(v)
@@ -58,10 +66,9 @@ def compare(original,replay,geometry=None):
             if key=='coverage':maximum_coverage_delta=max(maximum_coverage_delta,delta)
             else:maximum_area_delta=max(maximum_area_delta,delta)
         if geometry:
-            # A crop-weight perturbation bound is not a missing-weather bound.
-            for state in (first,second):
-                assert not any(state['coverageDiagnostics']['missingValueDates'].values())
-                assert state['coverageDiagnostics']['missingWeatherCellsWithCorn']==0
+            # An overlap-weight bound never permits a new missing-weather mask.
+            for key in ('missingValueDates','missingWeatherCellsWithCorn'):
+                assert first['coverageDiagnostics'][key]==second['coverageDiagnostics'][key]
         for key,stat in first['weatherSummary'].items():
             for name,value in stat.items():
                 delta=abs(value-second['weatherSummary'][key][name]);maximum_delta=max(maximum_delta,delta)
@@ -111,5 +118,7 @@ if __name__=='__main__':
         with patch('refresh_corn_spatial.urlopen',side_effect=AssertionError('Network forbidden in fixed-input replay')):
             rebuilt,_=refresh(Path(args.rebuilt_annual_cache),weather,original['period']['start'],original['period']['end'],original['generatedAt'])
         write_json(root/'replayed-rebuilt-summary.json',rebuilt)
-        result['runnerRebuiltAnnualGrid']=compare(original,rebuilt,compare_annual(annual,Path(args.rebuilt_annual_cache)))
+        with patch('refresh_corn_spatial.urlopen',side_effect=AssertionError('Network forbidden in fixed-input replay')):
+            geometry=compare_annual(annual,Path(args.rebuilt_annual_cache),weather,original)
+        result['runnerRebuiltAnnualGrid']=compare(original,rebuilt,geometry)
     write_json(args.output,result)
