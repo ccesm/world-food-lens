@@ -1,0 +1,46 @@
+{
+  "methodVersion": "iowa-mapped-corn-weather-intersection/1",
+  "geography": "US-IA",
+  "crop": "corn-class-1",
+  "cropYear": 2015,
+  "cropSource": {
+    "provider": "USDA NASS CDL",
+    "sourceUrl": "https://www.nass.usda.gov/Research_and_Science/Cropland/metadata/metadata_ia15.htm",
+    "downloadUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2015_19.tif",
+    "edition": "2015 Edition",
+    "publicationDate": "2016-02-12",
+    "publicationTimeKnown": false,
+    "cornClassProducerAccuracyPct": 98.54,
+    "cornClassUserAccuracyPct": 98.86,
+    "accuracyInterpretation": "Product validation statistics, not a per-field guarantee or exposure confidence score",
+    "excludedClasses": [12, 13, 225, 226, 237, 241],
+    "completenessEvidence": "Official metadata: entire state covered; class 0 is not a measured non-corn classification"
+  },
+  "start": "2015-07-01",
+  "end": "2015-07-14",
+  "selection": "Fixed calendar window proposed in Phase 4B-1.6 before outcome inspection; accepted only if all required dates are available.",
+  "grid": {
+    "crs": "EPSG:5070",
+    "cellSizeM": 9000,
+    "originX": -52095,
+    "originY": 2288295,
+    "version": "ia-2015-cdl-aligned-9km/1",
+    "edgeSegments": 16
+  },
+  "screen": {
+    "label": "LEGACY / DEMONSTRATION TEMPERATURE-ONLY SCREEN",
+    "tmaxC": 35,
+    "minimumDays": 3,
+    "windows": [[0, 7], [7, 14]],
+    "stageMultiplier": null,
+    "moistureScreen": null
+  },
+  "point": {"latitude": 42, "longitude": -93.5},
+  "acreageReference": {
+    "acres": 13500000,
+    "cropUniverse": "2015 corn planted for all purposes; survey estimate, not mapped class-1 area",
+    "publication": "Iowa AgriNews Vol 16-02, January 21, 2016; Crop Production 2015 Summary",
+    "publicationDate": "2016-01-21",
+    "url": "https://publications.iowa.gov/21433/1/AgriNews02_2016.pdf"
+  }
+}

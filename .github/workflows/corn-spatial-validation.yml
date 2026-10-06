@@ -1,0 +1,44 @@
+name: Validate production corn spatial pipeline (no deployment or email)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/corn_spatial_requirements.txt
+      - run: npm ci
+      - run: pip install -r scripts/corn_spatial_requirements.txt
+      - run: npm test
+      - run: python -m unittest discover -s tests/spatial
+      - run: python -m unittest discover -s research/iowa_spatial
+      - run: python -m unittest discover -s research/cornbelt_spatial
+      - name: Cold annual preprocessing
+        run: python scripts/prepare_corn_spatial.py --year 2023 --raw-cache "$RUNNER_TEMP/raw" --output-cache "$RUNNER_TEMP/annual" --acquire --performance "$RUNNER_TEMP/annual-performance.json"
+      - name: Cold / warm weather and state isolation
+        run: |
+          python scripts/refresh_corn_spatial.py --annual-cache "$RUNNER_TEMP/annual" --weather-cache "$RUNNER_TEMP/weather" --output "$RUNNER_TEMP/cold.json" --performance "$RUNNER_TEMP/cold-performance.json"
+          python scripts/refresh_corn_spatial.py --annual-cache "$RUNNER_TEMP/annual" --weather-cache "$RUNNER_TEMP/weather" --output "$RUNNER_TEMP/warm.json" --performance "$RUNNER_TEMP/warm-performance.json"
+          python scripts/refresh_corn_spatial.py --annual-cache "$RUNNER_TEMP/annual" --weather-cache "$RUNNER_TEMP/weather" --output "$RUNNER_TEMP/failure.json" --fail-state NE --performance "$RUNNER_TEMP/failure-performance.json"
+          python scripts/validate_corn_spatial_run.py --cold "$RUNNER_TEMP/cold.json" --warm "$RUNNER_TEMP/warm.json" --failure "$RUNNER_TEMP/failure.json"
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: corn-spatial-validation-measurements
+          path: |
+            ${{ runner.temp }}/*performance.json
+            ${{ runner.temp }}/cold.json
+            ${{ runner.temp }}/warm.json
+            ${{ runner.temp }}/failure.json
+          retention-days: 90

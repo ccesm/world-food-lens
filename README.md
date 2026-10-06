@@ -270,7 +270,60 @@ The Investment Lens keeps its instrument descriptions in this repository and emb
 
 Market quotes and charts may be delayed under exchange and data-provider rules. TradingView attribution and direct fallback links must remain visible.
 
+## US Corn spatial-stage screening (Phase 4B-1)
+
+The US Corn module now supports an additive `us-corn-spatial-stage-screen/1`
+artifact alongside the unchanged Phase 3/4A method. It remains **state-level
+representative screening**, not a crop-area/weather intersection or affected
+acreage estimate. Cumulative USDA progress is bounded without zero-filling;
+daily weather uses reports published before that day, with a seven-day hold
+since publication. National production, stage, weather and joint coverage are
+shown separately; missing shares are not normalized.
+
+See the [spatial-stage methodology and decision report](docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md).
+Run `node scripts/evaluate_corn_alignment.mjs` for the separate deterministic
+2012–2019 diagnostic artifact. The original research inputs are preserved for
+offline replay. This phase adds no hazards, deploys nothing and sends no email.
+The regular evaluation command generates new-method live artifacts; existing
+published snapshots remain unchanged until a deliberate subsequent release.
+
+## Level C informational corn-area weather (Phase 4B-1.9)
+
+An additive production pipeline now supports native-30m CDL preprocessing,
+content-verified annual derived caches, recent gridMET summaries and explicit
+state failure isolation. The US Corn view prefers healthy mapped-corn-area
+weighted weather; Level A remains a clearly labeled fallback/reference and the
+unchanged basis for existing alerts. State progress is separate context, never
+observed local stage or crop damage.
+
+The configured 2023 map is an explicitly older validated geography proxy, not
+the latest available CDL or exact current-year planting. Raw grids remain outside
+Git/Pages. Implementation and local tests/build are complete, but the annual
+asset has not been uploaded and actual Actions activation has not run. No
+deployment or email was performed. See the
+[production report, measurements and activation gates](docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md).
+
+### Operational validation (Phase 4B-1.10)
+
+Real GitHub-hosted cold/warm cache, source access, state/module outages,
+release consistency, alert/email isolation and cross-platform replay now pass.
+See the [operational report](docs/PHASE4B1_10_OPERATIONAL_VALIDATION.md) and
+[successful safe workflow run](https://github.com/ccesm/world-food-lens/actions/runs/37394519240).
+The approved annual cache is saved immediately and reused across runners;
+source failure remains explicit, never zero corn or normalized full coverage.
+The 2023 map is clearly labeled as a proxy. No public deployment or real email
+was performed; code is on the isolated validation branch, not activated on main.
+This supersedes the earlier report's pending Actions validation, not its
+preserved scientific methods. Phase 4B-2 is not implemented.
+
 ## Safety / data integrity rules
+
+Historical US corn research (2012–2019) is available below the US corn pilot.
+It is retrospective, not a point-in-time signal replay or yield forecast.
+See the [historical evaluation protocol](docs/CORN_HISTORY_PROTOCOL.md) and
+[Phase 4A assessment](docs/PHASE4A_CORN_HISTORY_VALIDATION.md). Reproduce the
+saved research artifact offline with `node scripts/evaluate_corn_history.mjs`;
+this command does not update live feeds, deploy, or send email.
 
 - Never commit API keys or tokens.
 - Never label recovered/static data as real-time.

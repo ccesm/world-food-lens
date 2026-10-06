@@ -26,6 +26,40 @@ def fixture():
 
 
 class AlertEmailTests(unittest.TestCase):
+    def test_revision_facts_never_become_notification_candidates(self):
+        feed = fixture()
+        ledger, _ = deliver(feed, {}, ENV, NOW, lambda *_: None)
+        # The notification consumer intentionally ignores the analytical layer.
+        # Its schema/replay validation belongs to the generator and release hash.
+        feed["analysis"] = {"signals": [{"id": "usda-endingStocks-revision/wheat/world/2026",
+                                        "state": "observed", "severity": None, "notification": False}]}
+        _, code = deliver(feed, ledger, ENV, NOW, lambda *_: self.fail("Revision fact sent as alert"))
+        self.assertEqual(code, 0)
+
+    def test_publication_lag_and_insufficient_evidence_are_silent(self):
+        feed=fixture()
+        ledger,_=deliver(feed,{},ENV,NOW,lambda *_:None)
+        for freshness,eligibility in [("awaiting","insufficient"),("current","insufficient")]:
+            feed["health"][0].update(status="unavailable",retrieval="ok",validation="passed",
+                                     freshness=freshness,eligibility=eligibility)
+            ledger,code=deliver(feed,ledger,ENV,NOW,lambda *_:self.fail("Normal lag sent as outage"))
+            self.assertEqual(code,0)
+
+    def test_failure_digests_use_specific_labels_not_interruption(self):
+        for retrieval,validation,freshness,label in [("failed","unknown","current","本次获取失败"),
+                ("ok","failed","current","新资料未通过核验"),("ok","passed","stale","缓存待重新检查"),
+                ("ok","passed","overdue","观测更新滞后")]:
+            feed=fixture()
+            ledger,_=deliver(feed,{},ENV,NOW,lambda *_:None)
+            feed["health"][0].update(status="unavailable",retrieval=retrieval,validation=validation,
+                                     freshness=freshness,eligibility="insufficient")
+            messages=[]
+            ledger,code=deliver(feed,ledger,ENV,NOW,lambda _,message:messages.append(message))
+            self.assertEqual(code,0);self.assertEqual(len(messages),1)
+            self.assertIn(label,messages[0].get_content())
+            self.assertNotIn("数据中断",messages[0].get_content()+str(messages[0]["Subject"]))
+            deliver(feed,ledger,ENV,NOW,lambda *_:self.fail("Unchanged health sent again"))
+
     def test_welcome_includes_pending_changes_and_daily_repeat_is_silent(self):
         sent = []
         feed = fixture()

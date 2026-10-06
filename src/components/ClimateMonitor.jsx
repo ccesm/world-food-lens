@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceLine} from "recharts";
 import "../climate.css";
+import {sourceStateLabel,hasOfficialData} from "../services/officialSources.js";
 
 const SOURCE_URL = "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/";
 const ADVISORY_URL = "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml";
@@ -59,12 +60,13 @@ export default function ClimateMonitor({record, lang = "zh",sectionId="climate"}
   const [months, setMonths] = useState(36);
   const latest = record?.data?.latest;
   const history = Array.isArray(record?.data?.history) ? record.data.history.slice(-months) : [];
-  const hasData = latest && Number.isFinite(latest.value) && history.length > 0;
+  const hasData = hasOfficialData("noaa",record) && latest && Number.isFinite(latest.value) && history.length > 0;
   const direction = hasData ? (latest.value > 0 ? "positive" : latest.value < 0 ? "negative" : "zero") : "zero";
 
   return <section id={sectionId} className="section climate-section">
     <div className="section-no">CLIMATE MONITOR · NOAA</div>
     <h2>{t.title}</h2><p>{t.intro}</p>
+    <p className="snapshot-note">{sourceStateLabel(record,lang,"noaa")}</p>
     {record?.status === "error" && hasData && <p role="status" className="climate-warning"><b>{t.cachedTitle} · </b>{t.cached}</p>}
     {!hasData ? <div className="pending-box" role="status"><p>{t.unavailable}</p></div> : <>
       <div className="climate-grid">

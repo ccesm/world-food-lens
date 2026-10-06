@@ -14,6 +14,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 import tempfile
+from urllib.error import URLError
+from data_contract import attach_metadata, DataIssue
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,12 +26,21 @@ def utc_now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
+def failure_kind(error):
+    """Classify known failures; an unexpected exception is not proof of outage."""
+    if isinstance(error, (OSError, URLError)):
+        return "retrieval"
+    if isinstance(error, ValueError):
+        return "validation"
+    return "unknown"
+
+
 def validate_result(result, key):
     if not isinstance(result, dict) or not isinstance(result.get("data"), dict):
-        raise ValueError("Adapter did not return a data object")
+        raise DataIssue("Adapter did not return a data object", "invalid_format", "failed")
     source = result.get("source", {})
     if not all(source.get(key) for key in ("label", "url", "period", "unit")):
-        raise ValueError("Missing source metadata")
+        raise DataIssue("Missing source metadata", "invalid_format", "failed")
     if not source["url"].startswith("https://"):
         raise ValueError("Source must use HTTPS")
     # allow_nan=False rejects NaN/Infinity anywhere before replacing the cache.
@@ -64,6 +75,7 @@ def validate_result(result, key):
                 for field in ("fertilizers", "agriculture"))
     elif key == "usda":
         valid = bool(re.fullmatch(r"\d{4}/\d{4}", str(data.get("latestPeriod", "")))) and \
+            month(data.get("releasePeriod")) and source["period"] == data["latestPeriod"] and \
             number(data.get("stockToUse")) and data["stockToUse"] >= 0 and number(data.get("priorStockToUse")) and \
             isinstance(data.get("history"), list) and len(data["history"]) >= 2 and all(
                 isinstance(row, dict) and isinstance(row.get("year"), str) and number(row.get("ratio"))
@@ -89,7 +101,8 @@ def validate_result(result, key):
                     value.get("stockToUse") == rows[-1]["ratio"] and value.get("priorStockToUse") == rows[-2]["ratio"]
             grains = data["grains"]
             valid = valid and isinstance(grains, dict) and all(grain(grains.get(k)) and
-                grains[k]["latestPeriod"] == data["latestPeriod"] for k in ("wheat", "maize", "rice")) and \
+                grains[k]["latestPeriod"] == data["latestPeriod"] and
+                grains[k].get("releasePeriod") == data["releasePeriod"] for k in ("wheat", "maize", "rice")) and \
                 data["history"] == grains["wheat"]["history"]
     elif key == "noaa":
         valid = number(data.get("latest", {}).get("value")) and isinstance(data.get("history"), list) and \
@@ -113,6 +126,64 @@ def observation_key(key, result):
     return ""
 
 
+def check_usda_publication(result, previous, stamp):
+    """Compare publication vintages separately from marketing-year identities.
+
+    Same-vintage content corrections are accepted and fingerprinted, not
+    mistaken for a new publication. This does not establish official revision
+    ordering within a month; the bulk source exposes only year/month here.
+    """
+    from macro_sources import usda_identity
+    from usda_coverage import assess_coverage
+
+    incoming = copy.deepcopy(result)
+    data, old = incoming["data"], previous.get("data", {})
+    vintage, old_vintage = data["releasePeriod"], old.get("releasePeriod")
+    checked_month = datetime.fromisoformat(stamp.replace("Z", "+00:00")).strftime("%Y-%m")
+    if vintage > checked_month:
+        raise DataIssue("USDA publication vintage is in the future; retained cache")
+    if old_vintage and vintage < old_vintage:
+        raise DataIssue(f"USDA publication vintage regressed from {old_vintage} to {vintage}; retained cache", "publication_regression")
+    codes = {"wheat": "410000", "maize": "440000", "rice": "422110"}
+    observations = data.get("grains", {"wheat": data})
+    prior_observations = old.get("grains", {"wheat": old})
+    revised = False
+    for name, observation in observations.items():
+        if name not in codes:
+            raise ValueError("Unknown USDA observation; retained cache")
+        prior = prior_observations.get(name, {})
+        prior_vintage = prior.get("releasePeriod", old_vintage)
+        if prior_vintage and observation["releasePeriod"] < prior_vintage:
+            raise DataIssue(f"USDA {name} publication vintage regressed; retained cache", "publication_regression")
+        identity = usda_identity(observation, codes[name])
+        for field, expected in identity.items():
+            if field in observation and observation[field] != expected:
+                raise ValueError(f"USDA {field} does not match observation content; retained cache")
+        if prior.get("history") and identity["revisionId"] != usda_identity(prior, codes[name])["revisionId"]:
+            revised = True
+        observation.update(identity)
+        observation["coverageAssessment"] = assess_coverage(observation, prior)
+    if "grains" in data:
+        # The existing top-level fields are the legacy wheat observation.
+        identity = usda_identity(data, codes["wheat"])
+        if any(field in data and data[field] != expected for field, expected in identity.items()):
+            raise ValueError("USDA legacy wheat identity does not match observation content; retained cache")
+        data.update(identity)
+        data["coverageAssessment"] = data["grains"]["wheat"]["coverageAssessment"]
+    if not old:
+        kind = "first-publication"
+    elif not old_vintage:
+        kind = "publication-established"
+    elif data["latestPeriod"] != old.get("latestPeriod"):
+        kind = "new-market-year"
+    elif vintage != old_vintage:
+        kind = "new-publication"
+    else:
+        kind = "same-vintage-revision" if revised else "unchanged"
+    incoming["refreshKind"] = kind
+    return incoming
+
+
 def refresh_bundle(previous, fetchers, attempted_at=None):
     """Pure orchestration apart from supplied fetchers; failures never erase data."""
     stamp = attempted_at or utc_now()
@@ -125,16 +196,24 @@ def refresh_bundle(previous, fetchers, attempted_at=None):
         for future in as_completed(futures):
             key = futures[future]
             old = records.get(key, {})
+            parsed, failure = False, None
             try:
-                result = validate_result(future.result(), key)
+                result = future.result()
+                parsed = True
+                result = validate_result(result, key)
                 new_period, old_period = observation_key(key, result), observation_key(key, old)
                 if new_period and old_period and new_period < old_period:
-                    raise ValueError(f"Source regressed from {old_period} to {new_period}; retained cache")
+                    raise DataIssue(f"Source regressed from {old_period} to {new_period}; retained cache", "publication_regression")
+                if key == "usda":
+                    result = check_usda_publication(result, old, stamp)
                 records[key] = dict(result, status="ok", fetchedAt=attempted_at or utc_now(), lastAttemptAt=stamp)
             except Exception as exc:
+                failure = exc
                 message = f"{type(exc).__name__}: {exc}"[:350]
                 failures[key] = message
-                records[key] = dict(old, status="error", lastAttemptAt=stamp, error=message)
+                records[key] = dict(old, status="error", lastAttemptAt=stamp, error=message,
+                                    failureKind=failure_kind(exc))
+            attach_metadata(records[key], key, old, failure=failure, parsed=parsed)
     return bundle, failures
 
 

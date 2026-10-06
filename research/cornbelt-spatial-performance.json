@@ -1,0 +1,62 @@
+{
+  "phase": "4B-1.8",
+  "measurementDate": "2026-10-05",
+  "environment": "Local macOS arm64, Python 3.12, pinned Iowa geospatial environment; not a GitHub runner benchmark",
+  "analyticalArtifact": "research/cornbelt-spatial-summary.json",
+  "analysisHash": "3cd4a9e0b80e09d1911d3bec44d2c891b4cc9c706a6f9384b70bab3ec5a49034",
+  "analyticalFileSha256": "a2ebf57ca17eb378918a0c4ec4ed9a7cbcb961dc9591525fa2ab1acc4938c103",
+  "acceptedAcquisition": {
+    "wallSeconds": 611.4432144999955,
+    "workers": 4,
+    "stateInputBytesIncludingReusedIowa": 2647374818,
+    "freshStateDownloadedBytes": 2438277132,
+    "allStateWeatherBytes": 15269120,
+    "caveat": "Iowa raw inputs reused from 4B-1.7, not downloaded again. State sums exclude the 465721-byte common acreage report and initial manual reference retrieval. Downloading the immutable reference was repeated once; no CDL duplicate transfer this phase. Package setup not included."
+  },
+  "cold": {
+    "wallSeconds": 267.8353351670012,
+    "peakChildResidentBytes": 711491584,
+    "peakCoordinatorResidentBytes": 109494272,
+    "scratchBytes": 2662239723,
+    "summaryBytes": 141860
+  },
+  "warmRuns": [
+    {"wallSeconds": 4.503348083002493, "peakChildResidentBytes": 167772160, "peakCoordinatorResidentBytes": 107380736, "allAnnualCachesReused": true},
+    {"wallSeconds": 4.462474749998364, "peakChildResidentBytes": 167854080, "peakCoordinatorResidentBytes": 107380736, "allAnnualCachesReused": true}
+  ],
+  "annualCacheBytes": 12087494,
+  "stateMeasurements": [
+    {"state":"IA","inputBytes":209177910,"freshDownloadedBytes":80224,"downloadSeconds":1.204634,"coldProcessingSeconds":31.856773,"warmProcessingSeconds":0.142944,"peakResidentBytes":452149248,"scratchBytes":210382410,"summaryBytes":11868},
+    {"state":"IL","inputBytes":247123857,"freshDownloadedBytes":247123857,"downloadSeconds":159.693862,"coldProcessingSeconds":31.548711,"warmProcessingSeconds":0.161446,"peakResidentBytes":480313344,"scratchBytes":248519393,"summaryBytes":11969},
+    {"state":"NE","inputBytes":296629596,"freshDownloadedBytes":296629596,"downloadSeconds":237.730425,"coldProcessingSeconds":33.324974,"warmProcessingSeconds":0.181432,"peakResidentBytes":526548992,"scratchBytes":298238356,"summaryBytes":11938},
+    {"state":"MN","inputBytes":424074319,"freshDownloadedBytes":424074319,"downloadSeconds":432.499833,"coldProcessingSeconds":32.184263,"warmProcessingSeconds":0.244045,"peakResidentBytes":711491584,"scratchBytes":426228349,"summaryBytes":11960},
+    {"state":"IN","inputBytes":144914747,"freshDownloadedBytes":144914747,"downloadSeconds":154.115700,"coldProcessingSeconds":18.728846,"warmProcessingSeconds":0.111996,"peakResidentBytes":358825984,"scratchBytes":145769505,"summaryBytes":11940},
+    {"state":"SD","inputBytes":284753651,"freshDownloadedBytes":284753651,"downloadSeconds":251.778198,"coldProcessingSeconds":28.157957,"warmProcessingSeconds":0.174239,"peakResidentBytes":569868288,"scratchBytes":286295669,"summaryBytes":11944},
+    {"state":"KS","inputBytes":258217367,"freshDownloadedBytes":258217367,"downloadSeconds":167.242493,"coldProcessingSeconds":26.699738,"warmProcessingSeconds":0.160686,"peakResidentBytes":510476288,"scratchBytes":259690828,"summaryBytes":11929},
+    {"state":"OH","inputBytes":174791325,"freshDownloadedBytes":174791325,"downloadSeconds":136.830583,"coldProcessingSeconds":17.149263,"warmProcessingSeconds":0.125887,"peakResidentBytes":400441344,"scratchBytes":175776124,"summaryBytes":11953},
+    {"state":"MO","inputBytes":336516710,"freshDownloadedBytes":336516710,"downloadSeconds":283.426320,"coldProcessingSeconds":22.780371,"warmProcessingSeconds":0.193514,"peakResidentBytes":584941568,"scratchBytes":338209851,"summaryBytes":11891},
+    {"state":"WI","inputBytes":271175336,"freshDownloadedBytes":271175336,"downloadSeconds":125.847582,"coldProcessingSeconds":22.313948,"warmProcessingSeconds":0.173603,"peakResidentBytes":487014400,"scratchBytes":272621862,"summaryBytes":11930}
+  ],
+  "nativeAreaAndStateUnionAudit": {"wallSeconds":8.39582425000117,"pairsChecked":45,"duplicateCornPixels":0,"allNativeCountsReconcile":true},
+  "reproducibility": {
+    "coldAndTwoWarmSummariesByteIdentical":true,
+    "iowaLegacyReplayByteIdentical":true,
+    "iowaLegacyFileSha256":"b1cd12ac741e916d8f4e179658f09228b1061692e1b3ffae82935aa4f0327c6d"
+  },
+  "realFailureIsolationExperiment": {
+    "fixture":"Independent external fixture referencing accepted inputs, with NE/pr.nc deliberately absent; original inputs and repository summary preserved",
+    "unavailableStates":["NE"],
+    "successfulStates":9,
+    "allTenMappedCropAreaPreserved":true,
+    "jointCoverage":0.8601739144239777,
+    "failedStateWeatherArea":null,
+    "failedStateWeatherStatistics":null,
+    "failureAnalysisHash":"eb24ef5660f7bace17fefab994b792a8d6264ef8f436b3d9460c37b89e9cda5c"
+  },
+  "measurementLimitations":[
+    "Cold source retrieval, geometry preprocessing and warm cached aggregation measured separately; no cold cloud cache restore or CI runner measurement.",
+    "RSS records per-process high-water marks, not continuously sampled simultaneous process-tree memory.",
+    "Scratch is logical bytes at run completion, not a continuously sampled disk peak; excludes the isolated environment and original Iowa-only derived cache.",
+    "Warm filesystem pages may be resident locally; these timings are not an operational latency guarantee."
+  ]
+}

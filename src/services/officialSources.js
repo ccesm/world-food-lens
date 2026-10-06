@@ -1,3 +1,6 @@
+import {publicationState, sourceHealth, healthLabel} from "./sourceHealth.js";
+import {datasetHealth} from "./dataHealth.js";
+import {inferDataset, normalizeMetadata} from "./dataContract.js";
 // Downloads run in scripts/refresh_data.py, never in a visitor's browser.
 export const officialSources = {
   fao: {label:"FAO · Food Price Index", homepage:"https://www.fao.org/worldfoodsituation/foodpricesindex/"},
@@ -54,6 +57,7 @@ export function validateOfficialBundle(bundle) {
   }
   for (const [key,record] of Object.entries(bundle.sources)) {
     if (!officialSources[key] || !record || !["ok","error"].includes(record.status)) throw new Error("Invalid source record");
+    if (record.metadata !== undefined && !normalizeMetadata(record,key)) throw new Error("Invalid dataset metadata");
     if (record.data && (!validSourceData(key,record.data) ||
       !Number.isFinite(Date.parse(record.fetchedAt)) || !record.source?.url?.startsWith("https://"))) {
       throw new Error(`Invalid data for ${key}`);
@@ -64,19 +68,35 @@ export function validateOfficialBundle(bundle) {
 }
 
 export function hasOfficialData(key, record) {
-  return !!record?.fetchedAt && validSourceData(key,record.data);
+  return !!record?.fetchedAt && validSourceData(key,record.data) && (record.metadata===undefined||!!normalizeMetadata(record,key));
 }
 
-export function sourceState(record, now = Date.now()) {
+export function sourceState(record, now = Date.now(), key = inferDataset(record)) {
   if (!record?.data) return "unavailable";
   if (record.status === "error") return "retained";
-  if (!record.fetchedAt || now - Date.parse(record.fetchedAt) > 72 * 60 * 60 * 1000) return "stale";
-  const observation = record.data?.releasePeriod || record.data?.latest?.endMonth || record.source?.period;
-  if (period(observation) && now - Date.parse(`${observation}-01T00:00:00Z`) > 100 * 86400000) return "old-observation";
+  const state = datasetHealth(record, {key,now,valid:validSourceData(key,record.data)});
+  if (!state.metadata || state.validation === "failed" || state.freshness === "stale") return "stale";
+  if (state.freshness === "overdue") return "old-observation";
+  if (record.metadata && !state.analysisUsable) return "unavailable";
   return "cached";
 }
 
-export function sourceStateLabel(record, lang) {
+export function officialHealth(key, record, now = Date.now()) {
+  const observation = record?.data?.releasePeriod || record?.data?.latest?.endMonth || record?.source?.period;
+  const valid = validSourceData(key, record?.data);
+  const publication = publicationState(key, observation, now);
+  return sourceHealth(record, {valid, publication, now,
+    eligible:valid && record?.status === "ok" && sourceState(record, now) === "cached" &&
+      ["current", "awaiting"].includes(publication)});
+}
+
+export function sourceStateLabel(record, lang, key) {
+  key = key ?? inferDataset(record);
+  if (officialSources[key] && !officialSources[key].editorial) {
+    const state = officialHealth(key, record);
+    return healthLabel(state, lang) + (record?.status === "error" && hasOfficialData(key, record) ?
+      (lang === "en" ? " · last verified cache retained" : " · 保留上次核验缓存") : "");
+  }
   const labels = {
     zh:{unavailable:"尚无已验证数据",retained:"更新失败 · 保留上次成功数据",stale:"官方缓存 · 超过 72 小时未成功检查","old-observation":"文件已检查 · 发布期较旧，请核对来源",cached:"官方数据 · 定时缓存"},
     en:{unavailable:"No verified data yet",retained:"Refresh failed · last good data retained",stale:"Official cache · not checked successfully for over 72h","old-observation":"File checked · older release; verify source",cached:"Official data · scheduled cache"},

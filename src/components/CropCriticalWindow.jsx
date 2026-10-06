@@ -2,6 +2,8 @@ import React,{useEffect,useState} from "react";
 import LocalCropWeather from "./LocalCropWeather";
 import CropWeatherAlerts from "./CropWeatherAlerts";
 import DroughtSoilMonitor from "./DroughtSoilMonitor";
+import USCornPilot from "./USCornPilot";
+import CornHistory from "./CornHistory";
 import {cropCalendars,CROP_NAMES,STAGES,CALENDAR_REVIEWED} from "../data/cropCalendars.js";
 import {stageForMonth,seasonalPriorities,winterExposure} from "../services/cropCalendar.js";
 import {loadDroughtMonitor} from "../services/droughtMonitor.js";
@@ -44,6 +46,8 @@ export default function CropCriticalWindow({lang}) {
   return <section id="crop-windows" className="section food-system">
     <div className="section-no">SEASONAL EXPOSURE / GRID WEATHER</div><h2>{t.title}</h2><p>{t.intro} <a href="#enso-outlook">{lang==="zh"?"查看 ENSO 与未来季节展望 ↗":"Explore ENSO and seasonal outlook ↗"}</a></p>
     <CropWeatherAlerts lang={lang}/>
+    <USCornPilot lang={lang}/>
+    <CornHistory lang={lang}/>
     <div className="fs-controls"><label className="fs-control">{t.month}<select aria-label={t.month} value={month} onChange={e=>setMonth(+e.target.value)}>{Array.from({length:12},(_,i)=><option value={i+1} key={i}>{monthName(i+1)}</option>)}</select></label>
       <label className="fs-control">{lang==="zh"?"天气年份":"Weather year"}<select value={year} onChange={e=>setYear(+e.target.value)}>{Array.from({length:Math.max(1,currentYear-2024+1)},(_,i)=>currentYear-i).map(y=><option key={y} value={y}>{y}</option>)}</select></label>
       <label className="fs-control">{t.crop}<select aria-label={t.crop} value={crop} onChange={e=>setCrop(e.target.value)}><option value="all">{t.all}</option>{Object.entries(CROP_NAMES).map(([key,name])=><option key={key} value={key}>{name[lang]}</option>)}</select></label>

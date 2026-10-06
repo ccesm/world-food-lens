@@ -219,3 +219,52 @@ is not inbox delivery. GDO service-page example periods now require advertised
 availability corroboration; unverified maps remain reference-only. Soil moisture,
 ENSO, policy and war do not independently generate automated damage claims.
 See docs/AUTOMATIC_MONITORING.md for thresholds, boundaries and operations.
+
+## US Corn spatial-stage alignment (Phase 4B-1, 2026-10-05)
+
+Baseline checkpoint: 42c55f6. Preserve legacy `us-corn-point-exposure/v1`, its
+frozen replay source hashes and `src/data/cornHistory.json`. New additive method:
+`us-corn-spatial-stage-screen/1`, still Level A state-level representative
+screening, not crop-area intersection. Cumulative stage bounds and daily
+published-before-day holds replace unsupported calendar imputation only in the
+new artifact. National production/stage/weather/joint coverage stays explicit.
+The conditional production-equivalent proxy is not affected acreage or loss.
+See docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md and the distinct research artifact.
+No new hazards, source providers, deployment or email in this phase. Phase 4B-2
+may expand screening variables only with these limitations and version guards.
+
+## Level C production implementation (Phase 4B-1.9, 2026-10-05)
+
+Additive `mapped-corn-weather-production/1` reuses frozen Iowa/ten-state native
+30m CDL geometry and gridMET readers. Annual derived grids stay outside Git;
+Pages receives compact area-weighted Tmax/Tmin/precipitation summaries with
+existing canonical metadata, Central Data Health, release binding and coarse
+Phase 2 changes. Ten-state failures retain explicit missing area/unknown
+geography, never silently normalize partial coverage. Level A remains fallback,
+historical reference and unchanged alert basis. No local stage, damage, loss or
+production weighting claims. The 2023 map is explicitly an older validated proxy
+for recent weather; native 10m CDL is not silently resampled.
+
+Local complete tests, build, real-source measurements and reference replay pass.
+Annual asset publishing and actual GitHub Actions validation are still pending;
+do not call the live Level C module activated. No push, deployment or email.
+See docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md for exact files, measured resource use
+and the operational gate before Phase 4B-2.
+
+## Level C operational validation (Phase 4B-1.10, 2026-10-05)
+
+Actual hosted workflow validation passed: run 37394519240, source cc85ebe.
+Annual cold rebuild 518.51–762.43 s; fresh weather 12.74–19.36 s; warm
+weather ~0.95–1.48 s. Exact scientific annual cache restored across runs and
+independent runners. Controlled NE, full-module and corrupt-cache failures
+preserve explicit coverage/unknown geography and unchanged alerts/mail policy.
+Fixed cached Mac/Linux inputs yield identical analytical hashes; independent
+geometry rebuild has measured sub-square-metre floating differences within
+existing geometric precision and the mathematical weighted-mean bound.
+All 215 JS + 220 Python tests and production build pass locally and hosted.
+2023 native-30m CDL remains a disclosed older proxy; newer native-10m is not
+silently selected. No local-stage or damage inference, hazard expansion,
+public deployment, email or main-branch write. Only isolated branch
+codex/phase4b1-10-operational-validation was pushed for the actual safe test.
+See docs/PHASE4B1_10_OPERATIONAL_VALIDATION.md for exact evidence/remaining risks.
+Earlier Phase 1.9 operational-pending wording is historical, not current status.

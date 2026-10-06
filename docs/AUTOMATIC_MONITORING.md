@@ -70,18 +70,33 @@ separately from the bounded display history so active unsent episodes can retry.
 `public/data/alert-delivery.json` records notification identifiers, source-health
 state, attempt/check times, SMTP acceptance and generic error categories. It
 contains no sender/recipient address, password or raw provider error. The email
-job reads the latest ledger on main before a retry and commits its updated
-receipt afterward. The website shows that receipt on the **next successful site
-publication**, not immediately after the SMTP job. An accepted message means
+job reads the exact immutable release snapshot, separately from the latest ledger
+on main. Release IDs bind source revision, rule version, evaluation time and
+input hashes; the manifest also binds exact snapshot bytes. Git ancestry, not
+timestamps, orders releases. The website labels its receipt as the **persisted
+cycle before the build**, not confirmation of this evaluation's delivery. An accepted message means
 the mail server accepted it, not that it reached the inbox.
 
-The workflow also saves an Actions receipt artifact
-for 14 days. SMTP and Git cannot provide a single atomic transaction: a crash
-after SMTP acceptance but before receipt persistence can still cause a duplicate.
-If a receipt push fails, inspect/restore that artifact before retrying. Failed
-SMTP sends do not mark alerts as delivered. Failures are flagged in Actions;
+Before SMTP, the workflow commits a pending intent. After SMTP it commits the
+receipt, and always attempts to save the ledger and private plan as an Actions
+artifact for 14 days. SMTP and Git cannot provide one atomic transaction or
+exactly-once delivery. A pending intent without a definitive durable outcome
+means **uncertain**, not definitely unsent. Automatic resends are blocked until
+an operator reconciles the artifact/provider outcome and pending intent.
+Definite SMTP rejections do not mark alerts delivered and allow retry.
+Failures are flagged in Actions;
 the published website remains available. A completely failed build cannot use
 this email channel to report its own failure; retain GitHub failure notifications.
+
+Use Actions **Re-run failed jobs**, or re-run only the notify job, for a definite
+SMTP failure. It reuses the build's exact data commit without source refresh,
+re-evaluation or rebuilding. A handled release is skipped; an older release never
+changes the newer ledger. Once main contains a newer identified data release,
+the older retry is conservatively skipped even if that newer Pages deployment
+failed. A re-run of the entire workflow is a new build/evaluation and a stale
+checkout fails safely. Never force-push or rebase notification JSON. Concurrent
+ledger edits/pushes fail optimistic checks; unrelated main commits are preserved.
+See [Batch 3 consistency details and recovery](PHASE0_BATCH3.md).
 
 ## Configuration
 

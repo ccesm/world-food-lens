@@ -9,8 +9,9 @@ calendar.
 
 ## Copernicus Global Drought Observatory
 
-`scripts/refresh_drought.py` reads the public Copernicus/JRC Global Drought
-Observatory service-page request examples, retains their exact dates and retrieves
+`scripts/refresh_drought.py` first reads public Copernicus/JRC Global Drought
+Observatory WMS time metadata, with service-page examples as an explicitly
+unverified reference-map fallback, and retrieves
 three global raster layers:
 
 - short-term precipitation anomaly: one-month SPI (`spaST`);
@@ -24,12 +25,21 @@ point classifications and the provider-hosted global map. It does not download
 or republish a full raster in this repository.
 
 Example request dates are not an authoritative latest-publication listing.
-The refresher separately checks WMS GetCapabilities layer availability ranges.
-Only dates corroborated for all three layers set `periodVerified: true`; this
-does not prove that they are the latest periods. Missing/contradictory metadata,
-future or regressed periods and failed refreshes clear verification. Reference
-maps remain labelled with their requested dates and an unverified-date notice;
-unverified GDO data cannot trigger the automatic alert center.
+The refresher checks exact membership in WMS GetCapabilities time dimensions,
+not merely containment between two dates. It accepts explicit date lists and
+aligned day/month/year intervals; it does not reinterpret `P10D` as calendar
+dekads. Unsupported or contradictory metadata fails closed. On 2026-10-04 the
+advertised short-term interval did not align with its timestep, and the service
+provided no trustworthy response observation date. Even exact membership alone
+does not establish that an unlabelled PNG represents that date. Consequently the
+current adapter never sets `periodVerified: true`; automatic drought screening
+remains disabled. Download, image parsing, available-date membership and product
+date association are recorded separately. Future/regressed periods and failed
+refreshes retain previous values without inheriting eligibility. Reference maps
+remain labelled with requested dates, not confirmed observation dates.
+
+See [Phase 0 Batch 2](PHASE0_BATCH2.md) for the live endpoint investigation and
+source-health semantics.
 
 SPI describes how precipitation at a grid cell compares with its historical
 distribution. RDrI-Agri combines hazard, exposure and vulnerability for hotspot
@@ -67,7 +77,10 @@ attempt fails. Individual source periods also have conservative age guards:
 35 days for short-term SPI, 75 days for long-term SPI and 45 days for RDrI-Agri.
 NASA current-month interpretation is suppressed when the cache is stale or its
 last daily value is too old. Missing and invalid data produce an unavailable
-state, never an invented normal or low-risk value.
+state, never an invented normal or low-risk value. At the start of a month,
+the collector's deliberate four-day lag may leave only prior-month observations:
+this is normal publication waiting, not a source outage. The current-month
+context remains insufficient; it is not filled with last month's data.
 
 The daily GitHub Pages workflow runs both `scripts/refresh_weather.py` and
 `scripts/refresh_drought.py`, retests the generated caches and commits changed

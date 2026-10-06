@@ -1,0 +1,58 @@
+{
+  "schema": {
+    "type":"object", "required":["contractVersion","datasetId","provider","sourceUrl","downloadUrl","observation","attempt","accepted","cache","version","extensions"],
+    "additionalProperties":false,
+    "properties": {
+      "contractVersion":{"enum":[1]},
+      "datasetId":{"type":"string","minLength":1},
+      "provider":{"type":"string","minLength":1},
+      "sourceUrl":{"type":["string","null"],"pattern":"^https://"},
+      "downloadUrl":{"type":["string","null"],"pattern":"^https://"},
+      "observation":{"type":"object","required":["period","marketYear","vintage","publishedAt"],"additionalProperties":false,"properties":{
+        "period":{"type":["string","null"]},"marketYear":{"type":["string","null"],"pattern":"^[0-9]{4}/[0-9]{4}$"},
+        "vintage":{"type":["string","null"],"pattern":"^[0-9]{4}-(0[1-9]|1[0-2])$"},"publishedAt":{"type":["string","null"],"format":"date-time"}}},
+      "attempt":{"type":"object","required":["checkedAt","retrieval","format","semantic","reason"],"additionalProperties":false,"properties":{
+        "checkedAt":{"type":["string","null"],"format":"date-time"},"retrieval":{"enum":["ok","failed","unknown"]},
+        "format":{"enum":["passed","failed","unknown"]},"semantic":{"enum":["passed","failed","unknown"]},
+        "reason":{"enum":[null,"retrieval_failed","invalid_format","semantic_validation_failed","publication_regression","coverage_incomplete","unknown"]}}},
+      "accepted":{"type":"object","required":["fetchedAt","format","semantic","period"],"additionalProperties":false,"properties":{
+        "fetchedAt":{"type":["string","null"],"format":"date-time"},"format":{"enum":["passed","failed","unknown"]},
+        "semantic":{"enum":["passed","failed","unknown"]},"period":{"enum":["verified","unverified","unknown"]}}},
+      "cache":{"enum":["new","unchanged","retained-retrieval","retained-validation","legacy","unavailable"]},
+      "version":{"type":"object","required":["contentHash","observationId","revisionId"],"additionalProperties":false,"properties":{
+        "contentHash":{"type":["string","null"],"pattern":"^[a-f0-9]{64}$"},"observationId":{"type":["string","null"]},"revisionId":{"type":["string","null"]}}},
+      "extensions":{"type":"object"}
+    }
+  },
+  "policies":{"checkDays":3,"weatherDays":10,"soilCollectionLagDays":4,"droughtDays":35,"ensoDays":45,"monthlyMaxDays":100},
+  "providers":{"fao":"FAO","worldBank":"World Bank","usda":"USDA PSD","eia":"EIA","noaa":"NOAA CPC RONI","enso":"NOAA CPC ENSO","weather":"NASA POWER","soil":"NASA POWER","drought":"Copernicus GDO","cornProduction":"USDA NASS","cornProgress":"USDA NASS","cornBaseline":"NASA POWER"},
+  "datasets":{
+    "fao":{"type":"index","frequency":"monthly"},"worldBank":{"type":"benchmark-prices","frequency":"monthly"},
+    "usda":{"type":"supply-use","frequency":"monthly-market-year-vintage"},"eia":{"type":"benchmark-price","frequency":"monthly"},
+    "noaa":{"type":"observed-index","frequency":"overlapping-three-month"},"enso":{"type":"official-outlook","frequency":"monthly"},
+    "weather":{"type":"representative-point-observations","frequency":"daily"},"soil":{"type":"representative-point-soil-and-normals","frequency":"daily"},
+    "drought":{"type":"map-classifications","frequency":"product-specific"},
+    "cornProduction":{"type":"state-grain-production-weights","frequency":"annual"},
+    "cornProgress":{"type":"state-crop-progress-condition","frequency":"weekly-Apr-Nov"},
+    "cornBaseline":{"type":"matched-calendar-seven-day-normal","frequency":"fixed-1991-2020"}
+  },
+  "cacheLabels":{
+    "new":{"zh":"本次取得新内容","en":"New accepted content"},"unchanged":{"zh":"重新检查，内容未变","en":"Rechecked; content unchanged"},
+    "retained-retrieval":{"zh":"获取失败，保留有效缓存","en":"Cache retained after retrieval failure"},
+    "retained-validation":{"zh":"新资料未通过核验，保留有效缓存","en":"Cache retained after validation failure"},
+    "legacy":{"zh":"兼容旧格式，内容版本未知","en":"Legacy format; content version unknown"},"unavailable":{"zh":"没有有效缓存","en":"No accepted cache"}
+  },
+  "reasons":{
+    "retrieval_failed":{"zh":"本次获取失败","en":"Latest retrieval failed"},
+    "invalid_format":{"zh":"文件格式不符合契约","en":"Invalid data format / contract"},
+    "semantic_validation_failed":{"zh":"新资料未通过内容核验","en":"Incoming data failed semantic validation"},
+    "period_unverified":{"zh":"资料对应日期尚未核实","en":"Observation period unverified"},
+    "awaiting_publication":{"zh":"正常等待官方发布","en":"Awaiting expected publication"},
+    "stale":{"zh":"检查或观测更新滞后","en":"Check or observation overdue"},
+    "cached_after_failure":{"zh":"保留上次有效缓存","en":"Last valid cache retained"},
+    "insufficient_evidence":{"zh":"本项分析资料不足","en":"Insufficient evidence for this rule"},
+    "publication_regression":{"zh":"拒绝较旧出版版本","en":"Older publication rejected"},
+    "coverage_incomplete":{"zh":"贡献地区覆盖不足或未核实","en":"Contributor coverage incomplete or unverified"},
+    "unknown":{"zh":"缺少可靠元数据或未知发布节奏","en":"Metadata or publication cadence unknown"}
+  }
+}

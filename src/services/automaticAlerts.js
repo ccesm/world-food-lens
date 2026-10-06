@@ -1,8 +1,14 @@
 import {cropCalendars, CROP_NAMES} from "../data/cropCalendars.js";
 import {weatherSummary} from "./localWeather.js";
-import {droughtPointSummary, soilMoistureSummary} from "./droughtMonitor.js";
+import {droughtPointSummary, soilMoistureSummary, droughtVerificationLabel} from "./droughtMonitor.js";
 import {validSourceData, sourceState, officialSources} from "./officialSources.js";
 import {validateEnsoBundle} from "./ensoOutlook.js";
+import {publicationState, validHealthDetails} from "./sourceHealth.js";
+import {validReleaseIdentity} from "./releaseIdentity.js";
+import {freshCheck, derivedProvenance, datasetHealth, validHealthSnapshot} from "./dataHealth.js";
+import {buildDataHealth} from "./centralDataHealth.js";
+import {MARKET_RULES} from "./marketRules.js";
+import {validPhase2} from "./changeSet.js";
 
 const DAY = 86400000;
 const text = (zh, en) => ({zh, en});
@@ -16,8 +22,7 @@ const validTimestamp = value => typeof value === "string" && /^\d{4}-\d{2}-\d{2}
   finite(Date.parse(value)) && new Date(value).toISOString() === (value.length === 20 ? value.replace("Z", ".000Z") : value);
 const bilingual = value => value && [value.zh, value.en].every(v => typeof v === "string" && v.length > 0);
 const httpsUrl = value => safe(() => new URL(value).protocol === "https:") === true;
-const freshFetch = (record, now) => record?.status === "ok" && validTimestamp(record.fetchedAt) &&
-  Date.parse(record.fetchedAt) <= now && now - Date.parse(record.fetchedAt) <= 3 * DAY;
+const freshFetch = freshCheck;
 const validCalendar = row => row && typeof row.id === "string" && bilingual(row.region) && CROP_NAMES[row.crop] &&
   Array.isArray(row.months) && row.months.length === 12 && row.months.every(stage => /^[PVWFGH-]$/.test(stage)) && httpsUrl(row.source);
 
@@ -36,6 +41,9 @@ function validAlert(alert) {
 
 export function validateMonitorBundle(bundle) {
   if (bundle?.schemaVersion !== 1 || bundle.rulesVersion !== ALERT_RULES_VERSION || !validTimestamp(bundle.generatedAt) ||
+    (bundle.release !== undefined && !validReleaseIdentity(bundle.release)) ||
+    (bundle.dataHealth !== undefined && !validHealthSnapshot(bundle.dataHealth,bundle.release?.id??null,bundle.generatedAt)) ||
+    (bundle.analysis !== undefined && !validPhase2(bundle.analysis,bundle.release?.id,bundle.generatedAt)) ||
     !Array.isArray(bundle.active) || !bundle.active.every(validAlert) || new Set(bundle.active.map(a => a.id)).size !== bundle.active.length ||
     bundle.active.some(alert => Date.parse(alert.lastEvaluatedAt) > Date.parse(bundle.generatedAt)) ||
     !Array.isArray(bundle.events) || bundle.events.length > 200 || !bundle.events.every(event =>
@@ -43,11 +51,11 @@ export function validateMonitorBundle(bundle) {
       ["new", "escalated", "resolved", "verification-lost", "reconfirmed"].includes(event.type) &&
       validTimestamp(event.at) && Date.parse(event.at) <= Date.parse(bundle.generatedAt) && validAlert(event.alert)) || new Set(bundle.events.map(e => e.id)).size !== bundle.events.length ||
     !Array.isArray(bundle.health) || !bundle.health.every(row => typeof row?.id === "string" && bilingual(row.label) &&
-      ["ok", "unavailable"].includes(row.status) && bilingual(row.reason) &&
+      ["ok", "unavailable"].includes(row.status) && validHealthDetails(row) && bilingual(row.reason) &&
       (row.period == null || typeof row.period === "string" && row.period.length > 0) &&
       (row.fetchedAt == null || validTimestamp(row.fetchedAt))) || new Set(bundle.health.map(row => row.id)).size !== bundle.health.length ||
     !bilingual(bundle.coverage?.automatic) || !bilingual(bundle.coverage?.manual) ||
-    !["not-configured", "configured", "sent", "failed"].includes(bundle.email?.status) ||
+    !["not-configured", "configured", "sent", "failed", "uncertain"].includes(bundle.email?.status) ||
     (bundle.email.lastSentAt != null && !validTimestamp(bundle.email.lastSentAt)) ||
     (bundle.email.lastAttemptAt != null && !validTimestamp(bundle.email.lastAttemptAt))) return null;
   return bundle;
@@ -97,9 +105,11 @@ function droughtEvidence(drought, point, now) {
   return validLayer ? layer : null;
 }
 
-function priceEvidence(official, key, field, now) {
+export function priceEvidence(official, key, field, now) {
   const record = official?.schemaVersion === 1 ? official.sources?.[key] : null;
   if (!freshFetch(record, now) || !safe(() => validSourceData(key, record.data)) || sourceState(record, now) !== "cached") return null;
+  if (!datasetHealth(record,{key,now}).analysisUsable) return null;
+  if (publicationState(key, record.source?.period, now) === "overdue") return null;
   const expectedUnit = key === "fao" ? "2014–2016 = 100" : "USD / mt; Brent: USD / barrel";
   const expectedHost = key === "fao" ? "www.fao.org" : "www.worldbank.org";
   if (record.source?.unit !== expectedUnit || !httpsUrl(record.source?.url) ||
@@ -205,15 +215,7 @@ export function evaluateAutomaticAlerts({weather, drought, official, enso, previ
   }
 
   const marketReady = new Map();
-  const definitions = [
-    ["fao", "fao", "FAO 食品价格指数", "FAO Food Price Index", 5, 10, "#s1"],
-    ["worldBank", "brent", "布伦特原油", "Brent crude", 10, 20, "#s4"],
-    ["worldBank", "urea", "尿素", "Urea", 10, 20, "#s4"],
-    ["worldBank", "dap", "磷酸二铵 DAP", "DAP", 10, 20, "#s4"],
-    ["worldBank", "tsp", "重过磷酸钙 TSP", "TSP", 10, 20, "#s4"],
-    ["worldBank", "potash", "氯化钾", "Potassium chloride", 10, 20, "#s4"],
-  ];
-  for (const [key, field, zh, en, yellow, red, target] of definitions) {
+  for (const [key, field, zh, en, yellow, red, target] of MARKET_RULES) {
     const id = `market/${key}/${field}`, evidence = priceEvidence(official, key, field, now);
     marketReady.set(field, evidence);
     let alert = null;
@@ -231,17 +233,19 @@ export function evaluateAutomaticAlerts({weather, drought, official, enso, previ
   }
 
   const total = points.length;
+  // `status` retains v1 evidence availability for older consumers. Source health
+  // lives in the independent dimensions below, not in that compatibility field.
   const healthRow = (id, label, ready, reason, period, fetchedAt) => ({id, label, status:ready ? "ok" : "unavailable", reason,
     ...(period ? {period} : {}), ...(validTimestamp(fetchedAt) ? {fetchedAt} : {})});
   const range = values => values.length ? [...new Set(values)].sort().join(" / ") : undefined;
   const ensoValid = safe(() => validateEnsoBundle(enso, now));
   const ensoReady = Boolean(ensoValid && !ensoValid.stale && freshFetch(enso, now) && validDate(ensoValid.data.issuedAt) &&
-    Date.parse(ensoValid.data.issuedAt) <= now);
+    Date.parse(ensoValid.data.issuedAt) <= now && publicationState("enso", ensoValid.data.issuedAt, now) !== "overdue");
   const health = [
     healthRow("weather", text("气温观测", "Temperature observations"), total > 0 && weatherReady.size === total,
       text(`${weatherReady.size}/${total} 个代表点通过连续性、来源和时效检查；最新观测最多允许滞后 10 天。`, `${weatherReady.size}/${total} representative points pass continuity, source and freshness checks; latest observations may lag by at most 10 days.`), range(currentPeriods.weather), weather?.generatedAt),
     healthRow("drought", text("官方干旱图层", "Official drought layer"), total > 0 && droughtReady.size === total,
-      drought?.periodVerified !== true ? text("图层日期尚未被官方可用数据范围证实；暂停自动干旱判定。", "The layer date has not been corroborated by official data availability; automatic drought screening is paused.") :
+      drought?.periodVerified !== true ? text(`${droughtVerificationLabel(drought,"zh")}；暂停自动干旱判定。`, `${droughtVerificationLabel(drought,"en")}; automatic drought screening is paused.`) :
         text(`${droughtReady.size}/${total} 个点有有效且及时的短期 SPI；缺失数据不会解除旧预警。`, `${droughtReady.size}/${total} points have usable, current short-term SPI; missing data does not resolve an existing alert.`), range(currentPeriods.drought), drought?.fetchedAt),
     healthRow("soil", text("土壤湿度背景", "Soil-moisture context"), total > 0 && soilReady.size === total,
       text(`${soilReady.size}/${total} 个点有有效当月数据及 1991–2020 同月基准；部分月份仅作背景，不触发红色预警。`, `${soilReady.size}/${total} points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts.`), range(currentPeriods.soil), weather?.generatedAt),
@@ -254,13 +258,62 @@ export function evaluateAutomaticAlerts({weather, drought, official, enso, previ
     healthRow("calendar", text("作物季节模板", "Crop seasonal templates"), calendarCount > 0 && calendarCount === points.reduce((sum, point) => sum + (point?.crops?.length ?? 0), 0),
       text(`${calendarCount} 个作物窗口可匹配。模板是估计生育期，仍需人工维护；不是实测田间进度。`, `${calendarCount} crop windows can be matched. Templates estimate growth stages and require editorial maintenance; they are not measured crop progress.`)),
   ];
+  const centralHealth = buildDataHealth({weather,drought,official,enso,points,now,
+    evidence:{weather:weatherReady,soil:soilReady,drought:droughtReady,fao:!!marketReady.get("fao"),
+      worldBank:["brent","urea","dap","tsp","potash"].every(key=>marketReady.get(key)),enso:ensoReady}});
+  // Compatibility rows are a projection of the central snapshot, not a
+  // second health engine. Rule-window counts above remain rule-owned.
+  for (const row of health) {
+    const eligible = row.status === "ok";
+    if (row.id === "calendar") {
+      Object.assign(row,{retrieval:"unknown",validation:eligible?"passed":"failed",freshness:"unknown",
+        eligibility:eligible?"eligible":"insufficient",reasonCodes:["unknown"]});
+      continue; // Editorial templates have no fabricated network fetch time.
+    }
+    const details = centralHealth.datasets.filter(d => ["weather","soil"].includes(row.id) ?
+      points.some(point=>d.id===`${row.id}/${point.id}`) : d.id === (row.id==="costs"?"worldBank":row.id));
+    const rank = {failed:0,unknown:1,unverified:2,stale:0,overdue:1,awaiting:2,current:3,ok:3,passed:3};
+    for(const field of ["retrieval","validation","freshness"])
+      row[field] = details.map(d=>d[field]).sort((a,b)=>rank[a]-rank[b])[0]??"unknown";
+    row.eligibility = eligible && details.every(d=>d.evidence.eligible) ? "eligible" : "insufficient";
+    row.status = row.eligibility==="eligible" ? "ok" : "unavailable";
+    row.reasonCodes = [...new Set(details.flatMap(d=>d.reasons))];
+    row.period = range(details.map(d=>d.metadata?.observation.period).filter(Boolean));
+    row.fetchedAt = details.map(d=>d.metadata?.accepted.fetchedAt).filter(validTimestamp).sort()[0];
+    if(row.id==="soil" && row.freshness==="awaiting") row.reason=text(
+      "来源按每日观测更新；本站保守滞后 4 天。月初尚未覆盖当月是正常等待，上月数据不冒充当月。",
+      "Daily observations are collected with a conservative 4-day lag. At month start, missing current-month values are expected, not replaced with last month's data.");
+    if(!row.period)delete row.period;
+    if(!row.fetchedAt)delete row.fetchedAt;
+  }
   const state = reconcile(outcomes, previous, at);
+  const lineage = (alert,eligible) => {
+    const [category,kind,pointId]=alert.id.split("/");
+    const inputs=category==="market"?[official?.sources?.[kind]]:kind==="heat"?[weather?.points?.[pointId]]:[drought];
+    const inputIds=[category==="market"?kind:kind==="heat"?`weather/${pointId}`:"drought"];
+    const provenance=derivedProvenance(`${alert.id.split("/").slice(0,2).join("/")}/v1`,inputs,{now,eligible,inputIds});
+    if(category==="crop")provenance.inputs.push({datasetId:"editorial/crop-calendars",vintage:null,observationId:null,contentHash:null,revisionId:null});
+    return provenance;
+  };
+  for(const alert of state.active) {
+    // Retained unverified alerts keep their original evidence lineage.
+    if(alert.state==="active")alert.provenance=lineage(alert,true);
+  }
+  for(const event of state.events.filter(e=>e.at===at)) {
+    event.provenance=lineage(event.alert,event.type!=="verification-lost");
+    if(["new","escalated","reconfirmed"].includes(event.type))event.alert.provenance=event.provenance;
+  }
   const result = {schemaVersion:1, rulesVersion:ALERT_RULES_VERSION, generatedAt:at, ...state, health,
     coverage:{automatic:text("NASA POWER 代表点高温与生育期重叠、日期被官方可用范围证实的短期干旱图层、FAO 与世界银行完整月份价格 / 成本涨幅。每日重新检查；源数据按各自发布节奏更新。",
       "Representative-point NASA POWER heat/stage overlap, official short-term drought layers with availability-corroborated dates, and complete-month FAO/World Bank price and cost rises. Rechecked daily; source observations follow provider publication schedules."),
       manual:text("政策、战争、地区季节预报和产量影响仍需人工核实。ENSO 与土壤湿度作背景；未自动推断受灾面积、减产比例或全球危机概率。",
         "Policy, conflict, regional seasonal forecasts and yield consequences still require review. ENSO and soil moisture provide context; affected area, yield loss and global crisis probabilities are not automatically inferred.")},
     email:previous?.email ? {status:previous.email.status, ...(previous.email.lastSentAt ? {lastSentAt:previous.email.lastSentAt} : {})} : {status:"not-configured"}};
+  result.dataHealth = centralHealth;
+  result.provenance = derivedProvenance(`automatic-alerts/${ALERT_RULES_VERSION}`,
+    [...Object.values(official?.sources??{}),...Object.values(weather?.points??{}),drought,enso],{now,
+      inputIds:[...Object.keys(official?.sources??{}),...Object.keys(weather?.points??{}).map(id=>`weather/${id}`),"drought","enso"],
+      eligible:[...outcomes.values()].every(value=>value.status!=="unavailable")});
   if (!validateMonitorBundle(result)) throw new Error("Generated alert schema is invalid");
   return result;
 }

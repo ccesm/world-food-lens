@@ -1,3 +1,7 @@
+import {validHealthDetails,healthState} from "./sourceHealth.js";
+import {validReleaseIdentity} from "./releaseIdentity.js";
+import {validHealthSnapshot} from "./dataHealth.js";
+import {validPhase2} from "./changeSet.js";
 const HOUR=60*60*1000;
 export const ALERT_FEED_MAX_AGE=72*HOUR;
 const text=value=>typeof value==="string"&&value.trim().length>0;
@@ -15,9 +19,12 @@ const validAlert=alert=>alert&&text(alert.id)&&["crop","market","system"].includ
 /** Invalid evidence fails closed; old, otherwise valid evidence remains readable as an archive. */
 export function validateAlertFeed(feed,now=Date.now()){
   if(!Number.isFinite(now)||feed?.schemaVersion!==1||feed.rulesVersion!=="1"||!timestamp(feed.generatedAt)||
+    (feed.release!==undefined&&!validReleaseIdentity(feed.release))||
+    (feed.dataHealth!==undefined&&!validHealthSnapshot(feed.dataHealth,feed.release?.id??null,feed.generatedAt))||
+    (feed.analysis!==undefined&&!validPhase2(feed.analysis,feed.release?.id,feed.generatedAt))||
     !Array.isArray(feed.active)||!Array.isArray(feed.events)||feed.events.length>200||!Array.isArray(feed.health)||
     !bilingual(feed.coverage?.automatic)||!bilingual(feed.coverage?.manual)||
-    !["not-configured","configured","sent","failed"].includes(feed.email?.status)||
+    !["not-configured","configured","sent","failed","uncertain"].includes(feed.email?.status)||
     (feed.email.lastSentAt!==undefined&&!timestamp(feed.email.lastSentAt))||
     (feed.email.lastAttemptAt!==undefined&&!timestamp(feed.email.lastAttemptAt)))return null;
   const generated=Date.parse(feed.generatedAt);
@@ -28,7 +35,7 @@ export function validateAlertFeed(feed,now=Date.now()){
     timestamp(event.at)&&Date.parse(event.at)<=generated+300000&&validAlert(event.alert)&&event.alert.id===event.alertId)||
     new Set(feed.events.map(event=>event.id)).size!==feed.events.length)return null;
   if(!feed.health.every(source=>source&&text(source.id)&&bilingual(source.label)&&bilingual(source.reason)&&
-    ["ok","unavailable"].includes(source.status)&&(source.period===undefined||text(source.period))&&
+    ["ok","unavailable"].includes(source.status)&&validHealthDetails(source)&&(source.period===undefined||text(source.period))&&
     (source.fetchedAt===undefined||timestamp(source.fetchedAt)))||
     new Set(feed.health.map(source=>source.id)).size!==feed.health.length)return null;
   return {...feed,stale:generated>now+300000||now-generated>ALERT_FEED_MAX_AGE};
@@ -40,7 +47,7 @@ export function alertOverview(feed,{now=Date.now(),failed=false}={}){
   return {archive,red:active.filter(alert=>alert.severity==="red").length,
     yellow:active.filter(alert=>alert.severity==="yellow").length,
     unverified:valid?.active.filter(alert=>alert.state==="unverified").length??0,
-    unavailable:valid?.health.filter(source=>source.status!=="ok").length??0};
+    unavailable:valid?.health.filter(source=>!["current","awaiting"].includes(healthState(source))).length??0};
 }
 
 export async function loadAlertFeed(signal){

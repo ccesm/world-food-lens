@@ -2,30 +2,38 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "codex/phase4b1-10-operational-validation"]
   workflow_dispatch:
+    inputs:
+      validation_only:
+        description: Validate without publishing data, deploying Pages or sending email
+        type: boolean
+        default: false
   schedule:
     - cron: "23 6 * * *"
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # Hosted cold CDL acquisition measured 12.7 min; leave room for unrelated
+    # existing refreshes on cache eviction. Routine warm runs do not rebuild.
+    timeout-minutes: 45
     outputs:
       published_sha: ${{ steps.saved.outputs.sha }}
+      annual_cache_key: ${{ steps.annual-lifecycle.outputs.persisted_key }}
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v5
         with:
           node-version: 24
@@ -33,6 +41,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/corn_spatial_requirements.txt
       - run: npm ci
       - run: npm test
       - name: Download official data (retain good cache on source failure)
@@ -63,34 +73,188 @@ jobs:
       - name: Report ENSO outlook failure
         if: steps.enso.outcome == 'failure'
         run: echo "::warning::NOAA ENSO outlook refresh failed. The last good issue date is retained and stale outlooks are not used for current crop watches."
-      - name: Evaluate automatic alerts against retained event history
-        env:
-          WFL_EMAIL_CONFIGURED: ${{ secrets.WFL_ALERT_TO != '' && secrets.WFL_SMTP_USER != '' && secrets.WFL_SMTP_PASSWORD != '' }}
-        run: npm run evaluate-alerts
-      - run: npm test
-      - run: npm run build
-      - name: Save cache to the source-of-truth repository
-        id: saved
-        if: github.ref == 'refs/heads/main'
+      - name: Refresh US corn pilot (no new notifications)
+        id: corn
+        continue-on-error: true
+        run: python3 scripts/refresh_corn.py
+      - name: Report corn pilot source failure
+        if: steps.corn.outcome == 'failure'
+        run: echo "::warning::Corn pilot source failed; prior accepted records retained. Missing baselines or weather disable exposure, not zero exposure."
+      - name: Install optional spatial runtime
+        continue-on-error: true
+        run: pip install -r scripts/corn_spatial_requirements.txt
+      - name: Read pinned annual cache identity
+        id: spatial-config
         run: |
-          git add public/data/official-data.json public/data/local-weather.json public/data/enso-outlook.json public/data/drought-monitor.json public/data/monitor-alerts.json
-          if ! git diff --cached --quiet; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Refresh official data cache'
-            git push origin HEAD:main
-          fi
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          KEY=$(python scripts/ensure_corn_spatial.py --print-key --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json")
+          printf 'key=%s\n' "$KEY" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/restore@v4
+        id: annual-cache
+        with:
+          path: ${{ runner.temp }}/corn-annual
+          key: ${{ steps.spatial-config.outputs.key }}
+          restore-keys: ${{ steps.spatial-config.outputs.key }}-
+      - name: Validate, restore or generate reviewed annual cache
+        id: annual-lifecycle
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RESTORED_KEY: ${{ steps.annual-cache.outputs.cache-matched-key }}
+        run: |
+          python scripts/ensure_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/annual-lifecycle.json"
+          python -c 'import json,os; a=json.load(open(os.environ["RUNNER_TEMP"]+"/annual-lifecycle.json")); key=os.environ["RESTORED_KEY"] if a["available"] and a["action"]=="reuse" else a["cacheKey"]+"-"+os.environ["GITHUB_RUN_ID"]; print("available="+str(a["available"]).lower()+"\naction="+a["action"]+"\npersisted_key="+key)' >> "$GITHUB_OUTPUT"
+      - name: Persist only approved annual grids (new snapshot also repairs corrupt cache)
+        if: steps.annual-lifecycle.outputs.available == 'true' && steps.annual-lifecycle.outputs.action != 'reuse'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/corn-annual
+          key: ${{ steps.annual-lifecycle.outputs.persisted_key }}
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/corn-weather
+          key: corn-weather-${{ hashFiles('src/data/cornSpatial.json', 'scripts/corn_spatial*.py', 'scripts/refresh_corn_spatial.py') }}-${{ github.run_id }}
+          restore-keys: |
+            corn-weather-${{ hashFiles('src/data/cornSpatial.json', 'scripts/corn_spatial*.py', 'scripts/refresh_corn_spatial.py') }}-
+      - name: Refresh informational mapped-corn weather (isolated module; no alert migration)
+        run: python scripts/refresh_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --weather-cache "$RUNNER_TEMP/corn-weather" --performance "$RUNNER_TEMP/corn-spatial-performance.json" --input-archive "$RUNNER_TEMP/corn-weather-inputs.tar.gz"
+      - name: Preserve spatial runtime diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: corn-spatial-diagnostics-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/corn-spatial-performance.json
+            ${{ runner.temp }}/annual-lifecycle.json
+            ${{ runner.temp }}/cdl-raw/annual-build-performance.json
+            ${{ runner.temp }}/cdl-raw/*/acquisition.json
+            ${{ runner.temp }}/cdl-raw/acquisition.json
+            ${{ runner.temp }}/corn-weather-inputs.tar.gz
+            public/data/corn-spatial.json
+          retention-days: 90
+      - name: Evaluate automatic alerts against retained event history
+        run: npm run evaluate-alerts
+      # The complete suite ran BEFORE refresh against its committed fixtures.
+      # After refresh validate actual release/data invariants, not fixture dates.
+      - name: Operational validation and frozen numerical suites (no SMTP)
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        run: |
+          python -m unittest discover -s tests/spatial
+          python -m unittest discover -s research/iowa_spatial
+          python -m unittest discover -s research/cornbelt_spatial
+          python scripts/validate_spatial_operation.py --snapshot public/data/monitor-alerts.json --output "$RUNNER_TEMP/cold-operation-verdict.json"
+      - run: npm run build
+      - name: Exercise actual immutable release against local-only bare remote
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        run: python scripts/validate_spatial_operation.py --snapshot public/data/monitor-alerts.json --exercise-local-release --dist dist --output "$RUNNER_TEMP/cold-operation-verdict.json"
+      - name: Retain cold operational release for the warm-run comparison
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        uses: actions/upload-artifact@v4
+        with:
+          name: corn-spatial-operation-cold
+          path: public/data/*.json
+          retention-days: 90
+      - name: Read authenticated frozen validation inputs (never production or Pages)
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download corn-spatial-validation-20261005 --repo ccesm/world-food-lens --dir "$RUNNER_TEMP/replay-inputs" --pattern 'corn-spatial-annual.tar.gz' --pattern 'wfl-production-weather-inputs.tar.gz' --pattern 'corn-spatial-local-reference.json'
+      - uses: actions/upload-artifact@v4
+        if: github.ref != 'refs/heads/main' || inputs.validation_only
+        with:
+          name: corn-spatial-fixed-validation-inputs
+          path: ${{ runner.temp }}/replay-inputs/*
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        if: (github.ref != 'refs/heads/main' || inputs.validation_only) && always()
+        with:
+          name: corn-spatial-cold-verdict
+          path: ${{ runner.temp }}/cold-operation-verdict.json
+          retention-days: 90
+      - name: Verify built snapshot and save immutable data release
+        id: saved
+        if: github.ref == 'refs/heads/main' && !inputs.validation_only
+        run: python3 scripts/release_pipeline.py save-data
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
+  spatial-operational-warm:
+    if: github.ref != 'refs/heads/main' || inputs.validation_only
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/corn_spatial_requirements.txt
+      - run: npm ci
+      - run: pip install -r scripts/corn_spatial_requirements.txt
+      - name: Exact annual key (no restore-prefix substitution)
+        id: spatial-config
+        run: |
+          KEY=$(python scripts/ensure_corn_spatial.py --print-key --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/warm-annual-lifecycle.json")
+          printf 'key=%s\n' "$KEY" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/restore@v4
+        id: annual-restore
+        with:
+          path: ${{ runner.temp }}/corn-annual
+          key: ${{ needs.build.outputs.annual_cache_key }}
+          fail-on-cache-miss: true
+      - uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/corn-weather
+          key: corn-weather-${{ hashFiles('src/data/cornSpatial.json', 'scripts/corn_spatial*.py', 'scripts/refresh_corn_spatial.py') }}-${{ github.run_id }}
+          fail-on-cache-miss: true
+      - name: Verify actual warm annual reuse
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/ensure_corn_spatial.py --annual-cache "$RUNNER_TEMP/corn-annual" --raw-cache "$RUNNER_TEMP/cdl-raw" --performance "$RUNNER_TEMP/warm-annual-lifecycle.json" --no-rebuild
+          python -c 'import json,os; a=json.load(open(os.environ["RUNNER_TEMP"]+"/warm-annual-lifecycle.json")); assert a["available"] and a["action"]=="reuse"'
+      - uses: actions/download-artifact@v4
+        with:
+          name: corn-spatial-operation-cold
+          path: ${{ runner.temp }}/cold-data
+      - name: Actual warm / single-state / complete-module failures, no notification send
+        run: python scripts/validate_spatial_scenarios.py --annual-cache "$RUNNER_TEMP/corn-annual" --weather-cache "$RUNNER_TEMP/corn-weather" --cold-data "$RUNNER_TEMP/cold-data" --output "$RUNNER_TEMP/scenarios"
+      - name: Fixed local input replay on Linux (authenticated draft, never Pages)
+        uses: actions/download-artifact@v4
+        with:
+          name: corn-spatial-fixed-validation-inputs
+          path: ${{ runner.temp }}/replay
+      - name: Compare frozen scientific inputs and rebuilt annual grid
+        run: python scripts/validate_spatial_replay.py --directory "$RUNNER_TEMP/replay" --rebuilt-annual-cache "$RUNNER_TEMP/corn-annual" --output "$RUNNER_TEMP/replay-verdict.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: corn-spatial-operation-warm
+          path: |
+            ${{ runner.temp }}/warm-annual-lifecycle.json
+            ${{ runner.temp }}/scenarios
+            ${{ runner.temp }}/replay-verdict.json
+            ${{ runner.temp }}/replay/replayed-*-summary.json
+          retention-days: 90
+
   deploy:
+    if: github.ref == 'refs/heads/main' && !inputs.validation_only
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - name: Deploy
         id: deployment
@@ -99,7 +263,7 @@ jobs:
   notify:
     name: Email changes after successful publication
     needs: [build, deploy]
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && !inputs.validation_only
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -108,41 +272,47 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: ${{ needs.build.outputs.published_sha }}
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Read latest delivery ledger before retries
-        run: |
-          git fetch origin main
-          git restore --source=origin/main --worktree -- public/data/alert-delivery.json
-      - name: Send new or escalated alerts and newly interrupted sources
-        id: email
+      - name: Verify published release and plan against latest durable ledger
+        id: plan
         continue-on-error: true
         env:
+          WFL_RELEASE_REVISION: ${{ needs.build.outputs.published_sha }}
+          WFL_EMAIL_CONFIGURED: ${{ secrets.WFL_ALERT_TO != '' && secrets.WFL_SMTP_USER != '' && secrets.WFL_SMTP_PASSWORD != '' }}
+        run: python3 scripts/send_alert_email.py prepare --release-revision "$WFL_RELEASE_REVISION"
+      - name: Persist intent before contacting SMTP
+        id: checkpoint
+        if: always() && steps.plan.outcome != 'skipped'
+        run: python3 scripts/release_pipeline.py persist-ledger
+      - name: Send new or escalated alerts and source-health changes
+        id: email
+        if: steps.plan.outcome == 'success' && steps.checkpoint.outcome == 'success'
+        continue-on-error: true
+        env:
+          WFL_RELEASE_REVISION: ${{ needs.build.outputs.published_sha }}
           WFL_ALERT_TO: ${{ secrets.WFL_ALERT_TO }}
           WFL_SMTP_USER: ${{ secrets.WFL_SMTP_USER }}
           WFL_SMTP_PASSWORD: ${{ secrets.WFL_SMTP_PASSWORD }}
-        run: python3 scripts/send_alert_email.py
+        run: python3 scripts/send_alert_email.py send --release-revision "$WFL_RELEASE_REVISION"
+      - name: Persist receipt without merging concurrent ledger changes
+        id: receipt
+        if: always() && steps.email.outcome != 'skipped' && steps.checkpoint.outcome == 'success'
+        run: python3 scripts/release_pipeline.py persist-ledger
       - name: Preserve delivery receipt for recovery
-        if: always() && steps.email.outcome != 'skipped'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: alert-delivery-${{ github.run_id }}-${{ github.run_attempt }}
-          path: public/data/alert-delivery.json
+          path: |
+            public/data/alert-delivery.json
+            .wfl-notification-plan.json
+          include-hidden-files: true
           retention-days: 14
-      - name: Save delivery ledger without addresses or credentials
-        if: always() && steps.email.outcome != 'skipped'
+      - name: Report failed or uncertain notification
+        if: always() && (steps.plan.outcome == 'failure' || steps.email.outcome == 'failure' || steps.checkpoint.outcome == 'failure' || steps.receipt.outcome == 'failure')
         run: |
-          git add public/data/alert-delivery.json
-          if ! git diff --cached --quiet; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Record automatic alert delivery status'
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
-      - name: Report email failure
-        if: steps.email.outcome == 'failure'
-        run: |
-          echo "::error::Email failed. Pending alert events were retained for retry; check the error category and SMTP secrets."
+          echo "::error::Notification did not complete. A durable pending intent means delivery is uncertain: reconcile the receipt artifact before retrying. Definite pre-acceptance failures can retry this notify job without rebuilding."
           exit 1

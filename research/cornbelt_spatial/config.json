@@ -1,0 +1,12 @@
+{
+  "methodVersion": "ten-state-mapped-corn-weather/1",
+  "cropYear": 2015,
+  "start": "2015-07-01",
+  "end": "2015-07-14",
+  "crop": "corn-class-1",
+  "grid": {"crs": "EPSG:5070", "cellSizeM": 9000, "originX": -52095, "originY": 2288295, "edgeSegments": 16, "version": "cornbelt-iowa-anchored-9km/1"},
+  "fips": {"IA": "19", "IL": "17", "NE": "31", "MN": "27", "IN": "18", "SD": "46", "KS": "20", "OH": "39", "MO": "29", "WI": "55"},
+  "selection": "Unchanged Iowa Phase 4B-1.7 dates, fixed before any ten-state weather or outcome comparison",
+  "acreageUrl": "https://esmis.nal.usda.gov/sites/default/release-files/k3569432s/kh04dr985/70795996r/CropProdSu-01-12-2016.txt",
+  "diagnostics": {"largeAcreageDifferenceFraction": 0.1, "interpretation": "Predeclared investigation flag only; no representative-point pass/fail threshold or calibration"}
+}

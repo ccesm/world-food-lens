@@ -4,18 +4,24 @@ Parsers fail closed on changed columns/units, duplicate periods or empty data.
 The refresh orchestrator owns persistence and last-good cache preservation.
 """
 import csv
+import hashlib
 from datetime import datetime, timezone
 from html import unescape
+from html.parser import HTMLParser
 import io
+import json
 import math
 import posixpath
 import re
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
+from urllib.parse import urljoin, urlsplit
 import xml.etree.ElementTree as ET
 import zipfile
 
 WB_URL = "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx"
-FAO_URL = "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv"
+FAO_PAGE = "https://www.fao.org/worldfoodsituation/foodpricesindex/en/"
+FAO_URL = "https://www.fao.org/media/docs/worldfoodsituationlibraries/wfs-library/food_price_indices_data.csv"
 EIA_URL = "https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RBRTE&f=M"
 USDA_URL = "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip"
 NS = {"s": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
@@ -198,10 +204,38 @@ def fetch_world_bank():
                 "Nominal monthly commodity benchmarks; percentage changes use adjacent calendar months, not trading quotes.")
 
 
+def fao_csv_url(html):
+    """A moved CSV must be linked by FAO itself, on its official HTTPS host."""
+    links = set()
+    class Links(HTMLParser):
+        def handle_starttag(self, tag, attrs):
+            if tag != "a":
+                return
+            url = urljoin(FAO_PAGE, dict(attrs).get("href", ""))
+            parsed = urlsplit(url)
+            if (parsed.scheme == "https" and parsed.netloc == "www.fao.org" and
+                    parsed.path.startswith("/media/docs/worldfoodsituationlibraries/") and
+                    parsed.path.endswith("/food_price_indices_data.csv")):
+                links.add(url)
+    Links().feed(html.decode("utf-8") if isinstance(html, bytes) else html)
+    if len(links) != 1:
+        raise ValueError("FAO monthly CSV link missing or ambiguous")
+    return links.pop()
+
+
 def fetch_fao():
-    data = parse_fao(download(FAO_URL))
-    return wrap(data, "FAO · Food Price Index", "https://www.fao.org/worldfoodsituation/foodpricesindex/en/",
-                FAO_URL, data["headline"]["period"], "2014–2016 = 100",
+    url = FAO_URL
+    try:
+        content = download(url)
+    except HTTPError as error:
+        if error.code not in (404, 410):
+            raise
+        url = fao_csv_url(download(FAO_PAGE))
+        content = download(url)
+    # Never fall back after invalid content, and never use a non-FAO mirror.
+    data = parse_fao(content)
+    return wrap(data, "FAO · Food Price Index", FAO_PAGE,
+                url, data["headline"]["period"], "2014–2016 = 100",
                 "Nominal export-weighted food price index. Recent meat inputs mix projected and observed prices; the index can be revised.")
 
 
@@ -217,6 +251,13 @@ EU_MEMBERS = {"Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Repu
               "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden"}
 
 
+def usda_identity(data, commodity_code):
+    """A content fingerprint identifies revisions, not their official chronology."""
+    content = json.dumps(data["history"], sort_keys=True, separators=(",", ":"), allow_nan=False)
+    return {"observationId": f"usda-psd/{commodity_code}/{data['latestPeriod']}",
+            "revisionId": hashlib.sha256(content.encode("utf-8")).hexdigest()}
+
+
 def parse_usda(content, as_of=None, commodity_code="410000"):
     as_of = as_of or datetime.now(timezone.utc).date()
     with zipfile.ZipFile(io.BytesIO(content)) as archive:
@@ -230,7 +271,8 @@ def parse_usda(content, as_of=None, commodity_code="410000"):
             raise ValueError("USDA bulk CSV columns changed")
         attributes = {"Production": "production", "Domestic Consumption": "consumption", "Ending Stocks": "endingStocks"}
         years = {}
-        released = set()
+        released = {}
+        entity_ids = {}
         for row in reader:
             if row["Commodity_Code"].lstrip("0") != commodity_code or row["Attribute_Description"] not in attributes:
                 continue
@@ -239,21 +281,33 @@ def parse_usda(content, as_of=None, commodity_code="410000"):
             # Use the provider's contemporary EU aggregate for each year.
             if year < 2000 or year > as_of.year:
                 continue
-            release = f"{int(row['Calendar_Year']):04d}-{int(row['Month']):02d}"
+            release_month = int(row["Month"])
+            if not 1 <= release_month <= 12:
+                raise ValueError("Invalid USDA release month")
+            release = f"{int(row['Calendar_Year']):04d}-{release_month:02d}"
             if release > as_of.strftime("%Y-%m"):
                 raise ValueError("USDA data has a future release month")
-            released.add(release)
+            released.setdefault(year, set()).add(release)
             if row["Unit_Description"].strip().upper() != "(1000 MT)":
                 raise ValueError("USDA grain quantity unit changed")
             value = numeric(row["Value"])
             if value is None or value < 0:
                 raise ValueError("Missing or negative USDA grain quantity")
             country = years.setdefault(year, {}).setdefault(row["Country_Name"], {})
+            entity = row["Country_Code"].strip()
+            if not entity:
+                raise ValueError("USDA coverage requires provider entity codes")
+            names = entity_ids.setdefault(year, {})
+            if (row["Country_Name"] in names and names[row["Country_Name"]] != entity) or any(
+                    name != row["Country_Name"] and code == entity for name, code in names.items()):
+                raise ValueError("Ambiguous USDA coverage entity identity")
+            names[row["Country_Name"]] = entity
             attribute = attributes[row["Attribute_Description"]]
             if attribute in country:
                 raise ValueError("Duplicate USDA country/year/attribute")
             country[attribute] = value
     history = []
+    coverage = {}
     for year, countries in sorted(years.items()):
         if "World" in countries:
             chosen = {"World": countries["World"]}
@@ -278,13 +332,24 @@ def parse_usda(content, as_of=None, commodity_code="410000"):
                         "ratio": round(totals["endingStocks"] / totals["consumption"] * 100, 4),
                         "excludingChina": excluding_china,
                         "countryAreaCount": len(chosen)})
+        coverage[f"{year}/{year+1}"] = {
+            "basis": "official-world" if "World" in countries else "contributors",
+            "count": len(chosen),
+            "contributors": [{"id": "usda-psd:" + entity_ids[year][name], "name": name, **values}
+                             for name, values in sorted(chosen.items(), key=lambda item: entity_ids[year][item[0]])],
+            "officialTotals": countries.get("World"),
+            "chinaId": "usda-psd:" + entity_ids[year]["China"] if china else None,
+        }
     if len(history) < 2 or any(int(b["year"][:4])-int(a["year"][:4]) != 1
                                for a, b in zip(history, history[1:])):
         raise ValueError("USDA requires consecutive market years")
-    return {"latestPeriod": history[-1]["year"], "stockToUse": history[-1]["ratio"],
+    data = {"latestPeriod": history[-1]["year"], "stockToUse": history[-1]["ratio"],
             "priorStockToUse": history[-2]["ratio"], "history": history,
-            "releasePeriod": max(released), "unit": "1000 metric tons; ratio: %",
+            "releasePeriod": max(released[int(history[-1]["year"][:4])]), "unit": "1000 metric tons; ratio: %",
             "methodology": "World grain totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Ex-China subtracts China from BOTH stocks and consumption; it is not an estimate of exportable stocks. Marketing years vary by country; figures include forecasts and revisions. Rice is on a milled basis."}
+    data.update(usda_identity(data, commodity_code))
+    data["coverage"] = coverage
+    return data
 
 
 def fetch_usda():
@@ -293,6 +358,8 @@ def fetch_usda():
               (("wheat", "410000"), ("maize", "440000"), ("rice", "422110"))}
     if len({grain["latestPeriod"] for grain in grains.values()}) != 1:
         raise ValueError("USDA grain marketing years are not aligned")
+    if len({grain["releasePeriod"] for grain in grains.values()}) != 1:
+        raise ValueError("USDA grain publication vintages are not aligned")
     # Keep the legacy wheat shape for existing cards and consumers.
     data = {**grains["wheat"], "grains": grains}
     return wrap(data, "USDA · PSD", "https://apps.fas.usda.gov/psdonline/app/index.html#/app/downloads",

@@ -1,5 +1,6 @@
 // WFL experimental screening rules, not fitted crisis probabilities.
 import {sourceState, validSourceData} from "./officialSources.js";
+import {derivedProvenance, datasetHealth} from "./dataHealth.js";
 
 const finite = x => typeof x === "number" && Number.isFinite(x);
 export const RISK_WEIGHTS = {crop:25, stocks:20, imports:15, energy:15, trade:10, prices:10, synchronization:5};
@@ -59,7 +60,7 @@ export function combineEvidence(factors) {
 
 export function buildFoodStress(bundle, now=Date.now()) {
   const sources=bundle?.sources??{};
-  const usable = key => validSourceData(key,sources[key]?.data) && sourceState(sources[key],now)==="cached" &&
+  const usable = key => validSourceData(key,sources[key]?.data) && datasetHealth(sources[key],{key,now}).analysisUsable && sourceState(sources[key],now,key)==="cached" &&
     Number.isFinite(Date.parse(sources[key].fetchedAt)) && Date.parse(sources[key].fetchedAt)<=now &&
     monthNumber(sources[key].data.releasePeriod ?? sources[key].source?.period)<=
       monthNumber(new Date(now).toISOString().slice(0,7));
@@ -73,5 +74,10 @@ export function buildFoodStress(bundle, now=Date.now()) {
   const factors={stocks:stocksReady?GRAINS.reduce((sum,key)=>sum+100-inventories[key].percentile,0)/3:null,
     energy:energyReady?costFields.reduce((sum,key)=>sum+costs[key].score,0)/4:null,
     prices:usable("fao")?prices?.score:null};
-  return {...combineEvidence(factors),inventories,costs,prices};
+  const combined=combineEvidence(factors);
+  return {...combined,inventories,costs,prices,provenance:derivedProvenance("food-stress/v1",
+    [sources.usda,sources.worldBank,sources.fao],{now,eligible:combined.coverage===100,inputIds:["usda","worldBank","fao"]}),
+    factorProvenance:{stocks:derivedProvenance("stock-percentile/v1",[sources.usda],{now,eligible:!!stocksReady,inputIds:["usda"]}),
+      energy:derivedProvenance("cost-percentile/v1",[sources.worldBank],{now,eligible:!!energyReady,inputIds:["worldBank"]}),
+      prices:derivedProvenance("price-percentile/v1",[sources.fao],{now,eligible:usable("fao")&&!!prices,inputIds:["fao"]})}};
 }

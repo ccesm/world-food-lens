@@ -49,3 +49,13 @@ test("email timestamps may follow evaluation because notification happens afterw
   const input={...feed,email:{status:"sent",lastSentAt:"2026-09-21T06:25:00Z",lastAttemptAt:"2026-09-21T06:24:00Z"}};
   assert.ok(validateAlertFeed(input,now));
 });
+
+test("expanded health labels keep normal publication waiting out of gap counts",()=>{
+  const health=[{...feed.health[0],status:"unavailable",retrieval:"ok",validation:"passed",freshness:"awaiting",eligibility:"insufficient"}];
+  assert.ok(validateAlertFeed({...feed,health},now));
+  assert.equal(alertOverview({...feed,health},{now}).unavailable,0);
+  for(const value of [{...health[0],retrieval:"guess"},{...health[0],validation:undefined}])
+    assert.equal(validateAlertFeed({...feed,health:[value]},now),null);
+  health[0].freshness="overdue";
+  assert.equal(alertOverview({...feed,health},{now}).unavailable,1);
+});

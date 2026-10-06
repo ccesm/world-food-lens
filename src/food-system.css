@@ -13,6 +13,7 @@
 .fs-calculation{font-size:24px!important;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .fs-provenance{display:flex;flex-wrap:wrap;gap:5px 15px;color:var(--fs-muted);font-size:11px;line-height:1.7;overflow-wrap:anywhere}.fs-card .fs-provenance{border-top:1px solid var(--fs-border);padding-top:10px;flex-direction:column;margin-top:auto}
 .fs-details{border-top:1px solid var(--fs-border);padding:18px 0;font-size:13px}.fs-details summary{font-weight:650;cursor:pointer;line-height:1.7}
+.corn-history-panel{padding:20px}.corn-history{display:flex;flex-direction:column;gap:12px;min-width:0}.corn-history .fs-calendar small{display:block;line-height:1.6}.corn-history .fs-calendar td{white-space:normal}.corn-history .fs-calendar{min-width:850px}
 .fs-controls{display:flex;flex-wrap:wrap;align-items:end;gap:15px;margin:24px 0}.fs-control{display:flex;flex-direction:column;gap:8px;font-size:13px;max-width:100%}
 .food-system select,.fs-controls>button{padding:11px 14px;background:var(--fs-surface);color:inherit;border:1px solid var(--fs-border);border-radius:9px;font:inherit;max-width:100%;min-height:44px}
 .fs-controls>button{cursor:pointer;font-size:13px}.grain-inventory{margin-top:32px;padding-top:16px;border-top:1px solid var(--fs-border)}.fs-subtitle{font-size:24px;font-weight:500}

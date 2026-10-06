@@ -30,16 +30,19 @@ def workbook(unit="($/bbl)"):
     return stream.getvalue()
 
 
-def usda_zip(missing=False, duplicate=False, unit="(1000 MT)", years=(2025,2026), commodity="0410000"):
+def usda_zip(missing=False, duplicate=False, unit="(1000 MT)", years=(2025,2026), commodity="0410000",
+             omit_country=None, release_month="09", historical_release_month=None):
     stream = io.StringIO()
     headers = ["Commodity_Code","Country_Name","Country_Code","Market_Year","Calendar_Year","Month",
                "Attribute_Description","Unit_Description","Value"]
     writer = csv.DictWriter(stream, fieldnames=headers); writer.writeheader()
     for year in years:
         for country, scale in (("European Union",10),("France",3),("United Kingdom",2),("China",20)):
+            if country == omit_country: continue
             for attribute, value in (("Production",110),("Domestic Consumption",100),("Ending Stocks",30)):
                 if missing and country == "China" and attribute == "Ending Stocks": continue
-                row = dict(zip(headers,[commodity,country,country,year,2026,"09",attribute,unit,value*scale]))
+                month = historical_release_month if historical_release_month and year != max(years) else release_month
+                row = dict(zip(headers,[commodity,country,country,year,2026,month,attribute,unit,value*scale]))
                 writer.writerow(row)
                 if duplicate: writer.writerow(row)
     zipped = io.BytesIO()
@@ -88,6 +91,33 @@ class MacroTests(unittest.TestCase):
         self.assertEqual(data["stockToUse"],30)
         self.assertEqual(data["history"][-1]["excludingChina"]["consumption"],1200)
         self.assertEqual(data["history"][-1]["excludingChina"]["endingStocks"],360)
+
+    def test_usda_publication_identity_is_distinct_from_marketing_year(self):
+        data = parse_usda(usda_zip(),AS_OF)
+        self.assertEqual(data["latestPeriod"],"2026/2027")
+        self.assertEqual(data["releasePeriod"],"2026-09")
+        self.assertEqual(data["observationId"],"usda-psd/410000/2026/2027")
+        self.assertRegex(data["revisionId"],r"^[a-f0-9]{64}$")
+        self.assertEqual(parse_usda(usda_zip(),AS_OF)["revisionId"],data["revisionId"])
+
+    def test_usda_latest_market_year_vintage_is_not_taken_from_unrelated_historical_rows(self):
+        data = parse_usda(usda_zip(historical_release_month="10"),date(2026,10,4))
+        self.assertEqual(data["releasePeriod"],"2026-09")
+        for month in ("00","13"):
+            with self.assertRaises(ValueError):
+                parse_usda(usda_zip(release_month=month),date(2026,10,4))
+
+    def test_known_coverage_limit_whole_missing_country_can_leave_plausible_totals(self):
+        # Diagnostic required by Phase 0; a reference coverage contract is not
+        # present yet. Partial-field checks cannot detect an absent country.
+        complete = parse_usda(usda_zip(),AS_OF)
+        missing = parse_usda(usda_zip(omit_country="China"),AS_OF)
+        self.assertEqual(complete["history"][-1]["consumption"],3200)
+        self.assertEqual(missing["history"][-1]["consumption"],1200)
+        self.assertEqual(missing["stockToUse"],complete["stockToUse"])
+        self.assertEqual(missing["history"][-1]["countryAreaCount"],2)
+        self.assertIsNone(missing["history"][-1]["excludingChina"])
+        self.assertNotEqual(missing["revisionId"],complete["revisionId"])
 
     def test_usda_maize_and_milled_rice_use_distinct_codes(self):
         for code in ("440000","422110"):

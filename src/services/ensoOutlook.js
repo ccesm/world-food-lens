@@ -1,7 +1,33 @@
 import {cropCalendars,STAGES} from "../data/cropCalendars.js";
+import {freshCheck, publicationState} from "./dataHealth.js";
 import {agriculturalExposureProfiles,seasonalClimateSignals,SIGNAL_REVIEWED} from "../data/seasonalClimateSignals.js";
 
 const MONTH=/^20\d\d-(0[1-9]|1[0-2])$/;
+
+export function strengthOutlookSummary(data,lang="zh") {
+  const evidence=data?.strengthEvidence,probability=evidence?.probability,event=evidence?.event,period=evidence?.period;
+  const operators={gt:">",gte:"≥",eq:"",lt:"<",lte:"≤"};
+  // Legacy strengthOutlook tags have no auditable probability or valid period.
+  if(evidence?.status!=="extracted"||evidence.reason!=="explicit-probability-event-period"||
+    typeof data.issuedAt!=="string"||!/^20\d\d-\d\d-\d\d$/.test(data.issuedAt)||
+    evidence.issuedAt!==data.issuedAt||
+    evidence.sourceUrl!=="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"||
+    typeof evidence.sourceText!=="string"||!evidence.sourceText.trim()||
+    !probability||!Object.hasOwn(operators,probability.operator)||!Number.isFinite(probability.percent)||probability.percent<0||probability.percent>100||
+    (probability.operator==="gt"&&probability.percent===100)||(probability.operator==="lt"&&probability.percent===0)||
+    !["el-nino","la-nina"].includes(event?.phase)||!["strong","very-strong"].includes(event?.strength)||
+    !MONTH.test(period?.startMonth)||!MONTH.test(period?.endMonth)||period.startMonth>period.endMonth||
+    typeof period.label!=="string"||!period.label.trim()||
+    !Array.isArray(data.forecasts)||!data.forecasts.length||!MONTH.test(data.forecasts[0]?.startMonth)||!MONTH.test(data.forecasts.at(-1)?.startMonth)||
+    period.startMonth<data.forecasts[0].startMonth||period.endMonth<data.issuedAt.slice(0,7)||
+    period.endMonth>addMonths(data.forecasts.at(-1).startMonth,2))return null;
+  const chance=`${operators[probability.operator]}${probability.percent}%`,dates=`${period.startMonth} → ${period.endMonth}`;
+  const zh=lang==="zh",phase=event.phase==="el-nino"?(zh?"厄尔尼诺":"El Niño"):(zh?"拉尼娜":"La Niña");
+  const strength=event.strength==="very-strong"?(zh?"非常强":"very strong"):(zh?"强":"strong");
+  return {...evidence,text:zh?`NOAA：${strength}${phase}事件概率 ${chance} · ${dates}`:
+    `NOAA: ${chance} chance of a ${strength} ${phase} event · ${dates}`};
+}
+
 export function validateEnsoBundle(bundle,now=Date.now()) {
   const data=bundle?.data;
   if(bundle?.schemaVersion!==1||!data||!Array.isArray(data.forecasts)||data.forecasts.length!==9||!/^20\d\d-\d\d-\d\d$/.test(data.issuedAt)||!Number.isFinite(Date.parse(data.issuedAt)))return null;
@@ -16,8 +42,7 @@ export function validateEnsoBundle(bundle,now=Date.now()) {
     if(!Array.isArray(row.roniPercentiles)||row.roniPercentiles.length!==7||!row.roniPercentiles.every((v,i,a)=>Number.isFinite(v)&&(i===0||v>=a[i-1])))return null;
     previous=row.startMonth;
   }
-  const fetched=Date.parse(bundle.fetchedAt);
-  return {...bundle,stale:bundle.status!=="ok"||!Number.isFinite(fetched)||now-fetched>7*86400000||now-issue>45*86400000};
+  return {...bundle,stale:!freshCheck(bundle,now)||!["current","awaiting"].includes(publicationState("enso",data.issuedAt,now))};
 }
 
 export async function loadEnsoOutlook(signal) {
