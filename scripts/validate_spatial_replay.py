@@ -56,9 +56,11 @@ if __name__=='__main__':
     # Failure cannot fetch a newer preliminary vintage during fixed-input replay.
     with patch('refresh_corn_spatial.urlopen',side_effect=AssertionError('Network forbidden in fixed-input replay')):
         replay,_=refresh(annual,weather,original['period']['start'],original['period']['end'],original['generatedAt'])
+    write_json(root/'replayed-fixed-summary.json',replay)
     result=compare(original,replay)
     if args.rebuilt_annual_cache:
         with patch('refresh_corn_spatial.urlopen',side_effect=AssertionError('Network forbidden in fixed-input replay')):
             rebuilt,_=refresh(Path(args.rebuilt_annual_cache),weather,original['period']['start'],original['period']['end'],original['generatedAt'])
+        write_json(root/'replayed-rebuilt-summary.json',rebuilt)
         result['runnerRebuiltAnnualGrid']=compare(original,rebuilt)
     write_json(args.output,result)

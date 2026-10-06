@@ -242,6 +242,7 @@ jobs:
             ${{ runner.temp }}/warm-annual-lifecycle.json
             ${{ runner.temp }}/scenarios
             ${{ runner.temp }}/replay-verdict.json
+            ${{ runner.temp }}/replay/replayed-*-summary.json
           retention-days: 90
 
   deploy:
