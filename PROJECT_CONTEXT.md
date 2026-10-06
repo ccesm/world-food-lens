@@ -250,3 +250,21 @@ Annual asset publishing and actual GitHub Actions validation are still pending;
 do not call the live Level C module activated. No push, deployment or email.
 See docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md for exact files, measured resource use
 and the operational gate before Phase 4B-2.
+
+## Level C operational validation (Phase 4B-1.10, 2026-10-05)
+
+Actual hosted workflow validation passed: run 37394519240, source cc85ebe.
+Annual cold rebuild 518.51–762.43 s; fresh weather 12.74–19.36 s; warm
+weather ~0.95–1.48 s. Exact scientific annual cache restored across runs and
+independent runners. Controlled NE, full-module and corrupt-cache failures
+preserve explicit coverage/unknown geography and unchanged alerts/mail policy.
+Fixed cached Mac/Linux inputs yield identical analytical hashes; independent
+geometry rebuild has measured sub-square-metre floating differences within
+existing geometric precision and the mathematical weighted-mean bound.
+All 215 JS + 220 Python tests and production build pass locally and hosted.
+2023 native-30m CDL remains a disclosed older proxy; newer native-10m is not
+silently selected. No local-stage or damage inference, hazard expansion,
+public deployment, email or main-branch write. Only isolated branch
+codex/phase4b1-10-operational-validation was pushed for the actual safe test.
+See docs/PHASE4B1_10_OPERATIONAL_VALIDATION.md for exact evidence/remaining risks.
+Earlier Phase 1.9 operational-pending wording is historical, not current status.

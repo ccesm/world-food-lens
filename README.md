@@ -303,6 +303,19 @@ asset has not been uploaded and actual Actions activation has not run. No
 deployment or email was performed. See the
 [production report, measurements and activation gates](docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md).
 
+### Operational validation (Phase 4B-1.10)
+
+Real GitHub-hosted cold/warm cache, source access, state/module outages,
+release consistency, alert/email isolation and cross-platform replay now pass.
+See the [operational report](docs/PHASE4B1_10_OPERATIONAL_VALIDATION.md) and
+[successful safe workflow run](https://github.com/ccesm/world-food-lens/actions/runs/37394519240).
+The approved annual cache is saved immediately and reused across runners;
+source failure remains explicit, never zero corn or normalized full coverage.
+The 2023 map is clearly labeled as a proxy. No public deployment or real email
+was performed; code is on the isolated validation branch, not activated on main.
+This supersedes the earlier report's pending Actions validation, not its
+preserved scientific methods. Phase 4B-2 is not implemented.
+
 ## Safety / data integrity rules
 
 Historical US corn research (2012–2019) is available below the US corn pilot.
