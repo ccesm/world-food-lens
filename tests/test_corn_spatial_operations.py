@@ -14,6 +14,8 @@ from refresh_corn_spatial import fetch_weather
 from corn_spatial import file_hash,write_json
 from data_contract import DataIssue
 import test_release_pipeline
+import json
+from validate_spatial_replay import compare
 
 
 class SpatialOperationsTests(unittest.TestCase):
@@ -93,5 +95,26 @@ class SpatialOperationsTests(unittest.TestCase):
             self.assertEqual(test_release_pipeline.git(fixture_repo.repo,'rev-parse','HEAD').decode().strip(),source)
             self.assertEqual(test_release_pipeline.git(fixture_repo.repo,'remote','get-url','origin'),remote)
         finally:fixture_repo.doCleanups()
+
+    def test_cross_platform_mean_bound_does_not_allow_material_weather_difference(self):
+        original=json.loads((Path(__file__).resolve().parents[1]/'public/data/corn-spatial.json').read_bytes())
+        candidate=copy.deepcopy(original)
+        geometry={s['state']:{'totalVariation':1e-11} for s in original['states']}
+        geometry['ten-state']={'totalVariation':1e-11}
+        candidate['states'][0]['weatherSummary']['precipitation14DayMm']['mean']+=2e-10
+        self.assertTrue(compare(original,candidate,geometry)['sameScientificInputs'])
+        candidate['states'][0]['weatherSummary']['precipitation14DayMm']['mean']+=.01
+        with self.assertRaises(AssertionError):compare(original,candidate,geometry)
+
+    def test_mean_perturbation_bound_never_relaxes_quantiles_or_missing_weather(self):
+        original=json.loads((Path(__file__).resolve().parents[1]/'public/data/corn-spatial.json').read_bytes())
+        geometry={s['state']:{'totalVariation':1e-11} for s in original['states']}
+        geometry['ten-state']={'totalVariation':1e-11}
+        candidate=copy.deepcopy(original)
+        candidate['states'][0]['weatherSummary']['precipitation14DayMm']['p90']+=2e-10
+        with self.assertRaises(AssertionError):compare(original,candidate,geometry)
+        candidate=copy.deepcopy(original)
+        candidate['states'][0]['coverageDiagnostics']['missingWeatherCellsWithCorn']=1
+        with self.assertRaises(AssertionError):compare(original,candidate,geometry)
 
 if __name__=='__main__':unittest.main()
