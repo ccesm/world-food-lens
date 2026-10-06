@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import cache from "../public/data/enso-outlook.json" with {type:"json"};
+// Historical assertions must not follow the scheduled production cache.
+import cache from "./fixtures/enso-outlook-baseline.json" with {type:"json"};
 import {validateEnsoBundle,monthSpan,cropSignalOverlap,activeRegionalSignals,agriculturalExposureRows,forecastWatchIntersections,strengthOutlookSummary} from "../src/services/ensoOutlook.js";
 import {seasonalClimateSignals,typicalTeleconnections} from "../src/data/seasonalClimateSignals.js";
 import {productionContextShare} from "../src/services/cropWeatherAlerts.js";

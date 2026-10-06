@@ -19,7 +19,7 @@ def fixture(value=130, period="2026-07"):
 
 class RefreshTests(unittest.TestCase):
     def usda_previous(self):
-        bundle = json.loads((Path(__file__).resolve().parents[1] / "public/data/official-data.json").read_text())
+        bundle = json.loads((Path(__file__).resolve().parents[1] / "tests/fixtures/official-data-baseline.json").read_text())
         return {"sources": {"usda": bundle["sources"]["usda"]}}
 
     def set_usda_vintage(self, record, vintage):
@@ -139,7 +139,7 @@ class RefreshTests(unittest.TestCase):
             self.assertEqual(result["sources"]["usda"]["data"],previous["sources"]["usda"]["data"])
 
     def test_extended_grains_validate_and_bad_extension_retains_full_cache(self):
-        previous = json.loads((Path(__file__).resolve().parents[1] / "public/data/official-data.json").read_text())
+        previous = json.loads((Path(__file__).resolve().parents[1] / "tests/fixtures/official-data-baseline.json").read_text())
         original = previous["sources"]["usda"]
         self.assertEqual(validate_result(original,"usda"),original)
         for field,value in (("consumption",0),("ratio",999),("year","2024/2025")):

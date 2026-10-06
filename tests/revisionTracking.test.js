@@ -134,7 +134,7 @@ test("legacy unknown USDA contributor coverage cannot support new revision signa
   assert.ok(next.analysis.signals.filter(s=>s.ruleId.startsWith("usda-")).every(s=>!s.eligible&&s.state==="unverified"));
 });
 test("ENSO issue vintage and same forecast-window probability revisions retain source evidence without strength inference",()=>{
-  const enso=JSON.parse(readFileSync(new URL("../public/data/enso-outlook.json",import.meta.url)));
+  const enso=JSON.parse(readFileSync(new URL("./fixtures/enso-outlook-baseline.json",import.meta.url)));
   enso.fetchedAt=at;enso.data.issuedAt="2026-09-10";
   const first=run({enso}),nextEnso=clone(enso);nextEnso.data.forecasts[0].elNino-=1;nextEnso.data.forecasts[0].neutral+=1;
   nextEnso.data.strengthEvidence={status:"not-reliably-extracted",sourceText:"A very strong event is unlikely"};
@@ -238,7 +238,7 @@ test("a full source hash change outside the projection is not advertised as iden
   assert.equal(changes(next,"revision").length,0);
 });
 test("large correction journals respect byte pruning without truncating current facts",()=>{
-  const enso=JSON.parse(readFileSync(new URL("../public/data/enso-outlook.json",import.meta.url)));
+  const enso=JSON.parse(readFileSync(new URL("./fixtures/enso-outlook-baseline.json",import.meta.url)));
   enso.fetchedAt=at;enso.data.issuedAt="2026-09-10";
   let prior=run({enso});
   for(let i=0;i<3;i++) {
