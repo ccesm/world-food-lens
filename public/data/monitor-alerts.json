@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "rulesVersion": "1",
-  "generatedAt": "2026-10-06T02:49:00.992Z",
+  "generatedAt": "2026-10-06T11:50:27.252Z",
   "active": [
     {
       "id": "market/worldBank/brent",
@@ -29,12 +29,12 @@
       ],
       "target": "#s4",
       "firstSeenAt": "2026-10-03T11:49:39.022Z",
-      "lastEvaluatedAt": "2026-10-06T02:49:00.992Z",
+      "lastEvaluatedAt": "2026-10-06T11:50:27.252Z",
       "state": "active",
       "provenance": {
         "methodVersion": "market/worldBank/v1",
-        "calculatedAt": "2026-10-06T02:49:00.992Z",
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
+        "calculatedAt": "2026-10-06T11:50:27.252Z",
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
         "inputs": [
           {
             "datasetId": "worldBank",
@@ -99,7 +99,7 @@
         "en": "16/16 representative points pass continuity, source and freshness checks; latest observations may lag by at most 10 days."
       },
       "period": "2026-10-02",
-      "fetchedAt": "2026-10-06T02:48:26Z",
+      "fetchedAt": "2026-10-06T11:49:54Z",
       "retrieval": "ok",
       "validation": "passed",
       "freshness": "current",
@@ -117,7 +117,7 @@
         "zh": "官方时间目录格式或时间步不一致；暂停自动干旱判定。",
         "en": "Official time metadata is malformed or its timestep is inconsistent; automatic drought screening is paused."
       },
-      "fetchedAt": "2026-10-06T02:48:34Z",
+      "fetchedAt": "2026-10-06T11:50:01Z",
       "retrieval": "ok",
       "validation": "unverified",
       "freshness": "current",
@@ -125,7 +125,7 @@
       "reasonCodes": [
         "period_unverified"
       ],
-      "period": "2026-09-11"
+      "period": "2026-09-21"
     },
     {
       "id": "soil",
@@ -139,7 +139,7 @@
         "en": "16/16 points have usable current-month data and 1991–2020 same-month normals; partial months are context only and never trigger red alerts."
       },
       "period": "2026-10-02",
-      "fetchedAt": "2026-10-06T02:48:26Z",
+      "fetchedAt": "2026-10-06T11:49:54Z",
       "retrieval": "ok",
       "validation": "passed",
       "freshness": "current",
@@ -158,7 +158,7 @@
         "en": "Adjacent months, units, values and freshness validated."
       },
       "period": "2026-09",
-      "fetchedAt": "2026-10-06T02:48:18Z",
+      "fetchedAt": "2026-10-06T11:49:44Z",
       "retrieval": "ok",
       "validation": "passed",
       "freshness": "current",
@@ -177,7 +177,7 @@
         "en": "5/5 cost series can be evaluated, using complete-month changes."
       },
       "period": "2026-09",
-      "fetchedAt": "2026-10-06T02:48:18Z",
+      "fetchedAt": "2026-10-06T11:49:44Z",
       "retrieval": "ok",
       "validation": "passed",
       "freshness": "current",
@@ -196,7 +196,7 @@
         "en": "Context freshness only; ENSO strength and historical tendencies never directly trigger crop alerts."
       },
       "period": "2026-09-10",
-      "fetchedAt": "2026-10-06T02:48:36Z",
+      "fetchedAt": "2026-10-06T11:50:04Z",
       "retrieval": "ok",
       "validation": "passed",
       "freshness": "awaiting",
@@ -242,8 +242,8 @@
   },
   "dataHealth": {
     "schemaVersion": 1,
-    "assessedAt": "2026-10-06T02:49:00.992Z",
-    "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
+    "assessedAt": "2026-10-06T11:50:27.252Z",
+    "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
     "datasets": [
       {
         "id": "fao",
@@ -260,14 +260,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:17Z",
+            "checkedAt": "2026-10-06T11:49:43Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:18Z",
+            "fetchedAt": "2026-10-06T11:49:44Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -281,7 +281,7 @@
           "extensions": {
             "derived": {
               "methodVersion": "monthly-change/v1",
-              "calculatedAt": "2026-10-06T02:48:18Z",
+              "calculatedAt": "2026-10-06T11:49:44Z",
               "inputs": [
                 {
                   "datasetId": "fao",
@@ -307,7 +307,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "usda",
@@ -324,14 +324,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:17Z",
+            "checkedAt": "2026-10-06T11:49:43Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:24Z",
+            "fetchedAt": "2026-10-06T11:49:51Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -731,7 +731,7 @@
             },
             "derived": {
               "methodVersion": "stock-to-use/v1",
-              "calculatedAt": "2026-10-06T02:48:24Z",
+              "calculatedAt": "2026-10-06T11:49:51Z",
               "inputs": [
                 {
                   "datasetId": "usda",
@@ -762,7 +762,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "worldBank",
@@ -779,14 +779,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:17Z",
+            "checkedAt": "2026-10-06T11:49:43Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:18Z",
+            "fetchedAt": "2026-10-06T11:49:44Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -800,7 +800,7 @@
           "extensions": {
             "derived": {
               "methodVersion": "monthly-change/v1",
-              "calculatedAt": "2026-10-06T02:48:18Z",
+              "calculatedAt": "2026-10-06T11:49:44Z",
               "inputs": [
                 {
                   "datasetId": "worldBank",
@@ -826,7 +826,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "eia",
@@ -843,14 +843,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:17Z",
+            "checkedAt": "2026-10-06T11:49:43Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -864,7 +864,7 @@
           "extensions": {
             "derived": {
               "methodVersion": "monthly-change/v1",
-              "calculatedAt": "2026-10-06T02:48:26Z",
+              "calculatedAt": "2026-10-06T11:49:54Z",
               "inputs": [
                 {
                   "datasetId": "eia",
@@ -895,7 +895,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "noaa",
@@ -912,14 +912,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:17Z",
+            "checkedAt": "2026-10-06T11:49:43Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:18Z",
+            "fetchedAt": "2026-10-06T11:49:44Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -953,7 +953,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/iowa",
@@ -970,14 +970,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1002,7 +1002,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/iowa",
@@ -1019,14 +1019,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1051,7 +1051,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/kansas",
@@ -1068,14 +1068,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1100,7 +1100,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/kansas",
@@ -1117,14 +1117,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1149,7 +1149,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/saskatchewan",
@@ -1166,14 +1166,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1198,7 +1198,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/saskatchewan",
@@ -1215,14 +1215,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1247,7 +1247,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/france",
@@ -1264,14 +1264,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1296,7 +1296,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/france",
@@ -1313,14 +1313,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1345,7 +1345,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/germany",
@@ -1362,14 +1362,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1394,7 +1394,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/germany",
@@ -1411,14 +1411,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1443,7 +1443,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/krasnodar",
@@ -1460,14 +1460,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1492,7 +1492,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/krasnodar",
@@ -1509,14 +1509,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1541,7 +1541,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/ukraine",
@@ -1558,14 +1558,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1590,7 +1590,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/ukraine",
@@ -1607,14 +1607,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1639,7 +1639,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/mato-grosso",
@@ -1656,14 +1656,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1688,7 +1688,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/mato-grosso",
@@ -1705,14 +1705,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1737,7 +1737,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/pampas",
@@ -1754,14 +1754,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1786,7 +1786,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/pampas",
@@ -1803,14 +1803,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1835,7 +1835,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/henan",
@@ -1852,14 +1852,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1884,7 +1884,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/henan",
@@ -1901,14 +1901,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1933,7 +1933,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/jilin",
@@ -1950,14 +1950,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -1982,7 +1982,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/jilin",
@@ -1999,14 +1999,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2031,7 +2031,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/india-rice",
@@ -2048,14 +2048,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2080,7 +2080,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/india-rice",
@@ -2097,14 +2097,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2129,7 +2129,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/punjab",
@@ -2146,14 +2146,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2178,7 +2178,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/punjab",
@@ -2195,14 +2195,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2227,7 +2227,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/thailand",
@@ -2244,14 +2244,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2276,7 +2276,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/thailand",
@@ -2293,14 +2293,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2325,7 +2325,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/australia",
@@ -2342,14 +2342,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2374,7 +2374,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/australia",
@@ -2391,14 +2391,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2423,7 +2423,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/free-state",
@@ -2440,14 +2440,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2472,7 +2472,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "soil/free-state",
@@ -2489,14 +2489,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:26Z",
+            "checkedAt": "2026-10-06T11:49:54Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:26Z",
+            "fetchedAt": "2026-10-06T11:49:54Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2521,7 +2521,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "drought",
@@ -2532,33 +2532,33 @@
           "sourceUrl": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
           "downloadUrl": null,
           "observation": {
-            "period": "2026-09-11",
+            "period": "2026-09-21",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:34Z",
+            "checkedAt": "2026-10-06T11:50:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:34Z",
+            "fetchedAt": "2026-10-06T11:50:01Z",
             "format": "passed",
             "semantic": "passed",
             "period": "unverified"
           },
-          "cache": "unchanged",
+          "cache": "new",
           "version": {
-            "contentHash": "9ff536b767bfe48ad9550b15f41dc35939059b7567916bb504a643b9f7b80b0c",
+            "contentHash": "7ba53c6305d25593c24fbd3986e3f38caba4e9aae7560ddfb0410606a6d609d6",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {
             "periodVerification": {
-              "checkedAt": "2026-10-06T02:48:36Z",
+              "checkedAt": "2026-10-06T11:50:04Z",
               "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
               "reason": "availability-metadata-invalid",
               "error": "GDO interval end does not align with its advertised timestep"
@@ -2582,7 +2582,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "enso",
@@ -2599,14 +2599,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:36Z",
+            "checkedAt": "2026-10-06T11:50:04Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:36Z",
+            "fetchedAt": "2026-10-06T11:50:04Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2635,7 +2635,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
         "strengthEvidence": {
           "ruleId": "enso-strength",
           "extracted": true,
@@ -2658,14 +2658,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2694,7 +2694,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornProgress",
@@ -2711,14 +2711,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2745,7 +2745,7 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-IA",
@@ -2762,14 +2762,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2796,7 +2796,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/IA",
@@ -2852,7 +2852,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-IL",
@@ -2869,14 +2869,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -2903,7 +2903,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/IL",
@@ -2959,7 +2959,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-NE",
@@ -2976,14 +2976,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3010,7 +3010,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/NE",
@@ -3066,7 +3066,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-MN",
@@ -3083,14 +3083,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3117,7 +3117,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/MN",
@@ -3173,7 +3173,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-IN",
@@ -3190,14 +3190,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3224,7 +3224,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/IN",
@@ -3280,7 +3280,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-SD",
@@ -3297,14 +3297,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3331,7 +3331,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/SD",
@@ -3387,7 +3387,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-KS",
@@ -3404,14 +3404,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3438,7 +3438,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/KS",
@@ -3494,7 +3494,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-OH",
@@ -3511,14 +3511,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3545,7 +3545,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/OH",
@@ -3601,7 +3601,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-MO",
@@ -3618,14 +3618,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3652,7 +3652,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/MO",
@@ -3708,7 +3708,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "weather/corn-WI",
@@ -3725,14 +3725,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:37Z",
+            "checkedAt": "2026-10-06T11:50:05Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -3759,7 +3759,7 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornBaseline/WI",
@@ -3815,19 +3815,19 @@
             "insufficient_evidence"
           ]
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/IA",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -3843,7 +3843,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -3871,19 +3871,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/IA",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -3899,7 +3899,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -3927,19 +3927,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/IA",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -3955,7 +3955,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -3983,19 +3983,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/IL",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4011,7 +4011,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4039,19 +4039,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/IL",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4067,7 +4067,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4095,19 +4095,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/IL",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4123,7 +4123,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4151,19 +4151,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/NE",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4179,7 +4179,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4207,19 +4207,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/NE",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4235,7 +4235,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4263,19 +4263,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/NE",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4291,7 +4291,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4319,19 +4319,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/MN",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4347,7 +4347,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4375,19 +4375,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/MN",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4403,7 +4403,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4431,19 +4431,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/MN",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4459,7 +4459,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4487,19 +4487,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/IN",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4515,7 +4515,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4543,19 +4543,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/IN",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4571,7 +4571,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4599,19 +4599,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/IN",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4627,7 +4627,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4655,19 +4655,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/SD",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4683,7 +4683,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4711,19 +4711,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/SD",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4739,7 +4739,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4767,19 +4767,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/SD",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4795,7 +4795,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4823,19 +4823,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/KS",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4851,7 +4851,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4879,19 +4879,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/KS",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4907,7 +4907,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4935,19 +4935,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/KS",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -4963,7 +4963,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -4991,19 +4991,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/OH",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5019,7 +5019,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5047,19 +5047,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/OH",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5075,7 +5075,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5103,19 +5103,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/OH",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5131,7 +5131,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5159,19 +5159,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/MO",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5187,7 +5187,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5215,19 +5215,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/MO",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5243,7 +5243,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5271,19 +5271,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/MO",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5299,7 +5299,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5327,19 +5327,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialCrop/WI",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5355,7 +5355,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5383,19 +5383,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatialWeather/WI",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5411,7 +5411,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5441,19 +5441,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/WI",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5469,7 +5469,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5499,19 +5499,19 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       },
       {
         "id": "cornSpatial/ten-state",
         "metadata": {
           "accepted": {
-            "fetchedAt": "2026-10-06T02:48:56.451Z",
+            "fetchedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "period": "verified",
             "semantic": "passed"
           },
           "attempt": {
-            "checkedAt": "2026-10-06T02:48:56.451Z",
+            "checkedAt": "2026-10-06T11:50:22.728Z",
             "format": "passed",
             "reason": null,
             "retrieval": "ok",
@@ -5527,7 +5527,7 @@
             "localStageEligibility": "insufficient",
             "methodVersion": "mapped-corn-weather-production/1",
             "spatialReason": null,
-            "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+            "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
           },
           "observation": {
             "marketYear": null,
@@ -5555,14 +5555,14 @@
           "eligible": true,
           "reasons": []
         },
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       }
     ]
   },
   "provenance": {
     "methodVersion": "automatic-alerts/1",
-    "calculatedAt": "2026-10-06T02:49:00.992Z",
-    "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
+    "calculatedAt": "2026-10-06T11:50:27.252Z",
+    "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
     "inputs": [
       {
         "datasetId": "usda",
@@ -5715,7 +5715,7 @@
         "datasetId": "drought",
         "vintage": null,
         "observationId": null,
-        "contentHash": "9ff536b767bfe48ad9550b15f41dc35939059b7567916bb504a643b9f7b80b0c",
+        "contentHash": "7ba53c6305d25593c24fbd3986e3f38caba4e9aae7560ddfb0410606a6d609d6",
         "revisionId": null
       },
       {
@@ -5732,14 +5732,14 @@
     ]
   },
   "release": {
-    "id": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-    "sourceRevision": "1af22e07565f98944c4eaf5e8971910400008d12",
-    "inputsHash": "99d1d09ca821e149bd7e4d909704a1edeb78d033805bb322b8118a3449802fa4"
+    "id": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+    "sourceRevision": "87f7600878bf2ef9c185a7f7b2bcca9a5da9381e",
+    "inputsHash": "118a3bafe62c67cc935d3ed0096407169c2dc442eb45fdf010018ec95d0084c5"
   },
   "analysis": {
     "schemaVersion": 1,
-    "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-    "evaluatedAt": "2026-10-06T02:49:00.992Z",
+    "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+    "evaluatedAt": "2026-10-06T11:50:27.252Z",
     "startedAt": "2026-10-06T02:46:11.587Z",
     "prunedThrough": null,
     "checkpoints": {
@@ -43504,8 +43504,8 @@
       }
     },
     "changeSet": {
-      "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-      "evaluatedAt": "2026-10-06T02:49:00.992Z",
+      "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+      "evaluatedAt": "2026-10-06T11:50:27.252Z",
       "datasets": [
         {
           "datasetId": "usda",
@@ -43687,8 +43687,8 @@
           "red": 10,
           "validated": false
         },
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "notification": true,
         "id": "market/fao/fao",
         "state": "inactive",
@@ -43727,8 +43727,8 @@
           "red": 20,
           "validated": false
         },
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "notification": true,
         "id": "market/worldBank/brent",
         "state": "active",
@@ -43767,8 +43767,8 @@
           "red": 20,
           "validated": false
         },
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "notification": true,
         "id": "market/worldBank/urea",
         "state": "inactive",
@@ -43807,8 +43807,8 @@
           "red": 20,
           "validated": false
         },
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "notification": true,
         "id": "market/worldBank/dap",
         "state": "inactive",
@@ -43847,8 +43847,8 @@
           "red": 20,
           "validated": false
         },
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "notification": true,
         "id": "market/worldBank/tsp",
         "state": "inactive",
@@ -43887,8 +43887,8 @@
           "red": 20,
           "validated": false
         },
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "notification": true,
         "id": "market/worldBank/potash",
         "state": "inactive",
@@ -43929,8 +43929,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -43944,7 +43944,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -43974,8 +43974,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -43989,7 +43989,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -44019,8 +44019,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -44034,7 +44034,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -44064,8 +44064,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -44079,7 +44079,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -44109,8 +44109,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -44124,7 +44124,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -44154,8 +44154,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -44169,7 +44169,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -44199,8 +44199,8 @@
         "evidenceType": "official_crop_condition",
         "notification": false,
         "severity": null,
-        "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-        "evaluatedAt": "2026-10-06T02:49:00.992Z",
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
         "state": "observed",
         "eligible": true,
         "reasons": [],
@@ -44214,7 +44214,7 @@
             "revisionId": null,
             "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
             "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-            "fetchedAt": "2026-10-06T02:48:37Z",
+            "fetchedAt": "2026-10-06T11:50:05Z",
             "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
           }
         ],
@@ -44232,8 +44232,8 @@
     "cornPilot": {
       "schemaVersion": 1,
       "methodVersion": "us-corn-point-exposure/v1",
-      "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-      "evaluatedAt": "2026-10-06T02:49:00.992Z",
+      "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+      "evaluatedAt": "2026-10-06T11:50:27.252Z",
       "crop": "maize",
       "country": "US",
       "period": {
@@ -44316,7 +44316,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44328,8 +44328,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "b16138db584d91324c7eb3a1fc6f2662e96ef87397ce6f7a2b745960706e4723"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "5a796ed96921e7650b83f317e8d38dfe99e5f17c28153a4f066849f473bc4b2c"
             },
             {
               "datasetId": "cornProgress",
@@ -44340,7 +44340,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44406,7 +44406,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44418,8 +44418,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "1fa8ca43f7dc7a81ab9c3145ab50bdec9dc7e965e60342d63436a3ee8a4077ee"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "1202c76604d221a7771d9f7d5a70e592b5b826a1d6325ce2ad56c23cfaeb83ec"
             },
             {
               "datasetId": "cornProgress",
@@ -44430,7 +44430,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44496,7 +44496,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44508,8 +44508,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "20482fc0dc3c8cf8cc9f7164f24d9ef2ef0385d973020aff22c0935daa0820cf"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "b27edd851c30e69d5fdda4a7f209c491dc53fc7ea44e8d13a4519b52e24c10c6"
             },
             {
               "datasetId": "cornProgress",
@@ -44520,7 +44520,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44586,7 +44586,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44598,8 +44598,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "ab7b1da8af5008cfdb627233c04edcb86938cb2cbcb87cd8d03e07d8d6f174d2"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "89333b509bc7a5699a2118134f2f12c2e3c560aaf531efd8b89cc9d65501864e"
             },
             {
               "datasetId": "cornProgress",
@@ -44610,7 +44610,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44676,7 +44676,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44688,8 +44688,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "7365aec7993331a50d2168b1ad74c1abcd2ec63417567d498433022378875d4d"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "30052d1bd502e0d222698b7603f25732a6305c62684f825272c2a95d2d701615"
             },
             {
               "datasetId": "cornProgress",
@@ -44700,7 +44700,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44766,7 +44766,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44778,8 +44778,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "9ceb1865eba889c6d7b8da78be5eb68f70bde300676cc9d8097c57c91d9afe07"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "147f73a9cc96d568e64838b7900cfa915ea48ccb2c4ed99211faf84544112ca1"
             },
             {
               "datasetId": "cornProgress",
@@ -44790,7 +44790,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44856,7 +44856,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44868,8 +44868,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "64079b5a96a5cc5483b8fa5db04e07948b54a0df82e15f5a3e309b89b94cdfed"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "866d2c90b0033d89fa885895c01d38539c57079063f35325e940eb427d536cf6"
             },
             {
               "datasetId": "cornProgress",
@@ -44880,7 +44880,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -44946,7 +44946,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -44958,8 +44958,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "c9727fcd0f345cf2ab17f3aadbb3bdd42a825dea905bdefc91092f6b368bed3a"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "5308b91d42cf9af7a9fc9f8373e2113394e1e3c8aa1f00d86f507753081b5b68"
             },
             {
               "datasetId": "cornProgress",
@@ -44970,7 +44970,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -45036,7 +45036,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -45048,8 +45048,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "5049a24f3f2cdb96fe0271e991ecedcdd72a50dd327153d7f0d7c8c63477cced"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "26ab801cbb266c8702368e4f37018d4714387719589ff8462e1b7163ae213e41"
             },
             {
               "datasetId": "cornProgress",
@@ -45060,7 +45060,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -45126,7 +45126,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
             },
             {
@@ -45138,8 +45138,8 @@
               "revisionId": null,
               "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
               "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-              "fetchedAt": "2026-10-06T02:48:37Z",
-              "rawHash": "27eb92638719781aaea689ffd0ee4fda3ff14deab0c4f2204e9e4d3df40887e4"
+              "fetchedAt": "2026-10-06T11:50:05Z",
+              "rawHash": "313098908ead32588e4d3f3672b5f700352e8862bde2a372442ce72bb375ccd7"
             },
             {
               "datasetId": "cornProgress",
@@ -45150,7 +45150,7 @@
               "revisionId": null,
               "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
               "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-              "fetchedAt": "2026-10-06T02:48:37Z",
+              "fetchedAt": "2026-10-06T11:50:05Z",
               "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
             }
           ]
@@ -45192,7 +45192,7 @@
           "revisionId": null,
           "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-production-annual-summary",
           "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/795725/cropan26.txt",
-          "fetchedAt": "2026-10-06T02:48:37Z",
+          "fetchedAt": "2026-10-06T11:50:05Z",
           "rawHash": "fc041c3579967a6634cf564267a09b07d4d978c0e6846bb97881b90328876b8d"
         },
         {
@@ -45204,8 +45204,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "b16138db584d91324c7eb3a1fc6f2662e96ef87397ce6f7a2b745960706e4723"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "5a796ed96921e7650b83f317e8d38dfe99e5f17c28153a4f066849f473bc4b2c"
         },
         {
           "datasetId": "cornProgress",
@@ -45216,7 +45216,7 @@
           "revisionId": null,
           "sourceUrl": "https://esmis.nal.usda.gov/publication/crop-progress",
           "downloadUrl": "https://esmis.nal.usda.gov/sites/default/release-files/796082/prog3926.txt",
-          "fetchedAt": "2026-10-06T02:48:37Z",
+          "fetchedAt": "2026-10-06T11:50:05Z",
           "rawHash": "61d5d8665b4f8357f627104369f5a404a63e04bda1fbf37182e16037c2e77f40"
         },
         {
@@ -45228,8 +45228,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "1fa8ca43f7dc7a81ab9c3145ab50bdec9dc7e965e60342d63436a3ee8a4077ee"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "1202c76604d221a7771d9f7d5a70e592b5b826a1d6325ce2ad56c23cfaeb83ec"
         },
         {
           "datasetId": "weather/corn-NE",
@@ -45240,8 +45240,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "20482fc0dc3c8cf8cc9f7164f24d9ef2ef0385d973020aff22c0935daa0820cf"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "b27edd851c30e69d5fdda4a7f209c491dc53fc7ea44e8d13a4519b52e24c10c6"
         },
         {
           "datasetId": "weather/corn-MN",
@@ -45252,8 +45252,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "ab7b1da8af5008cfdb627233c04edcb86938cb2cbcb87cd8d03e07d8d6f174d2"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "89333b509bc7a5699a2118134f2f12c2e3c560aaf531efd8b89cc9d65501864e"
         },
         {
           "datasetId": "weather/corn-IN",
@@ -45264,8 +45264,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "7365aec7993331a50d2168b1ad74c1abcd2ec63417567d498433022378875d4d"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "30052d1bd502e0d222698b7603f25732a6305c62684f825272c2a95d2d701615"
         },
         {
           "datasetId": "weather/corn-SD",
@@ -45276,8 +45276,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "9ceb1865eba889c6d7b8da78be5eb68f70bde300676cc9d8097c57c91d9afe07"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "147f73a9cc96d568e64838b7900cfa915ea48ccb2c4ed99211faf84544112ca1"
         },
         {
           "datasetId": "weather/corn-KS",
@@ -45288,8 +45288,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "64079b5a96a5cc5483b8fa5db04e07948b54a0df82e15f5a3e309b89b94cdfed"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "866d2c90b0033d89fa885895c01d38539c57079063f35325e940eb427d536cf6"
         },
         {
           "datasetId": "weather/corn-OH",
@@ -45300,8 +45300,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "c9727fcd0f345cf2ab17f3aadbb3bdd42a825dea905bdefc91092f6b368bed3a"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "5308b91d42cf9af7a9fc9f8373e2113394e1e3c8aa1f00d86f507753081b5b68"
         },
         {
           "datasetId": "weather/corn-MO",
@@ -45312,8 +45312,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "5049a24f3f2cdb96fe0271e991ecedcdd72a50dd327153d7f0d7c8c63477cced"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "26ab801cbb266c8702368e4f37018d4714387719589ff8462e1b7163ae213e41"
         },
         {
           "datasetId": "weather/corn-WI",
@@ -45324,8 +45324,8 @@
           "revisionId": null,
           "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
           "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20260919&end=20261002&format=JSON&time-standard=UTC",
-          "fetchedAt": "2026-10-06T02:48:37Z",
-          "rawHash": "27eb92638719781aaea689ffd0ee4fda3ff14deab0c4f2204e9e4d3df40887e4"
+          "fetchedAt": "2026-10-06T11:50:05Z",
+          "rawHash": "313098908ead32588e4d3f3672b5f700352e8862bde2a372442ce72bb375ccd7"
         },
         {
           "datasetId": "usda",
@@ -46283,15 +46283,106 @@
             ]
           }
         ]
+      },
+      {
+        "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+        "evaluatedAt": "2026-10-06T11:50:27.252Z",
+        "changes": [],
+        "signals": [],
+        "unavailable": [
+          {
+            "datasetId": "eia",
+            "reasons": [
+              "unknown"
+            ]
+          },
+          {
+            "datasetId": "drought",
+            "reasons": [
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/IA",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/IL",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/NE",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/MN",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/IN",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/SD",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/KS",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/OH",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/MO",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          },
+          {
+            "datasetId": "cornBaseline/WI",
+            "reasons": [
+              "unknown",
+              "period_unverified"
+            ]
+          }
+        ]
       }
     ],
     "weekly": {
-      "start": "2026-09-29T02:49:00.992Z",
-      "end": "2026-10-06T02:49:00.992Z",
+      "start": "2026-09-29T11:50:27.252Z",
+      "end": "2026-10-06T11:50:27.252Z",
       "complete": false,
       "releases": [
         "release-a62d47aee34188fc72a8456e90a5c4f7fce679d21184c92581f249267a83e9a9",
-        "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+        "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
+        "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
       ],
       "newObservations": [],
       "officialRevisions": [],
@@ -46528,6 +46619,100 @@
             "unknown",
             "period_unverified"
           ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "eia",
+          "reasons": [
+            "unknown"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "drought",
+          "reasons": [
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/IA",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/IL",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/NE",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/MN",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/IN",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/SD",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/KS",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/OH",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/MO",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
+        },
+        {
+          "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+          "datasetId": "cornBaseline/WI",
+          "reasons": [
+            "unknown",
+            "period_unverified"
+          ]
         }
       ]
     },
@@ -46535,8 +46720,8 @@
       "schemaVersion": 1,
       "methodVersion": "us-corn-spatial-stage-screen/1",
       "legacyMethodVersion": "us-corn-point-exposure/v1",
-      "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-      "evaluatedAt": "2026-10-06T02:49:00.992Z",
+      "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+      "evaluatedAt": "2026-10-06T11:50:27.252Z",
       "crop": "maize",
       "country": "US",
       "period": {
@@ -53078,8 +53263,8 @@
       ],
       "provenance": {
         "methodVersion": "us-corn-spatial-stage-screen/1",
-        "calculatedAt": "2026-10-06T02:49:00.992Z",
-        "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
+        "calculatedAt": "2026-10-06T11:50:27.252Z",
+        "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
         "inputs": [
           {
             "datasetId": "cornProduction",
@@ -57386,17 +57571,17 @@
               }
             }
           },
-          "fetchedAt": "2026-10-06T02:48:56.451Z",
-          "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+          "fetchedAt": "2026-10-06T11:50:22.728Z",
+          "lastAttemptAt": "2026-10-06T11:50:22.728Z",
           "metadata": {
             "accepted": {
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
               "format": "passed",
               "period": "verified",
               "semantic": "passed"
             },
             "attempt": {
-              "checkedAt": "2026-10-06T02:48:56.451Z",
+              "checkedAt": "2026-10-06T11:50:22.728Z",
               "format": "passed",
               "reason": null,
               "retrieval": "ok",
@@ -57412,7 +57597,7 @@
               "localStageEligibility": "insufficient",
               "methodVersion": "mapped-corn-weather-production/1",
               "spatialReason": null,
-              "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+              "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
             },
             "observation": {
               "marketYear": null,
@@ -57483,7 +57668,7 @@
           }
         }
       },
-      "generatedAt": "2026-10-06T02:48:56.451Z",
+      "generatedAt": "2026-10-06T11:50:22.728Z",
       "gridVersion": "cornbelt-iowa-anchored-9km/1",
       "inputArchive": {
         "bytes": 4056869,
@@ -57578,17 +57763,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_19.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -57604,7 +57789,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -57685,17 +57870,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -57711,7 +57896,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -57948,17 +58133,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -57974,7 +58159,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -58319,17 +58504,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_17.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -58345,7 +58530,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -58426,17 +58611,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -58452,7 +58637,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -58689,17 +58874,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -58715,7 +58900,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -59060,17 +59245,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_31.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -59086,7 +59271,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -59167,17 +59352,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -59193,7 +59378,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -59430,17 +59615,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -59456,7 +59641,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -59801,17 +59986,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_27.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -59827,7 +60012,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -59908,17 +60093,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -59934,7 +60119,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -60171,17 +60356,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -60197,7 +60382,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -60542,17 +60727,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_18.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -60568,7 +60753,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -60649,17 +60834,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -60675,7 +60860,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -60912,17 +61097,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -60938,7 +61123,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -61283,17 +61468,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_46.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -61309,7 +61494,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -61390,17 +61575,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -61416,7 +61601,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -61653,17 +61838,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -61679,7 +61864,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -62024,17 +62209,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_20.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -62050,7 +62235,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -62131,17 +62316,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -62157,7 +62342,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -62394,17 +62579,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -62420,7 +62605,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -62765,17 +62950,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_39.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -62791,7 +62976,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -62872,17 +63057,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -62898,7 +63083,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -63135,17 +63320,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -63161,7 +63346,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -63506,17 +63691,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_29.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -63532,7 +63717,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -63613,17 +63798,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -63639,7 +63824,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -63876,17 +64061,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -63902,7 +64087,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -64294,17 +64479,17 @@
                 "publicationDate": "2024-01-31",
                 "sourceUrl": "https://nassgeodata.gmu.edu/webservice/nass_data_cache/byfips/CDL_2023_55.tif"
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -64320,7 +64505,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -64401,17 +64586,17 @@
                   }
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -64427,7 +64612,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -64709,17 +64894,17 @@
                   ]
                 }
               },
-              "fetchedAt": "2026-10-06T02:48:56.451Z",
-              "lastAttemptAt": "2026-10-06T02:48:56.451Z",
+              "fetchedAt": "2026-10-06T11:50:22.728Z",
+              "lastAttemptAt": "2026-10-06T11:50:22.728Z",
               "metadata": {
                 "accepted": {
-                  "fetchedAt": "2026-10-06T02:48:56.451Z",
+                  "fetchedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "period": "verified",
                   "semantic": "passed"
                 },
                 "attempt": {
-                  "checkedAt": "2026-10-06T02:48:56.451Z",
+                  "checkedAt": "2026-10-06T11:50:22.728Z",
                   "format": "passed",
                   "reason": null,
                   "retrieval": "ok",
@@ -64735,7 +64920,7 @@
                   "localStageEligibility": "insufficient",
                   "methodVersion": "mapped-corn-weather-production/1",
                   "spatialReason": null,
-                  "release": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c"
+                  "release": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1"
                 },
                 "observation": {
                   "marketYear": null,
@@ -65001,9 +65186,9 @@
           }
         }
       ],
-      "releaseId": "release-dc9c2bd8e6b5ca3442c9273a60c9d6dcf5ee51e68e8e2d9cdfc8c5f66d80f08c",
-      "evaluatedAt": "2026-10-06T02:49:00.992Z"
+      "releaseId": "release-01a3269d59a2794c805ce818f1847b49b5b2485b9e333f5548a8ccbf88fdcec1",
+      "evaluatedAt": "2026-10-06T11:50:27.252Z"
     },
-    "integrity": "392ce42da120c8a97f013da74ccfe3330af6e4ad0d6a9ba7ed062568ede697a3"
+    "integrity": "93bc84e66eee988e924c4280b2af4146a3757cf32adfffa86c2764e262bdf929"
   }
 }
