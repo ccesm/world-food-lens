@@ -326,16 +326,16 @@
       "ruleId": "atmospheric_demand_vpd",
       "methodologyVersion": "mapped-corn-vpd-screen/1",
       "phase": "4B-2.2",
-      "reviewStatus": "draft",
-      "reviewedAt": null,
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-10-07",
       "freezeIdentifier": null,
       "concept": {
         "zh": "大气蒸发需求（饱和水汽压差，VPD）",
         "en": "Atmospheric evaporative demand (vapor pressure deficit, VPD)"
       },
       "intendedClaim": {
-        "zh": "与温度同源、同格网的 VPD 在制图玉米面积上的分布（定义待 4B-2.2 核对）",
-        "en": "Distribution of VPD from the same provider and grid as temperature (definition to be verified in 4B-2.2)"
+        "zh": "14 天窗口内，按 2023 年制图玉米面积加权的提供方日均 VPD 的描述性分布（均值与期内最大值），不设阈值",
+        "en": "Descriptive distribution of the provider's daily-mean VPD over the 14-day window (mean and period maximum), weighted by 2023 mapped corn area; no threshold"
       },
       "prohibitedClaims": [
         {
@@ -368,9 +368,13 @@
         "M2",
         "U6"
       ],
-      "proposedMetric": "Per-cell 14-day mean and maximum of provider daily-mean VPD, area-weighted summary; no threshold (PHASE4B2_2_VPD_SPEC §3)",
+      "proposedMetric": "Per-cell 14-day mean and maximum of gridMET daily-mean VPD (cells need all 14 days valid), area-weighted mean/min/max/p10/p50/p90",
       "units": "kPa",
-      "parameters": {},
+      "parameters": {
+        "ncVariable": "mean_vapor_pressure_deficit",
+        "gridmetPath": "vpd",
+        "expectedUnits": "kPa"
+      },
       "proposedRange": null,
       "exactThresholdSupported": false,
       "thresholdCategory": "physical",
@@ -384,7 +388,10 @@
         "gridMET vpd (candidate)",
         "annual corn-fraction grid"
       ],
-      "outputs": [],
+      "outputs": [
+        "vpdDailyMeanKPa",
+        "vpdPeriodMaximumKPa"
+      ],
       "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
       "applicableRegion": "ten-state US Corn Belt (Level C scope)",
       "managementDomain": "rainfed and irrigated not separated",
@@ -395,9 +402,9 @@
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {
-        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "sourcePublication": "corn-vpd-screen.json states[].weatherVersions (gridMET vpd edition text and raw file hash)",
         "observedPeriod": "period.start / period.end",
-        "revisionIdentity": "states[].weatherVersions",
+        "revisionIdentity": "states[].weatherVersions[].rawFileHash",
         "availableAsOf": "generatedAt"
       }
     },

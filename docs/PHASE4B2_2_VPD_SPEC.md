@@ -1,6 +1,6 @@
 # Phase 4B-2.2 — VPD 与热×VPD 同现：方法与实现规格
 
-状态：**已批准（2026-10-07）**。第 4 节补充了精确定义，审阅后才开始写 2.2b 的代码；2.2a 可以先做。
+状态：**已批准（2026-10-07，PR #8、#9）**。**2.2a 已实现**（`scripts/corn_vpd.py`，输出 `public/data/corn-vpd-screen.json`）；2.2b 等待气候缓存。
 需要保持一致的文件：
 - `PHASE4B0_CORN_AGRONOMIC_SPECIFICATION.md`：F 节（热与水分/VPD）、N 节（VPD 关卡）、O 节、P 节、Q 节
 - `PHASE4B2_0_METHOD_SPEC.md`：B 节的共同约定
@@ -120,6 +120,17 @@
 
 ### 已否决的方案（记录在案）
 - 项目自定的固定 kPa 阈值：2026-10-07 未被采纳，理由见 4B-0 Q 节，即 VPD 没有通用的 kPa 伤害界限。
+
+## 4a. 2.2a 实现说明
+
+- VPD 在 Level C 和热量文件都写出**之后**才下载，使用**独立的网络预算**（`--vpd-network-budget-seconds`，默认 120 秒）。
+  所以 VPD 下载失败或超时，不会占用 Level C 的 180 秒预算，也不会改变 Level C 的任何结果。
+- 变量名 `mean_vapor_pressure_deficit` 和单位 `kPa` 都从登记表读取。读取时还要核对坐标、日期、几何是否与年度作物格网一致，
+  并做数值的合理范围检查（0–15 kPa，只用于检查文件格式，不是生理范围）。任何一项不符就判为不可用，不做猜测。
+- 用历史固定输入重放时（`--offline-raw`），不写 VPD 文件，因为固定输入里没有 VPD。
+- 每次运行都会在 GitHub Actions 里留下一条 `VPD screen` 注释，写明覆盖率、不可用的州和原因，不用看日志也能核对结果。
+- 局限：VPD 的原始下载文件**不**放进 Level C 的输入存档（`archive_inputs`），但它的哈希和版本会记录在
+  `corn-vpd-screen.json` 的 `weatherVersions` 中。
 
 ## 5. 版本与文件
 

@@ -81,6 +81,7 @@ See:
 - `public/data/monitor-alerts.json` — daily rule evaluation, alert history and source health
 - `public/data/alert-delivery.json` — notification receipts without addresses or credentials
 - `public/data/corn-heat-screen.json` — Phase 4B-2.1 informational EDD and hot-day screens over Level C mapped corn area; not an alert input
+- `public/data/corn-vpd-screen.json` — Phase 4B-2.2a informational distribution of gridMET daily-mean VPD over Level C mapped corn area; no threshold; not an alert input
 - `public/data/recovered-snapshot.json` — unchanged migration fallback
 - `scripts/macro_sources.py` and `scripts/climate_sources.py` — public downloads
 - `scripts/refresh_data.py` — validation and atomic cache replacement

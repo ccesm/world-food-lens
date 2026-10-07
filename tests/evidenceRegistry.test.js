@@ -30,12 +30,14 @@ test("every published Level C metric belongs to a reviewed or frozen rule",()=>{
   for(const key of python.match(/"([^"]+)"/g).map(k=>k.slice(1,-1)))assert.ok(allowed.has(key),`Python metric ${key} has no reviewed rule`);
 });
 
-test("the heat screen artifact, when present, publishes only reviewed outputs",()=>{
+test("4B-2 screen artifacts, when present, publish only reviewed outputs",()=>{
   const allowed=publishableOutputs(registry);
-  let heat;
-  try{heat=JSON.parse(read("../public/data/corn-heat-screen.json"));}catch{return;}
-  const keys=new Set([...Object.keys(heat.combined.heatSummary??{}),...heat.states.flatMap(s=>Object.keys(s.heatSummary??{}))]);
-  for(const key of keys)assert.ok(allowed.has(key),`${key} has no reviewed rule`);
+  for(const [file,summary] of [["corn-heat-screen.json","heatSummary"],["corn-vpd-screen.json","vpdSummary"]]){
+    let artifact;
+    try{artifact=JSON.parse(read(`../public/data/${file}`));}catch{continue;}
+    const keys=new Set([...Object.keys(artifact.combined[summary]??{}),...artifact.states.flatMap(s=>Object.keys(s[summary]??{}))]);
+    for(const key of keys)assert.ok(allowed.has(key),`${file}: ${key} has no reviewed rule`);
+  }
 });
 
 test("draft outputs do not appear in any published data file",()=>{
@@ -51,7 +53,8 @@ test("draft outputs do not appear in any published data file",()=>{
 test("shipped rules are reviewed and later 4B-2 rules remain drafts",()=>{
   assert.equal(ruleForOutput(registry,"edd29Window14DayCDay").reviewStatus,"reviewed");
   assert.equal(ruleForOutput(registry,"hotDays35Count").reviewStatus,"reviewed");
-  for(const id of ["atmospheric_demand_vpd","heat_vpd_overlap","precipitation_anomaly","wetness_establishment_panel"])
+  assert.equal(ruleForOutput(registry,"vpdDailyMeanKPa").reviewStatus,"reviewed");
+  for(const id of ["heat_vpd_overlap","precipitation_anomaly","wetness_establishment_panel"])
     assert.equal(registry.rules[id].reviewStatus,"draft",id);
   assert.equal(ruleForOutput(registry,"precipitation14DayMm").reviewStatus,"reviewed");
   assert.equal(ruleForOutput(registry,"no-such-metric"),null);
@@ -72,7 +75,7 @@ test("the validator rejects dishonest or inconsistent rules",()=>{
     [r=>{r.rules.hot_day_tmax35.parameters.thresholdC=34;},/thresholdC/],
     [r=>{r.rules.heat_extreme_degree_days.parameters.baseC=[29];},/baseC/],
     [r=>{r.rules.heat_extreme_degree_days.outputs.push("precipitation14DayMm");},/claimed by both/],
-    [r=>{r.rules.atmospheric_demand_vpd.reviewedAt="2026-10-07";},/draft rules/],
+    [r=>{r.rules.heat_vpd_overlap.reviewedAt="2026-10-07";},/draft rules/],
     [r=>{r.rules.level_c_precipitation_total.reviewedAt=null;},/reviewedAt/],
     [r=>{r.rules.level_c_precipitation_total.reviewStatus="frozen";},/freezeIdentifier/],
     [r=>{r.rules.heat_extreme_degree_days.literatureSources=[];},/needs literature/],
