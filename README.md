@@ -7,13 +7,14 @@ monitors NOAA climate observations and offers a searchable historical policy
 registry. GitHub remains the source of truth. No brokerage connection or private
 API key is required.
 
-**Current status (2026-10-07):** main is the production branch. Phase 4B-1
-(US corn spatial-stage screening and the Level C informational mapped-corn
-weather module) is merged and live, and real scheduled production runs have
-passed. Daily refresh, deployment and alert email all run from main. Phase 4B-2
-is in progress (4B-2.0 evidence registry done; see the
-[plan](docs/PHASE4B2_PLAN.md)). See [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) for the one-page
-current state.
+**Mission (from 2026-10-07):** World Food Lens is a global food-market
+intelligence system that combines official production, inventory, trade,
+weather, input-cost, policy and market evidence to identify emerging global
+food-supply risks. **Global Macro is the main development track**; see the
+[Global Food Intelligence Roadmap](docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md)
+(G1 global crop supply is next). The high-resolution US Corn Level C work is
+live and preserved as an Advanced Regional Deep Dive; its further research is
+deferred. See [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) for the one-page state.
 
 This repository is a source-controlled migration of the previously published World Food Lens site:
 

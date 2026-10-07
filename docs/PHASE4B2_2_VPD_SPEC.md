@@ -1,6 +1,6 @@
 # Phase 4B-2.2 — VPD 与热×VPD 同现：方法与实现规格
 
-状态：**已批准（2026-10-07，PR #8、#9）**。**2.2a 已实现**（`scripts/corn_vpd.py`，输出 `public/data/corn-vpd-screen.json`）；2.2b 等待气候缓存。
+状态：**已批准（2026-10-07，PR #8、#9）**。**2.2a 已上线**（PR #10）。VPD 气候缓存（D1–D8）和 2.2b 是 **Deferred — Advanced US Corn Research**：规格保留，恢复时直接从这里开始，不需要重新审批。
 需要保持一致的文件：
 - `PHASE4B0_CORN_AGRONOMIC_SPECIFICATION.md`：F 节（热与水分/VPD）、N 节（VPD 关卡）、O 节、P 节、Q 节
 - `PHASE4B2_0_METHOD_SPEC.md`：B 节的共同约定
