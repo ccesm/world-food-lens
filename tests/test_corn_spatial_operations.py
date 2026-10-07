@@ -18,6 +18,11 @@ import json
 from validate_spatial_replay import compare
 
 
+
+# Frozen successful Level C release (a3df594, 2026-10-07). Never read the live
+# public/data copy here: a source outage there must not block the next refresh.
+BASELINE=Path(__file__).resolve().parent/'fixtures/corn-spatial-baseline.json'
+
 class SpatialOperationsTests(unittest.TestCase):
     def settings(self):
         index={"cropYear":2023,"grid":GRID,"methodVersion":ANNUAL_METHOD}
@@ -97,7 +102,7 @@ class SpatialOperationsTests(unittest.TestCase):
         finally:fixture_repo.doCleanups()
 
     def test_cross_platform_mean_bound_does_not_allow_material_weather_difference(self):
-        original=json.loads((Path(__file__).resolve().parents[1]/'public/data/corn-spatial.json').read_bytes())
+        original=json.loads(BASELINE.read_bytes())
         candidate=copy.deepcopy(original)
         geometry={s['state']:{'totalVariation':1e-11} for s in original['states']}
         geometry['ten-state']={'totalVariation':1e-11}
@@ -107,7 +112,7 @@ class SpatialOperationsTests(unittest.TestCase):
         with self.assertRaises(AssertionError):compare(original,candidate,geometry)
 
     def test_mean_perturbation_bound_never_relaxes_quantiles_or_missing_weather(self):
-        original=json.loads((Path(__file__).resolve().parents[1]/'public/data/corn-spatial.json').read_bytes())
+        original=json.loads(BASELINE.read_bytes())
         geometry={s['state']:{'totalVariation':1e-11} for s in original['states']}
         geometry['ten-state']={'totalVariation':1e-11}
         candidate=copy.deepcopy(original)
