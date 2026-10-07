@@ -21,7 +21,8 @@ ALERT = "public/data/monitor-alerts.json"
 MANIFEST = "public/data/release-manifest.json"
 LEDGER = "public/data/alert-delivery.json"
 GENERATED = [f"public/data/{name}" for name in CACHES] + [ALERT, MANIFEST]
-ALL_GENERATED = GENERATED + ["public/data/corn-spatial.json"]  # Additive, optional in legacy releases.
+ALL_GENERATED = GENERATED + ["public/data/corn-spatial.json",  # Additive, optional in legacy releases.
+                             "public/data/corn-heat-screen.json"]  # Phase 4B-2.1 informational; not an alert input.
 SHA = re.compile(r"[a-f0-9]{40}")
 HASH = re.compile(r"[a-f0-9]{64}")
 

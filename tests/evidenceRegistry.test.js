@@ -30,9 +30,17 @@ test("every published Level C metric belongs to a reviewed or frozen rule",()=>{
   for(const key of python.match(/"([^"]+)"/g).map(k=>k.slice(1,-1)))assert.ok(allowed.has(key),`Python metric ${key} has no reviewed rule`);
 });
 
+test("the heat screen artifact, when present, publishes only reviewed outputs",()=>{
+  const allowed=publishableOutputs(registry);
+  let heat;
+  try{heat=JSON.parse(read("../public/data/corn-heat-screen.json"));}catch{return;}
+  const keys=new Set([...Object.keys(heat.combined.heatSummary??{}),...heat.states.flatMap(s=>Object.keys(s.heatSummary??{}))]);
+  for(const key of keys)assert.ok(allowed.has(key),`${key} has no reviewed rule`);
+});
+
 test("draft outputs do not appear in any published data file",()=>{
+  // Later 4B-2 drafts have no named outputs yet; the guard applies as soon as they do.
   const blocked=[...unpublishableOutputs(registry)];
-  assert.ok(blocked.length>0);
   const dir=new URL("../public/data/",import.meta.url);
   for(const name of readdirSync(dir).filter(n=>n.endsWith(".json"))){
     const body=readFileSync(new URL(name,dir),"utf8");
@@ -40,9 +48,11 @@ test("draft outputs do not appear in any published data file",()=>{
   }
 });
 
-test("4B-2 rules start as drafts and Level C rules are already reviewed",()=>{
-  assert.equal(ruleForOutput(registry,"edd29Window14DayCDay").reviewStatus,"draft");
-  assert.equal(ruleForOutput(registry,"hotDays35Count").reviewStatus,"draft");
+test("shipped rules are reviewed and later 4B-2 rules remain drafts",()=>{
+  assert.equal(ruleForOutput(registry,"edd29Window14DayCDay").reviewStatus,"reviewed");
+  assert.equal(ruleForOutput(registry,"hotDays35Count").reviewStatus,"reviewed");
+  for(const id of ["atmospheric_demand_vpd","heat_vpd_overlap","precipitation_anomaly","wetness_establishment_panel"])
+    assert.equal(registry.rules[id].reviewStatus,"draft",id);
   assert.equal(ruleForOutput(registry,"precipitation14DayMm").reviewStatus,"reviewed");
   assert.equal(ruleForOutput(registry,"no-such-metric"),null);
 });
@@ -54,7 +64,7 @@ test("the validator rejects dishonest or inconsistent rules",()=>{
     [r=>{r.rules.hot_day_tmax35.parameters.thresholdC=34;},/thresholdC/],
     [r=>{r.rules.heat_extreme_degree_days.parameters.baseC=[29];},/baseC/],
     [r=>{r.rules.heat_extreme_degree_days.outputs.push("precipitation14DayMm");},/claimed by both/],
-    [r=>{r.rules.heat_extreme_degree_days.reviewedAt="2026-10-07";},/draft rules/],
+    [r=>{r.rules.atmospheric_demand_vpd.reviewedAt="2026-10-07";},/draft rules/],
     [r=>{r.rules.level_c_precipitation_total.reviewedAt=null;},/reviewedAt/],
     [r=>{r.rules.level_c_precipitation_total.reviewStatus="frozen";},/freezeIdentifier/],
     [r=>{r.rules.heat_extreme_degree_days.literatureSources=[];},/needs literature/],

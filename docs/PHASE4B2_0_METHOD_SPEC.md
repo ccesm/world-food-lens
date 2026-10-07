@@ -1,6 +1,6 @@
 # Phase 4B-2.0 — 证据登记表与方法规格
 
-状态：**规格草案**。本阶段只新增文档、数据契约和测试，不改任何数据流程、页面、告警或邮件。
+状态：**4B-2.0 已合并（PR #4）；C 节的热量指标已在 4B-2.1 实现**。4B-2.0 本身只新增了文档、数据契约和测试。
 依据：`PHASE4B0_CORN_AGRONOMIC_SPECIFICATION.md`（以下简称 4B-0），计划见 `PHASE4B2_PLAN.md`。
 
 ## A. 证据登记表
@@ -45,8 +45,10 @@
   gridMET 格点上算出逐日值，再按玉米面积加权。不能先对温度加权平均，再算指标。
 - **时间窗口**：与 Level C 相同的 14 天。日界、每日最高最低温都直接使用 gridMET 发布的日值，不重新聚合。
 - **缺失值**：沿用 Level C 已有的规则（`corn_spatial_geo.summarize`）。一个格点只有在窗口内 14 天、
-  所需变量全部有效时，才参与计算；否则它的面积计为缺失面积，不按比例放大。
-  覆盖率用现有的 `variableCoveredAreaM2` 和 `missingWeatherCellsWithCorn` 照常报告。
+  Level C 的全部变量（`tmmx`、`tmmn`、`pr`）都有效时，才参与计算；否则它的面积计为缺失面积，不按比例放大。
+  这样 4B-2 的覆盖面积和 Level C 完全一致，不会出现两套分母。覆盖率照常用 `variableCoveredAreaM2`
+  和 `missingWeatherCellsWithCorn` 报告。即便 Level C 本身成功，某个州的 4B-2 指标计算失败时，
+  该州在 4B-2 文件里也记为不可用，它的面积从分子中去掉，但仍留在分母里。
 - **汇总格式**：与现有的 `weatherSummary` 完全相同，即面积加权的 `mean/min/max/p10/p50/p90`，
   每州一份，十州合并一份。
 - **生育期**：Level C 的 `localStageEligibility` 现在是 `insufficient`。因此所有 4B-2 指标都覆盖全部已制图的
@@ -88,6 +90,19 @@ M = (Tx + Tn) / 2,   A = (Tx − Tn) / 2
   输出键名：`hotDays35Count`、`hotDays35LongestRun`。单位为天。
 - 35°C 是项目自定的筛查阈值，不是生理伤害界限（见 4B-0 O 节）。不设"几天算严重"之类的天数阈值。
 - 键名中的 35 必须与登记表中的数值一致，测试会检查这一点。
+
+### C3. 输出文件（`public/data/corn-heat-screen.json`）
+
+- 文件由 `scripts/refresh_corn_spatial.py` 在同一次运行中写出，计算逻辑在 `scripts/corn_heat.py`。
+  基准温度、阈值和指标键名都从登记表读取，代码里不写死。
+- `baseArtifact` 记录同一次运行的 `corn-spatial.json` 的方法版本和 `analysisHash`。
+  两个文件的哈希对不上，就说明它们来自不同的运行。
+- 每个州有 `status`、`heatSummary`（格式与 `weatherSummary` 相同）和 `reasons`。
+  合并部分重新计算覆盖率，只把 4B-2 指标计算成功的州算进分子。
+- 计算失败时写出"全部不可用"的文件；如果连这一步也失败，就删除旧文件。
+  这样旧的 4B-2 文件永远不会和新的 Level C 结果配在一起。
+- 这个文件进入每日数据发布（`release_pipeline.ALL_GENERATED`），但**不是告警的输入**，
+  不参与 `inputsHash`，也不影响邮件。
 
 ## D. 4B-2.2 以后（只列出必须通过的关卡，定义在各子阶段再补）
 
