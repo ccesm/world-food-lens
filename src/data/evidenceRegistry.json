@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 1,
+  "registryVersion": "wfl-corn-evidence-registry/1",
+  "specification": "docs/PHASE4B0_CORN_AGRONOMIC_SPECIFICATION.md",
+  "methodSpecification": "docs/PHASE4B2_0_METHOD_SPEC.md",
+  "rules": {
+    "level_c_temperature_summary": {
+      "ruleId": "level_c_temperature_summary",
+      "methodologyVersion": "mapped-corn-weather-production/1",
+      "phase": "4B-1.9",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-10-05",
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "制图玉米面积上的日最高/最低气温分布",
+        "en": "Distribution of daily maximum/minimum air temperature over mapped corn area"
+      },
+      "intendedClaim": {
+        "zh": "14 天窗口内，按 2023 年制图玉米面积加权的气温描述性统计",
+        "en": "Descriptive temperature statistics over the 14-day window, weighted by 2023 mapped corn area"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "气温统计即热害",
+          "en": "Temperature statistics as heat injury"
+        }
+      ],
+      "evidenceType": "wfl-design",
+      "evidenceStrength": "not-applicable",
+      "conceptTier": "B",
+      "implementationTier": "B",
+      "literatureSources": [],
+      "proposedMetric": "area-weighted mean/min/max/p10/p50/p90 of per-cell 14-day Tmax mean, Tmax maximum, Tmin mean, Tmin minimum",
+      "units": "°C",
+      "parameters": {},
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "none",
+      "heuristicComponent": null,
+      "limitations": [
+        "gridMET is a modeled gridded product, not station truth",
+        "2023 crop map is a proxy for current-year planting"
+      ],
+      "inputRequirements": [
+        "gridMET tmmx",
+        "gridMET tmmn",
+        "annual corn-fraction grid"
+      ],
+      "outputs": [
+        "tmaxDailyMeanC",
+        "tmaxPeriodMaximumC",
+        "tminDailyMeanC",
+        "tminPeriodMinimumC"
+      ],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "level_c_precipitation_total": {
+      "ruleId": "level_c_precipitation_total",
+      "methodologyVersion": "mapped-corn-weather-production/1",
+      "phase": "4B-1.9",
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-10-05",
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "制图玉米面积上的 14 天累计降水分布",
+        "en": "Distribution of 14-day precipitation totals over mapped corn area"
+      },
+      "intendedClaim": {
+        "zh": "14 天窗口内，按 2023 年制图玉米面积加权的降水量描述性统计",
+        "en": "Descriptive precipitation statistics over the 14-day window, weighted by 2023 mapped corn area"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "仅凭降水判断干旱或田间积水",
+          "en": "Drought or field saturation diagnosed from rainfall alone"
+        }
+      ],
+      "evidenceType": "wfl-design",
+      "evidenceStrength": "not-applicable",
+      "conceptTier": "B",
+      "implementationTier": "B",
+      "literatureSources": [],
+      "proposedMetric": "area-weighted mean/min/max/p10/p50/p90 of per-cell 14-day precipitation sum",
+      "units": "mm",
+      "parameters": {},
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "none",
+      "heuristicComponent": null,
+      "limitations": [
+        "No climatological baseline; totals are not anomalies",
+        "Rainfall is not plant-available water"
+      ],
+      "inputRequirements": [
+        "gridMET pr",
+        "annual corn-fraction grid"
+      ],
+      "outputs": [
+        "precipitation14DayMm"
+      ],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "heat_extreme_degree_days": {
+      "ruleId": "heat_extreme_degree_days",
+      "methodologyVersion": "mapped-corn-heat-screen/1",
+      "phase": "4B-2.1",
+      "reviewStatus": "draft",
+      "reviewedAt": null,
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "超过经验断点的累积热量（极端度日，EDD）",
+        "en": "Accumulated heat above an empirical breakpoint (extreme degree days, EDD)"
+      },
+      "intendedClaim": {
+        "zh": "14 天窗口内，按制图玉米面积加权的 EDD 分布（29°C 与 30°C 两个预先声明的基准，由日最高/最低温近似）",
+        "en": "Area-weighted distribution of 14-day EDD at two predeclared bases (29 °C and 30 °C), approximated from daily Tmin/Tmax"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "EDD 换算成减产百分比",
+          "en": "Conversion of EDD into a percentage yield loss"
+        },
+        {
+          "zh": "29°C 或 30°C 是普适的伤害阈值",
+          "en": "29 °C or 30 °C as a universal damage threshold"
+        }
+      ],
+      "evidenceType": "empirical-field",
+      "evidenceStrength": "strong",
+      "conceptTier": "A",
+      "implementationTier": "B",
+      "literatureSources": [
+        "E1",
+        "M1"
+      ],
+      "proposedMetric": "per-cell single-sine EDD summed over 14 days, then area-weighted summary",
+      "units": "°C·day",
+      "parameters": {
+        "baseC": [
+          29,
+          30
+        ]
+      },
+      "proposedRange": "approximately 29–30 °C base; both reported",
+      "exactThresholdSupported": false,
+      "thresholdCategory": "empirical",
+      "heuristicComponent": "Single-sine reconstruction from daily extremes instead of hourly integration; 14-day window",
+      "limitations": [
+        "Approximation of the diurnal cycle, not hourly data",
+        "Not stage-weighted",
+        "No portable loss coefficient"
+      ],
+      "inputRequirements": [
+        "gridMET tmmx",
+        "gridMET tmmn",
+        "annual corn-fraction grid"
+      ],
+      "outputs": [
+        "edd29Window14DayCDay",
+        "edd30Window14DayCDay"
+      ],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "hot_day_tmax35": {
+      "ruleId": "hot_day_tmax35",
+      "methodologyVersion": "mapped-corn-heat-screen/1",
+      "phase": "4B-2.1",
+      "reviewStatus": "draft",
+      "reviewedAt": null,
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "高温日的天数与持续（WFL 自定筛查）",
+        "en": "Count and persistence of hot days (WFL-defined screen)"
+      },
+      "intendedClaim": {
+        "zh": "14 天窗口内，日最高温 ≥ 35°C 的天数与最长连续天数，在制图玉米面积上的分布",
+        "en": "Area-weighted distribution of days with Tmax ≥ 35 °C and of the longest consecutive run, within the 14-day window"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "35°C 是生理伤害界限",
+          "en": "35 °C as a physiological injury boundary"
+        },
+        {
+          "zh": "由日最高气温推断授粉失败或籽粒败育",
+          "en": "Pollination failure or kernel abortion inferred from daily Tmax"
+        }
+      ],
+      "evidenceType": "wfl-design",
+      "evidenceStrength": "moderate",
+      "conceptTier": "A",
+      "implementationTier": "C",
+      "literatureSources": [
+        "P1",
+        "R1",
+        "R2"
+      ],
+      "proposedMetric": "per-cell count of days with Tmax ≥ thresholdC and longest consecutive run, then area-weighted summary",
+      "units": "days",
+      "parameters": {
+        "thresholdC": 35
+      },
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "wfl-heuristic",
+      "heuristicComponent": "35 °C cutoff; no duration severity boundary is defined",
+      "limitations": [
+        "A brief crossing and sustained heat are not distinguished within a day",
+        "Not stage-weighted"
+      ],
+      "inputRequirements": [
+        "gridMET tmmx",
+        "annual corn-fraction grid"
+      ],
+      "outputs": [
+        "hotDays35Count",
+        "hotDays35LongestRun"
+      ],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "atmospheric_demand_vpd": {
+      "ruleId": "atmospheric_demand_vpd",
+      "methodologyVersion": "mapped-corn-vpd-screen/1",
+      "phase": "4B-2.2",
+      "reviewStatus": "draft",
+      "reviewedAt": null,
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "大气蒸发需求（饱和水汽压差，VPD）",
+        "en": "Atmospheric evaporative demand (vapor pressure deficit, VPD)"
+      },
+      "intendedClaim": {
+        "zh": "与温度同源、同格网的 VPD 在制图玉米面积上的分布（定义待 4B-2.2 核对）",
+        "en": "Distribution of VPD from the same provider and grid as temperature (definition to be verified in 4B-2.2)"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "由温度推算出的 VPD",
+          "en": "VPD synthesized from temperature without moisture data"
+        },
+        {
+          "zh": "某个 kPa 值是普适的伤害界限",
+          "en": "Any kPa value as a universal injury boundary"
+        }
+      ],
+      "evidenceType": "process-model",
+      "evidenceStrength": "strong",
+      "conceptTier": "A",
+      "implementationTier": "B",
+      "literatureSources": [
+        "M1",
+        "M2",
+        "U6"
+      ],
+      "proposedMetric": "to be defined in 4B-2.2 after verifying the gridMET vpd definition",
+      "units": "kPa",
+      "parameters": {},
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "physical",
+      "heuristicComponent": null,
+      "limitations": [
+        "Variable definition and availability history not yet verified"
+      ],
+      "inputRequirements": [
+        "gridMET vpd (candidate)",
+        "annual corn-fraction grid"
+      ],
+      "outputs": [],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "heat_vpd_overlap": {
+      "ruleId": "heat_vpd_overlap",
+      "methodologyVersion": "mapped-corn-vpd-screen/1",
+      "phase": "4B-2.2",
+      "reviewStatus": "draft",
+      "reviewedAt": null,
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "热与大气需求在同一格点、同一时间的同现",
+        "en": "Same-cell, same-time co-occurrence of heat and atmospheric demand"
+      },
+      "intendedClaim": {
+        "zh": "同现 / 未同现 / 未知 三类在制图玉米面积上的分布",
+        "en": "Distribution of observed / not observed / unknown co-occurrence over mapped corn area"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "把热、VPD、少雨相加成风险分数",
+          "en": "Summing heat, VPD and low rain into a risk score"
+        },
+        {
+          "zh": "输入缺失时视为未同现",
+          "en": "Treating a missing input as no co-occurrence"
+        }
+      ],
+      "evidenceType": "process-model",
+      "evidenceStrength": "strong",
+      "conceptTier": "A",
+      "implementationTier": "C",
+      "literatureSources": [
+        "M1",
+        "M2",
+        "E2"
+      ],
+      "proposedMetric": "to be defined in 4B-2.2",
+      "units": "share of mapped area by category",
+      "parameters": {},
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "wfl-heuristic",
+      "heuristicComponent": "Screens defining 'heat' and 'high VPD' are WFL choices",
+      "limitations": [
+        "Co-occurrence only; no damage multiplier"
+      ],
+      "inputRequirements": [
+        "heat_extreme_degree_days or hot_day_tmax35",
+        "atmospheric_demand_vpd"
+      ],
+      "outputs": [],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "precipitation_anomaly": {
+      "ruleId": "precipitation_anomaly",
+      "methodologyVersion": "mapped-corn-precip-anomaly/1",
+      "phase": "4B-2.3",
+      "reviewStatus": "draft",
+      "reviewedAt": null,
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "相对于声明基准期的降水距平",
+        "en": "Precipitation departure from a declared baseline period"
+      },
+      "intendedClaim": {
+        "zh": "14 天降水相对基准期同期的距平分布，基准期与版本随结果公开",
+        "en": "Distribution of 14-day precipitation departure from a declared, versioned baseline"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "仅凭降水距平判断干旱",
+          "en": "Drought diagnosed from a rainfall departure alone"
+        }
+      ],
+      "evidenceType": "empirical-field",
+      "evidenceStrength": "moderate",
+      "conceptTier": "B",
+      "implementationTier": "C",
+      "literatureSources": [
+        "R3",
+        "E3"
+      ],
+      "proposedMetric": "to be defined in 4B-2.3 with baseline period and hash",
+      "units": "mm and percent of baseline",
+      "parameters": {},
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "none",
+      "heuristicComponent": "Baseline period choice",
+      "limitations": [
+        "Baseline not yet built"
+      ],
+      "inputRequirements": [
+        "gridMET pr",
+        "versioned gridMET precipitation climatology",
+        "annual corn-fraction grid"
+      ],
+      "outputs": [],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    },
+    "wetness_establishment_panel": {
+      "ruleId": "wetness_establishment_panel",
+      "methodologyVersion": "mapped-corn-wetness-panel/1",
+      "phase": "4B-2.4",
+      "reviewStatus": "draft",
+      "reviewedAt": null,
+      "freezeIdentifier": null,
+      "concept": {
+        "zh": "湿涝与播种期作业证据并列展示",
+        "en": "Side-by-side wetness and planting/fieldwork evidence"
+      },
+      "intendedClaim": {
+        "zh": "降水持续性、官方播种进度相对同期偏离、可作业天数并列展示",
+        "en": "Precipitation persistence, official planting-progress departure and days suitable for fieldwork, shown side by side"
+      },
+      "prohibitedClaims": [
+        {
+          "zh": "受影响面积、受影响产量或减产",
+          "en": "Affected acreage, affected production or yield loss"
+        },
+        {
+          "zh": "作物损害已确认，或未触发即“作物安全/风险低”",
+          "en": "Confirmed crop damage, or an untriggered screen meaning 'crop safe' / 'low risk'"
+        },
+        {
+          "zh": "局地生育期或某一生育期的暴露",
+          "en": "Local crop stage or stage-specific exposure"
+        },
+        {
+          "zh": "由高湿度百分位判断田间积水或淹水损失",
+          "en": "Field saturation or flood loss inferred from a high wetness percentile"
+        },
+        {
+          "zh": "降雨导致了播种延误（因果）",
+          "en": "Rainfall caused the planting delay (causal claim)"
+        }
+      ],
+      "evidenceType": "official-methodology",
+      "evidenceStrength": "moderate",
+      "conceptTier": "B",
+      "implementationTier": "B",
+      "literatureSources": [
+        "E4",
+        "P3",
+        "U1",
+        "U2",
+        "X2"
+      ],
+      "proposedMetric": "to be defined in 4B-2.4",
+      "units": "mixed (mm, percentage points, days)",
+      "parameters": {},
+      "proposedRange": null,
+      "exactThresholdSupported": false,
+      "thresholdCategory": "official",
+      "heuristicComponent": null,
+      "limitations": [
+        "State-level official progress; not field observations"
+      ],
+      "inputRequirements": [
+        "gridMET pr",
+        "USDA NASS Crop Progress (planted, days suitable)"
+      ],
+      "outputs": [],
+      "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
+      "applicableRegion": "ten-state US Corn Belt (Level C scope)",
+      "managementDomain": "rainfed and irrigated not separated",
+      "temporalSupport": "14 consecutive gridMET daily values",
+      "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
+      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
+      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
+      "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
+      "chronology": {
+        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "observedPeriod": "period.start / period.end",
+        "revisionIdentity": "states[].weatherVersions",
+        "availableAsOf": "generatedAt"
+      }
+    }
+  }
+}
