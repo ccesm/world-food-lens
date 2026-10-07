@@ -391,7 +391,7 @@
       "temporalSupport": "14 consecutive gridMET daily values",
       "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
       "missingnessPolicy": "A cell contributes only if all 14 daily vpd values are valid; independent of the Level C variables. Missing area stays in the denominator and is never rescaled.",
-      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "denominator": "mappedCornAreaM2 (Level C 2023 CDL mapped corn area). Area without valid VPD (2.2a) or with an unknown class (2.2b) stays in this denominator and is never rescaled.",
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {
@@ -450,15 +450,16 @@
       "proposedMetric": "Per cell and gridMET day: H = tmmx > base; V = vpd > P90(1991-2020, ±7-day window). Window class observed / not observed / unknown; shares of mapped corn area (PHASE4B2_2_VPD_SPEC §4 D1–D7)",
       "units": "share of mapped area by category",
       "parameters": {
+        "tmaxBaseC": [
+          29,
+          30
+        ],
+        "tmaxBaseCInheritedFrom": "heat_extreme_degree_days.parameters.baseC (4B-2.1)",
         "quantile": 0.9,
         "quantileMethod": "hyndman-fan-7",
         "baselinePeriod": "1991-2020",
         "windowHalfWidthDays": 7,
         "minimumValidSamples": 405,
-        "eddBaseC": [
-          29,
-          30
-        ],
         "leapDayKey": "02-28",
         "exceedance": "strictly-greater",
         "dayLogic": "kleene-and"
@@ -485,7 +486,7 @@
       "temporalSupport": "14 consecutive gridMET daily values",
       "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
       "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
-      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "denominator": "mappedCornAreaM2 (Level C 2023 CDL mapped corn area). Area without valid VPD (2.2a) or with an unknown class (2.2b) stays in this denominator and is never rescaled.",
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {

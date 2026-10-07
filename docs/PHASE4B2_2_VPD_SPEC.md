@@ -36,7 +36,7 @@
   输出格式与 `weatherSummary` 相同，即 mean、min、max、p10、p50、p90。
 - **覆盖率与分母**：格点只要在窗口内 14 天的 `vpd` 全部有效就计入，**和 Level C 的三个变量无关**，
   因为 VPD 是一个独立的证据维度。VPD 缺失的面积计入缺失面积，不按比例放大。
-  分母仍是 Level C 的 `mappedCornAreaM2`。这个文件单独报告自己的覆盖率。
+  分母是 Level C 的 `mappedCornAreaM2`，登记表的 `denominator` 字段与此一致。这个文件单独报告自己的覆盖率。
   2.1 用的是 Level C 的变量，所以覆盖率和 Level C 完全相同；这里不同。
 - **证据等级**：概念是 A 级（大气蒸发需求，依据 M1、M2、U6）；实现是 B 级，因为使用的是提供方的派生产品。
   这一步**没有阈值**，`thresholdCategory` 记为 `physical`，`exactThresholdSupported` 记为 false。
@@ -79,7 +79,8 @@
   任一值缺失时，V 为未知。
 
 ### D6. 同日同现
-- **热（H）**：对每个预先声明的基准 `b ∈ {29, 30}°C`，`tmmx(c, t) > b` 时 H 为真，否则为假；`tmmx` 缺失时为未知。
+- **热（H）**：对每个基准 `b ∈ {29, 30}°C`，`tmmx(c, t) > b` 时 H 为真，否则为假；`tmmx` 缺失时为未知。
+  这两个基准**继承自 2.1** 已预先声明的 EDD 基准（登记表参数 `tmaxBaseC`，来源为 `heat_extreme_degree_days.parameters.baseC`），不是另行选定。
   在 single-sine 方法下，这等价于"当天 EDD_b > 0"，所以不需要 `tmmn`。
 - **同一天**是指同一个 gridMET 日，即 07 UTC 到次日 07 UTC 的山地标准时间日，不做滞后，也不做滑动平滑。
   局限：VPD 是日平均值，H 用的是日最高温，所以这里是"同一天"同现，**不是同一小时**同现。
@@ -133,7 +134,7 @@
   VPD 单独读取、单独计算有效性。这一点由测试保证：同一组输入下，`corn-spatial.json` 的内容逐字节相同。
 - 登记表：`atmospheric_demand_vpd` 补上输出名、参数和局限，随 2.2a 改为 `reviewed`。
   `heat_vpd_overlap` 随 2.2b 改为 `reviewed`，参数为 `quantile: 0.90`、`quantileMethod: hyndman-fan-7`、
-  `baselinePeriod: 1991-2020`、`windowHalfWidthDays: 7`、`minimumValidSamples: 405`、`eddBaseC: [29, 30]`，
+  `baselinePeriod: 1991-2020`、`windowHalfWidthDays: 7`、`minimumValidSamples: 405`、`tmaxBaseC: [29, 30]`（继承自 2.1，有测试强制一致），
   以及 VPD 气候产品的版本和哈希。
 - 告警和邮件：不改。新文件不是告警输入，不进入 `inputsHash`。
 
@@ -156,6 +157,7 @@
 ## 7. 决定记录
 
 - 2026-10-07（PR #8）：规格方向获批。
+- 2026-10-07：用户审阅后修正：VPD 规则的分母改为 `mappedCornAreaM2`；同现参数改名为 `tmaxBaseC`，并注明继承 2.1 的 29/30°C 基准。其余 D1–D8 按当前版本批准。
 - 2026-10-07：用户决定：
   - 2.2a 先上线。
   - "高 VPD"采用 1991–2020 同期的 P90。
