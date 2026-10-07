@@ -1,0 +1,30 @@
+name: G1 PSD structure audit (read-only)
+
+# One-off G1.0 audit on the contract branch. Downloads the USDA PSD bulk files,
+# records their structure as a frozen fixture and commits it to THIS branch
+# only. No data release, Pages deployment, alert or email.
+on:
+  push:
+    branches: ["claude/g1-0-supply-contract"]
+    paths: ["scripts/g1_psd_audit.py", ".github/workflows/g1-psd-audit.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python scripts/g1_psd_audit.py --output tests/fixtures/g1-psd-structure-audit.json
+      - name: Commit the audit fixture to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/fixtures/g1-psd-structure-audit.json
+          git commit -m "Record G1.0 PSD structure audit fixture"
+          git push origin HEAD:claude/g1-0-supply-contract
