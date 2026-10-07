@@ -156,8 +156,8 @@
       "ruleId": "heat_extreme_degree_days",
       "methodologyVersion": "mapped-corn-heat-screen/1",
       "phase": "4B-2.1",
-      "reviewStatus": "draft",
-      "reviewedAt": null,
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-10-07",
       "freezeIdentifier": null,
       "concept": {
         "zh": "超过经验断点的累积热量（极端度日，EDD）",
@@ -233,9 +233,9 @@
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {
-        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "sourcePublication": "corn-spatial.json states[].weatherVersions (same gridMET inputs, bound by baseArtifact.analysisHash)",
         "observedPeriod": "period.start / period.end",
-        "revisionIdentity": "states[].weatherVersions",
+        "revisionIdentity": "baseArtifact.analysisHash",
         "availableAsOf": "generatedAt"
       }
     },
@@ -243,8 +243,8 @@
       "ruleId": "hot_day_tmax35",
       "methodologyVersion": "mapped-corn-heat-screen/1",
       "phase": "4B-2.1",
-      "reviewStatus": "draft",
-      "reviewedAt": null,
+      "reviewStatus": "reviewed",
+      "reviewedAt": "2026-10-07",
       "freezeIdentifier": null,
       "concept": {
         "zh": "高温日的天数与持续（WFL 自定筛查）",
@@ -316,9 +316,9 @@
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {
-        "sourcePublication": "record.metadata (gridMET provider/version per accepted fetch)",
+        "sourcePublication": "corn-spatial.json states[].weatherVersions (same gridMET inputs, bound by baseArtifact.analysisHash)",
         "observedPeriod": "period.start / period.end",
-        "revisionIdentity": "states[].weatherVersions",
+        "revisionIdentity": "baseArtifact.analysisHash",
         "availableAsOf": "generatedAt"
       }
     },

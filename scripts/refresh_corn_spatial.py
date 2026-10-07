@@ -120,6 +120,14 @@ def process(state, annual_dir, weather_cache, period, at, level_a, previous, *, 
                     "reasons": [] if joint >= mapped - max(.01, mapped * 1e-9) else ["partial_spatial_coverage"]}
     if not joint:
         state_result["reasons"] = ["weather_grid_incomplete"]
+    # Phase 4B-2.1 heat screens ride along in the cell values AFTER the Level C
+    # point comparison, so corn-spatial.json is unchanged. A failure here must
+    # never affect Level C: the separate heat artifact reports it as unavailable.
+    try:
+        from corn_heat import heat_cell_values
+        values.update(heat_cell_values(arrays["tmmn"], arrays["tmmx"]))
+    except Exception as error:
+        print(f"{state['id']}: heat screen diagnostic: {error}", file=__import__("sys").stderr)
     data = {"crop": {"annualKey": manifest["key"], "cropGeographyYear": year, "mappedCornAreaM2": mapped,
                      "publicationDate": manifest["publicationDate"], "cdlHash": manifest["identity"]["cdlHash"],
                      "sourceUrl": manifest["cdlSourceUrl"], "metadataHash": manifest["metadataHash"], "gridVersion": GRID["version"]},
@@ -135,8 +143,11 @@ def process(state, annual_dir, weather_cache, period, at, level_a, previous, *, 
     return state_result, (values, joint_weights), downloaded
 
 
-def refresh(annual, weather_cache, start, end, at, *, previous=None, official=None, offline_raw=None, fail_state=None, network_budget=None):
+def refresh(annual, weather_cache, start, end, at, *, previous=None, official=None, offline_raw=None, fail_state=None,
+            network_budget=None, heat=None):
+    """`heat`, when a dict, receives the separate Phase 4B-2.1 artifact (or its error)."""
     period = dates(start, end)
+    heat_cells = {}
     deadline = time.monotonic() + network_budget if network_budget is not None else None
     results, distributions, measurements = [], [], []
     for state in STATES:
@@ -163,6 +174,7 @@ def refresh(annual, weather_cache, start, end, at, *, previous=None, official=No
                 (official or {}).get("cornPilot", {}).get("weather", {}).get(state["id"]), old, offline_raw=offline_raw, deadline=deadline)
             if result["status"] == "ok":
                 distributions.append(distribution)
+                heat_cells[state["id"]] = distribution
         except Exception as error:
             issue = error if isinstance(error, DataIssue) else DataIssue(str(error), "spatial_alignment_failed")
             # Detailed paths belong in runner diagnostics, not public JSON.
@@ -204,10 +216,28 @@ def refresh(annual, weather_cache, start, end, at, *, previous=None, official=No
     projection = {**deterministic, "states": [{k: v for k, v in s.items() if k != "records"} for s in results],
                   "combined": {k: v for k, v in combined.items() if k != "record"}}
     deterministic.update(generatedAt=at, analysisHash=digest(projection), release=None)
+    if heat is not None:
+        heat.update(build_heat(deterministic, heat_cells, at))
     performance = {"states": measurements, "seconds": sum(m["seconds"] for m in measurements),
                    "downloadBytes": sum(m["downloadBytes"] for m in measurements),
                    "maximumMemoryBytes": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * (1 if __import__("sys").platform == "darwin" else 1024)}
     return deterministic, performance
+
+
+def build_heat(level_c, heat_cells, at):
+    """Separate informational artifact; any failure degrades to explicit unavailability."""
+    try:
+        from corn_heat import HEAT_METRICS, summarize_heat, build_artifact
+        usable = {sid: d for sid, d in heat_cells.items() if all(k in d[0] for k in HEAT_METRICS)}
+        summaries = {sid: summarize_heat([d]) for sid, d in usable.items()}
+        return {"artifact": build_artifact(level_c, summaries, summarize_heat(list(usable.values())), at)}
+    except Exception as error:
+        print(f"heat screen diagnostic: {error}", file=__import__("sys").stderr)
+        try:
+            from corn_heat import HEAT_METRICS, build_artifact
+            return {"artifact": build_artifact(level_c, {}, {k: None for k in HEAT_METRICS}, at), "error": str(error)}
+        except Exception as fallback:
+            return {"artifact": None, "error": f"{error}; {fallback}"}
 
 
 def prune_weather(cache, checked_day):
@@ -267,6 +297,7 @@ if __name__ == "__main__":
     parser.add_argument("--annual-cache", required=True)
     parser.add_argument("--weather-cache", required=True)
     parser.add_argument("--output", default="public/data/corn-spatial.json")
+    parser.add_argument("--heat-output", help="Phase 4B-2.1 heat screen artifact (default: corn-heat-screen.json beside --output)")
     parser.add_argument("--performance")
     parser.add_argument("--start")
     parser.add_argument("--end")
@@ -297,11 +328,18 @@ if __name__ == "__main__":
         official = json.loads((output.parent / "official-data.json").read_text())
     except (OSError, ValueError):
         official = None
+    heat = {}
     artifact, performance = refresh(annual, weather_cache, start, end, at, previous=previous, official=official,
-                                    offline_raw=args.offline_raw, fail_state=args.fail_state, network_budget=args.network_budget_seconds)
+                                    offline_raw=args.offline_raw, fail_state=args.fail_state, network_budget=args.network_budget_seconds,
+                                    heat=heat)
     if args.input_archive:
         artifact["inputArchive"] = archive_inputs(weather_cache, artifact, args.input_archive)
     write_json(output, artifact)
+    heat_output = Path(args.heat_output) if args.heat_output else output.parent / "corn-heat-screen.json"
+    if heat.get("artifact"):
+        write_json(heat_output, heat["artifact"])
+    else:
+        heat_output.unlink(missing_ok=True)  # Never leave a heat file bound to an older Level C run.
     prune_weather(weather_cache, at[:10])
     if args.performance:
         write_json(args.performance, performance)

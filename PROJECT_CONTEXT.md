@@ -77,7 +77,7 @@ failure. Each run tests, refreshes data, commits the generated data release to
 | --- | --- |
 | 0–4A (migration, official data, climate, monitoring, corn pilot/history) | Done, live |
 | 4B-1 (spatial-stage screening, Level C, operational validation) | Done, merged 2026-10-05, live |
-| 4B-2 (Level C hazard expansion) | **In progress** — 4B-2.0 evidence registry and method spec done; 2.1 (EDD, hot days) next. Plan: `docs/PHASE4B2_PLAN.md` |
+| 4B-2 (Level C hazard expansion) | **In progress** — 2.0 evidence registry merged; 2.1 EDD and hot-day screens (`public/data/corn-heat-screen.json`, data only, no UI yet). Plan: `docs/PHASE4B2_PLAN.md` |
 
 Phase 4B-2 may expand screening variables only within the limitations and
 version guards described in `docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md` and
@@ -111,7 +111,7 @@ Any ChatGPT, Codex or Claude session should:
 3. Never rewrite or force-push `main`, and never overwrite bot data commits.
 4. Preserve working features unless explicitly asked to remove them; avoid
    large refactors before understanding the source adapters.
-5. Run `npm test` and `npm run build` after changes (226 JS + 163 Python tests
-   locally; the 59 spatial tests need the geospatial runtime and run in CI).
+5. Run `npm test` and `npm run build` after changes (227 JS + 174 Python tests
+   locally; the spatial tests (`tests/spatial`, research suites) need the geospatial runtime and run in CI).
 6. Work on a branch and open a PR; commit in small, meaningful units.
 7. When status changes, update this page in place.
