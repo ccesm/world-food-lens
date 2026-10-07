@@ -98,8 +98,8 @@
 
 | 字段 | 定义 |
 | --- | --- |
-| `revision`、`revisionPct` | **同一观测**在相邻两期发布之间的变化，即"对同一年的新信息" |
-| `yoyChange`、`yoyChangePct` | **同一期发布**里，本年与上一年的差，即"两个不同年份的比较" |
+| `currentEstimate`、`previousEstimate`、`revision`、`revisionPct` | **同一观测**在相邻两期发布之间的变化，即"对同一年的新信息" |
+| `yoyChange`、`yoyPct` | **同一期发布**里，本年与上一年的差，即"两个不同年份的比较" |
 
 - 第一次出现的观测没有上一期，所以修订是 **unknown**，**不是 0**。
 - 基数为 0 时，百分比是 unknown。

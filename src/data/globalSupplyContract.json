@@ -305,6 +305,8 @@
     "unknown": "For derived values, revisions and directions only: computation impossible (no previous release, zero or missing base, unset dead zone)."
   },
   "revisionModel": {
+    "currentEstimate": "value of the observation in the current source release",
+    "previousEstimate": "value of the SAME observationId in the immediately preceding source release; null when there is none",
     "revision": "currentEstimate - previousEstimate for the SAME observationId across consecutive source releases",
     "revisionPct": "revision / previousEstimate x 100; unknown when previousEstimate is 0, missing or not-applicable",
     "yoyChange": "value(marketYear) - value(marketYear - 1) within the SAME source release",

@@ -65,15 +65,21 @@ export function stocksToUse(endingStocks,domesticUse){
   return {status:"ok",value:endingStocks.value/domesticUse.value*100};
 }
 
-function change(current,base,kind){
-  if(!known(current)||!known(base))return {[kind]:null,[`${kind}Pct`]:null,status:"unknown"};
-  const delta=current.value-base.value;
-  return {[kind]:delta,[`${kind}Pct`]:base.value===0?null:delta/base.value*100,status:base.value===0?"unknown":"ok"};
-}
 /** Release-to-release revision of the SAME observation. No previous release -> unknown, never 0. */
-export const revision=(current,previous)=>change(current,previous,"revision");
-/** Year-over-year change within ONE release. Separate concept, separate field. */
-export const yoy=(current,prior)=>change(current,prior,"yoyChange");
+export function revision(current,previous){
+  const currentEstimate=known(current)?current.value:null,previousEstimate=known(previous)?previous.value:null;
+  if(currentEstimate===null||previousEstimate===null)
+    return {currentEstimate,previousEstimate,revision:null,revisionPct:null,status:"unknown"};
+  const delta=currentEstimate-previousEstimate;
+  return {currentEstimate,previousEstimate,revision:delta,revisionPct:previousEstimate===0?null:delta/previousEstimate*100,
+    status:previousEstimate===0?"unknown":"ok"};
+}
+/** Year-over-year change within ONE release. Separate concept, separate fields. */
+export function yoy(current,prior){
+  if(!known(current)||!known(prior))return {yoyChange:null,yoyPct:null,status:"unknown"};
+  const delta=current.value-prior.value;
+  return {yoyChange:delta,yoyPct:prior.value===0?null:delta/prior.value*100,status:prior.value===0?"unknown":"ok"};
+}
 
 /** Metric-level direction. deadZonePct null (draft) -> unknown. Boundary is inclusive-stable. */
 export function metricDirection(metricId,pct,deadZonePct){

@@ -92,10 +92,12 @@ test("stocks-to-use is unknown whenever its denominator is unusable",()=>{
 });
 
 test("first observation has no revision, and revision is not YoY",()=>{
-  assert.deepEqual(revision(ok(100),undefined),{revision:null,revisionPct:null,status:"unknown"});
-  assert.deepEqual(revision(ok(97.6),ok(100)),{revision:-2.4000000000000057,revisionPct:-2.4000000000000057,status:"ok"});
+  assert.deepEqual(revision(ok(100),undefined),{currentEstimate:100,previousEstimate:null,revision:null,revisionPct:null,status:"unknown"});
+  const r=revision(ok(97.6),ok(100));
+  assert.deepEqual([r.currentEstimate,r.previousEstimate,r.status],[97.6,100,"ok"]);
+  assert.ok(Math.abs(r.revision+2.4)<1e-12&&Math.abs(r.revisionPct+2.4)<1e-12);
   const y=yoy(ok(120),ok(100));
-  assert.ok(!("revision" in y));assert.equal(y.yoyChange,20);assert.equal(y.yoyChangePct,20);
+  assert.ok(!("revision" in y)&&!("previousEstimate" in y));assert.equal(y.yoyChange,20);assert.equal(y.yoyPct,20);
   assert.equal(revision(ok(5),ok(0)).status,"unknown");                 // Percent on a zero base is undefined.
 });
 
