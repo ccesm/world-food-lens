@@ -240,6 +240,83 @@ def build_heat(level_c, heat_cells, at):
             return {"artifact": None, "error": f"{error}; {fallback}"}
 
 
+def build_vpd(annual, weather_cache, level_c, at, network_budget):
+    """Phase 4B-2.2a VPD distribution, run AFTER Level C with its own retrieval budget.
+
+    Level C content and its retrieval budget are never affected. Any failure
+    degrades to explicit unavailability, per state or as a whole.
+    """
+    import sys
+    try:
+        import numpy as np
+        from corn_spatial_geo import load_annual
+        from corn_vpd import NC_VARIABLE, SOURCE_KEY, read_vpd, vpd_cell_values, summarize_vpd, build_artifact
+        period = dates(level_c["period"]["start"], level_c["period"]["end"])
+        deadline = time.monotonic() + network_budget
+        results, distributions = {}, []
+        for s in level_c["states"]:
+            try:
+                if not s.get("annualKey"):
+                    raise DataIssue("No validated crop geography for this state", "crop_grid_unavailable")
+                manifest, coords, weights = load_annual(Path(annual) / s["state"])
+                if manifest["key"] != s["annualKey"]:
+                    raise DataIssue("Annual geography differs from the Level C run", "crop_grid_version_mismatch")
+                pieces, versions = [], []
+                for weather_year in sorted({d[:4] for d in period}):
+                    subset = [d for d in period if d.startswith(weather_year)]
+                    params = {"var": NC_VARIABLE, **coords["bounds"], "time_start": subset[0] + "T00:00:00Z",
+                              "time_end": subset[-1] + "T00:00:00Z", "accept": "netcdf"}
+                    url = (f"https://thredds.northwestknowledge.net/thredds/ncss/MET/{SOURCE_KEY}/{SOURCE_KEY}_{weather_year}.nc?"
+                           + urlencode(params))
+                    identity = {"dataset": "gridMET", "variable": SOURCE_KEY, "period": subset,
+                                "geometry": manifest["identity"]["weatherGeometryHash"], "query": url,
+                                "readerVersion": "gridmet-vpd-reader/1"}
+                    path, _, _ = fetch_weather(weather_cache, url, identity, at[:10], deadline=deadline)
+                    array, version = read_vpd(path, subset, coords)
+                    version.update(rawFileHash=file_hash(path), sourceUrl="https://www.climatologylab.org/gridmet.html", downloadUrl=url)
+                    pieces.append(array)
+                    versions.append(version)
+                vpd = np.concatenate(pieces, axis=0)
+                values, complete = vpd_cell_values(vpd)
+                valid_weights = weights * complete
+                valid = float(valid_weights.sum())
+                mapped = s.get("mappedCornAreaM2")
+                if mapped is not None and valid > mapped + max(.01, mapped * 1e-9):
+                    raise DataIssue("Valid VPD area exceeds mapped crop area", "spatial_alignment_failed")
+                if valid <= 0:
+                    raise DataIssue("No complete VPD window over mapped corn", "weather_grid_incomplete")
+                results[s["state"]] = {"validVpdAreaM2": valid, "vpdSummary": summarize_vpd([(values, valid_weights)]),
+                                       "weatherVersions": {SOURCE_KEY: versions}}
+                distributions.append((values, valid_weights))
+            except Exception as error:
+                reason = error.reason if isinstance(error, DataIssue) else "spatial_alignment_failed"
+                print(f"{s['state']}: VPD diagnostic: {error}", file=sys.stderr)
+                results[s["state"]] = {"reason": reason}
+        return {"artifact": build_artifact(level_c, results, summarize_vpd(distributions), at)}
+    except Exception as error:
+        print(f"VPD screen diagnostic: {error}", file=sys.stderr)
+        try:
+            from corn_vpd import VPD_METRICS, build_artifact
+            return {"artifact": build_artifact(level_c, {}, {k: None for k in VPD_METRICS}, at), "error": str(error)}
+        except Exception as fallback:
+            return {"artifact": None, "error": f"{error}; {fallback}"}
+
+
+def actions_notice(title, artifact, summary_key):
+    """Surface the real-data outcome as a run annotation (visible without logs)."""
+    import os
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return
+    if not artifact:
+        print(f"::warning title={title}::artifact not written")
+        return
+    c = artifact["combined"]
+    reasons = sorted({r for s in artifact["states"] for r in s["reasons"]})
+    means = {k: round(v["mean"], 3) for k, v in (c.get(summary_key) or {}).items() if v}
+    level = "notice" if not c["unavailableStates"] else "warning"
+    print(f"::{level} title={title}::coverage={c['coverage']} unavailable={c['unavailableStates']} reasons={reasons} means={means}")
+
+
 def prune_weather(cache, checked_day):
     """Bound external operational cache; never touch files outside owned hash names."""
     import re
@@ -305,11 +382,15 @@ if __name__ == "__main__":
     parser.add_argument("--offline-raw")
     parser.add_argument("--fail-state", choices=[s["id"] for s in STATES])
     parser.add_argument("--input-archive")
+    parser.add_argument("--vpd-output", help="Phase 4B-2.2a VPD artifact (default: corn-vpd-screen.json beside --output)")
+    parser.add_argument("--vpd-network-budget-seconds", type=float, default=120,
+                        help="Separate VPD retrieval budget, spent only after Level C has finished")
     parser.add_argument("--network-budget-seconds", type=float, default=180,
                         help="Shared retrieval budget; existing valid same-day entries remain usable")
     args = parser.parse_args()
-    if not __import__('math').isfinite(args.network_budget_seconds) or args.network_budget_seconds <= 0:
-        parser.error("--network-budget-seconds must be finite and positive")
+    for budget in (args.network_budget_seconds, args.vpd_network_budget_seconds):
+        if not __import__('math').isfinite(budget) or budget <= 0:
+            parser.error("network budgets must be finite and positive")
     if args.now and not timestamp(args.now):
         parser.error("--now must be a canonical UTC timestamp")
     now = datetime.fromisoformat(args.now.replace("Z", "+00:00")) if args.now else datetime.now(timezone.utc)
@@ -340,6 +421,15 @@ if __name__ == "__main__":
         write_json(heat_output, heat["artifact"])
     else:
         heat_output.unlink(missing_ok=True)  # Never leave a heat file bound to an older Level C run.
+    actions_notice("Heat screen", heat.get("artifact"), "heatSummary")
+    vpd_output = Path(args.vpd_output) if args.vpd_output else output.parent / "corn-vpd-screen.json"
+    # Fixed-input replays have no VPD inputs; never publish a VPD file for them.
+    vpd = build_vpd(annual, weather_cache, artifact, at, args.vpd_network_budget_seconds) if not args.offline_raw else {"artifact": None}
+    if vpd.get("artifact"):
+        write_json(vpd_output, vpd["artifact"])
+    else:
+        vpd_output.unlink(missing_ok=True)  # Never leave a VPD file bound to an older Level C run.
+    actions_notice("VPD screen", vpd.get("artifact"), "vpdSummary")
     prune_weather(weather_cache, at[:10])
     if args.performance:
         write_json(args.performance, performance)
