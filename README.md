@@ -11,7 +11,8 @@ API key is required.
 (US corn spatial-stage screening and the Level C informational mapped-corn
 weather module) is merged and live, and real scheduled production runs have
 passed. Daily refresh, deployment and alert email all run from main. Phase 4B-2
-has not started. See [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) for the one-page
+is in progress (4B-2.0 evidence registry done; see the
+[plan](docs/PHASE4B2_PLAN.md)). See [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) for the one-page
 current state.
 
 This repository is a source-controlled migration of the previously published World Food Lens site:
@@ -320,8 +321,9 @@ source failure remains explicit, never zero corn or normalized full coverage.
 The 2023 map is clearly labeled as a proxy. The validated code was merged to
 main on 2026-10-05 (PRs #1 and #2) and has since run in real scheduled
 production. To repeat the safe validation without deploying or sending email,
-run the workflow manually with `validation_only: true`. Phase 4B-2 is not
-implemented.
+run the workflow manually with `validation_only: true`. Phase 4B-2 extends this
+layer with separately versioned, informational screens; see the
+[plan](docs/PHASE4B2_PLAN.md) and [method specification](docs/PHASE4B2_0_METHOD_SPEC.md).
 
 ## Safety / data integrity rules
 

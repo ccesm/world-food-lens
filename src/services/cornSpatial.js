@@ -12,7 +12,7 @@ export const spatialReasonText=(code,lang="zh")=>({
 
 export const SPATIAL_METHOD="mapped-corn-weather-production/1";
 const GRID="cornbelt-iowa-anchored-9km/1";
-const METRICS=["tmaxDailyMeanC","tmaxPeriodMaximumC","tminDailyMeanC","tminPeriodMinimumC","precipitation14DayMm"];
+export const METRICS=["tmaxDailyMeanC","tmaxPeriodMaximumC","tminDailyMeanC","tminPeriodMinimumC","precipitation14DayMm"];
 const keys=["crop","weather","intersection"];
 const ids={crop:"cornSpatialCrop",weather:"cornSpatialWeather",intersection:"cornSpatial"};
 const number=v=>Number.isFinite(v)&&v>=0;
