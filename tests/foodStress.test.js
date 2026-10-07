@@ -4,7 +4,7 @@ import {readFileSync} from "node:fs";
 import {percentile,inventorySummary,priceSignal,combineEvidence,buildFoodStress,RISK_WEIGHTS,riskLevel} from "../src/services/foodStress.js";
 import {validateOfficialBundle} from "../src/services/officialSources.js";
 const load=()=>{
-  const b=JSON.parse(readFileSync(new URL("../public/data/official-data.json",import.meta.url)));
+  const b=JSON.parse(readFileSync(new URL("./fixtures/official-data-baseline.json",import.meta.url)));
   // Unit-test a successful-source scenario independently of the scheduled job's
   // latest network outcome. Retained-cache publication must remain possible.
   for(const record of Object.values(b.sources))record.status="ok";
