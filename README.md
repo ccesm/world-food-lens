@@ -7,6 +7,13 @@ monitors NOAA climate observations and offers a searchable historical policy
 registry. GitHub remains the source of truth. No brokerage connection or private
 API key is required.
 
+**Current status (2026-10-07):** main is the production branch. Phase 4B-1
+(US corn spatial-stage screening and the Level C informational mapped-corn
+weather module) is merged and live, and real scheduled production runs have
+passed. Daily refresh, deployment and alert email all run from main. Phase 4B-2
+has not started. See [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md) for the one-page
+current state.
+
 This repository is a source-controlled migration of the previously published World Food Lens site:
 
 https://world-food-lens.d47cjrv8xg.chatgpt.site/
@@ -298,10 +305,9 @@ observed local stage or crop damage.
 
 The configured 2023 map is an explicitly older validated geography proxy, not
 the latest available CDL or exact current-year planting. Raw grids remain outside
-Git/Pages. Implementation and local tests/build are complete, but the annual
-asset has not been uploaded and actual Actions activation has not run. No
-deployment or email was performed. See the
-[production report, measurements and activation gates](docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md).
+Git/Pages; the approved annual grid lives in the Actions cache. The module is
+live on main as informational context; it does not feed alerts or email. See
+the [production report, measurements and activation gates](docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md).
 
 ### Operational validation (Phase 4B-1.10)
 
@@ -311,10 +317,11 @@ See the [operational report](docs/PHASE4B1_10_OPERATIONAL_VALIDATION.md) and
 [successful safe workflow run](https://github.com/ccesm/world-food-lens/actions/runs/37394519240).
 The approved annual cache is saved immediately and reused across runners;
 source failure remains explicit, never zero corn or normalized full coverage.
-The 2023 map is clearly labeled as a proxy. No public deployment or real email
-was performed; code is on the isolated validation branch, not activated on main.
-This supersedes the earlier report's pending Actions validation, not its
-preserved scientific methods. Phase 4B-2 is not implemented.
+The 2023 map is clearly labeled as a proxy. The validated code was merged to
+main on 2026-10-05 (PRs #1 and #2) and has since run in real scheduled
+production. To repeat the safe validation without deploying or sending email,
+run the workflow manually with `validation_only: true`. Phase 4B-2 is not
+implemented.
 
 ## Safety / data integrity rules
 

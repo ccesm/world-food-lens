@@ -6,6 +6,11 @@ passed at source `cc85ebe2f3d9aef453695357136cb3f2b585a41d`. These are actual
 runner measurements, not substituted Phase 1.9 Mac measurements. **No deployment,
 real email, main-branch publication or Phase 4B-2 work was performed.**
 
+> Update 2026-10-07: this work is merged and live on main (PRs #1 and #2), and
+> real scheduled production runs have since passed. The validation-branch push
+> trigger described below has been removed; to repeat the safe validation, run
+> the workflow manually with `validation_only: true`.
+
 ## A. Workflow trace and safe execution scope
 
 The actual production workflow, `.github/workflows/deploy-pages.yml`, is used,

@@ -22,6 +22,7 @@ import CropCriticalWindow from "./components/CropCriticalWindow";
 import FoodHistory from "./components/FoodHistory";
 import HomeOrientation,{HomeHero} from "./components/HomeOrientation";
 import DetailModule from "./components/DetailModule";
+import ModuleBoundary from "./components/ModuleBoundary";
 import MobileNavigation from "./components/MobileNavigation";
 import AlertCenter from "./components/AlertCenter";
 import useFoodStress from "./hooks/useFoodStress";
@@ -43,7 +44,6 @@ const copy = {
     usdaTitle:"收成能否跟上消耗？", ratio:"全球小麦库存消费比",
     ratioHelp:"期末库存 ÷ 年度国内消费 × 100%。它表示库存相对于消耗的缓冲规模；下降可能意味着缓冲减弱，但不是价格上涨的保证。",
     policyTitle:"全球政策库", keyword:"关键词（原文）", country:"国家 / 地区", type:"政策类型",
-    policyPending:"旧站的 FAPDA 搜索/同步后端无法从 Site projection 直接导出。这里保留界面与接入位置，下一步重新连接官方 FAPDA。",
     dots:"三条线索，读懂价格传导",
     energy:"能源 → 农业成本", energyText:"原油影响农机燃油、运输和加工；天然气是氮肥的重要原料。油价和化肥价格可能同涨，但不是简单的一对一关系。",
     stocks:"收成与库存 → 缓冲能力", stocksText:"当消费高于产量时，库存可能提供缓冲。库存较低时，天气和供应冲击更容易引起价格变化。",
@@ -58,8 +58,7 @@ const copy = {
     viewOnTradingView:"在 TradingView 查看", chartUnavailable:"图表暂时无法加载，请使用下方链接查看。",
     desk:"每个数字，都能追溯来源", deskHelp:"以下时间来自旧站最后一次可恢复的数据快照，并不代表当前实时抓取。",
     observation:"观测期 / 市场年度", last:"旧站最近成功抓取", status:"状态",
-    footer:"帮助理解全球粮食系统 · 非投资建议或法律意见",
-    updateUnavailable:"本地 Git 迁移版尚未配置实时数据适配器；当前仍显示旧站恢复缓存。"
+    footer:"帮助理解全球粮食系统 · 非投资建议或法律意见"
   },
   en:{
     badge:"Global view · Official data · Clear interpretation",
@@ -75,7 +74,6 @@ const copy = {
     usdaTitle:"Can harvests keep up with use?", ratio:"Global wheat stock-to-use ratio",
     ratioHelp:"Ending stocks ÷ annual domestic consumption × 100%. It is a buffer indicator, not a guarantee of future price direction.",
     policyTitle:"Global policy database", keyword:"Keyword", country:"Country / region", type:"Policy type",
-    policyPending:"The old FAPDA search/sync backend cannot be exported directly from the hosted Site projection. The interface and adapter point are preserved here for reconnection.",
     dots:"Three signals for reading price transmission",
     energy:"Energy → farm costs", energyText:"Oil affects machinery fuel, transport and processing; natural gas is a major nitrogen-fertilizer input. Co-movement is not one-to-one causality.",
     stocks:"Harvests & stocks → buffer", stocksText:"When consumption exceeds production, inventories can absorb shocks. Low buffers can increase sensitivity to weather and supply disruptions.",
@@ -90,8 +88,7 @@ const copy = {
     viewOnTradingView:"View on TradingView", chartUnavailable:"The chart could not be loaded. Use the link below to view it instead.",
     desk:"Every number should be traceable", deskHelp:"These timestamps are from the last recoverable hosted-site snapshot, not a current live fetch.",
     observation:"Observation / marketing year", last:"Old-site last success", status:"Status",
-    footer:"Understand the global food system · Not investment or legal advice",
-    updateUnavailable:"Live source adapters are not configured in this Git migration yet. Recovered hosted-site cache remains displayed."
+    footer:"Understand the global food system · Not investment or legal advice"
   }
 };
 
@@ -276,12 +273,12 @@ function App(){
     </header>
 
     <main>
-      <HomeHero lang={lang} model={stressModel}>
+      <ModuleBoundary name="home-hero" lang={lang}><HomeHero lang={lang} model={stressModel}>
         {refreshMsg && <div className="notice" role="status">{refreshMsg==="loaded"?(lang==="zh"?"已读取网站最新发布的缓存。此按钮不会直接触发官方接口抓取；各来源的成功/失败状态见数据来源。":"Loaded the site's latest published cache. This button does not trigger upstream downloads; source success/failure is shown in Data Desk."):(lang==="zh"?"网站缓存暂时无法读取，继续显示已载入的数据。":"The published cache could not be read; previously loaded data remain visible.")}</div>}
-      </HomeHero>
-      <AlertCenter lang={lang}/>
-      <HomeOrientation lang={lang}/>
-      <EnsoHomeCard outlook={ensoOutlook} lang={lang}/>
+      </HomeHero></ModuleBoundary>
+      <ModuleBoundary name="alert-center" lang={lang}><AlertCenter lang={lang}/></ModuleBoundary>
+      <ModuleBoundary name="home-orientation" lang={lang}><HomeOrientation lang={lang}/></ModuleBoundary>
+      <ModuleBoundary name="enso-home-card" lang={lang}><EnsoHomeCard outlook={ensoOutlook} lang={lang}/></ModuleBoundary>
 
       <nav className="section-nav" aria-label={lang==="zh"?"页面模块导航":"Page sections"}>
         <a href="#home">{lang==="zh"?"首页导览":"Start here"}</a>
@@ -293,17 +290,17 @@ function App(){
         <a href="#price-outlook">{lang==="zh"?"价格展望":"Price outlook"}</a>
         <a href="#release-calendar">{lang==="zh"?"发布日历":"Release calendar"}</a>
       </nav>
-      <MobileNavigation lang={lang}/>
+      <ModuleBoundary name="mobile-navigation" lang={lang}><MobileNavigation lang={lang}/></ModuleBoundary>
 
-      <GlobalFoodStress bundle={official} lang={lang} model={stressModel}/>
+      <ModuleBoundary name="food-stress" lang={lang}><GlobalFoodStress bundle={official} lang={lang} model={stressModel}/></ModuleBoundary>
 
-      <CropCriticalWindow lang={lang}/>
+      <ModuleBoundary name="crop-windows" lang={lang}><CropCriticalWindow lang={lang}/></ModuleBoundary>
 
-      <EnsoSeasonalOutlook outlook={ensoOutlook} lang={lang}/>
+      <ModuleBoundary name="enso-outlook" lang={lang}><EnsoSeasonalOutlook outlook={ensoOutlook} lang={lang}/></ModuleBoundary>
 
-      <section id="grain-inventory" className="section alt"><GrainInventory record={official.sources.usda} lang={lang}/></section>
+      <section id="grain-inventory" className="section alt"><ModuleBoundary name="grain-inventory" lang={lang}><GrainInventory record={official.sources.usda} lang={lang}/></ModuleBoundary></section>
 
-      <DetailModule id="s2" title={lang==="zh"?"查看详细供需历史":"Explore supply history"} description={lang==="zh"?`产量与消费能否平衡？展开 ${wheatHistory.length} 年小麦图表与数据。`:`Can harvests keep up? Expand ${wheatHistory.length} years of wheat charts and data.`}>
+      <DetailModule lang={lang} id="s2" title={lang==="zh"?"查看详细供需历史":"Explore supply history"} description={lang==="zh"?`产量与消费能否平衡？展开 ${wheatHistory.length} 年小麦图表与数据。`:`Can harvests keep up? Expand ${wheatHistory.length} years of wheat charts and data.`}>
       <section id="s2-content" className="section alt">
         <div className="section-no">02 / USDA • WORLD TOTAL</div>
         <h2>{t.usdaTitle}</h2>
@@ -318,12 +315,12 @@ function App(){
       </DetailModule>
 
 
-      <DetailModule id="s3" anchorPrefix="policy-" title={lang==="zh"?"贸易与政策：供应如何流动":"Trade & policy: how supply moves"} description={lang==="zh"?"展开历史事件库与搜索；不是实时限制清单。":"Search historical events; not a live list of restrictions."}>
+      <DetailModule lang={lang} id="s3" anchorPrefix="policy-" title={lang==="zh"?"贸易与政策：供应如何流动":"Trade & policy: how supply moves"} description={lang==="zh"?"展开历史事件库与搜索；不是实时限制清单。":"Search historical events; not a live list of restrictions."}>
         <PolicyEvents lang={lang} sectionId="s3-content"/>
       </DetailModule>
 
 
-      <DetailModule id="s4" title={lang==="zh"?"能源与化肥：压力如何传导":"Energy & fertilizer: how stress transmits"} description={lang==="zh"?"展开能源、库存和政策的解释，不把关联当因果。":"Explore energy, inventory and policy mechanisms, without assuming causality."}>
+      <DetailModule lang={lang} id="s4" title={lang==="zh"?"能源与化肥：压力如何传导":"Energy & fertilizer: how stress transmits"} description={lang==="zh"?"展开能源、库存和政策的解释，不把关联当因果。":"Explore energy, inventory and policy mechanisms, without assuming causality."}>
       <section id="s4-content" className="section alt">
         <div className="section-no">04 / CONNECT THE DOTS</div><h2>{t.dots}</h2>
         <div className="three">
@@ -336,7 +333,7 @@ function App(){
       </DetailModule>
 
 
-      <DetailModule id="s1" title={lang==="zh"?"市场确认：价格与成本":"Market confirmation: prices & costs"} description={lang==="zh"?"展开四项指标、粮价/原油曲线及化肥与农产品基准。":"Expand headline indicators, food/oil charts and commodity benchmarks."}>
+      <DetailModule lang={lang} id="s1" title={lang==="zh"?"市场确认：价格与成本":"Market confirmation: prices & costs"} description={lang==="zh"?"展开四项指标、粮价/原油曲线及化肥与农产品基准。":"Expand headline indicators, food/oil charts and commodity benchmarks."}>
       <section className="kpis">
         <Kpi lang={lang} source={provenance.fao} label={lang==="zh"?"FAO 粮食价格指数":"FAO Food Price Index"} value={fao.value.toFixed(1)} change={fao.momPct} period={fao.period} unit={fao.unit}/>
         <Kpi lang={lang} source={provenance.brent} label={lang==="zh"?"Brent 原油":"Brent crude"} value={`$${brent.value.toFixed(2)}`} change={brent.momPct} period={brent.period} unit={lang==="zh"?"美元 / 桶":brent.unit}/>
@@ -378,24 +375,24 @@ function App(){
       </DetailModule>
 
 
-      <DetailModule id="climate" title={lang==="zh"?"气候背景：NOAA 海温观测":"Climate context: NOAA ocean observations"} description={lang==="zh"?"海温不是地区天气，更不是作物损失。":"Ocean temperatures are not local weather or crop losses."}>
+      <DetailModule lang={lang} id="climate" title={lang==="zh"?"气候背景：NOAA 海温观测":"Climate context: NOAA ocean observations"} description={lang==="zh"?"海温不是地区天气，更不是作物损失。":"Ocean temperatures are not local weather or crop losses."}>
         <ClimateMonitor record={official.sources.noaa} lang={lang} sectionId="climate-content"/>
       </DetailModule>
 
 
-      <DetailModule id="price-outlook" title={lang==="zh"?"实验价格展望":"Experimental price outlook"} description={lang==="zh"?"展开未来 12 个月情景、历史误差与模型方法。":"Explore 12-month scenarios, historical errors and model methodology."}>
+      <DetailModule lang={lang} id="price-outlook" title={lang==="zh"?"实验价格展望":"Experimental price outlook"} description={lang==="zh"?"展开未来 12 个月情景、历史误差与模型方法。":"Explore 12-month scenarios, historical errors and model methodology."}>
         <PriceOutlook record={official.sources.fao} lang={lang} sectionId="price-outlook-content"/>
       </DetailModule>
 
 
-      <DetailModule id="release-calendar" title={lang==="zh"?"下一批官方数据何时发布？":"When is the next official release?"} description={lang==="zh"?"展开已确认排期与未来一年的预计窗口。":"Explore confirmed dates and estimated windows for the coming year."}>
+      <DetailModule lang={lang} id="release-calendar" title={lang==="zh"?"下一批官方数据何时发布？":"When is the next official release?"} description={lang==="zh"?"展开已确认排期与未来一年的预计窗口。":"Explore confirmed dates and estimated windows for the coming year."}>
         <ReleaseCalendar lang={lang} sectionId="release-calendar-content"/>
       </DetailModule>
 
 
-      <FoodHistory lang={lang}/>
+      <ModuleBoundary name="food-history" lang={lang}><FoodHistory lang={lang}/></ModuleBoundary>
 
-      <DetailModule id="s5" title={lang==="zh"?"试一试：投入成本实验室":"Try it: input-cost lab"} description={lang==="zh"?"手动调整假设，观察总成本变化；不是粮价预测。":"Adjust assumptions and explore total costs—not a food-price forecast."}>
+      <DetailModule lang={lang} id="s5" title={lang==="zh"?"试一试：投入成本实验室":"Try it: input-cost lab"} description={lang==="zh"?"手动调整假设，观察总成本变化；不是粮价预测。":"Adjust assumptions and explore total costs—not a food-price forecast."}>
       <section id="s5-content" className="section">
         <div className="section-no">05 / LEARNING LAB</div><h2>{t.lab}</h2><p>{t.labHelp}</p>
         <div className="lab">
@@ -406,7 +403,7 @@ function App(){
       </DetailModule>
 
 
-      <DetailModule id="s6" title={lang==="zh"?"最后看市场：农业敏感资产":"Then explore agriculturally sensitive assets"} description={lang==="zh"?"12 个现有标的及 TradingView 图表；不是买卖建议。":"12 existing instruments with TradingView charts; not trading recommendations."}>
+      <DetailModule lang={lang} id="s6" title={lang==="zh"?"最后看市场：农业敏感资产":"Then explore agriculturally sensitive assets"} description={lang==="zh"?"12 个现有标的及 TradingView 图表；不是买卖建议。":"12 existing instruments with TradingView charts; not trading recommendations."}>
       <section id="s6-content" className="section alt">
         <div className="section-no">06 / INVESTMENT LENS</div><h2>{t.invest}</h2><p>{t.investHelp}</p>
         <div className="invest-grid">
@@ -421,9 +418,9 @@ function App(){
       </DetailModule>
 
 
-      <SourceDesk bundle={official} lang={lang} recovered={snapshot}/>
+      <ModuleBoundary name="data-desk" lang={lang}><SourceDesk bundle={official} lang={lang} recovered={snapshot}/></ModuleBoundary>
     </main>
-    <footer><b>World Food Lens</b><span>{t.footer}</span><small>Official data / v1.1</small></footer>
+    <footer><b>World Food Lens</b><span>{t.footer}</span><small>Official data / v{__APP_VERSION__}</small></footer>
   </div>
 }
 function Slider({label,value,set}){
@@ -433,4 +430,4 @@ function TableBox({kicker,title,rows,lang,source}){
   const t=copy[lang];
   return <article className="table-box"><div className="kicker">{kicker}</div><h3>{title}</h3><div className="unit">USD / mt</div><DataBadge record={source} lang={lang}/><table><thead><tr><th>{t.crop}</th><th>{t.monthly}</th><th>{t.change}</th></tr></thead><tbody>{rows.map(r=><tr key={r.nameEn}><td><b>{lang==="zh"?r.nameZh:r.nameEn}</b><small>{r.period}</small></td><td>{r.price.toFixed(2)}</td><td className={r.momPct>=0?"up":"down"}>{pct(r.momPct)}</td></tr>)}</tbody></table></article>
 }
-createRoot(document.getElementById("root")).render(<App/>);
+createRoot(document.getElementById("root")).render(<ModuleBoundary name="app"><App/></ModuleBoundary>);

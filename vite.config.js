@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import {readFileSync} from "node:fs";
 import {fileURLToPath} from "node:url";
 
+const {version} = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8"));
 const cachePath = fileURLToPath(new URL("./public/data/official-data.json", import.meta.url));
 // Embed the same canonical cache for initial/offline rendering without importing
 // from Vite's public directory (which is reserved for URL-served assets).
@@ -23,4 +24,6 @@ const officialCache = {
 export default defineConfig({
   plugins: [react(), officialCache],
   base: "./",
+  // Single source for the version shown in the page footer.
+  define: { __APP_VERSION__: JSON.stringify(version) },
 });

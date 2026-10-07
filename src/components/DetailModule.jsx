@@ -1,8 +1,9 @@
 import React,{useEffect,useRef,useState} from "react";
+import ModuleBoundary from "./ModuleBoundary";
 
 // Native disclosure keeps all original section IDs reachable, including a URL
 // opened directly at a nested anchor. Children stay mounted to preserve filters.
-export default function DetailModule({id,title,description,anchorPrefix,children}) {
+export default function DetailModule({id,title,description,anchorPrefix,lang,children}) {
   const ref=useRef(null),[visited,setVisited]=useState(false);
   useEffect(()=>{
     const reveal=()=>{
@@ -28,6 +29,6 @@ export default function DetailModule({id,title,description,anchorPrefix,children
   },[id,anchorPrefix,visited]);
   return <details id={id} ref={ref} className="detail-module" onToggle={event=>{if(event.currentTarget.open)setVisited(true);}}>
     <summary><span>{title}</span><small>{description}</small></summary>
-    {visited&&<div className="detail-module-content">{children}</div>}
+    {visited&&<div className="detail-module-content"><ModuleBoundary name={id} lang={lang}>{children}</ModuleBoundary></div>}
   </details>;
 }
