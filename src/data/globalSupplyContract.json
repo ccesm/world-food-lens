@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "contractVersion": "wfl-global-supply-contract/1",
+  "status": "draft-for-review",
+  "specification": "docs/G1_SUPPLY_CONTRACT.md",
+  "evidenceBasis": {
+    "structureAudit": "tests/fixtures/g1-psd-structure-audit.json",
+    "revisionAudit": "tests/fixtures/g1-revision-audit.json"
+  },
+  "commodities": {
+    "corn": {
+      "label": {
+        "zh": "玉米",
+        "en": "Corn"
+      },
+      "phase": "G1.1",
+      "sources": {
+        "usda-psd": {
+          "file": "psd_grains_pulses_csv.zip",
+          "commodityCode": "0440000",
+          "sourceDescription": "Corn"
+        }
+      }
+    },
+    "wheat": {
+      "label": {
+        "zh": "小麦",
+        "en": "Wheat"
+      },
+      "phase": "G1.1",
+      "sources": {
+        "usda-psd": {
+          "file": "psd_grains_pulses_csv.zip",
+          "commodityCode": "0410000",
+          "sourceDescription": "Wheat"
+        }
+      }
+    },
+    "rice": {
+      "label": {
+        "zh": "稻米（精米）",
+        "en": "Rice (milled)"
+      },
+      "phase": "G1.1",
+      "basisNote": "PSD production is milled rice; Rough Production (attribute 054) is a separate concept and is not mapped.",
+      "sources": {
+        "usda-psd": {
+          "file": "psd_grains_pulses_csv.zip",
+          "commodityCode": "0422110",
+          "sourceDescription": "Rice, Milled"
+        }
+      }
+    },
+    "soybean": {
+      "label": {
+        "zh": "大豆",
+        "en": "Soybean"
+      },
+      "phase": "G1.2",
+      "sources": {
+        "usda-psd": {
+          "file": "psd_oilseeds_csv.zip",
+          "commodityCode": "2222000",
+          "sourceDescription": "Oilseed, Soybean"
+        }
+      }
+    }
+  },
+  "geography": {
+    "types": [
+      "country",
+      "bloc",
+      "world"
+    ],
+    "idFormat": "{system}:{code} for source geographies (e.g. usda-psd:US); wfl:world for the WFL-derived world aggregate",
+    "typeAssignment": "By source code via this registry only, never inferred from display names. Unlisted usda-psd codes are type country; their ISO codes are null until explicitly mapped (FAS codes are not ISO codes, e.g. CH=China, UP=Ukraine, RS=Russia).",
+    "registry": {
+      "usda-psd:E4": {
+        "type": "bloc",
+        "name": {
+          "zh": "欧盟",
+          "en": "European Union"
+        },
+        "isoCode": null,
+        "activeFromMarketYear": 1999,
+        "composition": "Provider's contemporary EU aggregate; membership changes over time; United Kingdom reported separately from market year 2016; member states have no separate rows after 1998."
+      },
+      "usda-psd:E2": {
+        "type": "bloc",
+        "name": {
+          "zh": "欧盟 15 国（历史）",
+          "en": "EU-15 (historical)"
+        },
+        "isoCode": null,
+        "activeToMarketYear": 1998,
+        "composition": "Historical aggregate before E4; never combined with E4."
+      },
+      "usda-psd:UK": {
+        "type": "country",
+        "name": {
+          "zh": "英国",
+          "en": "United Kingdom"
+        },
+        "isoCode": "GB",
+        "activeFromMarketYear": 2016
+      },
+      "wfl:world": {
+        "type": "world",
+        "name": {
+          "zh": "世界（WFL 加总）",
+          "en": "World (WFL-derived)"
+        },
+        "isoCode": null,
+        "derivation": "Sum of usda-psd geographies for the market year; EU aggregate counted once, never with member rows. USDA bulk files contain no World row, so this is derived, not an official total."
+      }
+    }
+  },
+  "marketingYear": {
+    "representation": {
+      "sourceId": "source market-year identifier as published (usda-psd: integer start year, e.g. 2026)",
+      "label": "normalized display, e.g. 2026/27",
+      "system": "source system, e.g. usda-psd",
+      "startMonth": "null unless a reviewed source table supplies it; never assumed"
+    },
+    "caveat": "A label such as 2026/27 is a source-reported identity, not a common calendar window: market years start in different months by country and commodity. Cross-country comparison must show this limitation."
+  },
+  "releaseIdentity": {
+    "sourceRelease": "Source vintage. usda-psd: the Calendar_Year-Month of the rows (single vintage per bulk file, e.g. 2026-09).",
+    "observationId": "g1:{commodity}:{geographyId}:{marketingYearSourceId}:{metric}",
+    "versionedObservationId": "{observationId}@{source}:{sourceRelease}",
+    "revisionId": "{observationId}@{source}:{previousRelease}->{currentRelease}",
+    "dataRelease": "Bound by the existing immutable release pipeline (release-manifest.json releaseId and the data-release commit); no parallel release identity."
+  },
+  "metrics": [
+    {
+      "id": "production",
+      "kind": "source",
+      "canonicalUnit": "1000 t",
+      "psd": {
+        "attributeId": "028",
+        "attribute": "Production",
+        "unitId": "08",
+        "unit": "(1000 MT)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "invalid",
+      "directionEligible": true,
+      "polarity": "lower-is-tightening",
+      "inAggregateCore": true,
+      "note": "Rice is milled basis."
+    },
+    {
+      "id": "harvestedArea",
+      "kind": "source",
+      "canonicalUnit": "1000 ha",
+      "psd": {
+        "attributeId": "004",
+        "attribute": "Area Harvested",
+        "unitId": "04",
+        "unit": "(1000 HA)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "invalid",
+      "directionEligible": true,
+      "polarity": "lower-is-tightening",
+      "inAggregateCore": false,
+      "note": "Component of production; excluded from the aggregate core to avoid counting one signal twice."
+    },
+    {
+      "id": "yield",
+      "kind": "source",
+      "canonicalUnit": "t/ha",
+      "psd": {
+        "attributeId": "184",
+        "attribute": "Yield",
+        "unitId": "26",
+        "unit": "(MT/HA)"
+      },
+      "zeroIsValid": false,
+      "negativeSourceValues": "invalid",
+      "directionEligible": true,
+      "polarity": "lower-is-tightening",
+      "inAggregateCore": false,
+      "note": "Source value, never recomputed. Zero yield with zero area is not-applicable. Rice yield basis (rough vs milled) must be verified against Production/Area in G1.1 before display.",
+      "zeroRule": "not-applicable when harvestedArea is 0; validation flag when harvestedArea > 0"
+    },
+    {
+      "id": "beginningStocks",
+      "kind": "source",
+      "canonicalUnit": "1000 t",
+      "psd": {
+        "attributeId": "020",
+        "attribute": "Beginning Stocks",
+        "unitId": "08",
+        "unit": "(1000 MT)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "invalid",
+      "directionEligible": true,
+      "polarity": "lower-is-tightening",
+      "inAggregateCore": false,
+      "note": "Equals the prior year's ending stocks; excluded from the aggregate core."
+    },
+    {
+      "id": "endingStocks",
+      "kind": "source",
+      "canonicalUnit": "1000 t",
+      "psd": {
+        "attributeId": "176",
+        "attribute": "Ending Stocks",
+        "unitId": "08",
+        "unit": "(1000 MT)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "invalid",
+      "directionEligible": true,
+      "polarity": "lower-is-tightening",
+      "inAggregateCore": true,
+      "note": ""
+    },
+    {
+      "id": "domesticUse",
+      "kind": "source",
+      "canonicalUnit": "1000 t",
+      "psd": {
+        "attributeId": "125",
+        "attribute": "Domestic Consumption",
+        "unitId": "08",
+        "unit": "(1000 MT)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "flag",
+      "directionEligible": false,
+      "polarity": "contextual",
+      "inAggregateCore": false,
+      "note": "Higher use can mean demand pressure or larger available supply; no polarity without separate review. Soybean source has negative values (residual accounting); kept with a quality flag."
+    },
+    {
+      "id": "exports",
+      "kind": "source",
+      "canonicalUnit": "1000 t",
+      "psd": {
+        "attributeId": "088",
+        "attribute": "Exports",
+        "unitId": "08",
+        "unit": "(1000 MT)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "invalid",
+      "directionEligible": false,
+      "polarity": "contextual",
+      "inAggregateCore": false,
+      "note": "Market-year basis. TY Exports (113) is trade-year and is not mapped. Opposite meaning for exporters and importers; no automatic label."
+    },
+    {
+      "id": "imports",
+      "kind": "source",
+      "canonicalUnit": "1000 t",
+      "psd": {
+        "attributeId": "057",
+        "attribute": "Imports",
+        "unitId": "08",
+        "unit": "(1000 MT)"
+      },
+      "zeroIsValid": true,
+      "negativeSourceValues": "invalid",
+      "directionEligible": false,
+      "polarity": "contextual",
+      "inAggregateCore": false,
+      "note": "Market-year basis. TY Imports (081) is trade-year and is not mapped."
+    },
+    {
+      "id": "stocksToUse",
+      "kind": "derived",
+      "canonicalUnit": "percent",
+      "psd": null,
+      "zeroIsValid": true,
+      "negativeSourceValues": "not-applicable",
+      "directionEligible": true,
+      "polarity": "lower-is-tightening",
+      "inAggregateCore": true,
+      "note": "Same definition as the existing world metric. For exporters, domestic-use stocks-to-use ignores export demand; shown with that caveat.",
+      "formula": "endingStocks / domesticUse x 100",
+      "denominator": "domesticUse",
+      "unknownWhen": [
+        "endingStocks unavailable",
+        "domesticUse missing, unavailable, zero, negative or not-applicable"
+      ]
+    }
+  ],
+  "conversions": {
+    "rule": "Source unit must equal the mapped unit exactly; otherwise the commodity is unavailable (no silent conversion). usda-psd values are already canonical, so v1 conversion is identity."
+  },
+  "missingVsZero": {
+    "rule": "Zero is a reported value; missing is an absent row. Never substitute 0 for missing.",
+    "usdaPsdCaveat": "PSD bulk files are zero-filled matrices: every country x year x attribute has a row, so a 0 cannot be distinguished from 'not reported'. Zeros are kept as source-reported zeros, flagged sourceZeroFilled, and any percentage on a zero base is unknown."
+  },
+  "statusTaxonomy": {
+    "ok": "Value present, validated and from the current expected source release.",
+    "missing": "The source release genuinely has no value for this observation (no row).",
+    "unavailable": "Retrieval, parsing or validation failed (e.g. unit changed, impossible negative). Applies per commodity or per observation; never shown as a value.",
+    "stale": "Valid value, but the source release is older than the expected release cadence.",
+    "not-applicable": "The concept does not apply (yield with zero area; direction for contextual metrics).",
+    "conflicting": "Two or more sources of equal priority report different values for the same observation; all are shown, none is chosen.",
+    "unknown": "For derived values, revisions and directions only: computation impossible (no previous release, zero or missing base, unset dead zone)."
+  },
+  "revisionModel": {
+    "revision": "currentEstimate - previousEstimate for the SAME observationId across consecutive source releases",
+    "revisionPct": "revision / previousEstimate x 100; unknown when previousEstimate is 0, missing or not-applicable",
+    "yoyChange": "value(marketYear) - value(marketYear - 1) within the SAME source release",
+    "yoyPct": "yoyChange / value(marketYear - 1) x 100; unknown on a zero or missing base",
+    "firstObservation": "No previous release means revision, revisionPct and revision direction are unknown, never 0.",
+    "distinction": "A revision is new information about the same year; a YoY change compares two different years. They are separate fields with separate directions."
+  },
+  "conflicts": {
+    "key": "commodity x geography x marketingYear x metric",
+    "stored": [
+      "source",
+      "sourceTier",
+      "sourceRelease",
+      "sourceDate",
+      "value"
+    ],
+    "rule": "Never overwrite silently. Tier 1 vs Tier 1 disagreement is exposed as conflicting unless a reviewed source-priority policy exists; v1 has none (USDA PSD is the only source).",
+    "equality": "Values are equal only if identical after canonical units at source precision."
+  },
+  "provenance": {
+    "fields": [
+      "source",
+      "sourceDataset",
+      "sourceRelease",
+      "sourceDate",
+      "retrievedAt",
+      "rawFileHash",
+      "dataRevision"
+    ],
+    "alignment": "Per commodity block, recorded with the existing data-contract record and health metadata; dataRevision and releaseId come from the existing release pipeline."
+  },
+  "failureIsolation": {
+    "rule": "Each commodity is parsed, validated and published with its own status, provenance and observations. One commodity failing never fails or hides another; there is no single file-level status.",
+    "example": {
+      "corn": "ok",
+      "wheat": "unavailable",
+      "rice": "ok"
+    }
+  },
+  "fileArchitecture": {
+    "index": "public/data/global-supply.json (manifest: contractVersion, per-commodity status, release, provenance, file path)",
+    "perCommodity": "public/data/global-supply/{commodity}.json",
+    "frontend": "runtime fetch; never bundled into the JS build; never added to official-data.json",
+    "historyScope": "Country observations for the latest three market years (current, prior for YoY, one more for context); WFL world aggregate since 2000. Revisions accumulate from G1.1 onward, because PSD bulk files carry only one vintage."
+  },
+  "interpretationRules": [
+    {
+      "ruleId": "g1_metric_direction",
+      "tier": "C",
+      "status": "draft",
+      "appliesTo": "metrics with directionEligible = true",
+      "claim": {
+        "zh": "单个指标相对上一期发布（或上一年）的变化方向，按该指标的极性解读为收紧、稳定或放松",
+        "en": "Direction of one metric's change versus the previous release (or prior year), read through that metric's polarity"
+      },
+      "prohibited": [
+        {
+          "zh": "把多个指标合成一个分数",
+          "en": "Combining metrics into a score"
+        },
+        {
+          "zh": "把方向解读为价格预测或作物受损",
+          "en": "Reading a direction as a price forecast or crop damage"
+        },
+        {
+          "zh": "给出口、进口、国内消费自动贴收紧或放松标签",
+          "en": "Automatic tightening/easing labels for exports, imports or domestic use"
+        }
+      ],
+      "parameters": {
+        "boundary": "abs(pct) <= deadZone is stable (inclusive)",
+        "signRule": "lower-is-tightening: pct < -deadZone tightening, pct > +deadZone easing",
+        "deadZonesPct": {
+          "revision": null,
+          "yoy": null
+        },
+        "smallBaseGuard": null
+      },
+      "pendingReason": "No release-to-release revision pair exists in repository history (one PSD vintage, 2026-09). Dead zones stay unset (direction unknown) until calibrated; see the spec."
+    },
+    {
+      "ruleId": "g1_aggregate_supply_status",
+      "tier": "C",
+      "status": "draft",
+      "appliesTo": "one commodity x geography x marketing year",
+      "claim": {
+        "zh": "由核心指标的方向直接汇总出的供应状态，可以逐项追溯",
+        "en": "Supply status taken directly from core-metric directions, traceable item by item"
+      },
+      "prohibited": [
+        {
+          "zh": "加权或打分",
+          "en": "Weighting or scoring"
+        },
+        {
+          "zh": "把面积或单产与产量重复计算",
+          "en": "Counting area or yield again alongside production"
+        }
+      ],
+      "parameters": {
+        "coreMetrics": [
+          "production",
+          "endingStocks",
+          "stocksToUse"
+        ],
+        "states": [
+          "tightening",
+          "stable",
+          "easing",
+          "mixed",
+          "unknown"
+        ],
+        "proposedRule": "unknown if any core direction is unknown; mixed if both tightening and easing occur; tightening if at least one tightening and no easing; easing if at least one easing and no tightening; otherwise stable. Output always lists the metrics and their directions."
+      },
+      "pendingReason": "endingStocks and stocksToUse share endingStocks, so they are not independent; whether both belong in the core needs review before adoption."
+    }
+  ],
+  "legacy": {
+    "GlobalFoodStress": "Frozen legacy/experimental; never an input to G1 (roadmap decision 2)."
+  }
+}
