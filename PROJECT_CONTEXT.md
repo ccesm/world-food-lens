@@ -9,9 +9,17 @@ _Last reviewed: 2026-10-07._
 
 ## Product
 
-**World Food Lens / 全球粮食观察** helps non-specialists understand global
-food-price movements by connecting prices, energy, fertilizer, harvests,
-inventories, climate, policy and market exposure.
+**World Food Lens / 全球粮食观察** is a global food-market intelligence system
+that combines official production, inventory, trade, weather, input-cost,
+policy and market evidence to identify emerging global food-supply risks.
+
+**Main development track (from 2026-10-07): Global Macro.** Read
+[`docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md`](docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md)
+first. Architecture: Global Macro → Crop/Region Supply → Advanced Regional Deep
+Dives. Roadmap G1 (global crop supply, highest priority) → G2 weather risk →
+G3 input costs → G4 trade & policy → G5 market confirmation. High-resolution
+US Corn work is preserved as an Advanced Deep Dive; its further research is
+deferred, not abandoned.
 
 - Live site: https://ccesm.github.io/world-food-lens/
 - This repository (branch `main`) is the source of truth and the production
@@ -27,9 +35,19 @@ inventories, climate, policy and market exposure.
 5. Distinguish live, delayed, cached, estimated and recovered data. Recovered
    values are fallback only, never live.
 6. Missing evidence stays visibly unavailable; it is never zero, normal or
-   rescaled away.
-7. Chinese and English UI; mobile support.
-8. No secrets in the repository.
+   rescaled away. Global coverage may lower spatial resolution, never evidence
+   quality.
+7. No aggregate risk score: weather, supply, stocks, costs, policy and markets
+   stay independent evidence dimensions unless independently validated.
+   The existing Global Food Stress composite is frozen legacy/experimental,
+   outside the primary evidence framework, until G5 replaces it. Direction is
+   metric-level only; exports/imports get no automatic tightening/easing label;
+   aggregate supply status (tightening/stable/easing/mixed/unknown) must trace
+   to metric-level evidence. See roadmap §13.
+8. No crop-damage or yield-loss claims unless the source itself publishes an
+   official estimate. Official/authoritative sources (Tier 1) outrank news.
+9. Chinese and English UI; mobile support.
+10. No secrets in the repository.
 
 ## What is live on main
 
@@ -46,11 +64,12 @@ inventories, climate, policy and market exposure.
 - **Policy**: editorial, bilingual policy/conflict registry with citations.
 - **Investment lens**: TradingView charts for U.S.-listed agriculture ETFs and
   stocks, with attribution and delayed-data disclosure.
-- **US corn**: Phase 3/4A pilot and history, Phase 4B-1 spatial-stage
-  screening, and the **Level C** mapped-corn-area weather module
-  (`mapped-corn-weather-production/1`). Level C is informational context;
-  **Level A remains the basis for alerts**. The 2023 CDL map is a disclosed
-  older proxy.
+- **US Corn — Advanced Spatial Monitor (deep dive)**: Phase 3/4A pilot and
+  history, Phase 4B-1 spatial-stage screening, the **Level C** mapped-corn-area
+  weather module (`mapped-corn-weather-production/1`), and informational 4B-2
+  screens: EDD and hot days (`corn-heat-screen.json`) and VPD distribution
+  (`corn-vpd-screen.json`). Level C is informational context; **Level A remains
+  the basis for alerts**. The 2023 CDL map is a disclosed older proxy.
 - **Automatic monitoring and email**: daily rule evaluation, homepage alert
   center, and a post-publication SMTP job that sends only new/escalated alerts
   or source outages. Intent is recorded before contacting SMTP, so retries do
@@ -77,9 +96,11 @@ failure. Each run tests, refreshes data, commits the generated data release to
 | --- | --- |
 | 0–4A (migration, official data, climate, monitoring, corn pilot/history) | Done, live |
 | 4B-1 (spatial-stage screening, Level C, operational validation) | Done, merged 2026-10-05, live |
-| 4B-2 (Level C hazard expansion) | **In progress** — 2.0 registry and 2.1 heat screens live; 2.2a VPD distribution (`corn-vpd-screen.json`) implemented; 2.2b needs the VPD climatology. Roadmap and completion gate: `docs/PHASE4B2_PLAN.md` |
+| 4B-2 (US Corn hazard expansion) | 2.0 registry, 2.1 heat screens and 2.2a VPD distribution **live**. Everything else (VPD climatology, 2.2b, 2.3–2.6) is **Deferred — Advanced US Corn Research** (`docs/PHASE4B2_PLAN.md`) |
+| **G0** (global architecture + inventory) | Done — `docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md` |
+| **G1** (global crop supply) | **Next**: G1.0 data contract (metric-level direction), then G1.1 PSD corn + wheat + rice together with independent per-commodity validation |
 
-Phase 4B-2 may expand screening variables only within the limitations and
+The US Corn deep dive keeps its own rules. Phase 4B-2 may expand screening variables only within the limitations and
 version guards described in `docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md` and
 `docs/PHASE4B1_9_LEVEL_C_PRODUCTION.md`. No yield-loss, affected-acreage or
 predictive-accuracy claims. 4B-2 outputs are informational only and do not
@@ -91,8 +112,11 @@ Every published Level C metric must belong to a `reviewed` or `frozen` rule in
 
 ## Known follow-ups (not blocking)
 
-- Large main bundle: `official-data.json` and all modules ship in the main JS
-  chunk; move data to runtime fetch and lazy-load modules.
+- Large main bundle: `official-data.json` (3.6 MB) and all modules ship in the
+  main JS chunk. New global data must be separate runtime-fetched files.
+- Editorial layers expire soon: JRC crop-weather reports (30-day guard from
+  2026-09-13) and seasonal signals (45-day guard); policy registry last
+  reviewed 2026-09-12.
 - `recharts` 2.x is no longer maintained; plan a 3.x upgrade.
 - `src/main.jsx` mixes bilingual copy between the `copy` object and inline JSX.
 - CI hardening: pin Actions to commit SHAs; limit `contents: write` to the
@@ -117,5 +141,6 @@ Any ChatGPT, Codex or Claude session should:
 6. Run `npm test` and `npm run build` after changes (233 JS + 178 Python tests
    locally; the spatial tests (`tests/spatial`, research suites) need the geospatial runtime and run in CI).
 7. Work on a branch and open a PR; commit in small, meaningful units.
-8. For 4B-2 work, meet the nine-item completion gate in `docs/PHASE4B2_PLAN.md`.
+8. New work follows `docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md`; resumed US Corn
+   4B-2 work still meets the nine-item gate in `docs/PHASE4B2_PLAN.md`.
 9. When status changes, update this page in place.
