@@ -17,3 +17,17 @@ fixtures. Existing current-cache schema and integration tests still inspect
 methods and the schedule are unchanged. Never refresh these fixture files in
 the production workflow. Adding a new reviewed regression fixture is separate
 from updating a production source cache.
+
+## Level C fixtures (added 2026-10-07)
+
+- `corn-spatial-baseline.json`: the last successful Level C release before the
+  first observed outage (`a3df594`). Operations tests compare perturbations
+  against it instead of the live file.
+- `corn-spatial-outage.json` and `corn-heat-screen-outage.json`: the real
+  release `9f5b585`, published while a gridMET retrieval failure left every
+  state unavailable. `tests/liveDataOutage.test.js` proves the designated
+  live-data checks accept this shape, and lists the only tests still allowed
+  to read `public/data`.
+
+The same rule applies: a failed refresh must never stop the next run's tests,
+because those tests run before the refresh that would repair the data.

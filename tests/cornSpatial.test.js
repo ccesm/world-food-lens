@@ -95,7 +95,7 @@ test("bilingual UI separates spatial weather from phenology/condition/supply and
     "confirmed crop damage","受灾面积","USDA statewide crop progress","官方作物状况","供需修订"])assert.ok(source.includes(s));
 });
 test("spatial layer adds only coarse informational events; original alerts remain identical",async()=>{
-  const official=JSON.parse(await readFile(new URL("../public/data/official-data.json",import.meta.url)));
+  const official=JSON.parse(await readFile(new URL("./fixtures/official-data-baseline.json",import.meta.url)));
   const monitor=evaluateAutomaticAlerts({official,now});monitor.release={id:"release-"+h,sourceRevision:"1".repeat(40),inputsHash:h};
   const before=JSON.stringify({active:monitor.active,events:monitor.events,health:monitor.health,email:monitor.email});
   monitor.analysis=buildPhase2({official,monitor});attachCornAlignment({official,monitor});

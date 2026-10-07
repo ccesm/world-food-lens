@@ -158,7 +158,7 @@ test("weekly summary uses supplied evaluation time, exposes startup/pruning and 
   assert.equal(weeklySummary(next.analysis.journal,at,"2026-09-01T00:00:00.000Z","2026-09-19T00:00:00.000Z").complete,false);
 });
 test("monthly rolling checkpoints are bounded and do not invent structural loss for expired scope",()=>{
-  const official=JSON.parse(readFileSync(new URL("../public/data/official-data.json",import.meta.url)));
+  const official=JSON.parse(readFileSync(new URL("./fixtures/official-data-baseline.json",import.meta.url)));
   const projection=projectDataset("worldBank",official.sources.worldBank);
   assert.equal(Object.keys(projection.rows).length,24*9);
   assert.ok(JSON.stringify(projection).length<50000);
