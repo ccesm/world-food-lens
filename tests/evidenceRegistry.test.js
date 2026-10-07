@@ -57,6 +57,14 @@ test("shipped rules are reviewed and later 4B-2 rules remain drafts",()=>{
   assert.equal(ruleForOutput(registry,"no-such-metric"),null);
 });
 
+test("co-occurrence inherits the 2.1 heat bases and VPD rules use the mapped-area denominator",()=>{
+  const overlap=registry.rules.heat_vpd_overlap.parameters;
+  assert.deepEqual(overlap.tmaxBaseC,registry.rules.heat_extreme_degree_days.parameters.baseC);
+  assert.ok(!("eddBaseC" in overlap)&&!("baseC" in overlap));
+  for(const id of ["atmospheric_demand_vpd","heat_vpd_overlap"])
+    assert.match(registry.rules[id].denominator,/^mappedCornAreaM2\b/,id);
+});
+
 test("the validator rejects dishonest or inconsistent rules",()=>{
   const cases=[
     [r=>{r.rules.hot_day_tmax35.exactThresholdSupported=true;},/Tier C/],

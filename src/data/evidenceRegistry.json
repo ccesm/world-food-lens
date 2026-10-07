@@ -368,7 +368,7 @@
         "M2",
         "U6"
       ],
-      "proposedMetric": "to be defined in 4B-2.2 after verifying the gridMET vpd definition",
+      "proposedMetric": "Per-cell 14-day mean and maximum of provider daily-mean VPD, area-weighted summary; no threshold (PHASE4B2_2_VPD_SPEC §3)",
       "units": "kPa",
       "parameters": {},
       "proposedRange": null,
@@ -376,7 +376,9 @@
       "thresholdCategory": "physical",
       "heuristicComponent": null,
       "limitations": [
-        "Variable definition and availability history not yet verified"
+        "Provider derivation of daily-mean VPD not publicly documented; verify file metadata before publishing",
+        "Not stage-weighted",
+        "No kPa value is an injury boundary"
       ],
       "inputRequirements": [
         "gridMET vpd (candidate)",
@@ -388,8 +390,8 @@
       "managementDomain": "rainfed and irrigated not separated",
       "temporalSupport": "14 consecutive gridMET daily values",
       "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
-      "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
-      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "missingnessPolicy": "A cell contributes only if all 14 daily vpd values are valid; independent of the Level C variables. Missing area stays in the denominator and is never rescaled.",
+      "denominator": "mappedCornAreaM2 (Level C 2023 CDL mapped corn area). Area without valid VPD (2.2a) or with an unknown class (2.2b) stays in this denominator and is never rescaled.",
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {
@@ -411,8 +413,8 @@
         "en": "Same-cell, same-time co-occurrence of heat and atmospheric demand"
       },
       "intendedClaim": {
-        "zh": "同现 / 未同现 / 未知 三类在制图玉米面积上的分布",
-        "en": "Distribution of observed / not observed / unknown co-occurrence over mapped corn area"
+        "zh": "在 2023 年制图玉米面积上，14 天内同一天出现高于基准的高温与高于当地 1991–2020 同期 P90 的 VPD 的面积比例（同现 / 未同现 / 未知）",
+        "en": "Share of 2023 mapped corn area where, within 14 days, a day had Tmax above base and VPD above the local 1991–2020 same-window P90 (observed / not observed / unknown)"
       },
       "prohibitedClaims": [
         {
@@ -445,19 +447,37 @@
         "M2",
         "E2"
       ],
-      "proposedMetric": "to be defined in 4B-2.2",
+      "proposedMetric": "Per cell and gridMET day: H = tmmx > base; V = vpd > P90(1991-2020, ±7-day window). Window class observed / not observed / unknown; shares of mapped corn area (PHASE4B2_2_VPD_SPEC §4 D1–D7)",
       "units": "share of mapped area by category",
-      "parameters": {},
+      "parameters": {
+        "tmaxBaseC": [
+          29,
+          30
+        ],
+        "tmaxBaseCInheritedFrom": "heat_extreme_degree_days.parameters.baseC (4B-2.1)",
+        "quantile": 0.9,
+        "quantileMethod": "hyndman-fan-7",
+        "baselinePeriod": "1991-2020",
+        "windowHalfWidthDays": 7,
+        "minimumValidSamples": 405,
+        "leapDayKey": "02-28",
+        "exceedance": "strictly-greater",
+        "dayLogic": "kleene-and"
+      },
       "proposedRange": null,
       "exactThresholdSupported": false,
       "thresholdCategory": "wfl-heuristic",
-      "heuristicComponent": "Screens defining 'heat' and 'high VPD' are WFL choices",
+      "heuristicComponent": "0.90 quantile, ±7-day window and 405-sample minimum are WFL statistical conventions; same-day (not same-hour) co-occurrence",
       "limitations": [
-        "Co-occurrence only; no damage multiplier"
+        "Co-occurrence only; no damage multiplier",
+        "Daily-mean VPD with daily-maximum temperature: same day, not same hour",
+        "Provider VPD derivation not publicly documented"
       ],
       "inputRequirements": [
-        "heat_extreme_degree_days or hot_day_tmax35",
-        "atmospheric_demand_vpd"
+        "gridMET tmmx",
+        "gridMET vpd",
+        "gridmet-vpd-p90-1991-2020 climatology (pinned version and hash)",
+        "annual corn-fraction grid"
       ],
       "outputs": [],
       "applicableCropStage": "all mapped corn area; stage not resolved (localStageEligibility = insufficient)",
@@ -466,7 +486,7 @@
       "temporalSupport": "14 consecutive gridMET daily values",
       "spatialSupport": "gridMET native cells on cornbelt-iowa-anchored-9km/1, weighted by 2023 native-30m CDL corn area",
       "missingnessPolicy": "A cell contributes only if all 14 days of every required variable are valid; otherwise its area is reported as missing and never rescaled.",
-      "denominator": "2023 CDL mapped corn area with valid weather (validWeatherAreaM2)",
+      "denominator": "mappedCornAreaM2 (Level C 2023 CDL mapped corn area). Area without valid VPD (2.2a) or with an unknown class (2.2b) stays in this denominator and is never rescaled.",
       "weightVintage": "CDL 2023 native 30 m (explicitly older proxy)",
       "jointExposureAssumption": "none; summaries are distributions over mapped area, not joint exposure",
       "chronology": {
