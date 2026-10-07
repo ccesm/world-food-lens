@@ -39,7 +39,11 @@ deferred, not abandoned.
    quality.
 7. No aggregate risk score: weather, supply, stocks, costs, policy and markets
    stay independent evidence dimensions unless independently validated.
-   (The existing Global Food Stress composite is frozen pending G5.)
+   The existing Global Food Stress composite is frozen legacy/experimental,
+   outside the primary evidence framework, until G5 replaces it. Direction is
+   metric-level only; exports/imports get no automatic tightening/easing label;
+   aggregate supply status (tightening/stable/easing/mixed/unknown) must trace
+   to metric-level evidence. See roadmap §13.
 8. No crop-damage or yield-loss claims unless the source itself publishes an
    official estimate. Official/authoritative sources (Tier 1) outrank news.
 9. Chinese and English UI; mobile support.
@@ -94,7 +98,7 @@ failure. Each run tests, refreshes data, commits the generated data release to
 | 4B-1 (spatial-stage screening, Level C, operational validation) | Done, merged 2026-10-05, live |
 | 4B-2 (US Corn hazard expansion) | 2.0 registry, 2.1 heat screens and 2.2a VPD distribution **live**. Everything else (VPD climatology, 2.2b, 2.3–2.6) is **Deferred — Advanced US Corn Research** (`docs/PHASE4B2_PLAN.md`) |
 | **G0** (global architecture + inventory) | Done — `docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md` |
-| **G1** (global crop supply) | **Next**: G1.0 data contract, then G1.1 PSD grain expansion |
+| **G1** (global crop supply) | **Next**: G1.0 data contract (metric-level direction), then G1.1 PSD corn + wheat + rice together with independent per-commodity validation |
 
 The US Corn deep dive keeps its own rules. Phase 4B-2 may expand screening variables only within the limitations and
 version guards described in `docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md` and

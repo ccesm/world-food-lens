@@ -141,7 +141,7 @@ Previous estimate: X   Current estimate: Y   Revision: −2.4%   Direction: tigh
 | 粮食月度现货基准（小麦、玉米、稻米、大豆） | World Bank Pink Sheet | production-ready | Tier 1，月度 | 每日检查 | 不是期货 |
 | CBOT 期货 | TradingView 嵌入图表（只用于展示） | prototype | 第三方、有延迟 | 不是数据 | 没有可以分析的期货数据 |
 | 价格展望 | `priceForecast.js`：FAO 价格动量模型，带历史误差，明确标注为实验 | prototype | 实验性 | 每次加载时计算 | 定位需要在 G5 中复审 |
-| 综合"粮食压力"分数 | `foodStress.js` 和 `GlobalFoodStress`：加权综合分（RISK_WEIGHTS），缺因子时不给总分 | **与新不变量冲突** | — | — | 见第 8 节；建议在 G5 改为各维度独立状态 |
+| 综合"粮食压力"分数 | `foodStress.js` 和 `GlobalFoodStress`：加权综合分（RISK_WEIGHTS），缺因子时不给总分 | **frozen（legacy / experimental）** | — | — | Decision 2：冻结，标注为旧版或实验；G5 用独立维度取代 |
 
 ### 跨层基础设施
 
@@ -182,7 +182,7 @@ Previous estimate: X   Current estimate: Y   Revision: −2.4%   Direction: tigh
 1. **不做综合风险分数。** 不把天气、供应、库存、化肥、原油、政策、期货机械加权成一个总分，例如 "Food Risk Score = 76"。
    除非将来有独立验证证明这样的模型有价值。现在的做法是多个独立证据维度，保持透明。
    - 现有的 `GlobalFoodStress` 加权综合分与此冲突。它暂时保留，因为不删除正在运行的功能，
-     但不再扩展；计划在 G5 改为各维度独立状态。**这一点需要用户确认。**
+     但不再扩展；计划在 G5 改为各维度独立状态。**已确认（Decision 2）**：冻结，页面标注为旧版或实验，不属于主要证据框架。
 2. **全球系统可以降低空间精度，但不能降低证据质量。**
    - 可以用区域级的降水异常，不要求"精确作物面积 × 4 km 天气"。
    - 可以直接用官方产量修订，不需要自己重新预测国家产量。
@@ -212,14 +212,15 @@ Previous estimate: X   Current estimate: Y   Revision: −2.4%   Direction: tigh
 | --- | --- | --- |
 | **G0** | 本文件：盘点和路线 | — |
 | **G1.0** | 统一的全球作物供需数据契约，以及现有数据能支持的字段的审计 | 先定数据契约，后写代码 |
-| **G1.1** | PSD 谷物扩展：**玉米、小麦、稻米三种一起做**，按国家解析面积、单产、出口、进口和期初库存，并接入修订和方向；写入单独的数据文件 | 三种谷物在同一个已下载的文件里，用同一个解析器，分开做成本更高。**需要用户决定**（见第 13 节） |
+| **G1.1** | PSD 谷物扩展：**玉米、小麦、稻米三种一起做**，按国家解析面积、单产、出口、进口和期初库存，并接入修订和方向；写入单独的数据文件 | 三种谷物在同一个已下载的文件里，用同一个解析器。**已确认（Decision 1）**：一起实现，但每种作物各自校验、各自隔离失败 |
 | **G1.2** | 大豆：PSD 油籽文件 | 同一提供方、同一格式，只多一次下载 |
 | **G1.3** | G1 页面：作物 × 国家的修订与方向视图 | 数据稳定后再做 |
 | G3.0 | 顺手补上 Pink Sheet 里已有的天然气等列 | 成本很低 |
 | G2 | 区域天气异常：先在现有 16 个点位上加温度和降水距平，再考虑区域面平均 | 复用 NASA POWER 和 GDO |
 | G3 | 运费、美元、利率 | 需要寻找新来源 |
 | G4 | 政策记录结构化（到期、状态、维护流程），扩大覆盖 | 编辑工作为主 |
-| G5 | 各维度状态面板，替换综合分数 | 依赖 G1 到 G4 |
+| G5 | 各维度状态面板，取代已冻结的综合分数 | 依赖 G1 到 G4 |
+| 小 PR | 给 `GlobalFoodStress` 加上"旧版 / 实验"标注（Decision 2） | 只改页面文案，可以随时做 |
 
 ## 11. Deferred — Advanced US Corn Research
 
@@ -247,13 +248,33 @@ VPD 分布（`corn-vpd-screen.json`）、定时刷新、缓存、数据健康、
 - 第 3 层深度模块：只在数据好、市场重要的地区，按单独的方案加入（候选：巴西大豆、美国大豆、黑海小麦）。
 - 告警：在某个维度通过验证之后，才考虑把它纳入告警。
 
-## 13. Open decisions — 需要用户确认
+## 13. Decisions — 已确认的决定（2026-10-07）
 
-1. G1.1 是三种谷物一起做（推荐），还是按"先玉米、再小麦、再稻米"分三个 PR？
-2. 现有的 `GlobalFoodStress` 综合分数：暂时保留但冻结、不再扩展，等 G5 时改为各维度独立状态（推荐）；
-   还是现在就在页面上降级或隐藏？
-3. G1 的"方向"规则（tightening、stable、easing）：建议先采用简单、透明的启发式，并登记为 C 级，
-   例如"修订或同比的符号，以及一个死区"。具体规则在 G1.0 的数据契约中提出，交你审阅。
+**Decision 1 — G1.1 scope.** Corn, wheat and rice will be implemented together because they share
+the same USDA PSD grain source and parser. Commodity-level validation and failure isolation remain
+independent.
+- 三种谷物在同一个 PR 里实现。每种作物**各自校验、各自隔离失败**：一种作物的格式变化或缺数据，
+  不会让另外两种变成不可用，也不会被它们掩盖。
+
+**Decision 2 — Legacy composite.** GlobalFoodStress is frozen and no longer part of the primary
+evidence framework. It may remain visible as a clearly labeled legacy/experimental feature until G5
+replaces it with independent evidence dimensions.
+- 冻结：不加新因子，不改权重，不扩展，也不作为任何新功能的输入。
+- 可以继续显示，但页面上必须明确标注为"旧版 / 实验"，并说明它不属于主要证据框架。
+  这一标注需要一个小的页面改动，单独提 PR。
+- G5 用各维度独立状态取代它。
+
+**Decision 3 — Direction.** G1.0 will first define metric-level direction. No multi-metric supply
+score will be created. Metrics with ambiguous interpretation, such as exports/imports, will not
+automatically receive tightening/easing labels. Aggregate supply status may be
+tightening/stable/easing/mixed/unknown and must remain explainable from its underlying evidence.
+- 方向**只定义在单个指标上**，例如"巴西大豆产量修订 −2.4% → tightening"。
+- **不做多指标的供应分数。**
+- 含义有歧义的指标**不自动给 tightening 或 easing 标签**。例如出口和进口：同一个变化，对出口国和进口国意义相反，
+  也可能反映需求而不是供应。这类指标只显示变化，方向记为不适用。
+- 汇总的供应状态只有五种：tightening / stable / easing / mixed / unknown。它必须能追溯到底层的指标级证据，
+  例如"3 项收紧、0 项放松"或"信号相互矛盾 → mixed"。不能用加权打分得出。
+- 具体规则（哪些指标有方向、符号约定、死区、汇总规则）在 G1.0 的数据契约中提出，交用户审阅，并登记为 C 级启发式。
 
 ---
 
@@ -271,7 +292,8 @@ VPD 分布（`corn-vpd-screen.json`）、定时刷新、缓存、数据健康、
 | `stocksToUse` | 期末库存 ÷ 国内消费 | 可以计算（已有世界层面） |
 | `previousEstimate`、`revision`、`revisionPct` | 相对上一期发布 | 修订追踪有基础，需要扩展字段 |
 | `yoyChange` | 相对上一市场年度 | 可以计算 |
-| `direction` | tightening / stable / easing / unknown | 新增；规则需要另行规定，并登记为启发式 |
+| `direction` | 指标级：tightening / stable / easing / not-applicable / unknown | 新增（Decision 3）。只用于含义明确的指标；出口、进口等记为 not-applicable；登记为 C 级启发式 |
+| `aggregateStatus` | tightening / stable / easing / mixed / unknown | 新增（Decision 3）。必须能追溯到指标级证据，不做加权分数 |
 | `source`、`sourceDate`（发布期）、`provenance` | 来源、发布期、哈希 | 能 |
 | `freshness`、`status` | ok / stale / missing / not-applicable / conflicting | 数据健康已有 ok、stale、missing；`not-applicable` 和 `conflicting` 是新增 |
 
