@@ -106,7 +106,7 @@ Any ChatGPT, Codex or Claude session should:
 3. Never rewrite or force-push `main`, and never overwrite bot data commits.
 4. Preserve working features unless explicitly asked to remove them; avoid
    large refactors before understanding the source adapters.
-5. Run `npm test` and `npm run build` after changes (216 JS + 161 Python tests
+5. Run `npm test` and `npm run build` after changes (220 JS + 161 Python tests
    locally; the 59 spatial tests need the geospatial runtime and run in CI).
 6. Work on a branch and open a PR; commit in small, meaningful units.
 7. When status changes, update this page in place.

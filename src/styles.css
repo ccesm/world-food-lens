@@ -182,3 +182,8 @@ body,.top,.section.alt,.kpi,.chart-card,.table-box,.mini-chart,.three article,.s
   [data-theme="dark"] .mobile-nav-panel-list>a{background:#19231d;border-color:#3a473e;color:#dce8df}
   [data-theme="dark"] .mobile-nav-panel-list>span[aria-disabled="true"]{background:#222923;border-color:#343d36;color:#8f9b92}
 }
+.module-error{margin:16px 0;padding:14px 16px;border:1px solid #dccfa7;background:#fff9e7;border-radius:10px;font-size:12px;line-height:1.55}
+.module-error p{margin:0 0 6px}
+.module-error button{margin-top:4px;font:inherit;font-size:12px;border:1px solid #ced3cc;background:#fff;color:#243228;padding:7px 12px;border-radius:999px;cursor:pointer}
+[data-theme="dark"] .module-error{background:#302a19;border-color:#665a32;color:#eadca9}
+[data-theme="dark"] .module-error button{background:#1d241f;border-color:#4a5a4f;color:#e3ebe5}
