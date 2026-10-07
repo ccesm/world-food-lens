@@ -2,7 +2,7 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: ["main", "codex/phase4b1-10-operational-validation"]
+    branches: ["main"]
   workflow_dispatch:
     inputs:
       validation_only:
@@ -10,10 +10,8 @@ on:
         type: boolean
         default: false
   schedule:
-    # Temporary production schedule check: 2026-10-05 22:02 Pacific.
-    # Date-limited cron recurs annually; remove after this validation completes.
-    - cron: "2 22 5 10 *"
-      timezone: "America/Los_Angeles"
+    # Daily production refresh, 06:23 UTC. GitHub queues scheduled runs, so
+    # they routinely start several hours later; :23 avoids top-of-hour load.
     - cron: "23 6 * * *"
 
 permissions:
