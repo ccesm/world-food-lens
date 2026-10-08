@@ -1,51 +1,25 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-10-07T23:20:02Z",
+  "lastAttemptAt": "2026-10-08T13:44:09Z",
   "status": "ok",
   "data": {
-    "issuedAt": "2026-09-10",
+    "issuedAt": "2026-10-08",
     "phase": "el-nino",
-    "trend": "strengthening",
-    "nino34": 1.8,
-    "nino34Month": "2026-08",
-    "strengthOutlook": "very-strong-likely",
+    "trend": "not-specified",
+    "nino34": 2.1,
+    "nino34Month": "2026-09",
+    "strengthOutlook": "not-reliably-extracted",
     "strengthEvidence": {
-      "status": "extracted",
-      "reason": "explicit-probability-event-period",
-      "event": {
-        "phase": "el-nino",
-        "strength": "very-strong"
-      },
-      "probability": {
-        "operator": "gt",
-        "percent": 90.0
-      },
-      "period": {
-        "startMonth": "2026-09",
-        "endMonth": "2027-02",
-        "label": "the Northern Hemisphere fall and winter 2026-27"
-      },
-      "sourceText": "Synopsis: El Niño is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27. In summary, El Niño is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27.",
+      "status": "not-reliably-extracted",
+      "reason": "unsupported-strength-statement",
+      "event": null,
+      "probability": null,
+      "period": null,
+      "sourceText": "Synopsis: El Niño continues to strengthen, with a strong-to-very strong El Niño likely through January-March 2027 (remaining greater than an 83% chance). In summary, El Niño continues to strengthen, with a strong-to-very strong El Niño likely through January-March 2027 (remaining greater than an 83% chance).",
       "sourceUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
-      "issuedAt": "2026-09-10"
+      "issuedAt": "2026-10-08"
     },
     "forecasts": [
-      {
-        "season": "ASO",
-        "startMonth": "2026-08",
-        "laNina": 0.0,
-        "neutral": 0.0,
-        "elNino": 100.0,
-        "roniPercentiles": [
-          1.8,
-          1.9,
-          1.96,
-          2.07,
-          2.18,
-          2.24,
-          2.34
-        ]
-      },
       {
         "season": "SON",
         "startMonth": "2026-09",
@@ -53,13 +27,13 @@
         "neutral": 0.0,
         "elNino": 100.0,
         "roniPercentiles": [
-          2.01,
-          2.16,
-          2.26,
-          2.43,
-          2.6,
-          2.69,
-          2.85
+          2.18,
+          2.29,
+          2.35,
+          2.47,
+          2.59,
+          2.65,
+          2.76
         ]
       },
       {
@@ -69,12 +43,12 @@
         "neutral": 0.0,
         "elNino": 100.0,
         "roniPercentiles": [
-          2.12,
-          2.32,
-          2.44,
-          2.67,
-          2.9,
-          3.02,
+          2.25,
+          2.43,
+          2.54,
+          2.74,
+          2.94,
+          3.05,
           3.23
         ]
       },
@@ -85,13 +59,13 @@
         "neutral": 0.0,
         "elNino": 100.0,
         "roniPercentiles": [
-          1.87,
-          2.13,
-          2.28,
-          2.57,
-          2.85,
-          3.0,
-          3.26
+          2.0,
+          2.24,
+          2.39,
+          2.65,
+          2.92,
+          3.06,
+          3.31
         ]
       },
       {
@@ -101,13 +75,13 @@
         "neutral": 0.0,
         "elNino": 100.0,
         "roniPercentiles": [
-          1.48,
-          1.77,
-          1.94,
-          2.27,
-          2.59,
-          2.76,
-          3.06
+          1.58,
+          1.87,
+          2.04,
+          2.36,
+          2.68,
+          2.85,
+          3.14
         ]
       },
       {
@@ -117,61 +91,77 @@
         "neutral": 0.0,
         "elNino": 100.0,
         "roniPercentiles": [
-          1.04,
-          1.33,
-          1.5,
-          1.82,
-          2.14,
-          2.31,
-          2.59
+          1.13,
+          1.42,
+          1.59,
+          1.9,
+          2.22,
+          2.39,
+          2.67
         ]
       },
       {
         "season": "FMA",
         "startMonth": "2027-02",
         "laNina": 0.0,
-        "neutral": 3.0,
-        "elNino": 97.0,
+        "neutral": 2.0,
+        "elNino": 98.0,
         "roniPercentiles": [
-          0.56,
-          0.82,
-          0.97,
-          1.26,
-          1.54,
-          1.69,
-          1.95
+          0.66,
+          0.91,
+          1.05,
+          1.33,
+          1.6,
+          1.75,
+          2.0
         ]
       },
       {
         "season": "MAM",
         "startMonth": "2027-03",
         "laNina": 0.0,
-        "neutral": 18.0,
-        "elNino": 82.0,
+        "neutral": 15.0,
+        "elNino": 85.0,
         "roniPercentiles": [
-          0.17,
-          0.4,
-          0.54,
-          0.79,
-          1.05,
-          1.19,
-          1.42
+          0.23,
+          0.45,
+          0.58,
+          0.83,
+          1.08,
+          1.21,
+          1.43
         ]
       },
       {
         "season": "AMJ",
         "startMonth": "2027-04",
-        "laNina": 2.0,
-        "neutral": 55.0,
-        "elNino": 43.0,
+        "laNina": 1.0,
+        "neutral": 54.0,
+        "elNino": 45.0,
         "roniPercentiles": [
-          -0.27,
-          -0.03,
-          0.12,
-          0.38,
-          0.65,
-          0.8,
-          1.04
+          -0.22,
+          0.01,
+          0.14,
+          0.4,
+          0.66,
+          0.79,
+          1.02
+        ]
+      },
+      {
+        "season": "MJJ",
+        "startMonth": "2027-05",
+        "laNina": 13.0,
+        "neutral": 70.0,
+        "elNino": 17.0,
+        "roniPercentiles": [
+          -0.68,
+          -0.41,
+          -0.26,
+          0.03,
+          0.32,
+          0.48,
+          0.74
         ]
       }
     ],
@@ -181,7 +171,7 @@
       "outlook": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/outlook/"
     }
   },
-  "fetchedAt": "2026-10-07T23:20:02Z",
+  "fetchedAt": "2026-10-08T13:44:09Z",
   "metadata": {
     "contractVersion": 1,
     "datasetId": "enso",
@@ -189,32 +179,32 @@
     "sourceUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
     "downloadUrl": null,
     "observation": {
-      "period": "2026-09-10",
+      "period": "2026-10-08",
       "marketYear": null,
       "vintage": null,
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-10-07T23:20:02Z",
+      "checkedAt": "2026-10-08T13:44:09Z",
       "retrieval": "ok",
       "format": "passed",
       "semantic": "passed",
       "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-10-07T23:20:02Z",
+      "fetchedAt": "2026-10-08T13:44:09Z",
       "format": "passed",
       "semantic": "passed",
       "period": "verified"
     },
-    "cache": "unchanged",
+    "cache": "new",
     "version": {
-      "contentHash": "eb4cd2ca9fdb90db7af9a5d7dc47cc8ac040dcc243d598068688eeb75e91d815",
+      "contentHash": "82d14317af92cc7e84b89417e675c93c9d5174f497818fd079461b88933d3e13",
       "observationId": null,
       "revisionId": null
     },
     "extensions": {
-      "strengthExtraction": "extracted"
+      "strengthExtraction": "not-reliably-extracted"
     }
   }
 }
