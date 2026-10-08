@@ -42,7 +42,8 @@ export function normalizePsdValue(metricId,{attributeId,unit},raw){
   const m=METRICS[metricId];
   if(!m||m.kind!=="source")throw new Error(`Not a source metric: ${metricId}`);
   if(attributeId!==m.psd.attributeId||unit!==m.psd.unit)return {status:"unavailable",reason:"unit_or_attribute_changed"};
-  if(raw===null||raw===undefined||raw==="")return {status:"missing",value:null};
+  if(raw===null||raw===undefined||(typeof raw==="string"&&!raw.trim()))return {status:"missing",value:null};
+  if(typeof raw!=="string"&&typeof raw!=="number")return {status:"unavailable",reason:"not_numeric"};
   const value=Number(raw);
   if(!finite(value))return {status:"unavailable",reason:"not_numeric"};
   if(value<0){
@@ -95,7 +96,8 @@ export function metricDirection(metricId,pct,deadZonePct){
 /** DRAFT aggregate rule (contract interpretationRules). Counts only; lists every input. */
 export function aggregateSupplyStatus(directions){
   const rule=contract.interpretationRules.find(r=>r.ruleId==="g1_aggregate_supply_status");
-  const core=rule.parameters.coreMetrics,evidence=core.map(metric=>({metric,direction:directions[metric]??"unknown"}));
+  const core=rule.parameters.coreMetrics,evidence=core.map(metric=>({metric,
+    direction:["tightening","stable","easing"].includes(directions[metric])?directions[metric]:"unknown"}));
   const count=d=>evidence.filter(e=>e.direction===d).length;
   const counts={tightening:count("tightening"),stable:count("stable"),easing:count("easing"),unknown:count("unknown")};
   let status="stable";
@@ -106,12 +108,78 @@ export function aggregateSupplyStatus(directions){
   return {status,counts,evidence,ruleStatus:rule.status};
 }
 
-/** Same observation from several sources: expose disagreement, never choose silently. */
+/** Compare only canonical, same-observation/same-release evidence at the best known tier.
+ * Lower-tier and non-current evidence remains attached, never silently overwrites Tier 1.
+ * These contract helpers are not wired to production in G1.0.
+ */
 export function resolveSources(observations){
-  const values=observations.filter(o=>o.status==="ok");
-  if(values.length<=1)return {status:values.length?"ok":"missing",observations};
-  const distinct=new Set(values.map(o=>o.value));
-  return {status:distinct.size>1?"conflicting":"ok",observations};
+  const values=observations.filter(o=>known(o));
+  if(!values.length)return {status:observations.length?"unknown":"missing",observations,preferred:[]};
+  if(values.some(o=>![1,2,3].includes(o.sourceTier)||!o.source))
+    return {status:"unknown",reason:"source_priority_unknown",observations,preferred:[]};
+  const tier=Math.min(...values.map(o=>o.sourceTier));
+  const preferred=values.filter(o=>o.sourceTier===tier),lowerPriority=values.filter(o=>o.sourceTier!==tier);
+  const fields=["observationId","unit","basis","comparisonPeriod","sourceRelease"];
+  if(preferred.some(o=>fields.some(f=>typeof o[f]!=="string"||!o[f].trim())||!releaseMonth(o.sourceRelease)))
+    return {status:"unknown",reason:"comparability_metadata_missing",observations,preferred,lowerPriority};
+  if(fields.some(f=>new Set(preferred.map(o=>o[f])).size!==1))
+    return {status:"unknown",reason:"not_comparable",observations,preferred,lowerPriority};
+  // Distinct editions from one source within a month are revisions, not independent conflicting sources.
+  if(preferred.some((o,i)=>preferred.some((p,j)=>i!==j&&o.source===p.source&&o.value!==p.value)))
+    return {status:"unknown",reason:"same_source_revision_unordered",observations,preferred,lowerPriority};
+  return {status:new Set(preferred.map(o=>o.value)).size>1?"conflicting":"ok",observations,preferred,lowerPriority};
+}
+
+const releaseMonth=v=>typeof v==="string"&&/^\d{4}-(0[1-9]|1[0-2])$/.test(v);
+const hash=v=>typeof v==="string"&&/^[a-f0-9]{64}$/.test(v);
+const sequence=v=>Number.isSafeInteger(v)&&v>=0;
+
+/** Pure accept/quarantine decision. Retrieval/cache timestamps never order scientific versions. */
+export function assessReleaseVersion(incoming,previous){
+  const valid=v=>v&&["observationId","source","sourceDataset"].every(f=>typeof v[f]==="string"&&v[f].trim())&&
+    releaseMonth(v.sourceRelease)&&hash(v.rawFileHash);
+  const reject=reason=>({accepted:false,reason,retained:previous??null});
+  if(!valid(incoming))return reject("invalid_incoming_version");
+  if(!previous)return {accepted:true,kind:"first-publication"};
+  if(!valid(previous))return reject("invalid_previous_version");
+  if(["observationId","source","sourceDataset"].some(f=>incoming[f]!==previous[f]))return reject("observation_identity_mismatch");
+  if(incoming.sourceRelease<previous.sourceRelease)return reject("publication_regression");
+  if(incoming.sourceRelease>previous.sourceRelease)return {accepted:true,kind:"new-publication"};
+  if(sequence(incoming.revisionSequence)&&sequence(previous.revisionSequence)&&
+    incoming.revisionOrderSource==="source-authenticated"&&previous.revisionOrderSource==="source-authenticated"&&
+    incoming.revisionSequence<previous.revisionSequence)return reject("same_vintage_revision_regression");
+  if(incoming.rawFileHash===previous.rawFileHash)return {accepted:true,kind:"unchanged"};
+  // Only a source-authenticated edition order can authorize a same-month correction.
+  // A fetch counter, HTTP timestamp or content hash alone is not that evidence.
+  if(incoming.revisionOrderSource!=="source-authenticated"||previous.revisionOrderSource!=="source-authenticated"||
+    !sequence(incoming.revisionSequence)||!sequence(previous.revisionSequence))return reject("same_vintage_revision_unordered");
+  if(incoming.revisionSequence<=previous.revisionSequence)return reject("same_vintage_revision_regression");
+  return {accepted:true,kind:"same-vintage-revision"};
+}
+
+/** Per-metric geography presence against an explicit, reviewed market-year baseline.
+ * Not an aggregation/parser: no sums, no extrapolation, no inferred country weights.
+ * EU membership must be supplied as reviewed source IDs, not guessed from names.
+ */
+export function assessGeographyCoverage(rows,{expectedIds,marketYear,euMemberIds=[]}={}){
+  if(!Array.isArray(expectedIds)||!expectedIds.length||new Set(expectedIds).size!==expectedIds.length||
+    !Number.isInteger(marketYear)||expectedIds.some(id=>typeof id!=="string"||!/^usda-psd:[A-Z0-9]{2}$/.test(id)))
+    return {status:"unknown",reason:"coverage_baseline_missing_or_invalid"};
+  const activeEu=marketYear>=1999?"usda-psd:E4":"usda-psd:E2";
+  const inactiveEu=marketYear>=1999?"usda-psd:E2":"usda-psd:E4";
+  const excluded=id=>id===inactiveEu||(marketYear<2016&&id==="usda-psd:UK")||
+    (expectedIds.includes(activeEu)&&euMemberIds.includes(id));
+  if(expectedIds.some(excluded))return {status:"unknown",reason:"coverage_baseline_overlapping"};
+  const ids=rows.map(r=>r.geography?.id),duplicates=ids.filter((id,i)=>ids.indexOf(id)!==i);
+  const excludedIds=[...new Set(ids.filter(excluded))].sort();
+  const unexpectedIds=[...new Set(ids.filter(id=>!excluded(id)&&!expectedIds.includes(id)))].sort();
+  const presentIds=expectedIds.filter(id=>rows.some(r=>r.geography?.id===id&&known(r))).sort();
+  const missingIds=expectedIds.filter(id=>!presentIds.includes(id)).sort();
+  const complete=!missingIds.length&&!unexpectedIds.length&&!duplicates.length;
+  return {status:complete?"ok":"unavailable",reason:complete?null:"coverage_incomplete",expectedCount:expectedIds.length,
+    presentCount:presentIds.length,presentIds,missingIds,excludedIds,unexpectedIds,duplicateIds:[...new Set(duplicates)].sort(),
+    // This is row/identity coverage, NOT production coverage.
+    geographyCountCoverage:presentIds.length/expectedIds.length};
 }
 
 /** Validate a global-supply index: one status PER commodity, no single file-level status. */
@@ -147,5 +215,9 @@ export function validateContract(c=contract){
   }
   const ids=c.metrics.map(m=>m.id);
   if(new Set(ids).size!==ids.length)errors.push("duplicate metric ids");
+  const core=c.interpretationRules.find(r=>r.ruleId==="g1_aggregate_supply_status")?.parameters.coreMetrics;
+  if(!core||JSON.stringify(core)!==JSON.stringify(c.metrics.filter(m=>m.inAggregateCore).map(m=>m.id)))
+    errors.push("aggregate core flags and rule disagree");
+  if(c.metrics.find(m=>m.id==="stocksToUse")?.inAggregateCore)errors.push("stocksToUse duplicates endingStocks in core");
   return errors;
 }

@@ -111,9 +111,15 @@
           "en": "World (WFL-derived)"
         },
         "isoCode": null,
-        "derivation": "Sum of usda-psd geographies for the market year; EU aggregate counted once, never with member rows. USDA bulk files contain no World row, so this is derived, not an official total."
+        "derivation": "Coverage-validated sum of usda-psd geographies for the market year; EU aggregate counted once, never with member rows. A WFL cross-check or explicitly labelled fallback, not an official USDA world total."
       }
     }
+  },
+  "worldAggregatePolicy": {
+    "preferredCanonical": "Official USDA world aggregate when available and comparable in commodity, basis, units, marketing year and source release.",
+    "derivedRole": "WFL-derived world totals are cross-checks, or explicitly labelled coverage-validated fallback when no comparable official aggregate is accessible.",
+    "apiKeyAvailabilityBlocksG1_1": false,
+    "coverage": "Use a reviewed year-specific geography baseline; absent countries stay missing. Never normalize incomplete contributor coverage or label a derived total official."
   },
   "marketingYear": {
     "representation": {
@@ -125,7 +131,8 @@
     "caveat": "A label such as 2026/27 is a source-reported identity, not a common calendar window: market years start in different months by country and commodity. Cross-country comparison must show this limitation."
   },
   "releaseIdentity": {
-    "sourceRelease": "Source vintage. usda-psd: the Calendar_Year-Month of the rows (single vintage per bulk file, e.g. 2026-09).",
+    "sourceRelease": "Verified bulk snapshot vintage, identified from current/latest-market-year release metadata (e.g. 2026-09); historical rows may have older last-update months. Preserve rowLastUpdatedMonth separately; do not rewrite it to the snapshot vintage.",
+    "monotonicity": "For the same observation/source/dataset, reject older snapshot vintages regardless of retrieval time. Same-vintage identical raw hash is unchanged; changed bytes require source-authenticated ordered revisionSequence, otherwise quarantine and retain previous accepted data.",
     "observationId": "g1:{commodity}:{geographyId}:{marketingYearSourceId}:{metric}",
     "versionedObservationId": "{observationId}@{source}:{sourceRelease}",
     "revisionId": "{observationId}@{source}:{previousRelease}->{currentRelease}",
@@ -278,8 +285,8 @@
       "negativeSourceValues": "not-applicable",
       "directionEligible": true,
       "polarity": "lower-is-tightening",
-      "inAggregateCore": true,
-      "note": "Same definition as the existing world metric. For exporters, domestic-use stocks-to-use ignores export demand; shown with that caveat.",
+      "inAggregateCore": false,
+      "note": "Excluded from aggregate core because it reuses ending stocks. Retained as a separate metric. For exporters, domestic-use stocks-to-use ignores export demand; shown with that caveat.",
       "formula": "endingStocks / domesticUse x 100",
       "denominator": "domesticUse",
       "unknownWhen": [
@@ -321,9 +328,14 @@
       "sourceTier",
       "sourceRelease",
       "sourceDate",
+      "observationId",
+      "unit",
+      "basis",
+      "comparisonPeriod",
       "value"
     ],
-    "rule": "Never overwrite silently. Tier 1 vs Tier 1 disagreement is exposed as conflicting unless a reviewed source-priority policy exists; v1 has none (USDA PSD is the only source).",
+    "rule": "Preserve all evidence. Compare eligible finite values at the best known source tier (1 before 2 before 3); lower-tier values remain context and cannot override Tier 1. Same-tier conflicts require matching observationId, canonical unit, measurement basis, comparisonPeriod and sourceRelease. Different/missing identities or release periods are not comparable (unknown), not conflicts. Different editions from one source require revision ordering, not cross-source resolution. No automatic priority among same-tier sources.",
+    "comparisonFields": ["observationId", "unit", "basis", "comparisonPeriod", "sourceRelease"],
     "equality": "Values are equal only if identical after canonical units at source precision."
   },
   "provenance": {
@@ -350,7 +362,7 @@
     "index": "public/data/global-supply.json (manifest: contractVersion, per-commodity status, release, provenance, file path)",
     "perCommodity": "public/data/global-supply/{commodity}.json",
     "frontend": "runtime fetch; never bundled into the JS build; never added to official-data.json",
-    "historyScope": "Country observations for the latest three market years (current, prior for YoY, one more for context); WFL world aggregate since 2000. Revisions accumulate from G1.1 onward, because PSD bulk files carry only one vintage."
+    "historyScope": "Country observations for the latest three market years; official world aggregates preferred when available, WFL sums cross-check/fallback since 2000. Raw September 2026 snapshot is archived immutably for future revision comparison; historical row update months do not reconstruct complete past releases."
   },
   "interpretationRules": [
     {
@@ -409,8 +421,7 @@
       "parameters": {
         "coreMetrics": [
           "production",
-          "endingStocks",
-          "stocksToUse"
+          "endingStocks"
         ],
         "states": [
           "tightening",
@@ -421,7 +432,7 @@
         ],
         "proposedRule": "unknown if any core direction is unknown; mixed if both tightening and easing occur; tightening if at least one tightening and no easing; easing if at least one easing and no tightening; otherwise stable. Output always lists the metrics and their directions."
       },
-      "pendingReason": "endingStocks and stocksToUse share endingStocks, so they are not independent; whether both belong in the core needs review before adoption."
+      "pendingReason": "Core is production and endingStocks only; stocksToUse is excluded to avoid duplicate stock evidence. Interpretation thresholds and aggregate adoption remain draft; not production-enabled."
     }
   ],
   "legacy": {

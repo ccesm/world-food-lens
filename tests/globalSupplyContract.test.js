@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CONTRACT,COMMODITIES,METRICS,commodityId,psdGeography,WORLD,psdMarketingYear,observationId,revisionId,
   normalizePsdValue,yieldStatus,stocksToUse,revision,yoy,metricDirection,aggregateSupplyStatus,resolveSources,
-  validateSupplyIndex,validateContract} from "../src/services/globalSupply.js";
+  validateSupplyIndex,validateContract,assessReleaseVersion,assessGeographyCoverage} from "../src/services/globalSupply.js";
 
 const audit=JSON.parse(readFileSync(new URL("./fixtures/g1-psd-structure-audit.json",import.meta.url)));
 const revisionAudit=JSON.parse(readFileSync(new URL("./fixtures/g1-revision-audit.json",import.meta.url)));
@@ -117,19 +117,133 @@ test("direction polarity and inclusive dead-zone boundary",()=>{
 test("draft aggregate status is traceable counts, never a score",()=>{
   const r=aggregateSupplyStatus({production:"tightening",endingStocks:"stable",stocksToUse:"tightening",exports:"easing"});
   assert.equal(r.status,"tightening");
-  assert.deepEqual(r.evidence.map(e=>e.metric),["production","endingStocks","stocksToUse"]); // Exports never counted.
+  assert.deepEqual(r.evidence.map(e=>e.metric),["production","endingStocks"]); // No duplicate stock evidence.
   assert.equal(aggregateSupplyStatus({production:"tightening",endingStocks:"easing",stocksToUse:"stable"}).status,"mixed");
-  assert.equal(aggregateSupplyStatus({production:"stable",endingStocks:"stable"}).status,"unknown");
+  assert.equal(aggregateSupplyStatus({production:"stable",endingStocks:"stable"}).status,"stable");
+  assert.equal(aggregateSupplyStatus({production:"stable"}).status,"unknown");
+  assert.equal(aggregateSupplyStatus({production:"invalid",endingStocks:"stable"}).status,"unknown");
+  assert.equal(METRICS.stocksToUse.inAggregateCore,false);
   assert.equal(r.ruleStatus,"draft");
   assert.ok(!("score" in r));
 });
 
 test("conflicting sources are exposed, never silently resolved",()=>{
-  const usda={source:"usda-psd",sourceTier:1,status:"ok",value:169000};
-  const other={source:"conab",sourceTier:1,status:"ok",value:171500};
+  const usda={source:"usda-psd",sourceTier:1,status:"ok",value:169000,observationId:"g1:corn:usda-psd:BR:2026:production",
+    unit:"1000 t",basis:"grain",comparisonPeriod:"2026/27",sourceRelease:"2026-09"};
+  const other={...usda,source:"conab",value:171500};
   assert.equal(resolveSources([usda,other]).status,"conflicting");
   assert.equal(resolveSources([usda,{...other,value:169000}]).status,"ok");
   assert.equal(resolveSources([]).status,"missing");
+});
+
+const comparable={source:"usda-psd",sourceTier:1,status:"ok",value:100,observationId:"g1:corn:usda-psd:BR:2026:production",
+  unit:"1000 t",basis:"grain",comparisonPeriod:"2026/27",sourceRelease:"2026-09"};
+test("official world totals preferred; derived world is cross-check/fallback, never a credential blocker",()=>{
+  assert.match(CONTRACT.worldAggregatePolicy.preferredCanonical,/Official USDA world/);
+  assert.match(CONTRACT.worldAggregatePolicy.derivedRole,/cross-checks/);
+  assert.equal(CONTRACT.worldAggregatePolicy.apiKeyAvailabilityBlocksG1_1,false);
+  assert.deepEqual(CONTRACT.metrics.filter(m=>m.inAggregateCore).map(m=>m.id),["production","endingStocks"]);
+});
+
+test("source priority keeps lower tiers as context, never as Tier 1 conflicts",()=>{
+  const lower={...comparable,source:"news",sourceTier:3,value:500};
+  const before=structuredClone([comparable,lower]);
+  const result=resolveSources(before);
+  assert.equal(result.status,"ok");assert.deepEqual(result.preferred,[comparable]);
+  assert.deepEqual(result.lowerPriority,[lower]);assert.deepEqual(result.observations,before);
+  assert.equal(resolveSources([lower,{...lower,source:"institution",sourceTier:2,value:300}]).preferred[0].sourceTier,2);
+  assert.equal(resolveSources([comparable,{...lower,sourceTier:undefined}]).status,"unknown");
+});
+
+test("different releases, bases, units, periods and observations are not comparable conflicts",()=>{
+  for(const [key,value] of Object.entries({sourceRelease:"2026-08",basis:"rough-rice",unit:"t",comparisonPeriod:"2025/26",observationId:"other"})){
+    const r=resolveSources([comparable,{...comparable,source:"other",value:200,[key]:value}]);
+    assert.equal(r.status,"unknown",key);assert.equal(r.reason,"not_comparable");
+  }
+  for(const key of CONTRACT.conflicts.comparisonFields){
+    const r=resolveSources([{...comparable,[key]:undefined}]);
+    assert.equal(r.status,"unknown",key);
+  }
+  assert.equal(resolveSources([{...comparable,value:NaN}]).status,"unknown");
+  assert.equal(resolveSources([{...comparable,status:"stale"}]).status,"unknown");
+  assert.equal(resolveSources([comparable,{...comparable,value:90}]).reason,"same_source_revision_unordered");
+});
+
+const version={observationId:comparable.observationId,source:"usda-psd",sourceDataset:"grains",sourceRelease:"2026-09",rawFileHash:"a".repeat(64)};
+test("release monotonicity rejects older vintage despite later fetch/cache times and retains previous",()=>{
+  const old={...version,sourceRelease:"2026-10",retrievedAt:"2026-10-09T16:00:00Z"};
+  const incoming={...version,retrievedAt:"2026-10-10T16:00:00Z",cacheUpdatedAt:"2026-10-10T17:00:00Z"};
+  const copy=structuredClone(old),result=assessReleaseVersion(incoming,old);
+  assert.equal(result.accepted,false);assert.equal(result.reason,"publication_regression");
+  assert.deepEqual(result.retained,copy);assert.deepEqual(old,copy);
+  assert.equal(assessReleaseVersion(old,version).kind,"new-publication");
+  assert.equal(assessReleaseVersion(version,null).kind,"first-publication");
+  assert.equal(assessReleaseVersion(version,version).kind,"unchanged");
+});
+
+test("same-vintage revisions require an authenticated order, not a fetch timestamp/hash",()=>{
+  const correction={...version,rawFileHash:"b".repeat(64)};
+  assert.equal(assessReleaseVersion(correction,version).reason,"same_vintage_revision_unordered");
+  const previous={...version,revisionSequence:1,revisionOrderSource:"source-authenticated"};
+  const next={...correction,revisionSequence:2,revisionOrderSource:"source-authenticated"};
+  assert.equal(assessReleaseVersion(next,previous).kind,"same-vintage-revision");
+  assert.equal(assessReleaseVersion(previous,next).reason,"same_vintage_revision_regression");
+  assert.equal(assessReleaseVersion({...next,revisionSequence:1},previous).accepted,false);
+  assert.equal(assessReleaseVersion({...next,revisionOrderSource:"fetch-counter"},previous).accepted,false);
+  assert.equal(assessReleaseVersion({...next,sourceRelease:"2026-13"},previous).accepted,false);
+  assert.equal(assessReleaseVersion({...next,observationId:"another-year"},previous).reason,"observation_identity_mismatch");
+});
+
+const geoRow=(code,value=0,status="ok")=>({geography:psdGeography(code),value,status});
+test("missing entire geography cannot disappear from denominator, including source-zero countries",()=>{
+  const expectedIds=["usda-psd:US","usda-psd:BR","usda-psd:UK"];
+  const options={expectedIds,marketYear:2026};
+  const full=[geoRow("US",100),geoRow("BR",50),geoRow("UK",0)];
+  assert.equal(assessGeographyCoverage(full,options).status,"ok");
+  const partial=assessGeographyCoverage(full.slice(0,2),options);
+  assert.equal(partial.status,"unavailable");assert.deepEqual(partial.missingIds,["usda-psd:UK"]);
+  assert.equal(partial.geographyCountCoverage,2/3); // Neither weighted completeness nor normalized 100%.
+  assert.equal(assessGeographyCoverage([...full.slice(0,2),geoRow("UK",null,"missing")],options).presentCount,2);
+  assert.equal(assessGeographyCoverage(full).status,"unknown");
+  assert.equal(assessGeographyCoverage([...full,geoRow("US",100)],options).status,"unavailable");
+  assert.equal(assessGeographyCoverage([...full,geoRow("XX",1)],options).status,"unavailable");
+});
+
+test("EU aggregate counted once with reviewed member IDs; separate UK stays included after 2016",()=>{
+  const options={expectedIds:["usda-psd:E4","usda-psd:UK","usda-psd:US"],marketYear:2026,euMemberIds:["usda-psd:FR"]};
+  const rows=[geoRow("E4",100),geoRow("E2",90),geoRow("FR",20),geoRow("UK",10),geoRow("US",200)];
+  const result=assessGeographyCoverage(rows,options);
+  assert.equal(result.status,"ok");assert.deepEqual(result.presentIds,["usda-psd:E4","usda-psd:UK","usda-psd:US"]);
+  assert.deepEqual(result.excludedIds,["usda-psd:E2","usda-psd:FR"]);
+  assert.equal(rows.filter(r=>result.presentIds.includes(r.geography.id)).reduce((sum,r)=>sum+r.value,0),310);
+  assert.equal(assessGeographyCoverage(rows.filter(r=>r.geography.sourceId!=="E4"),options).status,"unavailable");
+  const historic=assessGeographyCoverage(rows,{...options,marketYear:1998,expectedIds:["usda-psd:E2","usda-psd:US"]});
+  assert.equal(historic.status,"ok");assert.deepEqual(historic.excludedIds,["usda-psd:E4","usda-psd:FR","usda-psd:UK"]);
+  assert.equal(rows.filter(r=>historic.presentIds.includes(r.geography.id)).reduce((sum,r)=>sum+r.value,0),290);
+  assert.equal(assessGeographyCoverage(rows,{...options,expectedIds:[...options.expectedIds,"usda-psd:FR"]}).status,"unknown");
+});
+
+test("frozen audited year-specific geography provides an explicit baseline for each commodity",()=>{
+  for(const commodity of COMMODITIES){
+    const file=commodity==="soybean"?audit.files.oilseeds:audit.files.grains;
+    const marketYear=file.latestMarketYear[commodity];
+    const expectedIds=file.geographies[commodity].filter(g=>g.firstMarketYear<=marketYear&&g.lastMarketYear>=marketYear).map(g=>`usda-psd:${g.code}`);
+    const rows=expectedIds.map(id=>geoRow(id.split(":")[1]));
+    assert.equal(assessGeographyCoverage(rows,{expectedIds,marketYear}).status,"ok",commodity);
+    const partial=assessGeographyCoverage(rows.slice(1),{expectedIds,marketYear});
+    assert.equal(partial.missingIds.length,1,commodity);
+    assert.ok(partial.geographyCountCoverage<1);
+  }
+});
+
+test("blank, absent and malformed source values never become numeric source zeros",()=>{
+  const mapping=METRICS.production.psd;
+  for(const input of [undefined,null,""," ","\t\n"])
+    assert.deepEqual(normalizePsdValue("production",mapping,input),{status:"missing",value:null});
+  for(const input of [false,true,[],{},NaN,Infinity,"NA"])
+    assert.equal(normalizePsdValue("production",mapping,input).status,"unavailable");
+  for(const input of [0,"0"," 0 "])
+    assert.deepEqual(normalizePsdValue("production",mapping,input),{status:"ok",value:0,flags:["source-zero-filled"]});
 });
 
 test("failure isolation: one status per commodity, never one file status",()=>{
