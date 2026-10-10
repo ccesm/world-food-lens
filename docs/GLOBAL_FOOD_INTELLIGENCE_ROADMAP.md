@@ -90,7 +90,7 @@ Previous estimate: X   Current estimate: Y   Revision: −2.4%   Direction: tigh
 | --- | --- | --- | --- | --- | --- |
 | 世界产量、消费、期末库存、库存消费比（小麦、玉米、稻米） | `scripts/macro_sources.py` `parse_usda`：USDA PSD 谷物与豆类批量 CSV，2000 年至今 | **production-ready** | Tier 1；有国家贡献度和覆盖率审计（`usda_coverage.py`），欧盟和英国分开处理 | 每日下载，保留上次可用数据 | 只解析了 Production、Domestic Consumption、Ending Stocks 三项 |
 | 分国家数据 | 同一份文件的 `coverage.contributors`（每个国家的产量、消费、库存） | usable but incomplete | Tier 1 | 每日 | 只用于覆盖率审计和修订追踪，没有面向用户的国家视图 |
-| 出口、进口、收获面积、单产 | **同一份 PSD 批量 CSV 里有这些字段，但没有解析** | missing（数据已下载） | Tier 1 | — | 需要扩展 `parse_usda`，不需要新数据源 |
+| 出口、进口、收获面积、单产 | **同一份 PSD 批量 CSV 里有这些字段，但没有解析**（G1.0 审计已确认属性 ID 和单位：Exports 088、Imports 057、Area Harvested 004、Yield 184） | missing（数据已下载） | Tier 1 | — | 需要扩展 `parse_usda`，不需要新数据源 |
 | 大豆 | PSD 的油籽文件（`psd_oilseeds_csv.zip`），同一提供方、同一格式 | missing | Tier 1 | — | 需要新增一个下载 |
 | 修订（相对上一期估计） | `scripts/revision_tracking.mjs` 和 `src/services/changeSet.js`（Phase 2 变更追踪）：按发布对比世界和国家数据（最近两个市场年度） | usable but incomplete | 有完整性哈希和发布绑定 | 每次发布 | 只有产量、消费、库存三项；没有"方向"标签和作物 × 国家的展示 |
 | 同比变化 | `GrainInventory`、`SupplyHistory` 组件（历史与比较） | usable but incomplete | — | — | 是世界总量层面，没有国家分解 |
@@ -211,7 +211,7 @@ Previous estimate: X   Current estimate: Y   Revision: −2.4%   Direction: tigh
 | 顺序 | 内容 | 调整理由 |
 | --- | --- | --- |
 | **G0** | 本文件：盘点和路线 | — |
-| **G1.0** | 统一的全球作物供需数据契约，以及现有数据能支持的字段的审计 | 先定数据契约，后写代码 |
+| **G1.0** | 统一的全球作物供需数据契约，以及现有数据能支持的字段的审计 | **草案已完成，待审**：`G1_SUPPLY_CONTRACT.md`。PSD 结构已在 Actions 中实际审计；死区和汇总规则保持 draft |
 | **G1.1** | PSD 谷物扩展：**玉米、小麦、稻米三种一起做**，按国家解析面积、单产、出口、进口和期初库存，并接入修订和方向；写入单独的数据文件 | 三种谷物在同一个已下载的文件里，用同一个解析器。**已确认（Decision 1）**：一起实现，但每种作物各自校验、各自隔离失败 |
 | **G1.2** | 大豆：PSD 油籽文件 | 同一提供方、同一格式，只多一次下载 |
 | **G1.3** | G1 页面：作物 × 国家的修订与方向视图 | 数据稳定后再做 |
@@ -278,7 +278,7 @@ tightening/stable/easing/mixed/unknown and must remain explainable from its unde
 
 ---
 
-## 附：G1 统一数据契约草案（概念）
+## 附：G1 统一数据契约草案（概念；正式版本见 `G1_SUPPLY_CONTRACT.md`）
 
 每一条观测是"作物 × 国家或地区 × 市场年度 × 发布期"：
 
