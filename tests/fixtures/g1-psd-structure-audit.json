@@ -1,0 +1,4410 @@
+{
+ "auditedAt": "2026-10-07T23:27:18Z",
+ "files": {
+  "grains": {
+   "absoluteYoYPctByAttribute": {
+    "corn|Area Harvested": {
+     "count": 2960,
+     "max": 1150.0,
+     "p50": 5.263157894736836,
+     "p75": 13.33333333333333,
+     "p90": 29.743589743589748
+    },
+    "corn|Beginning Stocks": {
+     "count": 2362,
+     "max": 1770.0,
+     "p50": 23.789764868603047,
+     "p75": 49.10714285714286,
+     "p90": 90.9090909090909
+    },
+    "corn|Domestic Consumption": {
+     "count": 3165,
+     "max": 1310.0,
+     "p50": 7.692307692307687,
+     "p75": 17.647058823529417,
+     "p90": 35.24590163934427
+    },
+    "corn|Ending Stocks": {
+     "count": 2411,
+     "max": 1770.0,
+     "p50": 23.076923076923084,
+     "p75": 47.890535917901936,
+     "p90": 88.75
+    },
+    "corn|Exports": {
+     "count": 1346,
+     "max": 8966.666666666668,
+     "p50": 42.85714285714286,
+     "p75": 91.796875,
+     "p90": 199.90875912408762
+    },
+    "corn|FSI Consumption": {
+     "count": 2881,
+     "max": 1310.0,
+     "p50": 2.499999999999991,
+     "p75": 11.111111111111116,
+     "p90": 29.41176470588236
+    },
+    "corn|Feed Dom. Consumption": {
+     "count": 2762,
+     "max": 1100.0,
+     "p50": 7.692307692307687,
+     "p75": 19.999999999999996,
+     "p90": 41.770529994175895
+    },
+    "corn|Imports": {
+     "count": 2737,
+     "max": 8900.0,
+     "p50": 23.381542699724523,
+     "p75": 62.16216216216216,
+     "p90": 100.0
+    },
+    "corn|Production": {
+     "count": 2960,
+     "max": 900.0,
+     "p50": 8.660030627871373,
+     "p75": 21.49122807017544,
+     "p90": 45.26438117373619
+    },
+    "corn|TY Exports": {
+     "count": 1338,
+     "max": 8966.666666666668,
+     "p50": 42.307692307692314,
+     "p75": 90.0,
+     "p90": 166.66666666666666
+    },
+    "corn|TY Imp. from U.S.": {
+     "count": 1178,
+     "max": 41400.0,
+     "p50": 50.70821529745042,
+     "p75": 100.0,
+     "p90": 186.87171792948237
+    },
+    "corn|TY Imports": {
+     "count": 2735,
+     "max": 10000.0,
+     "p50": 22.707423580786024,
+     "p75": 60.0,
+     "p90": 100.0
+    },
+    "corn|Total Distribution": {
+     "count": 3165,
+     "max": 1310.0,
+     "p50": 8.815903197925667,
+     "p75": 19.23076923076923,
+     "p90": 38.679791546033584
+    },
+    "corn|Total Supply": {
+     "count": 3165,
+     "max": 1310.0,
+     "p50": 8.815903197925667,
+     "p75": 19.23076923076923,
+     "p90": 38.679791546033584
+    },
+    "corn|Yield": {
+     "count": 2960,
+     "max": 866.6666666666666,
+     "p50": 5.6737588652482245,
+     "p75": 15.217391304347828,
+     "p90": 33.06878306878309
+    },
+    "rice|Area Harvested": {
+     "count": 2251,
+     "max": 2033.3333333333333,
+     "p50": 4.591836734693877,
+     "p75": 13.483146067415742,
+     "p90": 26.657997399219767
+    },
+    "rice|Beginning Stocks": {
+     "count": 1567,
+     "max": 1113.6363636363637,
+     "p50": 23.941798941798943,
+     "p75": 47.19101123595506,
+     "p90": 82.31707317073172
+    },
+    "rice|Domestic Consumption": {
+     "count": 2864,
+     "max": 400.0,
+     "p50": 4.8387096774193505,
+     "p75": 12.145748987854255,
+     "p90": 25.49019607843137
+    },
+    "rice|Ending Stocks": {
+     "count": 1582,
+     "max": 1113.6363636363637,
+     "p50": 22.72727272727273,
+     "p75": 46.153846153846146,
+     "p90": 80.32786885245902
+    },
+    "rice|Exports": {
+     "count": 1044,
+     "max": 4900.0,
+     "p50": 20.293398533007334,
+     "p75": 50.0,
+     "p90": 100.0
+    },
+    "rice|Imports": {
+     "count": 2677,
+     "max": 7500.0,
+     "p50": 15.384615384615385,
+     "p75": 35.1063829787234,
+     "p90": 76.36363636363637
+    },
+    "rice|Milling Rate (.9999)": {
+     "count": 2287,
+     "max": 100.0,
+     "p50": 0.0,
+     "p75": 0.0,
+     "p90": 0.0
+    },
+    "rice|Production": {
+     "count": 2251,
+     "max": 2846.153846153846,
+     "p50": 7.223476297968401,
+     "p75": 17.585692995529058,
+     "p90": 33.83886255924171
+    },
+    "rice|Rough Production": {
+     "count": 2251,
+     "max": 2775.0,
+     "p50": 7.113821138211374,
+     "p75": 17.33990147783251,
+     "p90": 34.210526315789465
+    },
+    "rice|TY Exports": {
+     "count": 1043,
+     "max": 4900.0,
+     "p50": 20.503742666396928,
+     "p75": 50.0,
+     "p90": 100.0
+    },
+    "rice|TY Imp. from U.S.": {
+     "count": 1401,
+     "max": 7500.0,
+     "p50": 46.66666666666666,
+     "p75": 100.0,
+     "p90": 113.63636363636363
+    },
+    "rice|TY Imports": {
+     "count": 2681,
+     "max": 13275.0,
+     "p50": 15.705128205128204,
+     "p75": 35.365853658536594,
+     "p90": 77.27272727272727
+    },
+    "rice|Total Distribution": {
+     "count": 2864,
+     "max": 400.0,
+     "p50": 6.849315068493156,
+     "p75": 14.66666666666666,
+     "p90": 28.125
+    },
+    "rice|Total Supply": {
+     "count": 2864,
+     "max": 400.0,
+     "p50": 6.849315068493156,
+     "p75": 14.66666666666666,
+     "p90": 28.125
+    },
+    "rice|Yield": {
+     "count": 2251,
+     "max": 233.33333333333334,
+     "p50": 4.428044280442811,
+     "p75": 10.204081632653072,
+     "p90": 21.875
+    },
+    "wheat|Area Harvested": {
+     "count": 2018,
+     "max": 1600.0,
+     "p50": 5.342237061769617,
+     "p75": 13.888888888888884,
+     "p90": 29.617834394904463
+    },
+    "wheat|Beginning Stocks": {
+     "count": 2321,
+     "max": 2100.0,
+     "p50": 22.968906720160476,
+     "p75": 48.14814814814815,
+     "p90": 84.72222222222223
+    },
+    "wheat|Domestic Consumption": {
+     "count": 3165,
+     "max": 1575.0,
+     "p50": 5.384615384615388,
+     "p75": 12.5,
+     "p90": 24.89711934156378
+    },
+    "wheat|Ending Stocks": {
+     "count": 2360,
+     "max": 2100.0,
+     "p50": 23.17073170731707,
+     "p75": 47.701647875108414,
+     "p90": 84.61538461538463
+    },
+    "wheat|Exports": {
+     "count": 1803,
+     "max": 27460.000000000004,
+     "p50": 21.052631578947366,
+     "p75": 56.94748358862145,
+     "p90": 100.0
+    },
+    "wheat|FSI Consumption": {
+     "count": 3165,
+     "max": 1575.0,
+     "p50": 3.8461538461538436,
+     "p75": 10.385818561001049,
+     "p90": 21.950402144772106
+    },
+    "wheat|Feed Dom. Consumption": {
+     "count": 1700,
+     "max": 2100.0,
+     "p50": 7.692307692307687,
+     "p75": 30.000000000000004,
+     "p90": 66.66666666666667
+    },
+    "wheat|Imports": {
+     "count": 3158,
+     "max": 361600.0,
+     "p50": 14.28571428571428,
+     "p75": 29.803921568627455,
+     "p90": 63.934426229508205
+    },
+    "wheat|Production": {
+     "count": 2018,
+     "max": 1476.923076923077,
+     "p50": 11.111111111111116,
+     "p75": 27.27272727272727,
+     "p90": 52.20125786163522
+    },
+    "wheat|TY Exports": {
+     "count": 1801,
+     "max": 22866.666666666664,
+     "p50": 21.052631578947366,
+     "p75": 57.14285714285714,
+     "p90": 100.0
+    },
+    "wheat|TY Imp. from U.S.": {
+     "count": 1711,
+     "max": 74400.0,
+     "p50": 41.49305555555556,
+     "p75": 100.0,
+     "p90": 105.29197080291972
+    },
+    "wheat|TY Imports": {
+     "count": 3158,
+     "max": 361600.0,
+     "p50": 14.250614250614246,
+     "p75": 29.811320754716974,
+     "p90": 64.86486486486487
+    },
+    "wheat|Total Distribution": {
+     "count": 3165,
+     "max": 1575.0,
+     "p50": 8.33171489609632,
+     "p75": 16.858789625360227,
+     "p90": 30.400424035079265
+    },
+    "wheat|Total Supply": {
+     "count": 3165,
+     "max": 1575.0,
+     "p50": 8.33171489609632,
+     "p75": 16.858789625360227,
+     "p90": 30.400424035079265
+    },
+    "wheat|Yield": {
+     "count": 2018,
+     "max": 448.00000000000006,
+     "p50": 8.157099697885206,
+     "p75": 20.63492063492063,
+     "p90": 40.000000000000014
+    }
+   },
+   "attributes": [
+    {
+     "attribute": "Area Harvested",
+     "attributeId": "004",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 HA)",
+     "unitId": "04",
+     "zeros": 558
+    },
+    {
+     "attribute": "Beginning Stocks",
+     "attributeId": "020",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 3073
+    },
+    {
+     "attribute": "Production",
+     "attributeId": "028",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 557
+    },
+    {
+     "attribute": "Imports",
+     "attributeId": "057",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1802
+    },
+    {
+     "attribute": "TY Imports",
+     "attributeId": "081",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1808
+    },
+    {
+     "attribute": "TY Imp. from U.S.",
+     "attributeId": "084",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4466
+    },
+    {
+     "attribute": "Total Supply",
+     "attributeId": "086",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 0
+    },
+    {
+     "attribute": "Exports",
+     "attributeId": "088",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4826
+    },
+    {
+     "attribute": "TY Exports",
+     "attributeId": "113",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4854
+    },
+    {
+     "attribute": "Domestic Consumption",
+     "attributeId": "125",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1
+    },
+    {
+     "attribute": "Feed Dom. Consumption",
+     "attributeId": "130",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1879
+    },
+    {
+     "attribute": "Ending Stocks",
+     "attributeId": "176",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 3004
+    },
+    {
+     "attribute": "Total Distribution",
+     "attributeId": "178",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 0
+    },
+    {
+     "attribute": "Yield",
+     "attributeId": "184",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(MT/HA)",
+     "unitId": "26",
+     "zeros": 558
+    },
+    {
+     "attribute": "FSI Consumption",
+     "attributeId": "192",
+     "blank": 0,
+     "commodity": "corn",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7586,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 609
+    },
+    {
+     "attribute": "Area Harvested",
+     "attributeId": "004",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 HA)",
+     "unitId": "04",
+     "zeros": 1782
+    },
+    {
+     "attribute": "Beginning Stocks",
+     "attributeId": "020",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 3927
+    },
+    {
+     "attribute": "Production",
+     "attributeId": "028",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1782
+    },
+    {
+     "attribute": "Rough Production",
+     "attributeId": "054",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1785
+    },
+    {
+     "attribute": "Imports",
+     "attributeId": "057",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1227
+    },
+    {
+     "attribute": "TY Imports",
+     "attributeId": "081",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1196
+    },
+    {
+     "attribute": "TY Imp. from U.S.",
+     "attributeId": "084",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4621
+    },
+    {
+     "attribute": "Total Supply",
+     "attributeId": "086",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 146
+    },
+    {
+     "attribute": "Exports",
+     "attributeId": "088",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 5227
+    },
+    {
+     "attribute": "TY Exports",
+     "attributeId": "113",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 5221
+    },
+    {
+     "attribute": "Domestic Consumption",
+     "attributeId": "125",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 146
+    },
+    {
+     "attribute": "Ending Stocks",
+     "attributeId": "176",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 3908
+    },
+    {
+     "attribute": "Total Distribution",
+     "attributeId": "178",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 146
+    },
+    {
+     "attribute": "Milling Rate (.9999)",
+     "attributeId": "182",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1736
+    },
+    {
+     "attribute": "Yield",
+     "attributeId": "184",
+     "blank": 0,
+     "commodity": "rice",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7616,
+     "unit": "(MT/HA)",
+     "unitId": "26",
+     "zeros": 1785
+    },
+    {
+     "attribute": "Area Harvested",
+     "attributeId": "004",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 HA)",
+     "unitId": "04",
+     "zeros": 2739
+    },
+    {
+     "attribute": "Beginning Stocks",
+     "attributeId": "020",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 3045
+    },
+    {
+     "attribute": "Production",
+     "attributeId": "028",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 2739
+    },
+    {
+     "attribute": "Imports",
+     "attributeId": "057",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 231
+    },
+    {
+     "attribute": "TY Imports",
+     "attributeId": "081",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 224
+    },
+    {
+     "attribute": "TY Imp. from U.S.",
+     "attributeId": "084",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 3202
+    },
+    {
+     "attribute": "Total Supply",
+     "attributeId": "086",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1
+    },
+    {
+     "attribute": "Exports",
+     "attributeId": "088",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4543
+    },
+    {
+     "attribute": "TY Exports",
+     "attributeId": "113",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4550
+    },
+    {
+     "attribute": "Domestic Consumption",
+     "attributeId": "125",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1
+    },
+    {
+     "attribute": "Feed Dom. Consumption",
+     "attributeId": "130",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 4263
+    },
+    {
+     "attribute": "Ending Stocks",
+     "attributeId": "176",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 2975
+    },
+    {
+     "attribute": "Total Distribution",
+     "attributeId": "178",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1
+    },
+    {
+     "attribute": "Yield",
+     "attributeId": "184",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(MT/HA)",
+     "unitId": "26",
+     "zeros": 2739
+    },
+    {
+     "attribute": "FSI Consumption",
+     "attributeId": "192",
+     "blank": 0,
+     "commodity": "wheat",
+     "firstMarketYear": 1960,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 7754,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 2
+    }
+   ],
+   "bytes": 2871937,
+   "commodityDescriptions": {
+    "corn": "Corn",
+    "rice": "Rice, Milled",
+    "wheat": "Wheat"
+   },
+   "geographies": {
+    "corn": [
+     {
+      "code": "AF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Afghanistan"
+     },
+     {
+      "code": "AG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Algeria"
+     },
+     {
+      "code": "AJ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Azerbaijan"
+     },
+     {
+      "code": "AL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Albania"
+     },
+     {
+      "code": "AM",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1992,
+      "name": "Armenia"
+     },
+     {
+      "code": "AO",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Angola"
+     },
+     {
+      "code": "AR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Argentina"
+     },
+     {
+      "code": "AS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Australia"
+     },
+     {
+      "code": "BC",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Botswana"
+     },
+     {
+      "code": "BG",
+      "firstMarketYear": 2009,
+      "lastMarketYear": 2026,
+      "name": "Bangladesh"
+     },
+     {
+      "code": "BK",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2026,
+      "name": "Bosnia and Herzegovina"
+     },
+     {
+      "code": "BL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Bolivia"
+     },
+     {
+      "code": "BM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burma"
+     },
+     {
+      "code": "BO",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Belarus"
+     },
+     {
+      "code": "BR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Brazil"
+     },
+     {
+      "code": "BT",
+      "firstMarketYear": 1980,
+      "lastMarketYear": 2026,
+      "name": "Bhutan"
+     },
+     {
+      "code": "BU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Bulgaria"
+     },
+     {
+      "code": "BY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burundi"
+     },
+     {
+      "code": "CA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Canada"
+     },
+     {
+      "code": "CB",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cambodia"
+     },
+     {
+      "code": "CD",
+      "firstMarketYear": 1982,
+      "lastMarketYear": 2026,
+      "name": "Chad"
+     },
+     {
+      "code": "CE",
+      "firstMarketYear": 2000,
+      "lastMarketYear": 2026,
+      "name": "Sri Lanka"
+     },
+     {
+      "code": "CF",
+      "firstMarketYear": 1977,
+      "lastMarketYear": 2026,
+      "name": "Congo (Brazzaville)"
+     },
+     {
+      "code": "CG",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Congo (Kinshasa)"
+     },
+     {
+      "code": "CH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "China"
+     },
+     {
+      "code": "CI",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Chile"
+     },
+     {
+      "code": "CM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cameroon"
+     },
+     {
+      "code": "CO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Colombia"
+     },
+     {
+      "code": "CS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Costa Rica"
+     },
+     {
+      "code": "CT",
+      "firstMarketYear": 1977,
+      "lastMarketYear": 2026,
+      "name": "Central African Republic"
+     },
+     {
+      "code": "CU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cuba"
+     },
+     {
+      "code": "CV",
+      "firstMarketYear": 1981,
+      "lastMarketYear": 2026,
+      "name": "Cabo Verde"
+     },
+     {
+      "code": "CY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Cyprus"
+     },
+     {
+      "code": "CZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1991,
+      "name": "Former Czechoslovakia"
+     },
+     {
+      "code": "DM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Benin"
+     },
+     {
+      "code": "DR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Dominican Republic"
+     },
+     {
+      "code": "E2",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "EU-15"
+     },
+     {
+      "code": "E4",
+      "firstMarketYear": 1999,
+      "lastMarketYear": 2026,
+      "name": "European Union"
+     },
+     {
+      "code": "EC",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ecuador"
+     },
+     {
+      "code": "EG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Egypt"
+     },
+     {
+      "code": "EN",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1996,
+      "name": "Estonia"
+     },
+     {
+      "code": "ER",
+      "firstMarketYear": 1993,
+      "lastMarketYear": 2026,
+      "name": "Eritrea"
+     },
+     {
+      "code": "ES",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "El Salvador"
+     },
+     {
+      "code": "ET",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ethiopia"
+     },
+     {
+      "code": "EZ",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Czech Republic"
+     },
+     {
+      "code": "GA",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Gambia, The"
+     },
+     {
+      "code": "GG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Georgia"
+     },
+     {
+      "code": "GH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ghana"
+     },
+     {
+      "code": "GT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guatemala"
+     },
+     {
+      "code": "GU",
+      "firstMarketYear": 1976,
+      "lastMarketYear": 2026,
+      "name": "Guinea"
+     },
+     {
+      "code": "GY",
+      "firstMarketYear": 1974,
+      "lastMarketYear": 2026,
+      "name": "Guyana"
+     },
+     {
+      "code": "HA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Haiti"
+     },
+     {
+      "code": "HK",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Hong Kong"
+     },
+     {
+      "code": "HO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Honduras"
+     },
+     {
+      "code": "HR",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Croatia"
+     },
+     {
+      "code": "HU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Hungary"
+     },
+     {
+      "code": "ID",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Indonesia"
+     },
+     {
+      "code": "IN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "India"
+     },
+     {
+      "code": "IR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Iran"
+     },
+     {
+      "code": "IS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Israel"
+     },
+     {
+      "code": "IV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cote d'Ivoire"
+     },
+     {
+      "code": "IZ",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Iraq"
+     },
+     {
+      "code": "JA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Japan"
+     },
+     {
+      "code": "JM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Jamaica"
+     },
+     {
+      "code": "JO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Jordan"
+     },
+     {
+      "code": "KE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Kenya"
+     },
+     {
+      "code": "KG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Kyrgyzstan"
+     },
+     {
+      "code": "KN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Korea, North"
+     },
+     {
+      "code": "KS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Korea, South"
+     },
+     {
+      "code": "KU",
+      "firstMarketYear": 1974,
+      "lastMarketYear": 2026,
+      "name": "Kuwait"
+     },
+     {
+      "code": "KZ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Kazakhstan"
+     },
+     {
+      "code": "LA",
+      "firstMarketYear": 1995,
+      "lastMarketYear": 2026,
+      "name": "Laos"
+     },
+     {
+      "code": "LE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Lebanon"
+     },
+     {
+      "code": "LG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1998,
+      "name": "Latvia"
+     },
+     {
+      "code": "LH",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1998,
+      "name": "Lithuania"
+     },
+     {
+      "code": "LO",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Slovakia"
+     },
+     {
+      "code": "LT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Lesotho"
+     },
+     {
+      "code": "LY",
+      "firstMarketYear": 1983,
+      "lastMarketYear": 2026,
+      "name": "Libya"
+     },
+     {
+      "code": "MA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Madagascar"
+     },
+     {
+      "code": "MD",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Moldova"
+     },
+     {
+      "code": "MI",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Malawi"
+     },
+     {
+      "code": "MK",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2026,
+      "name": "North Macedonia"
+     },
+     {
+      "code": "ML",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mali"
+     },
+     {
+      "code": "MO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Morocco"
+     },
+     {
+      "code": "MR",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Mauritania"
+     },
+     {
+      "code": "MT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Malta"
+     },
+     {
+      "code": "MU",
+      "firstMarketYear": 2016,
+      "lastMarketYear": 2026,
+      "name": "Oman"
+     },
+     {
+      "code": "MX",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mexico"
+     },
+     {
+      "code": "MY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Malaysia"
+     },
+     {
+      "code": "MZ",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Mozambique"
+     },
+     {
+      "code": "NI",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nigeria"
+     },
+     {
+      "code": "NO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Norway"
+     },
+     {
+      "code": "NP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nepal"
+     },
+     {
+      "code": "NU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nicaragua"
+     },
+     {
+      "code": "NZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "New Zealand"
+     },
+     {
+      "code": "OD",
+      "firstMarketYear": 2011,
+      "lastMarketYear": 2026,
+      "name": "South Sudan"
+     },
+     {
+      "code": "PA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Paraguay"
+     },
+     {
+      "code": "PE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Peru"
+     },
+     {
+      "code": "PK",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Pakistan"
+     },
+     {
+      "code": "PL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Poland"
+     },
+     {
+      "code": "PN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Panama"
+     },
+     {
+      "code": "PU",
+      "firstMarketYear": 1980,
+      "lastMarketYear": 2026,
+      "name": "Guinea-Bissau"
+     },
+     {
+      "code": "QA",
+      "firstMarketYear": 2016,
+      "lastMarketYear": 2026,
+      "name": "Qatar"
+     },
+     {
+      "code": "RB",
+      "firstMarketYear": 2006,
+      "lastMarketYear": 2026,
+      "name": "Serbia"
+     },
+     {
+      "code": "RH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Zimbabwe"
+     },
+     {
+      "code": "RO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Romania"
+     },
+     {
+      "code": "RP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Philippines"
+     },
+     {
+      "code": "RS",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Russia"
+     },
+     {
+      "code": "RW",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Rwanda"
+     },
+     {
+      "code": "SA",
+      "firstMarketYear": 1970,
+      "lastMarketYear": 2026,
+      "name": "Saudi Arabia"
+     },
+     {
+      "code": "SF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "South Africa"
+     },
+     {
+      "code": "SG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Senegal"
+     },
+     {
+      "code": "SI",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Slovenia"
+     },
+     {
+      "code": "SL",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Sierra Leone"
+     },
+     {
+      "code": "SN",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Singapore"
+     },
+     {
+      "code": "SO",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Somalia"
+     },
+     {
+      "code": "SR",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2005,
+      "name": "Serbia and Montenegro"
+     },
+     {
+      "code": "SY",
+      "firstMarketYear": 1974,
+      "lastMarketYear": 2026,
+      "name": "Syria"
+     },
+     {
+      "code": "SZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Switzerland"
+     },
+     {
+      "code": "TC",
+      "firstMarketYear": 2016,
+      "lastMarketYear": 2026,
+      "name": "United Arab Emirates"
+     },
+     {
+      "code": "TD",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Trinidad and Tobago"
+     },
+     {
+      "code": "TH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Thailand"
+     },
+     {
+      "code": "TI",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Tajikistan"
+     },
+     {
+      "code": "TO",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Togo"
+     },
+     {
+      "code": "TS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Tunisia"
+     },
+     {
+      "code": "TU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Turkey"
+     },
+     {
+      "code": "TW",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Taiwan"
+     },
+     {
+      "code": "TX",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Turkmenistan"
+     },
+     {
+      "code": "TZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Tanzania"
+     },
+     {
+      "code": "UG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Uganda"
+     },
+     {
+      "code": "UK",
+      "firstMarketYear": 2016,
+      "lastMarketYear": 2026,
+      "name": "United Kingdom"
+     },
+     {
+      "code": "UP",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Ukraine"
+     },
+     {
+      "code": "UR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1986,
+      "name": "Union of Soviet Socialist Repu"
+     },
+     {
+      "code": "US",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "United States"
+     },
+     {
+      "code": "UV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burkina Faso"
+     },
+     {
+      "code": "UY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Uruguay"
+     },
+     {
+      "code": "UZ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Uzbekistan"
+     },
+     {
+      "code": "VE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Venezuela"
+     },
+     {
+      "code": "VM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Vietnam"
+     },
+     {
+      "code": "WA",
+      "firstMarketYear": 2000,
+      "lastMarketYear": 2026,
+      "name": "Namibia"
+     },
+     {
+      "code": "WZ",
+      "firstMarketYear": 1976,
+      "lastMarketYear": 2026,
+      "name": "Eswatini"
+     },
+     {
+      "code": "YE",
+      "firstMarketYear": 1971,
+      "lastMarketYear": 1990,
+      "name": "Yemen (Sanaa)"
+     },
+     {
+      "code": "YM",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 2026,
+      "name": "Yemen"
+     },
+     {
+      "code": "YO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1991,
+      "name": "Former Yugoslavia"
+     },
+     {
+      "code": "ZA",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Zambia"
+     }
+    ],
+    "rice": [
+     {
+      "code": "AF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Afghanistan"
+     },
+     {
+      "code": "AG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Algeria"
+     },
+     {
+      "code": "AJ",
+      "firstMarketYear": 1993,
+      "lastMarketYear": 2026,
+      "name": "Azerbaijan"
+     },
+     {
+      "code": "AM",
+      "firstMarketYear": 1988,
+      "lastMarketYear": 2016,
+      "name": "Armenia"
+     },
+     {
+      "code": "AO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Angola"
+     },
+     {
+      "code": "AR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Argentina"
+     },
+     {
+      "code": "AS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Australia"
+     },
+     {
+      "code": "BG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Bangladesh"
+     },
+     {
+      "code": "BK",
+      "firstMarketYear": 1990,
+      "lastMarketYear": 2016,
+      "name": "Bosnia and Herzegovina"
+     },
+     {
+      "code": "BL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Bolivia"
+     },
+     {
+      "code": "BM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burma"
+     },
+     {
+      "code": "BO",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Belarus"
+     },
+     {
+      "code": "BR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Brazil"
+     },
+     {
+      "code": "BU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Bulgaria"
+     },
+     {
+      "code": "BX",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Brunei"
+     },
+     {
+      "code": "CA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Canada"
+     },
+     {
+      "code": "CB",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cambodia"
+     },
+     {
+      "code": "CD",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Chad"
+     },
+     {
+      "code": "CE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Sri Lanka"
+     },
+     {
+      "code": "CG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Congo (Kinshasa)"
+     },
+     {
+      "code": "CH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "China"
+     },
+     {
+      "code": "CI",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Chile"
+     },
+     {
+      "code": "CM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cameroon"
+     },
+     {
+      "code": "CO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Colombia"
+     },
+     {
+      "code": "CS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Costa Rica"
+     },
+     {
+      "code": "CU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cuba"
+     },
+     {
+      "code": "CV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1975,
+      "name": "Cabo Verde"
+     },
+     {
+      "code": "CY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1974,
+      "name": "Cyprus"
+     },
+     {
+      "code": "CZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1991,
+      "name": "Former Czechoslovakia"
+     },
+     {
+      "code": "DJ",
+      "firstMarketYear": 1983,
+      "lastMarketYear": 2026,
+      "name": "Djibouti"
+     },
+     {
+      "code": "DM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Benin"
+     },
+     {
+      "code": "DR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Dominican Republic"
+     },
+     {
+      "code": "E2",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "EU-15"
+     },
+     {
+      "code": "E4",
+      "firstMarketYear": 1999,
+      "lastMarketYear": 2026,
+      "name": "European Union"
+     },
+     {
+      "code": "EC",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ecuador"
+     },
+     {
+      "code": "EG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Egypt"
+     },
+     {
+      "code": "EN",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 1998,
+      "name": "Estonia"
+     },
+     {
+      "code": "ES",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "El Salvador"
+     },
+     {
+      "code": "ET",
+      "firstMarketYear": 2015,
+      "lastMarketYear": 2026,
+      "name": "Ethiopia"
+     },
+     {
+      "code": "EZ",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Czech Republic"
+     },
+     {
+      "code": "GA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Gambia, The"
+     },
+     {
+      "code": "GB",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1979,
+      "name": "Gabon"
+     },
+     {
+      "code": "GH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ghana"
+     },
+     {
+      "code": "GT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guatemala"
+     },
+     {
+      "code": "GU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guinea"
+     },
+     {
+      "code": "GY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guyana"
+     },
+     {
+      "code": "HA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Haiti"
+     },
+     {
+      "code": "HK",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Hong Kong"
+     },
+     {
+      "code": "HO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Honduras"
+     },
+     {
+      "code": "HR",
+      "firstMarketYear": 1990,
+      "lastMarketYear": 1998,
+      "name": "Croatia"
+     },
+     {
+      "code": "HU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Hungary"
+     },
+     {
+      "code": "ID",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Indonesia"
+     },
+     {
+      "code": "IN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "India"
+     },
+     {
+      "code": "IR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Iran"
+     },
+     {
+      "code": "IS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Israel"
+     },
+     {
+      "code": "IV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cote d'Ivoire"
+     },
+     {
+      "code": "IZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Iraq"
+     },
+     {
+      "code": "JA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Japan"
+     },
+     {
+      "code": "JM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Jamaica"
+     },
+     {
+      "code": "JO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Jordan"
+     },
+     {
+      "code": "KE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Kenya"
+     },
+     {
+      "code": "KG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Kyrgyzstan"
+     },
+     {
+      "code": "KN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Korea, North"
+     },
+     {
+      "code": "KS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Korea, South"
+     },
+     {
+      "code": "KU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Kuwait"
+     },
+     {
+      "code": "KZ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Kazakhstan"
+     },
+     {
+      "code": "LA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Laos"
+     },
+     {
+      "code": "LE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Lebanon"
+     },
+     {
+      "code": "LI",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Liberia"
+     },
+     {
+      "code": "LO",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Slovakia"
+     },
+     {
+      "code": "LY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Libya"
+     },
+     {
+      "code": "MA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Madagascar"
+     },
+     {
+      "code": "MC",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1979,
+      "name": "Macau"
+     },
+     {
+      "code": "MI",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Malawi"
+     },
+     {
+      "code": "MK",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2026,
+      "name": "North Macedonia"
+     },
+     {
+      "code": "ML",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mali"
+     },
+     {
+      "code": "MO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Morocco"
+     },
+     {
+      "code": "MP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mauritius"
+     },
+     {
+      "code": "MR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mauritania"
+     },
+     {
+      "code": "MU",
+      "firstMarketYear": 1966,
+      "lastMarketYear": 2026,
+      "name": "Oman"
+     },
+     {
+      "code": "MX",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mexico"
+     },
+     {
+      "code": "MY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Malaysia"
+     },
+     {
+      "code": "MZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mozambique"
+     },
+     {
+      "code": "NG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Niger"
+     },
+     {
+      "code": "NI",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nigeria"
+     },
+     {
+      "code": "NO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1979,
+      "name": "Norway"
+     },
+     {
+      "code": "NP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nepal"
+     },
+     {
+      "code": "NS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Suriname"
+     },
+     {
+      "code": "NU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nicaragua"
+     },
+     {
+      "code": "NZ",
+      "firstMarketYear": 1997,
+      "lastMarketYear": 2026,
+      "name": "New Zealand"
+     },
+     {
+      "code": "PA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Paraguay"
+     },
+     {
+      "code": "PE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Peru"
+     },
+     {
+      "code": "PK",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Pakistan"
+     },
+     {
+      "code": "PL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Poland"
+     },
+     {
+      "code": "PN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Panama"
+     },
+     {
+      "code": "PP",
+      "firstMarketYear": 1963,
+      "lastMarketYear": 2026,
+      "name": "Papua New Guinea"
+     },
+     {
+      "code": "PU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guinea-Bissau"
+     },
+     {
+      "code": "QA",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 2026,
+      "name": "Qatar"
+     },
+     {
+      "code": "RE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2022,
+      "name": "Reunion"
+     },
+     {
+      "code": "RO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Romania"
+     },
+     {
+      "code": "RP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Philippines"
+     },
+     {
+      "code": "RS",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Russia"
+     },
+     {
+      "code": "RW",
+      "firstMarketYear": 2000,
+      "lastMarketYear": 2026,
+      "name": "Rwanda"
+     },
+     {
+      "code": "SA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Saudi Arabia"
+     },
+     {
+      "code": "SF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "South Africa"
+     },
+     {
+      "code": "SG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Senegal"
+     },
+     {
+      "code": "SI",
+      "firstMarketYear": 1990,
+      "lastMarketYear": 1998,
+      "name": "Slovenia"
+     },
+     {
+      "code": "SL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Sierra Leone"
+     },
+     {
+      "code": "SN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Singapore"
+     },
+     {
+      "code": "SO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Somalia"
+     },
+     {
+      "code": "SU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Sudan"
+     },
+     {
+      "code": "SY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Syria"
+     },
+     {
+      "code": "SZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Switzerland"
+     },
+     {
+      "code": "TC",
+      "firstMarketYear": 1969,
+      "lastMarketYear": 2026,
+      "name": "United Arab Emirates"
+     },
+     {
+      "code": "TD",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2022,
+      "name": "Trinidad and Tobago"
+     },
+     {
+      "code": "TH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Thailand"
+     },
+     {
+      "code": "TI",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Tajikistan"
+     },
+     {
+      "code": "TO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Togo"
+     },
+     {
+      "code": "TU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Turkey"
+     },
+     {
+      "code": "TW",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Taiwan"
+     },
+     {
+      "code": "TX",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Turkmenistan"
+     },
+     {
+      "code": "TZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Tanzania"
+     },
+     {
+      "code": "UG",
+      "firstMarketYear": 2000,
+      "lastMarketYear": 2026,
+      "name": "Uganda"
+     },
+     {
+      "code": "UK",
+      "firstMarketYear": 2016,
+      "lastMarketYear": 2026,
+      "name": "United Kingdom"
+     },
+     {
+      "code": "UP",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Ukraine"
+     },
+     {
+      "code": "UR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1986,
+      "name": "Union of Soviet Socialist Repu"
+     },
+     {
+      "code": "US",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "United States"
+     },
+     {
+      "code": "UV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burkina Faso"
+     },
+     {
+      "code": "UY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Uruguay"
+     },
+     {
+      "code": "UZ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Uzbekistan"
+     },
+     {
+      "code": "VE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Venezuela"
+     },
+     {
+      "code": "VM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Vietnam"
+     },
+     {
+      "code": "WZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Eswatini"
+     },
+     {
+      "code": "YE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1990,
+      "name": "Yemen (Sanaa)"
+     },
+     {
+      "code": "YM",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 2026,
+      "name": "Yemen"
+     },
+     {
+      "code": "YO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1990,
+      "name": "Former Yugoslavia"
+     },
+     {
+      "code": "YS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1990,
+      "name": "Yemen (Aden)"
+     },
+     {
+      "code": "ZA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Zambia"
+     }
+    ],
+    "wheat": [
+     {
+      "code": "AF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Afghanistan"
+     },
+     {
+      "code": "AG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Algeria"
+     },
+     {
+      "code": "AJ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Azerbaijan"
+     },
+     {
+      "code": "AL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Albania"
+     },
+     {
+      "code": "AM",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Armenia"
+     },
+     {
+      "code": "AO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Angola"
+     },
+     {
+      "code": "AR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Argentina"
+     },
+     {
+      "code": "AS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Australia"
+     },
+     {
+      "code": "BA",
+      "firstMarketYear": 1980,
+      "lastMarketYear": 2026,
+      "name": "Bahrain"
+     },
+     {
+      "code": "BB",
+      "firstMarketYear": 1982,
+      "lastMarketYear": 2022,
+      "name": "Barbados"
+     },
+     {
+      "code": "BG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Bangladesh"
+     },
+     {
+      "code": "BK",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2026,
+      "name": "Bosnia and Herzegovina"
+     },
+     {
+      "code": "BL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Bolivia"
+     },
+     {
+      "code": "BM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burma"
+     },
+     {
+      "code": "BO",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Belarus"
+     },
+     {
+      "code": "BR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Brazil"
+     },
+     {
+      "code": "BT",
+      "firstMarketYear": 1980,
+      "lastMarketYear": 2022,
+      "name": "Bhutan"
+     },
+     {
+      "code": "BU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Bulgaria"
+     },
+     {
+      "code": "CA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Canada"
+     },
+     {
+      "code": "CD",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Chad"
+     },
+     {
+      "code": "CE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Sri Lanka"
+     },
+     {
+      "code": "CF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Congo (Brazzaville)"
+     },
+     {
+      "code": "CG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Congo (Kinshasa)"
+     },
+     {
+      "code": "CH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "China"
+     },
+     {
+      "code": "CI",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Chile"
+     },
+     {
+      "code": "CM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cameroon"
+     },
+     {
+      "code": "CO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Colombia"
+     },
+     {
+      "code": "CS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Costa Rica"
+     },
+     {
+      "code": "CU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cuba"
+     },
+     {
+      "code": "CY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Cyprus"
+     },
+     {
+      "code": "CZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1991,
+      "name": "Former Czechoslovakia"
+     },
+     {
+      "code": "DM",
+      "firstMarketYear": 2010,
+      "lastMarketYear": 2026,
+      "name": "Benin"
+     },
+     {
+      "code": "DR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Dominican Republic"
+     },
+     {
+      "code": "E2",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "EU-15"
+     },
+     {
+      "code": "E4",
+      "firstMarketYear": 1999,
+      "lastMarketYear": 2026,
+      "name": "European Union"
+     },
+     {
+      "code": "EC",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ecuador"
+     },
+     {
+      "code": "EG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Egypt"
+     },
+     {
+      "code": "EN",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1998,
+      "name": "Estonia"
+     },
+     {
+      "code": "ER",
+      "firstMarketYear": 1993,
+      "lastMarketYear": 2026,
+      "name": "Eritrea"
+     },
+     {
+      "code": "ES",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "El Salvador"
+     },
+     {
+      "code": "ET",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ethiopia"
+     },
+     {
+      "code": "EZ",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Czech Republic"
+     },
+     {
+      "code": "FJ",
+      "firstMarketYear": 1963,
+      "lastMarketYear": 2026,
+      "name": "Fiji"
+     },
+     {
+      "code": "GB",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Gabon"
+     },
+     {
+      "code": "GG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Georgia"
+     },
+     {
+      "code": "GH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Ghana"
+     },
+     {
+      "code": "GT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guatemala"
+     },
+     {
+      "code": "GU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guinea"
+     },
+     {
+      "code": "GY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Guyana"
+     },
+     {
+      "code": "HA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Haiti"
+     },
+     {
+      "code": "HK",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Hong Kong"
+     },
+     {
+      "code": "HO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Honduras"
+     },
+     {
+      "code": "HR",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Croatia"
+     },
+     {
+      "code": "HU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Hungary"
+     },
+     {
+      "code": "ID",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Indonesia"
+     },
+     {
+      "code": "IN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "India"
+     },
+     {
+      "code": "IR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Iran"
+     },
+     {
+      "code": "IS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Israel"
+     },
+     {
+      "code": "IV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Cote d'Ivoire"
+     },
+     {
+      "code": "IZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Iraq"
+     },
+     {
+      "code": "JA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Japan"
+     },
+     {
+      "code": "JM",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Jamaica"
+     },
+     {
+      "code": "JO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Jordan"
+     },
+     {
+      "code": "KE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Kenya"
+     },
+     {
+      "code": "KG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Kyrgyzstan"
+     },
+     {
+      "code": "KN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Korea, North"
+     },
+     {
+      "code": "KS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Korea, South"
+     },
+     {
+      "code": "KU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Kuwait"
+     },
+     {
+      "code": "KZ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Kazakhstan"
+     },
+     {
+      "code": "LE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Lebanon"
+     },
+     {
+      "code": "LG",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1998,
+      "name": "Latvia"
+     },
+     {
+      "code": "LH",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 1998,
+      "name": "Lithuania"
+     },
+     {
+      "code": "LI",
+      "firstMarketYear": 1976,
+      "lastMarketYear": 2026,
+      "name": "Liberia"
+     },
+     {
+      "code": "LO",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Slovakia"
+     },
+     {
+      "code": "LT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Lesotho"
+     },
+     {
+      "code": "LY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Libya"
+     },
+     {
+      "code": "MA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Madagascar"
+     },
+     {
+      "code": "MD",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Moldova"
+     },
+     {
+      "code": "MG",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Mongolia"
+     },
+     {
+      "code": "MI",
+      "firstMarketYear": 2010,
+      "lastMarketYear": 2026,
+      "name": "Malawi"
+     },
+     {
+      "code": "MK",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2026,
+      "name": "North Macedonia"
+     },
+     {
+      "code": "ML",
+      "firstMarketYear": 1990,
+      "lastMarketYear": 2026,
+      "name": "Mali"
+     },
+     {
+      "code": "MO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Morocco"
+     },
+     {
+      "code": "MP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mauritius"
+     },
+     {
+      "code": "MR",
+      "firstMarketYear": 1961,
+      "lastMarketYear": 2026,
+      "name": "Mauritania"
+     },
+     {
+      "code": "MT",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Malta"
+     },
+     {
+      "code": "MU",
+      "firstMarketYear": 1981,
+      "lastMarketYear": 2026,
+      "name": "Oman"
+     },
+     {
+      "code": "MX",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mexico"
+     },
+     {
+      "code": "MY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Malaysia"
+     },
+     {
+      "code": "MZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Mozambique"
+     },
+     {
+      "code": "NG",
+      "firstMarketYear": 1982,
+      "lastMarketYear": 2026,
+      "name": "Niger"
+     },
+     {
+      "code": "NI",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nigeria"
+     },
+     {
+      "code": "NO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Norway"
+     },
+     {
+      "code": "NP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nepal"
+     },
+     {
+      "code": "NU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Nicaragua"
+     },
+     {
+      "code": "NZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "New Zealand"
+     },
+     {
+      "code": "PA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Paraguay"
+     },
+     {
+      "code": "PE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Peru"
+     },
+     {
+      "code": "PK",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Pakistan"
+     },
+     {
+      "code": "PL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Poland"
+     },
+     {
+      "code": "PN",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Panama"
+     },
+     {
+      "code": "PP",
+      "firstMarketYear": 1982,
+      "lastMarketYear": 2026,
+      "name": "Papua New Guinea"
+     },
+     {
+      "code": "RB",
+      "firstMarketYear": 2006,
+      "lastMarketYear": 2026,
+      "name": "Serbia"
+     },
+     {
+      "code": "RH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Zimbabwe"
+     },
+     {
+      "code": "RO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1998,
+      "name": "Romania"
+     },
+     {
+      "code": "RP",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Philippines"
+     },
+     {
+      "code": "RS",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Russia"
+     },
+     {
+      "code": "RW",
+      "firstMarketYear": 2010,
+      "lastMarketYear": 2026,
+      "name": "Rwanda"
+     },
+     {
+      "code": "SA",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Saudi Arabia"
+     },
+     {
+      "code": "SF",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "South Africa"
+     },
+     {
+      "code": "SG",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Senegal"
+     },
+     {
+      "code": "SI",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1998,
+      "name": "Slovenia"
+     },
+     {
+      "code": "SL",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Sierra Leone"
+     },
+     {
+      "code": "SN",
+      "firstMarketYear": 1965,
+      "lastMarketYear": 2026,
+      "name": "Singapore"
+     },
+     {
+      "code": "SO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Somalia"
+     },
+     {
+      "code": "SR",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2005,
+      "name": "Serbia and Montenegro"
+     },
+     {
+      "code": "SU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Sudan"
+     },
+     {
+      "code": "SY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Syria"
+     },
+     {
+      "code": "SZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Switzerland"
+     },
+     {
+      "code": "TC",
+      "firstMarketYear": 1971,
+      "lastMarketYear": 2026,
+      "name": "United Arab Emirates"
+     },
+     {
+      "code": "TD",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Trinidad and Tobago"
+     },
+     {
+      "code": "TH",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Thailand"
+     },
+     {
+      "code": "TI",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Tajikistan"
+     },
+     {
+      "code": "TO",
+      "firstMarketYear": 1983,
+      "lastMarketYear": 2026,
+      "name": "Togo"
+     },
+     {
+      "code": "TS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Tunisia"
+     },
+     {
+      "code": "TU",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Turkey"
+     },
+     {
+      "code": "TW",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Taiwan"
+     },
+     {
+      "code": "TX",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Turkmenistan"
+     },
+     {
+      "code": "TZ",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Tanzania"
+     },
+     {
+      "code": "UG",
+      "firstMarketYear": 2010,
+      "lastMarketYear": 2026,
+      "name": "Uganda"
+     },
+     {
+      "code": "UK",
+      "firstMarketYear": 2016,
+      "lastMarketYear": 2026,
+      "name": "United Kingdom"
+     },
+     {
+      "code": "UP",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Ukraine"
+     },
+     {
+      "code": "UR",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1986,
+      "name": "Union of Soviet Socialist Repu"
+     },
+     {
+      "code": "US",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "United States"
+     },
+     {
+      "code": "UV",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Burkina Faso"
+     },
+     {
+      "code": "UY",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Uruguay"
+     },
+     {
+      "code": "UZ",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Uzbekistan"
+     },
+     {
+      "code": "VE",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 2026,
+      "name": "Venezuela"
+     },
+     {
+      "code": "VM",
+      "firstMarketYear": 1963,
+      "lastMarketYear": 2026,
+      "name": "Vietnam"
+     },
+     {
+      "code": "WA",
+      "firstMarketYear": 2010,
+      "lastMarketYear": 2026,
+      "name": "Namibia"
+     },
+     {
+      "code": "YE",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 1990,
+      "name": "Yemen (Sanaa)"
+     },
+     {
+      "code": "YM",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 2026,
+      "name": "Yemen"
+     },
+     {
+      "code": "YO",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1991,
+      "name": "Former Yugoslavia"
+     },
+     {
+      "code": "YS",
+      "firstMarketYear": 1960,
+      "lastMarketYear": 1990,
+      "name": "Yemen (Aden)"
+     },
+     {
+      "code": "ZA",
+      "firstMarketYear": 1963,
+      "lastMarketYear": 2026,
+      "name": "Zambia"
+     }
+    ]
+   },
+   "header": [
+    "Commodity_Code",
+    "Commodity_Description",
+    "Country_Code",
+    "Country_Name",
+    "Market_Year",
+    "Calendar_Year",
+    "Month",
+    "Attribute_ID",
+    "Attribute_Description",
+    "Unit_ID",
+    "Unit_Description",
+    "Value"
+   ],
+   "latestMarketYear": {
+    "corn": 2026,
+    "rice": 2026,
+    "wheat": 2026
+   },
+   "releaseMonthsForLatestMarketYear": {
+    "corn": [
+     "2026-09"
+    ],
+    "rice": [
+     "2026-09"
+    ],
+    "wheat": [
+     "2026-09"
+    ]
+   },
+   "url": "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip"
+  },
+  "oilseeds": {
+   "absoluteYoYPctByAttribute": {
+    "soybean|Area Harvested": {
+     "count": 1176,
+     "max": 550.0,
+     "p50": 6.360553569791949,
+     "p75": 17.741935483870975,
+     "p90": 42.85714285714286
+    },
+    "soybean|Beginning Stocks": {
+     "count": 1175,
+     "max": 11200.0,
+     "p50": 34.48389217619987,
+     "p75": 74.4186046511628,
+     "p90": 143.75
+    },
+    "soybean|Crush": {
+     "count": 1434,
+     "max": 5900.0,
+     "p50": 8.695652173913038,
+     "p75": 23.33333333333334,
+     "p90": 52.38095238095237
+    },
+    "soybean|Domestic Consumption": {
+     "count": 1586,
+     "max": 14100.0,
+     "p50": 8.92857142857142,
+     "p75": 24.0,
+     "p90": 56.25
+    },
+    "soybean|Ending Stocks": {
+     "count": 1194,
+     "max": 11200.0,
+     "p50": 33.333333333333336,
+     "p75": 72.23587223587225,
+     "p90": 130.31914893617022
+    },
+    "soybean|Exports": {
+     "count": 713,
+     "max": 11400.0,
+     "p50": 35.33507997793712,
+     "p75": 87.5,
+     "p90": 153.19148936170214
+    },
+    "soybean|Feed Waste Dom. Cons.": {
+     "count": 1267,
+     "max": 2900.0,
+     "p50": 6.711409395973156,
+     "p75": 25.0,
+     "p90": 66.66666666666667
+    },
+    "soybean|Food Use Dom. Cons.": {
+     "count": 788,
+     "max": 200.0,
+     "p50": 0.0,
+     "p75": 6.06635071090047,
+     "p90": 25.0
+    },
+    "soybean|Imports": {
+     "count": 1380,
+     "max": 33700.0,
+     "p50": 19.23076923076923,
+     "p75": 54.54545454545454,
+     "p90": 100.0
+    },
+    "soybean|Production": {
+     "count": 1176,
+     "max": 2000.0,
+     "p50": 8.6326163176348,
+     "p75": 25.0,
+     "p90": 50.0
+    },
+    "soybean|Total Distribution": {
+     "count": 1593,
+     "max": 15800.0,
+     "p50": 10.358565737051794,
+     "p75": 25.396825396825395,
+     "p90": 56.666666666666664
+    },
+    "soybean|Total Supply": {
+     "count": 1593,
+     "max": 15800.0,
+     "p50": 10.358565737051794,
+     "p75": 25.396825396825395,
+     "p90": 56.666666666666664
+    },
+    "soybean|Yield": {
+     "count": 1176,
+     "max": 394.00000000000006,
+     "p50": 5.084745762711851,
+     "p75": 15.048543689320383,
+     "p90": 30.263157894736835
+    }
+   },
+   "attributes": [
+    {
+     "attribute": "Area Harvested",
+     "attributeId": "004",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 HA)",
+     "unitId": "04",
+     "zeros": 1202
+    },
+    {
+     "attribute": "Crush",
+     "attributeId": "007",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 477
+    },
+    {
+     "attribute": "Beginning Stocks",
+     "attributeId": "020",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1715
+    },
+    {
+     "attribute": "Production",
+     "attributeId": "028",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1202
+    },
+    {
+     "attribute": "Imports",
+     "attributeId": "057",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 821
+    },
+    {
+     "attribute": "Total Supply",
+     "attributeId": "086",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 32
+    },
+    {
+     "attribute": "Exports",
+     "attributeId": "088",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 2473
+    },
+    {
+     "attribute": "Domestic Consumption",
+     "attributeId": "125",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 3,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 58
+    },
+    {
+     "attribute": "Food Use Dom. Cons.",
+     "attributeId": "149",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 2288
+    },
+    {
+     "attribute": "Feed Waste Dom. Cons.",
+     "attributeId": "161",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 5,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1048
+    },
+    {
+     "attribute": "Ending Stocks",
+     "attributeId": "176",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 1667
+    },
+    {
+     "attribute": "Total Distribution",
+     "attributeId": "178",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(1000 MT)",
+     "unitId": "08",
+     "zeros": 32
+    },
+    {
+     "attribute": "Yield",
+     "attributeId": "184",
+     "blank": 0,
+     "commodity": "soybean",
+     "firstMarketYear": 1964,
+     "lastMarketYear": 2026,
+     "negatives": 0,
+     "rows": 3808,
+     "unit": "(MT/HA)",
+     "unitId": "26",
+     "zeros": 1202
+    }
+   ],
+   "bytes": 3842357,
+   "commodityDescriptions": {
+    "soybean": "Oilseed, Soybean"
+   },
+   "geographies": {
+    "soybean": [
+     {
+      "code": "AG",
+      "firstMarketYear": 2015,
+      "lastMarketYear": 2026,
+      "name": "Algeria"
+     },
+     {
+      "code": "AR",
+      "firstMarketYear": 1977,
+      "lastMarketYear": 2026,
+      "name": "Argentina"
+     },
+     {
+      "code": "AS",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Australia"
+     },
+     {
+      "code": "AU",
+      "firstMarketYear": 1978,
+      "lastMarketYear": 1990,
+      "name": "Austria"
+     },
+     {
+      "code": "BB",
+      "firstMarketYear": 1995,
+      "lastMarketYear": 2026,
+      "name": "Barbados"
+     },
+     {
+      "code": "BE",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Belgium-Luxembourg"
+     },
+     {
+      "code": "BG",
+      "firstMarketYear": 2001,
+      "lastMarketYear": 2026,
+      "name": "Bangladesh"
+     },
+     {
+      "code": "BK",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 2026,
+      "name": "Bosnia and Herzegovina"
+     },
+     {
+      "code": "BL",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 2026,
+      "name": "Bolivia"
+     },
+     {
+      "code": "BM",
+      "firstMarketYear": 1969,
+      "lastMarketYear": 2026,
+      "name": "Burma"
+     },
+     {
+      "code": "BO",
+      "firstMarketYear": 2015,
+      "lastMarketYear": 2026,
+      "name": "Belarus"
+     },
+     {
+      "code": "BR",
+      "firstMarketYear": 1977,
+      "lastMarketYear": 2026,
+      "name": "Brazil"
+     },
+     {
+      "code": "CA",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Canada"
+     },
+     {
+      "code": "CH",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "China"
+     },
+     {
+      "code": "CI",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 2026,
+      "name": "Chile"
+     },
+     {
+      "code": "CO",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Colombia"
+     },
+     {
+      "code": "CS",
+      "firstMarketYear": 1985,
+      "lastMarketYear": 2026,
+      "name": "Costa Rica"
+     },
+     {
+      "code": "CU",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Cuba"
+     },
+     {
+      "code": "CZ",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1992,
+      "name": "Former Czechoslovakia"
+     },
+     {
+      "code": "DA",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Denmark"
+     },
+     {
+      "code": "DM",
+      "firstMarketYear": 2014,
+      "lastMarketYear": 2026,
+      "name": "Benin"
+     },
+     {
+      "code": "DR",
+      "firstMarketYear": 1972,
+      "lastMarketYear": 1995,
+      "name": "Dominican Republic"
+     },
+     {
+      "code": "E2",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 1998,
+      "name": "EU-15"
+     },
+     {
+      "code": "E4",
+      "firstMarketYear": 1999,
+      "lastMarketYear": 2026,
+      "name": "European Union"
+     },
+     {
+      "code": "EC",
+      "firstMarketYear": 1970,
+      "lastMarketYear": 2026,
+      "name": "Ecuador"
+     },
+     {
+      "code": "EG",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 2026,
+      "name": "Egypt"
+     },
+     {
+      "code": "EI",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Ireland"
+     },
+     {
+      "code": "EN",
+      "firstMarketYear": 1992,
+      "lastMarketYear": 1997,
+      "name": "Estonia"
+     },
+     {
+      "code": "ET",
+      "firstMarketYear": 2004,
+      "lastMarketYear": 2026,
+      "name": "Ethiopia"
+     },
+     {
+      "code": "FI",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Finland"
+     },
+     {
+      "code": "FR",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "France"
+     },
+     {
+      "code": "GC",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "German Democratic Republic"
+     },
+     {
+      "code": "GE",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Germany, Federal Republic of"
+     },
+     {
+      "code": "GH",
+      "firstMarketYear": 2010,
+      "lastMarketYear": 2026,
+      "name": "Ghana"
+     },
+     {
+      "code": "GR",
+      "firstMarketYear": 1965,
+      "lastMarketYear": 1990,
+      "name": "Greece"
+     },
+     {
+      "code": "GT",
+      "firstMarketYear": 1975,
+      "lastMarketYear": 2026,
+      "name": "Guatemala"
+     },
+     {
+      "code": "GY",
+      "firstMarketYear": 1983,
+      "lastMarketYear": 1989,
+      "name": "Guyana"
+     },
+     {
+      "code": "HA",
+      "firstMarketYear": 1980,
+      "lastMarketYear": 1985,
+      "name": "Haiti"
+     },
+     {
+      "code": "HO",
+      "firstMarketYear": 1986,
+      "lastMarketYear": 1997,
+      "name": "Honduras"
+     },
+     {
+      "code": "HR",
+      "firstMarketYear": 1990,
+      "lastMarketYear": 1998,
+      "name": "Croatia"
+     },
+     {
+      "code": "HU",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1998,
+      "name": "Hungary"
+     },
+     {
+      "code": "ID",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Indonesia"
+     },
+     {
+      "code": "IN",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "India"
+     },
+     {
+      "code": "IR",
+      "firstMarketYear": 1965,
+      "lastMarketYear": 2026,
+      "name": "Iran"
+     },
+     {
+      "code": "IS",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Israel"
+     },
+     {
+      "code": "IT",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Italy"
+     },
+     {
+      "code": "IV",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 1991,
+      "name": "Cote d'Ivoire"
+     },
+     {
+      "code": "IZ",
+      "firstMarketYear": 1973,
+      "lastMarketYear": 2026,
+      "name": "Iraq"
+     },
+     {
+      "code": "JA",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Japan"
+     },
+     {
+      "code": "JM",
+      "firstMarketYear": 1967,
+      "lastMarketYear": 1995,
+      "name": "Jamaica"
+     },
+     {
+      "code": "KN",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Korea, North"
+     },
+     {
+      "code": "KS",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Korea, South"
+     },
+     {
+      "code": "KZ",
+      "firstMarketYear": 2005,
+      "lastMarketYear": 2026,
+      "name": "Kazakhstan"
+     },
+     {
+      "code": "LE",
+      "firstMarketYear": 2014,
+      "lastMarketYear": 2026,
+      "name": "Lebanon"
+     },
+     {
+      "code": "MK",
+      "firstMarketYear": 1991,
+      "lastMarketYear": 1992,
+      "name": "North Macedonia"
+     },
+     {
+      "code": "MO",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Morocco"
+     },
+     {
+      "code": "MX",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Mexico"
+     },
+     {
+      "code": "MY",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Malaysia"
+     },
+     {
+      "code": "NI",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Nigeria"
+     },
+     {
+      "code": "NL",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Netherlands"
+     },
+     {
+      "code": "NO",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Norway"
+     },
+     {
+      "code": "NU",
+      "firstMarketYear": 1969,
+      "lastMarketYear": 2026,
+      "name": "Nicaragua"
+     },
+     {
+      "code": "PA",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Paraguay"
+     },
+     {
+      "code": "PE",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Peru"
+     },
+     {
+      "code": "PK",
+      "firstMarketYear": 1981,
+      "lastMarketYear": 2026,
+      "name": "Pakistan"
+     },
+     {
+      "code": "PL",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1998,
+      "name": "Poland"
+     },
+     {
+      "code": "PN",
+      "firstMarketYear": 1982,
+      "lastMarketYear": 2026,
+      "name": "Panama"
+     },
+     {
+      "code": "PO",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 1990,
+      "name": "Portugal"
+     },
+     {
+      "code": "RB",
+      "firstMarketYear": 2006,
+      "lastMarketYear": 2026,
+      "name": "Serbia"
+     },
+     {
+      "code": "RH",
+      "firstMarketYear": 1967,
+      "lastMarketYear": 2026,
+      "name": "Zimbabwe"
+     },
+     {
+      "code": "RO",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1998,
+      "name": "Romania"
+     },
+     {
+      "code": "RP",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Philippines"
+     },
+     {
+      "code": "RS",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Russia"
+     },
+     {
+      "code": "SA",
+      "firstMarketYear": 2005,
+      "lastMarketYear": 2026,
+      "name": "Saudi Arabia"
+     },
+     {
+      "code": "SF",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "South Africa"
+     },
+     {
+      "code": "SN",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Singapore"
+     },
+     {
+      "code": "SP",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Spain"
+     },
+     {
+      "code": "SR",
+      "firstMarketYear": 1990,
+      "lastMarketYear": 2005,
+      "name": "Serbia and Montenegro"
+     },
+     {
+      "code": "SW",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1990,
+      "name": "Sweden"
+     },
+     {
+      "code": "SY",
+      "firstMarketYear": 1988,
+      "lastMarketYear": 2026,
+      "name": "Syria"
+     },
+     {
+      "code": "SZ",
+      "firstMarketYear": 1968,
+      "lastMarketYear": 2026,
+      "name": "Switzerland"
+     },
+     {
+      "code": "TC",
+      "firstMarketYear": 1999,
+      "lastMarketYear": 2026,
+      "name": "United Arab Emirates"
+     },
+     {
+      "code": "TD",
+      "firstMarketYear": 1984,
+      "lastMarketYear": 2026,
+      "name": "Trinidad and Tobago"
+     },
+     {
+      "code": "TH",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Thailand"
+     },
+     {
+      "code": "TS",
+      "firstMarketYear": 1979,
+      "lastMarketYear": 2026,
+      "name": "Tunisia"
+     },
+     {
+      "code": "TU",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Turkey"
+     },
+     {
+      "code": "TW",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Taiwan"
+     },
+     {
+      "code": "UG",
+      "firstMarketYear": 1989,
+      "lastMarketYear": 2026,
+      "name": "Uganda"
+     },
+     {
+      "code": "UK",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "United Kingdom"
+     },
+     {
+      "code": "UP",
+      "firstMarketYear": 1987,
+      "lastMarketYear": 2026,
+      "name": "Ukraine"
+     },
+     {
+      "code": "UR",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1986,
+      "name": "Union of Soviet Socialist Repu"
+     },
+     {
+      "code": "US",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "United States"
+     },
+     {
+      "code": "UY",
+      "firstMarketYear": 1965,
+      "lastMarketYear": 2026,
+      "name": "Uruguay"
+     },
+     {
+      "code": "UZ",
+      "firstMarketYear": 1995,
+      "lastMarketYear": 2026,
+      "name": "Uzbekistan"
+     },
+     {
+      "code": "VE",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 2026,
+      "name": "Venezuela"
+     },
+     {
+      "code": "VM",
+      "firstMarketYear": 1972,
+      "lastMarketYear": 2026,
+      "name": "Vietnam"
+     },
+     {
+      "code": "YO",
+      "firstMarketYear": 1964,
+      "lastMarketYear": 1989,
+      "name": "Former Yugoslavia"
+     },
+     {
+      "code": "ZA",
+      "firstMarketYear": 1978,
+      "lastMarketYear": 2026,
+      "name": "Zambia"
+     }
+    ]
+   },
+   "header": [
+    "Commodity_Code",
+    "Commodity_Description",
+    "Country_Code",
+    "Country_Name",
+    "Market_Year",
+    "Calendar_Year",
+    "Month",
+    "Attribute_ID",
+    "Attribute_Description",
+    "Unit_ID",
+    "Unit_Description",
+    "Value"
+   ],
+   "latestMarketYear": {
+    "soybean": 2026
+   },
+   "releaseMonthsForLatestMarketYear": {
+    "soybean": [
+     "2026-09"
+    ]
+   },
+   "url": "https://apps.fas.usda.gov/psdonline/downloads/psd_oilseeds_csv.zip"
+  }
+ },
+ "purpose": "G1.0 read-only structure audit; not production data"
+}
