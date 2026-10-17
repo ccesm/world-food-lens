@@ -8129,9 +8129,17 @@
           "rain": 2.84,
           "rootWetness": 0.68,
           "surfaceWetness": 0.57
+        },
+        {
+          "date": "2026-10-13",
+          "max": 24.42,
+          "min": 11.17,
+          "rain": 0.32,
+          "rootWetness": 0.68,
+          "surfaceWetness": 0.6
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -8336,36 +8344,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/iowa",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "c7101e8509eb198bd0fe9d2ca0e2c31fbce782a5cd1e416cb82bbaf02fe09026",
+          "contentHash": "eb9fe264096579fefb9b79086d419f8d951369d3da24cebd79f817c9af40a86c",
           "observationId": null,
           "revisionId": null
         },
@@ -16501,9 +16509,17 @@
           "rain": 0.67,
           "rootWetness": 0.45,
           "surfaceWetness": 0.31
+        },
+        {
+          "date": "2026-10-13",
+          "max": 33.08,
+          "min": 22.07,
+          "rain": 3.38,
+          "rootWetness": 0.45,
+          "surfaceWetness": 0.38
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -16708,36 +16724,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/kansas",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "b3d44bf947077b9c58bbf3178930bc118051cec8c120e73db1232fa1a5e1c988",
+          "contentHash": "20e35e5aa69177102859663fd89186ab682372945be8a2d11743c9835f6a1710",
           "observationId": null,
           "revisionId": null
         },
@@ -24873,9 +24889,17 @@
           "rain": 0.21,
           "rootWetness": 0.48,
           "surfaceWetness": 0.45
+        },
+        {
+          "date": "2026-10-13",
+          "max": 11.15,
+          "min": -2.34,
+          "rain": 0.0,
+          "rootWetness": 0.48,
+          "surfaceWetness": 0.45
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -25075,41 +25099,41 @@
       },
       "climatologyUrl": "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=GWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=1991&end=2020&format=JSON",
       "providerSources": [
-        "MERRA2",
         "GEOSIT",
+        "MERRA2",
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/saskatchewan",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "84684ebe47628ec32bae3f2680efa24e786c92735b43efc34e9b9d322e831d63",
+          "contentHash": "da48ba809b78e4570be0b2a7557633f54e09ddb110cc72db991ed3520e9ed382",
           "observationId": null,
           "revisionId": null
         },
@@ -33245,9 +33269,17 @@
           "rain": 0.5,
           "rootWetness": 0.54,
           "surfaceWetness": 0.47
+        },
+        {
+          "date": "2026-10-13",
+          "max": 22.92,
+          "min": 11.64,
+          "rain": 0.48,
+          "rootWetness": 0.54,
+          "surfaceWetness": 0.47
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -33452,36 +33484,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/france",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "3e6aab46faf5bd9cfa1ca3af151cb64a324bd74614b72838b800748938a044c2",
+          "contentHash": "3393cb0fd46003aca404e35c5e22644ff8f2abdfbaed8641ba2169ec729b9eec",
           "observationId": null,
           "revisionId": null
         },
@@ -41617,9 +41649,17 @@
           "rain": 0.04,
           "rootWetness": 0.48,
           "surfaceWetness": 0.43
+        },
+        {
+          "date": "2026-10-13",
+          "max": 14.91,
+          "min": 2.96,
+          "rain": 0.5,
+          "rootWetness": 0.48,
+          "surfaceWetness": 0.42
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -41824,36 +41864,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/germany",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "89ba86c8d5c2dd997e6f015f75b577d6359c5760e561b2b01847bb7f6137e7e1",
+          "contentHash": "18b2bae977e057d0f2d406bd68c26ad51c66495bd03ec175bad8762e2a3bb66e",
           "observationId": null,
           "revisionId": null
         },
@@ -49989,9 +50029,17 @@
           "rain": 0.0,
           "rootWetness": 0.42,
           "surfaceWetness": 0.29
+        },
+        {
+          "date": "2026-10-13",
+          "max": 22.4,
+          "min": 14.97,
+          "rain": 2.47,
+          "rootWetness": 0.42,
+          "surfaceWetness": 0.33
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -50196,36 +50244,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/krasnodar",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "12a75053ad95687e38826475b912cd876cf6cd0c6e74337108d23fa08a4e9d8f",
+          "contentHash": "761b4f3e517cad79b951db7e52e8b52456150ff9caff2e36ac96bb5faf837fdf",
           "observationId": null,
           "revisionId": null
         },
@@ -58361,9 +58409,17 @@
           "rain": 0.01,
           "rootWetness": 0.44,
           "surfaceWetness": 0.31
+        },
+        {
+          "date": "2026-10-13",
+          "max": 11.04,
+          "min": 8.56,
+          "rain": 22.65,
+          "rootWetness": 0.46,
+          "surfaceWetness": 0.48
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -58568,36 +58624,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/ukraine",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "7a3a3ebc3969cc63455fb7224c3551f1cb46940e4578bbcb06961e0bede9052e",
+          "contentHash": "bbdd49041df7b4e5d59e26eac0034e5a51720545fd1b4d25904175909d594ddd",
           "observationId": null,
           "revisionId": null
         },
@@ -66733,9 +66789,17 @@
           "rain": 0.0,
           "rootWetness": 0.44,
           "surfaceWetness": 0.31
+        },
+        {
+          "date": "2026-10-13",
+          "max": 38.83,
+          "min": 24.0,
+          "rain": 1.1,
+          "rootWetness": 0.43,
+          "surfaceWetness": 0.28
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -66940,36 +67004,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/mato-grosso",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "804fcaff089a28f84f4ea1904d4cbc1df8cbe2804d650936d8861d09ac1a8382",
+          "contentHash": "beafacfc5713afc90f4a01e22019837c2b19e5cfaa4374fc3ae3494cfa7e2827",
           "observationId": null,
           "revisionId": null
         },
@@ -75105,9 +75169,17 @@
           "rain": 0.01,
           "rootWetness": 0.52,
           "surfaceWetness": 0.45
+        },
+        {
+          "date": "2026-10-13",
+          "max": 20.16,
+          "min": 10.09,
+          "rain": 0.21,
+          "rootWetness": 0.51,
+          "surfaceWetness": 0.44
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -75307,41 +75379,41 @@
       },
       "climatologyUrl": "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=GWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=1991&end=2020&format=JSON",
       "providerSources": [
-        "MERRA2",
         "GEOSIT",
+        "MERRA2",
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/pampas",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=-61&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "c336ebdfc7a3aa72e6400c03f1e13f83b264e47959032c845e5c0ada91008f44",
+          "contentHash": "3f16b66cce58cfd519bcea577806365ae38b9fd4bbdcb71197d43ac92978eaf6",
           "observationId": null,
           "revisionId": null
         },
@@ -83477,9 +83549,17 @@
           "rain": 2.39,
           "rootWetness": 0.55,
           "surfaceWetness": 0.5
+        },
+        {
+          "date": "2026-10-13",
+          "max": 26.26,
+          "min": 12.86,
+          "rain": 0.0,
+          "rootWetness": 0.55,
+          "surfaceWetness": 0.48
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -83679,41 +83759,41 @@
       },
       "climatologyUrl": "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=GWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=1991&end=2020&format=JSON",
       "providerSources": [
-        "GEOSIT",
         "MERRA2",
+        "GEOSIT",
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/henan",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "c2fb9ce384488e6d1114e0a49775cd76fcd29b6c3ddb73e612d24bb3e80c2a8c",
+          "contentHash": "2ede01f4537b208cfd107e60921d1c92b0e3c9c4dc66453adb3a699afaaf89a4",
           "observationId": null,
           "revisionId": null
         },
@@ -91849,9 +91929,17 @@
           "rain": 0.0,
           "rootWetness": 0.52,
           "surfaceWetness": 0.41
+        },
+        {
+          "date": "2026-10-13",
+          "max": 15.0,
+          "min": 2.03,
+          "rain": 0.03,
+          "rootWetness": 0.52,
+          "surfaceWetness": 0.4
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -92056,36 +92144,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/jilin",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "b5f688ebf27f29fe8c8c77829fece4b5fd4068ff24c3a5cff0b21030f2ef03e0",
+          "contentHash": "dc352d33093ada8991ab29a85683c6f51d6e46ec4a0324432938c0b44062c47e",
           "observationId": null,
           "revisionId": null
         },
@@ -100221,9 +100309,17 @@
           "rain": 0.71,
           "rootWetness": 0.72,
           "surfaceWetness": 0.69
+        },
+        {
+          "date": "2026-10-13",
+          "max": 30.72,
+          "min": 21.98,
+          "rain": 0.15,
+          "rootWetness": 0.71,
+          "surfaceWetness": 0.68
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -100423,41 +100519,41 @@
       },
       "climatologyUrl": "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=GWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=1991&end=2020&format=JSON",
       "providerSources": [
-        "MERRA2",
         "GEOSIT",
+        "MERRA2",
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/india-rice",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "2ae6c2364255aff52811240aedea78d1def13a4fb8b9f64e71bf360ac12f4fc5",
+          "contentHash": "9422aff37addfb2d1d2ee4dd14827ecea33425ade6fdd75bd1e4b63624f047ed",
           "observationId": null,
           "revisionId": null
         },
@@ -108593,9 +108689,17 @@
           "rain": 0.11,
           "rootWetness": 0.35,
           "surfaceWetness": 0.28
+        },
+        {
+          "date": "2026-10-13",
+          "max": 35.77,
+          "min": 22.53,
+          "rain": 0.18,
+          "rootWetness": 0.35,
+          "surfaceWetness": 0.26
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -108795,41 +108899,41 @@
       },
       "climatologyUrl": "https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=GWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=1991&end=2020&format=JSON",
       "providerSources": [
-        "MERRA2",
         "GEOSIT",
+        "MERRA2",
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/punjab",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "1580c004dc79e35cb483ee8260231df07849344a282fc4fe78bb7530c46c0b3d",
+          "contentHash": "cd1726dab7f4a4b3c2c519f7334af6115c743de9fd881b07e904fd378c168225",
           "observationId": null,
           "revisionId": null
         },
@@ -116965,9 +117069,17 @@
           "rain": 1.7,
           "rootWetness": 0.88,
           "surfaceWetness": 0.84
+        },
+        {
+          "date": "2026-10-13",
+          "max": 30.71,
+          "min": 23.39,
+          "rain": 19.36,
+          "rootWetness": 0.87,
+          "surfaceWetness": 0.86
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -117172,36 +117284,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/thailand",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "1fdf3034e8ca51e5e1fe10e23d6f3f7fc94405c0cf2c8d7a7bb150075b38e823",
+          "contentHash": "ee3a31662d65c0d708031368a13a75d6708a55ab8f6f2a8f0b412e68b8d051e8",
           "observationId": null,
           "revisionId": null
         },
@@ -125337,9 +125449,17 @@
           "rain": 0.01,
           "rootWetness": 0.42,
           "surfaceWetness": 0.37
+        },
+        {
+          "date": "2026-10-13",
+          "max": 20.83,
+          "min": 6.04,
+          "rain": 0.0,
+          "rootWetness": 0.42,
+          "surfaceWetness": 0.33
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -125544,36 +125664,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/australia",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "072879a52eea965829421d16d463ca83d2ea297b1eade275c5d07d70f6bb15f4",
+          "contentHash": "3a12eff8ef9a662fadecbc0e59607c493343151ab7936457e4e74372100ebae7",
           "observationId": null,
           "revisionId": null
         },
@@ -133709,9 +133829,17 @@
           "rain": 0.0,
           "rootWetness": 0.36,
           "surfaceWetness": 0.22
+        },
+        {
+          "date": "2026-10-13",
+          "max": 32.8,
+          "min": 17.52,
+          "rain": 0.0,
+          "rootWetness": 0.36,
+          "surfaceWetness": 0.2
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261013&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -133916,36 +134044,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-16T11:37:41Z",
-      "lastAttemptAt": "2026-10-16T11:37:41Z",
+      "fetchedAt": "2026-10-17T10:57:42Z",
+      "lastAttemptAt": "2026-10-17T10:57:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/free-state",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261012&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261012&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261013&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261013&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-12",
+          "period": "2026-10-13",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-16T11:37:41Z",
+          "checkedAt": "2026-10-17T10:57:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-16T11:37:41Z",
+          "fetchedAt": "2026-10-17T10:57:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "021c1dfbb2224ca6198172cdcbd21aa210c1c1271d4641c151f5af19975d0649",
+          "contentHash": "d84fca9acfbfec3f8b8d087968b11d405c993db994975f9825b4c2cd76f16a7b",
           "observationId": null,
           "revisionId": null
         },
@@ -133954,5 +134082,5 @@
     }
   },
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T11:37:41Z"
+  "generatedAt": "2026-10-17T10:57:42Z"
 }
