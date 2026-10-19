@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-18T11:23:57Z",
+  "generatedAt": "2026-10-19T13:41:11Z",
   "maps": {
     "shortTerm": {
       "period": "2026-10-01",
@@ -27,8 +27,8 @@
       "productPeriodVerified": false
     },
     "impactRisk": {
-      "period": "2026-09-11",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-11",
+      "period": "2026-09-21",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-21",
       "layer": "rdria",
       "title": "Risk of Drought Impact for Agriculture",
       "periodBasis": "wms-service-example",
@@ -63,7 +63,7 @@
     "germany": {
       "shortTerm": "near-normal",
       "longTerm": "moderately-dry",
-      "impactRisk": "no-hotspot"
+      "impactRisk": "medium"
     },
     "krasnodar": {
       "shortTerm": "near-normal",
@@ -73,7 +73,7 @@
     "ukraine": {
       "shortTerm": "moderately-wet",
       "longTerm": "near-normal",
-      "impactRisk": "low"
+      "impactRisk": "no-hotspot"
     },
     "mato-grosso": {
       "shortTerm": "near-normal",
@@ -113,7 +113,7 @@
     "australia": {
       "shortTerm": "near-normal",
       "longTerm": "near-normal",
-      "impactRisk": "no-hotspot"
+      "impactRisk": "low"
     },
     "free-state": {
       "shortTerm": "moderately-wet",
@@ -122,8 +122,8 @@
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-10-18T11:23:57Z",
-  "lastAttemptAt": "2026-10-18T11:23:57Z",
+  "fetchedAt": "2026-10-19T13:41:11Z",
+  "lastAttemptAt": "2026-10-19T13:41:11Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -132,7 +132,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-10-18T11:24:00Z",
+    "checkedAt": "2026-10-19T13:41:14Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "availability-metadata-invalid",
     "error": "GDO interval end does not align with its advertised timestep"
@@ -150,27 +150,27 @@
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-10-18T11:23:57Z",
+      "checkedAt": "2026-10-19T13:41:11Z",
       "retrieval": "ok",
       "format": "passed",
       "semantic": "passed",
       "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-10-18T11:23:57Z",
+      "fetchedAt": "2026-10-19T13:41:11Z",
       "format": "passed",
       "semantic": "passed",
       "period": "unverified"
     },
-    "cache": "unchanged",
+    "cache": "new",
     "version": {
-      "contentHash": "8d8a1f81a26f0ef84db474c0e3c65fc3252f3ef12ee38e21676fa2967d20607e",
+      "contentHash": "e14efaf5fe64f6d240891cdd151fa488b887a80058e7f57df432312bc3b28b53",
       "observationId": null,
       "revisionId": null
     },
     "extensions": {
       "periodVerification": {
-        "checkedAt": "2026-10-18T11:24:00Z",
+        "checkedAt": "2026-10-19T13:41:14Z",
         "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
         "reason": "availability-metadata-invalid",
         "error": "GDO interval end does not align with its advertised timestep"
