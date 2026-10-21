@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "status": "sent",
+  "status": "uncertain",
   "sentEventIds": [
     "evt-6e8d91635e5f02c5"
   ],
-  "lastCheckedAt": "2026-10-20T11:53:05Z",
+  "lastCheckedAt": "2026-10-21T12:05:38Z",
   "deliveredEpisodes": {
     "episode-5ecd79ba4449ef3bc210618d1efe1166": "red"
   },
@@ -22,9 +22,9 @@
     "calendar": "unknown"
   },
   "latestRelease": {
-    "releaseId": "release-aa1032aaa95e82b0141a55882bf849e80c2572a7e9e486d79e7a409cd4930a2d",
-    "dataRevision": "5ea9cbc2f2425cb33b0eb5e2e8a05867ef11b0af",
-    "snapshotSha256": "5c825eee3f9058434dbf28b7097fb4f44a4e93f8f4a4bfcb44b4a056a4f5d5ef"
+    "releaseId": "release-47b2da2c6d4f6207ae06dd47eda14b69648b9d417867128e0463e9a877027eec",
+    "dataRevision": "12295e0cc53ffbc979c61fdeb632fec47c15739e",
+    "snapshotSha256": "2213ce50b9842b1b726eb3af8d03494be6c9243d66e90594c85c62b8a0b9f05f"
   },
   "lastAttemptRelease": {
     "releaseId": "release-a62d47aee34188fc72a8456e90a5c4f7fce679d21184c92581f249267a83e9a9",
@@ -35,5 +35,15 @@
     "releaseId": "release-aa1032aaa95e82b0141a55882bf849e80c2572a7e9e486d79e7a409cd4930a2d",
     "dataRevision": "5ea9cbc2f2425cb33b0eb5e2e8a05867ef11b0af",
     "snapshotSha256": "5c825eee3f9058434dbf28b7097fb4f44a4e93f8f4a4bfcb44b4a056a4f5d5ef"
-  }
+  },
+  "pendingAttempt": {
+    "release": {
+      "releaseId": "release-47b2da2c6d4f6207ae06dd47eda14b69648b9d417867128e0463e9a877027eec",
+      "dataRevision": "12295e0cc53ffbc979c61fdeb632fec47c15739e",
+      "snapshotSha256": "2213ce50b9842b1b726eb3af8d03494be6c9243d66e90594c85c62b8a0b9f05f"
+    },
+    "messageId": "<wfl-3e2f8788e1db74f74dfb55c1ff0d6711@world-food-lens.local>",
+    "preparedAt": "2026-10-21T12:05:38Z"
+  },
+  "errorCode": "SMTPIntentPending"
 }
