@@ -4,7 +4,7 @@
   "sentEventIds": [
     "evt-6e8d91635e5f02c5"
   ],
-  "lastCheckedAt": "2026-10-22T12:08:15Z",
+  "lastCheckedAt": "2026-10-23T11:52:40Z",
   "deliveredEpisodes": {
     "episode-5ecd79ba4449ef3bc210618d1efe1166": "red"
   },
@@ -13,18 +13,18 @@
   "acceptance": "smtp-accepted",
   "welcomeSentAt": "2026-09-22T13:46:53Z",
   "healthStates": {
-    "weather": "validation-failed",
+    "weather": "current",
     "drought": "unverified",
-    "soil": "validation-failed",
+    "soil": "current",
     "fao": "current",
     "costs": "current",
     "enso": "current",
     "calendar": "unknown"
   },
   "latestRelease": {
-    "releaseId": "release-dec9a9dce6deba934c17acb3006e5508ee4cee0f09fb5557fa3214fdedbf3955",
-    "dataRevision": "01cb535e597ae25dbf901861e4718324d898d3c2",
-    "snapshotSha256": "67b3537d997417d995e4cf45d277c420952e82db758f1ee8649ae7a2e502fdae"
+    "releaseId": "release-bbe6fc6fac10d0f5e83cea01e88bc8e15feee9f774af84131f1885f9d2d02292",
+    "dataRevision": "b8c92daa30e85a813a0b0f752763a2b1c3057211",
+    "snapshotSha256": "3dcacccd6cb825dc9ded641b29eeb1dbb107ba1e1cfc8c9335425f2c8a79ee27"
   },
   "lastAttemptRelease": {
     "releaseId": "release-47b2da2c6d4f6207ae06dd47eda14b69648b9d417867128e0463e9a877027eec",
@@ -32,8 +32,8 @@
     "snapshotSha256": "2213ce50b9842b1b726eb3af8d03494be6c9243d66e90594c85c62b8a0b9f05f"
   },
   "lastProcessedRelease": {
-    "releaseId": "release-dec9a9dce6deba934c17acb3006e5508ee4cee0f09fb5557fa3214fdedbf3955",
-    "dataRevision": "01cb535e597ae25dbf901861e4718324d898d3c2",
-    "snapshotSha256": "67b3537d997417d995e4cf45d277c420952e82db758f1ee8649ae7a2e502fdae"
+    "releaseId": "release-bbe6fc6fac10d0f5e83cea01e88bc8e15feee9f774af84131f1885f9d2d02292",
+    "dataRevision": "b8c92daa30e85a813a0b0f752763a2b1c3057211",
+    "snapshotSha256": "3dcacccd6cb825dc9ded641b29eeb1dbb107ba1e1cfc8c9335425f2c8a79ee27"
   }
 }
