@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "status": "uncertain",
+  "status": "sent",
   "sentEventIds": [
     "evt-6e8d91635e5f02c5"
   ],
-  "lastCheckedAt": "2026-10-24T11:18:44Z",
+  "lastCheckedAt": "2026-10-24T11:18:46Z",
   "deliveredEpisodes": {
     "episode-5ecd79ba4449ef3bc210618d1efe1166": "red"
   },
-  "lastAttemptAt": "2026-10-21T12:05:40Z",
-  "lastSentAt": "2026-10-21T12:05:40Z",
+  "lastAttemptAt": "2026-10-24T11:18:46Z",
+  "lastSentAt": "2026-10-24T11:18:46Z",
   "acceptance": "smtp-accepted",
   "welcomeSentAt": "2026-09-22T13:46:53Z",
   "healthStates": {
-    "weather": "current",
+    "weather": "validation-failed",
     "drought": "unverified",
-    "soil": "current",
+    "soil": "validation-failed",
     "fao": "current",
     "costs": "current",
     "enso": "current",
@@ -27,23 +27,13 @@
     "snapshotSha256": "b217eaa853445632760bb0dea40cd7c965b3193d0af83fa9d38b6847014e550d"
   },
   "lastAttemptRelease": {
-    "releaseId": "release-47b2da2c6d4f6207ae06dd47eda14b69648b9d417867128e0463e9a877027eec",
-    "dataRevision": "12295e0cc53ffbc979c61fdeb632fec47c15739e",
-    "snapshotSha256": "2213ce50b9842b1b726eb3af8d03494be6c9243d66e90594c85c62b8a0b9f05f"
+    "releaseId": "release-3690aa8ba9a4979ec75a27fd200f9bbccee59f1db65433078ce3b71d01878963",
+    "dataRevision": "8c27c5f151685fee2434c3acbf2f58baf7bbbf2f",
+    "snapshotSha256": "b217eaa853445632760bb0dea40cd7c965b3193d0af83fa9d38b6847014e550d"
   },
   "lastProcessedRelease": {
-    "releaseId": "release-bbe6fc6fac10d0f5e83cea01e88bc8e15feee9f774af84131f1885f9d2d02292",
-    "dataRevision": "b8c92daa30e85a813a0b0f752763a2b1c3057211",
-    "snapshotSha256": "3dcacccd6cb825dc9ded641b29eeb1dbb107ba1e1cfc8c9335425f2c8a79ee27"
-  },
-  "pendingAttempt": {
-    "release": {
-      "releaseId": "release-3690aa8ba9a4979ec75a27fd200f9bbccee59f1db65433078ce3b71d01878963",
-      "dataRevision": "8c27c5f151685fee2434c3acbf2f58baf7bbbf2f",
-      "snapshotSha256": "b217eaa853445632760bb0dea40cd7c965b3193d0af83fa9d38b6847014e550d"
-    },
-    "messageId": "<wfl-2eea7b798d7953788aa5596e74d5a825@world-food-lens.local>",
-    "preparedAt": "2026-10-24T11:18:44Z"
-  },
-  "errorCode": "SMTPIntentPending"
+    "releaseId": "release-3690aa8ba9a4979ec75a27fd200f9bbccee59f1db65433078ce3b71d01878963",
+    "dataRevision": "8c27c5f151685fee2434c3acbf2f58baf7bbbf2f",
+    "snapshotSha256": "b217eaa853445632760bb0dea40cd7c965b3193d0af83fa9d38b6847014e550d"
+  }
 }
