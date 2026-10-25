@@ -8193,9 +8193,17 @@
           "rain": 0.0,
           "rootWetness": 0.68,
           "surfaceWetness": 0.6
+        },
+        {
+          "date": "2026-10-21",
+          "max": 23.33,
+          "min": 9.95,
+          "rain": 0.0,
+          "rootWetness": 0.68,
+          "surfaceWetness": 0.59
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -8400,36 +8408,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/iowa",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "15b694a451a64aa124af6329e1f26e184d34d3c46f26705f9fff325f048d5e52",
+          "contentHash": "5123d3d5a43872cde3605dac79df2169e32077bf3bf6892ebcefa0e3874b9471",
           "observationId": null,
           "revisionId": null
         },
@@ -16629,9 +16637,17 @@
           "rain": 4.32,
           "rootWetness": 0.47,
           "surfaceWetness": 0.37
+        },
+        {
+          "date": "2026-10-21",
+          "max": 25.93,
+          "min": 13.37,
+          "rain": 2.64,
+          "rootWetness": 0.47,
+          "surfaceWetness": 0.37
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -16836,36 +16852,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/kansas",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=38.5&longitude=-98&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "ba126be0db216a51f44548d20b0e2f7b22348b08f1cf8a8e540490c0637aeff9",
+          "contentHash": "eb03c4fedad363281fe599383e2568af78d1d7a3935615b8f8e28fd45990d9c6",
           "observationId": null,
           "revisionId": null
         },
@@ -25065,9 +25081,17 @@
           "rain": 0.0,
           "rootWetness": 0.48,
           "surfaceWetness": 0.39
+        },
+        {
+          "date": "2026-10-21",
+          "max": 16.7,
+          "min": 2.74,
+          "rain": 0.0,
+          "rootWetness": 0.48,
+          "surfaceWetness": 0.4
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -25272,36 +25296,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/saskatchewan",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=52&longitude=-106&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "72760091270c8e378f4095e1287504cd95c50b65cbae192be5baaec8f6aae4b5",
+          "contentHash": "4cae2531a5ddd9a40fc348c25891f1cf2c7d0a40b1a9e090490f106a2d4b92c1",
           "observationId": null,
           "revisionId": null
         },
@@ -33501,9 +33525,17 @@
           "rain": 176.64,
           "rootWetness": 0.55,
           "surfaceWetness": 0.56
+        },
+        {
+          "date": "2026-10-21",
+          "max": 13.23,
+          "min": 6.45,
+          "rain": 60.48,
+          "rootWetness": 0.55,
+          "surfaceWetness": 0.54
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -33708,36 +33740,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/france",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=48.5&longitude=2&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "0d987f92194fbbfee62d7ceba7752e8f2daeb889b27fb67a71e16b1c3040971d",
+          "contentHash": "a352d288d7907946fa92bf73c5123fd28439abda55b34689df7384048a323e60",
           "observationId": null,
           "revisionId": null
         },
@@ -41937,9 +41969,17 @@
           "rain": 0.48,
           "rootWetness": 0.48,
           "surfaceWetness": 0.44
+        },
+        {
+          "date": "2026-10-21",
+          "max": 9.01,
+          "min": 6.06,
+          "rain": 296.88,
+          "rootWetness": 0.49,
+          "surfaceWetness": 0.51
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -42144,36 +42184,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/germany",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=51&longitude=11&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "6ded2e6527e23a604599df4d05517994cd6b861c69a760277931a646fc4b6e43",
+          "contentHash": "05ffb9ab0ea2f8916f602aae6c2895971d31abb3984201e134df9ef0d62c60b7",
           "observationId": null,
           "revisionId": null
         },
@@ -50373,9 +50413,17 @@
           "rain": 0.0,
           "rootWetness": 0.42,
           "surfaceWetness": 0.38
+        },
+        {
+          "date": "2026-10-21",
+          "max": 23.81,
+          "min": 12.52,
+          "rain": 20.16,
+          "rootWetness": 0.42,
+          "surfaceWetness": 0.37
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -50580,36 +50628,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/krasnodar",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=45&longitude=39&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "038f269df0fb8db1ba84daab1d67152917b6a17887358507f78e880db93d81dc",
+          "contentHash": "13e2e4b5060e10d959a96068d311ada2c53c57796e4380f452fa0252cce7ff0e",
           "observationId": null,
           "revisionId": null
         },
@@ -58809,9 +58857,17 @@
           "rain": 3.36,
           "rootWetness": 0.5,
           "surfaceWetness": 0.47
+        },
+        {
+          "date": "2026-10-21",
+          "max": 17.16,
+          "min": 10.41,
+          "rain": 30.24,
+          "rootWetness": 0.5,
+          "surfaceWetness": 0.47
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -59016,36 +59072,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/ukraine",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=49&longitude=32&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "367cee70b12ba8d1b55f06e9d742ddf48cb2850a06e6cd5fd46516cefa887fa8",
+          "contentHash": "71c0a7a39a0f97424309cefd47b482cfac4b9f5f9877acf0bf20df4c4f2cb961",
           "observationId": null,
           "revisionId": null
         },
@@ -67245,9 +67301,17 @@
           "rain": 40.56,
           "rootWetness": 0.46,
           "surfaceWetness": 0.43
+        },
+        {
+          "date": "2026-10-21",
+          "max": 36.67,
+          "min": 25.37,
+          "rain": 52.56,
+          "rootWetness": 0.45,
+          "surfaceWetness": 0.38
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -67452,36 +67516,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/mato-grosso",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-13&longitude=-56&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "dda4406b33a49b47ffa9eaa82d8cd0097763ad13788d48597624efae764d70b4",
+          "contentHash": "b0f11d33612f963fd879c1a77395dfcebbb6122230abe6f9718784c46be2d803",
           "observationId": null,
           "revisionId": null
         },
@@ -75881,7 +75945,7 @@
       ],
       "status": "error",
       "fetchedAt": "2026-10-23T11:50:56Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/pampas",
@@ -75895,7 +75959,7 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "unknown",
           "semantic": "failed",
@@ -84111,9 +84175,17 @@
           "rain": 0.24,
           "rootWetness": 0.6,
           "surfaceWetness": 0.56
+        },
+        {
+          "date": "2026-10-21",
+          "max": 17.67,
+          "min": 8.9,
+          "rain": 0.0,
+          "rootWetness": 0.59,
+          "surfaceWetness": 0.51
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -84318,36 +84390,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/henan",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=34&longitude=114&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "811c50ffa0c079eac713e3a0a73397033cd5c47aadfc306587f95d60e5c45861",
+          "contentHash": "574d3acca71be67ee31993c8b4fd04ec90ac12c9db764d917429001a8b2f1c1b",
           "observationId": null,
           "revisionId": null
         },
@@ -92547,9 +92619,17 @@
           "rain": 0.96,
           "rootWetness": 0.56,
           "surfaceWetness": 0.5
+        },
+        {
+          "date": "2026-10-21",
+          "max": 5.95,
+          "min": -3.43,
+          "rain": 0.24,
+          "rootWetness": 0.55,
+          "surfaceWetness": 0.48
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -92754,36 +92834,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/jilin",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=125&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "6f16cd73b283692033a35da937233470b390903b74e8b7271f7196d97d4a8268",
+          "contentHash": "b466cfdea38f1e4912f4752a31d37599117261ddfbf5bd81b3c765ff0581fc1e",
           "observationId": null,
           "revisionId": null
         },
@@ -100983,9 +101063,17 @@
           "rain": 0.0,
           "rootWetness": 0.67,
           "surfaceWetness": 0.61
+        },
+        {
+          "date": "2026-10-21",
+          "max": 29.41,
+          "min": 18.07,
+          "rain": 0.0,
+          "rootWetness": 0.66,
+          "surfaceWetness": 0.61
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -101190,36 +101278,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/india-rice",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=26&longitude=83&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "22f4126bf5bf59e3138da55b66b07008935fe94fbb6e853164fb0fbc629147c1",
+          "contentHash": "ee9192b1b0f85737d07683eb41285fbba646188c34420cca8a1cd02e3d45c277",
           "observationId": null,
           "revisionId": null
         },
@@ -101464,7 +101552,7 @@
           "date": "2024-01-30",
           "max": 21.95,
           "min": 7.98,
-          "rain": 0.39,
+          "rain": 9.36,
           "rootWetness": 0.41,
           "surfaceWetness": 0.39
         },
@@ -101472,7 +101560,7 @@
           "date": "2024-01-31",
           "max": 22.71,
           "min": 10.04,
-          "rain": 5.52,
+          "rain": 132.48,
           "rootWetness": 0.41,
           "surfaceWetness": 0.41
         },
@@ -101480,7 +101568,7 @@
           "date": "2024-02-01",
           "max": 19.85,
           "min": 6.69,
-          "rain": 9.88,
+          "rain": 237.12,
           "rootWetness": 0.43,
           "surfaceWetness": 0.48
         },
@@ -101488,7 +101576,7 @@
           "date": "2024-02-02",
           "max": 20.28,
           "min": 5.5,
-          "rain": 0.91,
+          "rain": 21.84,
           "rootWetness": 0.44,
           "surfaceWetness": 0.43
         },
@@ -101496,7 +101584,7 @@
           "date": "2024-02-03",
           "max": 22.47,
           "min": 5.83,
-          "rain": 2.09,
+          "rain": 50.16,
           "rootWetness": 0.43,
           "surfaceWetness": 0.41
         },
@@ -101504,7 +101592,7 @@
           "date": "2024-02-04",
           "max": 20.27,
           "min": 7.14,
-          "rain": 4.81,
+          "rain": 115.44,
           "rootWetness": 0.44,
           "surfaceWetness": 0.45
         },
@@ -101512,7 +101600,7 @@
           "date": "2024-02-05",
           "max": 19.27,
           "min": 5.01,
-          "rain": 0.12,
+          "rain": 2.88,
           "rootWetness": 0.44,
           "surfaceWetness": 0.42
         },
@@ -101624,7 +101712,7 @@
           "date": "2024-02-19",
           "max": 27.49,
           "min": 11.65,
-          "rain": 2.05,
+          "rain": 49.2,
           "rootWetness": 0.42,
           "surfaceWetness": 0.39
         },
@@ -101632,7 +101720,7 @@
           "date": "2024-02-20",
           "max": 26.01,
           "min": 9.02,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.41,
           "surfaceWetness": 0.39
         },
@@ -101680,7 +101768,7 @@
           "date": "2024-02-26",
           "max": 21.01,
           "min": 10.26,
-          "rain": 0.07,
+          "rain": 1.68,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -101688,7 +101776,7 @@
           "date": "2024-02-27",
           "max": 19.92,
           "min": 7.91,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -101712,7 +101800,7 @@
           "date": "2024-03-01",
           "max": 26.28,
           "min": 13.75,
-          "rain": 2.25,
+          "rain": 54.0,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -101720,7 +101808,7 @@
           "date": "2024-03-02",
           "max": 22.32,
           "min": 6.22,
-          "rain": 15.67,
+          "rain": 376.08,
           "rootWetness": 0.42,
           "surfaceWetness": 0.47
         },
@@ -101728,7 +101816,7 @@
           "date": "2024-03-03",
           "max": 22.08,
           "min": 4.21,
-          "rain": 0.65,
+          "rain": 15.6,
           "rootWetness": 0.43,
           "surfaceWetness": 0.4
         },
@@ -101752,7 +101840,7 @@
           "date": "2024-03-06",
           "max": 23.03,
           "min": 5.04,
-          "rain": 0.06,
+          "rain": 1.44,
           "rootWetness": 0.42,
           "surfaceWetness": 0.39
         },
@@ -101760,7 +101848,7 @@
           "date": "2024-03-07",
           "max": 25.48,
           "min": 9.34,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.42,
           "surfaceWetness": 0.38
         },
@@ -101792,7 +101880,7 @@
           "date": "2024-03-11",
           "max": 30.06,
           "min": 14.05,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.41,
           "surfaceWetness": 0.37
         },
@@ -101800,7 +101888,7 @@
           "date": "2024-03-12",
           "max": 29.29,
           "min": 13.93,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.4,
           "surfaceWetness": 0.36
         },
@@ -101808,7 +101896,7 @@
           "date": "2024-03-13",
           "max": 27.38,
           "min": 13.84,
-          "rain": 0.07,
+          "rain": 1.68,
           "rootWetness": 0.4,
           "surfaceWetness": 0.36
         },
@@ -101872,7 +101960,7 @@
           "date": "2024-03-21",
           "max": 32.82,
           "min": 15.98,
-          "rain": 0.07,
+          "rain": 1.68,
           "rootWetness": 0.38,
           "surfaceWetness": 0.32
         },
@@ -101896,7 +101984,7 @@
           "date": "2024-03-24",
           "max": 29.69,
           "min": 15.17,
-          "rain": 0.09,
+          "rain": 2.16,
           "rootWetness": 0.38,
           "surfaceWetness": 0.32
         },
@@ -101912,7 +102000,7 @@
           "date": "2024-03-26",
           "max": 36.94,
           "min": 16.22,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.37,
           "surfaceWetness": 0.31
         },
@@ -101920,7 +102008,7 @@
           "date": "2024-03-27",
           "max": 34.45,
           "min": 19.39,
-          "rain": 1.84,
+          "rain": 44.16,
           "rootWetness": 0.37,
           "surfaceWetness": 0.32
         },
@@ -101936,7 +102024,7 @@
           "date": "2024-03-29",
           "max": 36.17,
           "min": 18.23,
-          "rain": 7.2,
+          "rain": 172.8,
           "rootWetness": 0.37,
           "surfaceWetness": 0.36
         },
@@ -101944,7 +102032,7 @@
           "date": "2024-03-30",
           "max": 33.79,
           "min": 20.64,
-          "rain": 1.81,
+          "rain": 43.44,
           "rootWetness": 0.38,
           "surfaceWetness": 0.4
         },
@@ -101952,7 +102040,7 @@
           "date": "2024-03-31",
           "max": 33.78,
           "min": 16.99,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -101976,7 +102064,7 @@
           "date": "2024-04-03",
           "max": 36.41,
           "min": 18.43,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.37,
           "surfaceWetness": 0.31
         },
@@ -102056,7 +102144,7 @@
           "date": "2024-04-13",
           "max": 38.71,
           "min": 21.65,
-          "rain": 0.96,
+          "rain": 23.04,
           "rootWetness": 0.35,
           "surfaceWetness": 0.23
         },
@@ -102064,7 +102152,7 @@
           "date": "2024-04-14",
           "max": 31.88,
           "min": 21.25,
-          "rain": 0.33,
+          "rain": 7.92,
           "rootWetness": 0.35,
           "surfaceWetness": 0.26
         },
@@ -102072,7 +102160,7 @@
           "date": "2024-04-15",
           "max": 35.02,
           "min": 22.13,
-          "rain": 0.31,
+          "rain": 7.44,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -102088,7 +102176,7 @@
           "date": "2024-04-17",
           "max": 35.72,
           "min": 18.09,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.35,
           "surfaceWetness": 0.23
         },
@@ -102096,7 +102184,7 @@
           "date": "2024-04-18",
           "max": 38.34,
           "min": 21.83,
-          "rain": 0.3,
+          "rain": 7.2,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -102104,7 +102192,7 @@
           "date": "2024-04-19",
           "max": 38.49,
           "min": 20.15,
-          "rain": 2.57,
+          "rain": 61.68,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -102112,7 +102200,7 @@
           "date": "2024-04-20",
           "max": 35.63,
           "min": 19.88,
-          "rain": 1.21,
+          "rain": 29.04,
           "rootWetness": 0.35,
           "surfaceWetness": 0.31
         },
@@ -102128,7 +102216,7 @@
           "date": "2024-04-22",
           "max": 37.19,
           "min": 21.12,
-          "rain": 0.35,
+          "rain": 8.4,
           "rootWetness": 0.35,
           "surfaceWetness": 0.24
         },
@@ -102136,7 +102224,7 @@
           "date": "2024-04-23",
           "max": 37.68,
           "min": 20.91,
-          "rain": 0.52,
+          "rain": 12.48,
           "rootWetness": 0.35,
           "surfaceWetness": 0.23
         },
@@ -102160,7 +102248,7 @@
           "date": "2024-04-26",
           "max": 40.54,
           "min": 23.57,
-          "rain": 2.65,
+          "rain": 63.6,
           "rootWetness": 0.35,
           "surfaceWetness": 0.21
         },
@@ -102168,7 +102256,7 @@
           "date": "2024-04-27",
           "max": 38.53,
           "min": 23.29,
-          "rain": 0.59,
+          "rain": 14.16,
           "rootWetness": 0.35,
           "surfaceWetness": 0.27
         },
@@ -102176,7 +102264,7 @@
           "date": "2024-04-28",
           "max": 37.07,
           "min": 23.1,
-          "rain": 0.15,
+          "rain": 3.6,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -102184,7 +102272,7 @@
           "date": "2024-04-29",
           "max": 32.34,
           "min": 19.78,
-          "rain": 2.25,
+          "rain": 54.0,
           "rootWetness": 0.35,
           "surfaceWetness": 0.29
         },
@@ -102272,7 +102360,7 @@
           "date": "2024-05-10",
           "max": 42.92,
           "min": 26.77,
-          "rain": 1.6,
+          "rain": 38.4,
           "rootWetness": 0.34,
           "surfaceWetness": 0.14
         },
@@ -102280,7 +102368,7 @@
           "date": "2024-05-11",
           "max": 41.23,
           "min": 26.33,
-          "rain": 0.22,
+          "rain": 5.28,
           "rootWetness": 0.35,
           "surfaceWetness": 0.19
         },
@@ -102288,7 +102376,7 @@
           "date": "2024-05-12",
           "max": 40.9,
           "min": 26.38,
-          "rain": 1.36,
+          "rain": 32.64,
           "rootWetness": 0.35,
           "surfaceWetness": 0.18
         },
@@ -102384,7 +102472,7 @@
           "date": "2024-05-24",
           "max": 43.98,
           "min": 30.74,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.34,
           "surfaceWetness": 0.11
         },
@@ -102432,7 +102520,7 @@
           "date": "2024-05-30",
           "max": 48.09,
           "min": 28.87,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.34,
           "surfaceWetness": 0.09
         },
@@ -102448,7 +102536,7 @@
           "date": "2024-06-01",
           "max": 46.65,
           "min": 31.39,
-          "rain": 0.78,
+          "rain": 18.72,
           "rootWetness": 0.34,
           "surfaceWetness": 0.09
         },
@@ -102456,7 +102544,7 @@
           "date": "2024-06-02",
           "max": 45.76,
           "min": 30.57,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.34,
           "surfaceWetness": 0.11
         },
@@ -102480,7 +102568,7 @@
           "date": "2024-06-05",
           "max": 45.0,
           "min": 30.96,
-          "rain": 4.16,
+          "rain": 99.84,
           "rootWetness": 0.35,
           "surfaceWetness": 0.16
         },
@@ -102488,7 +102576,7 @@
           "date": "2024-06-06",
           "max": 41.75,
           "min": 29.93,
-          "rain": 1.81,
+          "rain": 43.44,
           "rootWetness": 0.35,
           "surfaceWetness": 0.27
         },
@@ -102496,7 +102584,7 @@
           "date": "2024-06-07",
           "max": 42.56,
           "min": 29.87,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -102576,7 +102664,7 @@
           "date": "2024-06-17",
           "max": 47.67,
           "min": 34.0,
-          "rain": 0.06,
+          "rain": 1.44,
           "rootWetness": 0.34,
           "surfaceWetness": 0.11
         },
@@ -102592,7 +102680,7 @@
           "date": "2024-06-19",
           "max": 46.74,
           "min": 33.47,
-          "rain": 3.55,
+          "rain": 85.2,
           "rootWetness": 0.34,
           "surfaceWetness": 0.14
         },
@@ -102600,7 +102688,7 @@
           "date": "2024-06-20",
           "max": 44.42,
           "min": 31.89,
-          "rain": 4.31,
+          "rain": 103.44,
           "rootWetness": 0.35,
           "surfaceWetness": 0.24
         },
@@ -102608,7 +102696,7 @@
           "date": "2024-06-21",
           "max": 40.54,
           "min": 29.16,
-          "rain": 0.71,
+          "rain": 17.04,
           "rootWetness": 0.35,
           "surfaceWetness": 0.31
         },
@@ -102624,7 +102712,7 @@
           "date": "2024-06-23",
           "max": 43.55,
           "min": 30.99,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -102632,7 +102720,7 @@
           "date": "2024-06-24",
           "max": 44.48,
           "min": 31.63,
-          "rain": 0.43,
+          "rain": 10.32,
           "rootWetness": 0.35,
           "surfaceWetness": 0.2
         },
@@ -102640,7 +102728,7 @@
           "date": "2024-06-25",
           "max": 44.26,
           "min": 31.97,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.35,
           "surfaceWetness": 0.2
         },
@@ -102648,7 +102736,7 @@
           "date": "2024-06-26",
           "max": 44.5,
           "min": 32.26,
-          "rain": 3.44,
+          "rain": 82.56,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -102656,7 +102744,7 @@
           "date": "2024-06-27",
           "max": 40.4,
           "min": 30.61,
-          "rain": 5.39,
+          "rain": 129.36,
           "rootWetness": 0.36,
           "surfaceWetness": 0.35
         },
@@ -102664,7 +102752,7 @@
           "date": "2024-06-28",
           "max": 40.27,
           "min": 30.97,
-          "rain": 1.13,
+          "rain": 27.12,
           "rootWetness": 0.36,
           "surfaceWetness": 0.34
         },
@@ -102672,7 +102760,7 @@
           "date": "2024-06-29",
           "max": 40.27,
           "min": 30.24,
-          "rain": 6.42,
+          "rain": 154.08,
           "rootWetness": 0.36,
           "surfaceWetness": 0.38
         },
@@ -102680,7 +102768,7 @@
           "date": "2024-06-30",
           "max": 42.01,
           "min": 30.25,
-          "rain": 0.93,
+          "rain": 22.32,
           "rootWetness": 0.36,
           "surfaceWetness": 0.33
         },
@@ -102688,7 +102776,7 @@
           "date": "2024-07-01",
           "max": 41.19,
           "min": 30.49,
-          "rain": 6.15,
+          "rain": 147.6,
           "rootWetness": 0.36,
           "surfaceWetness": 0.38
         },
@@ -102696,7 +102784,7 @@
           "date": "2024-07-02",
           "max": 41.81,
           "min": 28.28,
-          "rain": 30.51,
+          "rain": 732.24,
           "rootWetness": 0.39,
           "surfaceWetness": 0.53
         },
@@ -102704,7 +102792,7 @@
           "date": "2024-07-03",
           "max": 42.82,
           "min": 27.75,
-          "rain": 15.92,
+          "rain": 382.08,
           "rootWetness": 0.43,
           "surfaceWetness": 0.48
         },
@@ -102712,7 +102800,7 @@
           "date": "2024-07-04",
           "max": 36.19,
           "min": 27.47,
-          "rain": 6.36,
+          "rain": 152.64,
           "rootWetness": 0.44,
           "surfaceWetness": 0.45
         },
@@ -102720,7 +102808,7 @@
           "date": "2024-07-05",
           "max": 39.8,
           "min": 28.27,
-          "rain": 8.69,
+          "rain": 208.56,
           "rootWetness": 0.44,
           "surfaceWetness": 0.44
         },
@@ -102728,7 +102816,7 @@
           "date": "2024-07-06",
           "max": 34.93,
           "min": 27.5,
-          "rain": 18.88,
+          "rain": 453.12,
           "rootWetness": 0.46,
           "surfaceWetness": 0.51
         },
@@ -102736,7 +102824,7 @@
           "date": "2024-07-07",
           "max": 36.93,
           "min": 27.47,
-          "rain": 7.56,
+          "rain": 181.44,
           "rootWetness": 0.48,
           "surfaceWetness": 0.49
         },
@@ -102744,7 +102832,7 @@
           "date": "2024-07-08",
           "max": 38.42,
           "min": 28.79,
-          "rain": 0.17,
+          "rain": 4.08,
           "rootWetness": 0.47,
           "surfaceWetness": 0.42
         },
@@ -102760,7 +102848,7 @@
           "date": "2024-07-10",
           "max": 40.15,
           "min": 29.76,
-          "rain": 1.73,
+          "rain": 41.52,
           "rootWetness": 0.46,
           "surfaceWetness": 0.42
         },
@@ -102768,7 +102856,7 @@
           "date": "2024-07-11",
           "max": 41.7,
           "min": 30.48,
-          "rain": 0.14,
+          "rain": 3.36,
           "rootWetness": 0.45,
           "surfaceWetness": 0.4
         },
@@ -102776,7 +102864,7 @@
           "date": "2024-07-12",
           "max": 39.82,
           "min": 29.36,
-          "rain": 4.21,
+          "rain": 101.04,
           "rootWetness": 0.45,
           "surfaceWetness": 0.42
         },
@@ -102792,7 +102880,7 @@
           "date": "2024-07-14",
           "max": 40.51,
           "min": 29.18,
-          "rain": 0.03,
+          "rain": 0.72,
           "rootWetness": 0.44,
           "surfaceWetness": 0.38
         },
@@ -102800,7 +102888,7 @@
           "date": "2024-07-15",
           "max": 41.25,
           "min": 29.92,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.43,
           "surfaceWetness": 0.38
         },
@@ -102808,7 +102896,7 @@
           "date": "2024-07-16",
           "max": 38.37,
           "min": 29.9,
-          "rain": 9.89,
+          "rain": 237.36,
           "rootWetness": 0.44,
           "surfaceWetness": 0.45
         },
@@ -102816,7 +102904,7 @@
           "date": "2024-07-17",
           "max": 39.66,
           "min": 29.37,
-          "rain": 4.08,
+          "rain": 97.92,
           "rootWetness": 0.44,
           "surfaceWetness": 0.43
         },
@@ -102824,7 +102912,7 @@
           "date": "2024-07-18",
           "max": 40.75,
           "min": 29.24,
-          "rain": 1.93,
+          "rain": 46.32,
           "rootWetness": 0.44,
           "surfaceWetness": 0.41
         },
@@ -102832,7 +102920,7 @@
           "date": "2024-07-19",
           "max": 41.29,
           "min": 29.4,
-          "rain": 0.34,
+          "rain": 8.16,
           "rootWetness": 0.44,
           "surfaceWetness": 0.39
         },
@@ -102840,7 +102928,7 @@
           "date": "2024-07-20",
           "max": 40.82,
           "min": 30.19,
-          "rain": 0.26,
+          "rain": 6.24,
           "rootWetness": 0.43,
           "surfaceWetness": 0.38
         },
@@ -102848,7 +102936,7 @@
           "date": "2024-07-21",
           "max": 41.12,
           "min": 30.47,
-          "rain": 2.08,
+          "rain": 49.92,
           "rootWetness": 0.43,
           "surfaceWetness": 0.39
         },
@@ -102856,7 +102944,7 @@
           "date": "2024-07-22",
           "max": 41.67,
           "min": 30.16,
-          "rain": 1.78,
+          "rain": 42.72,
           "rootWetness": 0.43,
           "surfaceWetness": 0.39
         },
@@ -102864,7 +102952,7 @@
           "date": "2024-07-23",
           "max": 38.38,
           "min": 28.79,
-          "rain": 11.73,
+          "rain": 281.52,
           "rootWetness": 0.44,
           "surfaceWetness": 0.46
         },
@@ -102872,7 +102960,7 @@
           "date": "2024-07-24",
           "max": 38.34,
           "min": 28.55,
-          "rain": 3.12,
+          "rain": 74.88,
           "rootWetness": 0.44,
           "surfaceWetness": 0.43
         },
@@ -102880,7 +102968,7 @@
           "date": "2024-07-25",
           "max": 36.99,
           "min": 28.08,
-          "rain": 3.06,
+          "rain": 73.44,
           "rootWetness": 0.44,
           "surfaceWetness": 0.42
         },
@@ -102888,7 +102976,7 @@
           "date": "2024-07-26",
           "max": 38.66,
           "min": 28.23,
-          "rain": 11.12,
+          "rain": 266.88,
           "rootWetness": 0.45,
           "surfaceWetness": 0.47
         },
@@ -102896,7 +102984,7 @@
           "date": "2024-07-27",
           "max": 40.36,
           "min": 29.51,
-          "rain": 0.64,
+          "rain": 15.36,
           "rootWetness": 0.45,
           "surfaceWetness": 0.4
         },
@@ -102904,7 +102992,7 @@
           "date": "2024-07-28",
           "max": 39.68,
           "min": 29.06,
-          "rain": 1.65,
+          "rain": 39.6,
           "rootWetness": 0.44,
           "surfaceWetness": 0.4
         },
@@ -102912,7 +103000,7 @@
           "date": "2024-07-29",
           "max": 40.51,
           "min": 28.95,
-          "rain": 0.21,
+          "rain": 5.04,
           "rootWetness": 0.44,
           "surfaceWetness": 0.39
         },
@@ -102920,7 +103008,7 @@
           "date": "2024-07-30",
           "max": 38.3,
           "min": 29.83,
-          "rain": 6.95,
+          "rain": 166.8,
           "rootWetness": 0.44,
           "surfaceWetness": 0.44
         },
@@ -102928,7 +103016,7 @@
           "date": "2024-07-31",
           "max": 38.38,
           "min": 28.5,
-          "rain": 19.95,
+          "rain": 478.8,
           "rootWetness": 0.46,
           "surfaceWetness": 0.52
         },
@@ -102936,7 +103024,7 @@
           "date": "2024-08-01",
           "max": 33.2,
           "min": 27.04,
-          "rain": 11.39,
+          "rain": 273.36,
           "rootWetness": 0.49,
           "surfaceWetness": 0.51
         },
@@ -102944,7 +103032,7 @@
           "date": "2024-08-02",
           "max": 37.9,
           "min": 27.11,
-          "rain": 2.11,
+          "rain": 50.64,
           "rootWetness": 0.48,
           "surfaceWetness": 0.46
         },
@@ -102952,7 +103040,7 @@
           "date": "2024-08-03",
           "max": 34.8,
           "min": 27.22,
-          "rain": 0.31,
+          "rain": 7.44,
           "rootWetness": 0.48,
           "surfaceWetness": 0.44
         },
@@ -102960,7 +103048,7 @@
           "date": "2024-08-04",
           "max": 38.47,
           "min": 27.36,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.47,
           "surfaceWetness": 0.42
         },
@@ -102968,7 +103056,7 @@
           "date": "2024-08-05",
           "max": 37.73,
           "min": 27.28,
-          "rain": 1.39,
+          "rain": 33.36,
           "rootWetness": 0.46,
           "surfaceWetness": 0.42
         },
@@ -102976,7 +103064,7 @@
           "date": "2024-08-06",
           "max": 37.59,
           "min": 27.24,
-          "rain": 1.01,
+          "rain": 24.24,
           "rootWetness": 0.46,
           "surfaceWetness": 0.41
         },
@@ -102984,7 +103072,7 @@
           "date": "2024-08-07",
           "max": 37.35,
           "min": 27.15,
-          "rain": 1.5,
+          "rain": 36.0,
           "rootWetness": 0.46,
           "surfaceWetness": 0.42
         },
@@ -102992,7 +103080,7 @@
           "date": "2024-08-08",
           "max": 36.37,
           "min": 26.71,
-          "rain": 3.9,
+          "rain": 93.6,
           "rootWetness": 0.46,
           "surfaceWetness": 0.43
         },
@@ -103000,7 +103088,7 @@
           "date": "2024-08-09",
           "max": 35.98,
           "min": 26.74,
-          "rain": 16.8,
+          "rain": 403.2,
           "rootWetness": 0.47,
           "surfaceWetness": 0.51
         },
@@ -103008,7 +103096,7 @@
           "date": "2024-08-10",
           "max": 33.45,
           "min": 26.88,
-          "rain": 15.11,
+          "rain": 362.64,
           "rootWetness": 0.49,
           "surfaceWetness": 0.53
         },
@@ -103016,7 +103104,7 @@
           "date": "2024-08-11",
           "max": 31.06,
           "min": 25.57,
-          "rain": 41.74,
+          "rain": 1001.76,
           "rootWetness": 0.54,
           "surfaceWetness": 0.66
         },
@@ -103024,7 +103112,7 @@
           "date": "2024-08-12",
           "max": 33.7,
           "min": 25.61,
-          "rain": 2.25,
+          "rain": 54.0,
           "rootWetness": 0.56,
           "surfaceWetness": 0.57
         },
@@ -103032,7 +103120,7 @@
           "date": "2024-08-13",
           "max": 33.37,
           "min": 26.64,
-          "rain": 1.21,
+          "rain": 29.04,
           "rootWetness": 0.55,
           "surfaceWetness": 0.55
         },
@@ -103040,7 +103128,7 @@
           "date": "2024-08-14",
           "max": 34.72,
           "min": 26.45,
-          "rain": 17.17,
+          "rain": 412.08,
           "rootWetness": 0.56,
           "surfaceWetness": 0.61
         },
@@ -103048,7 +103136,7 @@
           "date": "2024-08-15",
           "max": 34.17,
           "min": 26.49,
-          "rain": 8.77,
+          "rain": 210.48,
           "rootWetness": 0.58,
           "surfaceWetness": 0.61
         },
@@ -103056,7 +103144,7 @@
           "date": "2024-08-16",
           "max": 33.3,
           "min": 27.13,
-          "rain": 7.69,
+          "rain": 184.56,
           "rootWetness": 0.58,
           "surfaceWetness": 0.6
         },
@@ -103064,7 +103152,7 @@
           "date": "2024-08-17",
           "max": 30.73,
           "min": 25.49,
-          "rain": 4.8,
+          "rain": 115.2,
           "rootWetness": 0.58,
           "surfaceWetness": 0.61
         },
@@ -103072,7 +103160,7 @@
           "date": "2024-08-18",
           "max": 33.13,
           "min": 25.54,
-          "rain": 4.58,
+          "rain": 109.92,
           "rootWetness": 0.58,
           "surfaceWetness": 0.59
         },
@@ -103080,7 +103168,7 @@
           "date": "2024-08-19",
           "max": 32.78,
           "min": 26.67,
-          "rain": 14.54,
+          "rain": 348.96,
           "rootWetness": 0.6,
           "surfaceWetness": 0.65
         },
@@ -103088,7 +103176,7 @@
           "date": "2024-08-20",
           "max": 34.09,
           "min": 26.34,
-          "rain": 4.73,
+          "rain": 113.52,
           "rootWetness": 0.59,
           "surfaceWetness": 0.61
         },
@@ -103096,7 +103184,7 @@
           "date": "2024-08-21",
           "max": 34.37,
           "min": 26.21,
-          "rain": 3.63,
+          "rain": 87.12,
           "rootWetness": 0.59,
           "surfaceWetness": 0.6
         },
@@ -103104,7 +103192,7 @@
           "date": "2024-08-22",
           "max": 34.96,
           "min": 27.14,
-          "rain": 1.78,
+          "rain": 42.72,
           "rootWetness": 0.58,
           "surfaceWetness": 0.58
         },
@@ -103112,7 +103200,7 @@
           "date": "2024-08-23",
           "max": 34.55,
           "min": 26.02,
-          "rain": 1.42,
+          "rain": 34.08,
           "rootWetness": 0.57,
           "surfaceWetness": 0.58
         },
@@ -103120,7 +103208,7 @@
           "date": "2024-08-24",
           "max": 34.1,
           "min": 25.95,
-          "rain": 1.37,
+          "rain": 32.88,
           "rootWetness": 0.57,
           "surfaceWetness": 0.56
         },
@@ -103128,7 +103216,7 @@
           "date": "2024-08-25",
           "max": 32.95,
           "min": 26.59,
-          "rain": 0.26,
+          "rain": 6.24,
           "rootWetness": 0.56,
           "surfaceWetness": 0.56
         },
@@ -103136,7 +103224,7 @@
           "date": "2024-08-26",
           "max": 34.21,
           "min": 25.82,
-          "rain": 13.57,
+          "rain": 325.68,
           "rootWetness": 0.56,
           "surfaceWetness": 0.59
         },
@@ -103144,7 +103232,7 @@
           "date": "2024-08-27",
           "max": 32.1,
           "min": 25.55,
-          "rain": 14.95,
+          "rain": 358.8,
           "rootWetness": 0.58,
           "surfaceWetness": 0.64
         },
@@ -103152,7 +103240,7 @@
           "date": "2024-08-28",
           "max": 31.19,
           "min": 25.32,
-          "rain": 24.78,
+          "rain": 594.72,
           "rootWetness": 0.61,
           "surfaceWetness": 0.69
         },
@@ -103160,7 +103248,7 @@
           "date": "2024-08-29",
           "max": 30.68,
           "min": 25.09,
-          "rain": 10.97,
+          "rain": 263.28,
           "rootWetness": 0.63,
           "surfaceWetness": 0.69
         },
@@ -103168,7 +103256,7 @@
           "date": "2024-08-30",
           "max": 33.04,
           "min": 24.78,
-          "rain": 1.92,
+          "rain": 46.08,
           "rootWetness": 0.62,
           "surfaceWetness": 0.65
         },
@@ -103184,7 +103272,7 @@
           "date": "2024-09-01",
           "max": 34.41,
           "min": 25.67,
-          "rain": 0.17,
+          "rain": 4.08,
           "rootWetness": 0.6,
           "surfaceWetness": 0.61
         },
@@ -103192,7 +103280,7 @@
           "date": "2024-09-02",
           "max": 33.63,
           "min": 25.32,
-          "rain": 1.69,
+          "rain": 40.56,
           "rootWetness": 0.59,
           "surfaceWetness": 0.6
         },
@@ -103200,7 +103288,7 @@
           "date": "2024-09-03",
           "max": 33.1,
           "min": 25.16,
-          "rain": 25.31,
+          "rain": 607.44,
           "rootWetness": 0.62,
           "surfaceWetness": 0.7
         },
@@ -103208,7 +103296,7 @@
           "date": "2024-09-04",
           "max": 31.79,
           "min": 24.76,
-          "rain": 21.88,
+          "rain": 525.12,
           "rootWetness": 0.65,
           "surfaceWetness": 0.72
         },
@@ -103216,7 +103304,7 @@
           "date": "2024-09-05",
           "max": 32.25,
           "min": 24.56,
-          "rain": 1.95,
+          "rain": 46.8,
           "rootWetness": 0.64,
           "surfaceWetness": 0.68
         },
@@ -103224,7 +103312,7 @@
           "date": "2024-09-06",
           "max": 32.67,
           "min": 25.02,
-          "rain": 8.28,
+          "rain": 198.72,
           "rootWetness": 0.64,
           "surfaceWetness": 0.69
         },
@@ -103232,7 +103320,7 @@
           "date": "2024-09-07",
           "max": 32.07,
           "min": 24.85,
-          "rain": 5.58,
+          "rain": 133.92,
           "rootWetness": 0.64,
           "surfaceWetness": 0.68
         },
@@ -103240,7 +103328,7 @@
           "date": "2024-09-08",
           "max": 32.79,
           "min": 25.4,
-          "rain": 1.15,
+          "rain": 27.6,
           "rootWetness": 0.63,
           "surfaceWetness": 0.66
         },
@@ -103248,7 +103336,7 @@
           "date": "2024-09-09",
           "max": 33.53,
           "min": 25.32,
-          "rain": 1.7,
+          "rain": 40.8,
           "rootWetness": 0.63,
           "surfaceWetness": 0.65
         },
@@ -103256,7 +103344,7 @@
           "date": "2024-09-10",
           "max": 32.78,
           "min": 25.84,
-          "rain": 3.25,
+          "rain": 78.0,
           "rootWetness": 0.62,
           "surfaceWetness": 0.65
         },
@@ -103264,7 +103352,7 @@
           "date": "2024-09-11",
           "max": 32.36,
           "min": 25.15,
-          "rain": 0.35,
+          "rain": 8.4,
           "rootWetness": 0.62,
           "surfaceWetness": 0.64
         },
@@ -103272,7 +103360,7 @@
           "date": "2024-09-12",
           "max": 33.45,
           "min": 24.12,
-          "rain": 2.16,
+          "rain": 51.84,
           "rootWetness": 0.61,
           "surfaceWetness": 0.63
         },
@@ -103280,7 +103368,7 @@
           "date": "2024-09-13",
           "max": 33.77,
           "min": 23.62,
-          "rain": 1.18,
+          "rain": 28.32,
           "rootWetness": 0.6,
           "surfaceWetness": 0.62
         },
@@ -103288,7 +103376,7 @@
           "date": "2024-09-14",
           "max": 32.7,
           "min": 23.42,
-          "rain": 2.75,
+          "rain": 66.0,
           "rootWetness": 0.6,
           "surfaceWetness": 0.61
         },
@@ -103296,7 +103384,7 @@
           "date": "2024-09-15",
           "max": 33.47,
           "min": 23.92,
-          "rain": 1.59,
+          "rain": 38.16,
           "rootWetness": 0.59,
           "surfaceWetness": 0.6
         },
@@ -103312,7 +103400,7 @@
           "date": "2024-09-17",
           "max": 34.19,
           "min": 23.74,
-          "rain": 0.14,
+          "rain": 3.36,
           "rootWetness": 0.58,
           "surfaceWetness": 0.57
         },
@@ -103320,7 +103408,7 @@
           "date": "2024-09-18",
           "max": 33.5,
           "min": 23.6,
-          "rain": 0.27,
+          "rain": 6.48,
           "rootWetness": 0.57,
           "surfaceWetness": 0.56
         },
@@ -103328,7 +103416,7 @@
           "date": "2024-09-19",
           "max": 33.47,
           "min": 22.81,
-          "rain": 0.3,
+          "rain": 7.2,
           "rootWetness": 0.56,
           "surfaceWetness": 0.55
         },
@@ -103368,7 +103456,7 @@
           "date": "2024-09-24",
           "max": 36.8,
           "min": 25.9,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.53,
           "surfaceWetness": 0.5
         },
@@ -103376,7 +103464,7 @@
           "date": "2024-09-25",
           "max": 36.83,
           "min": 25.98,
-          "rain": 1.84,
+          "rain": 44.16,
           "rootWetness": 0.52,
           "surfaceWetness": 0.49
         },
@@ -103384,7 +103472,7 @@
           "date": "2024-09-26",
           "max": 33.36,
           "min": 24.59,
-          "rain": 3.31,
+          "rain": 79.44,
           "rootWetness": 0.52,
           "surfaceWetness": 0.52
         },
@@ -103392,7 +103480,7 @@
           "date": "2024-09-27",
           "max": 34.22,
           "min": 24.07,
-          "rain": 3.49,
+          "rain": 83.76,
           "rootWetness": 0.52,
           "surfaceWetness": 0.51
         },
@@ -103400,7 +103488,7 @@
           "date": "2024-09-28",
           "max": 34.5,
           "min": 23.79,
-          "rain": 0.2,
+          "rain": 4.8,
           "rootWetness": 0.52,
           "surfaceWetness": 0.49
         },
@@ -103448,7 +103536,7 @@
           "date": "2024-10-04",
           "max": 37.47,
           "min": 21.42,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.48,
           "surfaceWetness": 0.44
         },
@@ -103456,7 +103544,7 @@
           "date": "2024-10-05",
           "max": 36.7,
           "min": 21.28,
-          "rain": 0.89,
+          "rain": 21.36,
           "rootWetness": 0.48,
           "surfaceWetness": 0.44
         },
@@ -103464,7 +103552,7 @@
           "date": "2024-10-06",
           "max": 34.52,
           "min": 21.79,
-          "rain": 2.66,
+          "rain": 63.84,
           "rootWetness": 0.48,
           "surfaceWetness": 0.46
         },
@@ -103968,7 +104056,7 @@
           "date": "2024-12-08",
           "max": 22.98,
           "min": 6.82,
-          "rain": 0.84,
+          "rain": 20.16,
           "rootWetness": 0.36,
           "surfaceWetness": 0.29
         },
@@ -104080,7 +104168,7 @@
           "date": "2024-12-22",
           "max": 22.32,
           "min": 9.62,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.36,
           "surfaceWetness": 0.26
         },
@@ -104088,7 +104176,7 @@
           "date": "2024-12-23",
           "max": 17.94,
           "min": 9.62,
-          "rain": 2.67,
+          "rain": 64.08,
           "rootWetness": 0.36,
           "surfaceWetness": 0.33
         },
@@ -104096,7 +104184,7 @@
           "date": "2024-12-24",
           "max": 20.64,
           "min": 7.66,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -104112,7 +104200,7 @@
           "date": "2024-12-26",
           "max": 22.78,
           "min": 8.15,
-          "rain": 0.39,
+          "rain": 9.36,
           "rootWetness": 0.36,
           "surfaceWetness": 0.3
         },
@@ -104120,7 +104208,7 @@
           "date": "2024-12-27",
           "max": 15.75,
           "min": 9.63,
-          "rain": 17.07,
+          "rain": 409.68,
           "rootWetness": 0.38,
           "surfaceWetness": 0.47
         },
@@ -104128,7 +104216,7 @@
           "date": "2024-12-28",
           "max": 18.61,
           "min": 7.6,
-          "rain": 4.2,
+          "rain": 100.8,
           "rootWetness": 0.4,
           "surfaceWetness": 0.45
         },
@@ -104136,7 +104224,7 @@
           "date": "2024-12-29",
           "max": 21.41,
           "min": 4.84,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.4,
           "surfaceWetness": 0.38
         },
@@ -104192,7 +104280,7 @@
           "date": "2025-01-05",
           "max": 23.81,
           "min": 7.9,
-          "rain": 0.22,
+          "rain": 5.28,
           "rootWetness": 0.39,
           "surfaceWetness": 0.37
         },
@@ -104200,7 +104288,7 @@
           "date": "2025-01-06",
           "max": 21.47,
           "min": 6.96,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.39,
           "surfaceWetness": 0.37
         },
@@ -104240,7 +104328,7 @@
           "date": "2025-01-11",
           "max": 16.31,
           "min": 4.35,
-          "rain": 9.11,
+          "rain": 218.64,
           "rootWetness": 0.39,
           "surfaceWetness": 0.43
         },
@@ -104248,7 +104336,7 @@
           "date": "2025-01-12",
           "max": 17.66,
           "min": 6.11,
-          "rain": 1.65,
+          "rain": 39.6,
           "rootWetness": 0.4,
           "surfaceWetness": 0.43
         },
@@ -104272,7 +104360,7 @@
           "date": "2025-01-15",
           "max": 21.98,
           "min": 7.06,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.4,
           "surfaceWetness": 0.38
         },
@@ -104280,7 +104368,7 @@
           "date": "2025-01-16",
           "max": 19.83,
           "min": 5.6,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.4,
           "surfaceWetness": 0.38
         },
@@ -104432,7 +104520,7 @@
           "date": "2025-02-04",
           "max": 24.33,
           "min": 7.51,
-          "rain": 0.79,
+          "rain": 18.96,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -104440,7 +104528,7 @@
           "date": "2025-02-05",
           "max": 23.19,
           "min": 6.44,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -104552,7 +104640,7 @@
           "date": "2025-02-19",
           "max": 29.08,
           "min": 11.31,
-          "rain": 2.37,
+          "rain": 56.88,
           "rootWetness": 0.36,
           "surfaceWetness": 0.3
         },
@@ -104560,7 +104648,7 @@
           "date": "2025-02-20",
           "max": 25.98,
           "min": 10.23,
-          "rain": 7.7,
+          "rain": 184.8,
           "rootWetness": 0.37,
           "surfaceWetness": 0.43
         },
@@ -104576,7 +104664,7 @@
           "date": "2025-02-22",
           "max": 25.61,
           "min": 10.53,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.37,
           "surfaceWetness": 0.35
         },
@@ -104592,7 +104680,7 @@
           "date": "2025-02-24",
           "max": 28.1,
           "min": 11.92,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.37,
           "surfaceWetness": 0.34
         },
@@ -104600,7 +104688,7 @@
           "date": "2025-02-25",
           "max": 26.58,
           "min": 14.64,
-          "rain": 0.2,
+          "rain": 4.8,
           "rootWetness": 0.37,
           "surfaceWetness": 0.33
         },
@@ -104608,7 +104696,7 @@
           "date": "2025-02-26",
           "max": 29.66,
           "min": 16.02,
-          "rain": 0.7,
+          "rain": 16.8,
           "rootWetness": 0.37,
           "surfaceWetness": 0.33
         },
@@ -104616,7 +104704,7 @@
           "date": "2025-02-27",
           "max": 22.14,
           "min": 15.07,
-          "rain": 7.19,
+          "rain": 172.56,
           "rootWetness": 0.37,
           "surfaceWetness": 0.38
         },
@@ -104624,7 +104712,7 @@
           "date": "2025-02-28",
           "max": 21.22,
           "min": 11.98,
-          "rain": 14.38,
+          "rain": 345.12,
           "rootWetness": 0.4,
           "surfaceWetness": 0.51
         },
@@ -104632,7 +104720,7 @@
           "date": "2025-03-01",
           "max": 26.55,
           "min": 11.19,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.4,
           "surfaceWetness": 0.39
         },
@@ -104640,7 +104728,7 @@
           "date": "2025-03-02",
           "max": 26.95,
           "min": 10.6,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -104648,7 +104736,7 @@
           "date": "2025-03-03",
           "max": 28.63,
           "min": 10.03,
-          "rain": 0.37,
+          "rain": 8.88,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -104736,7 +104824,7 @@
           "date": "2025-03-14",
           "max": 34.15,
           "min": 15.87,
-          "rain": 1.98,
+          "rain": 47.52,
           "rootWetness": 0.37,
           "surfaceWetness": 0.34
         },
@@ -104744,7 +104832,7 @@
           "date": "2025-03-15",
           "max": 28.3,
           "min": 14.12,
-          "rain": 0.73,
+          "rain": 17.52,
           "rootWetness": 0.37,
           "surfaceWetness": 0.34
         },
@@ -104752,7 +104840,7 @@
           "date": "2025-03-16",
           "max": 30.63,
           "min": 13.76,
-          "rain": 0.11,
+          "rain": 2.64,
           "rootWetness": 0.37,
           "surfaceWetness": 0.33
         },
@@ -104952,7 +105040,7 @@
           "date": "2025-04-10",
           "max": 40.91,
           "min": 24.59,
-          "rain": 0.18,
+          "rain": 4.32,
           "rootWetness": 0.34,
           "surfaceWetness": 0.13
         },
@@ -104960,7 +105048,7 @@
           "date": "2025-04-11",
           "max": 38.67,
           "min": 22.02,
-          "rain": 1.35,
+          "rain": 32.4,
           "rootWetness": 0.35,
           "surfaceWetness": 0.15
         },
@@ -104968,7 +105056,7 @@
           "date": "2025-04-12",
           "max": 36.18,
           "min": 21.36,
-          "rain": 1.21,
+          "rain": 29.04,
           "rootWetness": 0.35,
           "surfaceWetness": 0.19
         },
@@ -105000,7 +105088,7 @@
           "date": "2025-04-16",
           "max": 41.24,
           "min": 25.19,
-          "rain": 0.99,
+          "rain": 23.76,
           "rootWetness": 0.35,
           "surfaceWetness": 0.16
         },
@@ -105008,7 +105096,7 @@
           "date": "2025-04-17",
           "max": 42.3,
           "min": 25.0,
-          "rain": 0.15,
+          "rain": 3.6,
           "rootWetness": 0.35,
           "surfaceWetness": 0.19
         },
@@ -105016,7 +105104,7 @@
           "date": "2025-04-18",
           "max": 42.67,
           "min": 25.16,
-          "rain": 0.63,
+          "rain": 15.12,
           "rootWetness": 0.35,
           "surfaceWetness": 0.18
         },
@@ -105032,7 +105120,7 @@
           "date": "2025-04-20",
           "max": 41.94,
           "min": 23.45,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.35,
           "surfaceWetness": 0.16
         },
@@ -105040,7 +105128,7 @@
           "date": "2025-04-21",
           "max": 41.57,
           "min": 22.6,
-          "rain": 0.27,
+          "rain": 6.48,
           "rootWetness": 0.35,
           "surfaceWetness": 0.15
         },
@@ -105120,7 +105208,7 @@
           "date": "2025-05-01",
           "max": 40.37,
           "min": 25.76,
-          "rain": 1.01,
+          "rain": 24.24,
           "rootWetness": 0.34,
           "surfaceWetness": 0.11
         },
@@ -105128,7 +105216,7 @@
           "date": "2025-05-02",
           "max": 33.34,
           "min": 23.9,
-          "rain": 9.09,
+          "rain": 218.16,
           "rootWetness": 0.36,
           "surfaceWetness": 0.37
         },
@@ -105136,7 +105224,7 @@
           "date": "2025-05-03",
           "max": 37.67,
           "min": 23.95,
-          "rain": 0.78,
+          "rain": 18.72,
           "rootWetness": 0.36,
           "surfaceWetness": 0.33
         },
@@ -105144,7 +105232,7 @@
           "date": "2025-05-04",
           "max": 37.92,
           "min": 23.44,
-          "rain": 4.81,
+          "rain": 115.44,
           "rootWetness": 0.36,
           "surfaceWetness": 0.34
         },
@@ -105152,7 +105240,7 @@
           "date": "2025-05-05",
           "max": 35.94,
           "min": 23.34,
-          "rain": 3.25,
+          "rain": 78.0,
           "rootWetness": 0.37,
           "surfaceWetness": 0.4
         },
@@ -105160,7 +105248,7 @@
           "date": "2025-05-06",
           "max": 36.71,
           "min": 23.71,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.36,
           "surfaceWetness": 0.33
         },
@@ -105168,7 +105256,7 @@
           "date": "2025-05-07",
           "max": 35.42,
           "min": 24.68,
-          "rain": 0.25,
+          "rain": 6.0,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -105176,7 +105264,7 @@
           "date": "2025-05-08",
           "max": 38.47,
           "min": 25.09,
-          "rain": 1.88,
+          "rain": 45.12,
           "rootWetness": 0.36,
           "surfaceWetness": 0.33
         },
@@ -105184,7 +105272,7 @@
           "date": "2025-05-09",
           "max": 38.72,
           "min": 25.12,
-          "rain": 0.66,
+          "rain": 15.84,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -105192,7 +105280,7 @@
           "date": "2025-05-10",
           "max": 38.95,
           "min": 25.41,
-          "rain": 1.67,
+          "rain": 40.08,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -105200,7 +105288,7 @@
           "date": "2025-05-11",
           "max": 41.38,
           "min": 25.55,
-          "rain": 1.69,
+          "rain": 40.56,
           "rootWetness": 0.36,
           "surfaceWetness": 0.3
         },
@@ -105216,7 +105304,7 @@
           "date": "2025-05-13",
           "max": 42.4,
           "min": 26.47,
-          "rain": 0.79,
+          "rain": 18.96,
           "rootWetness": 0.35,
           "surfaceWetness": 0.26
         },
@@ -105232,7 +105320,7 @@
           "date": "2025-05-15",
           "max": 44.83,
           "min": 28.59,
-          "rain": 0.82,
+          "rain": 19.68,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -105240,7 +105328,7 @@
           "date": "2025-05-16",
           "max": 45.21,
           "min": 29.28,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.35,
           "surfaceWetness": 0.21
         },
@@ -105256,7 +105344,7 @@
           "date": "2025-05-18",
           "max": 45.53,
           "min": 28.03,
-          "rain": 0.19,
+          "rain": 4.56,
           "rootWetness": 0.35,
           "surfaceWetness": 0.17
         },
@@ -105280,7 +105368,7 @@
           "date": "2025-05-21",
           "max": 46.26,
           "min": 28.11,
-          "rain": 2.78,
+          "rain": 66.72,
           "rootWetness": 0.35,
           "surfaceWetness": 0.16
         },
@@ -105304,7 +105392,7 @@
           "date": "2025-05-24",
           "max": 42.39,
           "min": 27.5,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.35,
           "surfaceWetness": 0.18
         },
@@ -105312,7 +105400,7 @@
           "date": "2025-05-25",
           "max": 34.93,
           "min": 25.72,
-          "rain": 14.18,
+          "rain": 340.32,
           "rootWetness": 0.37,
           "surfaceWetness": 0.4
         },
@@ -105336,7 +105424,7 @@
           "date": "2025-05-28",
           "max": 42.85,
           "min": 28.93,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.36,
           "surfaceWetness": 0.29
         },
@@ -105344,7 +105432,7 @@
           "date": "2025-05-29",
           "max": 43.99,
           "min": 27.6,
-          "rain": 2.87,
+          "rain": 68.88,
           "rootWetness": 0.36,
           "surfaceWetness": 0.28
         },
@@ -105352,7 +105440,7 @@
           "date": "2025-05-30",
           "max": 39.67,
           "min": 27.45,
-          "rain": 0.43,
+          "rain": 10.32,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -105360,7 +105448,7 @@
           "date": "2025-05-31",
           "max": 41.8,
           "min": 24.04,
-          "rain": 8.07,
+          "rain": 193.68,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -105368,7 +105456,7 @@
           "date": "2025-06-01",
           "max": 40.45,
           "min": 23.99,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.37,
           "surfaceWetness": 0.35
         },
@@ -105376,7 +105464,7 @@
           "date": "2025-06-02",
           "max": 40.36,
           "min": 24.01,
-          "rain": 4.58,
+          "rain": 109.92,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -105384,7 +105472,7 @@
           "date": "2025-06-03",
           "max": 37.31,
           "min": 24.18,
-          "rain": 8.68,
+          "rain": 208.32,
           "rootWetness": 0.38,
           "surfaceWetness": 0.42
         },
@@ -105392,7 +105480,7 @@
           "date": "2025-06-04",
           "max": 37.25,
           "min": 24.83,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.38,
           "surfaceWetness": 0.36
         },
@@ -105400,7 +105488,7 @@
           "date": "2025-06-05",
           "max": 38.37,
           "min": 26.0,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.37,
           "surfaceWetness": 0.33
         },
@@ -105456,7 +105544,7 @@
           "date": "2025-06-12",
           "max": 47.26,
           "min": 31.76,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.35,
           "surfaceWetness": 0.19
         },
@@ -105464,7 +105552,7 @@
           "date": "2025-06-13",
           "max": 46.32,
           "min": 30.73,
-          "rain": 0.19,
+          "rain": 4.56,
           "rootWetness": 0.35,
           "surfaceWetness": 0.18
         },
@@ -105472,7 +105560,7 @@
           "date": "2025-06-14",
           "max": 45.42,
           "min": 30.63,
-          "rain": 0.94,
+          "rain": 22.56,
           "rootWetness": 0.35,
           "surfaceWetness": 0.18
         },
@@ -105480,7 +105568,7 @@
           "date": "2025-06-15",
           "max": 43.46,
           "min": 30.95,
-          "rain": 0.29,
+          "rain": 6.96,
           "rootWetness": 0.35,
           "surfaceWetness": 0.21
         },
@@ -105488,7 +105576,7 @@
           "date": "2025-06-16",
           "max": 36.78,
           "min": 27.01,
-          "rain": 34.33,
+          "rain": 823.92,
           "rootWetness": 0.38,
           "surfaceWetness": 0.49
         },
@@ -105496,7 +105584,7 @@
           "date": "2025-06-17",
           "max": 30.82,
           "min": 26.07,
-          "rain": 16.21,
+          "rain": 389.04,
           "rootWetness": 0.44,
           "surfaceWetness": 0.51
         },
@@ -105504,7 +105592,7 @@
           "date": "2025-06-18",
           "max": 37.52,
           "min": 26.11,
-          "rain": 0.91,
+          "rain": 21.84,
           "rootWetness": 0.43,
           "surfaceWetness": 0.4
         },
@@ -105512,7 +105600,7 @@
           "date": "2025-06-19",
           "max": 40.31,
           "min": 27.64,
-          "rain": 0.28,
+          "rain": 6.72,
           "rootWetness": 0.42,
           "surfaceWetness": 0.37
         },
@@ -105520,7 +105608,7 @@
           "date": "2025-06-20",
           "max": 39.65,
           "min": 29.19,
-          "rain": 0.38,
+          "rain": 9.12,
           "rootWetness": 0.42,
           "surfaceWetness": 0.38
         },
@@ -105528,7 +105616,7 @@
           "date": "2025-06-21",
           "max": 38.1,
           "min": 29.65,
-          "rain": 0.35,
+          "rain": 8.4,
           "rootWetness": 0.42,
           "surfaceWetness": 0.38
         },
@@ -105536,7 +105624,7 @@
           "date": "2025-06-22",
           "max": 38.94,
           "min": 29.62,
-          "rain": 9.57,
+          "rain": 229.68,
           "rootWetness": 0.42,
           "surfaceWetness": 0.42
         },
@@ -105544,7 +105632,7 @@
           "date": "2025-06-23",
           "max": 37.78,
           "min": 28.5,
-          "rain": 27.71,
+          "rain": 665.04,
           "rootWetness": 0.46,
           "surfaceWetness": 0.56
         },
@@ -105552,7 +105640,7 @@
           "date": "2025-06-24",
           "max": 38.67,
           "min": 28.41,
-          "rain": 6.69,
+          "rain": 160.56,
           "rootWetness": 0.47,
           "surfaceWetness": 0.47
         },
@@ -105560,7 +105648,7 @@
           "date": "2025-06-25",
           "max": 38.32,
           "min": 27.86,
-          "rain": 5.82,
+          "rain": 139.68,
           "rootWetness": 0.47,
           "surfaceWetness": 0.45
         },
@@ -105568,7 +105656,7 @@
           "date": "2025-06-26",
           "max": 35.78,
           "min": 27.82,
-          "rain": 6.48,
+          "rain": 155.52,
           "rootWetness": 0.48,
           "surfaceWetness": 0.48
         },
@@ -105576,7 +105664,7 @@
           "date": "2025-06-27",
           "max": 39.58,
           "min": 28.5,
-          "rain": 2.79,
+          "rain": 66.96,
           "rootWetness": 0.48,
           "surfaceWetness": 0.45
         },
@@ -105584,7 +105672,7 @@
           "date": "2025-06-28",
           "max": 37.38,
           "min": 27.76,
-          "rain": 16.73,
+          "rain": 401.52,
           "rootWetness": 0.49,
           "surfaceWetness": 0.51
         },
@@ -105592,7 +105680,7 @@
           "date": "2025-06-29",
           "max": 38.16,
           "min": 27.87,
-          "rain": 12.52,
+          "rain": 300.48,
           "rootWetness": 0.5,
           "surfaceWetness": 0.51
         },
@@ -105600,7 +105688,7 @@
           "date": "2025-06-30",
           "max": 34.68,
           "min": 27.3,
-          "rain": 9.01,
+          "rain": 216.24,
           "rootWetness": 0.51,
           "surfaceWetness": 0.53
         },
@@ -105608,7 +105696,7 @@
           "date": "2025-07-01",
           "max": 31.63,
           "min": 25.25,
-          "rain": 16.13,
+          "rain": 387.12,
           "rootWetness": 0.54,
           "surfaceWetness": 0.57
         },
@@ -105616,7 +105704,7 @@
           "date": "2025-07-02",
           "max": 38.1,
           "min": 25.69,
-          "rain": 0.92,
+          "rain": 22.08,
           "rootWetness": 0.53,
           "surfaceWetness": 0.5
         },
@@ -105624,7 +105712,7 @@
           "date": "2025-07-03",
           "max": 36.4,
           "min": 27.51,
-          "rain": 1.51,
+          "rain": 36.24,
           "rootWetness": 0.52,
           "surfaceWetness": 0.5
         },
@@ -105632,7 +105720,7 @@
           "date": "2025-07-04",
           "max": 38.47,
           "min": 27.77,
-          "rain": 0.64,
+          "rain": 15.36,
           "rootWetness": 0.51,
           "surfaceWetness": 0.48
         },
@@ -105640,7 +105728,7 @@
           "date": "2025-07-05",
           "max": 37.4,
           "min": 28.84,
-          "rain": 7.32,
+          "rain": 175.68,
           "rootWetness": 0.52,
           "surfaceWetness": 0.52
         },
@@ -105648,7 +105736,7 @@
           "date": "2025-07-06",
           "max": 35.63,
           "min": 28.27,
-          "rain": 7.27,
+          "rain": 174.48,
           "rootWetness": 0.52,
           "surfaceWetness": 0.53
         },
@@ -105656,7 +105744,7 @@
           "date": "2025-07-07",
           "max": 36.51,
           "min": 27.73,
-          "rain": 9.42,
+          "rain": 226.08,
           "rootWetness": 0.53,
           "surfaceWetness": 0.55
         },
@@ -105664,7 +105752,7 @@
           "date": "2025-07-08",
           "max": 35.11,
           "min": 27.99,
-          "rain": 4.99,
+          "rain": 119.76,
           "rootWetness": 0.54,
           "surfaceWetness": 0.54
         },
@@ -105672,7 +105760,7 @@
           "date": "2025-07-09",
           "max": 35.13,
           "min": 26.51,
-          "rain": 12.18,
+          "rain": 292.32,
           "rootWetness": 0.54,
           "surfaceWetness": 0.57
         },
@@ -105680,7 +105768,7 @@
           "date": "2025-07-10",
           "max": 32.3,
           "min": 26.19,
-          "rain": 9.53,
+          "rain": 228.72,
           "rootWetness": 0.56,
           "surfaceWetness": 0.59
         },
@@ -105688,7 +105776,7 @@
           "date": "2025-07-11",
           "max": 34.87,
           "min": 26.35,
-          "rain": 1.18,
+          "rain": 28.32,
           "rootWetness": 0.55,
           "surfaceWetness": 0.54
         },
@@ -105696,7 +105784,7 @@
           "date": "2025-07-12",
           "max": 33.83,
           "min": 26.62,
-          "rain": 1.27,
+          "rain": 30.48,
           "rootWetness": 0.55,
           "surfaceWetness": 0.54
         },
@@ -105704,7 +105792,7 @@
           "date": "2025-07-13",
           "max": 31.74,
           "min": 26.9,
-          "rain": 4.93,
+          "rain": 118.32,
           "rootWetness": 0.55,
           "surfaceWetness": 0.56
         },
@@ -105712,7 +105800,7 @@
           "date": "2025-07-14",
           "max": 31.33,
           "min": 26.07,
-          "rain": 21.06,
+          "rain": 505.44,
           "rootWetness": 0.57,
           "surfaceWetness": 0.64
         },
@@ -105720,7 +105808,7 @@
           "date": "2025-07-15",
           "max": 34.12,
           "min": 25.82,
-          "rain": 7.83,
+          "rain": 187.92,
           "rootWetness": 0.58,
           "surfaceWetness": 0.59
         },
@@ -105728,7 +105816,7 @@
           "date": "2025-07-16",
           "max": 34.28,
           "min": 26.0,
-          "rain": 4.41,
+          "rain": 105.84,
           "rootWetness": 0.58,
           "surfaceWetness": 0.59
         },
@@ -105736,7 +105824,7 @@
           "date": "2025-07-17",
           "max": 33.34,
           "min": 25.95,
-          "rain": 1.86,
+          "rain": 44.64,
           "rootWetness": 0.57,
           "surfaceWetness": 0.57
         },
@@ -105744,7 +105832,7 @@
           "date": "2025-07-18",
           "max": 34.96,
           "min": 26.0,
-          "rain": 1.67,
+          "rain": 40.08,
           "rootWetness": 0.57,
           "surfaceWetness": 0.56
         },
@@ -105752,7 +105840,7 @@
           "date": "2025-07-19",
           "max": 36.06,
           "min": 26.34,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.56,
           "surfaceWetness": 0.54
         },
@@ -105760,7 +105848,7 @@
           "date": "2025-07-20",
           "max": 36.96,
           "min": 26.63,
-          "rain": 0.78,
+          "rain": 18.72,
           "rootWetness": 0.55,
           "surfaceWetness": 0.52
         },
@@ -105768,7 +105856,7 @@
           "date": "2025-07-21",
           "max": 31.71,
           "min": 24.96,
-          "rain": 9.15,
+          "rain": 219.6,
           "rootWetness": 0.55,
           "surfaceWetness": 0.57
         },
@@ -105776,7 +105864,7 @@
           "date": "2025-07-22",
           "max": 31.87,
           "min": 24.88,
-          "rain": 16.53,
+          "rain": 396.72,
           "rootWetness": 0.58,
           "surfaceWetness": 0.63
         },
@@ -105784,7 +105872,7 @@
           "date": "2025-07-23",
           "max": 35.32,
           "min": 27.2,
-          "rain": 9.46,
+          "rain": 227.04,
           "rootWetness": 0.58,
           "surfaceWetness": 0.6
         },
@@ -105792,7 +105880,7 @@
           "date": "2025-07-24",
           "max": 36.16,
           "min": 27.69,
-          "rain": 5.62,
+          "rain": 134.88,
           "rootWetness": 0.58,
           "surfaceWetness": 0.59
         },
@@ -105800,7 +105888,7 @@
           "date": "2025-07-25",
           "max": 35.18,
           "min": 28.3,
-          "rain": 2.65,
+          "rain": 63.6,
           "rootWetness": 0.58,
           "surfaceWetness": 0.58
         },
@@ -105808,7 +105896,7 @@
           "date": "2025-07-26",
           "max": 35.4,
           "min": 28.44,
-          "rain": 1.41,
+          "rain": 33.84,
           "rootWetness": 0.57,
           "surfaceWetness": 0.58
         },
@@ -105816,7 +105904,7 @@
           "date": "2025-07-27",
           "max": 35.11,
           "min": 28.29,
-          "rain": 9.69,
+          "rain": 232.56,
           "rootWetness": 0.58,
           "surfaceWetness": 0.61
         },
@@ -105824,7 +105912,7 @@
           "date": "2025-07-28",
           "max": 36.81,
           "min": 26.56,
-          "rain": 10.55,
+          "rain": 253.2,
           "rootWetness": 0.58,
           "surfaceWetness": 0.6
         },
@@ -105832,7 +105920,7 @@
           "date": "2025-07-29",
           "max": 33.63,
           "min": 26.31,
-          "rain": 14.11,
+          "rain": 338.64,
           "rootWetness": 0.6,
           "surfaceWetness": 0.65
         },
@@ -105840,7 +105928,7 @@
           "date": "2025-07-30",
           "max": 29.98,
           "min": 26.34,
-          "rain": 19.38,
+          "rain": 465.12,
           "rootWetness": 0.61,
           "surfaceWetness": 0.68
         },
@@ -105848,7 +105936,7 @@
           "date": "2025-07-31",
           "max": 28.74,
           "min": 26.15,
-          "rain": 20.79,
+          "rain": 498.96,
           "rootWetness": 0.66,
           "surfaceWetness": 0.73
         },
@@ -105856,7 +105944,7 @@
           "date": "2025-08-01",
           "max": 32.24,
           "min": 26.15,
-          "rain": 21.47,
+          "rain": 515.28,
           "rootWetness": 0.67,
           "surfaceWetness": 0.73
         },
@@ -105864,7 +105952,7 @@
           "date": "2025-08-02",
           "max": 31.96,
           "min": 25.71,
-          "rain": 5.27,
+          "rain": 126.48,
           "rootWetness": 0.68,
           "surfaceWetness": 0.72
         },
@@ -105872,7 +105960,7 @@
           "date": "2025-08-03",
           "max": 34.0,
           "min": 25.76,
-          "rain": 6.56,
+          "rain": 157.44,
           "rootWetness": 0.67,
           "surfaceWetness": 0.71
         },
@@ -105880,7 +105968,7 @@
           "date": "2025-08-04",
           "max": 34.5,
           "min": 26.62,
-          "rain": 2.59,
+          "rain": 62.16,
           "rootWetness": 0.66,
           "surfaceWetness": 0.69
         },
@@ -105888,7 +105976,7 @@
           "date": "2025-08-05",
           "max": 34.36,
           "min": 25.56,
-          "rain": 2.54,
+          "rain": 60.96,
           "rootWetness": 0.65,
           "surfaceWetness": 0.68
         },
@@ -105896,7 +105984,7 @@
           "date": "2025-08-06",
           "max": 33.56,
           "min": 25.51,
-          "rain": 4.71,
+          "rain": 113.04,
           "rootWetness": 0.64,
           "surfaceWetness": 0.68
         },
@@ -105912,7 +106000,7 @@
           "date": "2025-08-08",
           "max": 35.25,
           "min": 25.79,
-          "rain": 2.67,
+          "rain": 64.08,
           "rootWetness": 0.62,
           "surfaceWetness": 0.64
         },
@@ -105920,7 +106008,7 @@
           "date": "2025-08-09",
           "max": 33.9,
           "min": 25.31,
-          "rain": 2.29,
+          "rain": 54.96,
           "rootWetness": 0.61,
           "surfaceWetness": 0.63
         },
@@ -105928,7 +106016,7 @@
           "date": "2025-08-10",
           "max": 34.38,
           "min": 25.24,
-          "rain": 0.91,
+          "rain": 21.84,
           "rootWetness": 0.61,
           "surfaceWetness": 0.62
         },
@@ -105936,7 +106024,7 @@
           "date": "2025-08-11",
           "max": 32.96,
           "min": 25.34,
-          "rain": 9.0,
+          "rain": 216.0,
           "rootWetness": 0.61,
           "surfaceWetness": 0.65
         },
@@ -105944,7 +106032,7 @@
           "date": "2025-08-12",
           "max": 31.61,
           "min": 25.42,
-          "rain": 2.78,
+          "rain": 66.72,
           "rootWetness": 0.61,
           "surfaceWetness": 0.63
         },
@@ -105952,7 +106040,7 @@
           "date": "2025-08-13",
           "max": 34.38,
           "min": 25.53,
-          "rain": 5.23,
+          "rain": 125.52,
           "rootWetness": 0.61,
           "surfaceWetness": 0.62
         },
@@ -105960,7 +106048,7 @@
           "date": "2025-08-14",
           "max": 29.64,
           "min": 25.47,
-          "rain": 14.73,
+          "rain": 353.52,
           "rootWetness": 0.63,
           "surfaceWetness": 0.68
         },
@@ -105968,7 +106056,7 @@
           "date": "2025-08-15",
           "max": 32.53,
           "min": 25.52,
-          "rain": 1.68,
+          "rain": 40.32,
           "rootWetness": 0.62,
           "surfaceWetness": 0.65
         },
@@ -105976,7 +106064,7 @@
           "date": "2025-08-16",
           "max": 33.1,
           "min": 25.71,
-          "rain": 1.53,
+          "rain": 36.72,
           "rootWetness": 0.62,
           "surfaceWetness": 0.63
         },
@@ -105984,7 +106072,7 @@
           "date": "2025-08-17",
           "max": 34.05,
           "min": 25.67,
-          "rain": 0.27,
+          "rain": 6.48,
           "rootWetness": 0.61,
           "surfaceWetness": 0.61
         },
@@ -105992,7 +106080,7 @@
           "date": "2025-08-18",
           "max": 32.06,
           "min": 25.17,
-          "rain": 1.23,
+          "rain": 29.52,
           "rootWetness": 0.6,
           "surfaceWetness": 0.6
         },
@@ -106000,7 +106088,7 @@
           "date": "2025-08-19",
           "max": 34.17,
           "min": 25.3,
-          "rain": 0.38,
+          "rain": 9.12,
           "rootWetness": 0.59,
           "surfaceWetness": 0.59
         },
@@ -106008,7 +106096,7 @@
           "date": "2025-08-20",
           "max": 30.84,
           "min": 25.05,
-          "rain": 16.26,
+          "rain": 390.24,
           "rootWetness": 0.6,
           "surfaceWetness": 0.65
         },
@@ -106016,7 +106104,7 @@
           "date": "2025-08-21",
           "max": 33.78,
           "min": 25.12,
-          "rain": 0.29,
+          "rain": 6.96,
           "rootWetness": 0.6,
           "surfaceWetness": 0.61
         },
@@ -106024,7 +106112,7 @@
           "date": "2025-08-22",
           "max": 34.54,
           "min": 26.57,
-          "rain": 1.76,
+          "rain": 42.24,
           "rootWetness": 0.59,
           "surfaceWetness": 0.6
         },
@@ -106032,7 +106120,7 @@
           "date": "2025-08-23",
           "max": 34.31,
           "min": 25.47,
-          "rain": 7.01,
+          "rain": 168.24,
           "rootWetness": 0.6,
           "surfaceWetness": 0.62
         },
@@ -106040,7 +106128,7 @@
           "date": "2025-08-24",
           "max": 32.29,
           "min": 24.69,
-          "rain": 21.99,
+          "rain": 527.76,
           "rootWetness": 0.62,
           "surfaceWetness": 0.67
         },
@@ -106048,7 +106136,7 @@
           "date": "2025-08-25",
           "max": 29.26,
           "min": 24.74,
-          "rain": 50.4,
+          "rain": 1209.6,
           "rootWetness": 0.68,
           "surfaceWetness": 0.79
         },
@@ -106056,7 +106144,7 @@
           "date": "2025-08-26",
           "max": 31.16,
           "min": 25.46,
-          "rain": 9.02,
+          "rain": 216.48,
           "rootWetness": 0.7,
           "surfaceWetness": 0.75
         },
@@ -106064,7 +106152,7 @@
           "date": "2025-08-27",
           "max": 32.18,
           "min": 25.73,
-          "rain": 1.53,
+          "rain": 36.72,
           "rootWetness": 0.69,
           "surfaceWetness": 0.72
         },
@@ -106072,7 +106160,7 @@
           "date": "2025-08-28",
           "max": 33.18,
           "min": 25.52,
-          "rain": 2.11,
+          "rain": 50.64,
           "rootWetness": 0.68,
           "surfaceWetness": 0.71
         },
@@ -106080,7 +106168,7 @@
           "date": "2025-08-29",
           "max": 31.33,
           "min": 25.58,
-          "rain": 2.16,
+          "rain": 51.84,
           "rootWetness": 0.67,
           "surfaceWetness": 0.7
         },
@@ -106088,7 +106176,7 @@
           "date": "2025-08-30",
           "max": 31.38,
           "min": 25.33,
-          "rain": 25.36,
+          "rain": 608.64,
           "rootWetness": 0.69,
           "surfaceWetness": 0.76
         },
@@ -106096,7 +106184,7 @@
           "date": "2025-08-31",
           "max": 28.97,
           "min": 24.99,
-          "rain": 30.67,
+          "rain": 736.08,
           "rootWetness": 0.72,
           "surfaceWetness": 0.79
         },
@@ -106104,7 +106192,7 @@
           "date": "2025-09-01",
           "max": 28.55,
           "min": 23.46,
-          "rain": 17.77,
+          "rain": 426.48,
           "rootWetness": 0.75,
           "surfaceWetness": 0.8
         },
@@ -106112,7 +106200,7 @@
           "date": "2025-09-02",
           "max": 29.78,
           "min": 23.2,
-          "rain": 23.13,
+          "rain": 555.12,
           "rootWetness": 0.77,
           "surfaceWetness": 0.81
         },
@@ -106120,7 +106208,7 @@
           "date": "2025-09-03",
           "max": 30.68,
           "min": 23.79,
-          "rain": 10.91,
+          "rain": 261.84,
           "rootWetness": 0.78,
           "surfaceWetness": 0.81
         },
@@ -106128,7 +106216,7 @@
           "date": "2025-09-04",
           "max": 30.54,
           "min": 23.71,
-          "rain": 4.28,
+          "rain": 102.72,
           "rootWetness": 0.78,
           "surfaceWetness": 0.79
         },
@@ -106136,7 +106224,7 @@
           "date": "2025-09-05",
           "max": 32.11,
           "min": 23.68,
-          "rain": 8.85,
+          "rain": 212.4,
           "rootWetness": 0.78,
           "surfaceWetness": 0.8
         },
@@ -106144,7 +106232,7 @@
           "date": "2025-09-06",
           "max": 31.38,
           "min": 24.69,
-          "rain": 33.97,
+          "rain": 815.28,
           "rootWetness": 0.8,
           "surfaceWetness": 0.84
         },
@@ -106152,7 +106240,7 @@
           "date": "2025-09-07",
           "max": 31.49,
           "min": 24.75,
-          "rain": 10.03,
+          "rain": 240.72,
           "rootWetness": 0.82,
           "surfaceWetness": 0.83
         },
@@ -106160,7 +106248,7 @@
           "date": "2025-09-08",
           "max": 31.5,
           "min": 24.61,
-          "rain": 4.67,
+          "rain": 112.08,
           "rootWetness": 0.81,
           "surfaceWetness": 0.82
         },
@@ -106168,7 +106256,7 @@
           "date": "2025-09-09",
           "max": 32.3,
           "min": 24.44,
-          "rain": 0.03,
+          "rain": 0.72,
           "rootWetness": 0.8,
           "surfaceWetness": 0.8
         },
@@ -106176,7 +106264,7 @@
           "date": "2025-09-10",
           "max": 31.23,
           "min": 22.64,
-          "rain": 0.17,
+          "rain": 4.08,
           "rootWetness": 0.79,
           "surfaceWetness": 0.79
         },
@@ -106184,7 +106272,7 @@
           "date": "2025-09-11",
           "max": 31.27,
           "min": 22.39,
-          "rain": 0.24,
+          "rain": 5.76,
           "rootWetness": 0.78,
           "surfaceWetness": 0.79
         },
@@ -106192,7 +106280,7 @@
           "date": "2025-09-12",
           "max": 31.55,
           "min": 23.08,
-          "rain": 0.11,
+          "rain": 2.64,
           "rootWetness": 0.77,
           "surfaceWetness": 0.78
         },
@@ -106200,7 +106288,7 @@
           "date": "2025-09-13",
           "max": 32.36,
           "min": 23.21,
-          "rain": 9.26,
+          "rain": 222.24,
           "rootWetness": 0.77,
           "surfaceWetness": 0.79
         },
@@ -106208,7 +106296,7 @@
           "date": "2025-09-14",
           "max": 32.71,
           "min": 23.73,
-          "rain": 0.29,
+          "rain": 6.96,
           "rootWetness": 0.76,
           "surfaceWetness": 0.77
         },
@@ -106216,7 +106304,7 @@
           "date": "2025-09-15",
           "max": 32.42,
           "min": 23.43,
-          "rain": 0.54,
+          "rain": 12.96,
           "rootWetness": 0.75,
           "surfaceWetness": 0.76
         },
@@ -106224,7 +106312,7 @@
           "date": "2025-09-16",
           "max": 33.09,
           "min": 23.72,
-          "rain": 1.58,
+          "rain": 37.92,
           "rootWetness": 0.74,
           "surfaceWetness": 0.76
         },
@@ -106232,7 +106320,7 @@
           "date": "2025-09-17",
           "max": 33.27,
           "min": 23.92,
-          "rain": 0.36,
+          "rain": 8.64,
           "rootWetness": 0.73,
           "surfaceWetness": 0.75
         },
@@ -106240,7 +106328,7 @@
           "date": "2025-09-18",
           "max": 32.62,
           "min": 24.21,
-          "rain": 3.3,
+          "rain": 79.2,
           "rootWetness": 0.72,
           "surfaceWetness": 0.75
         },
@@ -106248,7 +106336,7 @@
           "date": "2025-09-19",
           "max": 33.39,
           "min": 23.94,
-          "rain": 1.18,
+          "rain": 28.32,
           "rootWetness": 0.71,
           "surfaceWetness": 0.74
         },
@@ -106256,7 +106344,7 @@
           "date": "2025-09-20",
           "max": 32.4,
           "min": 22.95,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.7,
           "surfaceWetness": 0.72
         },
@@ -106328,7 +106416,7 @@
           "date": "2025-09-29",
           "max": 34.5,
           "min": 24.47,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.61,
           "surfaceWetness": 0.62
         },
@@ -106336,7 +106424,7 @@
           "date": "2025-09-30",
           "max": 33.65,
           "min": 22.74,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.61,
           "surfaceWetness": 0.61
         },
@@ -106344,7 +106432,7 @@
           "date": "2025-10-01",
           "max": 33.19,
           "min": 22.53,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.6,
           "surfaceWetness": 0.6
         },
@@ -106352,7 +106440,7 @@
           "date": "2025-10-02",
           "max": 33.22,
           "min": 22.88,
-          "rain": 0.83,
+          "rain": 19.92,
           "rootWetness": 0.59,
           "surfaceWetness": 0.59
         },
@@ -106360,7 +106448,7 @@
           "date": "2025-10-03",
           "max": 32.59,
           "min": 22.58,
-          "rain": 0.24,
+          "rain": 5.76,
           "rootWetness": 0.59,
           "surfaceWetness": 0.59
         },
@@ -106368,7 +106456,7 @@
           "date": "2025-10-04",
           "max": 33.66,
           "min": 22.51,
-          "rain": 0.76,
+          "rain": 18.24,
           "rootWetness": 0.58,
           "surfaceWetness": 0.58
         },
@@ -106376,7 +106464,7 @@
           "date": "2025-10-05",
           "max": 32.78,
           "min": 21.83,
-          "rain": 6.42,
+          "rain": 154.08,
           "rootWetness": 0.58,
           "surfaceWetness": 0.6
         },
@@ -106384,7 +106472,7 @@
           "date": "2025-10-06",
           "max": 27.02,
           "min": 20.88,
-          "rain": 11.79,
+          "rain": 282.96,
           "rootWetness": 0.59,
           "surfaceWetness": 0.62
         },
@@ -106392,7 +106480,7 @@
           "date": "2025-10-07",
           "max": 25.77,
           "min": 18.78,
-          "rain": 20.62,
+          "rain": 494.88,
           "rootWetness": 0.63,
           "surfaceWetness": 0.7
         },
@@ -106400,7 +106488,7 @@
           "date": "2025-10-08",
           "max": 27.25,
           "min": 16.98,
-          "rain": 2.16,
+          "rain": 51.84,
           "rootWetness": 0.63,
           "surfaceWetness": 0.65
         },
@@ -106520,7 +106608,7 @@
           "date": "2025-10-23",
           "max": 30.49,
           "min": 17.66,
-          "rain": 0.09,
+          "rain": 2.16,
           "rootWetness": 0.54,
           "surfaceWetness": 0.52
         },
@@ -106528,7 +106616,7 @@
           "date": "2025-10-24",
           "max": 31.21,
           "min": 18.37,
-          "rain": 0.06,
+          "rain": 1.44,
           "rootWetness": 0.54,
           "surfaceWetness": 0.52
         },
@@ -106616,7 +106704,7 @@
           "date": "2025-11-04",
           "max": 30.18,
           "min": 14.01,
-          "rain": 0.48,
+          "rain": 11.52,
           "rootWetness": 0.5,
           "surfaceWetness": 0.47
         },
@@ -107072,7 +107160,7 @@
           "date": "2025-12-31",
           "max": 18.35,
           "min": 7.45,
-          "rain": 1.8,
+          "rain": 43.2,
           "rootWetness": 0.41,
           "surfaceWetness": 0.38
         },
@@ -107080,7 +107168,7 @@
           "date": "2026-01-01",
           "max": 14.09,
           "min": 5.85,
-          "rain": 0.87,
+          "rain": 20.88,
           "rootWetness": 0.41,
           "surfaceWetness": 0.4
         },
@@ -107248,7 +107336,7 @@
           "date": "2026-01-22",
           "max": 24.63,
           "min": 7.09,
-          "rain": 5.5,
+          "rain": 132.0,
           "rootWetness": 0.4,
           "surfaceWetness": 0.36
         },
@@ -107256,7 +107344,7 @@
           "date": "2026-01-23",
           "max": 15.89,
           "min": 0.69,
-          "rain": 32.37,
+          "rain": 776.88,
           "rootWetness": 0.46,
           "surfaceWetness": 0.56
         },
@@ -107280,7 +107368,7 @@
           "date": "2026-01-26",
           "max": 20.58,
           "min": 6.06,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.46,
           "surfaceWetness": 0.43
         },
@@ -107288,7 +107376,7 @@
           "date": "2026-01-27",
           "max": 17.7,
           "min": 7.39,
-          "rain": 15.08,
+          "rain": 361.92,
           "rootWetness": 0.47,
           "surfaceWetness": 0.5
         },
@@ -107296,7 +107384,7 @@
           "date": "2026-01-28",
           "max": 19.3,
           "min": 5.55,
-          "rain": 0.55,
+          "rain": 13.2,
           "rootWetness": 0.48,
           "surfaceWetness": 0.47
         },
@@ -107320,7 +107408,7 @@
           "date": "2026-01-31",
           "max": 21.39,
           "min": 7.39,
-          "rain": 0.35,
+          "rain": 8.4,
           "rootWetness": 0.47,
           "surfaceWetness": 0.45
         },
@@ -107328,7 +107416,7 @@
           "date": "2026-02-01",
           "max": 20.86,
           "min": 7.61,
-          "rain": 0.34,
+          "rain": 8.16,
           "rootWetness": 0.47,
           "surfaceWetness": 0.45
         },
@@ -107344,7 +107432,7 @@
           "date": "2026-02-03",
           "max": 21.86,
           "min": 8.46,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.47,
           "surfaceWetness": 0.44
         },
@@ -107400,7 +107488,7 @@
           "date": "2026-02-10",
           "max": 25.39,
           "min": 9.27,
-          "rain": 0.07,
+          "rain": 1.68,
           "rootWetness": 0.45,
           "surfaceWetness": 0.42
         },
@@ -107456,7 +107544,7 @@
           "date": "2026-02-17",
           "max": 28.42,
           "min": 10.5,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.43,
           "surfaceWetness": 0.4
         },
@@ -107464,7 +107552,7 @@
           "date": "2026-02-18",
           "max": 20.65,
           "min": 10.45,
-          "rain": 0.74,
+          "rain": 17.76,
           "rootWetness": 0.44,
           "surfaceWetness": 0.41
         },
@@ -107632,7 +107720,7 @@
           "date": "2026-03-11",
           "max": 36.2,
           "min": 17.45,
-          "rain": 0.35,
+          "rain": 8.4,
           "rootWetness": 0.38,
           "surfaceWetness": 0.32
         },
@@ -107640,7 +107728,7 @@
           "date": "2026-03-12",
           "max": 35.19,
           "min": 18.31,
-          "rain": 0.1,
+          "rain": 2.4,
           "rootWetness": 0.38,
           "surfaceWetness": 0.32
         },
@@ -107656,7 +107744,7 @@
           "date": "2026-03-14",
           "max": 33.13,
           "min": 16.57,
-          "rain": 0.07,
+          "rain": 1.68,
           "rootWetness": 0.38,
           "surfaceWetness": 0.31
         },
@@ -107664,7 +107752,7 @@
           "date": "2026-03-15",
           "max": 31.43,
           "min": 13.29,
-          "rain": 3.89,
+          "rain": 93.36,
           "rootWetness": 0.38,
           "surfaceWetness": 0.35
         },
@@ -107672,7 +107760,7 @@
           "date": "2026-03-16",
           "max": 30.86,
           "min": 13.0,
-          "rain": 0.68,
+          "rain": 16.32,
           "rootWetness": 0.38,
           "surfaceWetness": 0.35
         },
@@ -107688,7 +107776,7 @@
           "date": "2026-03-18",
           "max": 24.5,
           "min": 15.75,
-          "rain": 1.09,
+          "rain": 26.16,
           "rootWetness": 0.38,
           "surfaceWetness": 0.33
         },
@@ -107696,7 +107784,7 @@
           "date": "2026-03-19",
           "max": 25.79,
           "min": 15.68,
-          "rain": 3.76,
+          "rain": 90.24,
           "rootWetness": 0.38,
           "surfaceWetness": 0.37
         },
@@ -107704,7 +107792,7 @@
           "date": "2026-03-20",
           "max": 21.24,
           "min": 12.05,
-          "rain": 7.55,
+          "rain": 181.2,
           "rootWetness": 0.4,
           "surfaceWetness": 0.45
         },
@@ -107712,7 +107800,7 @@
           "date": "2026-03-21",
           "max": 28.83,
           "min": 11.82,
-          "rain": 0.03,
+          "rain": 0.72,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -107720,7 +107808,7 @@
           "date": "2026-03-22",
           "max": 30.41,
           "min": 13.5,
-          "rain": 0.99,
+          "rain": 23.76,
           "rootWetness": 0.39,
           "surfaceWetness": 0.37
         },
@@ -107728,7 +107816,7 @@
           "date": "2026-03-23",
           "max": 30.69,
           "min": 15.26,
-          "rain": 0.07,
+          "rain": 1.68,
           "rootWetness": 0.39,
           "surfaceWetness": 0.36
         },
@@ -107736,7 +107824,7 @@
           "date": "2026-03-24",
           "max": 32.69,
           "min": 16.12,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.39,
           "surfaceWetness": 0.35
         },
@@ -107752,7 +107840,7 @@
           "date": "2026-03-26",
           "max": 34.92,
           "min": 19.8,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.38,
           "surfaceWetness": 0.33
         },
@@ -107768,7 +107856,7 @@
           "date": "2026-03-28",
           "max": 31.59,
           "min": 20.08,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.38,
           "surfaceWetness": 0.32
         },
@@ -107776,7 +107864,7 @@
           "date": "2026-03-29",
           "max": 34.46,
           "min": 19.94,
-          "rain": 2.55,
+          "rain": 61.2,
           "rootWetness": 0.38,
           "surfaceWetness": 0.36
         },
@@ -107784,7 +107872,7 @@
           "date": "2026-03-30",
           "max": 30.19,
           "min": 16.73,
-          "rain": 0.12,
+          "rain": 2.88,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -107792,7 +107880,7 @@
           "date": "2026-03-31",
           "max": 31.77,
           "min": 16.1,
-          "rain": 4.79,
+          "rain": 114.96,
           "rootWetness": 0.39,
           "surfaceWetness": 0.39
         },
@@ -107808,7 +107896,7 @@
           "date": "2026-04-02",
           "max": 36.84,
           "min": 19.78,
-          "rain": 0.35,
+          "rain": 8.4,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -107816,7 +107904,7 @@
           "date": "2026-04-03",
           "max": 28.94,
           "min": 18.19,
-          "rain": 2.09,
+          "rain": 50.16,
           "rootWetness": 0.38,
           "surfaceWetness": 0.37
         },
@@ -107824,7 +107912,7 @@
           "date": "2026-04-04",
           "max": 27.52,
           "min": 16.62,
-          "rain": 0.83,
+          "rain": 19.92,
           "rootWetness": 0.38,
           "surfaceWetness": 0.37
         },
@@ -107832,7 +107920,7 @@
           "date": "2026-04-05",
           "max": 32.13,
           "min": 15.8,
-          "rain": 0.13,
+          "rain": 3.12,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -107840,7 +107928,7 @@
           "date": "2026-04-06",
           "max": 32.86,
           "min": 17.54,
-          "rain": 0.99,
+          "rain": 23.76,
           "rootWetness": 0.38,
           "surfaceWetness": 0.33
         },
@@ -107848,7 +107936,7 @@
           "date": "2026-04-07",
           "max": 29.23,
           "min": 16.16,
-          "rain": 5.92,
+          "rain": 142.08,
           "rootWetness": 0.38,
           "surfaceWetness": 0.36
         },
@@ -107856,7 +107944,7 @@
           "date": "2026-04-08",
           "max": 26.55,
           "min": 14.1,
-          "rain": 6.55,
+          "rain": 157.2,
           "rootWetness": 0.4,
           "surfaceWetness": 0.44
         },
@@ -107864,7 +107952,7 @@
           "date": "2026-04-09",
           "max": 29.37,
           "min": 13.71,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.4,
           "surfaceWetness": 0.37
         },
@@ -107880,7 +107968,7 @@
           "date": "2026-04-11",
           "max": 33.27,
           "min": 16.9,
-          "rain": 0.7,
+          "rain": 16.8,
           "rootWetness": 0.39,
           "surfaceWetness": 0.35
         },
@@ -107928,7 +108016,7 @@
           "date": "2026-04-17",
           "max": 40.53,
           "min": 22.78,
-          "rain": 0.25,
+          "rain": 6.0,
           "rootWetness": 0.37,
           "surfaceWetness": 0.29
         },
@@ -108008,7 +108096,7 @@
           "date": "2026-04-27",
           "max": 43.84,
           "min": 25.12,
-          "rain": 2.76,
+          "rain": 66.24,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -108016,7 +108104,7 @@
           "date": "2026-04-28",
           "max": 39.88,
           "min": 24.39,
-          "rain": 1.0,
+          "rain": 24.0,
           "rootWetness": 0.36,
           "surfaceWetness": 0.3
         },
@@ -108024,7 +108112,7 @@
           "date": "2026-04-29",
           "max": 39.29,
           "min": 23.65,
-          "rain": 0.21,
+          "rain": 5.04,
           "rootWetness": 0.35,
           "surfaceWetness": 0.27
         },
@@ -108032,7 +108120,7 @@
           "date": "2026-04-30",
           "max": 40.17,
           "min": 23.39,
-          "rain": 0.39,
+          "rain": 9.36,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -108040,7 +108128,7 @@
           "date": "2026-05-01",
           "max": 39.91,
           "min": 23.07,
-          "rain": 0.06,
+          "rain": 1.44,
           "rootWetness": 0.35,
           "surfaceWetness": 0.23
         },
@@ -108048,7 +108136,7 @@
           "date": "2026-05-02",
           "max": 41.44,
           "min": 23.05,
-          "rain": 9.36,
+          "rain": 224.64,
           "rootWetness": 0.35,
           "surfaceWetness": 0.26
         },
@@ -108056,7 +108144,7 @@
           "date": "2026-05-03",
           "max": 38.95,
           "min": 22.73,
-          "rain": 5.72,
+          "rain": 137.28,
           "rootWetness": 0.37,
           "surfaceWetness": 0.4
         },
@@ -108064,7 +108152,7 @@
           "date": "2026-05-04",
           "max": 33.9,
           "min": 20.62,
-          "rain": 0.51,
+          "rain": 12.24,
           "rootWetness": 0.37,
           "surfaceWetness": 0.38
         },
@@ -108072,7 +108160,7 @@
           "date": "2026-05-05",
           "max": 35.13,
           "min": 20.59,
-          "rain": 0.42,
+          "rain": 10.08,
           "rootWetness": 0.37,
           "surfaceWetness": 0.34
         },
@@ -108080,7 +108168,7 @@
           "date": "2026-05-06",
           "max": 37.23,
           "min": 21.59,
-          "rain": 0.16,
+          "rain": 3.84,
           "rootWetness": 0.36,
           "surfaceWetness": 0.32
         },
@@ -108112,7 +108200,7 @@
           "date": "2026-05-10",
           "max": 39.52,
           "min": 25.91,
-          "rain": 0.37,
+          "rain": 8.88,
           "rootWetness": 0.35,
           "surfaceWetness": 0.27
         },
@@ -108120,7 +108208,7 @@
           "date": "2026-05-11",
           "max": 40.42,
           "min": 26.3,
-          "rain": 0.3,
+          "rain": 7.2,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -108128,7 +108216,7 @@
           "date": "2026-05-12",
           "max": 40.97,
           "min": 26.41,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.35,
           "surfaceWetness": 0.24
         },
@@ -108136,7 +108224,7 @@
           "date": "2026-05-13",
           "max": 42.18,
           "min": 26.41,
-          "rain": 3.09,
+          "rain": 74.16,
           "rootWetness": 0.35,
           "surfaceWetness": 0.24
         },
@@ -108144,7 +108232,7 @@
           "date": "2026-05-14",
           "max": 42.25,
           "min": 26.96,
-          "rain": 0.67,
+          "rain": 16.08,
           "rootWetness": 0.35,
           "surfaceWetness": 0.29
         },
@@ -108200,7 +108288,7 @@
           "date": "2026-05-21",
           "max": 45.49,
           "min": 30.4,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.35,
           "surfaceWetness": 0.14
         },
@@ -108208,7 +108296,7 @@
           "date": "2026-05-22",
           "max": 44.51,
           "min": 27.98,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.34,
           "surfaceWetness": 0.13
         },
@@ -108216,7 +108304,7 @@
           "date": "2026-05-23",
           "max": 43.91,
           "min": 27.35,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.34,
           "surfaceWetness": 0.13
         },
@@ -108256,7 +108344,7 @@
           "date": "2026-05-28",
           "max": 46.27,
           "min": 29.47,
-          "rain": 0.18,
+          "rain": 4.32,
           "rootWetness": 0.34,
           "surfaceWetness": 0.1
         },
@@ -108264,7 +108352,7 @@
           "date": "2026-05-29",
           "max": 42.86,
           "min": 28.91,
-          "rain": 1.13,
+          "rain": 27.12,
           "rootWetness": 0.34,
           "surfaceWetness": 0.12
         },
@@ -108272,7 +108360,7 @@
           "date": "2026-05-30",
           "max": 37.19,
           "min": 23.05,
-          "rain": 17.45,
+          "rain": 418.8,
           "rootWetness": 0.37,
           "surfaceWetness": 0.39
         },
@@ -108280,7 +108368,7 @@
           "date": "2026-05-31",
           "max": 36.05,
           "min": 23.35,
-          "rain": 0.76,
+          "rain": 18.24,
           "rootWetness": 0.37,
           "surfaceWetness": 0.35
         },
@@ -108288,7 +108376,7 @@
           "date": "2026-06-01",
           "max": 38.26,
           "min": 24.59,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.37,
           "surfaceWetness": 0.32
         },
@@ -108296,7 +108384,7 @@
           "date": "2026-06-02",
           "max": 40.13,
           "min": 26.97,
-          "rain": 0.38,
+          "rain": 9.12,
           "rootWetness": 0.36,
           "surfaceWetness": 0.31
         },
@@ -108304,7 +108392,7 @@
           "date": "2026-06-03",
           "max": 39.07,
           "min": 27.56,
-          "rain": 0.61,
+          "rain": 14.64,
           "rootWetness": 0.36,
           "surfaceWetness": 0.31
         },
@@ -108312,7 +108400,7 @@
           "date": "2026-06-04",
           "max": 41.65,
           "min": 25.56,
-          "rain": 6.09,
+          "rain": 146.16,
           "rootWetness": 0.36,
           "surfaceWetness": 0.31
         },
@@ -108352,7 +108440,7 @@
           "date": "2026-06-09",
           "max": 46.2,
           "min": 29.32,
-          "rain": 0.22,
+          "rain": 5.28,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -108360,7 +108448,7 @@
           "date": "2026-06-10",
           "max": 46.73,
           "min": 28.69,
-          "rain": 8.24,
+          "rain": 197.76,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -108368,7 +108456,7 @@
           "date": "2026-06-11",
           "max": 44.17,
           "min": 25.87,
-          "rain": 11.31,
+          "rain": 271.44,
           "rootWetness": 0.37,
           "surfaceWetness": 0.4
         },
@@ -108376,7 +108464,7 @@
           "date": "2026-06-12",
           "max": 37.41,
           "min": 25.91,
-          "rain": 5.54,
+          "rain": 132.96,
           "rootWetness": 0.39,
           "surfaceWetness": 0.43
         },
@@ -108384,7 +108472,7 @@
           "date": "2026-06-13",
           "max": 37.35,
           "min": 25.44,
-          "rain": 4.55,
+          "rain": 109.2,
           "rootWetness": 0.39,
           "surfaceWetness": 0.39
         },
@@ -108392,7 +108480,7 @@
           "date": "2026-06-14",
           "max": 39.71,
           "min": 26.1,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -108400,7 +108488,7 @@
           "date": "2026-06-15",
           "max": 41.01,
           "min": 27.87,
-          "rain": 1.15,
+          "rain": 27.6,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -108408,7 +108496,7 @@
           "date": "2026-06-16",
           "max": 40.94,
           "min": 27.6,
-          "rain": 2.17,
+          "rain": 52.08,
           "rootWetness": 0.38,
           "surfaceWetness": 0.35
         },
@@ -108416,7 +108504,7 @@
           "date": "2026-06-17",
           "max": 40.17,
           "min": 27.85,
-          "rain": 1.07,
+          "rain": 25.68,
           "rootWetness": 0.38,
           "surfaceWetness": 0.34
         },
@@ -108424,7 +108512,7 @@
           "date": "2026-06-18",
           "max": 40.63,
           "min": 27.58,
-          "rain": 1.04,
+          "rain": 24.96,
           "rootWetness": 0.37,
           "surfaceWetness": 0.34
         },
@@ -108432,7 +108520,7 @@
           "date": "2026-06-19",
           "max": 40.79,
           "min": 27.72,
-          "rain": 0.08,
+          "rain": 1.92,
           "rootWetness": 0.37,
           "surfaceWetness": 0.33
         },
@@ -108448,7 +108536,7 @@
           "date": "2026-06-21",
           "max": 41.82,
           "min": 28.42,
-          "rain": 1.22,
+          "rain": 29.28,
           "rootWetness": 0.36,
           "surfaceWetness": 0.31
         },
@@ -108456,7 +108544,7 @@
           "date": "2026-06-22",
           "max": 40.44,
           "min": 28.35,
-          "rain": 1.94,
+          "rain": 46.56,
           "rootWetness": 0.36,
           "surfaceWetness": 0.33
         },
@@ -108464,7 +108552,7 @@
           "date": "2026-06-23",
           "max": 41.11,
           "min": 28.5,
-          "rain": 0.04,
+          "rain": 0.96,
           "rootWetness": 0.36,
           "surfaceWetness": 0.3
         },
@@ -108472,7 +108560,7 @@
           "date": "2026-06-24",
           "max": 41.0,
           "min": 29.41,
-          "rain": 2.26,
+          "rain": 54.24,
           "rootWetness": 0.36,
           "surfaceWetness": 0.31
         },
@@ -108480,7 +108568,7 @@
           "date": "2026-06-25",
           "max": 41.0,
           "min": 29.5,
-          "rain": 1.54,
+          "rain": 36.96,
           "rootWetness": 0.36,
           "surfaceWetness": 0.3
         },
@@ -108488,7 +108576,7 @@
           "date": "2026-06-26",
           "max": 42.21,
           "min": 29.95,
-          "rain": 0.11,
+          "rain": 2.64,
           "rootWetness": 0.36,
           "surfaceWetness": 0.27
         },
@@ -108496,7 +108584,7 @@
           "date": "2026-06-27",
           "max": 44.15,
           "min": 31.42,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.35,
           "surfaceWetness": 0.25
         },
@@ -108504,7 +108592,7 @@
           "date": "2026-06-28",
           "max": 44.65,
           "min": 32.05,
-          "rain": 0.22,
+          "rain": 5.28,
           "rootWetness": 0.35,
           "surfaceWetness": 0.23
         },
@@ -108512,7 +108600,7 @@
           "date": "2026-06-29",
           "max": 45.04,
           "min": 31.94,
-          "rain": 0.16,
+          "rain": 3.84,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
         },
@@ -108520,7 +108608,7 @@
           "date": "2026-06-30",
           "max": 44.85,
           "min": 32.05,
-          "rain": 0.31,
+          "rain": 7.44,
           "rootWetness": 0.35,
           "surfaceWetness": 0.2
         },
@@ -108528,7 +108616,7 @@
           "date": "2026-07-01",
           "max": 39.64,
           "min": 28.01,
-          "rain": 36.2,
+          "rain": 868.8,
           "rootWetness": 0.39,
           "surfaceWetness": 0.49
         },
@@ -108536,7 +108624,7 @@
           "date": "2026-07-02",
           "max": 38.21,
           "min": 27.98,
-          "rain": 5.49,
+          "rain": 131.76,
           "rootWetness": 0.42,
           "surfaceWetness": 0.42
         },
@@ -108544,7 +108632,7 @@
           "date": "2026-07-03",
           "max": 39.1,
           "min": 28.93,
-          "rain": 1.41,
+          "rain": 33.84,
           "rootWetness": 0.41,
           "surfaceWetness": 0.37
         },
@@ -108552,7 +108640,7 @@
           "date": "2026-07-04",
           "max": 35.6,
           "min": 28.39,
-          "rain": 12.33,
+          "rain": 295.92,
           "rootWetness": 0.43,
           "surfaceWetness": 0.47
         },
@@ -108560,7 +108648,7 @@
           "date": "2026-07-05",
           "max": 37.87,
           "min": 28.62,
-          "rain": 0.61,
+          "rain": 14.64,
           "rootWetness": 0.42,
           "surfaceWetness": 0.39
         },
@@ -108568,7 +108656,7 @@
           "date": "2026-07-06",
           "max": 35.96,
           "min": 28.95,
-          "rain": 5.8,
+          "rain": 139.2,
           "rootWetness": 0.43,
           "surfaceWetness": 0.44
         },
@@ -108576,7 +108664,7 @@
           "date": "2026-07-07",
           "max": 39.07,
           "min": 29.31,
-          "rain": 2.54,
+          "rain": 60.96,
           "rootWetness": 0.43,
           "surfaceWetness": 0.41
         },
@@ -108584,7 +108672,7 @@
           "date": "2026-07-08",
           "max": 38.2,
           "min": 28.11,
-          "rain": 1.58,
+          "rain": 37.92,
           "rootWetness": 0.43,
           "surfaceWetness": 0.39
         },
@@ -108592,7 +108680,7 @@
           "date": "2026-07-09",
           "max": 39.68,
           "min": 27.4,
-          "rain": 8.49,
+          "rain": 203.76,
           "rootWetness": 0.44,
           "surfaceWetness": 0.44
         },
@@ -108600,7 +108688,7 @@
           "date": "2026-07-10",
           "max": 37.51,
           "min": 27.56,
-          "rain": 20.3,
+          "rain": 487.2,
           "rootWetness": 0.45,
           "surfaceWetness": 0.5
         },
@@ -108608,7 +108696,7 @@
           "date": "2026-07-11",
           "max": 39.75,
           "min": 27.88,
-          "rain": 0.94,
+          "rain": 22.56,
           "rootWetness": 0.46,
           "surfaceWetness": 0.44
         },
@@ -108616,7 +108704,7 @@
           "date": "2026-07-12",
           "max": 39.79,
           "min": 28.95,
-          "rain": 5.95,
+          "rain": 142.8,
           "rootWetness": 0.46,
           "surfaceWetness": 0.44
         },
@@ -108624,7 +108712,7 @@
           "date": "2026-07-13",
           "max": 39.75,
           "min": 29.12,
-          "rain": 1.99,
+          "rain": 47.76,
           "rootWetness": 0.46,
           "surfaceWetness": 0.43
         },
@@ -108632,7 +108720,7 @@
           "date": "2026-07-14",
           "max": 40.82,
           "min": 29.7,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.45,
           "surfaceWetness": 0.4
         },
@@ -108640,7 +108728,7 @@
           "date": "2026-07-15",
           "max": 40.32,
           "min": 29.34,
-          "rain": 1.4,
+          "rain": 33.6,
           "rootWetness": 0.45,
           "surfaceWetness": 0.4
         },
@@ -108656,7 +108744,7 @@
           "date": "2026-07-17",
           "max": 41.54,
           "min": 29.91,
-          "rain": 0.06,
+          "rain": 1.44,
           "rootWetness": 0.43,
           "surfaceWetness": 0.38
         },
@@ -108664,7 +108752,7 @@
           "date": "2026-07-18",
           "max": 41.85,
           "min": 30.27,
-          "rain": 0.38,
+          "rain": 9.12,
           "rootWetness": 0.43,
           "surfaceWetness": 0.37
         },
@@ -108672,7 +108760,7 @@
           "date": "2026-07-19",
           "max": 40.59,
           "min": 28.62,
-          "rain": 0.39,
+          "rain": 9.36,
           "rootWetness": 0.42,
           "surfaceWetness": 0.37
         },
@@ -108680,7 +108768,7 @@
           "date": "2026-07-20",
           "max": 40.21,
           "min": 27.62,
-          "rain": 3.24,
+          "rain": 77.76,
           "rootWetness": 0.42,
           "surfaceWetness": 0.39
         },
@@ -108688,7 +108776,7 @@
           "date": "2026-07-21",
           "max": 31.85,
           "min": 27.08,
-          "rain": 16.34,
+          "rain": 392.16,
           "rootWetness": 0.45,
           "surfaceWetness": 0.5
         },
@@ -108696,7 +108784,7 @@
           "date": "2026-07-22",
           "max": 31.56,
           "min": 27.07,
-          "rain": 10.2,
+          "rain": 244.8,
           "rootWetness": 0.46,
           "surfaceWetness": 0.48
         },
@@ -108704,7 +108792,7 @@
           "date": "2026-07-23",
           "max": 34.44,
           "min": 27.21,
-          "rain": 2.41,
+          "rain": 57.84,
           "rootWetness": 0.47,
           "surfaceWetness": 0.44
         },
@@ -108712,7 +108800,7 @@
           "date": "2026-07-24",
           "max": 36.74,
           "min": 26.57,
-          "rain": 3.53,
+          "rain": 84.72,
           "rootWetness": 0.46,
           "surfaceWetness": 0.42
         },
@@ -108720,7 +108808,7 @@
           "date": "2026-07-25",
           "max": 36.25,
           "min": 26.62,
-          "rain": 4.1,
+          "rain": 98.4,
           "rootWetness": 0.46,
           "surfaceWetness": 0.46
         },
@@ -108728,7 +108816,7 @@
           "date": "2026-07-26",
           "max": 35.6,
           "min": 27.39,
-          "rain": 2.9,
+          "rain": 69.6,
           "rootWetness": 0.46,
           "surfaceWetness": 0.45
         },
@@ -108736,7 +108824,7 @@
           "date": "2026-07-27",
           "max": 37.3,
           "min": 28.22,
-          "rain": 5.24,
+          "rain": 125.76,
           "rootWetness": 0.47,
           "surfaceWetness": 0.46
         },
@@ -108744,7 +108832,7 @@
           "date": "2026-07-28",
           "max": 36.46,
           "min": 28.29,
-          "rain": 8.31,
+          "rain": 199.44,
           "rootWetness": 0.47,
           "surfaceWetness": 0.48
         },
@@ -108752,7 +108840,7 @@
           "date": "2026-07-29",
           "max": 38.61,
           "min": 28.11,
-          "rain": 2.19,
+          "rain": 52.56,
           "rootWetness": 0.47,
           "surfaceWetness": 0.44
         },
@@ -108760,7 +108848,7 @@
           "date": "2026-07-30",
           "max": 36.36,
           "min": 27.82,
-          "rain": 10.77,
+          "rain": 258.48,
           "rootWetness": 0.48,
           "surfaceWetness": 0.5
         },
@@ -108768,7 +108856,7 @@
           "date": "2026-07-31",
           "max": 36.7,
           "min": 27.52,
-          "rain": 0.42,
+          "rain": 10.08,
           "rootWetness": 0.47,
           "surfaceWetness": 0.43
         },
@@ -108776,7 +108864,7 @@
           "date": "2026-08-01",
           "max": 35.14,
           "min": 27.6,
-          "rain": 0.27,
+          "rain": 6.48,
           "rootWetness": 0.47,
           "surfaceWetness": 0.43
         },
@@ -108784,7 +108872,7 @@
           "date": "2026-08-02",
           "max": 35.53,
           "min": 27.68,
-          "rain": 0.62,
+          "rain": 14.88,
           "rootWetness": 0.46,
           "surfaceWetness": 0.43
         },
@@ -108792,7 +108880,7 @@
           "date": "2026-08-03",
           "max": 35.31,
           "min": 27.94,
-          "rain": 24.87,
+          "rain": 596.88,
           "rootWetness": 0.48,
           "surfaceWetness": 0.55
         },
@@ -108800,7 +108888,7 @@
           "date": "2026-08-04",
           "max": 34.97,
           "min": 27.38,
-          "rain": 21.75,
+          "rain": 522.0,
           "rootWetness": 0.54,
           "surfaceWetness": 0.59
         },
@@ -108808,7 +108896,7 @@
           "date": "2026-08-05",
           "max": 36.2,
           "min": 27.09,
-          "rain": 1.95,
+          "rain": 46.8,
           "rootWetness": 0.52,
           "surfaceWetness": 0.5
         },
@@ -108816,7 +108904,7 @@
           "date": "2026-08-06",
           "max": 36.96,
           "min": 26.39,
-          "rain": 2.66,
+          "rain": 63.84,
           "rootWetness": 0.52,
           "surfaceWetness": 0.5
         },
@@ -108824,7 +108912,7 @@
           "date": "2026-08-07",
           "max": 35.41,
           "min": 26.4,
-          "rain": 3.38,
+          "rain": 81.12,
           "rootWetness": 0.51,
           "surfaceWetness": 0.49
         },
@@ -108832,7 +108920,7 @@
           "date": "2026-08-08",
           "max": 31.95,
           "min": 26.39,
-          "rain": 9.38,
+          "rain": 225.12,
           "rootWetness": 0.53,
           "surfaceWetness": 0.55
         },
@@ -108840,7 +108928,7 @@
           "date": "2026-08-09",
           "max": 35.5,
           "min": 27.38,
-          "rain": 0.99,
+          "rain": 23.76,
           "rootWetness": 0.52,
           "surfaceWetness": 0.5
         },
@@ -108848,7 +108936,7 @@
           "date": "2026-08-10",
           "max": 33.28,
           "min": 27.35,
-          "rain": 2.5,
+          "rain": 60.0,
           "rootWetness": 0.52,
           "surfaceWetness": 0.51
         },
@@ -108856,7 +108944,7 @@
           "date": "2026-08-11",
           "max": 34.77,
           "min": 27.16,
-          "rain": 0.7,
+          "rain": 16.8,
           "rootWetness": 0.52,
           "surfaceWetness": 0.49
         },
@@ -108864,7 +108952,7 @@
           "date": "2026-08-12",
           "max": 37.38,
           "min": 27.08,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.51,
           "surfaceWetness": 0.47
         },
@@ -108872,7 +108960,7 @@
           "date": "2026-08-13",
           "max": 37.13,
           "min": 27.93,
-          "rain": 3.73,
+          "rain": 89.52,
           "rootWetness": 0.51,
           "surfaceWetness": 0.49
         },
@@ -108880,7 +108968,7 @@
           "date": "2026-08-14",
           "max": 36.12,
           "min": 27.12,
-          "rain": 16.82,
+          "rain": 403.68,
           "rootWetness": 0.52,
           "surfaceWetness": 0.55
         },
@@ -108888,7 +108976,7 @@
           "date": "2026-08-15",
           "max": 35.57,
           "min": 27.15,
-          "rain": 6.65,
+          "rain": 159.6,
           "rootWetness": 0.53,
           "surfaceWetness": 0.54
         },
@@ -108896,7 +108984,7 @@
           "date": "2026-08-16",
           "max": 37.0,
           "min": 27.01,
-          "rain": 2.89,
+          "rain": 69.36,
           "rootWetness": 0.53,
           "surfaceWetness": 0.51
         },
@@ -108904,7 +108992,7 @@
           "date": "2026-08-17",
           "max": 37.37,
           "min": 26.95,
-          "rain": 0.92,
+          "rain": 22.08,
           "rootWetness": 0.52,
           "surfaceWetness": 0.49
         },
@@ -108912,7 +109000,7 @@
           "date": "2026-08-18",
           "max": 36.47,
           "min": 26.89,
-          "rain": 19.99,
+          "rain": 479.76,
           "rootWetness": 0.53,
           "surfaceWetness": 0.57
         },
@@ -108920,7 +109008,7 @@
           "date": "2026-08-19",
           "max": 35.93,
           "min": 26.81,
-          "rain": 2.66,
+          "rain": 63.84,
           "rootWetness": 0.54,
           "surfaceWetness": 0.53
         },
@@ -108928,7 +109016,7 @@
           "date": "2026-08-20",
           "max": 36.75,
           "min": 26.71,
-          "rain": 4.12,
+          "rain": 98.88,
           "rootWetness": 0.53,
           "surfaceWetness": 0.52
         },
@@ -108936,7 +109024,7 @@
           "date": "2026-08-21",
           "max": 35.08,
           "min": 27.68,
-          "rain": 4.69,
+          "rain": 112.56,
           "rootWetness": 0.53,
           "surfaceWetness": 0.53
         },
@@ -108944,7 +109032,7 @@
           "date": "2026-08-22",
           "max": 36.08,
           "min": 26.28,
-          "rain": 13.84,
+          "rain": 332.16,
           "rootWetness": 0.54,
           "surfaceWetness": 0.57
         },
@@ -108952,7 +109040,7 @@
           "date": "2026-08-23",
           "max": 36.46,
           "min": 26.2,
-          "rain": 1.19,
+          "rain": 28.56,
           "rootWetness": 0.54,
           "surfaceWetness": 0.52
         },
@@ -108960,7 +109048,7 @@
           "date": "2026-08-24",
           "max": 36.61,
           "min": 26.67,
-          "rain": 0.16,
+          "rain": 3.84,
           "rootWetness": 0.53,
           "surfaceWetness": 0.5
         },
@@ -108968,7 +109056,7 @@
           "date": "2026-08-25",
           "max": 36.71,
           "min": 26.06,
-          "rain": 3.07,
+          "rain": 73.68,
           "rootWetness": 0.52,
           "surfaceWetness": 0.51
         },
@@ -108976,7 +109064,7 @@
           "date": "2026-08-26",
           "max": 38.02,
           "min": 25.95,
-          "rain": 0.16,
+          "rain": 3.84,
           "rootWetness": 0.52,
           "surfaceWetness": 0.48
         },
@@ -108984,7 +109072,7 @@
           "date": "2026-08-27",
           "max": 38.42,
           "min": 26.93,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.51,
           "surfaceWetness": 0.47
         },
@@ -108992,7 +109080,7 @@
           "date": "2026-08-28",
           "max": 38.45,
           "min": 26.82,
-          "rain": 0.41,
+          "rain": 9.84,
           "rootWetness": 0.5,
           "surfaceWetness": 0.46
         },
@@ -109000,7 +109088,7 @@
           "date": "2026-08-29",
           "max": 39.28,
           "min": 26.36,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.49,
           "surfaceWetness": 0.45
         },
@@ -109008,7 +109096,7 @@
           "date": "2026-08-30",
           "max": 38.63,
           "min": 26.17,
-          "rain": 0.62,
+          "rain": 14.88,
           "rootWetness": 0.49,
           "surfaceWetness": 0.45
         },
@@ -109016,7 +109104,7 @@
           "date": "2026-08-31",
           "max": 38.22,
           "min": 26.24,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.48,
           "surfaceWetness": 0.44
         },
@@ -109024,7 +109112,7 @@
           "date": "2026-09-01",
           "max": 37.8,
           "min": 26.08,
-          "rain": 0.46,
+          "rain": 11.04,
           "rootWetness": 0.47,
           "surfaceWetness": 0.43
         },
@@ -109032,7 +109120,7 @@
           "date": "2026-09-02",
           "max": 37.7,
           "min": 26.3,
-          "rain": 2.48,
+          "rain": 59.52,
           "rootWetness": 0.47,
           "surfaceWetness": 0.44
         },
@@ -109040,7 +109128,7 @@
           "date": "2026-09-03",
           "max": 36.91,
           "min": 26.18,
-          "rain": 2.8,
+          "rain": 67.2,
           "rootWetness": 0.47,
           "surfaceWetness": 0.45
         },
@@ -109048,7 +109136,7 @@
           "date": "2026-09-04",
           "max": 35.41,
           "min": 25.87,
-          "rain": 13.65,
+          "rain": 327.6,
           "rootWetness": 0.49,
           "surfaceWetness": 0.51
         },
@@ -109056,7 +109144,7 @@
           "date": "2026-09-05",
           "max": 35.17,
           "min": 25.1,
-          "rain": 5.43,
+          "rain": 130.32,
           "rootWetness": 0.49,
           "surfaceWetness": 0.49
         },
@@ -109064,7 +109152,7 @@
           "date": "2026-09-06",
           "max": 35.69,
           "min": 24.93,
-          "rain": 0.81,
+          "rain": 19.44,
           "rootWetness": 0.49,
           "surfaceWetness": 0.45
         },
@@ -109072,7 +109160,7 @@
           "date": "2026-09-07",
           "max": 36.47,
           "min": 25.0,
-          "rain": 0.26,
+          "rain": 6.24,
           "rootWetness": 0.48,
           "surfaceWetness": 0.44
         },
@@ -109088,7 +109176,7 @@
           "date": "2026-09-09",
           "max": 38.25,
           "min": 25.42,
-          "rain": 0.02,
+          "rain": 0.48,
           "rootWetness": 0.47,
           "surfaceWetness": 0.42
         },
@@ -109096,7 +109184,7 @@
           "date": "2026-09-10",
           "max": 38.22,
           "min": 24.63,
-          "rain": 3.39,
+          "rain": 81.36,
           "rootWetness": 0.46,
           "surfaceWetness": 0.43
         },
@@ -109104,7 +109192,7 @@
           "date": "2026-09-11",
           "max": 38.68,
           "min": 24.36,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.46,
           "surfaceWetness": 0.42
         },
@@ -109112,7 +109200,7 @@
           "date": "2026-09-12",
           "max": 36.12,
           "min": 25.47,
-          "rain": 0.61,
+          "rain": 14.64,
           "rootWetness": 0.46,
           "surfaceWetness": 0.42
         },
@@ -109120,7 +109208,7 @@
           "date": "2026-09-13",
           "max": 36.81,
           "min": 25.96,
-          "rain": 1.84,
+          "rain": 44.16,
           "rootWetness": 0.45,
           "surfaceWetness": 0.42
         },
@@ -109128,7 +109216,7 @@
           "date": "2026-09-14",
           "max": 35.92,
           "min": 25.72,
-          "rain": 2.33,
+          "rain": 55.92,
           "rootWetness": 0.45,
           "surfaceWetness": 0.43
         },
@@ -109136,7 +109224,7 @@
           "date": "2026-09-15",
           "max": 36.43,
           "min": 25.6,
-          "rain": 1.09,
+          "rain": 26.16,
           "rootWetness": 0.45,
           "surfaceWetness": 0.42
         },
@@ -109144,7 +109232,7 @@
           "date": "2026-09-16",
           "max": 36.9,
           "min": 25.12,
-          "rain": 2.32,
+          "rain": 55.68,
           "rootWetness": 0.45,
           "surfaceWetness": 0.42
         },
@@ -109152,7 +109240,7 @@
           "date": "2026-09-17",
           "max": 33.84,
           "min": 24.39,
-          "rain": 8.54,
+          "rain": 204.96,
           "rootWetness": 0.46,
           "surfaceWetness": 0.47
         },
@@ -109208,7 +109296,7 @@
           "date": "2026-09-24",
           "max": 37.08,
           "min": 23.56,
-          "rain": 0.05,
+          "rain": 1.2,
           "rootWetness": 0.43,
           "surfaceWetness": 0.39
         },
@@ -109216,7 +109304,7 @@
           "date": "2026-09-25",
           "max": 34.4,
           "min": 23.54,
-          "rain": 3.02,
+          "rain": 72.48,
           "rootWetness": 0.43,
           "surfaceWetness": 0.42
         },
@@ -109224,7 +109312,7 @@
           "date": "2026-09-26",
           "max": 35.84,
           "min": 21.89,
-          "rain": 0.32,
+          "rain": 7.68,
           "rootWetness": 0.43,
           "surfaceWetness": 0.39
         },
@@ -109232,7 +109320,7 @@
           "date": "2026-09-27",
           "max": 35.84,
           "min": 21.67,
-          "rain": 0.23,
+          "rain": 5.52,
           "rootWetness": 0.42,
           "surfaceWetness": 0.39
         },
@@ -109240,7 +109328,7 @@
           "date": "2026-09-28",
           "max": 32.2,
           "min": 20.87,
-          "rain": 9.33,
+          "rain": 223.92,
           "rootWetness": 0.44,
           "surfaceWetness": 0.46
         },
@@ -109304,7 +109392,7 @@
           "date": "2026-10-06",
           "max": 39.77,
           "min": 24.25,
-          "rain": 0.01,
+          "rain": 0.24,
           "rootWetness": 0.35,
           "surfaceWetness": 0.13
         },
@@ -109320,7 +109408,7 @@
           "date": "2026-10-08",
           "max": 37.5,
           "min": 24.63,
-          "rain": 0.49,
+          "rain": 11.76,
           "rootWetness": 0.34,
           "surfaceWetness": 0.14
         },
@@ -109328,7 +109416,7 @@
           "date": "2026-10-09",
           "max": 36.33,
           "min": 24.1,
-          "rain": 0.38,
+          "rain": 9.12,
           "rootWetness": 0.35,
           "surfaceWetness": 0.16
         },
@@ -109336,7 +109424,7 @@
           "date": "2026-10-10",
           "max": 35.42,
           "min": 23.7,
-          "rain": 2.47,
+          "rain": 59.28,
           "rootWetness": 0.35,
           "surfaceWetness": 0.2
         },
@@ -109344,7 +109432,7 @@
           "date": "2026-10-11",
           "max": 30.59,
           "min": 21.46,
-          "rain": 0.55,
+          "rain": 13.2,
           "rootWetness": 0.35,
           "surfaceWetness": 0.29
         },
@@ -109352,7 +109440,7 @@
           "date": "2026-10-12",
           "max": 34.76,
           "min": 21.18,
-          "rain": 0.11,
+          "rain": 2.64,
           "rootWetness": 0.35,
           "surfaceWetness": 0.28
         },
@@ -109360,7 +109448,7 @@
           "date": "2026-10-13",
           "max": 35.77,
           "min": 22.53,
-          "rain": 0.18,
+          "rain": 4.32,
           "rootWetness": 0.35,
           "surfaceWetness": 0.26
         },
@@ -109368,7 +109456,7 @@
           "date": "2026-10-14",
           "max": 36.03,
           "min": 22.98,
-          "rain": 2.25,
+          "rain": 54.0,
           "rootWetness": 0.35,
           "surfaceWetness": 0.27
         },
@@ -109376,7 +109464,7 @@
           "date": "2026-10-15",
           "max": 32.71,
           "min": 20.88,
-          "rain": 1.91,
+          "rain": 45.84,
           "rootWetness": 0.35,
           "surfaceWetness": 0.34
         },
@@ -109419,9 +109507,17 @@
           "rain": 0.0,
           "rootWetness": 0.35,
           "surfaceWetness": 0.22
+        },
+        {
+          "date": "2026-10-21",
+          "max": 34.91,
+          "min": 22.5,
+          "rain": 0.0,
+          "rootWetness": 0.34,
+          "surfaceWetness": 0.21
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -109626,36 +109722,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/punjab",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=30.5&longitude=75.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "9248ad6a0236435d478cecb092ecbcdb6ee34f5e4debb0a2a2227165503a6ecd",
+          "contentHash": "99af50e6d3bf2da9d3e2cb176f7fee55344bf241ea8792696b5905e203be3996",
           "observationId": null,
           "revisionId": null
         },
@@ -117855,9 +117951,17 @@
           "rain": 100.8,
           "rootWetness": 0.84,
           "surfaceWetness": 0.8
+        },
+        {
+          "date": "2026-10-21",
+          "max": 30.22,
+          "min": 22.55,
+          "rain": 1.2,
+          "rootWetness": 0.83,
+          "surfaceWetness": 0.77
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -118062,36 +118166,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/thailand",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=16&longitude=103&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "9cc1dae7ab98856cf22ac72c797b8e2fbcb81cce07655bdcaf4f875a0a147f21",
+          "contentHash": "71b42e949508d51f45950dae6e22aea7ccdd56c4aeb7f3cbe36d72fc710a6082",
           "observationId": null,
           "revisionId": null
         },
@@ -126291,9 +126395,17 @@
           "rain": 8.64,
           "rootWetness": 0.41,
           "surfaceWetness": 0.22
+        },
+        {
+          "date": "2026-10-21",
+          "max": 30.14,
+          "min": 18.76,
+          "rain": 0.24,
+          "rootWetness": 0.41,
+          "surfaceWetness": 0.21
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -126498,36 +126610,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/australia",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-34&longitude=138.5&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "007cb78c8994fee851ea075fd45cc6ccbf553aa765a4f9b53cf2678e8112a565",
+          "contentHash": "ee558b898fe3fafe134ca45f3fd16cb1525ad599b12c5453bf20a502824840be",
           "observationId": null,
           "revisionId": null
         },
@@ -134727,9 +134839,17 @@
           "rain": 0.0,
           "rootWetness": 0.35,
           "surfaceWetness": 0.18
+        },
+        {
+          "date": "2026-10-21",
+          "max": 30.36,
+          "min": 13.96,
+          "rain": 0.0,
+          "rootWetness": 0.35,
+          "surfaceWetness": 0.17
         }
       ],
-      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+      "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261021&format=JSON&time-standard=UTC",
       "soilClimatology": {
         "baseline": "1991–2020",
         "months": {
@@ -134934,36 +135054,36 @@
         "POWER"
       ],
       "status": "ok",
-      "fetchedAt": "2026-10-24T11:17:04Z",
-      "lastAttemptAt": "2026-10-24T11:17:04Z",
+      "fetchedAt": "2026-10-25T11:47:09Z",
+      "lastAttemptAt": "2026-10-25T11:47:09Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/free-state",
         "provider": "NASA POWER",
-        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261020&format=JSON&time-standard=UTC",
-        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261020&format=JSON&time-standard=UTC",
+        "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261021&format=JSON&time-standard=UTC",
+        "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=-28&longitude=27&start=20240101&end=20261021&format=JSON&time-standard=UTC",
         "observation": {
-          "period": "2026-10-20",
+          "period": "2026-10-21",
           "marketYear": null,
           "vintage": null,
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-24T11:17:04Z",
+          "checkedAt": "2026-10-25T11:47:09Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-24T11:17:04Z",
+          "fetchedAt": "2026-10-25T11:47:09Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
         "cache": "new",
         "version": {
-          "contentHash": "359fc0c9e9156bfeb9762283f2f0e1763028856fdad355f33ef4f5f23b211f60",
+          "contentHash": "a4f9349f5be6c0711b8aabeb0bb939783b61babe873dfc37b83dfd875e87a81f",
           "observationId": null,
           "revisionId": null
         },
@@ -134972,5 +135092,5 @@
     }
   },
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T11:17:04Z"
+  "generatedAt": "2026-10-25T11:47:09Z"
 }
