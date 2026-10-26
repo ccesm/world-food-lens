@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-25T11:47:17Z",
+  "generatedAt": "2026-10-26T13:19:26Z",
   "maps": {
     "shortTerm": {
-      "period": "2026-10-01",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-01&SELECTED_TIMESCALE=01",
+      "period": "2026-10-11",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-11&SELECTED_TIMESCALE=01",
       "layer": "spaST",
       "title": "SPI ERA5 Short Term (1 month)",
       "periodBasis": "wms-service-example",
@@ -27,8 +27,8 @@
       "productPeriodVerified": false
     },
     "impactRisk": {
-      "period": "2026-09-21",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-21",
+      "period": "2026-10-01",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=rdria&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-01",
       "layer": "rdria",
       "title": "Risk of Drought Impact for Agriculture",
       "periodBasis": "wms-service-example",
@@ -41,7 +41,7 @@
   },
   "points": {
     "iowa": {
-      "shortTerm": "very-wet",
+      "shortTerm": "moderately-wet",
       "longTerm": "very-wet",
       "impactRisk": "no-hotspot"
     },
@@ -51,7 +51,7 @@
       "impactRisk": "no-hotspot"
     },
     "saskatchewan": {
-      "shortTerm": "near-normal",
+      "shortTerm": "severely-dry",
       "longTerm": "moderately-wet",
       "impactRisk": "no-hotspot"
     },
@@ -81,17 +81,17 @@
       "impactRisk": "no-hotspot"
     },
     "pampas": {
-      "shortTerm": "moderately-wet",
-      "longTerm": "near-normal",
-      "impactRisk": "no-hotspot"
-    },
-    "henan": {
       "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
+    "henan": {
+      "shortTerm": "moderately-wet",
+      "longTerm": "near-normal",
+      "impactRisk": "no-hotspot"
+    },
     "jilin": {
-      "shortTerm": "moderately-dry",
+      "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -116,14 +116,14 @@
       "impactRisk": "low"
     },
     "free-state": {
-      "shortTerm": "moderately-wet",
+      "shortTerm": "near-normal",
       "longTerm": "extremely-wet",
       "impactRisk": "no-hotspot"
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-10-25T11:47:17Z",
-  "lastAttemptAt": "2026-10-25T11:47:17Z",
+  "fetchedAt": "2026-10-26T13:19:26Z",
+  "lastAttemptAt": "2026-10-26T13:19:26Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -132,7 +132,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-10-25T11:47:19Z",
+    "checkedAt": "2026-10-26T13:19:28Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "availability-metadata-invalid",
     "error": "GDO interval end does not align with its advertised timestep"
@@ -144,33 +144,33 @@
     "sourceUrl": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
     "downloadUrl": null,
     "observation": {
-      "period": "2026-10-01",
+      "period": "2026-10-11",
       "marketYear": null,
       "vintage": null,
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-10-25T11:47:17Z",
+      "checkedAt": "2026-10-26T13:19:26Z",
       "retrieval": "ok",
       "format": "passed",
       "semantic": "passed",
       "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-10-25T11:47:17Z",
+      "fetchedAt": "2026-10-26T13:19:26Z",
       "format": "passed",
       "semantic": "passed",
       "period": "unverified"
     },
-    "cache": "unchanged",
+    "cache": "new",
     "version": {
-      "contentHash": "e14efaf5fe64f6d240891cdd151fa488b887a80058e7f57df432312bc3b28b53",
+      "contentHash": "07ad3af2129b862e18b4fa3584c0b02ced19568630746d911d483ac66eb03046",
       "observationId": null,
       "revisionId": null
     },
     "extensions": {
       "periodVerification": {
-        "checkedAt": "2026-10-25T11:47:19Z",
+        "checkedAt": "2026-10-26T13:19:28Z",
         "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
         "reason": "availability-metadata-invalid",
         "error": "GDO interval end does not align with its advertised timestep"
