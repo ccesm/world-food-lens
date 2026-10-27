@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T13:19:13Z",
+  "generatedAt": "2026-10-27T12:27:22Z",
   "sources": {
     "usda": {
       "source": {
@@ -94896,8 +94896,8 @@
       },
       "refreshKind": "unchanged",
       "status": "ok",
-      "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:13Z",
+      "fetchedAt": "2026-10-27T12:27:28Z",
+      "lastAttemptAt": "2026-10-27T12:27:22Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "usda",
@@ -94911,14 +94911,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:13Z",
+          "checkedAt": "2026-10-27T12:27:22Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-26T13:19:17Z",
+          "fetchedAt": "2026-10-27T12:27:28Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -95318,7 +95318,7 @@
           },
           "derived": {
             "methodVersion": "stock-to-use/v1",
-            "calculatedAt": "2026-10-26T13:19:17Z",
+            "calculatedAt": "2026-10-27T12:27:28Z",
             "inputs": [
               {
                 "datasetId": "usda",
@@ -97117,8 +97117,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-26T13:19:14Z",
-      "lastAttemptAt": "2026-10-26T13:19:13Z",
+      "fetchedAt": "2026-10-27T12:27:22Z",
+      "lastAttemptAt": "2026-10-27T12:27:22Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "fao",
@@ -97132,14 +97132,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:13Z",
+          "checkedAt": "2026-10-27T12:27:22Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-26T13:19:14Z",
+          "fetchedAt": "2026-10-27T12:27:22Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -97153,7 +97153,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-10-26T13:19:14Z",
+            "calculatedAt": "2026-10-27T12:27:22Z",
             "inputs": [
               {
                 "datasetId": "fao",
@@ -98274,8 +98274,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-10-26T13:19:14Z",
-      "lastAttemptAt": "2026-10-26T13:19:13Z",
+      "fetchedAt": "2026-10-27T12:27:23Z",
+      "lastAttemptAt": "2026-10-27T12:27:22Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "noaa",
@@ -98289,14 +98289,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:13Z",
+          "checkedAt": "2026-10-27T12:27:22Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-26T13:19:14Z",
+          "fetchedAt": "2026-10-27T12:27:23Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -105613,8 +105613,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-10-26T13:19:14Z",
-      "lastAttemptAt": "2026-10-26T13:19:13Z",
+      "fetchedAt": "2026-10-27T12:27:23Z",
+      "lastAttemptAt": "2026-10-27T12:27:22Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "worldBank",
@@ -105628,14 +105628,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:13Z",
+          "checkedAt": "2026-10-27T12:27:22Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-26T13:19:14Z",
+          "fetchedAt": "2026-10-27T12:27:23Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -105649,7 +105649,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-10-26T13:19:14Z",
+            "calculatedAt": "2026-10-27T12:27:23Z",
             "inputs": [
               {
                 "datasetId": "worldBank",
@@ -107576,8 +107576,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-26T13:19:14Z",
-      "lastAttemptAt": "2026-10-26T13:19:13Z",
+      "fetchedAt": "2026-10-27T12:27:22Z",
+      "lastAttemptAt": "2026-10-27T12:27:22Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "eia",
@@ -107591,14 +107591,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:13Z",
+          "checkedAt": "2026-10-27T12:27:22Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-26T13:19:14Z",
+          "fetchedAt": "2026-10-27T12:27:22Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -107612,7 +107612,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-10-26T13:19:14Z",
+            "calculatedAt": "2026-10-27T12:27:22Z",
             "inputs": [
               {
                 "datasetId": "eia",
@@ -107705,8 +107705,8 @@
           "period": "2025"
         },
         "status": "ok",
-        "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "fetchedAt": "2026-10-27T12:27:40Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "cornProduction",
@@ -107720,14 +107720,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-26T13:19:30Z",
+            "fetchedAt": "2026-10-27T12:27:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -108606,8 +108606,8 @@
           "period": "2026-10-18"
         },
         "status": "ok",
-        "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "fetchedAt": "2026-10-27T12:27:40Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "cornProgress",
@@ -108621,14 +108621,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-26T13:19:30Z",
+            "fetchedAt": "2026-10-27T12:27:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -108763,9 +108763,9 @@
           }
         ],
         "rawHash": "dba13143176770630f7eb6e19628f42d895be420eeedf2d7ab46fd3a921abe18",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IA",
@@ -108779,11 +108779,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -108791,14 +108791,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "6bfbb36bb175da2ef2896542093f25081324520c3bc41095564015b045f280f1",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "IL": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -108917,9 +108919,9 @@
           }
         ],
         "rawHash": "aede19d9934b9f017ccd8b3bfa3bde2f21874e298d8aa9e627cab20cdfd8230f",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IL",
@@ -108933,11 +108935,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -108945,14 +108947,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "763b09ffb8a5ab6496fbb46741865afb492543f68a8bcb7c1de39afc3aa12c2e",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "NE": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109071,9 +109075,9 @@
           }
         ],
         "rawHash": "1a8d842de15f30cdd68cf6b84fdc92b4887aabe05f36edcfa4504e104cde2c6c",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-NE",
@@ -109087,11 +109091,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -109099,14 +109103,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "34b1d999c2efeacb25d0dab2ab437a78d93a0477a6dab59e5aaf300f692020e3",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "MN": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109225,9 +109231,9 @@
           }
         ],
         "rawHash": "ab05b4f36fd3bc4c639954988216c987c6e52fc2934849f23cae12d1290d1c8d",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-MN",
@@ -109241,11 +109247,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -109253,14 +109259,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "2e92e440328f5553fe53c30d6c4934afe0398480f83475d38f5b20411aa28f3a",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "IN": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109379,9 +109387,9 @@
           }
         ],
         "rawHash": "50715ea05ff90d69f5f57fc9cdd04042f33bd3cbcdbcb01461c7074ac1d09ab0",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IN",
@@ -109395,11 +109403,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -109407,14 +109415,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "9b2279c4ba93096d73b379926082f99e362dea0a6bb4d76642498d070df458f2",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "SD": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109533,9 +109543,9 @@
           }
         ],
         "rawHash": "c78a0aebf7bfeb4c02efb8da7c2c438e842b8bebc10fbcffb61a511e0a3e0c41",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-SD",
@@ -109549,11 +109559,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -109561,14 +109571,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "46ce64ac7263bc662e08520678323490b2a03f98f47b86a23d766a4a89e09427",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "KS": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109687,9 +109699,9 @@
           }
         ],
         "rawHash": "527981a495a5c168c918ce738a1bea1885f9043810f66749a625f75112ff0aed",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-KS",
@@ -109703,11 +109715,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -109715,14 +109727,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "1a27ef962fdeb4ed32c5844f3a92858f129499bdc0cab0da5bd7f00e2ad465c7",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "OH": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109841,9 +109855,9 @@
           }
         ],
         "rawHash": "b0f485434661445e30a78cfe223aac68e2f46deb2a042b5fb56e562894cb1149",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-OH",
@@ -109857,11 +109871,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -109869,14 +109883,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "18ae4567cb00e0e916bce930ee3687bc8f79c07245e05b936b5a3d39e3786295",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "MO": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -109995,9 +110011,9 @@
           }
         ],
         "rawHash": "03755332e3952fd69a465143af8759e6a1a3e15bbda28838199f3613044238fc",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-MO",
@@ -110011,11 +110027,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -110023,14 +110039,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "452ad9f3eb3cf175d64d3fe593347597af775f301e86e521471f88f808f79695",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       },
       "WI": {
         "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261009&end=20261022&format=JSON&time-standard=UTC",
@@ -110149,9 +110167,9 @@
           }
         ],
         "rawHash": "34eab4f627fe96c7774091780da88ca70fc928c9271fbc70e159b96db5629b48",
-        "status": "ok",
+        "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-26T13:19:30Z",
+        "lastAttemptAt": "2026-10-27T12:27:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-WI",
@@ -110165,11 +110183,11 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-26T13:19:30Z",
+            "checkedAt": "2026-10-27T12:27:40Z",
             "retrieval": "ok",
             "format": "passed",
-            "semantic": "passed",
-            "reason": null
+            "semantic": "failed",
+            "reason": "semantic_validation_failed"
           },
           "accepted": {
             "fetchedAt": "2026-10-26T13:19:30Z",
@@ -110177,14 +110195,16 @@
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "retained-validation",
           "version": {
             "contentHash": "c1c4640034a1556f2fa41be966b54df1749c3d3e2baeb494d857c7aaf9564814",
             "observationId": null,
             "revisionId": null
           },
           "extensions": {}
-        }
+        },
+        "failureKind": "validation",
+        "error": "Missing sentinel or implausible daily value"
       }
     },
     "baselines": {}

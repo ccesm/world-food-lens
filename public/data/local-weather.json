@@ -8415,9 +8415,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/iowa",
@@ -8431,11 +8431,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -8443,14 +8443,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "497c9d1296ac7d7eda90af7445331ecf6ca3114ccf192f6ecafb15844abc02cc",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "kansas": {
       "days": [
@@ -16867,9 +16869,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/kansas",
@@ -16883,11 +16885,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -16895,14 +16897,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "75f40d87d05a826f72d5e5ecb05492c3e8e6aafc6ac2d8a1857d04ccdcb15492",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "saskatchewan": {
       "days": [
@@ -25319,9 +25323,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/saskatchewan",
@@ -25335,11 +25339,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -25347,14 +25351,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "cf27ccb9a1bd4e38f036593e143a712cf7fb8f0a984202bb087a7cc933ba33e8",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "france": {
       "days": [
@@ -33771,9 +33777,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/france",
@@ -33787,11 +33793,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -33799,14 +33805,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "3974cf7503e18810fd0273100ffbd7f892ba75fefde51aa48a4262dbaf796115",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "germany": {
       "days": [
@@ -42223,9 +42231,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/germany",
@@ -42239,11 +42247,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -42251,14 +42259,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "a76fecfa991ff9c2388486330ddc7f7969d0f4983e9fa488adadabad1c25345b",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "krasnodar": {
       "days": [
@@ -50675,9 +50685,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/krasnodar",
@@ -50691,11 +50701,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -50703,14 +50713,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "0f66a2045a66c8efaae7008b6d64265fcf52d0e816da721b6cb1112ac0eb3efe",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "ukraine": {
       "days": [
@@ -59127,9 +59139,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/ukraine",
@@ -59143,11 +59155,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -59155,14 +59167,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "8dd8b12911ceb993a39af48931f549023d88d6fc2b2930648a2aa499c7fa9a6f",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "mato-grosso": {
       "days": [
@@ -67579,9 +67593,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/mato-grosso",
@@ -67595,11 +67609,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -67607,14 +67621,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "2f22d08bac4a5bbcf5c252cbff2ddc42db5503d794287ae9b3a79205d5d53975",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "pampas": {
       "days": [
@@ -76009,7 +76025,7 @@
       ],
       "status": "error",
       "fetchedAt": "2026-10-23T11:50:56Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/pampas",
@@ -76023,7 +76039,7 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
           "format": "unknown",
           "semantic": "failed",
@@ -84461,9 +84477,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/henan",
@@ -84477,11 +84493,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -84489,14 +84505,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "7286704f4f3bd6277f0bb2efc47c061d7aef7405937d4e13959b97ebb4588346",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "jilin": {
       "days": [
@@ -92913,9 +92931,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/jilin",
@@ -92929,11 +92947,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -92941,14 +92959,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "1c509745b6301fc5826711d851451149b960faf4b85484d7b5c8225cccac86ef",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "india-rice": {
       "days": [
@@ -101365,9 +101385,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/india-rice",
@@ -101381,11 +101401,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -101393,14 +101413,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "895b19f89c62d7f98718fd7c249e13a8c0c12100394a149b3fe48187941db0ec",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "punjab": {
       "days": [
@@ -109817,9 +109839,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/punjab",
@@ -109833,11 +109855,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -109845,14 +109867,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "0476c0fc158d7517a6391dcb26fd50e106b3034be6e981274bb39533bf3d2661",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "thailand": {
       "days": [
@@ -118269,9 +118293,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/thailand",
@@ -118285,11 +118309,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -118297,14 +118321,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "5bbeb7c5dff9ccef3367a3eeedf89bcc3777e4dbab096380b5bd48b7d27bc667",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "australia": {
       "days": [
@@ -126721,9 +126747,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/australia",
@@ -126737,11 +126763,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -126749,14 +126775,16 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "cdec3277e547e9382db03127f3c83602eac25428f08670d44d6907c3808ce3ec",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     },
     "free-state": {
       "days": [
@@ -135173,9 +135201,9 @@
         "GEOSIT",
         "POWER"
       ],
-      "status": "ok",
+      "status": "error",
       "fetchedAt": "2026-10-26T13:19:17Z",
-      "lastAttemptAt": "2026-10-26T13:19:17Z",
+      "lastAttemptAt": "2026-10-27T12:27:29Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "weather/free-state",
@@ -135189,11 +135217,11 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-26T13:19:17Z",
+          "checkedAt": "2026-10-27T12:27:29Z",
           "retrieval": "ok",
-          "format": "passed",
-          "semantic": "passed",
-          "reason": null
+          "format": "unknown",
+          "semantic": "failed",
+          "reason": "semantic_validation_failed"
         },
         "accepted": {
           "fetchedAt": "2026-10-26T13:19:17Z",
@@ -135201,16 +135229,18 @@
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "new",
+        "cache": "retained-validation",
         "version": {
           "contentHash": "27ca25e792b6cd366244796d1ac234e0dc48761e767a926f68e38ef0ad1083db",
           "observationId": null,
           "revisionId": null
         },
         "extensions": {}
-      }
+      },
+      "error": "Missing sentinel or implausible daily value",
+      "failureKind": "validation"
     }
   },
   "schemaVersion": 1,
-  "generatedAt": "2026-10-26T13:19:17Z"
+  "generatedAt": "2026-10-27T12:27:29Z"
 }
