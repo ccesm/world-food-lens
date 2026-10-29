@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-28T13:13:33Z",
+  "generatedAt": "2026-10-29T13:20:42Z",
   "sources": {
     "usda": {
       "source": {
@@ -94896,8 +94896,8 @@
       },
       "refreshKind": "unchanged",
       "status": "ok",
-      "fetchedAt": "2026-10-28T13:13:40Z",
-      "lastAttemptAt": "2026-10-28T13:13:33Z",
+      "fetchedAt": "2026-10-29T13:20:48Z",
+      "lastAttemptAt": "2026-10-29T13:20:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "usda",
@@ -94911,14 +94911,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-28T13:13:33Z",
+          "checkedAt": "2026-10-29T13:20:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-28T13:13:40Z",
+          "fetchedAt": "2026-10-29T13:20:48Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -95318,7 +95318,7 @@
           },
           "derived": {
             "methodVersion": "stock-to-use/v1",
-            "calculatedAt": "2026-10-28T13:13:40Z",
+            "calculatedAt": "2026-10-29T13:20:48Z",
             "inputs": [
               {
                 "datasetId": "usda",
@@ -97117,8 +97117,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-28T13:13:34Z",
-      "lastAttemptAt": "2026-10-28T13:13:33Z",
+      "fetchedAt": "2026-10-29T13:20:42Z",
+      "lastAttemptAt": "2026-10-29T13:20:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "fao",
@@ -97132,14 +97132,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-28T13:13:33Z",
+          "checkedAt": "2026-10-29T13:20:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-28T13:13:34Z",
+          "fetchedAt": "2026-10-29T13:20:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -97153,7 +97153,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-10-28T13:13:34Z",
+            "calculatedAt": "2026-10-29T13:20:42Z",
             "inputs": [
               {
                 "datasetId": "fao",
@@ -98274,8 +98274,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-10-28T13:13:34Z",
-      "lastAttemptAt": "2026-10-28T13:13:33Z",
+      "fetchedAt": "2026-10-29T13:20:42Z",
+      "lastAttemptAt": "2026-10-29T13:20:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "noaa",
@@ -98289,14 +98289,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-28T13:13:33Z",
+          "checkedAt": "2026-10-29T13:20:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-28T13:13:34Z",
+          "fetchedAt": "2026-10-29T13:20:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -105613,8 +105613,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-10-28T13:13:34Z",
-      "lastAttemptAt": "2026-10-28T13:13:33Z",
+      "fetchedAt": "2026-10-29T13:20:42Z",
+      "lastAttemptAt": "2026-10-29T13:20:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "worldBank",
@@ -105628,14 +105628,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-28T13:13:33Z",
+          "checkedAt": "2026-10-29T13:20:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-28T13:13:34Z",
+          "fetchedAt": "2026-10-29T13:20:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -105649,7 +105649,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-10-28T13:13:34Z",
+            "calculatedAt": "2026-10-29T13:20:42Z",
             "inputs": [
               {
                 "datasetId": "worldBank",
@@ -107576,8 +107576,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-10-28T13:13:33Z",
-      "lastAttemptAt": "2026-10-28T13:13:33Z",
+      "fetchedAt": "2026-10-29T13:20:42Z",
+      "lastAttemptAt": "2026-10-29T13:20:42Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "eia",
@@ -107591,14 +107591,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-10-28T13:13:33Z",
+          "checkedAt": "2026-10-29T13:20:42Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-10-28T13:13:33Z",
+          "fetchedAt": "2026-10-29T13:20:42Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -107612,7 +107612,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-10-28T13:13:33Z",
+            "calculatedAt": "2026-10-29T13:20:42Z",
             "inputs": [
               {
                 "datasetId": "eia",
@@ -107705,8 +107705,8 @@
           "period": "2025"
         },
         "status": "ok",
-        "fetchedAt": "2026-10-28T13:13:52Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "fetchedAt": "2026-10-29T13:21:01Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "cornProduction",
@@ -107720,14 +107720,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-28T13:13:52Z",
+            "fetchedAt": "2026-10-29T13:21:01Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -108725,8 +108725,8 @@
           "period": "2026-10-25"
         },
         "status": "ok",
-        "fetchedAt": "2026-10-28T13:13:52Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "fetchedAt": "2026-10-29T13:21:01Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "cornProgress",
@@ -108740,19 +108740,19 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-10-28T13:13:52Z",
+            "fetchedAt": "2026-10-29T13:21:01Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "unchanged",
           "version": {
             "contentHash": "3c71905ed9253a183dc7efee1b1068705df4771bbea1f2df0905a846fa5beeec",
             "observationId": "NASS/corn-progress/2026-10-25",
@@ -108884,7 +108884,7 @@
         "rawHash": "dba13143176770630f7eb6e19628f42d895be420eeedf2d7ab46fd3a921abe18",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IA",
@@ -108898,7 +108898,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109040,7 +109040,7 @@
         "rawHash": "aede19d9934b9f017ccd8b3bfa3bde2f21874e298d8aa9e627cab20cdfd8230f",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IL",
@@ -109054,7 +109054,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109196,7 +109196,7 @@
         "rawHash": "1a8d842de15f30cdd68cf6b84fdc92b4887aabe05f36edcfa4504e104cde2c6c",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-NE",
@@ -109210,7 +109210,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109352,7 +109352,7 @@
         "rawHash": "ab05b4f36fd3bc4c639954988216c987c6e52fc2934849f23cae12d1290d1c8d",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-MN",
@@ -109366,7 +109366,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109508,7 +109508,7 @@
         "rawHash": "50715ea05ff90d69f5f57fc9cdd04042f33bd3cbcdbcb01461c7074ac1d09ab0",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IN",
@@ -109522,7 +109522,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109664,7 +109664,7 @@
         "rawHash": "c78a0aebf7bfeb4c02efb8da7c2c438e842b8bebc10fbcffb61a511e0a3e0c41",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-SD",
@@ -109678,7 +109678,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109820,7 +109820,7 @@
         "rawHash": "527981a495a5c168c918ce738a1bea1885f9043810f66749a625f75112ff0aed",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-KS",
@@ -109834,7 +109834,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -109976,7 +109976,7 @@
         "rawHash": "b0f485434661445e30a78cfe223aac68e2f46deb2a042b5fb56e562894cb1149",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-OH",
@@ -109990,7 +109990,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -110132,7 +110132,7 @@
         "rawHash": "03755332e3952fd69a465143af8759e6a1a3e15bbda28838199f3613044238fc",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-MO",
@@ -110146,7 +110146,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
@@ -110288,7 +110288,7 @@
         "rawHash": "34eab4f627fe96c7774091780da88ca70fc928c9271fbc70e159b96db5629b48",
         "status": "error",
         "fetchedAt": "2026-10-26T13:19:30Z",
-        "lastAttemptAt": "2026-10-28T13:13:52Z",
+        "lastAttemptAt": "2026-10-29T13:21:01Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-WI",
@@ -110302,7 +110302,7 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-10-28T13:13:52Z",
+            "checkedAt": "2026-10-29T13:21:01Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "failed",
