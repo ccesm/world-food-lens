@@ -98,7 +98,7 @@ failure. Each run tests, refreshes data, commits the generated data release to
 | 4B-1 (spatial-stage screening, Level C, operational validation) | Done, merged 2026-10-05, live |
 | 4B-2 (US Corn hazard expansion) | 2.0 registry, 2.1 heat screens and 2.2a VPD distribution **live**. Everything else (VPD climatology, 2.2b, 2.3–2.6) is **Deferred — Advanced US Corn Research** (`docs/PHASE4B2_PLAN.md`) |
 | **G0** (global architecture + inventory) | Done — `docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md` |
-| **G1** (global crop supply) | **Next**: G1.0 data contract (metric-level direction), then G1.1 PSD corn + wheat + rice together with independent per-commodity validation |
+| **G1** (global crop supply) | **G1.0 contract in review** (PR #12): official world totals preferred when available; WFL sums cross-check/fallback, no API-key blocker. Core: production + ending stocks only. September raw ZIPs archived and re-downloaded/verified in immutable Release `usda-psd-2026-09-raw-v1`. Dead zones and aggregate adoption remain draft. G1.1 has not started |
 
 The US Corn deep dive keeps its own rules. Phase 4B-2 may expand screening variables only within the limitations and
 version guards described in `docs/PHASE4B1_SPATIAL_STAGE_ALIGNMENT.md` and
@@ -138,7 +138,7 @@ Any ChatGPT, Codex or Claude session should:
 4. Never rewrite or force-push `main`, and never overwrite bot data commits.
 5. Preserve working features unless explicitly asked to remove them; avoid
    large refactors before understanding the source adapters.
-6. Run `npm test` and `npm run build` after changes (233 JS + 178 Python tests
+6. Run `npm test` and `npm run build` after changes (258 JS + 178 Python tests
    locally; the spatial tests (`tests/spatial`, research suites) need the geospatial runtime and run in CI).
 7. Work on a branch and open a PR; commit in small, meaningful units.
 8. New work follows `docs/GLOBAL_FOOD_INTELLIGENCE_ROADMAP.md`; resumed US Corn
