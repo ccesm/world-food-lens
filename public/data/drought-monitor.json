@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-06T14:26:34Z",
+  "generatedAt": "2026-11-07T13:18:20Z",
   "maps": {
     "shortTerm": {
-      "period": "2026-10-11",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-11&SELECTED_TIMESCALE=01",
+      "period": "2026-10-21",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-21&SELECTED_TIMESCALE=01",
       "layer": "spaST",
       "title": "SPI ERA5 Short Term (1 month)",
       "periodBasis": "wms-service-example",
@@ -15,8 +15,8 @@
       "productPeriodVerified": false
     },
     "longTerm": {
-      "period": "2026-09-01",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaLT&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-09-01&SELECTED_TIMESCALE=06",
+      "period": "2026-10-01",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaLT&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-01&SELECTED_TIMESCALE=06",
       "layer": "spaLT",
       "title": "SPI ERA5 Long Term (6 months)",
       "periodBasis": "wms-service-example",
@@ -41,8 +41,8 @@
   },
   "points": {
     "iowa": {
-      "shortTerm": "moderately-wet",
-      "longTerm": "very-wet",
+      "shortTerm": "near-normal",
+      "longTerm": "moderately-wet",
       "impactRisk": "no-hotspot"
     },
     "kansas": {
@@ -51,37 +51,37 @@
       "impactRisk": "no-hotspot"
     },
     "saskatchewan": {
-      "shortTerm": "severely-dry",
-      "longTerm": "moderately-wet",
+      "shortTerm": "near-normal",
+      "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
     "france": {
       "shortTerm": "near-normal",
-      "longTerm": "extremely-dry",
+      "longTerm": "severely-dry",
       "impactRisk": "medium"
     },
     "germany": {
       "shortTerm": "near-normal",
-      "longTerm": "moderately-dry",
+      "longTerm": "near-normal",
       "impactRisk": "medium"
     },
     "krasnodar": {
       "shortTerm": "near-normal",
-      "longTerm": "moderately-wet",
+      "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
     "ukraine": {
-      "shortTerm": "moderately-wet",
+      "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
     "mato-grosso": {
-      "shortTerm": "near-normal",
-      "longTerm": "near-normal",
+      "shortTerm": "moderately-dry",
+      "longTerm": "severely-dry",
       "impactRisk": "no-hotspot"
     },
     "pampas": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-dry",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -101,29 +101,29 @@
       "impactRisk": "no-hotspot"
     },
     "punjab": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-wet",
       "longTerm": "moderately-dry",
       "impactRisk": "no-hotspot"
     },
     "thailand": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-dry",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
     "australia": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-wet",
       "longTerm": "near-normal",
       "impactRisk": "low"
     },
     "free-state": {
-      "shortTerm": "near-normal",
-      "longTerm": "extremely-wet",
+      "shortTerm": "moderately-dry",
+      "longTerm": "moderately-wet",
       "impactRisk": "no-hotspot"
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-11-06T14:26:34Z",
-  "lastAttemptAt": "2026-11-06T14:26:34Z",
+  "fetchedAt": "2026-11-07T13:18:20Z",
+  "lastAttemptAt": "2026-11-07T13:18:20Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -132,7 +132,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-11-06T14:26:36Z",
+    "checkedAt": "2026-11-07T13:18:23Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "availability-metadata-invalid",
     "error": "GDO interval end does not align with its advertised timestep"
@@ -144,33 +144,33 @@
     "sourceUrl": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
     "downloadUrl": null,
     "observation": {
-      "period": "2026-10-11",
+      "period": "2026-10-21",
       "marketYear": null,
       "vintage": null,
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-11-06T14:26:34Z",
+      "checkedAt": "2026-11-07T13:18:20Z",
       "retrieval": "ok",
       "format": "passed",
       "semantic": "passed",
       "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-11-06T14:26:34Z",
+      "fetchedAt": "2026-11-07T13:18:20Z",
       "format": "passed",
       "semantic": "passed",
       "period": "unverified"
     },
-    "cache": "unchanged",
+    "cache": "new",
     "version": {
-      "contentHash": "ee4a6832f880fb1c387577aaca7496328098a9f8697e422255461958320d5b11",
+      "contentHash": "8a5de5d1f5e754a0858253eb39b5c6e20e5821db75dbecd4edc3599b0000354f",
       "observationId": null,
       "revisionId": null
     },
     "extensions": {
       "periodVerification": {
-        "checkedAt": "2026-11-06T14:26:36Z",
+        "checkedAt": "2026-11-07T13:18:23Z",
         "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
         "reason": "availability-metadata-invalid",
         "error": "GDO interval end does not align with its advertised timestep"
