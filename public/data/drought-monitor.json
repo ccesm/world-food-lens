@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-07T13:18:20Z",
+  "generatedAt": "2026-11-08T13:39:37Z",
   "maps": {
     "shortTerm": {
       "period": "2026-10-21",
@@ -122,8 +122,8 @@
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-11-07T13:18:20Z",
-  "lastAttemptAt": "2026-11-07T13:18:20Z",
+  "fetchedAt": "2026-11-08T13:39:37Z",
+  "lastAttemptAt": "2026-11-08T13:39:37Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -132,7 +132,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-11-07T13:18:23Z",
+    "checkedAt": "2026-11-08T13:39:39Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "availability-metadata-invalid",
     "error": "GDO interval end does not align with its advertised timestep"
@@ -150,19 +150,19 @@
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-11-07T13:18:20Z",
+      "checkedAt": "2026-11-08T13:39:37Z",
       "retrieval": "ok",
       "format": "passed",
       "semantic": "passed",
       "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-11-07T13:18:20Z",
+      "fetchedAt": "2026-11-08T13:39:37Z",
       "format": "passed",
       "semantic": "passed",
       "period": "unverified"
     },
-    "cache": "new",
+    "cache": "unchanged",
     "version": {
       "contentHash": "8a5de5d1f5e754a0858253eb39b5c6e20e5821db75dbecd4edc3599b0000354f",
       "observationId": null,
@@ -170,7 +170,7 @@
     },
     "extensions": {
       "periodVerification": {
-        "checkedAt": "2026-11-07T13:18:23Z",
+        "checkedAt": "2026-11-08T13:39:39Z",
         "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
         "reason": "availability-metadata-invalid",
         "error": "GDO interval end does not align with its advertised timestep"
