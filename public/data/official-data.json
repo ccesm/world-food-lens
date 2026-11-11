@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T15:03:04Z",
+  "generatedAt": "2026-11-11T14:34:21Z",
   "sources": {
     "usda": {
       "source": {
@@ -13,8 +13,8 @@
       },
       "data": {
         "latestPeriod": "2026/2027",
-        "stockToUse": 33.5108,
-        "priorStockToUse": 34.4377,
+        "stockToUse": 34.0494,
+        "priorStockToUse": 34.5822,
         "history": [
           {
             "year": "2000/2001",
@@ -313,93 +313,93 @@
           {
             "year": "2021/2022",
             "production": 780860.0,
-            "consumption": 787951.0,
-            "endingStocks": 274920.0,
-            "ratio": 34.8905,
+            "consumption": 787911.0,
+            "endingStocks": 274960.0,
+            "ratio": 34.8973,
             "excludingChina": {
               "production": 643914.0,
-              "consumption": 639951.0,
-              "endingStocks": 138161.0,
-              "ratio": 21.5893
+              "consumption": 639911.0,
+              "endingStocks": 138201.0,
+              "ratio": 21.5969
             },
             "countryAreaCount": 125
           },
           {
             "year": "2022/2023",
             "production": 790286.0,
-            "consumption": 781685.0,
-            "endingStocks": 274032.0,
-            "ratio": 35.0566,
+            "consumption": 781675.0,
+            "endingStocks": 274082.0,
+            "ratio": 35.0634,
             "excludingChina": {
               "production": 652563.0,
-              "consumption": 633685.0,
-              "endingStocks": 135214.0,
-              "ratio": 21.3377
+              "consumption": 633675.0,
+              "endingStocks": 135264.0,
+              "ratio": 21.346
             },
             "countryAreaCount": 125
           },
           {
             "year": "2023/2024",
-            "production": 791593.0,
-            "consumption": 797035.0,
-            "endingStocks": 269764.0,
-            "ratio": 33.8459,
+            "production": 791592.0,
+            "consumption": 797020.0,
+            "endingStocks": 269873.0,
+            "ratio": 33.8603,
             "excludingChina": {
-              "production": 655003.0,
-              "consumption": 643535.0,
-              "endingStocks": 135241.0,
-              "ratio": 21.0153
+              "production": 655002.0,
+              "consumption": 643520.0,
+              "endingStocks": 135350.0,
+              "ratio": 21.0328
             },
             "countryAreaCount": 123
           },
           {
             "year": "2024/2025",
-            "production": 799059.0,
-            "consumption": 799303.0,
-            "endingStocks": 260395.0,
-            "ratio": 32.5778,
+            "production": 799022.0,
+            "consumption": 799105.0,
+            "endingStocks": 260421.0,
+            "ratio": 32.5891,
             "excludingChina": {
-              "production": 658960.0,
-              "consumption": 649303.0,
-              "endingStocks": 132620.0,
-              "ratio": 20.425
+              "production": 658923.0,
+              "consumption": 649105.0,
+              "endingStocks": 132646.0,
+              "ratio": 20.4352
             },
             "countryAreaCount": 123
           },
           {
             "year": "2025/2026",
-            "production": 844057.0,
-            "consumption": 817563.0,
-            "endingStocks": 281550.0,
-            "ratio": 34.4377,
+            "production": 844029.0,
+            "consumption": 817930.0,
+            "endingStocks": 282858.0,
+            "ratio": 34.5822,
             "excludingChina": {
-              "production": 703987.0,
-              "consumption": 667563.0,
-              "endingStocks": 159346.0,
-              "ratio": 23.8698
+              "production": 703959.0,
+              "consumption": 667930.0,
+              "endingStocks": 160654.0,
+              "ratio": 24.0525
             },
             "countryAreaCount": 123
           },
           {
             "year": "2026/2027",
-            "production": 822390.0,
-            "consumption": 823729.0,
-            "endingStocks": 276038.0,
-            "ratio": 33.5108,
+            "production": 827505.0,
+            "consumption": 824737.0,
+            "endingStocks": 280818.0,
+            "ratio": 34.0494,
             "excludingChina": {
-              "production": 681390.0,
-              "consumption": 674729.0,
-              "endingStocks": 156834.0,
-              "ratio": 23.244
+              "production": 686505.0,
+              "consumption": 675737.0,
+              "endingStocks": 161614.0,
+              "ratio": 23.9167
             },
             "countryAreaCount": 123
           }
         ],
-        "releasePeriod": "2026-10",
+        "releasePeriod": "2026-11",
         "unit": "1000 metric tons; ratio: %",
         "methodology": "World grain totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Ex-China subtracts China from BOTH stocks and consumption; it is not an estimate of exportable stocks. Marketing years vary by country; figures include forecasts and revisions. Rice is on a milled basis.",
         "observationId": "usda-psd/410000/2026/2027",
-        "revisionId": "5a8732b26f657afe07eb21e3169464ceb729cf6878dee22dc54c7adc616c73c5",
+        "revisionId": "641e7cb4f80fc142f6f217a4059caa95fd159f54429d97cb9f38fa064942b4b8",
         "coverage": {
           "2000/2001": {
             "basis": "contributors",
@@ -19007,8 +19007,8 @@
               {
                 "id": "usda-psd:PA",
                 "name": "Paraguay",
-                "consumption": 695.0,
-                "endingStocks": 212.0,
+                "consumption": 655.0,
+                "endingStocks": 252.0,
                 "production": 973.0
               },
               {
@@ -19890,8 +19890,8 @@
               {
                 "id": "usda-psd:PA",
                 "name": "Paraguay",
-                "consumption": 665.0,
-                "endingStocks": 175.0,
+                "consumption": 655.0,
+                "endingStocks": 225.0,
                 "production": 851.0
               },
               {
@@ -20347,8 +20347,8 @@
                 "id": "usda-psd:CO",
                 "name": "Colombia",
                 "consumption": 2050.0,
-                "endingStocks": 219.0,
-                "production": 9.0
+                "endingStocks": 218.0,
+                "production": 8.0
               },
               {
                 "id": "usda-psd:CS",
@@ -20759,8 +20759,8 @@
               {
                 "id": "usda-psd:PA",
                 "name": "Paraguay",
-                "consumption": 675.0,
-                "endingStocks": 200.0,
+                "consumption": 660.0,
+                "endingStocks": 265.0,
                 "production": 1078.0
               },
               {
@@ -21005,7 +21005,7 @@
                 "id": "usda-psd:UZ",
                 "name": "Uzbekistan",
                 "consumption": 8800.0,
-                "endingStocks": 997.0,
+                "endingStocks": 1042.0,
                 "production": 6472.0
               },
               {
@@ -21159,7 +21159,7 @@
               {
                 "id": "usda-psd:CA",
                 "name": "Canada",
-                "consumption": 8264.0,
+                "consumption": 8161.0,
                 "endingStocks": 4240.0,
                 "production": 35939.0
               },
@@ -21216,8 +21216,8 @@
                 "id": "usda-psd:CO",
                 "name": "Colombia",
                 "consumption": 1950.0,
-                "endingStocks": 148.0,
-                "production": 6.0
+                "endingStocks": 146.0,
+                "production": 5.0
               },
               {
                 "id": "usda-psd:CS",
@@ -21397,8 +21397,8 @@
               {
                 "id": "usda-psd:IZ",
                 "name": "Iraq",
-                "consumption": 7700.0,
-                "endingStocks": 2969.0,
+                "consumption": 7600.0,
+                "endingStocks": 3069.0,
                 "production": 6000.0
               },
               {
@@ -21432,9 +21432,9 @@
               {
                 "id": "usda-psd:KG",
                 "name": "Kyrgyzstan",
-                "consumption": 975.0,
-                "endingStocks": 193.0,
-                "production": 701.0
+                "consumption": 950.0,
+                "endingStocks": 182.0,
+                "production": 665.0
               },
               {
                 "id": "usda-psd:KN",
@@ -21628,8 +21628,8 @@
               {
                 "id": "usda-psd:PA",
                 "name": "Paraguay",
-                "consumption": 680.0,
-                "endingStocks": 161.0,
+                "consumption": 660.0,
+                "endingStocks": 246.0,
                 "production": 1237.0
               },
               {
@@ -21796,8 +21796,8 @@
               {
                 "id": "usda-psd:TS",
                 "name": "Tunisia",
-                "consumption": 2900.0,
-                "endingStocks": 664.0,
+                "consumption": 2950.0,
+                "endingStocks": 614.0,
                 "production": 1179.0
               },
               {
@@ -21874,7 +21874,7 @@
                 "id": "usda-psd:UZ",
                 "name": "Uzbekistan",
                 "consumption": 8900.0,
-                "endingStocks": 1226.0,
+                "endingStocks": 1130.0,
                 "production": 6729.0
               },
               {
@@ -21923,8 +21923,8 @@
               {
                 "id": "usda-psd:AF",
                 "name": "Afghanistan",
-                "consumption": 9250.0,
-                "endingStocks": 814.0,
+                "consumption": 9300.0,
+                "endingStocks": 1064.0,
                 "production": 4800.0
               },
               {
@@ -21972,8 +21972,8 @@
               {
                 "id": "usda-psd:AS",
                 "name": "Australia",
-                "consumption": 10600.0,
-                "endingStocks": 6356.0,
+                "consumption": 11100.0,
+                "endingStocks": 6568.0,
                 "production": 35985.0
               },
               {
@@ -22028,7 +22028,7 @@
               {
                 "id": "usda-psd:CA",
                 "name": "Canada",
-                "consumption": 8983.0,
+                "consumption": 8998.0,
                 "endingStocks": 6649.0,
                 "production": 40562.0
               },
@@ -22085,8 +22085,8 @@
                 "id": "usda-psd:CO",
                 "name": "Colombia",
                 "consumption": 1920.0,
-                "endingStocks": 139.0,
-                "production": 6.0
+                "endingStocks": 135.0,
+                "production": 4.0
               },
               {
                 "id": "usda-psd:CS",
@@ -22134,7 +22134,7 @@
                 "id": "usda-psd:EG",
                 "name": "Egypt",
                 "consumption": 20600.0,
-                "endingStocks": 5156.0,
+                "endingStocks": 5155.0,
                 "production": 9200.0
               },
               {
@@ -22182,8 +22182,8 @@
               {
                 "id": "usda-psd:GH",
                 "name": "Ghana",
-                "consumption": 1065.0,
-                "endingStocks": 399.0,
+                "consumption": 1090.0,
+                "endingStocks": 384.0,
                 "production": 0.0
               },
               {
@@ -22246,7 +22246,7 @@
                 "id": "usda-psd:IR",
                 "name": "Iran",
                 "consumption": 16950.0,
-                "endingStocks": 2486.0,
+                "endingStocks": 3011.0,
                 "production": 13500.0
               },
               {
@@ -22260,14 +22260,14 @@
                 "id": "usda-psd:IV",
                 "name": "Cote d'Ivoire",
                 "consumption": 880.0,
-                "endingStocks": 155.0,
+                "endingStocks": 158.0,
                 "production": 0.0
               },
               {
                 "id": "usda-psd:IZ",
                 "name": "Iraq",
                 "consumption": 7700.0,
-                "endingStocks": 2269.0,
+                "endingStocks": 2339.0,
                 "production": 4400.0
               },
               {
@@ -22302,8 +22302,8 @@
                 "id": "usda-psd:KG",
                 "name": "Kyrgyzstan",
                 "consumption": 1055.0,
-                "endingStocks": 296.0,
-                "production": 516.0
+                "endingStocks": 259.0,
+                "production": 490.0
               },
               {
                 "id": "usda-psd:KN",
@@ -22322,7 +22322,7 @@
               {
                 "id": "usda-psd:KU",
                 "name": "Kuwait",
-                "consumption": 352.0,
+                "consumption": 353.0,
                 "endingStocks": 0.0,
                 "production": 0.0
               },
@@ -22428,7 +22428,7 @@
                 "id": "usda-psd:MU",
                 "name": "Oman",
                 "consumption": 820.0,
-                "endingStocks": 402.0,
+                "endingStocks": 403.0,
                 "production": 0.0
               },
               {
@@ -22497,8 +22497,8 @@
               {
                 "id": "usda-psd:PA",
                 "name": "Paraguay",
-                "consumption": 620.0,
-                "endingStocks": 28.0,
+                "consumption": 635.0,
+                "endingStocks": 42.0,
                 "production": 1200.0
               },
               {
@@ -22588,7 +22588,7 @@
               {
                 "id": "usda-psd:SL",
                 "name": "Sierra Leone",
-                "consumption": 175.0,
+                "consumption": 176.0,
                 "endingStocks": 0.0,
                 "production": 0.0
               },
@@ -22602,7 +22602,7 @@
               {
                 "id": "usda-psd:SO",
                 "name": "Somalia",
-                "consumption": 1200.0,
+                "consumption": 1235.0,
                 "endingStocks": 0.0,
                 "production": 0.0
               },
@@ -22610,7 +22610,7 @@
                 "id": "usda-psd:SU",
                 "name": "Sudan",
                 "consumption": 3050.0,
-                "endingStocks": 293.0,
+                "endingStocks": 305.0,
                 "production": 300.0
               },
               {
@@ -22666,14 +22666,14 @@
                 "id": "usda-psd:TS",
                 "name": "Tunisia",
                 "consumption": 3050.0,
-                "endingStocks": 758.0,
+                "endingStocks": 706.0,
                 "production": 1318.0
               },
               {
                 "id": "usda-psd:TU",
                 "name": "Turkey",
-                "consumption": 18200.0,
-                "endingStocks": 2773.0,
+                "consumption": 17950.0,
+                "endingStocks": 3023.0,
                 "production": 16800.0
               },
               {
@@ -22686,8 +22686,8 @@
               {
                 "id": "usda-psd:TX",
                 "name": "Turkmenistan",
-                "consumption": 1000.0,
-                "endingStocks": 78.0,
+                "consumption": 975.0,
+                "endingStocks": 60.0,
                 "production": 600.0
               },
               {
@@ -22736,14 +22736,14 @@
                 "id": "usda-psd:UY",
                 "name": "Uruguay",
                 "consumption": 370.0,
-                "endingStocks": 221.0,
+                "endingStocks": 271.0,
                 "production": 1430.0
               },
               {
                 "id": "usda-psd:UZ",
                 "name": "Uzbekistan",
                 "consumption": 9000.0,
-                "endingStocks": 1526.0,
+                "endingStocks": 1546.0,
                 "production": 6100.0
               },
               {
@@ -22764,21 +22764,21 @@
                 "id": "usda-psd:WA",
                 "name": "Namibia",
                 "consumption": 200.0,
-                "endingStocks": 12.0,
+                "endingStocks": 33.0,
                 "production": 25.0
               },
               {
                 "id": "usda-psd:YM",
                 "name": "Yemen",
                 "consumption": 4200.0,
-                "endingStocks": 332.0,
+                "endingStocks": 333.0,
                 "production": 115.0
               },
               {
                 "id": "usda-psd:ZA",
                 "name": "Zambia",
                 "consumption": 480.0,
-                "endingStocks": 130.0,
+                "endingStocks": 136.0,
                 "production": 130.0
               }
             ],
@@ -22793,7 +22793,7 @@
                 "id": "usda-psd:AF",
                 "name": "Afghanistan",
                 "consumption": 9500.0,
-                "endingStocks": 614.0,
+                "endingStocks": 1064.0,
                 "production": 4800.0
               },
               {
@@ -22835,15 +22835,15 @@
                 "id": "usda-psd:AR",
                 "name": "Argentina",
                 "consumption": 7450.0,
-                "endingStocks": 1867.0,
-                "production": 21500.0
+                "endingStocks": 2867.0,
+                "production": 23000.0
               },
               {
                 "id": "usda-psd:AS",
                 "name": "Australia",
-                "consumption": 9150.0,
-                "endingStocks": 4941.0,
-                "production": 31000.0
+                "consumption": 9650.0,
+                "endingStocks": 5153.0,
+                "production": 32500.0
               },
               {
                 "id": "usda-psd:BA",
@@ -22954,7 +22954,7 @@
                 "id": "usda-psd:CO",
                 "name": "Colombia",
                 "consumption": 1920.0,
-                "endingStocks": 198.0,
+                "endingStocks": 194.0,
                 "production": 4.0
               },
               {
@@ -23003,7 +23003,7 @@
                 "id": "usda-psd:EG",
                 "name": "Egypt",
                 "consumption": 20700.0,
-                "endingStocks": 4256.0,
+                "endingStocks": 4255.0,
                 "production": 10000.0
               },
               {
@@ -23052,7 +23052,7 @@
                 "id": "usda-psd:GH",
                 "name": "Ghana",
                 "consumption": 1165.0,
-                "endingStocks": 264.0,
+                "endingStocks": 259.0,
                 "production": 0.0
               },
               {
@@ -23114,8 +23114,8 @@
               {
                 "id": "usda-psd:IR",
                 "name": "Iran",
-                "consumption": 17050.0,
-                "endingStocks": 3236.0,
+                "consumption": 17250.0,
+                "endingStocks": 3561.0,
                 "production": 16000.0
               },
               {
@@ -23129,14 +23129,14 @@
                 "id": "usda-psd:IV",
                 "name": "Cote d'Ivoire",
                 "consumption": 900.0,
-                "endingStocks": 80.0,
+                "endingStocks": 83.0,
                 "production": 0.0
               },
               {
                 "id": "usda-psd:IZ",
                 "name": "Iraq",
                 "consumption": 8000.0,
-                "endingStocks": 2069.0,
+                "endingStocks": 1839.0,
                 "production": 5800.0
               },
               {
@@ -23157,8 +23157,8 @@
                 "id": "usda-psd:JO",
                 "name": "Jordan",
                 "consumption": 1095.0,
-                "endingStocks": 773.0,
-                "production": 30.0
+                "endingStocks": 823.0,
+                "production": 80.0
               },
               {
                 "id": "usda-psd:KE",
@@ -23171,8 +23171,8 @@
                 "id": "usda-psd:KG",
                 "name": "Kyrgyzstan",
                 "consumption": 1100.0,
-                "endingStocks": 191.0,
-                "production": 625.0
+                "endingStocks": 229.0,
+                "production": 700.0
               },
               {
                 "id": "usda-psd:KN",
@@ -23198,9 +23198,9 @@
               {
                 "id": "usda-psd:KZ",
                 "name": "Kazakhstan",
-                "consumption": 7975.0,
-                "endingStocks": 2029.0,
-                "production": 15000.0
+                "consumption": 8275.0,
+                "endingStocks": 2529.0,
+                "production": 15800.0
               },
               {
                 "id": "usda-psd:LE",
@@ -23297,7 +23297,7 @@
                 "id": "usda-psd:MU",
                 "name": "Oman",
                 "consumption": 880.0,
-                "endingStocks": 342.0,
+                "endingStocks": 343.0,
                 "production": 0.0
               },
               {
@@ -23366,8 +23366,8 @@
               {
                 "id": "usda-psd:PA",
                 "name": "Paraguay",
-                "consumption": 620.0,
-                "endingStocks": 15.0,
+                "consumption": 635.0,
+                "endingStocks": 14.0,
                 "production": 1200.0
               },
               {
@@ -23423,7 +23423,7 @@
                 "id": "usda-psd:RS",
                 "name": "Russia",
                 "consumption": 41200.0,
-                "endingStocks": 19088.0,
+                "endingStocks": 20088.0,
                 "production": 88000.0
               },
               {
@@ -23444,8 +23444,8 @@
                 "id": "usda-psd:SF",
                 "name": "South Africa",
                 "consumption": 3840.0,
-                "endingStocks": 593.0,
-                "production": 1800.0
+                "endingStocks": 583.0,
+                "production": 1790.0
               },
               {
                 "id": "usda-psd:SG",
@@ -23471,7 +23471,7 @@
               {
                 "id": "usda-psd:SO",
                 "name": "Somalia",
-                "consumption": 1200.0,
+                "consumption": 1250.0,
                 "endingStocks": 0.0,
                 "production": 0.0
               },
@@ -23479,7 +23479,7 @@
                 "id": "usda-psd:SU",
                 "name": "Sudan",
                 "consumption": 3050.0,
-                "endingStocks": 243.0,
+                "endingStocks": 255.0,
                 "production": 300.0
               },
               {
@@ -23535,15 +23535,15 @@
                 "id": "usda-psd:TS",
                 "name": "Tunisia",
                 "consumption": 3100.0,
-                "endingStocks": 788.0,
+                "endingStocks": 736.0,
                 "production": 1300.0
               },
               {
                 "id": "usda-psd:TU",
                 "name": "Turkey",
-                "consumption": 19200.0,
-                "endingStocks": 5073.0,
-                "production": 23000.0
+                "consumption": 18750.0,
+                "endingStocks": 5273.0,
+                "production": 23500.0
               },
               {
                 "id": "usda-psd:TW",
@@ -23555,8 +23555,8 @@
               {
                 "id": "usda-psd:TX",
                 "name": "Turkmenistan",
-                "consumption": 1050.0,
-                "endingStocks": 228.0,
+                "consumption": 1025.0,
+                "endingStocks": 235.0,
                 "production": 1100.0
               },
               {
@@ -23583,15 +23583,15 @@
               {
                 "id": "usda-psd:UP",
                 "name": "Ukraine",
-                "consumption": 9500.0,
-                "endingStocks": 6100.0,
-                "production": 26000.0
+                "consumption": 9800.0,
+                "endingStocks": 7300.0,
+                "production": 26500.0
               },
               {
                 "id": "usda-psd:US",
                 "name": "United States",
-                "consumption": 30182.0,
-                "endingStocks": 20135.0,
+                "consumption": 30100.0,
+                "endingStocks": 20217.0,
                 "production": 41742.0
               },
               {
@@ -23605,49 +23605,49 @@
                 "id": "usda-psd:UY",
                 "name": "Uruguay",
                 "consumption": 370.0,
-                "endingStocks": 161.0,
-                "production": 1200.0
+                "endingStocks": 216.0,
+                "production": 1400.0
               },
               {
                 "id": "usda-psd:UZ",
                 "name": "Uzbekistan",
-                "consumption": 8900.0,
-                "endingStocks": 1326.0,
+                "consumption": 9000.0,
+                "endingStocks": 1246.0,
                 "production": 7200.0
               },
               {
                 "id": "usda-psd:VE",
                 "name": "Venezuela",
-                "consumption": 1650.0,
-                "endingStocks": 193.0,
+                "consumption": 1600.0,
+                "endingStocks": 143.0,
                 "production": 0.0
               },
               {
                 "id": "usda-psd:VM",
                 "name": "Vietnam",
-                "consumption": 5950.0,
-                "endingStocks": 740.0,
+                "consumption": 6100.0,
+                "endingStocks": 790.0,
                 "production": 0.0
               },
               {
                 "id": "usda-psd:WA",
                 "name": "Namibia",
                 "consumption": 200.0,
-                "endingStocks": 7.0,
+                "endingStocks": 28.0,
                 "production": 25.0
               },
               {
                 "id": "usda-psd:YM",
                 "name": "Yemen",
                 "consumption": 4250.0,
-                "endingStocks": 342.0,
+                "endingStocks": 343.0,
                 "production": 110.0
               },
               {
                 "id": "usda-psd:ZA",
                 "name": "Zambia",
                 "consumption": 545.0,
-                "endingStocks": 130.0,
+                "endingStocks": 136.0,
                 "production": 200.0
               }
             ],
@@ -23658,8 +23658,8 @@
         "grains": {
           "wheat": {
             "latestPeriod": "2026/2027",
-            "stockToUse": 33.5108,
-            "priorStockToUse": 34.4377,
+            "stockToUse": 34.0494,
+            "priorStockToUse": 34.5822,
             "history": [
               {
                 "year": "2000/2001",
@@ -23958,93 +23958,93 @@
               {
                 "year": "2021/2022",
                 "production": 780860.0,
-                "consumption": 787951.0,
-                "endingStocks": 274920.0,
-                "ratio": 34.8905,
+                "consumption": 787911.0,
+                "endingStocks": 274960.0,
+                "ratio": 34.8973,
                 "excludingChina": {
                   "production": 643914.0,
-                  "consumption": 639951.0,
-                  "endingStocks": 138161.0,
-                  "ratio": 21.5893
+                  "consumption": 639911.0,
+                  "endingStocks": 138201.0,
+                  "ratio": 21.5969
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2022/2023",
                 "production": 790286.0,
-                "consumption": 781685.0,
-                "endingStocks": 274032.0,
-                "ratio": 35.0566,
+                "consumption": 781675.0,
+                "endingStocks": 274082.0,
+                "ratio": 35.0634,
                 "excludingChina": {
                   "production": 652563.0,
-                  "consumption": 633685.0,
-                  "endingStocks": 135214.0,
-                  "ratio": 21.3377
+                  "consumption": 633675.0,
+                  "endingStocks": 135264.0,
+                  "ratio": 21.346
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2023/2024",
-                "production": 791593.0,
-                "consumption": 797035.0,
-                "endingStocks": 269764.0,
-                "ratio": 33.8459,
+                "production": 791592.0,
+                "consumption": 797020.0,
+                "endingStocks": 269873.0,
+                "ratio": 33.8603,
                 "excludingChina": {
-                  "production": 655003.0,
-                  "consumption": 643535.0,
-                  "endingStocks": 135241.0,
-                  "ratio": 21.0153
+                  "production": 655002.0,
+                  "consumption": 643520.0,
+                  "endingStocks": 135350.0,
+                  "ratio": 21.0328
                 },
                 "countryAreaCount": 123
               },
               {
                 "year": "2024/2025",
-                "production": 799059.0,
-                "consumption": 799303.0,
-                "endingStocks": 260395.0,
-                "ratio": 32.5778,
+                "production": 799022.0,
+                "consumption": 799105.0,
+                "endingStocks": 260421.0,
+                "ratio": 32.5891,
                 "excludingChina": {
-                  "production": 658960.0,
-                  "consumption": 649303.0,
-                  "endingStocks": 132620.0,
-                  "ratio": 20.425
+                  "production": 658923.0,
+                  "consumption": 649105.0,
+                  "endingStocks": 132646.0,
+                  "ratio": 20.4352
                 },
                 "countryAreaCount": 123
               },
               {
                 "year": "2025/2026",
-                "production": 844057.0,
-                "consumption": 817563.0,
-                "endingStocks": 281550.0,
-                "ratio": 34.4377,
+                "production": 844029.0,
+                "consumption": 817930.0,
+                "endingStocks": 282858.0,
+                "ratio": 34.5822,
                 "excludingChina": {
-                  "production": 703987.0,
-                  "consumption": 667563.0,
-                  "endingStocks": 159346.0,
-                  "ratio": 23.8698
+                  "production": 703959.0,
+                  "consumption": 667930.0,
+                  "endingStocks": 160654.0,
+                  "ratio": 24.0525
                 },
                 "countryAreaCount": 123
               },
               {
                 "year": "2026/2027",
-                "production": 822390.0,
-                "consumption": 823729.0,
-                "endingStocks": 276038.0,
-                "ratio": 33.5108,
+                "production": 827505.0,
+                "consumption": 824737.0,
+                "endingStocks": 280818.0,
+                "ratio": 34.0494,
                 "excludingChina": {
-                  "production": 681390.0,
-                  "consumption": 674729.0,
-                  "endingStocks": 156834.0,
-                  "ratio": 23.244
+                  "production": 686505.0,
+                  "consumption": 675737.0,
+                  "endingStocks": 161614.0,
+                  "ratio": 23.9167
                 },
                 "countryAreaCount": 123
               }
             ],
-            "releasePeriod": "2026-10",
+            "releasePeriod": "2026-11",
             "unit": "1000 metric tons; ratio: %",
             "methodology": "World grain totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Ex-China subtracts China from BOTH stocks and consumption; it is not an estimate of exportable stocks. Marketing years vary by country; figures include forecasts and revisions. Rice is on a milled basis.",
             "observationId": "usda-psd/410000/2026/2027",
-            "revisionId": "5a8732b26f657afe07eb21e3169464ceb729cf6878dee22dc54c7adc616c73c5",
+            "revisionId": "641e7cb4f80fc142f6f217a4059caa95fd159f54429d97cb9f38fa064942b4b8",
             "coverage": {
               "2000/2001": {
                 "basis": "contributors",
@@ -42652,8 +42652,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 695.0,
-                    "endingStocks": 212.0,
+                    "consumption": 655.0,
+                    "endingStocks": 252.0,
                     "production": 973.0
                   },
                   {
@@ -43535,8 +43535,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 665.0,
-                    "endingStocks": 175.0,
+                    "consumption": 655.0,
+                    "endingStocks": 225.0,
                     "production": 851.0
                   },
                   {
@@ -43992,8 +43992,8 @@
                     "id": "usda-psd:CO",
                     "name": "Colombia",
                     "consumption": 2050.0,
-                    "endingStocks": 219.0,
-                    "production": 9.0
+                    "endingStocks": 218.0,
+                    "production": 8.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -44404,8 +44404,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 675.0,
-                    "endingStocks": 200.0,
+                    "consumption": 660.0,
+                    "endingStocks": 265.0,
                     "production": 1078.0
                   },
                   {
@@ -44650,7 +44650,7 @@
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
                     "consumption": 8800.0,
-                    "endingStocks": 997.0,
+                    "endingStocks": 1042.0,
                     "production": 6472.0
                   },
                   {
@@ -44804,7 +44804,7 @@
                   {
                     "id": "usda-psd:CA",
                     "name": "Canada",
-                    "consumption": 8264.0,
+                    "consumption": 8161.0,
                     "endingStocks": 4240.0,
                     "production": 35939.0
                   },
@@ -44861,8 +44861,8 @@
                     "id": "usda-psd:CO",
                     "name": "Colombia",
                     "consumption": 1950.0,
-                    "endingStocks": 148.0,
-                    "production": 6.0
+                    "endingStocks": 146.0,
+                    "production": 5.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -45042,8 +45042,8 @@
                   {
                     "id": "usda-psd:IZ",
                     "name": "Iraq",
-                    "consumption": 7700.0,
-                    "endingStocks": 2969.0,
+                    "consumption": 7600.0,
+                    "endingStocks": 3069.0,
                     "production": 6000.0
                   },
                   {
@@ -45077,9 +45077,9 @@
                   {
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
-                    "consumption": 975.0,
-                    "endingStocks": 193.0,
-                    "production": 701.0
+                    "consumption": 950.0,
+                    "endingStocks": 182.0,
+                    "production": 665.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -45273,8 +45273,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 680.0,
-                    "endingStocks": 161.0,
+                    "consumption": 660.0,
+                    "endingStocks": 246.0,
                     "production": 1237.0
                   },
                   {
@@ -45441,8 +45441,8 @@
                   {
                     "id": "usda-psd:TS",
                     "name": "Tunisia",
-                    "consumption": 2900.0,
-                    "endingStocks": 664.0,
+                    "consumption": 2950.0,
+                    "endingStocks": 614.0,
                     "production": 1179.0
                   },
                   {
@@ -45519,7 +45519,7 @@
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
                     "consumption": 8900.0,
-                    "endingStocks": 1226.0,
+                    "endingStocks": 1130.0,
                     "production": 6729.0
                   },
                   {
@@ -45568,8 +45568,8 @@
                   {
                     "id": "usda-psd:AF",
                     "name": "Afghanistan",
-                    "consumption": 9250.0,
-                    "endingStocks": 814.0,
+                    "consumption": 9300.0,
+                    "endingStocks": 1064.0,
                     "production": 4800.0
                   },
                   {
@@ -45617,8 +45617,8 @@
                   {
                     "id": "usda-psd:AS",
                     "name": "Australia",
-                    "consumption": 10600.0,
-                    "endingStocks": 6356.0,
+                    "consumption": 11100.0,
+                    "endingStocks": 6568.0,
                     "production": 35985.0
                   },
                   {
@@ -45673,7 +45673,7 @@
                   {
                     "id": "usda-psd:CA",
                     "name": "Canada",
-                    "consumption": 8983.0,
+                    "consumption": 8998.0,
                     "endingStocks": 6649.0,
                     "production": 40562.0
                   },
@@ -45730,8 +45730,8 @@
                     "id": "usda-psd:CO",
                     "name": "Colombia",
                     "consumption": 1920.0,
-                    "endingStocks": 139.0,
-                    "production": 6.0
+                    "endingStocks": 135.0,
+                    "production": 4.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -45779,7 +45779,7 @@
                     "id": "usda-psd:EG",
                     "name": "Egypt",
                     "consumption": 20600.0,
-                    "endingStocks": 5156.0,
+                    "endingStocks": 5155.0,
                     "production": 9200.0
                   },
                   {
@@ -45827,8 +45827,8 @@
                   {
                     "id": "usda-psd:GH",
                     "name": "Ghana",
-                    "consumption": 1065.0,
-                    "endingStocks": 399.0,
+                    "consumption": 1090.0,
+                    "endingStocks": 384.0,
                     "production": 0.0
                   },
                   {
@@ -45891,7 +45891,7 @@
                     "id": "usda-psd:IR",
                     "name": "Iran",
                     "consumption": 16950.0,
-                    "endingStocks": 2486.0,
+                    "endingStocks": 3011.0,
                     "production": 13500.0
                   },
                   {
@@ -45905,14 +45905,14 @@
                     "id": "usda-psd:IV",
                     "name": "Cote d'Ivoire",
                     "consumption": 880.0,
-                    "endingStocks": 155.0,
+                    "endingStocks": 158.0,
                     "production": 0.0
                   },
                   {
                     "id": "usda-psd:IZ",
                     "name": "Iraq",
                     "consumption": 7700.0,
-                    "endingStocks": 2269.0,
+                    "endingStocks": 2339.0,
                     "production": 4400.0
                   },
                   {
@@ -45947,8 +45947,8 @@
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
                     "consumption": 1055.0,
-                    "endingStocks": 296.0,
-                    "production": 516.0
+                    "endingStocks": 259.0,
+                    "production": 490.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -45967,7 +45967,7 @@
                   {
                     "id": "usda-psd:KU",
                     "name": "Kuwait",
-                    "consumption": 352.0,
+                    "consumption": 353.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -46073,7 +46073,7 @@
                     "id": "usda-psd:MU",
                     "name": "Oman",
                     "consumption": 820.0,
-                    "endingStocks": 402.0,
+                    "endingStocks": 403.0,
                     "production": 0.0
                   },
                   {
@@ -46142,8 +46142,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 620.0,
-                    "endingStocks": 28.0,
+                    "consumption": 635.0,
+                    "endingStocks": 42.0,
                     "production": 1200.0
                   },
                   {
@@ -46233,7 +46233,7 @@
                   {
                     "id": "usda-psd:SL",
                     "name": "Sierra Leone",
-                    "consumption": 175.0,
+                    "consumption": 176.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -46247,7 +46247,7 @@
                   {
                     "id": "usda-psd:SO",
                     "name": "Somalia",
-                    "consumption": 1200.0,
+                    "consumption": 1235.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -46255,7 +46255,7 @@
                     "id": "usda-psd:SU",
                     "name": "Sudan",
                     "consumption": 3050.0,
-                    "endingStocks": 293.0,
+                    "endingStocks": 305.0,
                     "production": 300.0
                   },
                   {
@@ -46311,14 +46311,14 @@
                     "id": "usda-psd:TS",
                     "name": "Tunisia",
                     "consumption": 3050.0,
-                    "endingStocks": 758.0,
+                    "endingStocks": 706.0,
                     "production": 1318.0
                   },
                   {
                     "id": "usda-psd:TU",
                     "name": "Turkey",
-                    "consumption": 18200.0,
-                    "endingStocks": 2773.0,
+                    "consumption": 17950.0,
+                    "endingStocks": 3023.0,
                     "production": 16800.0
                   },
                   {
@@ -46331,8 +46331,8 @@
                   {
                     "id": "usda-psd:TX",
                     "name": "Turkmenistan",
-                    "consumption": 1000.0,
-                    "endingStocks": 78.0,
+                    "consumption": 975.0,
+                    "endingStocks": 60.0,
                     "production": 600.0
                   },
                   {
@@ -46381,14 +46381,14 @@
                     "id": "usda-psd:UY",
                     "name": "Uruguay",
                     "consumption": 370.0,
-                    "endingStocks": 221.0,
+                    "endingStocks": 271.0,
                     "production": 1430.0
                   },
                   {
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
                     "consumption": 9000.0,
-                    "endingStocks": 1526.0,
+                    "endingStocks": 1546.0,
                     "production": 6100.0
                   },
                   {
@@ -46409,21 +46409,21 @@
                     "id": "usda-psd:WA",
                     "name": "Namibia",
                     "consumption": 200.0,
-                    "endingStocks": 12.0,
+                    "endingStocks": 33.0,
                     "production": 25.0
                   },
                   {
                     "id": "usda-psd:YM",
                     "name": "Yemen",
                     "consumption": 4200.0,
-                    "endingStocks": 332.0,
+                    "endingStocks": 333.0,
                     "production": 115.0
                   },
                   {
                     "id": "usda-psd:ZA",
                     "name": "Zambia",
                     "consumption": 480.0,
-                    "endingStocks": 130.0,
+                    "endingStocks": 136.0,
                     "production": 130.0
                   }
                 ],
@@ -46438,7 +46438,7 @@
                     "id": "usda-psd:AF",
                     "name": "Afghanistan",
                     "consumption": 9500.0,
-                    "endingStocks": 614.0,
+                    "endingStocks": 1064.0,
                     "production": 4800.0
                   },
                   {
@@ -46480,15 +46480,15 @@
                     "id": "usda-psd:AR",
                     "name": "Argentina",
                     "consumption": 7450.0,
-                    "endingStocks": 1867.0,
-                    "production": 21500.0
+                    "endingStocks": 2867.0,
+                    "production": 23000.0
                   },
                   {
                     "id": "usda-psd:AS",
                     "name": "Australia",
-                    "consumption": 9150.0,
-                    "endingStocks": 4941.0,
-                    "production": 31000.0
+                    "consumption": 9650.0,
+                    "endingStocks": 5153.0,
+                    "production": 32500.0
                   },
                   {
                     "id": "usda-psd:BA",
@@ -46599,7 +46599,7 @@
                     "id": "usda-psd:CO",
                     "name": "Colombia",
                     "consumption": 1920.0,
-                    "endingStocks": 198.0,
+                    "endingStocks": 194.0,
                     "production": 4.0
                   },
                   {
@@ -46648,7 +46648,7 @@
                     "id": "usda-psd:EG",
                     "name": "Egypt",
                     "consumption": 20700.0,
-                    "endingStocks": 4256.0,
+                    "endingStocks": 4255.0,
                     "production": 10000.0
                   },
                   {
@@ -46697,7 +46697,7 @@
                     "id": "usda-psd:GH",
                     "name": "Ghana",
                     "consumption": 1165.0,
-                    "endingStocks": 264.0,
+                    "endingStocks": 259.0,
                     "production": 0.0
                   },
                   {
@@ -46759,8 +46759,8 @@
                   {
                     "id": "usda-psd:IR",
                     "name": "Iran",
-                    "consumption": 17050.0,
-                    "endingStocks": 3236.0,
+                    "consumption": 17250.0,
+                    "endingStocks": 3561.0,
                     "production": 16000.0
                   },
                   {
@@ -46774,14 +46774,14 @@
                     "id": "usda-psd:IV",
                     "name": "Cote d'Ivoire",
                     "consumption": 900.0,
-                    "endingStocks": 80.0,
+                    "endingStocks": 83.0,
                     "production": 0.0
                   },
                   {
                     "id": "usda-psd:IZ",
                     "name": "Iraq",
                     "consumption": 8000.0,
-                    "endingStocks": 2069.0,
+                    "endingStocks": 1839.0,
                     "production": 5800.0
                   },
                   {
@@ -46802,8 +46802,8 @@
                     "id": "usda-psd:JO",
                     "name": "Jordan",
                     "consumption": 1095.0,
-                    "endingStocks": 773.0,
-                    "production": 30.0
+                    "endingStocks": 823.0,
+                    "production": 80.0
                   },
                   {
                     "id": "usda-psd:KE",
@@ -46816,8 +46816,8 @@
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
                     "consumption": 1100.0,
-                    "endingStocks": 191.0,
-                    "production": 625.0
+                    "endingStocks": 229.0,
+                    "production": 700.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -46843,9 +46843,9 @@
                   {
                     "id": "usda-psd:KZ",
                     "name": "Kazakhstan",
-                    "consumption": 7975.0,
-                    "endingStocks": 2029.0,
-                    "production": 15000.0
+                    "consumption": 8275.0,
+                    "endingStocks": 2529.0,
+                    "production": 15800.0
                   },
                   {
                     "id": "usda-psd:LE",
@@ -46942,7 +46942,7 @@
                     "id": "usda-psd:MU",
                     "name": "Oman",
                     "consumption": 880.0,
-                    "endingStocks": 342.0,
+                    "endingStocks": 343.0,
                     "production": 0.0
                   },
                   {
@@ -47011,8 +47011,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 620.0,
-                    "endingStocks": 15.0,
+                    "consumption": 635.0,
+                    "endingStocks": 14.0,
                     "production": 1200.0
                   },
                   {
@@ -47068,7 +47068,7 @@
                     "id": "usda-psd:RS",
                     "name": "Russia",
                     "consumption": 41200.0,
-                    "endingStocks": 19088.0,
+                    "endingStocks": 20088.0,
                     "production": 88000.0
                   },
                   {
@@ -47089,8 +47089,8 @@
                     "id": "usda-psd:SF",
                     "name": "South Africa",
                     "consumption": 3840.0,
-                    "endingStocks": 593.0,
-                    "production": 1800.0
+                    "endingStocks": 583.0,
+                    "production": 1790.0
                   },
                   {
                     "id": "usda-psd:SG",
@@ -47116,7 +47116,7 @@
                   {
                     "id": "usda-psd:SO",
                     "name": "Somalia",
-                    "consumption": 1200.0,
+                    "consumption": 1250.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -47124,7 +47124,7 @@
                     "id": "usda-psd:SU",
                     "name": "Sudan",
                     "consumption": 3050.0,
-                    "endingStocks": 243.0,
+                    "endingStocks": 255.0,
                     "production": 300.0
                   },
                   {
@@ -47180,15 +47180,15 @@
                     "id": "usda-psd:TS",
                     "name": "Tunisia",
                     "consumption": 3100.0,
-                    "endingStocks": 788.0,
+                    "endingStocks": 736.0,
                     "production": 1300.0
                   },
                   {
                     "id": "usda-psd:TU",
                     "name": "Turkey",
-                    "consumption": 19200.0,
-                    "endingStocks": 5073.0,
-                    "production": 23000.0
+                    "consumption": 18750.0,
+                    "endingStocks": 5273.0,
+                    "production": 23500.0
                   },
                   {
                     "id": "usda-psd:TW",
@@ -47200,8 +47200,8 @@
                   {
                     "id": "usda-psd:TX",
                     "name": "Turkmenistan",
-                    "consumption": 1050.0,
-                    "endingStocks": 228.0,
+                    "consumption": 1025.0,
+                    "endingStocks": 235.0,
                     "production": 1100.0
                   },
                   {
@@ -47228,15 +47228,15 @@
                   {
                     "id": "usda-psd:UP",
                     "name": "Ukraine",
-                    "consumption": 9500.0,
-                    "endingStocks": 6100.0,
-                    "production": 26000.0
+                    "consumption": 9800.0,
+                    "endingStocks": 7300.0,
+                    "production": 26500.0
                   },
                   {
                     "id": "usda-psd:US",
                     "name": "United States",
-                    "consumption": 30182.0,
-                    "endingStocks": 20135.0,
+                    "consumption": 30100.0,
+                    "endingStocks": 20217.0,
                     "production": 41742.0
                   },
                   {
@@ -47250,49 +47250,49 @@
                     "id": "usda-psd:UY",
                     "name": "Uruguay",
                     "consumption": 370.0,
-                    "endingStocks": 161.0,
-                    "production": 1200.0
+                    "endingStocks": 216.0,
+                    "production": 1400.0
                   },
                   {
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
-                    "consumption": 8900.0,
-                    "endingStocks": 1326.0,
+                    "consumption": 9000.0,
+                    "endingStocks": 1246.0,
                     "production": 7200.0
                   },
                   {
                     "id": "usda-psd:VE",
                     "name": "Venezuela",
-                    "consumption": 1650.0,
-                    "endingStocks": 193.0,
+                    "consumption": 1600.0,
+                    "endingStocks": 143.0,
                     "production": 0.0
                   },
                   {
                     "id": "usda-psd:VM",
                     "name": "Vietnam",
-                    "consumption": 5950.0,
-                    "endingStocks": 740.0,
+                    "consumption": 6100.0,
+                    "endingStocks": 790.0,
                     "production": 0.0
                   },
                   {
                     "id": "usda-psd:WA",
                     "name": "Namibia",
                     "consumption": 200.0,
-                    "endingStocks": 7.0,
+                    "endingStocks": 28.0,
                     "production": 25.0
                   },
                   {
                     "id": "usda-psd:YM",
                     "name": "Yemen",
                     "consumption": 4250.0,
-                    "endingStocks": 342.0,
+                    "endingStocks": 343.0,
                     "production": 110.0
                   },
                   {
                     "id": "usda-psd:ZA",
                     "name": "Zambia",
                     "consumption": 545.0,
-                    "endingStocks": 130.0,
+                    "endingStocks": 136.0,
                     "production": 200.0
                   }
                 ],
@@ -47688,8 +47688,8 @@
           },
           "maize": {
             "latestPeriod": "2026/2027",
-            "stockToUse": 21.3566,
-            "priorStockToUse": 23.6002,
+            "stockToUse": 21.5226,
+            "priorStockToUse": 23.6009,
             "history": [
               {
                 "year": "2000/2001",
@@ -47973,108 +47973,108 @@
               },
               {
                 "year": "2020/2021",
-                "production": 1134185.0,
-                "consumption": 1154165.0,
-                "endingStocks": 296946.0,
-                "ratio": 25.7282,
+                "production": 1134099.0,
+                "consumption": 1154115.0,
+                "endingStocks": 296910.0,
+                "ratio": 25.7262,
                 "excludingChina": {
-                  "production": 873515.0,
-                  "consumption": 869165.0,
-                  "endingStocks": 91242.0,
-                  "ratio": 10.4977
+                  "production": 873429.0,
+                  "consumption": 869115.0,
+                  "endingStocks": 91206.0,
+                  "ratio": 10.4941
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2021/2022",
-                "production": 1220839.0,
-                "consumption": 1181970.0,
-                "endingStocks": 313343.0,
-                "ratio": 26.5102,
+                "production": 1220810.0,
+                "consumption": 1181920.0,
+                "endingStocks": 313328.0,
+                "ratio": 26.5101,
                 "excludingChina": {
-                  "production": 948287.0,
-                  "consumption": 890970.0,
-                  "endingStocks": 104206.0,
-                  "ratio": 11.6958
+                  "production": 948258.0,
+                  "consumption": 890920.0,
+                  "endingStocks": 104191.0,
+                  "ratio": 11.6948
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2022/2023",
-                "production": 1165651.0,
-                "consumption": 1168306.0,
-                "endingStocks": 303713.0,
-                "ratio": 25.996,
+                "production": 1166063.0,
+                "consumption": 1168596.0,
+                "endingStocks": 303820.0,
+                "ratio": 25.9987,
                 "excludingChina": {
-                  "production": 888451.0,
-                  "consumption": 869306.0,
-                  "endingStocks": 97690.0,
-                  "ratio": 11.2377
+                  "production": 888863.0,
+                  "consumption": 869596.0,
+                  "endingStocks": 97797.0,
+                  "ratio": 11.2463
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2023/2024",
-                "production": 1232008.0,
-                "consumption": 1226909.0,
-                "endingStocks": 313822.0,
-                "ratio": 25.5783,
+                "production": 1232123.0,
+                "consumption": 1227039.0,
+                "endingStocks": 313914.0,
+                "ratio": 25.583,
                 "excludingChina": {
-                  "production": 943166.0,
-                  "consumption": 919909.0,
-                  "endingStocks": 102630.0,
-                  "ratio": 11.1565
+                  "production": 943281.0,
+                  "consumption": 920039.0,
+                  "endingStocks": 102722.0,
+                  "ratio": 11.165
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2024/2025",
-                "production": 1234983.0,
-                "consumption": 1252134.0,
-                "endingStocks": 295641.0,
-                "ratio": 23.611,
+                "production": 1234962.0,
+                "consumption": 1252159.0,
+                "endingStocks": 295690.0,
+                "ratio": 23.6144,
                 "excludingChina": {
-                  "production": 940066.0,
-                  "consumption": 936134.0,
-                  "endingStocks": 103713.0,
-                  "ratio": 11.0789
+                  "production": 940045.0,
+                  "consumption": 936159.0,
+                  "endingStocks": 103762.0,
+                  "ratio": 11.0838
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2025/2026",
-                "production": 1330621.0,
-                "consumption": 1301525.0,
-                "endingStocks": 307162.0,
-                "ratio": 23.6002,
+                "production": 1334715.0,
+                "consumption": 1306348.0,
+                "endingStocks": 308310.0,
+                "ratio": 23.6009,
                 "excludingChina": {
-                  "production": 1029381.0,
-                  "consumption": 981525.0,
-                  "endingStocks": 130014.0,
-                  "ratio": 13.2461
+                  "production": 1033475.0,
+                  "consumption": 986348.0,
+                  "endingStocks": 131339.0,
+                  "ratio": 13.3157
                 },
                 "countryAreaCount": 125
               },
               {
                 "year": "2026/2027",
-                "production": 1293750.0,
-                "consumption": 1313129.0,
-                "endingStocks": 280440.0,
-                "ratio": 21.3566,
+                "production": 1291550.0,
+                "consumption": 1309964.0,
+                "endingStocks": 281938.0,
+                "ratio": 21.5226,
                 "excludingChina": {
-                  "production": 986750.0,
-                  "consumption": 989129.0,
-                  "endingStocks": 115312.0,
-                  "ratio": 11.6579
+                  "production": 984550.0,
+                  "consumption": 987964.0,
+                  "endingStocks": 114987.0,
+                  "ratio": 11.6388
                 },
                 "countryAreaCount": 125
               }
             ],
-            "releasePeriod": "2026-10",
+            "releasePeriod": "2026-11",
             "unit": "1000 metric tons; ratio: %",
             "methodology": "World grain totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Ex-China subtracts China from BOTH stocks and consumption; it is not an estimate of exportable stocks. Marketing years vary by country; figures include forecasts and revisions. Rice is on a milled basis.",
             "observationId": "usda-psd/440000/2026/2027",
-            "revisionId": "439e082dc0a1f6dc2a9c3a4bff2718ceb0eeaad82fbf19b2bfc4cae3a590ea28",
+            "revisionId": "00643c99319e6d2c8089cdb1907454282052b98001431348a3404f0f5194d267",
             "coverage": {
               "2000/2001": {
                 "basis": "contributors",
@@ -65330,9 +65330,9 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 7250.0,
-                    "endingStocks": 307.0,
-                    "production": 1479.0
+                    "consumption": 7200.0,
+                    "endingStocks": 271.0,
+                    "production": 1393.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -66213,9 +66213,9 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 8000.0,
-                    "endingStocks": 398.0,
-                    "production": 1580.0
+                    "consumption": 7950.0,
+                    "endingStocks": 383.0,
+                    "production": 1551.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -67096,9 +67096,9 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 7900.0,
-                    "endingStocks": 340.0,
-                    "production": 1500.0
+                    "consumption": 8200.0,
+                    "endingStocks": 446.0,
+                    "production": 1921.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -67320,9 +67320,9 @@
                   {
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
-                    "consumption": 690.0,
-                    "endingStocks": 74.0,
-                    "production": 733.0
+                    "consumption": 680.0,
+                    "endingStocks": 75.0,
+                    "production": 724.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -67979,9 +67979,9 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 8170.0,
-                    "endingStocks": 390.0,
-                    "production": 1600.0
+                    "consumption": 8300.0,
+                    "endingStocks": 492.0,
+                    "production": 1726.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -68204,8 +68204,8 @@
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
                     "consumption": 750.0,
-                    "endingStocks": 120.0,
-                    "production": 800.0
+                    "endingStocks": 110.0,
+                    "production": 789.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -68862,9 +68862,9 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 8950.0,
-                    "endingStocks": 392.0,
-                    "production": 1500.0
+                    "consumption": 9000.0,
+                    "endingStocks": 434.0,
+                    "production": 1490.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -69086,9 +69086,9 @@
                   {
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
-                    "consumption": 800.0,
-                    "endingStocks": 101.0,
-                    "production": 805.0
+                    "consumption": 775.0,
+                    "endingStocks": 105.0,
+                    "production": 794.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -69514,7 +69514,7 @@
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
                     "consumption": 915.0,
-                    "endingStocks": 111.0,
+                    "endingStocks": 114.0,
                     "production": 867.0
                   },
                   {
@@ -69634,7 +69634,7 @@
                     "id": "usda-psd:BK",
                     "name": "Bosnia and Herzegovina",
                     "consumption": 875.0,
-                    "endingStocks": 88.0,
+                    "endingStocks": 98.0,
                     "production": 630.0
                   },
                   {
@@ -69661,9 +69661,9 @@
                   {
                     "id": "usda-psd:BR",
                     "name": "Brazil",
-                    "consumption": 100500.0,
-                    "endingStocks": 14804.0,
-                    "production": 141000.0
+                    "consumption": 103500.0,
+                    "endingStocks": 15304.0,
+                    "production": 144500.0
                   },
                   {
                     "id": "usda-psd:BT",
@@ -69682,8 +69682,8 @@
                   {
                     "id": "usda-psd:CA",
                     "name": "Canada",
-                    "consumption": 15300.0,
-                    "endingStocks": 1983.0,
+                    "consumption": 15548.0,
+                    "endingStocks": 1735.0,
                     "production": 14867.0
                   },
                   {
@@ -69703,7 +69703,7 @@
                   {
                     "id": "usda-psd:CE",
                     "name": "Sri Lanka",
-                    "consumption": 515.0,
+                    "consumption": 465.0,
                     "endingStocks": 38.0,
                     "production": 257.0
                   },
@@ -69725,7 +69725,7 @@
                     "id": "usda-psd:CH",
                     "name": "China",
                     "consumption": 320000.0,
-                    "endingStocks": 177148.0,
+                    "endingStocks": 176971.0,
                     "production": 301240.0
                   },
                   {
@@ -69745,14 +69745,14 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 9950.0,
-                    "endingStocks": 387.0,
-                    "production": 1550.0
+                    "consumption": 9900.0,
+                    "endingStocks": 479.0,
+                    "production": 1450.0
                   },
                   {
                     "id": "usda-psd:CS",
                     "name": "Costa Rica",
-                    "consumption": 1100.0,
+                    "consumption": 1150.0,
                     "endingStocks": 95.0,
                     "production": 7.0
                   },
@@ -69787,8 +69787,8 @@
                   {
                     "id": "usda-psd:DR",
                     "name": "Dominican Republic",
-                    "consumption": 1850.0,
-                    "endingStocks": 218.0,
+                    "consumption": 1950.0,
+                    "endingStocks": 248.0,
                     "production": 70.0
                   },
                   {
@@ -69808,7 +69808,7 @@
                   {
                     "id": "usda-psd:EG",
                     "name": "Egypt",
-                    "consumption": 19300.0,
+                    "consumption": 18900.0,
                     "endingStocks": 1991.0,
                     "production": 6700.0
                   },
@@ -69822,8 +69822,8 @@
                   {
                     "id": "usda-psd:ES",
                     "name": "El Salvador",
-                    "consumption": 1475.0,
-                    "endingStocks": 167.0,
+                    "consumption": 1450.0,
+                    "endingStocks": 165.0,
                     "production": 610.0
                   },
                   {
@@ -69864,7 +69864,7 @@
                   {
                     "id": "usda-psd:GU",
                     "name": "Guinea",
-                    "consumption": 860.0,
+                    "consumption": 875.0,
                     "endingStocks": 57.0,
                     "production": 760.0
                   },
@@ -69878,14 +69878,14 @@
                   {
                     "id": "usda-psd:HA",
                     "name": "Haiti",
-                    "consumption": 280.0,
-                    "endingStocks": 2.0,
+                    "consumption": 275.0,
+                    "endingStocks": 4.0,
                     "production": 275.0
                   },
                   {
                     "id": "usda-psd:HK",
                     "name": "Hong Kong",
-                    "consumption": 30.0,
+                    "consumption": 29.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -69899,28 +69899,28 @@
                   {
                     "id": "usda-psd:ID",
                     "name": "Indonesia",
-                    "consumption": 14100.0,
-                    "endingStocks": 916.0,
+                    "consumption": 14000.0,
+                    "endingStocks": 971.0,
                     "production": 13100.0
                   },
                   {
                     "id": "usda-psd:IN",
                     "name": "India",
-                    "consumption": 48000.0,
-                    "endingStocks": 7797.0,
+                    "consumption": 48200.0,
+                    "endingStocks": 7822.0,
                     "production": 55090.0
                   },
                   {
                     "id": "usda-psd:IR",
                     "name": "Iran",
-                    "consumption": 9850.0,
+                    "consumption": 10850.0,
                     "endingStocks": 1356.0,
                     "production": 1400.0
                   },
                   {
                     "id": "usda-psd:IS",
                     "name": "Israel",
-                    "consumption": 1600.0,
+                    "consumption": 1700.0,
                     "endingStocks": 90.0,
                     "production": 0.0
                   },
@@ -69928,7 +69928,7 @@
                     "id": "usda-psd:IV",
                     "name": "Cote d'Ivoire",
                     "consumption": 1725.0,
-                    "endingStocks": 140.0,
+                    "endingStocks": 123.0,
                     "production": 1700.0
                   },
                   {
@@ -69942,14 +69942,14 @@
                     "id": "usda-psd:JA",
                     "name": "Japan",
                     "consumption": 15700.0,
-                    "endingStocks": 1388.0,
+                    "endingStocks": 1346.0,
                     "production": 16.0
                   },
                   {
                     "id": "usda-psd:JM",
                     "name": "Jamaica",
-                    "consumption": 305.0,
-                    "endingStocks": 21.0,
+                    "consumption": 260.0,
+                    "endingStocks": 14.0,
                     "production": 3.0
                   },
                   {
@@ -69969,9 +69969,9 @@
                   {
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
-                    "consumption": 800.0,
-                    "endingStocks": 84.0,
-                    "production": 810.0
+                    "consumption": 825.0,
+                    "endingStocks": 87.0,
+                    "production": 834.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -69983,14 +69983,14 @@
                   {
                     "id": "usda-psd:KS",
                     "name": "Korea, South",
-                    "consumption": 11600.0,
-                    "endingStocks": 2072.0,
+                    "consumption": 11550.0,
+                    "endingStocks": 2055.0,
                     "production": 94.0
                   },
                   {
                     "id": "usda-psd:KU",
                     "name": "Kuwait",
-                    "consumption": 125.0,
+                    "consumption": 152.0,
                     "endingStocks": 10.0,
                     "production": 0.0
                   },
@@ -70025,7 +70025,7 @@
                   {
                     "id": "usda-psd:LY",
                     "name": "Libya",
-                    "consumption": 1000.0,
+                    "consumption": 988.0,
                     "endingStocks": 57.0,
                     "production": 0.0
                   },
@@ -70054,7 +70054,7 @@
                     "id": "usda-psd:MK",
                     "name": "North Macedonia",
                     "consumption": 195.0,
-                    "endingStocks": 25.0,
+                    "endingStocks": 28.0,
                     "production": 148.0
                   },
                   {
@@ -70067,7 +70067,7 @@
                   {
                     "id": "usda-psd:MO",
                     "name": "Morocco",
-                    "consumption": 3550.0,
+                    "consumption": 3850.0,
                     "endingStocks": 126.0,
                     "production": 55.0
                   },
@@ -70081,7 +70081,7 @@
                   {
                     "id": "usda-psd:MU",
                     "name": "Oman",
-                    "consumption": 360.0,
+                    "consumption": 324.0,
                     "endingStocks": 36.0,
                     "production": 15.0
                   },
@@ -70089,7 +70089,7 @@
                     "id": "usda-psd:MX",
                     "name": "Mexico",
                     "consumption": 51000.0,
-                    "endingStocks": 5551.0,
+                    "endingStocks": 5507.0,
                     "production": 24900.0
                   },
                   {
@@ -70116,14 +70116,14 @@
                   {
                     "id": "usda-psd:NO",
                     "name": "Norway",
-                    "consumption": 100.0,
+                    "consumption": 92.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
                   {
                     "id": "usda-psd:NP",
                     "name": "Nepal",
-                    "consumption": 3500.0,
+                    "consumption": 3450.0,
                     "endingStocks": 232.0,
                     "production": 3100.0
                   },
@@ -70137,8 +70137,8 @@
                   {
                     "id": "usda-psd:NZ",
                     "name": "New Zealand",
-                    "consumption": 275.0,
-                    "endingStocks": 40.0,
+                    "consumption": 265.0,
+                    "endingStocks": 37.0,
                     "production": 227.0
                   },
                   {
@@ -70158,22 +70158,22 @@
                   {
                     "id": "usda-psd:PE",
                     "name": "Peru",
-                    "consumption": 6250.0,
-                    "endingStocks": 408.0,
+                    "consumption": 6410.0,
+                    "endingStocks": 413.0,
                     "production": 1650.0
                   },
                   {
                     "id": "usda-psd:PK",
                     "name": "Pakistan",
                     "consumption": 8400.0,
-                    "endingStocks": 1157.0,
+                    "endingStocks": 1156.0,
                     "production": 8794.0
                   },
                   {
                     "id": "usda-psd:PN",
                     "name": "Panama",
-                    "consumption": 830.0,
-                    "endingStocks": 90.0,
+                    "consumption": 880.0,
+                    "endingStocks": 97.0,
                     "production": 120.0
                   },
                   {
@@ -70228,16 +70228,16 @@
                   {
                     "id": "usda-psd:SA",
                     "name": "Saudi Arabia",
-                    "consumption": 5500.0,
-                    "endingStocks": 460.0,
+                    "consumption": 5850.0,
+                    "endingStocks": 470.0,
                     "production": 135.0
                   },
                   {
                     "id": "usda-psd:SF",
                     "name": "South Africa",
-                    "consumption": 14600.0,
-                    "endingStocks": 3056.0,
-                    "production": 18100.0
+                    "consumption": 14300.0,
+                    "endingStocks": 4026.0,
+                    "production": 18400.0
                   },
                   {
                     "id": "usda-psd:SG",
@@ -70291,15 +70291,15 @@
                   {
                     "id": "usda-psd:TD",
                     "name": "Trinidad and Tobago",
-                    "consumption": 100.0,
-                    "endingStocks": 9.0,
+                    "consumption": 110.0,
+                    "endingStocks": 12.0,
                     "production": 5.0
                   },
                   {
                     "id": "usda-psd:TH",
                     "name": "Thailand",
                     "consumption": 6700.0,
-                    "endingStocks": 331.0,
+                    "endingStocks": 350.0,
                     "production": 5400.0
                   },
                   {
@@ -70327,14 +70327,14 @@
                     "id": "usda-psd:TU",
                     "name": "Turkey",
                     "consumption": 13200.0,
-                    "endingStocks": 1361.0,
+                    "endingStocks": 1332.0,
                     "production": 7900.0
                   },
                   {
                     "id": "usda-psd:TW",
                     "name": "Taiwan",
-                    "consumption": 4800.0,
-                    "endingStocks": 404.0,
+                    "consumption": 4700.0,
+                    "endingStocks": 397.0,
                     "production": 105.0
                   },
                   {
@@ -70389,7 +70389,7 @@
                   {
                     "id": "usda-psd:UY",
                     "name": "Uruguay",
-                    "consumption": 1650.0,
+                    "consumption": 1800.0,
                     "endingStocks": 157.0,
                     "production": 1453.0
                   },
@@ -70397,15 +70397,15 @@
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
                     "consumption": 840.0,
-                    "endingStocks": 71.0,
+                    "endingStocks": 79.0,
                     "production": 725.0
                   },
                   {
                     "id": "usda-psd:VE",
                     "name": "Venezuela",
-                    "consumption": 3250.0,
-                    "endingStocks": 137.0,
-                    "production": 1260.0
+                    "consumption": 3600.0,
+                    "endingStocks": 138.0,
+                    "production": 1630.0
                   },
                   {
                     "id": "usda-psd:VM",
@@ -70431,8 +70431,8 @@
                   {
                     "id": "usda-psd:YM",
                     "name": "Yemen",
-                    "consumption": 795.0,
-                    "endingStocks": 52.0,
+                    "consumption": 725.0,
+                    "endingStocks": 51.0,
                     "production": 70.0
                   },
                   {
@@ -70460,7 +70460,7 @@
                   {
                     "id": "usda-psd:AG",
                     "name": "Algeria",
-                    "consumption": 5100.0,
+                    "consumption": 5000.0,
                     "endingStocks": 260.0,
                     "production": 12.0
                   },
@@ -70490,7 +70490,7 @@
                     "name": "Argentina",
                     "consumption": 17700.0,
                     "endingStocks": 5012.0,
-                    "production": 55000.0
+                    "production": 57000.0
                   },
                   {
                     "id": "usda-psd:AS",
@@ -70509,7 +70509,7 @@
                   {
                     "id": "usda-psd:BG",
                     "name": "Bangladesh",
-                    "consumption": 7650.0,
+                    "consumption": 7500.0,
                     "endingStocks": 174.0,
                     "production": 6000.0
                   },
@@ -70517,7 +70517,7 @@
                     "id": "usda-psd:BK",
                     "name": "Bosnia and Herzegovina",
                     "consumption": 850.0,
-                    "endingStocks": 83.0,
+                    "endingStocks": 93.0,
                     "production": 650.0
                   },
                   {
@@ -70544,9 +70544,9 @@
                   {
                     "id": "usda-psd:BR",
                     "name": "Brazil",
-                    "consumption": 102000.0,
-                    "endingStocks": 10604.0,
-                    "production": 139000.0
+                    "consumption": 104000.0,
+                    "endingStocks": 11104.0,
+                    "production": 141000.0
                   },
                   {
                     "id": "usda-psd:BT",
@@ -70566,7 +70566,7 @@
                     "id": "usda-psd:CA",
                     "name": "Canada",
                     "consumption": 15700.0,
-                    "endingStocks": 2083.0,
+                    "endingStocks": 1835.0,
                     "production": 16800.0
                   },
                   {
@@ -70607,8 +70607,8 @@
                   {
                     "id": "usda-psd:CH",
                     "name": "China",
-                    "consumption": 324000.0,
-                    "endingStocks": 165128.0,
+                    "consumption": 322000.0,
+                    "endingStocks": 166951.0,
                     "production": 307000.0
                   },
                   {
@@ -70628,9 +70628,9 @@
                   {
                     "id": "usda-psd:CO",
                     "name": "Colombia",
-                    "consumption": 10000.0,
-                    "endingStocks": 385.0,
-                    "production": 1400.0
+                    "consumption": 10100.0,
+                    "endingStocks": 427.0,
+                    "production": 1350.0
                   },
                   {
                     "id": "usda-psd:CS",
@@ -70670,16 +70670,16 @@
                   {
                     "id": "usda-psd:DR",
                     "name": "Dominican Republic",
-                    "consumption": 1825.0,
-                    "endingStocks": 168.0,
+                    "consumption": 1850.0,
+                    "endingStocks": 173.0,
                     "production": 80.0
                   },
                   {
                     "id": "usda-psd:E4",
                     "name": "European Union",
-                    "consumption": 71000.0,
+                    "consumption": 69500.0,
                     "endingStocks": 5049.0,
-                    "production": 48000.0
+                    "production": 47500.0
                   },
                   {
                     "id": "usda-psd:EC",
@@ -70706,7 +70706,7 @@
                     "id": "usda-psd:ES",
                     "name": "El Salvador",
                     "consumption": 1500.0,
-                    "endingStocks": 162.0,
+                    "endingStocks": 160.0,
                     "production": 650.0
                   },
                   {
@@ -70762,7 +70762,7 @@
                     "id": "usda-psd:HA",
                     "name": "Haiti",
                     "consumption": 255.0,
-                    "endingStocks": 2.0,
+                    "endingStocks": 4.0,
                     "production": 250.0
                   },
                   {
@@ -70783,14 +70783,14 @@
                     "id": "usda-psd:ID",
                     "name": "Indonesia",
                     "consumption": 14400.0,
-                    "endingStocks": 1011.0,
+                    "endingStocks": 1066.0,
                     "production": 13500.0
                   },
                   {
                     "id": "usda-psd:IN",
                     "name": "India",
-                    "consumption": 52000.0,
-                    "endingStocks": 4397.0,
+                    "consumption": 52200.0,
+                    "endingStocks": 4722.0,
                     "production": 50000.0
                   },
                   {
@@ -70811,28 +70811,28 @@
                     "id": "usda-psd:IV",
                     "name": "Cote d'Ivoire",
                     "consumption": 1775.0,
-                    "endingStocks": 150.0,
+                    "endingStocks": 133.0,
                     "production": 1760.0
                   },
                   {
                     "id": "usda-psd:IZ",
                     "name": "Iraq",
-                    "consumption": 2000.0,
-                    "endingStocks": 119.0,
+                    "consumption": 1850.0,
+                    "endingStocks": 69.0,
                     "production": 500.0
                   },
                   {
                     "id": "usda-psd:JA",
                     "name": "Japan",
                     "consumption": 15500.0,
-                    "endingStocks": 1404.0,
+                    "endingStocks": 1362.0,
                     "production": 16.0
                   },
                   {
                     "id": "usda-psd:JM",
                     "name": "Jamaica",
-                    "consumption": 325.0,
-                    "endingStocks": 24.0,
+                    "consumption": 320.0,
+                    "endingStocks": 22.0,
                     "production": 3.0
                   },
                   {
@@ -70852,9 +70852,9 @@
                   {
                     "id": "usda-psd:KG",
                     "name": "Kyrgyzstan",
-                    "consumption": 800.0,
-                    "endingStocks": 70.0,
-                    "production": 800.0
+                    "consumption": 825.0,
+                    "endingStocks": 73.0,
+                    "production": 825.0
                   },
                   {
                     "id": "usda-psd:KN",
@@ -70867,7 +70867,7 @@
                     "id": "usda-psd:KS",
                     "name": "Korea, South",
                     "consumption": 11550.0,
-                    "endingStocks": 2116.0,
+                    "endingStocks": 2099.0,
                     "production": 94.0
                   },
                   {
@@ -70937,7 +70937,7 @@
                     "id": "usda-psd:MK",
                     "name": "North Macedonia",
                     "consumption": 195.0,
-                    "endingStocks": 23.0,
+                    "endingStocks": 26.0,
                     "production": 148.0
                   },
                   {
@@ -70971,9 +70971,9 @@
                   {
                     "id": "usda-psd:MX",
                     "name": "Mexico",
-                    "consumption": 52400.0,
-                    "endingStocks": 4831.0,
-                    "production": 24500.0
+                    "consumption": 51700.0,
+                    "endingStocks": 4487.0,
+                    "production": 24000.0
                   },
                   {
                     "id": "usda-psd:MY",
@@ -71021,7 +71021,7 @@
                     "id": "usda-psd:NZ",
                     "name": "New Zealand",
                     "consumption": 275.0,
-                    "endingStocks": 39.0,
+                    "endingStocks": 36.0,
                     "production": 225.0
                   },
                   {
@@ -71041,22 +71041,22 @@
                   {
                     "id": "usda-psd:PE",
                     "name": "Peru",
-                    "consumption": 6350.0,
-                    "endingStocks": 348.0,
+                    "consumption": 6650.0,
+                    "endingStocks": 453.0,
                     "production": 1700.0
                   },
                   {
                     "id": "usda-psd:PK",
                     "name": "Pakistan",
                     "consumption": 9400.0,
-                    "endingStocks": 1277.0,
+                    "endingStocks": 1276.0,
                     "production": 9800.0
                   },
                   {
                     "id": "usda-psd:PN",
                     "name": "Panama",
                     "consumption": 830.0,
-                    "endingStocks": 80.0,
+                    "endingStocks": 87.0,
                     "production": 120.0
                   },
                   {
@@ -71098,7 +71098,7 @@
                     "id": "usda-psd:RS",
                     "name": "Russia",
                     "consumption": 12200.0,
-                    "endingStocks": 1308.0,
+                    "endingStocks": 1508.0,
                     "production": 16500.0
                   },
                   {
@@ -71112,15 +71112,15 @@
                     "id": "usda-psd:SA",
                     "name": "Saudi Arabia",
                     "consumption": 4850.0,
-                    "endingStocks": 445.0,
+                    "endingStocks": 455.0,
                     "production": 135.0
                   },
                   {
                     "id": "usda-psd:SF",
                     "name": "South Africa",
                     "consumption": 14700.0,
-                    "endingStocks": 2656.0,
-                    "production": 16500.0
+                    "endingStocks": 2126.0,
+                    "production": 15000.0
                   },
                   {
                     "id": "usda-psd:SG",
@@ -71174,15 +71174,15 @@
                   {
                     "id": "usda-psd:TD",
                     "name": "Trinidad and Tobago",
-                    "consumption": 100.0,
-                    "endingStocks": 14.0,
+                    "consumption": 105.0,
+                    "endingStocks": 12.0,
                     "production": 5.0
                   },
                   {
                     "id": "usda-psd:TH",
                     "name": "Thailand",
                     "consumption": 7200.0,
-                    "endingStocks": 181.0,
+                    "endingStocks": 200.0,
                     "production": 5300.0
                   },
                   {
@@ -71209,15 +71209,15 @@
                   {
                     "id": "usda-psd:TU",
                     "name": "Turkey",
-                    "consumption": 11500.0,
-                    "endingStocks": 1161.0,
+                    "consumption": 11000.0,
+                    "endingStocks": 1132.0,
                     "production": 7400.0
                   },
                   {
                     "id": "usda-psd:TW",
                     "name": "Taiwan",
                     "consumption": 4700.0,
-                    "endingStocks": 364.0,
+                    "endingStocks": 357.0,
                     "production": 110.0
                   },
                   {
@@ -71252,15 +71252,15 @@
                     "id": "usda-psd:UP",
                     "name": "Ukraine",
                     "consumption": 7200.0,
-                    "endingStocks": 5526.0,
+                    "endingStocks": 7526.0,
                     "production": 31800.0
                   },
                   {
                     "id": "usda-psd:US",
                     "name": "United States",
-                    "consumption": 330342.0,
-                    "endingStocks": 46967.0,
-                    "production": 407281.0
+                    "consumption": 329707.0,
+                    "endingStocks": 44667.0,
+                    "production": 403711.0
                   },
                   {
                     "id": "usda-psd:UV",
@@ -71280,15 +71280,15 @@
                     "id": "usda-psd:UZ",
                     "name": "Uzbekistan",
                     "consumption": 865.0,
-                    "endingStocks": 81.0,
+                    "endingStocks": 89.0,
                     "production": 800.0
                   },
                   {
                     "id": "usda-psd:VE",
                     "name": "Venezuela",
-                    "consumption": 3280.0,
-                    "endingStocks": 137.0,
-                    "production": 1680.0
+                    "consumption": 3200.0,
+                    "endingStocks": 113.0,
+                    "production": 1575.0
                   },
                   {
                     "id": "usda-psd:VM",
@@ -71315,7 +71315,7 @@
                     "id": "usda-psd:YM",
                     "name": "Yemen",
                     "consumption": 650.0,
-                    "endingStocks": 57.0,
+                    "endingStocks": 56.0,
                     "production": 65.0
                   },
                   {
@@ -71718,8 +71718,8 @@
           },
           "rice": {
             "latestPeriod": "2026/2027",
-            "stockToUse": 37.0194,
-            "priorStockToUse": 38.4971,
+            "stockToUse": 37.2863,
+            "priorStockToUse": 38.6114,
             "history": [
               {
                 "year": "2000/2001",
@@ -72004,107 +72004,107 @@
               {
                 "year": "2020/2021",
                 "production": 509416.0,
-                "consumption": 498401.0,
-                "endingStocks": 190170.0,
-                "ratio": 38.156,
+                "consumption": 498391.0,
+                "endingStocks": 190180.0,
+                "ratio": 38.1588,
                 "excludingChina": {
                   "production": 361116.0,
-                  "consumption": 348108.0,
-                  "endingStocks": 73670.0,
-                  "ratio": 21.163
+                  "consumption": 348098.0,
+                  "endingStocks": 73680.0,
+                  "ratio": 21.1665
                 },
                 "countryAreaCount": 116
               },
               {
                 "year": "2021/2022",
                 "production": 514186.0,
-                "consumption": 516571.0,
-                "endingStocks": 185685.0,
-                "ratio": 35.9457,
+                "consumption": 516551.0,
+                "endingStocks": 185715.0,
+                "ratio": 35.9529,
                 "excludingChina": {
                   "production": 365196.0,
-                  "consumption": 360211.0,
-                  "endingStocks": 72685.0,
-                  "ratio": 20.1785
+                  "consumption": 360191.0,
+                  "endingStocks": 72715.0,
+                  "ratio": 20.1879
                 },
                 "countryAreaCount": 116
               },
               {
                 "year": "2022/2023",
                 "production": 516927.0,
-                "consumption": 523314.0,
-                "endingStocks": 181551.0,
-                "ratio": 34.6926,
+                "consumption": 523239.0,
+                "endingStocks": 181656.0,
+                "ratio": 34.7176,
                 "excludingChina": {
                   "production": 370981.0,
-                  "consumption": 368320.0,
-                  "endingStocks": 74951.0,
-                  "ratio": 20.3494
+                  "consumption": 368245.0,
+                  "endingStocks": 75056.0,
+                  "ratio": 20.3821
                 },
                 "countryAreaCount": 116
               },
               {
                 "year": "2023/2024",
                 "production": 523604.0,
-                "consumption": 521706.0,
-                "endingStocks": 180410.0,
-                "ratio": 34.5808,
+                "consumption": 521621.0,
+                "endingStocks": 180600.0,
+                "ratio": 34.6228,
                 "excludingChina": {
                   "production": 378984.0,
-                  "consumption": 373591.0,
-                  "endingStocks": 77410.0,
-                  "ratio": 20.7205
+                  "consumption": 373506.0,
+                  "endingStocks": 77600.0,
+                  "ratio": 20.7761
                 },
                 "countryAreaCount": 114
               },
               {
                 "year": "2024/2025",
-                "production": 542157.0,
-                "consumption": 527517.0,
-                "endingStocks": 191628.0,
-                "ratio": 36.3264,
+                "production": 542078.0,
+                "consumption": 527393.0,
+                "endingStocks": 191864.0,
+                "ratio": 36.3797,
                 "excludingChina": {
-                  "production": 396882.0,
-                  "consumption": 382560.0,
-                  "endingStocks": 87128.0,
-                  "ratio": 22.775
+                  "production": 396803.0,
+                  "consumption": 382436.0,
+                  "endingStocks": 87364.0,
+                  "ratio": 22.8441
                 },
                 "countryAreaCount": 114
               },
               {
                 "year": "2025/2026",
                 "production": 545653.0,
-                "consumption": 530474.0,
-                "endingStocks": 204217.0,
-                "ratio": 38.4971,
+                "consumption": 530506.0,
+                "endingStocks": 204836.0,
+                "ratio": 38.6114,
                 "excludingChina": {
                   "production": 399324.0,
-                  "consumption": 383123.0,
-                  "endingStocks": 98717.0,
-                  "ratio": 25.7664
+                  "consumption": 383155.0,
+                  "endingStocks": 99336.0,
+                  "ratio": 25.9258
                 },
                 "countryAreaCount": 114
               },
               {
                 "year": "2026/2027",
-                "production": 533083.0,
-                "consumption": 536200.0,
-                "endingStocks": 198498.0,
-                "ratio": 37.0194,
+                "production": 533185.0,
+                "consumption": 535905.0,
+                "endingStocks": 199819.0,
+                "ratio": 37.2863,
                 "excludingChina": {
-                  "production": 386083.0,
-                  "consumption": 388900.0,
-                  "endingStocks": 91998.0,
-                  "ratio": 23.656
+                  "production": 386185.0,
+                  "consumption": 388605.0,
+                  "endingStocks": 93319.0,
+                  "ratio": 24.0138
                 },
                 "countryAreaCount": 114
               }
             ],
-            "releasePeriod": "2026-10",
+            "releasePeriod": "2026-11",
             "unit": "1000 metric tons; ratio: %",
             "methodology": "World grain totals calculated from USDA PSD country/area records since 2000. The supplied EU aggregate is counted once per year; separate UK records are included only when supplied. EU coverage changes over history. Ending stocks / domestic consumption × 100. Ex-China subtracts China from BOTH stocks and consumption; it is not an estimate of exportable stocks. Marketing years vary by country; figures include forecasts and revisions. Rice is on a milled basis.",
             "observationId": "usda-psd/422110/2026/2027",
-            "revisionId": "d8892870259fe554999e24ed1ab0bd959c413c71f6423b937438729595f379a5",
+            "revisionId": "0bbf291cf9aa449671847bba82854118fabeffafb1dd09a0b1b7992589346bd0",
             "coverage": {
               "2000/2001": {
                 "basis": "contributors",
@@ -88954,8 +88954,8 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 365.0,
-                    "endingStocks": 77.0,
+                    "consumption": 355.0,
+                    "endingStocks": 87.0,
                     "production": 264.0
                   },
                   {
@@ -89774,8 +89774,8 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 375.0,
-                    "endingStocks": 53.0,
+                    "consumption": 360.0,
+                    "endingStocks": 78.0,
                     "production": 272.0
                   },
                   {
@@ -89788,8 +89788,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 45.0,
-                    "endingStocks": 75.0,
+                    "consumption": 40.0,
+                    "endingStocks": 80.0,
                     "production": 725.0
                   },
                   {
@@ -90349,8 +90349,8 @@
                   {
                     "id": "usda-psd:HO",
                     "name": "Honduras",
-                    "consumption": 185.0,
-                    "endingStocks": 34.0,
+                    "consumption": 180.0,
+                    "endingStocks": 39.0,
                     "production": 32.0
                   },
                   {
@@ -90594,8 +90594,8 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 385.0,
-                    "endingStocks": 38.0,
+                    "consumption": 370.0,
+                    "endingStocks": 78.0,
                     "production": 279.0
                   },
                   {
@@ -90608,8 +90608,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 45.0,
-                    "endingStocks": 23.0,
+                    "consumption": 40.0,
+                    "endingStocks": 33.0,
                     "production": 850.0
                   },
                   {
@@ -90699,8 +90699,8 @@
                   {
                     "id": "usda-psd:SG",
                     "name": "Senegal",
-                    "consumption": 2200.0,
-                    "endingStocks": 645.0,
+                    "consumption": 2150.0,
+                    "endingStocks": 695.0,
                     "production": 959.0
                   },
                   {
@@ -91169,8 +91169,8 @@
                   {
                     "id": "usda-psd:HO",
                     "name": "Honduras",
-                    "consumption": 185.0,
-                    "endingStocks": 29.0,
+                    "consumption": 175.0,
+                    "endingStocks": 44.0,
                     "production": 22.0
                   },
                   {
@@ -91414,8 +91414,8 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 395.0,
-                    "endingStocks": 62.0,
+                    "consumption": 380.0,
+                    "endingStocks": 117.0,
                     "production": 276.0
                   },
                   {
@@ -91428,8 +91428,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 45.0,
-                    "endingStocks": 116.0,
+                    "consumption": 35.0,
+                    "endingStocks": 136.0,
                     "production": 860.0
                   },
                   {
@@ -91512,8 +91512,8 @@
                   {
                     "id": "usda-psd:SG",
                     "name": "Senegal",
-                    "consumption": 2150.0,
-                    "endingStocks": 385.0,
+                    "consumption": 2100.0,
+                    "endingStocks": 485.0,
                     "production": 720.0
                   },
                   {
@@ -91793,7 +91793,7 @@
                   {
                     "id": "usda-psd:CA",
                     "name": "Canada",
-                    "consumption": 458.0,
+                    "consumption": 459.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -91976,7 +91976,7 @@
                     "id": "usda-psd:HO",
                     "name": "Honduras",
                     "consumption": 175.0,
-                    "endingStocks": 44.0,
+                    "endingStocks": 59.0,
                     "production": 15.0
                   },
                   {
@@ -92101,8 +92101,8 @@
                   {
                     "id": "usda-psd:LI",
                     "name": "Liberia",
-                    "consumption": 610.0,
-                    "endingStocks": 108.0,
+                    "consumption": 600.0,
+                    "endingStocks": 118.0,
                     "production": 203.0
                   },
                   {
@@ -92220,9 +92220,9 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 415.0,
-                    "endingStocks": 76.0,
-                    "production": 295.0
+                    "consumption": 380.0,
+                    "endingStocks": 87.0,
+                    "production": 216.0
                   },
                   {
                     "id": "usda-psd:NZ",
@@ -92234,8 +92234,8 @@
                   {
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
-                    "consumption": 40.0,
-                    "endingStocks": 103.0,
+                    "consumption": 35.0,
+                    "endingStocks": 128.0,
                     "production": 975.0
                   },
                   {
@@ -92255,8 +92255,8 @@
                   {
                     "id": "usda-psd:PN",
                     "name": "Panama",
-                    "consumption": 330.0,
-                    "endingStocks": 20.0,
+                    "consumption": 325.0,
+                    "endingStocks": 25.0,
                     "production": 233.0
                   },
                   {
@@ -92269,8 +92269,8 @@
                   {
                     "id": "usda-psd:PU",
                     "name": "Guinea-Bissau",
-                    "consumption": 345.0,
-                    "endingStocks": 49.0,
+                    "consumption": 350.0,
+                    "endingStocks": 44.0,
                     "production": 146.0
                   },
                   {
@@ -92318,8 +92318,8 @@
                   {
                     "id": "usda-psd:SG",
                     "name": "Senegal",
-                    "consumption": 2175.0,
-                    "endingStocks": 423.0,
+                    "consumption": 2100.0,
+                    "endingStocks": 598.0,
                     "production": 643.0
                   },
                   {
@@ -92515,14 +92515,14 @@
                   {
                     "id": "usda-psd:AF",
                     "name": "Afghanistan",
-                    "consumption": 345.0,
+                    "consumption": 330.0,
                     "endingStocks": 0.0,
                     "production": 270.0
                   },
                   {
                     "id": "usda-psd:AG",
                     "name": "Algeria",
-                    "consumption": 190.0,
+                    "consumption": 160.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -92557,8 +92557,8 @@
                   {
                     "id": "usda-psd:BG",
                     "name": "Bangladesh",
-                    "consumption": 38400.0,
-                    "endingStocks": 2377.0,
+                    "consumption": 38300.0,
+                    "endingStocks": 2477.0,
                     "production": 37650.0
                   },
                   {
@@ -92586,7 +92586,7 @@
                     "id": "usda-psd:BR",
                     "name": "Brazil",
                     "consumption": 7350.0,
-                    "endingStocks": 964.0,
+                    "endingStocks": 1039.0,
                     "production": 7600.0
                   },
                   {
@@ -92599,7 +92599,7 @@
                   {
                     "id": "usda-psd:CA",
                     "name": "Canada",
-                    "consumption": 455.0,
+                    "consumption": 459.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -92621,7 +92621,7 @@
                     "id": "usda-psd:CE",
                     "name": "Sri Lanka",
                     "consumption": 3500.0,
-                    "endingStocks": 896.0,
+                    "endingStocks": 890.0,
                     "production": 3700.0
                   },
                   {
@@ -92648,7 +92648,7 @@
                   {
                     "id": "usda-psd:CM",
                     "name": "Cameroon",
-                    "consumption": 646.0,
+                    "consumption": 626.0,
                     "endingStocks": 0.0,
                     "production": 246.0
                   },
@@ -92697,8 +92697,8 @@
                   {
                     "id": "usda-psd:E4",
                     "name": "European Union",
-                    "consumption": 3600.0,
-                    "endingStocks": 963.0,
+                    "consumption": 3650.0,
+                    "endingStocks": 968.0,
                     "production": 1770.0
                   },
                   {
@@ -92712,14 +92712,14 @@
                     "id": "usda-psd:EG",
                     "name": "Egypt",
                     "consumption": 4150.0,
-                    "endingStocks": 436.0,
+                    "endingStocks": 486.0,
                     "production": 4200.0
                   },
                   {
                     "id": "usda-psd:ES",
                     "name": "El Salvador",
                     "consumption": 95.0,
-                    "endingStocks": 8.0,
+                    "endingStocks": 29.0,
                     "production": 3.0
                   },
                   {
@@ -92739,8 +92739,8 @@
                   {
                     "id": "usda-psd:GH",
                     "name": "Ghana",
-                    "consumption": 1900.0,
-                    "endingStocks": 458.0,
+                    "consumption": 1950.0,
+                    "endingStocks": 468.0,
                     "production": 970.0
                   },
                   {
@@ -92782,7 +92782,7 @@
                     "id": "usda-psd:HO",
                     "name": "Honduras",
                     "consumption": 170.0,
-                    "endingStocks": 34.0,
+                    "endingStocks": 22.0,
                     "production": 15.0
                   },
                   {
@@ -92795,15 +92795,15 @@
                   {
                     "id": "usda-psd:IN",
                     "name": "India",
-                    "consumption": 121024.0,
+                    "consumption": 121103.0,
                     "endingStocks": 59000.0,
                     "production": 154024.0
                   },
                   {
                     "id": "usda-psd:IR",
                     "name": "Iran",
-                    "consumption": 3050.0,
-                    "endingStocks": 580.0,
+                    "consumption": 3100.0,
+                    "endingStocks": 630.0,
                     "production": 2000.0
                   },
                   {
@@ -92831,7 +92831,7 @@
                     "id": "usda-psd:JA",
                     "name": "Japan",
                     "consumption": 7461.0,
-                    "endingStocks": 2486.0,
+                    "endingStocks": 2436.0,
                     "production": 7293.0
                   },
                   {
@@ -92907,14 +92907,14 @@
                   {
                     "id": "usda-psd:LI",
                     "name": "Liberia",
-                    "consumption": 630.0,
-                    "endingStocks": 87.0,
+                    "consumption": 615.0,
+                    "endingStocks": 62.0,
                     "production": 209.0
                   },
                   {
                     "id": "usda-psd:LY",
                     "name": "Libya",
-                    "consumption": 215.0,
+                    "consumption": 227.0,
                     "endingStocks": 0.0,
                     "production": 0.0
                   },
@@ -92949,7 +92949,7 @@
                   {
                     "id": "usda-psd:MO",
                     "name": "Morocco",
-                    "consumption": 178.0,
+                    "consumption": 148.0,
                     "endingStocks": 0.0,
                     "production": 48.0
                   },
@@ -92978,7 +92978,7 @@
                     "id": "usda-psd:MX",
                     "name": "Mexico",
                     "consumption": 1010.0,
-                    "endingStocks": 106.0,
+                    "endingStocks": 150.0,
                     "production": 173.0
                   },
                   {
@@ -93006,13 +93006,13 @@
                     "id": "usda-psd:NI",
                     "name": "Nigeria",
                     "consumption": 8500.0,
-                    "endingStocks": 2218.0,
+                    "endingStocks": 2418.0,
                     "production": 5904.0
                   },
                   {
                     "id": "usda-psd:NP",
                     "name": "Nepal",
-                    "consumption": 4400.0,
+                    "consumption": 4342.0,
                     "endingStocks": 0.0,
                     "production": 3800.0
                   },
@@ -93026,8 +93026,8 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 420.0,
-                    "endingStocks": 46.0,
+                    "consumption": 390.0,
+                    "endingStocks": 72.0,
                     "production": 270.0
                   },
                   {
@@ -93041,14 +93041,14 @@
                     "id": "usda-psd:PA",
                     "name": "Paraguay",
                     "consumption": 35.0,
-                    "endingStocks": 28.0,
+                    "endingStocks": 13.0,
                     "production": 900.0
                   },
                   {
                     "id": "usda-psd:PE",
                     "name": "Peru",
                     "consumption": 2575.0,
-                    "endingStocks": 190.0,
+                    "endingStocks": 194.0,
                     "production": 2413.0
                   },
                   {
@@ -93061,8 +93061,8 @@
                   {
                     "id": "usda-psd:PN",
                     "name": "Panama",
-                    "consumption": 325.0,
-                    "endingStocks": 10.0,
+                    "consumption": 320.0,
+                    "endingStocks": 12.0,
                     "production": 230.0
                   },
                   {
@@ -93075,8 +93075,8 @@
                   {
                     "id": "usda-psd:PU",
                     "name": "Guinea-Bissau",
-                    "consumption": 375.0,
-                    "endingStocks": 75.0,
+                    "consumption": 390.0,
+                    "endingStocks": 90.0,
                     "production": 151.0
                   },
                   {
@@ -93110,8 +93110,8 @@
                   {
                     "id": "usda-psd:SA",
                     "name": "Saudi Arabia",
-                    "consumption": 1725.0,
-                    "endingStocks": 758.0,
+                    "consumption": 1700.0,
+                    "endingStocks": 708.0,
                     "production": 0.0
                   },
                   {
@@ -93125,13 +93125,13 @@
                     "id": "usda-psd:SG",
                     "name": "Senegal",
                     "consumption": 2000.0,
-                    "endingStocks": 180.0,
+                    "endingStocks": 255.0,
                     "production": 647.0
                   },
                   {
                     "id": "usda-psd:SL",
                     "name": "Sierra Leone",
-                    "consumption": 1333.0,
+                    "consumption": 1358.0,
                     "endingStocks": 0.0,
                     "production": 908.0
                   },
@@ -93180,8 +93180,8 @@
                   {
                     "id": "usda-psd:TH",
                     "name": "Thailand",
-                    "consumption": 12700.0,
-                    "endingStocks": 3797.0,
+                    "consumption": 12800.0,
+                    "endingStocks": 3897.0,
                     "production": 20700.0
                   },
                   {
@@ -93194,7 +93194,7 @@
                   {
                     "id": "usda-psd:TO",
                     "name": "Togo",
-                    "consumption": 359.0,
+                    "consumption": 334.0,
                     "endingStocks": 0.0,
                     "production": 134.0
                   },
@@ -93321,7 +93321,7 @@
                   {
                     "id": "usda-psd:AF",
                     "name": "Afghanistan",
-                    "consumption": 390.0,
+                    "consumption": 350.0,
                     "endingStocks": 0.0,
                     "production": 290.0
                   },
@@ -93349,21 +93349,21 @@
                   {
                     "id": "usda-psd:AR",
                     "name": "Argentina",
-                    "consumption": 510.0,
-                    "endingStocks": 189.0,
-                    "production": 709.0
+                    "consumption": 515.0,
+                    "endingStocks": 200.0,
+                    "production": 800.0
                   },
                   {
                     "id": "usda-psd:AS",
                     "name": "Australia",
-                    "consumption": 400.0,
-                    "endingStocks": 61.0,
-                    "production": 100.0
+                    "consumption": 410.0,
+                    "endingStocks": 126.0,
+                    "production": 155.0
                   },
                   {
                     "id": "usda-psd:BG",
                     "name": "Bangladesh",
-                    "consumption": 38800.0,
+                    "consumption": 38600.0,
                     "endingStocks": 1767.0,
                     "production": 36900.0
                   },
@@ -93392,7 +93392,7 @@
                     "id": "usda-psd:BR",
                     "name": "Brazil",
                     "consumption": 7300.0,
-                    "endingStocks": 614.0,
+                    "endingStocks": 689.0,
                     "production": 7400.0
                   },
                   {
@@ -93427,7 +93427,7 @@
                     "id": "usda-psd:CE",
                     "name": "Sri Lanka",
                     "consumption": 3550.0,
-                    "endingStocks": 886.0,
+                    "endingStocks": 880.0,
                     "production": 3350.0
                   },
                   {
@@ -93454,7 +93454,7 @@
                   {
                     "id": "usda-psd:CM",
                     "name": "Cameroon",
-                    "consumption": 846.0,
+                    "consumption": 746.0,
                     "endingStocks": 0.0,
                     "production": 246.0
                   },
@@ -93503,8 +93503,8 @@
                   {
                     "id": "usda-psd:E4",
                     "name": "European Union",
-                    "consumption": 3700.0,
-                    "endingStocks": 928.0,
+                    "consumption": 3725.0,
+                    "endingStocks": 918.0,
                     "production": 1725.0
                   },
                   {
@@ -93518,14 +93518,14 @@
                     "id": "usda-psd:EG",
                     "name": "Egypt",
                     "consumption": 4175.0,
-                    "endingStocks": 411.0,
+                    "endingStocks": 461.0,
                     "production": 4100.0
                   },
                   {
                     "id": "usda-psd:ES",
                     "name": "El Salvador",
                     "consumption": 100.0,
-                    "endingStocks": 16.0,
+                    "endingStocks": 27.0,
                     "production": 3.0
                   },
                   {
@@ -93545,8 +93545,8 @@
                   {
                     "id": "usda-psd:GH",
                     "name": "Ghana",
-                    "consumption": 1950.0,
-                    "endingStocks": 340.0,
+                    "consumption": 2000.0,
+                    "endingStocks": 300.0,
                     "production": 932.0
                   },
                   {
@@ -93588,7 +93588,7 @@
                     "id": "usda-psd:HO",
                     "name": "Honduras",
                     "consumption": 160.0,
-                    "endingStocks": 29.0,
+                    "endingStocks": 17.0,
                     "production": 15.0
                   },
                   {
@@ -93602,14 +93602,14 @@
                     "id": "usda-psd:IN",
                     "name": "India",
                     "consumption": 125000.0,
-                    "endingStocks": 57000.0,
+                    "endingStocks": 58000.0,
                     "production": 147000.0
                   },
                   {
                     "id": "usda-psd:IR",
                     "name": "Iran",
                     "consumption": 3050.0,
-                    "endingStocks": 430.0,
+                    "endingStocks": 480.0,
                     "production": 2000.0
                   },
                   {
@@ -93623,7 +93623,7 @@
                     "id": "usda-psd:IV",
                     "name": "Cote d'Ivoire",
                     "consumption": 3500.0,
-                    "endingStocks": 653.0,
+                    "endingStocks": 553.0,
                     "production": 1755.0
                   },
                   {
@@ -93637,7 +93637,7 @@
                     "id": "usda-psd:JA",
                     "name": "Japan",
                     "consumption": 7954.0,
-                    "endingStocks": 2522.0,
+                    "endingStocks": 2472.0,
                     "production": 7370.0
                   },
                   {
@@ -93713,7 +93713,7 @@
                   {
                     "id": "usda-psd:LI",
                     "name": "Liberia",
-                    "consumption": 650.0,
+                    "consumption": 625.0,
                     "endingStocks": 70.0,
                     "production": 208.0
                   },
@@ -93755,7 +93755,7 @@
                   {
                     "id": "usda-psd:MO",
                     "name": "Morocco",
-                    "consumption": 215.0,
+                    "consumption": 175.0,
                     "endingStocks": 0.0,
                     "production": 55.0
                   },
@@ -93784,7 +93784,7 @@
                     "id": "usda-psd:MX",
                     "name": "Mexico",
                     "consumption": 1020.0,
-                    "endingStocks": 88.0,
+                    "endingStocks": 132.0,
                     "production": 162.0
                   },
                   {
@@ -93812,7 +93812,7 @@
                     "id": "usda-psd:NI",
                     "name": "Nigeria",
                     "consumption": 8800.0,
-                    "endingStocks": 1988.0,
+                    "endingStocks": 2188.0,
                     "production": 5670.0
                   },
                   {
@@ -93832,9 +93832,9 @@
                   {
                     "id": "usda-psd:NU",
                     "name": "Nicaragua",
-                    "consumption": 430.0,
-                    "endingStocks": 38.0,
-                    "production": 267.0
+                    "consumption": 390.0,
+                    "endingStocks": 62.0,
+                    "production": 225.0
                   },
                   {
                     "id": "usda-psd:NZ",
@@ -93854,7 +93854,7 @@
                     "id": "usda-psd:PE",
                     "name": "Peru",
                     "consumption": 2575.0,
-                    "endingStocks": 165.0,
+                    "endingStocks": 169.0,
                     "production": 2400.0
                   },
                   {
@@ -93867,8 +93867,8 @@
                   {
                     "id": "usda-psd:PN",
                     "name": "Panama",
-                    "consumption": 330.0,
-                    "endingStocks": 14.0,
+                    "consumption": 325.0,
+                    "endingStocks": 21.0,
                     "production": 234.0
                   },
                   {
@@ -93881,8 +93881,8 @@
                   {
                     "id": "usda-psd:PU",
                     "name": "Guinea-Bissau",
-                    "consumption": 400.0,
-                    "endingStocks": 63.0,
+                    "consumption": 420.0,
+                    "endingStocks": 33.0,
                     "production": 138.0
                   },
                   {
@@ -93917,7 +93917,7 @@
                     "id": "usda-psd:SA",
                     "name": "Saudi Arabia",
                     "consumption": 1800.0,
-                    "endingStocks": 758.0,
+                    "endingStocks": 708.0,
                     "production": 0.0
                   },
                   {
@@ -93930,7 +93930,7 @@
                   {
                     "id": "usda-psd:SG",
                     "name": "Senegal",
-                    "consumption": 2025.0,
+                    "consumption": 1950.0,
                     "endingStocks": 175.0,
                     "production": 670.0
                   },
@@ -93986,8 +93986,8 @@
                   {
                     "id": "usda-psd:TH",
                     "name": "Thailand",
-                    "consumption": 12800.0,
-                    "endingStocks": 3847.0,
+                    "consumption": 13000.0,
+                    "endingStocks": 3947.0,
                     "production": 20300.0
                   },
                   {
@@ -94000,15 +94000,15 @@
                   {
                     "id": "usda-psd:TO",
                     "name": "Togo",
-                    "consumption": 395.0,
+                    "consumption": 320.0,
                     "endingStocks": 0.0,
                     "production": 120.0
                   },
                   {
                     "id": "usda-psd:TU",
                     "name": "Turkey",
-                    "consumption": 820.0,
-                    "endingStocks": 221.0,
+                    "consumption": 815.0,
+                    "endingStocks": 201.0,
                     "production": 580.0
                   },
                   {
@@ -94057,8 +94057,8 @@
                     "id": "usda-psd:US",
                     "name": "United States",
                     "consumption": 4698.0,
-                    "endingStocks": 1269.0,
-                    "production": 5008.0
+                    "endingStocks": 1267.0,
+                    "production": 5006.0
                   },
                   {
                     "id": "usda-psd:UV",
@@ -94894,10 +94894,10 @@
           ]
         }
       },
-      "refreshKind": "unchanged",
+      "refreshKind": "new-publication",
       "status": "ok",
-      "fetchedAt": "2026-11-10T15:03:09Z",
-      "lastAttemptAt": "2026-11-10T15:03:04Z",
+      "fetchedAt": "2026-11-11T14:34:28Z",
+      "lastAttemptAt": "2026-11-11T14:34:21Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "usda",
@@ -94907,30 +94907,30 @@
         "observation": {
           "period": "2026/2027",
           "marketYear": "2026/2027",
-          "vintage": "2026-10",
+          "vintage": "2026-11",
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-11-10T15:03:04Z",
+          "checkedAt": "2026-11-11T14:34:21Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-11-10T15:03:09Z",
+          "fetchedAt": "2026-11-11T14:34:28Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
         },
-        "cache": "unchanged",
+        "cache": "new",
         "version": {
-          "contentHash": "e84a53451d78c7fc3b3a087f360bfc5cf7edf5f5af15d49881cc54b7117b15fb",
+          "contentHash": "39d9ddf9d61cef82eb6b9cbabd36fbc26bb7af27dd5e8c65140fae428e1ff804",
           "observationId": "usda-psd/410000/2026/2027",
-          "revisionId": "5a8732b26f657afe07eb21e3169464ceb729cf6878dee22dc54c7adc616c73c5"
+          "revisionId": "641e7cb4f80fc142f6f217a4059caa95fd159f54429d97cb9f38fa064942b4b8"
         },
         "extensions": {
-          "refreshKind": "unchanged",
+          "refreshKind": "new-publication",
           "coverage": {
             "state": "compared",
             "policy": "usda-coverage-v1",
@@ -95318,14 +95318,14 @@
           },
           "derived": {
             "methodVersion": "stock-to-use/v1",
-            "calculatedAt": "2026-11-10T15:03:09Z",
+            "calculatedAt": "2026-11-11T14:34:28Z",
             "inputs": [
               {
                 "datasetId": "usda",
-                "vintage": "2026-10",
-                "contentHash": "e84a53451d78c7fc3b3a087f360bfc5cf7edf5f5af15d49881cc54b7117b15fb",
+                "vintage": "2026-11",
+                "contentHash": "39d9ddf9d61cef82eb6b9cbabd36fbc26bb7af27dd5e8c65140fae428e1ff804",
                 "observationId": "usda-psd/410000/2026/2027",
-                "revisionId": "5a8732b26f657afe07eb21e3169464ceb729cf6878dee22dc54c7adc616c73c5"
+                "revisionId": "641e7cb4f80fc142f6f217a4059caa95fd159f54429d97cb9f38fa064942b4b8"
               }
             ],
             "eligibility": "eligible"
@@ -97121,8 +97121,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-11-10T15:03:04Z",
-      "lastAttemptAt": "2026-11-10T15:03:04Z",
+      "fetchedAt": "2026-11-11T14:34:22Z",
+      "lastAttemptAt": "2026-11-11T14:34:21Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "fao",
@@ -97136,14 +97136,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-11-10T15:03:04Z",
+          "checkedAt": "2026-11-11T14:34:21Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-11-10T15:03:04Z",
+          "fetchedAt": "2026-11-11T14:34:22Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -97157,7 +97157,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-11-10T15:03:04Z",
+            "calculatedAt": "2026-11-11T14:34:22Z",
             "inputs": [
               {
                 "datasetId": "fao",
@@ -98278,8 +98278,8 @@
         "advisoryUrl": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml"
       },
       "status": "ok",
-      "fetchedAt": "2026-11-10T15:03:04Z",
-      "lastAttemptAt": "2026-11-10T15:03:04Z",
+      "fetchedAt": "2026-11-11T14:34:22Z",
+      "lastAttemptAt": "2026-11-11T14:34:21Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "noaa",
@@ -98293,14 +98293,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-11-10T15:03:04Z",
+          "checkedAt": "2026-11-11T14:34:21Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-11-10T15:03:04Z",
+          "fetchedAt": "2026-11-11T14:34:22Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -105617,8 +105617,8 @@
         ]
       },
       "status": "ok",
-      "fetchedAt": "2026-11-10T15:03:04Z",
-      "lastAttemptAt": "2026-11-10T15:03:04Z",
+      "fetchedAt": "2026-11-11T14:34:22Z",
+      "lastAttemptAt": "2026-11-11T14:34:21Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "worldBank",
@@ -105632,14 +105632,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-11-10T15:03:04Z",
+          "checkedAt": "2026-11-11T14:34:21Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-11-10T15:03:04Z",
+          "fetchedAt": "2026-11-11T14:34:22Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -105653,7 +105653,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-11-10T15:03:04Z",
+            "calculatedAt": "2026-11-11T14:34:22Z",
             "inputs": [
               {
                 "datasetId": "worldBank",
@@ -107584,8 +107584,8 @@
         }
       },
       "status": "ok",
-      "fetchedAt": "2026-11-10T15:03:04Z",
-      "lastAttemptAt": "2026-11-10T15:03:04Z",
+      "fetchedAt": "2026-11-11T14:34:22Z",
+      "lastAttemptAt": "2026-11-11T14:34:21Z",
       "metadata": {
         "contractVersion": 1,
         "datasetId": "eia",
@@ -107599,14 +107599,14 @@
           "publishedAt": null
         },
         "attempt": {
-          "checkedAt": "2026-11-10T15:03:04Z",
+          "checkedAt": "2026-11-11T14:34:21Z",
           "retrieval": "ok",
           "format": "passed",
           "semantic": "passed",
           "reason": null
         },
         "accepted": {
-          "fetchedAt": "2026-11-10T15:03:04Z",
+          "fetchedAt": "2026-11-11T14:34:22Z",
           "format": "passed",
           "semantic": "passed",
           "period": "verified"
@@ -107620,7 +107620,7 @@
         "extensions": {
           "derived": {
             "methodVersion": "monthly-change/v1",
-            "calculatedAt": "2026-11-10T15:03:04Z",
+            "calculatedAt": "2026-11-11T14:34:22Z",
             "inputs": [
               {
                 "datasetId": "eia",
@@ -107713,8 +107713,8 @@
           "period": "2025"
         },
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "cornProduction",
@@ -107728,14 +107728,14 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
@@ -108811,8 +108811,8 @@
           "period": "2026-11-08"
         },
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "cornProgress",
@@ -108826,19 +108826,19 @@
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
-          "cache": "new",
+          "cache": "unchanged",
           "version": {
             "contentHash": "fea5b79b305dcc22ab42f4ebc2aba1ac7efd56d2e2b26f73d5a2846391fd696a",
             "observationId": "NASS/corn-progress/2026-11-08",
@@ -108852,16 +108852,8 @@
     },
     "weather": {
       "IA": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 24.73,
-            "min": 11.65,
-            "rain": 0.0,
-            "rootWetness": 0.67,
-            "surfaceWetness": 0.56
-          },
           {
             "date": "2026-10-25",
             "max": 20.69,
@@ -108965,40 +108957,48 @@
             "rain": 0.0,
             "rootWetness": 0.72,
             "surfaceWetness": 0.68
+          },
+          {
+            "date": "2026-11-07",
+            "max": 11.08,
+            "min": -0.25,
+            "rain": 0.0,
+            "rootWetness": 0.71,
+            "surfaceWetness": 0.68
           }
         ],
-        "rawHash": "26e77df8bf6e0d8f22f85766c219987806fd672620c6892900af42cb83ec228d",
+        "rawHash": "934b7865b255bd173c10001ca117f8844793156cad3cd2ac28ada36c21332303",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IA",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=42&longitude=-93.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "4575c5a78972110e69b63eb4bb4b576dc203680e79ab16569caeac3e699b9c0c",
+            "contentHash": "78bb45ce27d8488b0d4c4b454c257909fe058c45a42784098a222808ad35316b",
             "observationId": null,
             "revisionId": null
           },
@@ -109006,16 +109006,8 @@
         }
       },
       "IL": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 22.04,
-            "min": 8.81,
-            "rain": 0.0,
-            "rootWetness": 0.54,
-            "surfaceWetness": 0.43
-          },
           {
             "date": "2026-10-25",
             "max": 23.77,
@@ -109119,40 +109111,48 @@
             "rain": 1.33,
             "rootWetness": 0.56,
             "surfaceWetness": 0.56
+          },
+          {
+            "date": "2026-11-07",
+            "max": 10.83,
+            "min": -0.29,
+            "rain": 0.0,
+            "rootWetness": 0.56,
+            "surfaceWetness": 0.53
           }
         ],
-        "rawHash": "6084ad33f5703a66cf66688786a6d77e0b352679eef8d2c2be83f720d2accba7",
+        "rawHash": "004e51adbd37c7e80c45775a05760aedc7278bd2bb395d50b21c280900ccb494",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IL",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-89&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "c616c3865a9ed0bfe995663f3315e24ea43ecae00cb87086b49c57a196d630bc",
+            "contentHash": "7dbecc5a82f2466d47d52a8adb2ef994b2acdf70b77f2a84758f802c0a083a4b",
             "observationId": null,
             "revisionId": null
           },
@@ -109160,16 +109160,8 @@
         }
       },
       "NE": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 22.31,
-            "min": 16.44,
-            "rain": 0.52,
-            "rootWetness": 0.45,
-            "surfaceWetness": 0.35
-          },
           {
             "date": "2026-10-25",
             "max": 17.74,
@@ -109273,40 +109265,48 @@
             "rain": 0.0,
             "rootWetness": 0.5,
             "surfaceWetness": 0.47
+          },
+          {
+            "date": "2026-11-07",
+            "max": 19.35,
+            "min": 1.64,
+            "rain": 0.0,
+            "rootWetness": 0.49,
+            "surfaceWetness": 0.45
           }
         ],
-        "rawHash": "54779f36924f192e89ef77ce424b32efaf5a2c5492c8b876dcb8947b39b90273",
+        "rawHash": "1dba60c681f921e26ff2f7c58aebc82d15ee867a61b92768a1816f5028c48041",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-NE",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=41&longitude=-98&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "e4786370760c0e7ba94894f588655843906856ea81fb5d0ddf9870717763b10e",
+            "contentHash": "e9b269dafa31ed113c0cb4bbbaf228f96512695b1610d7d8f1a24351bab3b496",
             "observationId": null,
             "revisionId": null
           },
@@ -109314,16 +109314,8 @@
         }
       },
       "MN": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 19.19,
-            "min": 13.19,
-            "rain": 2.35,
-            "rootWetness": 0.52,
-            "surfaceWetness": 0.48
-          },
           {
             "date": "2026-10-25",
             "max": 12.68,
@@ -109427,40 +109419,48 @@
             "rain": 0.0,
             "rootWetness": 0.57,
             "surfaceWetness": 0.56
+          },
+          {
+            "date": "2026-11-07",
+            "max": 13.74,
+            "min": -0.86,
+            "rain": 0.0,
+            "rootWetness": 0.57,
+            "surfaceWetness": 0.54
           }
         ],
-        "rawHash": "ca9298dee695d2c62e60ddb97ce5cd29a46adfe0266ed159a47ed3527f557e61",
+        "rawHash": "e1dedfb851163f66512bc3138b5ffdba9eb778080a725527f5a5a9bfe5acfc1c",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-MN",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-95&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "913cc70a40aabd656789bf55c54ec651d3e9a8803c8fe9fa82a653cbc94cb611",
+            "contentHash": "3c3ba04f4ef5bfc0f98fa266798c8e9af8b344a56d625d86e057566a2dee7f7c",
             "observationId": null,
             "revisionId": null
           },
@@ -109468,16 +109468,8 @@
         }
       },
       "IN": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 21.52,
-            "min": 7.92,
-            "rain": 0.0,
-            "rootWetness": 0.56,
-            "surfaceWetness": 0.44
-          },
           {
             "date": "2026-10-25",
             "max": 22.98,
@@ -109581,40 +109573,48 @@
             "rain": 0.86,
             "rootWetness": 0.56,
             "surfaceWetness": 0.52
+          },
+          {
+            "date": "2026-11-07",
+            "max": 11.54,
+            "min": 1.04,
+            "rain": 0.0,
+            "rootWetness": 0.56,
+            "surfaceWetness": 0.51
           }
         ],
-        "rawHash": "774979f94931c4d66155ea8e0d53951e86ec34ebe5c369b41daa9e34403f44ff",
+        "rawHash": "e0aefe8bd2e1a34a4a591dff04da22ebb3e4638e95ff83ca4017d04174b76654",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-IN",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40&longitude=-86&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "5fc532ef757811ff23dbc2c4dcc179ff5be3a7014d4782cc0470f14e33358235",
+            "contentHash": "51a09a1ec37402bcf60a429375ae46bce971339f7c80e3a2ef5c5a09407ea17d",
             "observationId": null,
             "revisionId": null
           },
@@ -109622,16 +109622,8 @@
         }
       },
       "SD": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 22.07,
-            "min": 10.78,
-            "rain": 1.49,
-            "rootWetness": 0.48,
-            "surfaceWetness": 0.44
-          },
           {
             "date": "2026-10-25",
             "max": 10.37,
@@ -109735,40 +109727,48 @@
             "rain": 0.0,
             "rootWetness": 0.56,
             "surfaceWetness": 0.53
+          },
+          {
+            "date": "2026-11-07",
+            "max": 13.66,
+            "min": -0.83,
+            "rain": 0.03,
+            "rootWetness": 0.55,
+            "surfaceWetness": 0.51
           }
         ],
-        "rawHash": "83f2434adc622e010c999e28a81d5081c7cb100ae4f77df84059bbe8646f6df6",
+        "rawHash": "588bdc42600032a2be2d071a7873ca419fa0307d821e797eb9885eae672933a8",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-SD",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=44&longitude=-97.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "9a3d73c03349d9964b44bad32f0fb01de319ff8b3a39e60036af0c00eb09d6ac",
+            "contentHash": "baf697c34b691867fa5015eaac463ba4ec27d92a659b1ea6040d130962f5c0bd",
             "observationId": null,
             "revisionId": null
           },
@@ -109776,16 +109776,8 @@
         }
       },
       "KS": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 27.64,
-            "min": 15.22,
-            "rain": 0.0,
-            "rootWetness": 0.5,
-            "surfaceWetness": 0.36
-          },
           {
             "date": "2026-10-25",
             "max": 24.85,
@@ -109889,40 +109881,48 @@
             "rain": 0.01,
             "rootWetness": 0.53,
             "surfaceWetness": 0.47
+          },
+          {
+            "date": "2026-11-07",
+            "max": 18.77,
+            "min": 2.2,
+            "rain": 0.0,
+            "rootWetness": 0.52,
+            "surfaceWetness": 0.46
           }
         ],
-        "rawHash": "15748840f7791f47ff39a57d4a02b140e9abb47a545de0a07169418314e071e0",
+        "rawHash": "864df522b9c7fec156482c32de43c1662c4c0d22d2b40c519f3c191d68db98bf",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-KS",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-98&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "4a0e3865a25b7d0051fd84671baaac662d55b6c1c0dd8cc13c9959a98af4be70",
+            "contentHash": "f5a7971e1e39ab920dbb80ffcedd79321a5182b6d4517b8c702f011c36a571cb",
             "observationId": null,
             "revisionId": null
           },
@@ -109930,16 +109930,8 @@
         }
       },
       "OH": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 20.33,
-            "min": 7.48,
-            "rain": 0.0,
-            "rootWetness": 0.64,
-            "surfaceWetness": 0.58
-          },
           {
             "date": "2026-10-25",
             "max": 20.43,
@@ -110043,40 +110035,48 @@
             "rain": 0.44,
             "rootWetness": 0.65,
             "surfaceWetness": 0.64
+          },
+          {
+            "date": "2026-11-07",
+            "max": 9.41,
+            "min": 4.14,
+            "rain": 0.13,
+            "rootWetness": 0.64,
+            "surfaceWetness": 0.62
           }
         ],
-        "rawHash": "d2ec9a188cecad30c59a3d18f52b977126f8277455b1e50754aac2ec0e6e9b5d",
+        "rawHash": "daa5ca0e8ecee6693160515330de202bf857c9a523c7353223a8717af21678ba",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-OH",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=40.5&longitude=-83.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "e67be0cc09a122d3b69ee72711d31f5ccc2d12480c6e069f01f64d79848bc9a1",
+            "contentHash": "9a4cc652a22f461eed986eb5b428c9018cc20f9d7ec2e67184de42ec6287f2bf",
             "observationId": null,
             "revisionId": null
           },
@@ -110084,16 +110084,8 @@
         }
       },
       "MO": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 24.99,
-            "min": 10.0,
-            "rain": 0.0,
-            "rootWetness": 0.61,
-            "surfaceWetness": 0.48
-          },
           {
             "date": "2026-10-25",
             "max": 25.7,
@@ -110197,40 +110189,48 @@
             "rain": 0.08,
             "rootWetness": 0.61,
             "surfaceWetness": 0.53
+          },
+          {
+            "date": "2026-11-07",
+            "max": 12.59,
+            "min": 1.45,
+            "rain": 0.0,
+            "rootWetness": 0.61,
+            "surfaceWetness": 0.53
           }
         ],
-        "rawHash": "0dc221440213faf59d1ca69ae8fe34dc1826055b07fdc5a20622317dff19b339",
+        "rawHash": "48365cc9b833c723c01c26f16d6483f2beb33ece9761999cfab8b3d0f0919e09",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-MO",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=39&longitude=-92&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "76839fd79358ed828003c50cce6560a920bd117c218a0e38231396c7ae80ab49",
+            "contentHash": "f787cab94c05779f5fbc55dea809363752b4f9df35821c2ec66dd41aaab7b664",
             "observationId": null,
             "revisionId": null
           },
@@ -110238,16 +110238,8 @@
         }
       },
       "WI": {
-        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+        "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
         "days": [
-          {
-            "date": "2026-10-24",
-            "max": 21.08,
-            "min": 9.08,
-            "rain": 0.0,
-            "rootWetness": 0.45,
-            "surfaceWetness": 0.39
-          },
           {
             "date": "2026-10-25",
             "max": 22.8,
@@ -110351,40 +110343,48 @@
             "rain": 0.1,
             "rootWetness": 0.47,
             "surfaceWetness": 0.51
+          },
+          {
+            "date": "2026-11-07",
+            "max": 10.64,
+            "min": -2.14,
+            "rain": 0.0,
+            "rootWetness": 0.47,
+            "surfaceWetness": 0.48
           }
         ],
-        "rawHash": "7a05183cdef245199bccc30a0a35b04184cfe74a936dccf01b858dd6de8bd537",
+        "rawHash": "827f2cfa8e7686fe7f71639bcc4562e3953b4f37de879b181f999af31001416e",
         "status": "ok",
-        "fetchedAt": "2026-11-10T15:03:22Z",
-        "lastAttemptAt": "2026-11-10T15:03:22Z",
+        "fetchedAt": "2026-11-11T14:34:40Z",
+        "lastAttemptAt": "2026-11-11T14:34:40Z",
         "metadata": {
           "contractVersion": 1,
           "datasetId": "weather/corn-WI",
           "provider": "NASA POWER",
-          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
-          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261024&end=20261106&format=JSON&time-standard=UTC",
+          "sourceUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
+          "downloadUrl": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CPRECTOTCORR%2CGWETROOT%2CGWETTOP&community=AG&latitude=43.5&longitude=-89.5&start=20261025&end=20261107&format=JSON&time-standard=UTC",
           "observation": {
-            "period": "2026-11-06",
+            "period": "2026-11-07",
             "marketYear": null,
             "vintage": null,
             "publishedAt": null
           },
           "attempt": {
-            "checkedAt": "2026-11-10T15:03:22Z",
+            "checkedAt": "2026-11-11T14:34:40Z",
             "retrieval": "ok",
             "format": "passed",
             "semantic": "passed",
             "reason": null
           },
           "accepted": {
-            "fetchedAt": "2026-11-10T15:03:22Z",
+            "fetchedAt": "2026-11-11T14:34:40Z",
             "format": "passed",
             "semantic": "passed",
             "period": "verified"
           },
           "cache": "new",
           "version": {
-            "contentHash": "de5d84edc0bb332de0af29c5094ad32046957e05529fc3cb70e44ad605d4d440",
+            "contentHash": "21b72689dc83b6e94a3692a2021b3b05773296b67ed003df02b2a1f00b097ab7",
             "observationId": null,
             "revisionId": null
           },
