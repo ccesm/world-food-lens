@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "releaseUrl": "https://github.com/ccesm/world-food-lens/releases/tag/usda-psd-2026-09-raw-v1",
+  "releaseId": 406455865,
+  "tag": "usda-psd-2026-09-raw-v1",
+  "immutable": true,
+  "tagCommit": "f1fdf2968a0ab59b419e8d17729f56c42278e8a9",
+  "publishedAt": "2026-10-08T05:38:00Z",
+  "verifiedAt": "2026-10-08T05:43:18Z",
+  "verification": "Draft and published assets re-downloaded; ZIP sizes and SHA-256 match captured source; manifest and checksums byte-identical. No production observation parsing.",
+  "assets": [
+    {
+      "filename": "psd_grains_pulses_csv.zip",
+      "sourceUrl": "https://apps.fas.usda.gov/psdonline/downloads/psd_grains_pulses_csv.zip",
+      "retrievedAt": "2026-10-08T05:36:09Z",
+      "sha256": "70464746e0905060c70c5f27330748769908f5159669b5b7b853e0925bd3d5f4",
+      "bytes": 2871937,
+      "latestSourceVintage": "2026-09"
+    },
+    {
+      "filename": "psd_oilseeds_csv.zip",
+      "sourceUrl": "https://apps.fas.usda.gov/psdonline/downloads/psd_oilseeds_csv.zip",
+      "retrievedAt": "2026-10-08T05:36:12Z",
+      "sha256": "4f670b5f824e5701d1f068d8da6c6f638a6540d73849f6c34c369e72fa8e94bb",
+      "bytes": 3842357,
+      "latestSourceVintage": "2026-09"
+    }
+  ],
+  "manifestSha256": "67d37f210403f57181ca293ba44f51da4a59b27c6476436bf96986a6158b9f2d",
+  "vintageCaveat": "Latest Market_Year for the four G1 crops is 2026 with September 2026 metadata; historical row last-update months remain distinct.",
+  "reviewedPrHead": "2f9e97b5967ee8d3a98bac73485f05d74da0d5f3"
+}
