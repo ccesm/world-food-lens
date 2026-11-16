@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-15T14:07:02Z",
+  "generatedAt": "2026-11-16T16:06:50Z",
   "maps": {
     "shortTerm": {
-      "period": "2026-10-21",
-      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-10-21&SELECTED_TIMESCALE=01",
+      "period": "2026-11-01",
+      "url": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=spaST&SRS=EPSG%3A4326&BBOX=-180%2C-90%2C180%2C90&WIDTH=1440&HEIGHT=720&STYLE=&FORMAT=image%2Fpng&TIME=2026-11-01&SELECTED_TIMESCALE=01",
       "layer": "spaST",
       "title": "SPI ERA5 Short Term (1 month)",
       "periodBasis": "wms-service-example",
@@ -41,12 +41,12 @@
   },
   "points": {
     "iowa": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-wet",
       "longTerm": "moderately-wet",
       "impactRisk": "no-hotspot"
     },
     "kansas": {
-      "shortTerm": "moderately-wet",
+      "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -76,12 +76,12 @@
       "impactRisk": "no-hotspot"
     },
     "mato-grosso": {
-      "shortTerm": "moderately-dry",
+      "shortTerm": "extremely-dry",
       "longTerm": "severely-dry",
       "impactRisk": "no-hotspot"
     },
     "pampas": {
-      "shortTerm": "moderately-dry",
+      "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -96,7 +96,7 @@
       "impactRisk": "no-hotspot"
     },
     "india-rice": {
-      "shortTerm": "near-normal",
+      "shortTerm": "moderately-wet",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -106,7 +106,7 @@
       "impactRisk": "no-hotspot"
     },
     "thailand": {
-      "shortTerm": "moderately-dry",
+      "shortTerm": "near-normal",
       "longTerm": "near-normal",
       "impactRisk": "no-hotspot"
     },
@@ -122,8 +122,8 @@
     }
   },
   "status": "ok",
-  "fetchedAt": "2026-11-15T14:07:02Z",
-  "lastAttemptAt": "2026-11-15T14:07:02Z",
+  "fetchedAt": "2026-11-16T16:06:50Z",
+  "lastAttemptAt": "2026-11-16T16:06:50Z",
   "source": {
     "name": "Copernicus Emergency Management Service / Global Drought Observatory",
     "url": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
@@ -132,7 +132,7 @@
   },
   "periodVerified": false,
   "periodVerification": {
-    "checkedAt": "2026-11-15T14:07:05Z",
+    "checkedAt": "2026-11-16T16:06:54Z",
     "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
     "reason": "availability-metadata-invalid",
     "error": "GDO interval end does not align with its advertised timestep"
@@ -144,33 +144,33 @@
     "sourceUrl": "https://drought.emergency.copernicus.eu/tumbo/gdo/map/",
     "downloadUrl": null,
     "observation": {
-      "period": "2026-10-21",
+      "period": "2026-11-01",
       "marketYear": null,
       "vintage": null,
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-11-15T14:07:02Z",
+      "checkedAt": "2026-11-16T16:06:50Z",
       "retrieval": "ok",
       "format": "passed",
       "semantic": "passed",
       "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-11-15T14:07:02Z",
+      "fetchedAt": "2026-11-16T16:06:50Z",
       "format": "passed",
       "semantic": "passed",
       "period": "unverified"
     },
-    "cache": "unchanged",
+    "cache": "new",
     "version": {
-      "contentHash": "b0d833faea21c6ea1bad6106fc1ce2f2e8453c1b7da073b175d6cc41cf802536",
+      "contentHash": "d0801022f35abf85e8303b73e74606c358a85d6c8c38dbf934be1875320a05dc",
       "observationId": null,
       "revisionId": null
     },
     "extensions": {
       "periodVerification": {
-        "checkedAt": "2026-11-15T14:07:05Z",
+        "checkedAt": "2026-11-16T16:06:54Z",
         "sourceUrl": "https://drought.emergency.copernicus.eu/api/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.1.1",
         "reason": "availability-metadata-invalid",
         "error": "GDO interval end does not align with its advertised timestep"
