@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-11-16T16:06:54Z",
-  "status": "ok",
+  "lastAttemptAt": "2026-11-17T16:16:37Z",
+  "status": "error",
   "data": {
     "issuedAt": "2026-11-12",
     "phase": "el-nino",
@@ -185,11 +185,11 @@
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-11-16T16:06:54Z",
-      "retrieval": "ok",
-      "format": "passed",
-      "semantic": "passed",
-      "reason": null
+      "checkedAt": "2026-11-17T16:16:37Z",
+      "retrieval": "failed",
+      "format": "unknown",
+      "semantic": "unknown",
+      "reason": "retrieval_failed"
     },
     "accepted": {
       "fetchedAt": "2026-11-16T16:06:54Z",
@@ -197,7 +197,7 @@
       "semantic": "passed",
       "period": "verified"
     },
-    "cache": "unchanged",
+    "cache": "retained-retrieval",
     "version": {
       "contentHash": "3e97e2143db1eb6cffd829222d847faa9897b92ce59f3aafad1faec2d7b04aad",
       "observationId": null,
@@ -206,5 +206,7 @@
     "extensions": {
       "strengthExtraction": "not-reliably-extracted"
     }
-  }
+  },
+  "error": "<urlopen error timed out>",
+  "failureKind": "retrieval"
 }
