@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "lastAttemptAt": "2026-11-17T16:16:37Z",
-  "status": "error",
+  "lastAttemptAt": "2026-11-18T15:50:29Z",
+  "status": "ok",
   "data": {
     "issuedAt": "2026-11-12",
     "phase": "el-nino",
@@ -171,7 +171,7 @@
       "outlook": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/outlook/"
     }
   },
-  "fetchedAt": "2026-11-16T16:06:54Z",
+  "fetchedAt": "2026-11-18T15:50:29Z",
   "metadata": {
     "contractVersion": 1,
     "datasetId": "enso",
@@ -185,19 +185,19 @@
       "publishedAt": null
     },
     "attempt": {
-      "checkedAt": "2026-11-17T16:16:37Z",
-      "retrieval": "failed",
-      "format": "unknown",
-      "semantic": "unknown",
-      "reason": "retrieval_failed"
+      "checkedAt": "2026-11-18T15:50:29Z",
+      "retrieval": "ok",
+      "format": "passed",
+      "semantic": "passed",
+      "reason": null
     },
     "accepted": {
-      "fetchedAt": "2026-11-16T16:06:54Z",
+      "fetchedAt": "2026-11-18T15:50:29Z",
       "format": "passed",
       "semantic": "passed",
       "period": "verified"
     },
-    "cache": "retained-retrieval",
+    "cache": "unchanged",
     "version": {
       "contentHash": "3e97e2143db1eb6cffd829222d847faa9897b92ce59f3aafad1faec2d7b04aad",
       "observationId": null,
@@ -206,7 +206,5 @@
     "extensions": {
       "strengthExtraction": "not-reliably-extracted"
     }
-  },
-  "error": "<urlopen error timed out>",
-  "failureKind": "retrieval"
+  }
 }
